@@ -15,3 +15,353 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+.status-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+  
+.app-sub-navigation {
+    margin-bottom: 40px;
+  }
+  
+  .app-sub-navigation__list {
+    font-size: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (min-width: 23.4375em) {
+    .app-sub-navigation__list {
+      box-shadow: inset 0 -1px 0 #b1b4b6;
+      width: 100%;
+    }
+  }
+  
+  .app-sub-navigation__item {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-shadow: inset 0 -1px 0 #b1b4b6;
+    display: block;
+    margin-top: -1px;
+  }
+  
+  @media print {
+    .app-sub-navigation__item {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-sub-navigation__item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+  }
+  
+  @media print {
+    .app-sub-navigation__item {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  
+  .app-sub-navigation__item:last-child {
+    box-shadow: none;
+  }
+  
+  @media (min-width: 23.4375em) {
+    .app-sub-navigation__item {
+      box-shadow: none;
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 0;
+    }
+  }
+  
+  .app-sub-navigation__link {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 17px;
+    padding-left: 15px;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+  }
+  
+  @media print {
+    .app-sub-navigation__link {
+      font-family: sans-serif;
+    }
+  }
+  
+  .app-sub-navigation__link:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+  
+  .app-sub-navigation__link:link {
+    color: #1d70b8;
+  }
+  
+  .app-sub-navigation__link:visited {
+    color: #4c2c92;
+  }
+  
+  .app-sub-navigation__link:hover {
+    color: #003078;
+  }
+  
+  .app-sub-navigation__link:active {
+    color: #0b0c0c;
+  }
+  
+  .app-sub-navigation__link:focus {
+    color: #0b0c0c;
+  }
+  
+  @media (min-width: 23.4375em) {
+    .app-sub-navigation__link {
+      padding-left: 0;
+    }
+  }
+  
+  .app-sub-navigation__link:link, .app-sub-navigation__link:visited {
+    color: #1d70b8;
+  }
+  
+  .app-sub-navigation__link:hover {
+    color: #0b0c0c;
+  }
+  
+  .app-sub-navigation__link:focus {
+    color: #0b0c0c;
+    position: relative;
+    box-shadow: none;
+  }
+  
+  .app-sub-navigation__link:focus:before {
+    background-color: #0b0c0c;
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+  }
+  
+  .app-sub-navigation__link[aria-current="page"] {
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .app-sub-navigation__link[aria-current="page"]:before {
+    background-color: #1d70b8;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+  }
+  
+  @media (min-width: 23.4375em) {
+    .app-sub-navigation__link[aria-current="page"]:before {
+      height: 5px;
+      width: 100%;
+    }
+  }
+  
+  .app-sub-navigation__link[aria-current="page"]:focus:before {
+    background-color: #0b0c0c;
+  }
+  .app-primary-navigation {
+    background-color: #f3f2f1;
+  }
+  
+  .app-primary-navigation__container {
+    max-width: 960px;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 0;
+    text-align: justify;
+  }
+  
+  @supports (margin: max(calc(0px))) {
+    .app-primary-navigation__container {
+      margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+      margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-primary-navigation__container {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+    @supports (margin: max(calc(0px))) {
+      .app-primary-navigation__container {
+        margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+        margin-left: max(30px, calc(15px + env(safe-area-inset-left)));
+      }
+    }
+  }
+  
+  @media (min-width: 1020px) {
+    .app-primary-navigation__container {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @supports (margin: max(calc(0px))) {
+      .app-primary-navigation__container {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+  
+  .app-primary-navigation__container:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .app-primary-navigation__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app-primary-navigation__list:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .app-primary-navigation__item {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-right: 15px;
+    float: left;
+    margin-top: 0;
+  }
+  
+  @media print {
+    .app-primary-navigation__item {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-primary-navigation__item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+  }
+  
+  @media print {
+    .app-primary-navigation__item {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  
+  .app-primary-navigation__item:last-child {
+    margin-right: 0;
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-primary-navigation__item {
+      margin-right: 20px;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-primary-navigation__item--align-right {
+      float: right;
+    }
+  }
+  
+  .app-primary-navigation__link {
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .app-primary-navigation__link:link, .app-primary-navigation__link:visited {
+    color: #1d70b8;
+  }
+  
+  .app-primary-navigation__link:focus {
+    color: #0b0c0c;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+  }
+  
+  .app-primary-navigation__link:hover {
+    color: #003078;
+  }
+  
+  .app-primary-navigation__link[aria-current] {
+    color: #1d70b8;
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .app-primary-navigation__link[aria-current]:before {
+    background-color: #1d70b8;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .app-primary-navigation__link[aria-current]:focus {
+    color: #0b0c0c;
+    position: relative;
+    border: none;
+  }
+  
+  .app-primary-navigation__link[aria-current]:focus:before {
+    background-color: #0b0c0c;
+  }
+  
+  .app-primary-navigation__link[aria-current]:hover {
+    color: #003078;
+  }
+  
+  .app-primary-navigation__link[aria-current]:hover:before {
+    background-color: #003078;
+  }
+  
