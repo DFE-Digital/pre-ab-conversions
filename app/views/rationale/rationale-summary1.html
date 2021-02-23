@@ -123,10 +123,9 @@
             <dt class="govuk-summary-list__key">
               Rationale for project
             </dt>
-            <dd class="govuk-summary-list__value">
-              <p>St Wilfred's is a small primary school in Lincolnshire which is facing a financially challenging future should it remain on its own. Low pupil numbers and the high level of staffing costs due to the school being supported by an Agency Interim Head Teacher have contributed to this.</p>
-              </p>The Chair of St Wilfred's and Dynamics Trust have agreed to a Memorandum of Understanding which will allow Dynamics Trust to oversee all operational aspects of the school with immediate effect. Central services provided will include school imporvement, finance and operational support and HR support. Dynamics Trust have also apponted Garth Brown, Head Teacher of Angel Primary School, to the role of interim Executive Head Teacher, he assumed full responsibility for Wilfred's on 2nd Novemeber 2020.</p>
-            </dd>
+              <dd class="govuk-summary-list__value">
+                {{ data["project-rationale"] }}
+                </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="project-rationale.html">
                 Change<span class="govuk-visually-hidden">project-rationale</span>
@@ -135,10 +134,14 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Rationale for sponsor/MAT
+              Rationale for trust/sponsor
             </dt>
             <dd class="govuk-summary-list__value">
-              -
+              {% if data['trust-rationale']%}
+              {{data['trust-rationale']}}
+             {% else %} 
+            <span class="govuk-hint">Empty</class>
+            {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="sponsor-rationale.html">
