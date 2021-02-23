@@ -19,6 +19,7 @@ Example usage:
 
 module.exports = {
 
-  "opening-date": "Tuesday 21 March 2021"
+  "opening-date": "Tuesday 21 March 2021",
+  "aorequired": "Yes"
 
 }
