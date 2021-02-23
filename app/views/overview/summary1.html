@@ -124,10 +124,15 @@ Rationale
               Recomendation
             </dt>
             <dd class="govuk-summary-list__value">
-              
+              {% if data['recomendation']%}
+                {{data['recomendation']}}
+               {% else %} 
+              <span class="govuk-hint">Empty</class>
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="recommendation">
                 Change<span class="govuk-visually-hidden">recomendation</span>
               </a>
             </dd>
@@ -147,11 +152,11 @@ Rationale
               Is AO required?
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes
+              Yes{{ data["aorequired"] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden">ao-required</span>
+              <a class="govuk-link" href="aorequired.html">
+                Change
               </a>
             </dd>
           </div>
@@ -160,7 +165,11 @@ Rationale
              Date of HTB
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body"></p>
+              {% if data['htb-date']%}
+              {{data['htb-date']}}
+             {% else %} 
+            <span class="govuk-hint">Empty</class>
+            {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="set-htb.html">
@@ -204,11 +213,11 @@ Rationale
              Proposed academy opening date
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">20 July 2020</p>
+             {{ data['opening-date']}} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden">opening</span>
+              <a class="govuk-link" href="/overview/opening">
+                Change
               </a>
             </dd>
           </div>
@@ -232,9 +241,15 @@ Rationale
             
               </div>
             </div>
-            <div><button class="govuk-button" data-module="govuk-button">
-              Continue
-            </button></div>
+            <form action="/task_list1" method="post" novalidate>
+
+              <input type="hidden" name="task_list1" value="true">
+    
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+    
+            </form>
         </main>
       </div>
 
