@@ -19,7 +19,14 @@ Example usage:
 
 module.exports = {
 
+  /* overview */
   "opening-date": "Tuesday 21 March 2021",
-  "aorequired": "Yes"
+  "aorequired": "Yes",
+
+    /* general info */
+  "viability": "Yes",
+  "deficit": "No",
+  "diocesan": "Yes",
+  "distance": "20.1 miles"
 
 }
