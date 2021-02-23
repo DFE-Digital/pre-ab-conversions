@@ -9,7 +9,7 @@ journeys where users are returning or logging in to an existing application.
 
 Example usage:
 
-"full-name": "Sarah Philips",
+"opening-date": "Tuesday 21 March 2021",
 
 "options-chosen": [ "foo", "bar" ]
 
@@ -19,6 +19,6 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  "opening-date": "Tuesday 21 March 2021"
 
 }
