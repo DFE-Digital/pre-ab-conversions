@@ -115,32 +115,44 @@ Sponsor rationale
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="/rationale/rationale-summary1" method="post" novalidate>
+  {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      <h1 class="govuk-heading-l">
-        Rationale for sponsor/MAT</h1>
-    
-<p>Explain why the trust is a good match for the school.</p>
-<p class="govuk-body">You could include information about:</p>
+{{ govukCharacterCount({
+  name: "trust-rationale",
+  id: "trust-rationale",
+  maxlength: 500,
+  label: {
+    text: "Write the rationale for the trust/sponsor",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Explain why the trust is a good match for the school."
+  }
+}) }}
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with writing a trust/sponsor rationale
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">To write your rationale, you could include information about:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>if the school and the trsut have a shared vision and values</li>
+  <li>if the school and the trust have a shared vision and values</li>
   <li>the services the trust can offer the school</li>
   <li>how the trust can help the school imporve (if needed)</li>
   <li>how the trust will run the school</li>
 </ul>
-<br>
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-!-font-weight-bold" for="body">
-  Write your rationale for the sponsor/MAT
-  </label>
-  
-  <textarea class="govuk-textarea" id="body" name="body" rows="5" data-module="moj-rich-text-editor" data-moj-rich-text-editor-toolbar="bold,italic,underline,bullets,numbers"></textarea>
-  <div id="body-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-    You can enter up to 500 characters
   </div>
-  </div> 
-</fieldset><button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
+</details>
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
 </div> <div class="govuk-grid-column-one-third">
   <div class="status-box">
       
