@@ -115,6 +115,24 @@ Sponsor rationale
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">Write the rationale for the trust/sponsor</h1>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with writing a trust/sponsor rationale
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">To write your rationale, you could include information about:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if the school and the trust have a shared vision and values</li>
+        <li>the services the trust can offer the school</li>
+        <li>how the trust can help the school imporve (if needed)</li>
+        <li>how the trust will run the school</li>
+      </ul>
+        </div>
+      </details>
+      <p>Explain why the trust is a good match for the school.</p>
       <form action="/rationale/rationale-summary1" method="post" novalidate>
   {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
@@ -122,31 +140,10 @@ Sponsor rationale
   name: "trust-rationale",
   id: "trust-rationale",
   maxlength: 500,
-  label: {
-    text: "Write the rationale for the trust/sponsor",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  hint: {
-    text: "Explain why the trust is a good match for the school."
-  }
+  rows: 15
+
 }) }}
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help with writing a trust/sponsor rationale
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">To write your rationale, you could include information about:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>if the school and the trust have a shared vision and values</li>
-  <li>the services the trust can offer the school</li>
-  <li>how the trust can help the school imporve (if needed)</li>
-  <li>how the trust will run the school</li>
-</ul>
-  </div>
-</details>
+
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
