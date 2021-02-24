@@ -387,3 +387,11 @@ $govuk-assets-path: '/govuk/assets/';
     padding-bottom: 4px;
     padding-left: 8px;
   }
+
+  .govuk-HTBtable__header,
+  .govuk-HTBtable__cell {
+    padding: 10px 20px 10px 0;
+    border: 1px solid #b1b4b6;
+    text-align: left;
+    vertical-align: top;
+  }
