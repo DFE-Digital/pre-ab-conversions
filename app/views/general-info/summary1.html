@@ -109,7 +109,7 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list.html" class="govuk-back-link">Back</a>
+      <div class="govuk-width-container"><a onClick="history.go(-1)" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
@@ -123,7 +123,7 @@
               School phase
             </dt>
             <dd class="govuk-summary-list__value">
-             Primry
+             Primary
             </dd>
             <dd class="govuk-summary-list__actions">
         
@@ -302,28 +302,33 @@
     
     
       
-            </div>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="waste">
-                  This information is ready to be included in the HTB papers
-                </label>
-              </div>
-            
-              </div>
-            </div>
-            <form action="/task_list1" method="post" novalidate>
 
-              <input type="hidden" name="task_list1" value="true">
+    <form action="/task_list1" method="post"> 
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
     
-              <button class="govuk-button" data-module="govuk-button">
-                Continue
-              </button>
+      {{ govukCheckboxes({
+        idPrefix: "general-info-status",
+        name: "general-info-status",
+        
+        items: [
+         
+          {
+            value: "Complete",
+            text: "This section is ready to be included in the HTB templates"
+          }
+          ]
+        }) }}
     
-            </form>
+       
+            
+    
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    
+       </form>
+            </main>
         </main>
       </div>
 

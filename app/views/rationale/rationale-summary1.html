@@ -154,24 +154,32 @@
 
 
   
-        </div>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="waste">
-                  This information is ready to be included in the HTB papers
-                </label>
-              </div>
-            
-              </div>
-            </div>
-            <div><button class="govuk-button" data-module="govuk-button">
-              Continue
-            </button></div>
-        </main>
-      </div>
+<form action="/task_list1" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "rationale-status",
+    name: "rationale-status",
+    
+    items: [
+     
+      {
+        value: "Complete",
+        text: "This section is ready to be included in the HTB templates"
+      }
+      ]
+    }) }}
+
+   
+        
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+   </form>
+
 
 
     
