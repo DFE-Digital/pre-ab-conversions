@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Deficit or surpluss
+Financial deficit or surplus
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -110,7 +110,7 @@ Deficit or surpluss
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="general-info/summary1.html" class="govuk-back-link">Back</a>
+      <div class="govuk-width-container"><a href="/general-info/summary1" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
   {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
@@ -123,8 +123,17 @@ Deficit or surpluss
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="/general-info/summary1" method="post">
-  <h1 class="govuk-heading-l">Does this school have a surpluss or a deficit</h1>
-
+  <h1 class="govuk-heading-l">Does this school have a financial surplus or deficit?</h1>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with surplus and deficits
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+     You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
+    </div>
+  </details>
 
 
           {{ govukRadios({
@@ -134,16 +143,16 @@ Deficit or surpluss
             items: [
        
               {
-                value: "Surpluss",
-                text: "Surpluss"
+                value: "surplus",
+                text: "Surplus"
               },
               {
                 value: "Deficit",
                 text: "Deficit"
               },
               {
-                value: "Neither",
-                text: "Neither"
+                value: "There are no financial issues at the school",
+                text: "There are no financial issues at the school"
               }
               
             ]

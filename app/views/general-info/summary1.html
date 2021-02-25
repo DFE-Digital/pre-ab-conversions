@@ -134,7 +134,7 @@
               Age range
             </dt>
             <dd class="govuk-summary-list__value">
-              3-11
+              3 to 11
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -144,7 +144,7 @@
               Establishment type
             </dt>
             <dd class="govuk-summary-list__value">
-            Church of England School
+            Voluntary aided school
             </dd>
             <dd class="govuk-summary-list__actions">
             
@@ -152,7 +152,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             NOR
+             NOR (number on roll)
             </dt>
             <dd class="govuk-summary-list__value">
              105
@@ -163,7 +163,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             % Full
+             Percentage the school is full
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">54%</p>
@@ -184,7 +184,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            PAN
+            PAN (published admissions number)
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">30</p>
@@ -194,7 +194,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             % FSM
+             Percentage of free school meals at the school
             </dt>
             <dd class="govuk-summary-list__value">
             23.8%
@@ -206,7 +206,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Part of PFI scheme
+             Part of a PFI (private finance initiative) scheme
             </dt>
             <dd class="govuk-summary-list__value">
             No
@@ -231,7 +231,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                 Surpluss or deficit
+                 Financial surplus or deficit
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['deficit'] }}
@@ -243,7 +243,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                 Is this a Diocesan MAT
+                 Is this a Diocesan MAT (multi-academy trust)?
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['diocesan'] }}
@@ -256,7 +256,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                % of good or outstanding schools
+                Percentage of good or outstanding schools in the trust
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if data['goodschools']%}
@@ -273,7 +273,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                Distance to MAT HQ
+                Distance from the school to the trust headquarters
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['distance'] }}
