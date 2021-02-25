@@ -113,7 +113,7 @@ Preview HTB
       <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
-  <h1 class="govuk-heading-l">Preview of your HTB template</h1>
+  <h1 class="govuk-heading-l">Preview your HTB template</h1>
 
   
 
@@ -148,22 +148,41 @@ Preview HTB
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Project name (URN) and Local authority:</th>
-          <td class="govuk-table__cell"> St. Wilfred's Primary School (65738375) Warrington</td>
-      
+          <th scope="row" class="govuk-table__header">School name:</th>
+          <td class="govuk-table__cell"> St. Wilfred's Primary School</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Name of MAT sponsor:</th>
-          <td class="govuk-table__cell"> TR-35384975 Dynamics Academy Trust<br>      SP-93583450 Chester Diocease </td></td>
-
+          <th scope="row" class="govuk-table__header">URN (unique reference number):</th>
+          <td class="govuk-table__cell">120620</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Local authority:</th>
+          <td class="govuk-table__cell">Warrington</td>
+        </tr>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Trust reference number:</th>
+        <td class="govuk-table__cell">TR01318</td>
+      </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name of trust/sponsor:</th>
+          <td class="govuk-table__cell">Dynamics Trust</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Sponsor reference number:</th>
+          <td class="govuk-table__cell">SP00170</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Sponsor name:</th>
+          <td class="govuk-table__cell">Diocese of Warrington</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Academy type and route:</th>
-          <td class="govuk-table__cell"> Conversion grant only - £25,000 <br> Route of project: Convertor </td>
+          <td class="govuk-table__cell">Route: grant only - £25,000 <br>Type: Convertor </td>
     
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Proposed onpening date:</th>
+          <th scope="row" class="govuk-table__header">Proposed academy opening date:</th>
           <td class="govuk-table__cell"> {{ data['opening-date']}} </td>
     
         </tr>
@@ -178,15 +197,15 @@ Preview HTB
           <th scope="row" class="govuk-table__header">School phase:</th>
           <td class="govuk-table__cell">Primary</td>
           <th scope="row" class="govuk-table__header">Age range:</th>
-          <td class="govuk-table__cell">3-11</td>
+          <td class="govuk-table__cell">3 to 11</td>
           <th scope="row" class="govuk-table__header">School type:</th>
           <td class="govuk-table__cell">Voluntary aided school</td>
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">NOR (%full):</th>
-          <td class="govuk-table__cell">105 (54%</td>
-          <th scope="row" class="govuk-table__header">Capacity</th>
+          <td class="govuk-table__cell">105 (54%)</td>
+          <th scope="row" class="govuk-table__header">Capacity:</th>
           <td class="govuk-table__cell">196</td>
           <th scope="row" class="govuk-table__header">PAN:</th>
           <td class="govuk-table__cell">30</td>
@@ -199,18 +218,38 @@ Preview HTB
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">%FSM:</th>
-          <td class="govuk-table__cell">23</td>
-          <th scope="row" class="govuk-table__header">PFI?:</th>
+          <td class="govuk-table__cell">23.8%</td>
+          <th scope="row" class="govuk-table__header">PFI:</th>
           <td class="govuk-table__cell">No</td>
-          <th scope="row" class="govuk-table__header">Viability</th>
-          <td class="govuk-table__cell">Yes pupil numbers</td>
-          <td class="govuk-table__header">PAN</td>
-          <td class="govuk-table__cell">30</td>
+          <th scope="row" class="govuk-table__header">Viability:</th>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__header">Surplus or Deficit:</td>
+          <td class="govuk-table__cell">Deficit</td>
         </tr>
-       
+      </tr>
       </tbody>
     </table>
-  
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Is this a Diocesan MAT?</th>
+          <td class="govuk-table__cell">{{ data['diocesan']}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Percentage of good or outstanding schools in the trust:</th>
+          <td class="govuk-table__cell">{{ data['goodschools']}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Distance to proposed MAT/sponsor:</th>
+          <td class="govuk-table__cell">{{ data['distance']}}</td>
+        </tr>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">MP:</th>
+        <td class="govuk-table__cell">Greg Davies, Warrington South</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
   
   </main>
