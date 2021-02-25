@@ -123,7 +123,7 @@ Academy order required
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="/overview/summary1" method="post">
-  <h1 class="govuk-heading-l">Do you recomend this conversion?</h1>
+  <h1 class="govuk-heading-l">What is your recommendation for this project?</h1>
 
 
           {{ govukRadios({
@@ -133,12 +133,16 @@ Academy order required
             items: [
        
               {
-                value: "Yes",
-                text: "Yes"
+                value: "Approve",
+                text: "Approve"
               },
               {
-                value: "No",
-                text: "No"
+                value: "Defer",
+                text: "Defer"
+              },
+              {
+                value: "Decline",
+                text: "Decline"
               }
               
             ]
