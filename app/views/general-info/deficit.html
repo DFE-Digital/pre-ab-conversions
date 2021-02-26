@@ -144,23 +144,25 @@ Financial deficit or surplus
        
               {
                 value: "surplus",
+                checked:  data['deficit'] === "Surplus",
                 text: "Surplus"
               },
               {
                 value: "Deficit",
+                checked:  data['deficit'] === "Deficit",
                 text: "Deficit"
               },
               {
                 value: "There are no financial issues at the school",
+                checked:  data['deficit'] === "There are no financial issues at the school",
                 text: "There are no financial issues at the school"
               }
               
             ]
           }) }}
   
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+          
+
           {% endblock %}
         </form>
       </div><div class="govuk-grid-column-one-third">
