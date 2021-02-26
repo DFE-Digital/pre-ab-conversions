@@ -20,7 +20,7 @@ Example usage:
 module.exports = {
 
   /* overview */
-  "opening-date": "21 03 2021",
+  "opening-date": "Monday 1 March 2021",
   "aorequired": "Yes",
 
   /*rationale */
