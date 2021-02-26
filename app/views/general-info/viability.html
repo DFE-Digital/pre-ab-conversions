@@ -144,10 +144,12 @@ Viability issues
        
               {
                 value: "Yes",
+                checked:  data['viability'] === "Yes",
                 text: "Yes"
               },
               {
                 value: "No",
+                checked:  data['viability'] === "No",
                 text: "No"
               }
               
@@ -158,6 +160,7 @@ Viability issues
             text: "Continue"
           }) }}
           {% endblock %}
+          
         </form>
       </div><div class="govuk-grid-column-one-third">
         <div class="status-box">

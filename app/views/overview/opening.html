@@ -126,6 +126,24 @@ Set HTB date
   <h1 class="govuk-heading-l">Set the opening date for the academy</h1>
 <p>Acadamies must open on the first day of every month. You should tell the school and the trust what the opening date will be if you change it.</p>
 
+<!-- {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "opening-date",
+  namePrefix: "opening-date",
+  value: data['opening-date'],
+  fieldset: {
+    legend: {
+      text: "Academy opening date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }} -->
+
           {{ govukRadios({
             idPrefix: "opening-date",
             name: "opening-date",

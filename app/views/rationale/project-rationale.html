@@ -142,6 +142,7 @@ id: 'rationale',
 name: 'rationale',
 maxlength: 500,
 rows: 15,
+value: data["project-rationale"],
 attributes: {
 'data-module': 'moj-rich-text-editor',
 'data-moj-rich-text-editor-toolbar': 'bold,italic,underline,bullets,numbers'
@@ -252,14 +253,13 @@ attributes: {
     
   
     <!-- Javascript -->
-<script src="public/javascripts/jquery-1.11.3.js"></script>
-<script src="extension-assets/govuk-frontend/govuk/all.js"></script>
-<script src="public/javascripts/docs.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/public/javascripts/docs.js"></script>
 
 
-  <script src="public/javascripts/auto-store-data.js"></script>
-  <script src="node_modules/@ministryofjustice/frontend/moj/all.js"></script>
-  <script src="/app/assets/javascripts/rich-text-editor/rich-text-editor.js"></script>
+  <script src="/public/javascripts/auto-store-data.js"></script>
+  <script src="/public/javascripts/rich-text-editor/rich-text-editor.js"></script>
 
     <script>
     window.MOJFrontend.initAll()

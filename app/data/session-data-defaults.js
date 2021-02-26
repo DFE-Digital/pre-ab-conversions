@@ -20,7 +20,7 @@ Example usage:
 module.exports = {
 
   /* overview */
-  "opening-date": "Tuesday 21 March 2021",
+  "opening-date": "21 03 2021",
   "aorequired": "Yes",
 
   /*rationale */
@@ -28,7 +28,7 @@ module.exports = {
 
     /* general info */
   "viability": "Yes",
-  "deficit": "No",
+  "deficit": "There are no financial issues at the school",
   "diocesan": "Yes",
   "distance": "20.1 miles"
 
