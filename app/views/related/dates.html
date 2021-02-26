@@ -109,16 +109,21 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="index" class="govuk-back-link">Back to all conversion projects</a>
+      <div class="govuk-width-container"><a href="/index" class="govuk-back-link">Back to all conversion projects</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-l">AS_6759840</span>
+      <span class="govuk-caption-xl">AS_6759840</span>
       <h1 class="govuk-heading-l">
         St. Wilfred's Primary School
         <strong class="govuk-tag govuk-tag--green">Newly assigned</strong></h1>
+        {% if data['htb-date']%}
+        <div class="govuk-inset-text"><h4 class="govuk-heading-m">Date to HTB</h4>
+        <p>The HTB for this project is on the {{ data['htb-date']}}</p></div> 
+         {% else %} 
+         {% endif %}
 <nav class="app-sub-navigation" aria-label="sub menu">
 
   <ul class="app-sub-navigation__list">

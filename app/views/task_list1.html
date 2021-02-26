@@ -121,6 +121,11 @@
       <h1 class="govuk-heading-l">
         St. Wilfred's Primary School
         <strong class="govuk-tag govuk-tag--green">Newly assigned</strong></h1>
+        {% if data['htb-date']%}
+        <div class="govuk-inset-text"><h4 class="govuk-heading-m">Date to HTB</h4>
+        <p>The HTB for this project is on the {{ data['htb-date']}}</p></div> 
+         {% else %} 
+         {% endif %}
 <nav class="app-sub-navigation" aria-label="sub menu">
 
   <ul class="app-sub-navigation__list">
@@ -143,6 +148,7 @@
 </div>
 <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Task list</h2>
+
       <p class="govuk-body">The task list will help you fill out your HTB (headteacher board) template. You can complete each task in any order and the infromation you fill out will populate into the template.</p>
       <p> Some of the information is already pre-populated from TRAMS and the application form. You can use this as a guide to help you assess the school and trust.</p>
    <ol class="app-task-list">
@@ -162,6 +168,11 @@
 
           </Ol>
         </li> -->
+    
+     
+
+      
+     
 
         <li>
           <h2 class="app-task-list__section">

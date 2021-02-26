@@ -89,7 +89,7 @@
 
         <ul class="app-primary-navigation__list">
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="/">Academy conversions</a>
+              <a class="app-primary-navigation__link" aria-current="index" href="/index">Academy conversions</a>
             </li>
           
             <li class="app-primary-navigation__item">
@@ -109,7 +109,7 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to all conversion projects</a>
+<div class="govuk-width-container"><a href="/index" class="govuk-back-link">Back to all conversion projects</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
@@ -119,12 +119,17 @@
       <h1 class="govuk-heading-l">
         St. Wilfred's Primary School
         <strong class="govuk-tag govuk-tag--green">Newly assigned</strong></h1>
+        {% if data['htb-date']%}
+        <div class="govuk-inset-text"><h4 class="govuk-heading-m">Date to HTB</h4>
+        <p>The HTB for this project is on the {{ data['htb-date']}}</p></div> 
+         {% else %} 
+         {% endif %}
 <nav class="app-sub-navigation" aria-label="sub menu">
 
   <ul class="app-sub-navigation__list">
 
     <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link"  href="/index">Task list</a>
+      <a class="app-sub-navigation__link" href="/task_list1">Task list</a>
     </li>
         <li class="app-sub-navigation__item">
           <a class="app-sub-navigation__link"   aria-current="page"  href="#">Application form</a>
