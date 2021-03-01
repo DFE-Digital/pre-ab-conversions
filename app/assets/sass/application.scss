@@ -388,15 +388,10 @@ $govuk-assets-path: '/govuk/assets/';
     padding-left: 8px;
   }
 
-
-  .govuk-HTBtable__header {
- background-color: #4c2c92;
-  }
-  .app-application-card__submitted {
-    overflow-wrap: break-word;
-  }
-  
-  .app-application-card__submitted span {
-    display: block;
-  }
+table.data {
+border: solid;
+border-width: 1px 1px 1px 1px;
+border-color: #000000;
+background: pink;
+}
   
