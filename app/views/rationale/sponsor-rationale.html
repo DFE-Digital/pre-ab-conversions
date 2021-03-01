@@ -135,15 +135,20 @@ Sponsor rationale
       </details>
  
       <form action="/rationale/rationale-summary1" method="post" novalidate>
-  {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-{{ govukCharacterCount({
-  name: "trust-rationale",
-  id: "trust-rationale",
-  maxlength: 500,
-  rows: 15
+        {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
-}) }}
+{{ govukTextarea({
+id: 'trust-rationale',
+name: 'trust-rationale',
+maxlength: 500,
+rows: 15,
+value: data["trust-rationale"],
+attributes: {
+'data-module': 'moj-rich-text-editor',
+'data-moj-rich-text-editor-toolbar': 'bold,italic,underline,bullets,numbers'
+}
+}) }} 
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -249,10 +254,13 @@ Sponsor rationale
     <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/node_modules/moj-frontend/moj/all.js"></script>
+<script src="/public/javascripts/application.js"></script>
 <script src="/public/javascripts/docs.js"></script>
 
 
   <script src="/public/javascripts/auto-store-data.js"></script>
+  <script src="/public/javascripts/rich-text-editor/rich-text-editor.js"></script>
 
 
     
