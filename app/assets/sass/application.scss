@@ -369,10 +369,10 @@ $govuk-assets-path: '/govuk/assets/';
 
   .empty {
     display: inline-block;
-    outline: 2px solid transparent;
+    border: 2px solid;
     outline-offset: -2px;
-    color: #ffffff;
-    background-color: #1d70b8;
+    color: #505a5f;
+    background-color: #ffffff;
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
@@ -389,9 +389,10 @@ $govuk-assets-path: '/govuk/assets/';
     padding-left: 8px;
   }
 
-table.data {
-border: solid;
+.datatable {
+border: 2px solid;
 border-width: 1px 1px 1px 1px;
-border-color: #000000;
+color: #000000;
 background: pink;
+font-family: "GDS Transport", arial, sans-serif;
 }
