@@ -206,23 +206,24 @@ $govuk-assets-path: '/govuk/assets/';
   }
   
   @supports (margin: max(calc(0px))) {
-    .app-primary-navigation__container {
-      margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
-      margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
-    }
+   .app-primary-navigation__container {
+    margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+   margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
   }
+
+}
   
   @media (min-width: 40.0625em) {
     .app-primary-navigation__container {
       margin-right: 30px;
       margin-left: 30px;
     }
-    @supports (margin: max(calc(0px))) {
-      .app-primary-navigation__container {
-        margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
-        margin-left: max(30px, calc(15px + env(safe-area-inset-left)));
-      }
-    }
+    // @supports (margin: max(calc(0px))) {
+    //   .app-primary-navigation__container {
+    //     margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+    //     margin-left: max(30px, calc(15px + env(safe-area-inset-left)));
+    //   }
+    // }
   }
   
   @media (min-width: 1020px) {
@@ -230,12 +231,12 @@ $govuk-assets-path: '/govuk/assets/';
       margin-right: auto;
       margin-left: auto;
     }
-    @supports (margin: max(calc(0px))) {
-      .app-primary-navigation__container {
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
+    // @supports (margin: max(calc(0px))) {
+    //   .app-primary-navigation__container {
+    //     margin-right: auto;
+    //     margin-left: auto;
+    //   }
+    // }
   }
   
   .app-primary-navigation__container:after {
@@ -388,15 +389,9 @@ $govuk-assets-path: '/govuk/assets/';
     padding-left: 8px;
   }
 
-
-  .govuk-HTBtable__header {
- background-color: #4c2c92;
-  }
-  .app-application-card__submitted {
-    overflow-wrap: break-word;
-  }
-  
-  .app-application-card__submitted span {
-    display: block;
-  }
-  
+table.data {
+border: solid;
+border-width: 1px 1px 1px 1px;
+border-color: #000000;
+background: pink;
+}
