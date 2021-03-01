@@ -205,12 +205,13 @@ $govuk-assets-path: '/govuk/assets/';
     text-align: justify;
   }
   
-//  @supports (margin: max(calc(0px))) {
-//   .app-primary-navigation__container {
-//    margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
-//   margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
-//  }
-//}
+  @supports (margin: max(calc(0px))) {
+   .app-primary-navigation__container {
+    margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+   margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
+  }
+
+}
   
   @media (min-width: 40.0625em) {
     .app-primary-navigation__container {
