@@ -89,19 +89,19 @@
 
       <nav class="app-primary-navigation" aria-label="main menu">
 
-        <ul class="app-primary-navigation__list">
+         <ul class="app-primary-navigation__list">
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="/">Academy conversions</a>
+              <a class="app-primary-navigation__link" aria-current="index" href="/">Academy conversions (4)</a>
             </li>
           
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link"  href="/management">Academy transfers</a>
+              <a class="app-primary-navigation__link"  href="/management">Academy transfers (2)</a>
             </li>
           
             <li class="app-primary-navigation__item"> 
-              <a class="app-primary-navigation__link"  href="/concerns">Significant change</a>
+              <a class="app-primary-navigation__link"  href="/concerns">Significant change (1)</a>
             </li>         <li class="app-primary-navigation__item"> 
-              <a class="app-primary-navigation__link"  href="/concerns">Case concerns</a>
+              <a class="app-primary-navigation__link"  href="/concerns">Trust management</a>
             </li>
   
           </ul>
@@ -120,7 +120,19 @@
       <span class="govuk-caption-xl">AS_6759840</span>
       <h1 class="govuk-heading-l">
         St. Wilfrid's Primary School
-        <strong class="govuk-tag govuk-tag--green">Newly assigned</strong></h1>
+        {% if data['htb-date']%}
+         <strong class="govuk-tag govuk-tag--blue">Pre HTB</strong></h1>
+         {% else %} 
+         <strong class="govuk-tag govuk-tag--green">New</strong></h1>
+         {% endif %}
+      </h1>
+     
+
+      
+     
+
+
+
         {% if data['htb-date']%}
         <div class="govuk-inset-text"><h4 class="govuk-heading-m">Date to HTB</h4>
         <p>The HTB for this project is on the {{ data['htb-date']}}</p></div> 
