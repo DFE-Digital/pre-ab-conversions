@@ -120,7 +120,12 @@
       <span class="govuk-caption-xl">AS_6759840</span>
       <h1 class="govuk-heading-l">
         St. Wilfrid's Primary School
-        <strong class="govuk-tag govuk-tag--green">Newly assigned</strong></h1>
+        {% if data['htb-date']%}
+        <strong class="govuk-tag govuk-tag--blue">Pre HTB</strong></h1>
+        {% else %} 
+        <strong class="govuk-tag govuk-tag--green">New</strong></h1>
+        {% endif %}
+     </h1>
         {% if data['htb-date']%}
         <div class="govuk-inset-text"><h4 class="govuk-heading-m">Date to HTB</h4>
         <p>The HTB for this project is on the {{ data['htb-date']}}</p></div> 

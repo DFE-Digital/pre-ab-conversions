@@ -14,49 +14,56 @@
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th class="govuk-table__header">School name and application number
-              <th class="govuk-table__header">Trust and local authority</th>
-              <th class="govuk-table__header">Dates
-                <th class="govuk-table__header">Status</th>
+              <th class="govuk-table__header">Application information
+          
+           
+                <th class="govuk-table__header govuk-table__header--numeric">Project status and key dates</th>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="task_list1"><b>St. Wilfrid's Primary School</b></span></a><br>AS_4659841</td>
-              <td class="govuk-table__cell"><p class="govuk-body-s">Application to join Dynamics Trust</br>Local authority: Warrington</P></td>
-              <td class="govuk-table__cell"><p class="govuk-body-s">Recieved on: 10 February 2021</br>
-              Assigned on: 14 February 2021</p></td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green app-task-list__tag" id="school-performance">Newly assigned</strong></td>  
+              <td class="govuk-table__cell"><p class="govuk govuk-caption-l"><strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> AS_4659841
+                <p></p>
+                <p>Application to join a trust: Dynamics Academy Trust</br>
+               Local authority: Warrington</P></td></td>
+      
+         
+              <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
+                <p class="govuk-tag govuk-tag--blue">Pre HTB</p>
+                {% else %} 
+                <p class="govuk-tag govuk-tag--green">Newly assigned</p>
+                {% endif %}
+                <p class="govuk-hint">HTB date: 15 March 2021</br>
+                  Opening date: 01 July 2021</p></td> </td>  
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="task_list1"><b>Bolton Spa Primary</b></span></a><br>AS_6759880</td>
-              <td class="govuk-table__cell"><p class="govuk-body-s">Application to join Oak Hill Trust</br>
-              Local authority: Warrington</P></td>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s">HTB date: 15 March 2021</br>
-              Opening date: 01 July 2021</p></td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="school-performance">Pre HTB</strong></td>  
+              <td class="govuk-table__cell"><p class="govuk govuk-caption-l"><strong><a href="task_list1">Bolton Spa Primary</a></strong> AS_6759880
+            <p></p>
+              <p>Application to join a trust: Oak Hill Trust</br>
+             Local authority: Warrington</P></td>
+     
+              <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--blue">Pre HTB</p> 
+                <p class="govuk-hint">HTB date: 15 March 2021</br>
+                  Opening date: 01 July 2021</p></td>  
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="task_list1"><b>Blessed John Henry Newman Roman Catholic College</b></span></a><br>AS_4659841</td>
-              <td class="govuk-table__cell"><p class="govuk-body-s">Application to join Kingfisher Learning trust</br>
-              Local authority: Liverpool</P></td>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s">HTB date: 25 July 2021</br>
-              Assigned on: 01 December 2021</p></td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="school-performance">Pre HTB</strong></td>  
+              <td class="govuk-table__cell"><a href="task_list1"><p class="govuk govuk-caption-l"><strong>Blessed John Henry Newman Roman Catholic College</strong></a> AS_4659841  <p></p>
+                <p>Application to join a trust: Kingfisher learning trust</br>
+               Local authority: Warrington</P></td></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--blue">Pre HTB</p> 
+                  <p class="govuk-hint">HTB date: 15 July 2021</br>
+                    Opening date: 01 December 2021</p></td>   
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="task_list1"><b>Bolton Spa Primary</b></span></a><br>AS_6759880</td>
-              <td class="govuk-table__cell"><p class="govuk-body-s">Application to join Oak Hill Trust</br>
-              Local authority: Warrington</P></td>
-              <td class="govuk-table__cell">
-                <p class="govuk-body-s"></p></td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink app-task-list__tag" id="school-performance">On hold</strong></td>  
+              <td class="govuk-table__cell"><a href="task_list1"><p class="govuk govuk-caption-l"><strong>Bolton Spa Primary</strong></a> AS_4659841  <p></p>
+                <p>Application to join a trust: Oak Hill Trust</br>
+               Local authority: Bolton</P></td></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--pink">on hold</p> 
+                </td>    
             </tr>
         
             
           </tbody>
         </table>
-        <a href="#">View all archived conversion projects</a>
+        <p> <a href="#">All archived conversion projects</a></p>
         </div>
 
 {% endblock %}
