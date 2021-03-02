@@ -123,19 +123,19 @@ Preview HTB
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header data">Recommendation:</th>
           <td class="govuk-table__cell"> {{data['recomendation']}}</td>
-          <th class="govuk-table__header"> Version:</th>
+          <th class="govuk-table__cellr"> Version:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Is AO required:</th>
+          <th scope="row" class="table__cell">Is AO required:</th>
           <td class="govuk-table__cell"> {{data['aorequired']}}</td>
-          <th class="govuk-table__header"> Cleared by:</th>
+          <th class="govuk-table__cellr"> Cleared by:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Date of HTB:</th>
+          <th scope="row" class="table__cell">Date of HTB:</th>
           <td class="govuk-table__cell"> {{data['htb-date']}}</td>
-          <th class="govuk-table__header"> Previous HTB:</th>
+          <th class="govuk-table__cellr"> Previous HTB:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
       </tbody>
@@ -192,30 +192,22 @@ Preview HTB
     <h2 class="govuk-heading-m">General information</h2>
 
     <table class="datatable">
-      <tbody class="datatable">
-        <tr class="datatable">
-          <th class="datatable">School phase:</th>
-          <td class="datatable">Primary</td>
-          <th scope="row" class="govuk-HTBtable__header">Age range:</th>
-          <td class="govuk-table__cell">3 to 11</td>
-          <th scope="row" class="govuk-HTBtable__header">School type:</th>
-          <td class="govuk-HTBtable__header">Voluntary aided school</td>
-        </tr>
-
+      <tbody>
         <tr>
-          <th>NOR (%full):</th>
-          <td>105 (54%)</td>
-          <th>Capacity:</th>
-          <td>196</td>
-          <th>PAN:</th>
-          <td>30</td>
+          <th class="datatable_cell"><b>School phase:</b> Primary</th>
+          <th class="datatable_cell">Age range: 3 to 11</th>
+          <th class="datatable_cell">School type: Voluntary aided school</th>
+        </tr>
+        <tr>
+          <td class="datatable_cell"><b>School phase:</b> Primary</td>
+          <td class="datatable_cell">Age range: 3 to 11</td>
+          <td class="datatable_cell">School type: Voluntary aided school</td>
+        </tr>
       
        
       </tbody>
     </table>
     <table class="govuk-table">
-   
-        </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">%FSM:</th>
           <td class="govuk-table__cell">23.8%</td>
@@ -225,7 +217,6 @@ Preview HTB
           <td class="govuk-table__cell">Yes</td>
           <td class="govuk-table__header">Surplus or Deficit:</td>
           <td class="govuk-table__cell">Deficit</td>
-        </tr>
       </tr>
       </tbody>
     </table>
