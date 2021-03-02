@@ -417,3 +417,25 @@ $govuk-assets-path: '/govuk/assets/';
   text-align: left;
   vertical-align: top;
 }
+
+.overdue {
+  display: inline-block;
+  border: 2px solid;
+  outline-offset: -2px;
+  color: red;
+  background-color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 5px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+}
