@@ -111,7 +111,7 @@ Preview HTB
       <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
-  <h1 class="govuk-heading-l">Preview your HTB template</h1>
+  <h1 class="govuk-heading-xl">Preview your HTB template</h1>
 
   
 
@@ -119,65 +119,48 @@ Preview HTB
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header data">Recommendation:</th>
-          <td class="govuk-table__cell"> {{data['recomendation']}}</td>
-          <th class="govuk-table__cellr"> Version:</th>
+          <th class="govuk-table__header govuk-!-width-one-quater">Recommendation:</th>
+          <td class="govuk-table__cell govuk-!-width-one-quater"> {{data['recomendation']}}&nbsp;</td>
+          <th class="govuk-table__header govuk-!-width-one-quater"> Version:</th>
+          <td class="govuk-table__cell govuk-!-width-one-quater"> &nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Is AO required:</th>
+          <td class="govuk-table__cell"> {{data['aorequired']}}&nbsp;</td>
+          <th class="govuk-table__cell"> Cleared by:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="table__cell">Is AO required:</th>
-          <td class="govuk-table__cell"> {{data['aorequired']}}</td>
-          <th class="govuk-table__cellr"> Cleared by:</th>
+          <th scope="row" class="govuk-table__header">Date of HTB:</th>
+          <td class="govuk-table__cell"> {{data['htb-date']}}&nbsp;</td>
+          <th class="govuk-table__cell"> Previous HTB date:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="table__cell">Date of HTB:</th>
-          <td class="govuk-table__cell"> {{data['htb-date']}}</td>
-          <th class="govuk-table__cellr"> Previous HTB:</th>
+          <th scope="row" class="govuk-table__header">% FSM:</th>
+          <td class="govuk-table__cell"> {{data['htb-date']}}&nbsp;</td>
+          <th class="govuk-table__cell"> Previous HTB date:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
         </tr>
       </tbody>
     </table>
 
 
-    
-    <h2 class="govuk-heading-m">Project overview</h2>
 
     <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">Project overview</caption>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header data">School name:</th>
-          <td class="govuk-table__cell"> St. Wilfrid's Primary School</td>
+          <th scope="row" class="govuk-table__header">Project name (URN) and LA:</th>
+          <td class="govuk-table__cell"> St. Wilfrid's Primary School (1236475), Warrington</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header data">URN (unique reference number):</th>
-          <td class="govuk-table__cell">120620</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__heade datar">Local authority:</th>
-          <td class="govuk-table__cell">Warrington</td>
-        </tr>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Trust reference number:</th>
-        <td class="govuk-table__cell">TR01318</td>
-      </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Name of trust/sponsor:</th>
-          <td class="govuk-table__cell">Dynamics Trust</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Sponsor reference number:</th>
-          <td class="govuk-table__cell">SP00170</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Sponsor name:</th>
-          <td class="govuk-table__cell">Diocese of Warrington</td>
+          <th scope="row" class="govuk-table__header">Name of sponsor/MAT:</th>
+          <td class="govuk-table__cell">DT647586 - Dynamics trust</br>SP001707 - Chester diocese</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Academy type and route:</th>
           <td class="govuk-table__cell">Route: grant only - £25,000 <br>Type: Convertor </td>
-    
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Proposed academy opening date:</th>
@@ -187,58 +170,188 @@ Preview HTB
       </tbody>
     </table>
 
-    <h2 class="govuk-heading-m">General information</h2>
-
-    <table class="datatable">
-      <tbody>
-        <tr>
-          <th class="datatable_cell"><b>School phase:</b> Primary</th>
-          <th class="datatable_cell">Age range: 3 to 11</th>
-          <th class="datatable_cell">School type: Voluntary aided school</th>
-        </tr>
-        <tr>
-          <td class="datatable_cell"><b>School phase:</b> Primary</td>
-          <td class="datatable_cell">Age range: 3 to 11</td>
-          <td class="datatable_cell">School type: Voluntary aided school</td>
-        </tr>
-      
-       
-      </tbody>
-    </table>
     <table class="govuk-table">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">%FSM:</th>
-          <td class="govuk-table__cell">23.8%</td>
-          <th scope="row" class="govuk-table__header">PFI:</th>
-          <td class="govuk-table__cell">No</td>
-          <th scope="row" class="govuk-table__header">Viability:</th>
-          <td class="govuk-table__cell">Yes</td>
-          <td class="govuk-table__header">Surplus or Deficit:</td>
-          <td class="govuk-table__cell">Deficit</td>
-      </tr>
-      </tbody>
-    </table>
-    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">General information</caption>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Is this a Diocesan MAT?</th>
-          <td class="govuk-table__cell">{{ data['diocesan']}}</td>
+          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>School phase:</strong> Primary</td>
+          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>Age range:</strong> 3-11:</dh>
+          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>School type:</strong> Voluntary aided</td>
+          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>NOR (% full):</strong> 105 54%</t>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Percentage of good or outstanding schools in the trust:</th>
-          <td class="govuk-table__cell">{{ data['goodschools']}}</td>
+          <td class="govuk-table__cell"><strong>Capacity:</strong> 196</td>
+          <td class="govuk-table__cell"><strong>PAN:</strong> 30:</td>
+          <td class="govuk-table__cell"><strong>% FSM:</strong> 23</td>
+          <td class="govuk-table__cell"><strong>PFI?:</strong> No</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Distance to proposed MAT/sponsor:</th>
-          <td class="govuk-table__cell">{{ data['distance']}}</td>
+          <td class="govuk-table__cell"><strong>Viability issues:</strong> Yes Pupil numbers</td>
+          <td class="govuk-table__cell"><strong>Deficit:</strong> Yes - please see school budget narrative below</td>
+          <td class="govuk-table__cell"><strong>Is this a Diocesean MAT?</strong> Yes</td>
+          <td class="govuk-table__cell"><strong>If yes % of schools that are G orO?</strong> RSC Breifing tool - 16.10.20</td>
         </tr>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">MP:</th>
-        <td class="govuk-table__cell">Greg Davies, Warrington South</td>
-      </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Distance to proposed MAT/Sponsor:</strong> {{ data['distance']}} </td>
+          <td class="govuk-table__cell"><strong>MP:</strong> Greg Davies MP Conservative</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        
       </tbody>
     </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">School performance</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell govuk-!-width-one-half"><strong>Ofsted judgement date:</strong> 05/02/2020</td>
+          <td class="govuk-table__cell govuk-table__cell govuk-!-width-one-half"></td>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Outcomes for pupils:</strong> Requires improvement</td>
+          <td scope="row" class="govuk-table__cell"><strong>Quality of teaching, learning and assessment:</strong> Requires improvement</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Effectiveness of leadership and management:</strong> Requires improvement</td>
+          <td scope="row" class="govuk-table__cell"><strong>Personal development, behaviour and welfare:</strong> Good</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Early years provision /11-18/16-19:</strong> Good</td>
+          <td scope="row" class="govuk-table__cell"><strong>Overall effectiveness:</strong> Requires improvement</td>
+    
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">Rationale</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Rationale for project:</strong></br> {{ data['project-rationale']}} </td>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Sponsor rationale:</strong></br> {{ data['trust-rationale']}} </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Risks and issues:</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Has an Equalaties Impact Assessment been considered?:</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">School budget information</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><strong>Revenue carry forward at end-March [current year] 2021:</strong></br></td>
+          <td scope="row" class="govuk-table__cell"><span class="govuk-tag--pink">23k main share or -10K with PP/PE/UIFSM etc</span></td>
+     </tr>
+     <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell"><strong>Projected revenue balance at end-March [following year] 2022:</strong></br></td>
+      <td scope="row" class="govuk-table__cell">£0k main share or £16K surplus with PP/PE/UIFSM etc</td>
+ </tr>
+ <tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell"><strong>Capital carry forward at end-March [current year]:</strong></br></td>
+  <td scope="row" class="govuk-table__cell">£21K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell"><strong>PCapital carry forward at end-March [following year]:</strong></br></td>
+  <td scope="row" class="govuk-table__cell">£18K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell"><strong>Narrative</strong></br></td>
+  <td scope="row" class="govuk-table__cell"></td>
+</tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">Supplementary information</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" colspan="4" class="govuk-table__cell"><span class="govuk-heading-m">School pupil forecasts</span> </th> </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__cell"></th>
+          <th scope="row" class="govuk-table__cell">Capacity</th>
+          <th scope="row" class="govuk-table__cell">Total pupil number</th>
+          <th scope="row" class="govuk-table__cell">% Full</th>
+     </tr>
+     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Current AY (2-19/20)</th>
+      <td scope="row" class="govuk-table__cell">196</td>
+      <td scope="row" class="govuk-table__cell">105</td>
+      <td scope="row" class="govuk-table__cell">54%</td>
+ </tr>
+ <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">2020/21 Forecast</th>
+  <td scope="row" class="govuk-table__cell">196</td>
+  <td scope="row" class="govuk-table__cell">115</td>
+  <td scope="row" class="govuk-table__cell">59%</td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">2021/22 Forecast</th>
+  <td scope="row" class="govuk-table__cell">196</td>
+  <td scope="row" class="govuk-table__cell">100</td>
+  <td scope="row" class="govuk-table__cell">51%</td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">2022/23 Forecast</th>
+  <td scope="row" class="govuk-table__cell">196</td>
+  <td scope="row" class="govuk-table__cell">100</td>
+  <td scope="row" class="govuk-table__cell">51%</td>
+</tr>
+<tr class="govuk-table__row">
+  <td colspan="4" class="govuk-table__cell">Pupil forecasts are based on recent estimates from the LA. Please note from 1.3.20, the number of classes has been reduced from 7 to 4.</td>
+</tr>
+
+     </tbody></table>
+
+     <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <th scope="row" colspan="4" class="govuk-table__cell"><span class="govuk-heading-m">2020-23 finance plans</span> </th> </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__cell">Revenue balances</th>
+          <th scope="row" class="govuk-table__cell">2020-21 budget</th>
+          <th scope="row" class="govuk-table__cell">2021-22 budget</th>
+          <th scope="row" class="govuk-table__cell">2023-23 budget</th>
+     </tr>
+     <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">Total allocation and income</td>
+      <td scope="row" class="govuk-table__cell">£776K</td>
+      <td scope="row" class="govuk-table__cell">£652K</td>
+      <td scope="row" class="govuk-table__cell">£592K</td>
+ </tr>
+ <tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell">Revenue gross expenditure</td>
+  <td scope="row" class="govuk-table__cell">£867K</td>
+  <td scope="row" class="govuk-table__cell">£634K</td>
+  <td scope="row" class="govuk-table__cell">£498K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell">Revenue balance in year</td>
+  <td scope="row" class="govuk-table__cell">£-87K</td>
+  <td scope="row" class="govuk-table__cell">£28K</td>
+  <td scope="row" class="govuk-table__cell">£18K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell">Revenue balance brought forward from previous year</td>
+  <td scope="row" class="govuk-table__cell">£77K</td>
+  <td scope="row" class="govuk-table__cell">£-10K</td>
+  <td scope="row" class="govuk-table__cell">£10K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell">Revenue balance carried forward to following year</td>
+  <td scope="row" class="govuk-table__cell">£-10K</td>
+  <td scope="row" class="govuk-table__cell">£18K</td>
+  <td scope="row" class="govuk-table__cell">£37K</td>
+</tr>
+<tr class="govuk-table__row">
+  <td colspan="4" class="govuk-table__cell">It should be noted that year ended March 21 includes firstly costs of operating 7 classes for 136 pupils until 03.8.20 together with some restructuring costs, two elements also being shared with LCC.</td>
+</tr>
+
+     </tbody></table>
   </div>
   
   </main>
