@@ -108,7 +108,7 @@ Preview HTB
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back</a>
+      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
   <h1 class="govuk-heading-xl">Preview your HTB template</h1>
@@ -119,28 +119,24 @@ Preview HTB
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-width-one-quater">Recommendation:</th>
-          <td class="govuk-table__cell govuk-!-width-one-quater"> {{data['recomendation']}}&nbsp;</td>
-          <th class="govuk-table__header govuk-!-width-one-quater"> Version:</th>
-          <td class="govuk-table__cell govuk-!-width-one-quater"> &nbsp;</td>
+          <td scope="col" class="govuk-table__cell govuk-!-width-one-half"><strong>Recommendation:</strong> {{data['recomendation']}}</td>
+          <td scope="col" class="govuk-table__cell govuk-!-width-one-half"><strong>Version:</strong> </td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Is AO required:</th>
-          <td class="govuk-table__cell"> {{data['aorequired']}}&nbsp;</td>
-          <th class="govuk-table__cell"> Cleared by:</th>
-          <td class="govuk-table__cell"> &nbsp;</td>
+          <td class="govuk-table__cell"><strong>Is AO required?:</strong> {{data['aorequired']}}</td>
+          <td class="govuk-table__cell"><strong>Cleared by: </strong></td>
+
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Date of HTB:</th>
-          <td class="govuk-table__cell"> {{data['htb-date']}}&nbsp;</td>
-          <th class="govuk-table__cell"> Previous HTB date:</th>
-          <td class="govuk-table__cell"> &nbsp;</td>
+          <td class="govuk-table__cell"><strong> Date of HTB: </strong> {{data['htb-date']}}</td>
+          <td class="govuk-table__cell"><strong> Previous HTB date: </strong>None</td>
+        
+
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">% FSM:</th>
-          <td class="govuk-table__cell"> {{data['htb-date']}}&nbsp;</td>
-          <th class="govuk-table__cell"> Previous HTB date:</th>
           <td class="govuk-table__cell"> &nbsp;</td>
+       
         </tr>
       </tbody>
     </table>
@@ -174,30 +170,33 @@ Preview HTB
       <caption class="govuk-table__caption govuk-table__caption--l">General information</caption>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>School phase:</strong> Primary</td>
-          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>Age range:</strong> 3-11:</dh>
-          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>School type:</strong> Voluntary aided</td>
-          <td class="govuk-table__cell govuk-!-width-one-quater"><strong>NOR (% full):</strong> 105 54%</t>
+          <td class="govuk-table__cell govuk-!-width-one-third"><strong>School phase:</strong> Primary</td>
+          <td class="govuk-table__cell govuk-!-width-one-third"><strong>Age range:</strong> 3-11:</dh>
+          <td class="govuk-table__cell govuk-!-width-one-third"><strong>School type:</strong> Voluntary aided</td>
         </tr>
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>NOR (% full):</strong> 105 54%</t>
           <td class="govuk-table__cell"><strong>Capacity:</strong> 196</td>
           <td class="govuk-table__cell"><strong>PAN:</strong> 30:</td>
-          <td class="govuk-table__cell"><strong>% FSM:</strong> 23</td>
-          <td class="govuk-table__cell"><strong>PFI?:</strong> No</td>
+   
         </tr>
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>% FSM:</strong> 23</td>
+          <td class="govuk-table__cell"><strong>PFI?:</strong> No</td>
           <td class="govuk-table__cell"><strong>Viability issues:</strong> Yes Pupil numbers</td>
+       
+        </tr>
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell"><strong>Deficit:</strong> Yes - please see school budget narrative below</td>
           <td class="govuk-table__cell"><strong>Is this a Diocesean MAT?</strong> Yes</td>
           <td class="govuk-table__cell"><strong>If yes % of schools that are G orO?</strong> RSC Breifing tool - 16.10.20</td>
         </tr>
-        <tr class="govuk-table__row">
+        <tr>
           <td class="govuk-table__cell"><strong>Distance to proposed MAT/Sponsor:</strong> {{ data['distance']}} </td>
           <td class="govuk-table__cell"><strong>MP:</strong> Greg Davies MP Conservative</td>
           <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"></td>
+
         </tr>
-        
       </tbody>
     </table>
 
