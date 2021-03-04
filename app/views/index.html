@@ -130,11 +130,16 @@
          
               <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
                 <p class="govuk-tag govuk-tag--blue">Pre HTB</p>
-                {% else %} 
+               
+
+                <p class="govuk-hint">HTB date: {{ data['htb-date']}}</br>
+                  Opening date:  {{ data['opening-date']}}</p>  
+                  {% else %}               
                 <p class="govuk-tag govuk-tag--green">Newly assigned</p>
-                {% endif %}
                 <p class="govuk-hint">Application recieved: 01 March 2021</br>
-                  Assigned to me: 03 March 2021</p></td>
+                  Assigned to me: 03 March 2021</p>
+                  {% endif %}
+                </td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><p class="govuk govuk-caption-l"><strong><a href="task_list1">Bolton Spa Primary</a></strong> AS_6759880
