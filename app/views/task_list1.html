@@ -95,11 +95,11 @@
             </li>
           
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link"  href="/management">Academy transfers (2)</a>
+              <a class="app-primary-navigation__link"  href="/management">Academy transfers (2)<span class="hide-me">live projects</span></a>
             </li>
           
             <li class="app-primary-navigation__item"> 
-              <a class="app-primary-navigation__link"  href="/concerns">Significant change (1)</a>
+              <a class="app-primary-navigation__link"  href="/concerns">Significant change (1)<span class="hide-me">live projects</span></a>
             </li> 
   
           </ul>
@@ -115,7 +115,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-xl">AS_6759840</span>
+      <span class="govuk-caption-xl" >AS_6759840</span>
       <h1 class="govuk-heading-l">
         St. Wilfrid's Primary School
         {% if data['htb-date']%}
@@ -159,9 +159,9 @@
 <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Task list</h2>
 
-      <p class="govuk-body">The task list will help you fill out your headteacher board (HTB) template. You can complete each task in any order and the infromation you fill out will populate into the template.</p>
+      <p class="govuk-body">The task list will help you fill out your headteacher board (HTB) template. You can complete each task in any order and the information you fill out will populate into the template.</p>
       <p> Some of the information is already pre-populated from TRAMS and the application form. You can use this as a guide to help you assess the school and trust.</p>
-   <ol class="app-task-list">
+  
           <!--  <li>
           <h2 class="app-task-list__section">
             Send LA information template
@@ -184,11 +184,11 @@
       
      
 
-        <li>
+    
           <h2 class="app-task-list__section">
         Create headteacher board (HTB) template
           </h2>
-          <ol class="app-task-list govuk-!-margin-bottom-8">
+          <ol class="app-task-list govuk-!-margin-bottom-8" aria-label="list of tasks">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="overview/summary1.html" aria-describedby="company-information-status">
@@ -277,12 +277,8 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="supporting-information">Not started</strong>
             </li>
           </ol>
-        </li>
-
-        <li>
           <h2 class="app-task-list__section">
-            Trust or sponsor template
-          </h2>
+            Trust or sponsor template</h2>
           <ol class="app-task-list govuk-!-margin-bottom-8">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -292,16 +288,9 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-template">Not Started</strong>
             </li>
-
           </Ol>
-        </li>
-            </li>
-          </ul>
-        </li>
-      </ol>
-      
-   
-    
+
+ 
           </div>
           <div class="govuk-grid-column-one-third">
             <div class="status-box">
@@ -318,12 +307,13 @@
                   
                     
                       <p class="govuk-body-s">You can make changes after generating the HTB papers. <p>
-                      <a href="/publish/2CH/2YMZ" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
+                      <a href="generate/generate_summary" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
                   </p>
                 
               </div>
           </div>
   </div>
+  
 
 
         </main>
