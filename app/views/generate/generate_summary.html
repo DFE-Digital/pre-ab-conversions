@@ -113,9 +113,42 @@ Conversion overview
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+   <h1 class="govuk-heading-xl">
+      Generate HTB template</h1>
+</div>
+<!-- error summary-->
 
-      <h1 class="govuk-heading-l">
-        Conversion overview</h1>
+{% if data['htb-date']%}
+<div class="govuk-grid-column-full">
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is missing data in you HTB Template
+    </h2>
+    <div class="govuk-error-summary__body">
+      <p>You can either go back and implement all missing informatioh from the <a href="/task_list1">task list</a> or add the additional information in the Word document.   </p>
+
+    </div>
+  </div>
+{% else %} 
+<div class="govuk-grid-column-full">
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is missing data in you HTB Template
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#passport-issued-error">You must have set a HTB date</a>
+        </li>
+      <p>You can either go back and implement all missing informatioh from the <a href="/task_list1">task list</a> or add it in the Word document.   </p>
+      </ul>
+    </div>
+  </div>
+{% endif %}
+
+<!-- end of error summary-->
+
+ <h3 class="govuk-heading-l">Conversion overview</h3>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -270,35 +303,263 @@ Conversion overview
           </div>
         </dl>
 
-        
+ <h3 class="govuk-heading-l">General information</h3>
+ <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      School phase
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Primary
+    </dd>
+    <dd class="govuk-summary-list__actions">
 
-
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age range
+    </dt>
+    <dd class="govuk-summary-list__value">
+      3 to 11
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    School type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Voluntary aided school
+    </dd>
+    <dd class="govuk-summary-list__actions">
     
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB templates"
-      }
-      ]
-    }) }}
-
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Number on roll (NOR)
+    </dt>
+    <dd class="govuk-summary-list__value">
+     105
+    </dd>
+    <dd class="govuk-summary-list__actions">
    
-        
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Percentage the school is full
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">54%</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+   
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Capacity
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">196</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Published admissions number (PAN)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">30</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Percentage of free school meals at the school (%FSM)
+    </dt>
+    <dd class="govuk-summary-list__value">
+    23.8%
+    </dd>
+    <dd class="govuk-summary-list__actions">
+   
+    </dd>
+  </div>
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Part of a private finance initiative (PFI) scheme
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+    </dd>
+    <dd class="govuk-summary-list__actions">
+         
+    </dd>
+  </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Viability issues
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {{ data['viability'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/general-info/viability">
+            Change
+          </a>
+        </dd>
+      </div>
 
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Financial surplus or deficit
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['deficit'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/general-info/deficit">Change
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is this a Diocesan multi-academy trust (MAT)?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['diocesan'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/general-info/diocesan">Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Percentage of good or outstanding schools in the trust
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['goodschools']%}
+          {{data['goodschools']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/general-info/goodschools">Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Distance from the school to the trust headquarters
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['distance'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/general-info/distance">Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        MP details
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Gregg Davies, Warrington South
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          
+        </dd>
+      </div>
+    </dl>
+
+    <h3 class="govuk-heading-l">Rationale</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Rationale for project
+        </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["project-rationale"] | safe }}
+            </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="project-rationale.html">
+            Change<span class="govuk-visually-hidden">project-rationale</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Rationale for the trust or sponsor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['trust-rationale']%}
+          {{data['trust-rationale'] | safe }} 
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sponsor-rationale.html">
+            Change<span class="govuk-visually-hidden">sponsor-rationale</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h3 class="govuk-heading-l">Pupil forecasts</h3>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Year</th>
+          <th scope="col" class="govuk-table__header">Capacity</th>
+          <th scope="col" class="govuk-table__header">Total pupil numbers</th>
+          <th scope="col" class="govuk-table__header">Percentage full</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current year</th>
+          <td class="govuk-table__cell">196</td>
+          <td class="govuk-table__cell">105</td>
+          <td class="govuk-table__cell">54%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2021 to 2022 forecast</th>
+          <td class="govuk-table__cell">196</td>
+          <td class="govuk-table__cell">115</td>
+          <td class="govuk-table__cell">59%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2022 to 2023 forecast</th>
+          <td class="govuk-table__cell">196</td>
+          <td class="govuk-table__cell">100</td>
+          <td class="govuk-table__cell">51%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
+          <td class="govuk-table__cell">196</td>
+          <td class="govuk-table__cell">100</td>
+          <td class="govuk-table__cell">51%</td>
+        </tr>
+      </tbody>
+    </table>   
+
+    <a href="generate/generate_documents" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
+
+    
+   <p><a href="summary1">Cancel</a></p>
         </main>
       </div>
 
