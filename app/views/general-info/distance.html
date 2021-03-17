@@ -127,6 +127,9 @@ Distance from MAT HQ
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
   {{ govukInput({
+    hint: {
+      text: "Answer in miles. For example, 25.3 miles"
+    },
 
     classes: "govuk-input--width-5",
     id: "distance",
