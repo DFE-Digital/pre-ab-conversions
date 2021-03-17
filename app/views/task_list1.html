@@ -178,16 +178,10 @@
                   Conversion overview
                 </a>
               </span>
-              <strong class="{{data|statusTagClass(
-                              ['overview-status'],
-                              ['recomendation', 'htb-date'] 
-                              )}} app-task-list__tag" id="project-overview">  
+              <strong class="{{data|statusTagClass(['overview-status'],['htb-date', 'recomendation'] )}} app-task-list__tag" id="project-overview">  
                   {{data|statusTagText(
                     ['overview-status'],
-                    [
-                    'htb-date', 
-                    'recomendation'
-                    ] 
+                    ['htb-date','recomendation'] 
                   )}} 
               </strong>
             </li>
@@ -197,11 +191,12 @@
                   General information
                 </a>
               </span>
-              {% if data['general-info-status'] %} 
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="project-overview"> {{data['overview-status']}} </strong>
-              {% else %} 
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag"> Not started </strong>
-            {% endif %}
+              <strong class="{{data|statusTagClass(['overview-status'],['goodschools'] )}} app-task-list__tag" id="project-overview">  
+                {{data|statusTagText(
+                  ['overview-status'],
+                  ['goodschools'] 
+                )}} 
+            </strong>
           </strong>
           
             </li>
