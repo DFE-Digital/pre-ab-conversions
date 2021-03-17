@@ -126,6 +126,9 @@ Percentage of good or outstanding schools
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
   {{ govukInput({
+    hint: {
+      text: "For example, 65%"
+    },
 
     classes: "govuk-input--width-3",
     id: "goodschools",
