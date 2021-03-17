@@ -214,11 +214,12 @@
                   Rationale
                 </a>
               </span>
-              {% if data['rationale-status']%} 
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="project-overview">  {{data['overview-status']}} </strong>
-             {% else %} 
-             <strong class="govuk-tag govuk-tag--grey app-task-list__tag"> Not started </strong>
-            {% endif %}
+              <strong class="{{data|statusTagClass(['overview-status'],['trust-rationale'] )}} app-task-list__tag" id="project-overview">  
+                {{data|statusTagText(
+                  ['overview-status'],
+                  ['trust-rationale'] 
+                )}} 
+            </strong>
             </li>
            <li class="app-task-list__item">
               <span class="app-task-list__task-name">
