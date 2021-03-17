@@ -12,13 +12,13 @@ module.exports = function (env) {
     const flag = inProgressFields.some(field => data[field]);
 
     if (data[completedFields]){
-      return "govuk-tag govuk-tag--blue app-task-list__tag";
+      return "govuk-tag govuk-tag--blue";
     }
     else if (flag){
-      return "govuk-tag govuk-tag--yellow app-task-list__tag"
+      return "govuk-tag govuk-tag--yellow"
     }
     else {
-      return "govuk-tag govuk-tag--grey app-task-list__tag";
+      return "govuk-tag govuk-tag--grey";
     }
   }
 
