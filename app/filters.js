@@ -7,6 +7,34 @@ module.exports = function (env) {
    */
   var filters = {}
 
+
+  filters.statusTagClass = function (data, completedFields, inProgressFields) {
+    const flag = inProgressFields.some(field => data[field]);
+
+    if (data[completedFields]){
+      return "govuk-tag govuk-tag--blue app-task-list__tag";
+    }
+    else if (flag){
+      return "govuk-tag govuk-tag--yellow app-task-list__tag"
+    }
+    else {
+      return "govuk-tag govuk-tag--grey app-task-list__tag";
+    }
+  }
+
+  filters.statusTagText = function (data, completedFields, inProgressFields) {
+    const flag = inProgressFields.some(field => data[field]);
+
+    if (data[completedFields]){
+      return "Complete";
+    }
+    else if (flag){
+      return "In Progress"
+    }
+    else {
+      return "Not Started";
+    }
+  }
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
