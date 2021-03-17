@@ -119,15 +119,6 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
         St. Wilfrid's Primary School
          <strong class="govuk-tag govuk-tag--blue">Pre HTB</strong></h1>
- 
-    
-     
-
-      
-     
-
-
-
         {% if data['htb-date']%}
         <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
         <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
@@ -153,6 +144,9 @@
 
 </nav>
 </div>
+
+
+
 <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Task list</h2>
 
@@ -175,16 +169,8 @@
 
           </Ol>
         </li> -->
-    
-     
 
-      
-     
-
-    
-          <h2 class="app-task-list__section">
-        Create headteacher board (HTB) template
-          </h2>
+          <h2 class="app-task-list__section">Create headteacher board (HTB) template</h2>
           <ol class="app-task-list govuk-!-margin-bottom-8" aria-label="list of tasks">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -192,12 +178,18 @@
                   Conversion overview
                 </a>
               </span>
-              {% if data['overview-status']%} 
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="project-overview">  {{data['overview-status']}} </strong>
-             {% else %} 
-             <strong class="govuk-tag govuk-tag--grey app-task-list__tag"> Not started </strong>
-            {% endif %}
-          </strong>
+              <strong class="{{data|statusTagClass(
+                              ['overview-status'],
+                              ['recomendation', 'htb-date'] 
+                              )}} app-task-list__tag" id="project-overview">  
+                  {{data|statusTagText(
+                    ['overview-status'],
+                    [
+                    'htb-date', 
+                    'recomendation'
+                    ] 
+                  )}} 
+              </strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -205,10 +197,10 @@
                   General information
                 </a>
               </span>
-              {% if data['general-info-status']%} 
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="project-overview">  {{data['overview-status']}} </strong>
-             {% else %} 
-             <strong class="govuk-tag govuk-tag--grey app-task-list__tag"> Not started </strong>
+              {% if data['general-info-status'] %} 
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="project-overview"> {{data['overview-status']}} </strong>
+              {% else %} 
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag"> Not started </strong>
             {% endif %}
           </strong>
           
