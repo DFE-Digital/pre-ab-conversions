@@ -178,10 +178,11 @@
                   Conversion overview
                 </a>
               </span>
-              <strong class="{{data|statusTagClass(['overview-status'],['htb-date', 'recomendation'] )}} app-task-list__tag" id="project-overview">  
-                  {{data|statusTagText(
+              <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                  {{data|conversionOverviewStatusText(
                     ['overview-status'],
-                    ['htb-date','recomendation'] 
+                    ['htb-date','recomendation'],
+                    ['opening-date', 'aorequired']
                   )}} 
               </strong>
             </li>
@@ -191,10 +192,11 @@
                   General information
                 </a>
               </span>
-              <strong class="{{data|statusTagClass(['overview-status'],['goodschools'] )}} app-task-list__tag" id="project-overview">  
-                {{data|statusTagText(
+              <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="project-overview">  
+                {{data|generalInfoStatusText(
                   ['general-info-status'],
-                  ['goodschools'] 
+                  ['goodschools'],
+                  ['viability','deficit','diocesan','distance']
                 )}} 
             </strong>
           </strong>
@@ -214,10 +216,10 @@
                   Rationale
                 </a>
               </span>
-              <strong class="{{data|statusTagClass(['rationale-status'],['trust-rationale'] )}} app-task-list__tag" id="project-overview">  
-                {{data|statusTagText(
-                  ['rationale-status'],
-                  ['trust-rationale'] 
+              <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'] )}} app-task-list__tag" id="rationale-status">  
+                {{data|rationaleOverviewStatusText(
+                  ['rationale-status-htb'],
+                  ['trust-rationale']
                 )}} 
             </strong>
             </li>
