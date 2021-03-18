@@ -108,36 +108,45 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+<div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-          
+          <div><h1 class="govuk-heading-xl">Generate headteacher board (HTB) template</h1></div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-   <h1 class="govuk-heading-xl">
-    Generate headteacher board (HTB) template</h1>
-</div>
+    <div class="govuk-grid-column-full-width">
 <!-- error summary-->
-
+<div>
 {% if data['htb-date']%}
-{% else %} 
-<div class="govuk-grid-column-full">
-  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-    <h2 class="govuk-error-summary__title" id="error-summary-title">
-      There is missing information in the HTB template
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="/overview/set-htb.html">Set an HTB date before you generate your template</a></li>
-      </ul>
+
+<div class="govuk-warning-text">
+ <p><span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    There is missing information in the template. <br>If you continue, you will need to fill out the missing information in the generated Word document.
+  </strong></p> 
+</div>
+<div>
+      {% else %} 
+      <div class="govuk-grid-column-full">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is missing information in the HTB template
+          </h2>
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="/overview/set-htb.html">Set an HTB date before you generate your template</a></li>
+          </ul> 
+        </div>
+      </div>
     </div>
-  </div>
 {% endif %}
-
+</div>
+</div>
+    
 <!-- end of error summary-->
-
+<div class="govuk-grid-column-full">
  <h3 class="govuk-heading-l">Conversion overview</h3>
-        <dl class="govuk-summary-list">
+     
+ <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Recomendation
@@ -151,7 +160,7 @@ Conversion overview
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
+              <a class="govuk-link" href="/overview/recommendation">
                 Change<span class="govuk-visually-hidden">recomendation</span>
               </a>
             </dd>
@@ -174,7 +183,7 @@ Conversion overview
             {{ data["aorequired"] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
+              <a class="govuk-link" href="/overview/aorequired.html">
                 Change
               </a>
             </dd>
@@ -191,7 +200,7 @@ Conversion overview
             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
+              <a class="govuk-link" href="/overview/set-htb.html">
                 Change<span class="govuk-visually-hidden">htb-date</span>
               </a>
             </dd>
@@ -543,12 +552,12 @@ Conversion overview
         </tr>
       </tbody>
     </table>   
-
-    <a href="/generate/generate_documents" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
+      <a href="/generate/generate_documents" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
 
     
    <p><a href="/task_list1">Cancel</a></p>
-        </main>
+  </div>      
+  </main>
       </div>
 
 
