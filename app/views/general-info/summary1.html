@@ -143,7 +143,11 @@
                 Viability issues
                 </dt>
                 <dd class="govuk-summary-list__value">
-                {{ data['viability'] }}
+                  {% if data['viability']%}
+                  {{data['viability']}}
+                 {% else %} 
+                 <span class="empty">Empty</span>
+                {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="/general-info/viability">
@@ -241,7 +245,11 @@
               </form>
               <p><a href="task_list1">Cancel</a></p>
           </main>
-        </main>
+
+    
+      {{ govukButton({
+        text: "Continue"
+      }) }}
       </div>
 
 
