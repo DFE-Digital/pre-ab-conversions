@@ -118,14 +118,14 @@ Conversion overview
 {% if data['htb-date']%}
 
 <div class="govuk-warning-text">
- <p><span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-warning-text__assistive">Warning</span>
     There is missing information in the template. <br>If you continue, you will need to fill out the missing information in the generated Word document.
-  </strong></p> 
+  </strong>
 </div>
-<div>
-      {% else %} 
+
+     {% else %} 
       <div class="govuk-grid-column-full">
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
           <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -140,7 +140,7 @@ Conversion overview
     </div>
 {% endif %}
 </div>
-</div>
+
     
 <!-- end of error summary-->
 <div class="govuk-grid-column-full">
