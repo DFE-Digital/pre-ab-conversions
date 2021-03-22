@@ -628,14 +628,3 @@ $govuk-assets-path: '/govuk/assets/';
     display: none;
   }
 }
-
-
-.attachment {
-  @include govuk-font(19);
-  @include govuk-clearfix;
-  position: relative;
-
-  .govuk-details__summary {
-    @include govuk-font($size: 14);
-  }
-}
