@@ -146,7 +146,7 @@ Conversion overview
 </div>
 
 
-
+<div class="govuk-grid-column-full">
 
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
@@ -228,7 +228,7 @@ Conversion overview
     
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-         is an academy oder (AO) required?
+         Is an academy oder (AO) required?
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['ao-required']%}
@@ -240,8 +240,8 @@ Conversion overview
         
           <dd class="govuk-summary-list__actions">
             
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> gender</span>
+              <a class="govuk-link" href="/overview/aorequired">
+                Change<span class="govuk-visually-hidden">Academy order</span>
                 </a>
             
           </dd>
@@ -314,8 +314,8 @@ Conversion overview
          {{ data['opening-date']}} 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/overview/opening"><span class="govuk-visually-hidden">Opening date</span>
-            Change
+          <a class="govuk-link" href="/overview/opening">
+            Change<span class="govuk-visually-hidden">Opening date</span>
           </a>
         </dd>
       </div>
@@ -331,7 +331,7 @@ Conversion overview
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     general information
+     General information
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -465,8 +465,12 @@ Conversion overview
         <dt class="govuk-summary-list__key">
           Is this a Diocesan multi-academy trust (MAT)?
         </dt>
-        <dd class="govuk-summary-list__value">Yes</dd>
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">diocesan MAT</span></a> </dd>
+        <dd class="govuk-summary-list__value"> {% if data['diocesan']%}
+          {{data['diocesan']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+         {% endif %}</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/diocesan">Change<span class="govuk-visually-hidden">diocesan MAT</span></a> </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -477,7 +481,7 @@ Conversion overview
          {% else %} 
          <span class="empty">Empty</span>
         {% endif %}
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">outstnding school percentage</span></a> </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/goodschools">Change<span class="govuk-visually-hidden">outstanding school percentage</span></a> </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -489,8 +493,8 @@ Conversion overview
          <span class="empty">Empty</span>
         {% endif %}
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/general-info/distance"><span class="govuk-visually-hidden">distancee</span>
-            Change
+          <a class="govuk-link" href="/general-info/distance">
+            Change<span class="govuk-visually-hidden">distancee</span>
           </a>
         </dd>
       </div>
@@ -504,11 +508,141 @@ Conversion overview
         </dd>
       </div>
 </dl>
-
-
   </div>
+</section>  
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
   
-</section>   
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School performance information
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Ofsted juudgement date
+        </dt>
+        <dd class="govuk-summary-list__value">
+        5 February 2020 </dd>
+<dd class="govuk-summary-list__actions"></dd> </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Outcome for pupils
+        </dt>
+        <dd class="govuk-summary-list__value">
+        Requires improvement
+        </dd>
+        
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Quality of teaching and learning assessment
+  </dt>
+  <dd class="govuk-summary-list__value">
+  Requires improvement
+  </dd>
+  
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+ Effectiveness of leadership and management
+  </dt>
+  <dd class="govuk-summary-list__value">
+  Requires improvement
+  </dd>
+  
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Personal development, behaviour and welfare
+  </dt>
+  <dd class="govuk-summary-list__value">
+  Requires improvement
+  </dd>
+  
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Early years provision
+  </dt>
+  <dd class="govuk-summary-list__value">
+ Good
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd></div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+ Overall effectiveness
+    </dt>
+    <dd class="govuk-summary-list__value">
+  Requires improvement
+    </dd>
+</dl>
+  </div>
+</section>  
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     Rationale
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Rationale for project
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          {% if data['project-rationale']%}
+          {{data['project-rationale'] }} 
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+
+  <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/rationale/project-rationale">  Change<span class="govuk-visually-hidden">project rationale</span>
+  </a>
+</dd> </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Sponsor rationale
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['trust-rationale']%}
+          {{data['trust-rationale'] }} 
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        
+<dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/rationale/sponsor-rationale">  Change<span class="govuk-visually-hidden">trust rationale</span>
+</a>
+
+</dd></div>
+
+</dl>
+  </div>
+</section>  
 
  
       <a href="/generate/generate_documents" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
