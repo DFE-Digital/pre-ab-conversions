@@ -11,13 +11,13 @@ module.exports = function (env) {
   filters.conversionOverviewStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
     let checkOpeningDate = "Monday 1 March 2021" === data["opening-date"] ? false : true;
-    let checkAorequired = "Yes" === data["aorequired"] ? false : true;
+    let checkAoRequired = data["aorequired"]  == "Yes" || data["aorequired"]  == "No" ? true : false;
 
     if (data[completedFields]){
-      return "govuk-tag govuk-tag--blue";
+      return "govuk-tag";
     }
-    else if (flag || checkOpeningDate || checkAorequired){
-      return "govuk-tag govuk-tag--yellow"
+    else if (flag || checkOpeningDate || checkAoRequired){
+      return "govuk-tag govuk-tag--blue"
     }
     else {
       return "govuk-tag govuk-tag--grey";
@@ -27,12 +27,12 @@ module.exports = function (env) {
   filters.conversionOverviewStatusText = function (data, completedFields, inProgressFields, defaultFields) {
     const flag = inProgressFields.some(field => data[field]);
     let checkOpeningDate = "Monday 1 March 2021" === data["opening-date"] ? false : true;
-    let checkAorequired = "Yes" === data["aorequired"] ? false : true;
+    let checkAoRequired = data["aorequired"]  == "Yes" || data["aorequired"]  == "No" ? true : false;
 
     if (data[completedFields]){
       return "Complete";
     }
-    else if (flag || checkOpeningDate || checkAorequired){
+    else if (flag || checkOpeningDate || checkAoRequired){
       return "In Progress"
     }
     else {
@@ -44,16 +44,16 @@ module.exports = function (env) {
   filters.generalInfoStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
-    let checkViability = data["viability"] === "Yes" ? false : true;
+    let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
     let checkDeficit = data["deficit"] === "There are no financial issues at the school" ? false : true;
     let checkDiocesan = data["diocesan"] === "Yes" ? false : true;
     let checkDistance = data["distance"] === "20.1 miles" ? false : true;
 
     if (data[completedFields]){
-      return "govuk-tag govuk-tag--blue";
+      return "govuk-tag";
     }
-    else if (flag || checkViability || checkDeficit || checkDiocesan || checkDistance){
-      return "govuk-tag govuk-tag--yellow"
+    else if (flag || checkDeficit || checkDiocesan || checkDistance || checkViability){
+      return "govuk-tag govuk-tag--blue"
     }
     else {
       return "govuk-tag govuk-tag--grey";
@@ -63,7 +63,7 @@ module.exports = function (env) {
   filters.generalInfoStatusText = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
-    let checkViability = data["viability"] === "Yes" ? false : true;
+    let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
     let checkDeficit = data["deficit"] === "There are no financial issues at the school" ? false : true;
     let checkDiocesan = data["diocesan"] === "Yes" ? false : true;
     let checkDistance = data["distance"] === "20.1 miles" ? false : true;
@@ -71,7 +71,7 @@ module.exports = function (env) {
     if (data[completedFields]){
       return "Complete";
     }
-    else if (flag || checkViability || checkDeficit || checkDiocesan || checkDistance){
+    else if (flag || checkDeficit || checkDiocesan || checkDistance || checkViability){
       return "In Progress"
     }
     else {
@@ -87,10 +87,10 @@ module.exports = function (env) {
 
 
     if (data[completedFields] == "_unchecked,Complete"){
-      return "govuk-tag govuk-tag--blue";
+      return "govuk-tag";
     }
     else if (flag || checkProjectRationale){
-      return "govuk-tag govuk-tag--yellow"
+      return "govuk-tag govuk-tag--blue"
     }
     else {
       return "govuk-tag govuk-tag--grey";
