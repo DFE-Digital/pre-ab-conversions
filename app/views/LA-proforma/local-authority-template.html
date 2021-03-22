@@ -107,17 +107,15 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back</a>
+<div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
         Send local authority information template
         </h1>
-        <form method="post">
+        <form method="post"  action="/LA-proforma/LAproforma-summary">
         
           <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
             
@@ -212,8 +210,21 @@
                 Comments
               </label>
             
-            
-              <textarea class="govuk-textarea govuk-js-character-count" id="subject" name="subject" rows="5" aria-describedby="subject-info subject-hint"></textarea>
+              
+              {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+
+  {{ govukTextarea({
+    hint: {
+
+    },
+maxlength: 500,
+rows: 8,
+    classes: "govuk-input--width-30",
+    id: "la-comments",
+    name: "la-comments", 
+    value: data["la-comments"]
+  }) }}
+
             </div>
             
               <div id="subject-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
@@ -239,19 +250,10 @@
             
           
                 <form action="/task_list1" method="post"> 
-                  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        
                   {% from "govuk/components/button/macro.njk" import govukButton %}
         
-                  {{ govukCheckboxes({
-                    idPrefix: "rationale-status-htb",
-                    name: "rationale-status-htb",
-                    items: [
-                      {
-                        value: "Complete",
-                        text: "The template has been received and stored in Sharepoint"
-                      }
-                    ]
-                  }) }}
+               
         
                   {{ govukButton({
                     text: "Continue"
