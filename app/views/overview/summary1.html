@@ -150,7 +150,11 @@ Conversion overview
               Is an academy order (AO) required?
             </dt>
             <dd class="govuk-summary-list__value">
-            {{ data["aorequired"] }}
+              {% if data['aorequired']%}
+              {{data['aorequired']}}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="aorequired.html">
