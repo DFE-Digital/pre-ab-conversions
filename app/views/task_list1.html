@@ -134,9 +134,9 @@
         <li class="app-sub-navigation__item">
           <a class="app-sub-navigation__link"  href="/related/application">Application form</a>
         </li>
-        <li class="app-sub-navigation__item">
+        <!-- Not MVP <li class="app-sub-navigation__item">
           <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
-        </li>
+        </li> -->
         <li class="app-sub-navigation__item">
           <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
         </li>
@@ -159,7 +159,7 @@
           <ol class="app-task-list govuk-!-margin-bottom-8">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="//LA-proformalocal-authority-template" aria-describedby="LA-infromation-template">
+                <a href="/LA-proforma/local-authority-template" aria-describedby="LA-infromation-template">
                 Send the LA information template
                 </a>
               </span>
@@ -173,7 +173,7 @@
           <ol class="app-task-list govuk-!-margin-bottom-8" aria-label="list of tasks">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="overview/summary1.html">
+                <a href="overview/summary1.html"  aria-describedby="project-overview">
                   Conversion overview
                 </a>
               </span>
@@ -187,11 +187,11 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/general-info/summary1">
+                <a href="/general-info/summary1" aria-describedby="general-information">
                   General information
                 </a>
               </span>
-              <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="project-overview">  
+              <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="general-information">  
                 {{data|generalInfoStatusText(
                   ['general-info-status'],
                   ['goodschools'],
@@ -203,7 +203,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="#" aria-describedby="school-performance">
                   School performance (Ofsted information)
                 </a>
               </span>
@@ -211,7 +211,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="rationale/rationale-summary1.html">
+                <a href="rationale/rationale-summary1.html" aria-describedby="rationale-status">
                   Rationale
                 </a>
               </span>
@@ -224,7 +224,7 @@
             </li>
            <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="#" aria-describedby="risks-and-issues">
                   Risks and issues
                 </a>
               </span>
@@ -232,7 +232,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="#" aria-describedby="school-budget-information">
                   School budget information
                 </a>
               </span>
@@ -240,7 +240,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/pupil-forecasts/school-pupil-forecasts">
+                <a href="/pupil-forecasts/school-pupil-forecasts" aria-describedby="school-pupil-forecast">
                   School pupil forecast
                 </a>
               </span>
@@ -248,7 +248,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="#" aria-describedby="performance-tables">
                   Key stage (KS) performance tables
                 </a>
               </span>
@@ -256,7 +256,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="upload-docs/upload-docs.html">
+                <a href="upload-docs/upload-docs.html"  aria-describedby="supporting-information">
                   Upload supporting documentation
                 </a>
               </span>
@@ -268,7 +268,7 @@
           <ol class="app-task-list govuk-!-margin-bottom-8">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="#" aria-describedby="sponsor-template">
                   Check and edit the trust or sponsor template
                 </a>
               </span>
