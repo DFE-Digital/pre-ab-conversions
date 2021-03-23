@@ -122,6 +122,7 @@ Financial deficit or surplus
       <div class="govuk-grid-column-two-thirds">
         <form action="/general-info/summary1" method="post">
   <h1 class="govuk-heading-l">Does this school have a financial surplus or deficit?</h1>
+  <!--
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
@@ -132,7 +133,7 @@ Financial deficit or surplus
      You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
     </div>
   </details>
-
+-->
 
           {{ govukRadios({
             idPrefix: "defict",
@@ -169,8 +170,9 @@ Financial deficit or surplus
     
         <p><a href="javascript:history.back();">Cancel</a></p>
       </div><div class="govuk-grid-column-one-third">
+        <!-- 
         <div class="status-box">
-            
+          
               <h3 class="govuk-heading-m">Useful information</h3>
               <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
               <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
@@ -183,7 +185,7 @@ Financial deficit or surplus
                   <p class="govuk-body-s"><a href="#">Guidance on deficits</a><p>
                     <p class="govuk-body-s"><a href="#">Full guidance</a><p>
           
-            
+            --> 
           </div>
       </div>
     </div>
