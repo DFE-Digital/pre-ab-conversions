@@ -113,160 +113,108 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Send local authority information template
-        </h1>
+        Send local authority information template</h1>
         <form method="post"  action="/LA-proforma/LAproforma-summary">
-        
-          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
-            
-          
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="body">
-              Date you sent the template to the local authority
-            </label>
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+              id: "la-sent-date",
+              namePrefix: "la-sent-date",
+              fieldset: {
+                legend: {
+                  text: "Date you sent the template to the local authority"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2021"
+              },
+              items: [
+                {
+                  name: "day",
+                  value: data["la-sent-date-day"]
+                },
+                {
+                  name: "month",
+                  value: data["la-sent-date-month"]
+                },                
+                {
+                  name: "year",
+                  value: data["la-sent-date-year"]
+                }
+              ]
+            }) }}
+          
+            <br></br>
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+              {{ govukDateInput({
+                id: "la-sent-back",
+                namePrefix: "la-sent-back",
+                fieldset: {
+                  legend: {
+                    text: "Date the local authority sent the template back"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: data["la-sent-back-day"]
+                },
+                {
+                  name: "month",
+                  value: data["la-sent-back-month"]
+                },                
+                {
+                  name: "year",                  
+                  value: data["la-sent-back-year"]
+                }
+              ]
+              }) }}
+
+            <br></br>
+
+            {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+            {{ govukCharacterCount({
+              name: "la-comments",
+              id: "la-comments",
+              value: data["la-comments"],
+              maxlength: 200,
+              label: {
+                text: "Comments"
+              }
+            }) }}
+          
+            <br><br>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-              
-                <div id="passport-issued-hint" class="govuk-hint">
-                  For example, 27 3 2021
-                </div>
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                </div>
-            
-              </fieldset>
-            </div>
-          
-          </div>
-
-          <br> <br>
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="body">
-              Date the local authority sent the template back
-            </label>
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-              
-                <div id="passport-issued-hint" class="govuk-hint">
-                  For example, 27 3 2021
-                </div>
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                  </div>
-                </div>
-            
-              </fieldset>
-            </div>
-          
-          </div>
-          <br><br>
-          
-          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
-            
-          
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--m" for="subject">
-                Comments
+              <label class="govuk-heading-m" for="file-upload-1">
+                Add a link to the template in Sharepoint
               </label>
-            
-              
-              {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
-
-  {{ govukTextarea({
-    hint: {
-
-    },
-maxlength: 500,
-rows: 8,
-    classes: "govuk-input--width-30",
-    id: "la-comments",
-    name: "la-comments", 
-    value: data["la-comments"]
-  }) }}
-
+              <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add link
+                </a>
             </div>
-            
-              <div id="subject-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-              You can enter up to 200 characters
-            </div>
-            
-            </div>
-                  
-          
-            
-              <br><br>
 
-              <div class="govuk-form-group">
-                <label class="govuk-heading-m" for="file-upload-1">
-                  Add a link to the template in Sharepoint
-                </label>
-                <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Add link
-                  </a>
-              </div>
-                
-                </div>
-            
-          
-                <form action="/task_list1" method="post"> 
-        
-                  {% from "govuk/components/button/macro.njk" import govukButton %}
-        
-               
-        
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }}
-        
-                </form>
-                <p><a href="javascript:history.back();">Cancel</a></p>
-                </form>
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+            <p><a href="javascript:history.back();">Cancel</a></p>
+
+          </div>
+        </form>
           
               </div>
             </div>
           
-                  </main>
+        </main>
       </div>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
@@ -331,24 +279,12 @@ rows: 8,
       </div>
     </div>
   </div>
-</footer>
-
-
-
-    
-  
+  </footer>
     <!-- Javascript -->
-<script src="/public/javascripts/jquery-1.11.3.js"></script>
-<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
-<script src="/public/javascripts/docs.js"></script>
-
-
-  <script src="/public/javascripts/auto-store-data.js"></script>
-
-
-    
-  
-
+    <script src="/public/javascripts/jquery-1.11.3.js"></script>
+    <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+    <script src="/public/javascripts/docs.js"></script>
+    <script src="/public/javascripts/auto-store-data.js"></script>
   </body>
 </html>
 
