@@ -160,7 +160,7 @@ module.exports = function (env) {
     filters.laProformaStatusClass = function (data, completedFields, inProgressFields) {
       const flag = inProgressFields.some(field => data[field]);
   
-      if (data[completedFields] == "_unchecked,Complete"){
+      if (data[completedFields]){
         return "govuk-tag";
       }
       else if (flag){
@@ -174,7 +174,7 @@ module.exports = function (env) {
     filters.laProformaStatusText = function (data, completedFields, inProgressFields) {
       const flag = inProgressFields.some(field => data[field]);
   
-      if (data[completedFields] == "_unchecked,Complete"){
+      if (data[completedFields]){
         return "Completed";
       }
       else if (flag){
