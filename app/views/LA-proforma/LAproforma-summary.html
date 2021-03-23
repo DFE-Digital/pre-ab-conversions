@@ -141,7 +141,7 @@ Conversion overview
               Date the local authority sent the template back
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['la-sent-date-day'] and data['la-sent-date-month'] and data['la-sent-date-year']%}
+              {% if data['la-sent-back-day'] and data['la-sent-back-month'] and data['la-sent-back-year']%}
                 <span>{{ data['la-sent-back-day'] }} </span>
                 <span>{{ data['la-sent-back-month'] }} </span>
                 <span>{{ data['la-sent-back-year'] }}</span>
@@ -201,21 +201,17 @@ Conversion overview
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
   {{ govukCheckboxes({
-    idPrefix: "overview-status",
+    id: "overview-status",
     name: "overview-status",
     
     items: [
-     
       {
         value: "Complete",
         text: "This section is ready to be included in the HTB templates"
       }
       ]
     }) }}
-
-   
         
-
   {{ govukButton({
     text: "Continue"
   }) }}
