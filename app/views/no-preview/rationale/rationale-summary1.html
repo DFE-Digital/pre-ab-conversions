@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-  Academy conversions - projects list
+  Rationale
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -88,9 +88,9 @@
 
       <nav class="app-primary-navigation" aria-label="main menu">
 
-        <ul class="app-primary-navigation__list">
+         <ul class="app-primary-navigation__list">
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="#">Academy conversions (4)</a>
+              <a class="app-primary-navigation__link" aria-current="index" href="/index">Academy conversions (4)</a>
             </li>
           
             <li class="app-primary-navigation__item">
@@ -99,7 +99,8 @@
           
             <li class="app-primary-navigation__item"> 
               <a class="app-primary-navigation__link"  href="#">Significant change (1)</a>
-            </li>       
+            </li> 
+  
           </ul>
 
       </nav>
@@ -107,75 +108,77 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container">
+      <div class="govuk-width-container"><a href="/no-preview/task_list1.html" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
+          
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        Academy conversion projects (4)</h1>
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header govuk-!-width-two-thirds">Application information
-          
-           
-                <th class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-third">Project status and dates</th>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> AS_102062</h2>
-            
-                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Academy Trust</br>
-               Local authority: Warrington</P></td>
-      
-         
-              <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
-                <p class="govuk-tag govuk-tag--blue  govuk-!-margin-top-0">Pre HTB</p>
-                <p class="govuk-hint govuk-!-margin-top-0">HTB date: {{ data['htb-date']}}</br>
-                  Opening date:  {{ data['opening-date']}}</p>  
-                  {% else %}               
-                 <!-- Not MVP <span class="empty">NEW</span>--> <p class="govuk-tag govuk-tag--blue govuk-!-margin-top-0  govuk-!-margin-bottom-3">Pre HTB</p>
-                <p class="govuk-hint govuk-!-margin-top-0">Application received: 01 March 2021</br>
-                  Assigned to me: 03 March 2021</p>
-                  {% endif %}
-                </td>
 
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> AS_675091</h2>
-            <p class="govuk-!-margin-top-3">Application to join a trust: Oak Hill Trust</br>
-             Local authority: Warrington</P></td>
-              <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--blue">Pre HTB</p> 
-                <p class="govuk-hint govuk-!-margin-top-0">HTB date: 15 April 2021</br>
-                  Opening date: 01 October 2021</p></td>  
-            </tr>
+      <h1 class="govuk-heading-l">Rationale</h1>
+        <dl class="govuk-summary-list">
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="/no-task-derived-info/task_list1">Blessed John Henry Newman Roman Catholic College</a></strong> AS_123920 </h2>
-                <p class="govuk-!-margin-top-3">
-                  Application to join a trust: Kingfisher learning trust</br>
-               Local authority: Warrington</P></td>
-                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--purple">Post HTB</p> 
-                  <p class="govuk-hint  govuk-!-margin-top-0">
-                    Baseline date: 01 June 2021</div></br>
-                    Opening date: 01 July 2021</p></td>   
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="/no-preview/task_list1">Bolton Spa Primary</a></strong> AS_112456</h2>
-                <p class="govuk-!-margin-top-3">
-                Application to join a trust: Oak Hill Trust</br>
-               Local authority: Bolton</P></td>
-                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--pink">on hold</p> 
-                </td>   
-            </tr>
-        
-            
-          </tbody>
-        </table>
-       <p> <a href="#">All archived conversion projects</a></p>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Rationale for project
+            </dt>
+            <dd class="govuk-summary-list__value">{{ data["project-rationale"] }}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/no-preview/project-rationale.html">
+                Change<span class="govuk-visually-hidden">project rationale</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Rationale for the trust or sponsor
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['trust-rationale']%}
+              {{data['trust-rationale'] }} 
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/no-preview/sponsor-rationale.html">
+                Change<span class="govuk-visually-hidden">sponsor rationale</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+  
+        <form action="/no-preview/task_list1" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukCheckboxes({
+            idPrefix: "rationale-status-htb",
+            name: "rationale-status-htb",
+            items: [
+              {
+                value: "Complete",
+                text: "This section is ready to be included in the HTB templates"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+        <p><a href="javascript:history.back();">Cancel</a></p>
       </main>
-    </div>
-    <footer class="govuk-footer " role="contentinfo">
+    </main>   
+  </div>
+
+  </main>
+    
+  <footer class="govuk-footer " role="contentinfo">
     <div class="govuk-width-container ">
       
       <div class="govuk-footer__meta">
@@ -247,10 +250,13 @@
       <!-- Javascript -->
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+  <script src="/node_modules/moj-frontend/moj/all.js"></script>
+  <script src="/public/javascripts/application.js"></script>
   <script src="/public/javascripts/docs.js"></script>
   
   
     <script src="/public/javascripts/auto-store-data.js"></script>
+    <script src="/public/javascripts/rich-text-editor/rich-text-editor.js"></script>
   
   
       
@@ -258,3 +264,25 @@
   
     </body>
   </html>
+  
+  
+
+
+
+    
+  
+    <!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/public/javascripts/docs.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+    
+  
+
+  </body>
+</html>
+

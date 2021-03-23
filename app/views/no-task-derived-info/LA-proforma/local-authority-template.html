@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Conversion overview
+  Local authority information template
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -24,8 +24,7 @@ Conversion overview
 
 <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-<!--[if lte IE 8]><link href="/public/stylesheets/docs-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
 
 
     
@@ -108,209 +107,167 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+<div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
       <h1 class="govuk-heading-l">
-        Conversion overview</h1>
-        <p>This information is pre-populated from TRAMS and the school's application form.</p>
-        <p>TRAMS last updated on: 23 March 2021</p>
-        <br>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Recommendation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Date of HTB
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
-              </a>
-            </dd>
-          </div>
-        </dl>
-
+        Send local authority information template
+        </h1>
+        <form method="post"  action="/LA-proforma/LAproforma-summary">
         
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+            
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="body">
+              Date you sent the template to the local authority
+            </label>
 
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              
+                <div id="passport-issued-hint" class="govuk-hint">
+                  For example, 27 3 2021
+                </div>
+                <div class="govuk-date-input" id="passport-issued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+          
+          </div>
 
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+          <br> <br>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="body">
+              Date the local authority sent the template back
+            </label>
 
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
-    
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB template"
-      }
-      ]
-    }) }}
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              
+                <div id="passport-issued-hint" class="govuk-hint">
+                  For example, 27 3 2021
+                </div>
+                <div class="govuk-date-input" id="passport-issued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+          
+          </div>
+          <br><br>
+          
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
+            
+          
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="subject">
+                Comments
+              </label>
+            
+              
+              {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
-   
-        
+  {{ govukTextarea({
+    hint: {
 
-  {{ govukButton({
-    text: "Continue"
+    },
+maxlength: 500,
+rows: 8,
+    classes: "govuk-input--width-30",
+    id: "la-comments",
+    name: "la-comments", 
+    value: data["la-comments"]
   }) }}
 
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
-        </main>
+            </div>
+            
+              <div id="subject-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+              You can enter up to 200 characters
+            </div>
+            
+            </div>
+                  
+          
+            
+              <br><br>
+
+              <div class="govuk-form-group">
+                <label class="govuk-heading-m" for="file-upload-1">
+                  Add a link to the template in Sharepoint
+                </label>
+                <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add link
+                  </a>
+              </div>
+                
+                </div>
+            
+          
+                <form action="/task_list1" method="post"> 
+        
+                  {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+               
+        
+                  {{ govukButton({
+                    text: "Continue"
+                  }) }}
+        
+                </form>
+                <p><a href="javascript:history.back();">Cancel</a></p>
+                </form>
+          
+              </div>
+            </div>
+          
+                  </main>
       </div>
-
-
-    
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     
@@ -394,4 +351,6 @@ Conversion overview
 
   </body>
 </html>
+
+
 

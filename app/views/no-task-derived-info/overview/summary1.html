@@ -116,13 +116,10 @@ Conversion overview
 
       <h1 class="govuk-heading-l">
         Conversion overview</h1>
-        <p>This information is pre-populated from TRAMS and the school's application form.</p>
-        <p>TRAMS last updated on: 23 March 2021</p>
-        <br>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Recommendation
+              Recomendation
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['recomendation']%}
@@ -138,16 +135,7 @@ Conversion overview
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Is an academy order (AO) required?
@@ -178,90 +166,11 @@ Conversion overview
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
+                Change<span class="govuk-visually-hidden">htb date</span>
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Proposed academy opening date
@@ -271,7 +180,7 @@ Conversion overview
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/overview/opening">
-                Change
+                Change<span class="govuk-visually-hidden">opening date</span>
               </a>
             </dd>
           </div>
@@ -280,7 +189,7 @@ Conversion overview
         
 
 
-<form action="/task_list1" method="post"> 
+<form action="/no-task-derived-info/task_list1" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -292,7 +201,7 @@ Conversion overview
      
       {
         value: "Complete",
-        text: "This section is ready to be included in the HTB template"
+        text: "This section is ready to be included in the HTB templates"
       }
       ]
     }) }}
@@ -305,7 +214,7 @@ Conversion overview
   }) }}
 
    </form>
-   <p><a href="/task_list1">Cancel</a></p>
+   <p><a href="/no-task-derived-info/task_list1">Cancel</a></p>
         </main>
       </div>
 
