@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Conversion overview
+Set HTB date
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -108,201 +108,118 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+      <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-          
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l">
-        Conversion overview</h1>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Recomendation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Date of HTB
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
-              </a>
-            </dd>
-          </div>
-        </dl>
-
-        
-
-
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
+  
 
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
-    
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB templates"
-      }
-      ]
-    }) }}
+  
+  {% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/overview/summary1" method="post">
+  <h1 class="govuk-heading-l">Set the opening date for the academy</h1>
+<p>Acadamies must open on the first day of every month. You should tell the school and the trust what the opening date will be if you change it.</p>
 
-   
+<!-- {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "opening-date",
+  namePrefix: "opening-date",
+  value: data['opening-date'],
+  fieldset: {
+    legend: {
+      text: "Academy opening date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }} -->
+
+          {{ govukRadios({
+            idPrefix: "opening-date",
+            name: "opening-date",
+      
+            items: [
+       
+              {
+                value: "Monday 1 March 2021",
+                checked:  data['opening-date'] === "Monday 1 March 2021",
+                text: "Monday 1 March 2021"
+              },
+              {
+                value: "Thursday 1 April 2021",
+                checked:  data['opening-date'] === "Thursday 1 April 2021",
+                text: "Thursday 1 April 2021"
+              },
+              {
+                value: "Saturday 1 May 2021",
+                checked:  data['opening-date'] === "Saturday 1st May 2021",
+                text: "Saturday 1 May 2021"
+              },
+              {
+                value: "Tuesday 1 June 2021",
+                checked:  data['opening-date'] === "Tuesday 1 June 2021",
+                text: "Tuesday 1 June 2021"
+              },
+              {
+                value: "Thursday 1 July 2021",
+                checked:  data['opening-date'] === "Thursday 1 July 2021",
+                text: "Thursday 1 July 2021"
+              },
+              {
+                value: "Sunday 1 August 2021",
+                checked:  data['opening-date'] === "Sunday 1 August 2021",
+                text: "Sunday 1 August 2021"
+              },
+              {
+                value: "Wednesday 1 September 2021",
+                checked:  data['opening-date'] === "Wednesday 1 September 2021",
+                text: "Wednesday 1 September 2021"
+              },
+              {
+                value: "Friday 1 October 2021",
+                checked:  data['opening-date'] === "Friday 1 October 2021",
+                text: "Friday 1 October 2021"
+              },
+              {
+                value: "Monday 1 November 2021",
+                checked:  data['opening-date'] === "Monday 1 November 2021",
+                text: "Monday 1 November 2021"
+              },
+              {
+                value: "Wednesday 1 December 2021",
+                checked:  data['opening-date'] === "Wednesday 1 December 2021",
+                text: "Wednesday 1 December 2021"
+              },
+              {
+                value: "Saturday 1 January 2022",
+                checked:  data['opening-date'] === "Saturday 1 January 2021",
+                text: "Saturday 1 January 2022"
+              },
+              {
+                value: "Monday 1 February 2022",
+                checked:  data['opening-date'] === "Monday 1 February 2021",
+                text: "Monday 1 February 2022"
+              }
+            ]
+          }) }}
+  
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+          {% endblock %}
+        </form>
+        <p><a href="javascript:history.back();">Cancel</a></p>
+</div>
+        </div>
         
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
         </main>
       </div>
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Conversion overview
+  Uploaded supporting documentation
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -24,8 +24,7 @@ Conversion overview
 
 <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-<!--[if lte IE 8]><link href="/public/stylesheets/docs-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
 
 
     
@@ -108,204 +107,108 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+      <div class="govuk-width-container"><a href="upload-docs" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">
-        Conversion overview</h1>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Recomendation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Date of HTB
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
-              </a>
-            </dd>
-          </div>
-        </dl>
-
+       Uploaded supporting documentation
+        </h1>
+        <h1 class="govuk-heading-m">
+          Files added
+           </h1>
+        <form method="post">
         
+          <dl class="govuk-summary-list">
 
-
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
-    
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB templates"
-      }
-      ]
-    }) }}
-
-   
-        
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
-        </main>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                File 1
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a download href="/">Ofsted_interim_report.docx</a> 2MB
+              </dd>
+          
+              <dd class="govuk-summary-list__actions">
+          
+                <a class="govuk-link" href="#">
+                  Delete<span class="govuk-visually-hidden"> file 1</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                File 2
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a download href="/">Distance_from_MAT.jpg</a> 5MB
+              </dd>
+          
+              <dd class="govuk-summary-list__actions">
+          
+                <a class="govuk-link" href="#">
+                  Delete<span class="govuk-visually-hidden"> file 2</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+          </dl>
+        </div>
       </div>
-
+      
+      <div class="govuk-form-group">
+      
+      <fieldset class="govuk-fieldset">
+      
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      
+        Do you want to upload another document?
+      
+      </legend>
+      
+      <div class="govuk-radios">
+      
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="another" name="another" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="another">
+            Yes
+          </label>
+      
+        </div>
+      
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="another-2" name="another" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="another-2">
+            No
+          </label>
+      
+        </div>
+      
+      </div>
+      </fieldset>
+      
+      </div>
+      
+      <a href="/no-preview/task_list1.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+          
+                </form>
+                <p><a href="/task_list1">Cancel</a></p>
+              </div>
+            </div>
+          
+                  </main>
+      </div>
+    
 
     
   <footer class="govuk-footer " role="contentinfo">

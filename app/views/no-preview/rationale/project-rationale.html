@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Conversion overview
+  Project rationale
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -108,201 +108,77 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+      <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/no-preview/rationale/rationale-summary1" method="post" novalidate>
+        <h1 class="govuk-heading-l">Write the rationale for the project</h1>
 
-      <h1 class="govuk-heading-l">
-        Conversion overview</h1>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Recomendation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
+        <p class="govuk-hint">The rationale comes from the school's application form, but you can edit it and add your own analysis</p>
+      <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with writing a rationale 
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">To write your rationale, you could include information about:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>how governance will work between the school and the trust</li>
+              <li>who will be the head of the school and how will the school be managed</li>
+              <li>if the school has any feeder links that would be important for the HTB to know about</li>
+            </ul>
+          </div>
+        </details> -->
+      
+        {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Date of HTB
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
-              </a>
-            </dd>
-          </div>
-        </dl>
+        {{ govukTextarea({
+          id: 'project-rationale',
+          name: 'project-rationale',
+          maxlength: 500,
+          rows: 15,
+          value: data["project-rationale"],
+          attributes: {
+            'data-module': 'moj-rich-text-editor',
+            'data-moj-rich-text-editor-toolbar': 'bold,italic,underline,bullets,numbers'
+            }
+          }) 
+        }} 
 
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+      <p><a href="javascript:history.back();">Cancel</a></p>
+    </div> <div class="govuk-grid-column-one-third">
+
+
+ <!-- Not MVP   <div class="status-box">
+      
+      <h3 class="govuk-heading-m">Useful information</h3>
+        <p class="govuk-body-s"><a href="#">School information on TRAMS</a></p>
+        <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
+  
+        <h3 class="govuk-heading-m">Guidance</h3>
         
-
-
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
+          
+            <p class="govuk-body-s"><a href="#">Guidance on writing an HTB rationale</a><p>
+              <p class="govuk-body-s"><a href="#">Full guidance</a><p> -->
     
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB templates"
-      }
-      ]
-    }) }}
+      
+    </div>
+</div>
 
-   
-        
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
+        </div>
+       
         </main>
       </div>
 
@@ -380,15 +256,14 @@ Conversion overview
     <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/node_modules/moj-frontend/moj/all.js"></script>
+<script src="/public/javascripts/application.js"></script>
 <script src="/public/javascripts/docs.js"></script>
 
 
   <script src="/public/javascripts/auto-store-data.js"></script>
-
-
-    
-  
-
-  </body>
+  <script src="/public/javascripts/rich-text-editor/rich-text-editor.js"></script>
+    </body>
 </html>
+
 

@@ -108,167 +108,84 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
+      <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
-        Conversion overview</h1>
+        Send local authority information template</h1>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Recomendation
+              Date you sent the template to the local authority
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
+              {% if data['la-sent-date']%}
+                {{data['la-sent-date']}}
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
+              <a class="govuk-link" href="/LA-proforma/local-authority-template">
+                Change<span class="govuk-visually-hidden">date LA proforma was sent to LA</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Author
+              Date the local authority sent the template back
             </dt>
             <dd class="govuk-summary-list__value">
-              Delivery Officer
+              {% if data['la-sent-back']%}
+                {{data['la-sent-back']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
+              <a class="govuk-link" href="/LA-proforma/local-authority-template">
+                Change<span class="govuk-visually-hidden">date LA proforma was sent back from LA</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Date of HTB
+              Comments
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
+              {% if data['la-comments']%}
+                {{data['la-comments']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
+              <a class="govuk-link" href="/LA-proforma/local-authority-template">
+                Change<span class="govuk-visually-hidden">comments</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             School name
+              Add a link to the template in Sharepoint
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
+              {% if data['la-sharepont-link']%}
+                {{data['la-sharepoint-link']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
+              <a class="govuk-link" href="/LA-proforma/local-authority-template">
+                Change<span class="govuk-visually-hidden">sharepoint link</span>
               </a>
             </dd>
           </div>
@@ -302,7 +219,7 @@ Conversion overview
   }) }}
 
    </form>
-   <p><a href="/task_list1">Cancel</a></p>
+   <p><a href="javascript:history.back();">Cancel</a></p>
         </main>
       </div>
 

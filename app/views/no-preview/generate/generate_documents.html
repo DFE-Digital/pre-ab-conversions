@@ -108,206 +108,50 @@ Conversion overview
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/task_list1" class="govuk-back-link">Back to task list</a>
-<main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
+      <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-      <h1 class="govuk-heading-l">
-        Conversion overview</h1>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Recomendation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recommendation">
-                Change<span class="govuk-visually-hidden">recomendation</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Author
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Delivery Officer
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is an academy order (AO) required?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="aorequired.html">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Date of HTB
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['htb-date']%}
-              {{data['htb-date']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="set-htb.html">
-                Change<span class="govuk-visually-hidden">htb-date</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             School name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">St. Wilfrid's Primary School</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Unique reference number (URN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">120620</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Local authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Trust reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">TRO1318</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name of trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Dynamics Trust</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">SP00170</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Sponsor name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Diocese of Warrington</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Academy type and route
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Converter, grant only £25000</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Proposed academy opening date
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{ data['opening-date']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/overview/opening">
-                Change
-              </a>
-            </dd>
-          </div>
-        </dl>
-
-        
-
-
-<form action="/task_list1" method="post"> 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukCheckboxes({
-    idPrefix: "overview-status",
-    name: "overview-status",
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                  
+        <div><h1 class="govuk-heading-xl">Generate headteacher board (HTB) template</h1></div>
+        <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
     
-    items: [
-     
-      {
-        value: "Complete",
-        text: "This section is ready to be included in the HTB templates"
-      }
-      ]
-    }) }}
-
-   
-        
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-
-   </form>
-   <p><a href="/task_list1">Cancel</a></p>
+          <section class="attachment embedded" id="attachment_4565749">
+    
+          <div class="govuk-grid-column-three-quaters">
+            <div class="govuk-inset-text"><p class="govuk-body-m">Please save these documents in the school's Sharepoint file</p><span>
+              </div>
+            </div>
+             
+          <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <a aria-hidden="true" class="thumbnail" tabindex="-1" href="#"></a><img alt="" src="https://www.gov.uk/assets/whitehall/pub-cover-html-b0465911e56983d98c70f0e25fba24bc206d37e8c83d4addf6421dcf6022c6cd.png"></a>
+          </div>
+            <div class="govuk-grid-column-three-quaters">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="#">HTB-Wilfreds-Dynamics-HTB-temp-13March2021.docx</a></h2>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Word document 267kb</p>
+        </div>
+          
+            </div>
+          <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <a aria-hidden="true" class="thumbnail" tabindex="-1" href="#"></a><img alt="" src="https://www.gov.uk/assets/whitehall/pub-cover-html-b0465911e56983d98c70f0e25fba24bc206d37e8c83d4addf6421dcf6022c6cd.png"></a>
+          </div>
+            <div class="govuk-grid-column-three-quaters">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="#">Dynamics-SPONSOR-temp-13March2021.docx</a></h2>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Word document 120kb</p>
+            
+            
+            </div>
+      
+       
+          </div>
+          
+        </div> 
+      
         </main>
-      </div>
-
-
-    
+    </div>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     
