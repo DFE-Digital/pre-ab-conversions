@@ -103,14 +103,19 @@
       <ol class="app-task-list govuk-!-margin-bottom-8">
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="/LA-proforma/local-authority-template" aria-describedby="LA-infromation-template">
-            Send the LA information template
+            <a 
+              href="{{data|laProformaNextPageLink(
+                    ['overview-status'],
+                    ['la-sent-date', 'la-sent-back', 'la-comments', 'la-sharepoint-link']                
+                  )}}" 
+              aria-describedby="LA-infromation-template">
+            Send the LA information template 
             </a>
           </span>
           <strong class="{{data|laProformaStatusClass(['overview-status'],['la-sent-date', 'la-sent-back', 'la-comments', 'la-sarepoint-link'])}} app-task-list__tag" id="LA-infromation-template">  
             {{data|laProformaStatusText(
               ['overview-status'],
-              ['la-sent-date', 'la-sent-back', 'la-comments', 'la-sarepoint-link']                
+              ['la-sent-date', 'la-sent-back', 'la-comments', 'la-sharepoint-link']                
             )}} 
           </strong>            
         </li>
