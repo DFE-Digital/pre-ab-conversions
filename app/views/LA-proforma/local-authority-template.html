@@ -191,15 +191,18 @@
             }) }}
           
             <br><br>
+<!-- 
+            {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-            <div class="govuk-form-group">
-              <label class="govuk-heading-m" for="file-upload-1">
-                Add a link to the template in Sharepoint
-              </label>
-              <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Add link
-                </a>
-            </div>
+            {{
+              govukFileUpload ({
+                id: "file-upload-1",
+                name: "file=upload-1",
+                label: {
+                  text: "Add a link to the template in Sharepoint"
+                }
+              })
+            }} -->
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
