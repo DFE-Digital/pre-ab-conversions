@@ -191,18 +191,19 @@
             }) }}
           
             <br><br>
-<!-- 
-            {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-            {{
-              govukFileUpload ({
-                id: "file-upload-1",
-                name: "file=upload-1",
-                label: {
-                  text: "Add a link to the template in Sharepoint"
-                }
-              })
-            }} -->
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Add a link to the template in Sharepoint"
+              },
+              id: "la-sharepoint-link",
+              name: "la-sharepoint-link",
+              value: data["la-sharepoint-link"]
+            }) }}
+
+            <br><br>
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
