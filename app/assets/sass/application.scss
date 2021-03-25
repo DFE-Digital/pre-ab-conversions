@@ -413,6 +413,29 @@ $govuk-assets-path: '/govuk/assets/';
   margin-right: 8px;
 }
 
+.onhold {
+  display: inline-block;
+  border: 2px solid;
+  outline-offset: -2px;
+  color: #912B88;
+  background-color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 3px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
 .app-summary-card {
   border: 1px solid #b1b4b6;
 }
@@ -627,4 +650,134 @@ $govuk-assets-path: '/govuk/assets/';
   .app-summary-card__actions {
     display: none;
   }
+}
+
+.app-banner {
+  color: #0b0c0c;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 5px solid #1d70b8;
+}
+
+@media print {
+  .app-banner {
+    color: #000000;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-banner {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-banner {
+    margin-bottom: 50px;
+  }
+}
+
+.app-banner:focus {
+  outline: 3px solid #ffdd00;
+  outline-offset: 0;
+}
+
+.app-banner--missing-section {
+  border-width: 0 0 0 5px;
+  padding: 10px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 40.0625em) {
+  .app-banner--missing-section {
+    margin-bottom: 20px;
+  }
+}
+
+.app-banner--missing-section .app-banner__message p {
+  font-weight: 700;
+  color: #1d70b8;
+  margin: 0;
+}
+
+.app-banner--info {
+  border-color: #1d70b8;
+}
+
+.app-banner--success {
+  border-color: #00703c;
+}
+
+.app-banner--success .app-banner__icon {
+  fill: #00703c;
+}
+
+.app-banner--warning {
+  border-color: #d4351c;
+}
+
+.app-banner--warning .app-banner__icon {
+  fill: #d4351c;
+}
+
+.app-banner--warning.app-banner--missing-section .app-banner__message p {
+  color: #d4351c;
+}
+
+.app-banner__icon {
+  fill: #1d70b8;
+  float: left;
+  margin-right: 10px;
+}
+
+.app-banner__assistive {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.app-banner__message {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  overflow: hidden;
+}
+
+@media print {
+  .app-banner__message {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-banner__message {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .app-banner__message {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.app-banner__message *:last-child {
+  margin-bottom: 0;
 }
