@@ -112,7 +112,7 @@
           <span class="app-task-list__task-name">
             <a 
               href="{{data|laProformaNextPageLink(
-                    ['overview-status'],
+                    ['la-proforma-status'],
                     ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
                     'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
                     'la-comments', 'la-sharepoint-link']                
@@ -122,13 +122,13 @@
             </a>
           </span>
           <strong class="{{data|laProformaStatusClass(
-                    ['overview-status'],
+                    ['la-proforma-status'],
                     ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
                     'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
                     'la-comments', 'la-sharepoint-link']  
             )}} app-task-list__tag" id="LA-infromation-template">  
             {{data|laProformaStatusText(
-              ['overview-status'],
+              ['la-proforma-status'],
               ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
               'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
               'la-comments', 'la-sharepoint-link']               
