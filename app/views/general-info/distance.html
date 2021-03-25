@@ -121,55 +121,61 @@ Distance from MAT HQ
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="/general-info/summary1" method="post">
-  <h1 class="govuk-heading-l">What is the distance from the school to the trust headquaters?</h1>
-  
-  
-  {% from "govuk/components/input/macro.njk" import govukInput %}
+          <h1 class="govuk-heading-l">What is the distance from the school to the trust headquaters?</h1>
+          {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  {{ govukInput({
-    hint: {
-      text: "Answer in miles. For example, 25.3 miles"
-    },
+          {{ govukInput({
+            hint: {
+              text: "Answer in miles. For example, 25.3 miles"
+            },
+            classes: "govuk-input--width-5",
+            id: "distance",
+            name: "distance", 
+            value: data["distance"]
+          }) }}
 
-    classes: "govuk-input--width-5",
-    id: "distance",
-    name: "distance", 
-    value: data["distance"]
-  }) }}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
-</form>
-<p><a href="javascript:history.back();">Cancel</a></p>
-</div><div class="govuk-grid-column-one-third">
-  <!-- Not MVP
-  <div class="status-box">
-      
-        <h3 class="govuk-heading-m">Useful information</h3>
-        <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
-        <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
-        <p class="govuk-body-s"><a href="#">Google maps</a></p>
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
-  
-        <h3 class="govuk-heading-m">Guidance</h3>
-        
-          
-            <p class="govuk-body-s"><a href="#">Guidance on setting a distance</a><p>
-              <p class="govuk-body-s"><a href="#">Full guidance</a><p>
-    
-      -->
+        </form>
+        <p><a href="javascript:history.back();">Cancel</a></p>
+        <div class="govuk-grid-column-one-third">
+        <!-- Not MVP
+          <div class="status-box">
+                <h3 class="govuk-heading-m">Useful information</h3>
+                <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
+                <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
+                <p class="govuk-body-s"><a href="#">Google maps</a></p>
+                <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
+                <h3 class="govuk-heading-m">Guidance</h3>
+                <p class="govuk-body-s"><a href="#">Guidance on setting a distance</a><p>
+                <p class="govuk-body-s"><a href="#">Full guidance</a><p>
+            </div>
+            -->
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+        <div class="status-box">
+          <h3 class="govuk-heading-m">Useful information</h3>
+          <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
+          <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
+          <p class="govuk-body-s"><a href="#">Google maps</a></p>
+          <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
+          <h3 class="govuk-heading-m">Guidance</h3>
+          <p class="govuk-body-s"><a href="#">Guidance on setting a distance</a><p>
+          <p class="govuk-body-s"><a href="#">Full guidance</a><p>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-
-
-</div>
   </div>
+</div>
   
-  </main>
+</main>
 
 
 

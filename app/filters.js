@@ -7,6 +7,36 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  /* ------------------------------------------------------------------
+    add your methods to the filters obj below this comment block:
+    @example:
+
+    filters.sayHi = function(name) {
+        return 'Hi ' + name + '!'
+    }
+
+    Which in your templates would be used as:
+
+    {{ 'Paul' | sayHi }} => 'Hi Paul'
+
+    Notice the first argument of your filters method is whatever
+    gets 'piped' via '|' to the filter.
+
+    Filters can take additional arguments, for example:
+
+    filters.sayHi = function(name,tone) {
+      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
+    }
+
+    Which would be used like this:
+
+    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
+    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
+
+    For more on filters and how to write them see the Nunjucks
+    documentation.
+
+  ------------------------------------------------------------------ */
   // Conversion Overview 
   filters.conversionOverviewStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
@@ -112,36 +142,47 @@ module.exports = function (env) {
       return "Not Started";
     }
   }
-  /* ------------------------------------------------------------------
-    add your methods to the filters obj below this comment block:
-    @example:
 
-    filters.sayHi = function(name) {
-        return 'Hi ' + name + '!'
+    // LA Proforma
+
+    filters.laProformaNextPageLink = function (data, completedFields, inProgressFields) {
+      const flag = inProgressFields.some(field => data[field]);
+  
+      if (data[completedFields] || flag ){
+        return "/LA-proforma/LAproforma-summary";
+      }
+      else {
+        return "/LA-proforma/local-authority-template";
+      }
     }
 
-    Which in your templates would be used as:
-
-    {{ 'Paul' | sayHi }} => 'Hi Paul'
-
-    Notice the first argument of your filters method is whatever
-    gets 'piped' via '|' to the filter.
-
-    Filters can take additional arguments, for example:
-
-    filters.sayHi = function(name,tone) {
-      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
+    filters.laProformaStatusClass = function (data, completedFields, inProgressFields) {
+      const flag = inProgressFields.some(field => data[field]);
+  
+      if (data[completedFields]){
+        return "govuk-tag";
+      }
+      else if (flag){
+        return "govuk-tag govuk-tag--blue"
+      }
+      else {
+        return "govuk-tag govuk-tag--grey";
+      }
     }
-
-    Which would be used like this:
-
-    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
-    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
-
-    For more on filters and how to write them see the Nunjucks
-    documentation.
-
-  ------------------------------------------------------------------ */
+  
+    filters.laProformaStatusText = function (data, completedFields, inProgressFields) {
+      const flag = inProgressFields.some(field => data[field]);
+  
+      if (data[completedFields]){
+        return "Complete";
+      }
+      else if (flag){
+        return "In Progress"
+      }
+      else {
+        return "Not Started";
+      }
+    }
 
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app

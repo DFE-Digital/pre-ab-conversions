@@ -122,12 +122,13 @@ Conversion overview
               Date you sent the template to the local authority
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['la-sent-date']%}
-                {{data['la-sent-date']}}
+              {% if data['la-sent-date-day'] and data['la-sent-date-month'] and data['la-sent-date-year']%}
+                <span>{{ data['la-sent-date-day'] }} </span>
+                <span>{{ data['la-sent-date-month'] }} </span>
+                <span>{{ data['la-sent-date-year'] }}</span>
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/LA-proforma/local-authority-template">
@@ -140,12 +141,13 @@ Conversion overview
               Date the local authority sent the template back
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['la-sent-back']%}
-                {{data['la-sent-back']}}
+              {% if data['la-sent-back-day'] and data['la-sent-back-month'] and data['la-sent-back-year']%}
+                <span>{{ data['la-sent-back-day'] }} </span>
+                <span>{{ data['la-sent-back-month'] }} </span>
+                <span>{{ data['la-sent-back-year'] }}</span>
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/LA-proforma/local-authority-template">
@@ -163,8 +165,8 @@ Conversion overview
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
-
             </dd>
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/LA-proforma/local-authority-template">
                 Change<span class="govuk-visually-hidden">comments</span>
@@ -176,12 +178,11 @@ Conversion overview
               Add a link to the template in Sharepoint
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['la-sharepont-link']%}
-                {{data['la-sharepoint-link']}}
+              {% if data["la-sharepoint-link"] %}
+                {{ data["la-sharepoint-link"] }}
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/LA-proforma/local-authority-template">
@@ -199,21 +200,17 @@ Conversion overview
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
   {{ govukCheckboxes({
-    idPrefix: "overview-status",
+    id: "overview-status",
     name: "overview-status",
     
     items: [
-     
       {
         value: "Complete",
         text: "This section is ready to be included in the HTB template"
       }
       ]
     }) }}
-
-   
         
-
   {{ govukButton({
     text: "Continue"
   }) }}
