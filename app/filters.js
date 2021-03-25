@@ -148,7 +148,7 @@ module.exports = function (env) {
     filters.laProformaNextPageLink = function (data, completedFields, inProgressFields) {
       const flag = inProgressFields.some(field => data[field]);
   
-      if (data[completedFields] == "_unchecked,Complete" || flag){
+      if (data[completedFields] || flag ){
         return "/LA-proforma/LAproforma-summary";
       }
       else {
