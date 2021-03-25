@@ -154,7 +154,6 @@ module.exports = function (env) {
       else {
         return "/LA-proforma/local-authority-template";
       }
-
     }
 
     filters.laProformaStatusClass = function (data, completedFields, inProgressFields) {
@@ -175,7 +174,7 @@ module.exports = function (env) {
       const flag = inProgressFields.some(field => data[field]);
   
       if (data[completedFields]){
-        return "Completed";
+        return "Complete";
       }
       else if (flag){
         return "In Progress"
