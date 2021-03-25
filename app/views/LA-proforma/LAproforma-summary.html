@@ -178,12 +178,11 @@ Conversion overview
               Add a link to the template in Sharepoint
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['la-sharepont-link']%}
-                {{data['la-sharepoint-link']}}
+              {% if data["la-sharepoint-link"] %}
+                {{ data["la-sharepoint-link"] }}
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/LA-proforma/local-authority-template">
