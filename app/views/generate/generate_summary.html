@@ -114,7 +114,7 @@ Conversion overview
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
           
-<div><h1 class="govuk-heading-xl">Generate headteacher board (HTB) template</h1></div>
+<div class="govuk-grid-column-three-quaters"><h1 class="govuk-heading-xl">Preview headteacher board (HTB) template</h1></div>
 
   <div class="govuk-grid-column-full-width">
 <!-- error summary-->
@@ -146,10 +146,52 @@ Conversion overview
 </div>
 
 
-<div class="govuk-grid-column-full">
 
-<section class="app-summary-card govuk-!-margin-bottom-6">
+
+<div class="govuk-grid-column-full">
+  <h2 class="govuk-heading-m">
+    Local authority (LA) information template
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+   
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       Conversion overview
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
   
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommendation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['recomendation']%}
+                  {{data['recomendation']}}
+                 {% else %} 
+                 <span class="empty">Empty</span>
+                {% endif %}
+              </dd>
+            </div>
+      </dl>
+      
+      
+        </div>
+        
+      </section>  
+
+
+
+  <h2 class="govuk-heading-m">
+   Headteacher board (HTB) template
+   </h2>
+<section class="app-summary-card govuk-!-margin-bottom-6">
+   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
@@ -652,6 +694,9 @@ Early years provision
   <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
 </div>
 </div> 
+<h2 class="govuk-heading-m">
+Trust template
+ </h2>
 <div class="app-banner app-banner--missing-section">
 
   <div class="app-banner__message">
