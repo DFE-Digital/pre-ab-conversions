@@ -558,7 +558,7 @@ Conversion overview
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     School performance information
+     School performance (Ofsted information)
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -635,6 +635,7 @@ Early years provision
   </div>
 </section>  
 
+</section> 
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
@@ -655,7 +656,7 @@ Early years provision
         </dt>
         <dd class="govuk-summary-list__value"> 
           {% if data['project-rationale']%}
-          {{data['project-rationale'] }} 
+          {{data['project-rationale'] | safe  }} 
           {% else %} 
           <span class="empty">Empty</span>
           {% endif %}
@@ -686,6 +687,379 @@ Early years provision
   </div>
 </section> 
 
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     Risks and issues
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Risks and issues details
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          {% if data['risks']%}
+          {{data['risks'] | safe  }} 
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+
+        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/risks-and-issues/risks-and-issues">  Change<span class="govuk-visually-hidden">trust rationale</span>
+        </a>  
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section> 
+
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School budget information
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Revenue carry forward at end-March [current year] 2021:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          23k main share or -10K with PP/PE/UIFSM etc </dd>
+<dd class="govuk-summary-list__actions"></dd> </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Projected revenue balance at end-March [following year] 2022:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £0k main share or £16K surplus with PP/PE/UIFSM etc
+        </dd>
+        
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Capital carry forward at end-March [current year]:
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £21K
+  </dd>
+  
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Capital carry forward at end-March [following year]:
+  </dt>
+  <dd class="govuk-summary-list__value">
+18k
+  </dd>
+  
+<dd class="govuk-summary-list__actions">
+</dd></div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Narrative
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+  </dd>
+ 
+</dl>
+  </div>
+</section>  
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School pupil forecasts
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Year</dt>
+        <dt class="govuk-summary-list__key">Capacity </dt>
+        <dt class="govuk-summary-list__key">Total pupil numbers</dt>
+        <dt class="govuk-summary-list__key">Percentage full</dt> </div>
+             
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Current year</dt>
+        <dd class="govuk-summary-list__value">196</dd>
+        <dd class="govuk-summary-list__value">105</dd>
+        <dd class="govuk-summary-list__value">54%</dd> </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2021 to 2020 forecast</dt>
+          <dd class="govuk-summary-list__value">196</dd>
+          <dd class="govuk-summary-list__value">115</dd>
+          <dd class="govuk-summary-list__value">59%</dd> </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">2022 to 2023 forecast</dt>
+            <dd class="govuk-summary-list__value">196</dd>
+            <dd class="govuk-summary-list__value">100</dd>
+            <dd class="govuk-summary-list__value">51%</dd> </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">2023 to 2024 forecast</dt>
+              <dd class="govuk-summary-list__value">196</dd>
+              <dd class="govuk-summary-list__value">100</dd>
+              <dd class="govuk-summary-list__value">51%</dd> </div>
+ 
+</dl>
+  </div>
+</section> 
+<h2 class="govuk-heading-m">
+Key stage (KS) performance tables
+  </h2>
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     KS2 2019
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key"></dd>
+        <dt class="govuk-summary-list__key">% meeting expected standard in RWM (PP)</dt>
+        <dt class="govuk-summary-list__key">% higher standard in RWM (PP)</dt>
+        <dt class="govuk-summary-list__key">Maths progress scores (PP)</dt>
+        <dt class="govuk-summary-list__key">Reading progress scores (PP)</dt>
+        <dt class="govuk-summary-list__key">Writing progress scores (PP)</dt>
+      </div>
+             
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">St Wilfrid's Primary School</dt>
+        <dd class="govuk-summary-list__value">57% (25)</dd>
+        <dd class="govuk-summary-list__value">0% (0)</dd>
+        <dd class="govuk-summary-list__value">0.1% (0.1)</dd>
+        <dd class="govuk-summary-list__value">0.2% (-2.1)</dd>
+        <dd class="govuk-summary-list__value">2.1 (-0.2)</dd> </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Warrington LA</dt>
+          <dd class="govuk-summary-list__value">61% (9)</dd>
+          <dd class="govuk-summary-list__value">No data</dd>
+          <dd class="govuk-summary-list__value">0.7%</dd>
+          <dd class="govuk-summary-list__value">-0.9%</dd>
+          <dd class="govuk-summary-list__value">-0.2%</dd> </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">National average</dt>
+            <dd class="govuk-summary-list__value">65% (51)</dd>
+            <dd class="govuk-summary-list__value">11% (5)</dd>
+            <dd class="govuk-summary-list__value">0</dd>
+            <dd class="govuk-summary-list__value">0</dd>
+            <dd class="govuk-summary-list__value">0</dd> </div>
+        
+</dl>
+  </div>
+</section> 
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     KS2 2018
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+
+ 
+   <div class="govuk-summary-list__row">
+     <dd class="govuk-summary-list__key"></dd>
+     <dt class="govuk-summary-list__key">% meeting expected standard in RWM (PP)</dt>
+     <dt class="govuk-summary-list__key">% higher standard in RWM (PP)</dt>
+     <dt class="govuk-summary-list__key">Maths progress scores (PP)</dt>
+     <dt class="govuk-summary-list__key">Reading progress scores (PP)</dt>
+     <dt class="govuk-summary-list__key">Writing progress scores (PP)</dt>
+   </div>
+          
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">St Wilfrid's Primary School</dt>
+     <dd class="govuk-summary-list__value">39% (50)</dd>
+     <dd class="govuk-summary-list__value">6 (0)</dd>
+     <dd class="govuk-summary-list__value">-1.9 (-1.1)</dd>
+     <dd class="govuk-summary-list__value">-2.6 (-3.4)</dd>
+     <dd class="govuk-summary-list__value">0.1 (-2)</dd> </div>
+
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">Warrington LA</dt>
+       <dd class="govuk-summary-list__value">60% (8)</dd>
+       <dd class="govuk-summary-list__value">No data</dd>
+       <dd class="govuk-summary-list__value">0.8%</dd>
+       <dd class="govuk-summary-list__value">-0.7%</dd>
+       <dd class="govuk-summary-list__value">-0.3%</dd> </div>
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">National average</dt>
+         <dd class="govuk-summary-list__value">64% (51)</dd>
+         <dd class="govuk-summary-list__value">10% (4)</dd>
+         <dd class="govuk-summary-list__value">0</dd>
+         <dd class="govuk-summary-list__value">0</dd>
+         <dd class="govuk-summary-list__value">0</dd> </div>
+     
+</dl>
+</div>
+</section> 
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     KS2 2017
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+
+ 
+   <div class="govuk-summary-list__row">
+     <dd class="govuk-summary-list__key"></dd>
+     <dt class="govuk-summary-list__key">% meeting expected standard in RWM (PP)</dt>
+     <dt class="govuk-summary-list__key">% higher standard in RWM (PP)</dt>
+     <dt class="govuk-summary-list__key">Maths progress scores (PP)</dt>
+     <dt class="govuk-summary-list__key">Reading progress scores (PP)</dt>
+     <dt class="govuk-summary-list__key">Writing progress scores (PP)</dt>
+   </div>
+          
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">St Wilfrid's Primary School</dt>
+     <dd class="govuk-summary-list__value">38% (57)</dd>
+     <dd class="govuk-summary-list__value">16 (14)</dd>
+     <dd class="govuk-summary-list__value">3.3 (4.6)</dd>
+     <dd class="govuk-summary-list__value">-0.4 (1.7)</dd>
+     <dd class="govuk-summary-list__value">3.7 (4.0)</dd> </div>
+
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">Warrington LA</dt>
+       <dd class="govuk-summary-list__value">57% (7)</dd>
+       <dd class="govuk-summary-list__value">No data</dd>
+       <dd class="govuk-summary-list__value">-1.2%</dd>
+       <dd class="govuk-summary-list__value">-0.9%</dd>
+       <dd class="govuk-summary-list__value">-0.6%</dd> </div>
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">National average</dt>
+         <dd class="govuk-summary-list__value">61% (47)</dd>
+         <dd class="govuk-summary-list__value">9% (4)</dd>
+         <dd class="govuk-summary-list__value">0</dd>
+         <dd class="govuk-summary-list__value">0</dd>
+         <dd class="govuk-summary-list__value">0</dd> </div>
+     
+</dl>
+</div>
+</section> 
+<h2 class="govuk-heading-m">
+Supporting documentation
+    </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       Supporting documentation details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">File 1</dt>
+          <dd class="govuk-summary-list__value">Ofsted_interim-report.docx</dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2">Change<span class="govuk-visually-hidden">file 1</span></a> </dd>
+     
+        </div>
+
+               
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">File 2</dt>
+          <dd class="govuk-summary-list__value">Distance-from-MAT.jpg</dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2">Change<span class="govuk-visually-hidden">file 2</span></a> </dd>        </div>
+  </dl>
+    </div>
+  </section> 
+
+  <h2 class="govuk-heading-m">
+   Trust template
+        </h2>
+      <section class="app-summary-card govuk-!-margin-bottom-6">
+        
+        <header class="app-summary-card__header">
+          
+          <h2 class="app-summary-card__title">
+           Trust template details
+          </h2>
+        </header>
+        <div class="app-summary-card__body">
+      
+        
+      <dl class="govuk-summary-list">
+        
+          
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Trust template</dt>
+              <dd class="govuk-summary-list__value">Dynamics-SPONSOR-temp-13March2021.docx</dd>
+              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2">Change<span class="govuk-visually-hidden">file 1</span></a> </dd>
+         
+            </div>
+    
+            
+      </dl>
+        </div>
+      </section> 
+
+
+
+
+
+
+
+
+
+
+<!-- missing information style
 <div class="app-banner app-banner--missing-section">
 
   <div class="app-banner__message">
@@ -704,7 +1078,7 @@ Trust template
   <p class="govuk-body" id="missing-degree-details">Trust template section is not marked as complete</p>
   <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
 </div>
-</div> 
+</div> -->
 
  
       <a href="/generate/generate_documents" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
