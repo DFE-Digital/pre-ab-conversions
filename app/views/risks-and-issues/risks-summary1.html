@@ -123,7 +123,7 @@
               Risks and issues details
             </dt>
             <dd class="govuk-summary-list__value">   {% if data['risks']%}
-              {{data['risks']}}
+              {{data['risks'] | safe }}
              {% else %} 
              <span class="empty">Empty</span>
             {% endif %}</dd>

@@ -123,7 +123,7 @@
             <dt class="govuk-summary-list__key">
               Rationale for project
             </dt>
-            <dd class="govuk-summary-list__value">{{ data["project-rationale"] }}</dd>
+            <dd class="govuk-summary-list__value">{{ data["project-rationale"] | safe }}</dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="project-rationale.html">
                 Change<span class="govuk-visually-hidden">project rationale</span>
@@ -137,7 +137,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['trust-rationale']%}
-              {{data['trust-rationale'] }} 
+              {{data['trust-rationale'] | safe }} 
               {% else %} 
               <span class="empty">Empty</span>
               {% endif %}
