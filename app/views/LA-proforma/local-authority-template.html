@@ -111,7 +111,7 @@
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         Send local authority information template</h1>
         <form method="post"  action="/LA-proforma/LAproforma-summary">
@@ -132,15 +132,18 @@
               items: [
                 {
                   name: "day",
-                  value: data["la-sent-date-day"]
+                  value: data["la-sent-date-day"],
+                  classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: data["la-sent-date-month"]
+                  value: data["la-sent-date-month"],
+                  classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",
-                  value: data["la-sent-date-year"]
+                  value: data["la-sent-date-year"],
+                  classes: "govuk-input--width-4"
                 }
               ]
             }) }}
@@ -163,15 +166,18 @@
                 items: [
                 {
                   name: "day",
-                  value: data["la-sent-back-day"]
+                  value: data["la-sent-back-day"],
+                  classes: "govuk-input--width-2"
                 },
                 {
                   name: "month",
-                  value: data["la-sent-back-month"]
+                  value: data["la-sent-back-month"],
+                  classes: "govuk-input--width-2"
                 },                
                 {
                   name: "year",                  
-                  value: data["la-sent-back-year"]
+                  value: data["la-sent-back-year"],
+                  classes: "govuk-input--width-4"
                 }
               ]
               }) }}
