@@ -160,10 +160,13 @@
               General information
             </a>
           </span>
-          <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['deficit','diocesan','distance', 'goodschools'] )}} app-task-list__tag" id="general-information">  
+          <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
             {{data|generalInfoStatusText(
               ['general-info-status'],
-              ['deficit','diocesan','distance', 'goodschools']
+              ['distance'],
+              ['deficit'],
+              ['diocesan'],
+              ['goodschools','viability' ]
             )}} 
           </strong>
         </li>

@@ -71,18 +71,17 @@ module.exports = function (env) {
   }
 
   // General Info
-  filters.generalInfoStatusClass = function (data, completedFields, inProgressFields) {
+  filters.generalInfoStatusClass = function (data, completedFields, distance, financial, diocesan, inProgressFields) {
+    let checkDistance = data[distance] === "20.1" ? false : true;
+    let checkDeficit = data[financial] === "There are no financial issues at the school" ? false : true;
+    let checkDiocesan = data[diocesan] === "Yes" ? false : true;
+    
     const flag = inProgressFields.some(field => data[field]);
-
-    // let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
-    let checkDeficit = data["deficit"] === "There are no financial issues at the school" ? false : true;
-    let checkDiocesan = data["diocesan"] === "Yes" ? false : true;
-    let checkDistance = data["distance"] === "20.1 miles" ? false : true;
 
     if (data[completedFields]){
       return "govuk-tag";
     }
-    else if (flag ){
+    else if (checkDeficit ||  checkDiocesan || checkDistance || flag){
       return "govuk-tag govuk-tag--blue"
     }
     else {
@@ -90,18 +89,17 @@ module.exports = function (env) {
     }
   }
 
-  filters.generalInfoStatusText = function (data, completedFields, inProgressFields) {
+  filters.generalInfoStatusText = function (data, completedFields, distance, financial, diocesan, inProgressFields) {
+    let checkDistance = data[distance] === "20.1" ? false : true;
+    let checkDeficit = data[financial] === "There are no financial issues at the school" ? false : true;
+    let checkDiocesan = data[diocesan] === "Yes" ? false : true;
+    
     const flag = inProgressFields.some(field => data[field]);
-
-    let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
-    let checkDeficit = data["deficit"] === "There are no financial issues at the school" ? false : true;
-    let checkDiocesan = data["diocesan"] === "Yes" ? false : true;
-    let checkDistance = data["distance"] === "20.1 miles" ? false : true;
 
     if (data[completedFields]){
       return "Complete";
     }
-    else if (flag){
+    else if (checkDeficit ||  checkDiocesan || checkDistance || flag){
       return "In Progress"
     }
     else {
