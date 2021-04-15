@@ -181,16 +181,21 @@
               Rationale
             </a>
           </span>
-          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale', 'project-rationale'] )}} app-task-list__tag" id="rationale-status">  
+          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
             {{data|rationaleOverviewStatusText(
               ['rationale-status-htb'],
-              ['trust-rationale', 'project-rationale']
+              ['trust-rationale'],
+              ['project-rationale']
             )}} 
         </strong>
         </li>
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="/risks-and-issues/risks-and-issues" aria-describedby="risks-and-issues">
+            <a 
+              href="{{ data|riskAndIssuesNextPageLink (
+                ['risks-status'],['risks']
+              )}}" 
+              aria-describedby="risks-and-issues">
               Risks and issues
             </a>
           </span>
