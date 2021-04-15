@@ -160,11 +160,10 @@
               General information
             </a>
           </span>
-          <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="general-information">  
+          <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['deficit','diocesan','distance', 'goodschools'] )}} app-task-list__tag" id="general-information">  
             {{data|generalInfoStatusText(
               ['general-info-status'],
-              ['goodschools'],
-              ['viability','deficit','diocesan','distance']
+              ['deficit','diocesan','distance', 'goodschools']
             )}} 
           </strong>
         </li>
@@ -182,10 +181,10 @@
               Rationale
             </a>
           </span>
-          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'] )}} app-task-list__tag" id="rationale-status">  
+          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale', 'project-rationale'] )}} app-task-list__tag" id="rationale-status">  
             {{data|rationaleOverviewStatusText(
               ['rationale-status-htb'],
-              ['trust-rationale']
+              ['trust-rationale', 'project-rationale']
             )}} 
         </strong>
         </li>
@@ -195,8 +194,8 @@
               Risks and issues
             </a>
           </span>
-          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'] )}} app-task-list__tag" id="rationale-status">  
-            {{data|rationaleOverviewStatusText(
+          <strong class="{{data|riskStatusClass(['risks-status'],['risks'] )}} app-task-list__tag" id="risks-status">  
+            {{data|riskStatusText(
               ['risks-status'],
               ['risks']
             )}} 

@@ -74,7 +74,7 @@ module.exports = function (env) {
   filters.generalInfoStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
-    let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
+    // let checkViability = data["viability"] === "Yes" || data["viability"] === "No" ?  true : false;
     let checkDeficit = data["deficit"] === "There are no financial issues at the school" ? false : true;
     let checkDiocesan = data["diocesan"] === "Yes" ? false : true;
     let checkDistance = data["distance"] === "20.1 miles" ? false : true;
@@ -82,7 +82,7 @@ module.exports = function (env) {
     if (data[completedFields]){
       return "govuk-tag";
     }
-    else if (flag || checkDeficit || checkDiocesan || checkDistance || checkViability){
+    else if (flag ){
       return "govuk-tag govuk-tag--blue"
     }
     else {
@@ -101,7 +101,7 @@ module.exports = function (env) {
     if (data[completedFields]){
       return "Complete";
     }
-    else if (flag || checkDeficit || checkDiocesan || checkDistance || checkViability){
+    else if (flag){
       return "In Progress"
     }
     else {
@@ -113,13 +113,10 @@ module.exports = function (env) {
   filters.rationaleStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
-    let checkProjectRationale = data["project-rationale"] === "St Wilfrid’s is a small primary school in Warrington which is facing a financially challenging future should it remain on its own. Low pupil numbers and the high level of staffing costs due to the school  being supported by an Agency Interim Head Teacher,  contributed to this. The Chair St Wilfrid’s and Dynamics trust have agreed to a Memorandum of Understanding which will allow Dynamics Trust to oversee all operational aspects of the school with immediate effect. Central services provided will include school improvement, finance and operational support and HR support. Dynamics Trust have also appointed Gareth Smith, Head Teacher of Angel Primary School, to the role of Interim Executive Head Teacher." ? false : true;
-
-
     if (data[completedFields] == "_unchecked,Complete"){
       return "govuk-tag";
     }
-    else if (flag || checkProjectRationale){
+    else if (flag){
       return "govuk-tag govuk-tag--blue"
     }
     else {
@@ -130,12 +127,40 @@ module.exports = function (env) {
   filters.rationaleOverviewStatusText = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
-    let checkProjectRationale = data["project-rationale"] === "St Wilfrid’s is a small primary school in Warrington which is facing a financially challenging future should it remain on its own. Low pupil numbers and the high level of staffing costs due to the school  being supported by an Agency Interim Head Teacher,  contributed to this. The Chair St Wilfrid’s and Dynamics trust have agreed to a Memorandum of Understanding which will allow Dynamics Trust to oversee all operational aspects of the school with immediate effect. Central services provided will include school improvement, finance and operational support and HR support. Dynamics Trust have also appointed Gareth Smith, Head Teacher of Angel Primary School, to the role of Interim Executive Head Teacher." ? false : true;
+    if (data[completedFields] == "_unchecked,Complete"){
+      return "Completed";
+    }
+    else if (flag){
+      return "In Progress"
+    }
+    else {
+      return "Not Started";
+    }
+  }
+
+    // Risks & Issues
+
+  filters.riskStatusClass = function (data, completedFields, inProgressFields) {
+    const flag = inProgressFields.some(field => data[field]);
+
+    if (data[completedFields] == "_unchecked,Complete"){
+      return "govuk-tag";
+    }
+    else if (flag){
+      return "govuk-tag govuk-tag--blue"
+    }
+    else {
+      return "govuk-tag govuk-tag--grey";
+    }
+  }
+
+  filters.riskStatusText = function (data, completedFields, inProgressFields) {
+    const flag = inProgressFields.some(field => data[field]);
     
     if (data[completedFields] == "_unchecked,Complete"){
       return "Completed";
     }
-    else if (flag || checkProjectRationale){
+    else if (flag){
       return "In Progress"
     }
     else {
