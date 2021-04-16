@@ -125,7 +125,7 @@ Preview headteacher board template
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
   <span class="govuk-warning-text__assistive">Warning</span>
-  There is missing information. <br>If you continue, you will need to fill out the missing information in the generated Word document.
+  There is missing information. You will need to fill out the rest of the information in a Word document if you generate your HTB template now.
 </strong>
 </div>
 
@@ -133,11 +133,11 @@ Preview headteacher board template
     <div class="govuk-grid-column-full">
       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
         <h2 class="govuk-error-summary__title" id="error-summary-title">
-          There is missing information in the HTB template
+          You have not set an HTB date
         </h2>
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="/overview/set-htb.html">Set an HTB date before you generate your template</a></li>
+            <a href="/overview/set-htb.html">Set an HTB date</a>, this is the minimum amount of information we need before you can generate your template</li>
         </ul> 
       </div>
     </div>
@@ -466,7 +466,7 @@ Preview headteacher board template
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Is this a diocesan multi-academy trust (MAT)?
+          Is this a Diocesan multi-academy trust (MAT)?
         </dt>
         <dd class="govuk-summary-list__value"> {% if data['diocesan']%}
           {{data['diocesan']}}
@@ -477,7 +477,7 @@ Preview headteacher board template
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Percentage of good or outstanding schools in the diocesan trust
+        Percentage of good or outstanding schools in the trust
         </dt>
         <dd class="govuk-summary-list__value">  {% if data['goodschools']%}
           {{data['goodschools']}}
