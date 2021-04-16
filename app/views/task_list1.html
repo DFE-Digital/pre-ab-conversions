@@ -160,11 +160,13 @@
               General information
             </a>
           </span>
-          <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="general-information">  
+          <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
             {{data|generalInfoStatusText(
               ['general-info-status'],
-              ['goodschools'],
-              ['viability','deficit','diocesan','distance']
+              ['distance'],
+              ['deficit'],
+              ['diocesan'],
+              ['goodschools','viability' ]
             )}} 
           </strong>
         </li>
@@ -182,21 +184,26 @@
               Rationale
             </a>
           </span>
-          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'] )}} app-task-list__tag" id="rationale-status">  
+          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
             {{data|rationaleOverviewStatusText(
               ['rationale-status-htb'],
-              ['trust-rationale']
+              ['trust-rationale'],
+              ['project-rationale']
             )}} 
         </strong>
         </li>
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="/risks-and-issues/risks-and-issues" aria-describedby="risks-and-issues">
+            <a 
+              href="{{ data|riskAndIssuesNextPageLink (
+                ['risks-status'],['risks']
+              )}}" 
+              aria-describedby="risks-and-issues">
               Risks and issues
             </a>
           </span>
-          <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'] )}} app-task-list__tag" id="rationale-status">  
-            {{data|rationaleOverviewStatusText(
+          <strong class="{{data|riskStatusClass(['risks-status'],['risks'] )}} app-task-list__tag" id="risks-status">  
+            {{data|riskStatusText(
               ['risks-status'],
               ['risks']
             )}} 
