@@ -144,11 +144,11 @@ module.exports = function (env) {
       const flag = inProgressFields.some(field => data[field]);
       var check = data["risks"] === "Empty" ? false : true;
 
-      if (data[completedFields] || check ){
+      if (flag || data[completedFields] == "_unchecked,Complete"){
         return "/risks-and-issues/risks-summary1";
       }
       else {
-        return "risks-and-issues/risks-and-issues";
+        return "/risks-and-issues/risks-and-issues";
       }
     }
   filters.riskStatusClass = function (data, completedFields, inProgressFields) {
