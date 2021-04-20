@@ -31,5 +31,11 @@ module.exports = {
   "diocesan": "Yes",
   "distance": "20.1"
 
+  /* finance data */
+  "finance-following-year-2021" : "0.00",
+  "finance-following-year-2022" : "143,931.00",
+  "finance-forward-2021" : "0.00",
+  "finance-forward-2022" : "0.00"
+
 }
 

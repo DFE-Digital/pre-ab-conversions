@@ -112,29 +112,108 @@ School budget information
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
   <h1 class="govuk-heading-l">School budget information</h1>
-  <p class="govuk-body govuk-!-margin-bottom-7">This information comes from the school's application form. The table will populate into your HTB template.</p>
-  <table class="govuk-table">
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell"><strong>Revenue carry forward at end-March (current year) 2021:</strong></br></td>
-        <td scope="row" class="govuk-table__cell">£0.00</td>
-   </tr>
-   <tr class="govuk-table__row">
-    <td scope="row" class="govuk-table__cell"><strong>Projected revenue balance at end-March (following year) 2022:</strong></br></td>
-    <td scope="row" class="govuk-table__cell">£143,931.00</td>
-</tr>
-<tr class="govuk-table__row">
-<td scope="row" class="govuk-table__cell"><strong>Capital carry forward at end-March (current year):</strong></br></td>
-<td scope="row" class="govuk-table__cell">£0.00</td>
-</tr>
-<tr class="govuk-table__row">
-<td scope="row" class="govuk-table__cell"><strong>Capital carry forward at end-March (following year):</strong></br></td>
-<td scope="row" class="govuk-table__cell">£0.00</td>
-</tr>
-
-    </tbody>
-  </table>
+  <p class="govuk-body govuk-!-margin-bottom-7">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab). </a>The table will populate into your HTB template.</p>
+ 
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Revenue carry forward at end-March (current year) 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['finance-current-year-2021']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details">
+          Change<span class="govuk-visually-hidden"> Revenue carry forward at end-March (current year) 2021</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Projected revenue balance at end-March (following year) 2022
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['finance-following-year-2022']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details">
+          Change<span class="govuk-visually-hidden">Projected revenue balance at end-March (following year) 202</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Capital carry forward at end-March (current year)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['finance-forward-2021']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details">
+          Change<span class="govuk-visually-hidden">  Capital carry forward at end-March (current year)</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Capital carry forward at end-March (following year)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">  {{ data['finance-forward-2022']}}</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Optional comments
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">   {% if data['finance-comments']%}
+          {{data['finance-comments']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details">
+          Change<span class="govuk-visually-hidden"> comments</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
   
+  <form action="/task_list1" method="post"> 
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add another finance table",
+  classes: "govuk-button--secondary"
+}) }}
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukCheckboxes({
+      idPrefix: "rationale-status-htb",
+      name: "rationale-status-htb",
+      items: [
+        {
+          value: "Complete",
+          text: "This section is ready to be included in the HTB template"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+  </form>
+
  
   </div>
   
