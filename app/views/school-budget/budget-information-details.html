@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Financial deficit or surplus
+Change school budget information
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -22,10 +22,10 @@ Financial deficit or surplus
     
   <meta name="description" content="Use the GOV.UK Prototype Kit to quickly make realistic HTML prototypes of GOV.UK services.">
 
-<!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
 <!--[if lte IE 8]><link href="/public/stylesheets/docs-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]--> 
 
 
     
@@ -108,96 +108,110 @@ Financial deficit or surplus
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
+<div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
+
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-
-  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
+  <form action="buget-information" method="post">
+  <h1 class="govuk-heading-l">School budget information</h1>
+  <div class="govuk-width-three-quaters">
+    <p class="govuk-body govuk-!-margin-bottom-7">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab). </a>The table will populate into your HTB template.</p>
+ 
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    label: {
+      text: "Revenue carry forward at end-March (current year) 2021:",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    classes: "govuk-input--width-5",
+    id: "finance-current-year-2021",
+    name: "finance-current-year-2021",
+    prefix: {
+    text: "£"
+  },
+  value: data["finance-urrent-year-2021"]
+  }) }}
+
+
+
+  {{ govukInput({
+    label: {
+      text: "Projected revenue balance at end-March (following year) 2022",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    classes: "govuk-input--width-5",
+    id: "finance-following-year-2022",
+    name: "finance-following-year-2022",
+    prefix: {
+    text: "£"
+  },
+  value: data["finance-following-year-2022"]
+  }) }}
+
+
+
+  {{ govukInput({
+    label: {
+      text: "Capital carry forward at end-March (current year)",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    classes: "govuk-input--width-5",
+    id: "forward-current-year",
+    name: "finance- forward-current-year",
+    prefix: {
+    text: "£"
+    },
+    value: data["finance-forward-current-year"]
+  }) }}
+
+
+ 
+
+  {{ govukInput({
+    label: {
+      text: "forward-following-year"
+    },
+    label: {
+      text: "Capital carry forward at end-March (following year)",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    classes: "govuk-input--width-5",
+    id: "finance-forward-following-year",
+    name: "finance-forward-following-year",
+    prefix: {
+    text: "£"
+    },
+    value: data["finance-forward-following-year"]
+  }) }}
+
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  {{ govukTextarea({
+    name: "finance-more-detail",
+    id: "finance-more-detail",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--s"
+    }
+  }) }}
+
+
+
+
+  <p><a href="javascript:history.back();">Cancel</a></p>
+</form>
+
+  </div>
+  </div>
   
-
-  
-  {% block content %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/no-preview/general-info/summary1" method="post">
-  <h1 class="govuk-heading-l">Does this school have a financial surplus or deficit?</h1>
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Help with surplus and deficits
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-     You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
-    </div>
-  </details>
-
-
-          {{ govukRadios({
-            idPrefix: "defict",
-            name: "deficit",
-      
-            items: [
-       
-              {
-                value: "surplus",
-                checked:  data['deficit'] === "Surplus",
-                text: "Surplus"
-              },
-              {
-                value: "Deficit",
-                checked:  data['deficit'] === "Deficit",
-                text: "Deficit"
-              },
-              {
-                value: "There are no financial issues at the school",
-                checked:  data['deficit'] === "There are no financial issues at the school",
-                text: "There are no financial issues at the school"
-              }
-              
-            ]
-          }) }}
-  
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-          {% endblock %}
-
-
-        </form>
-    
-        <p><a href="javascript:history.back();">Cancel</a></p>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <div class="status-box">
-            
-              <h3 class="govuk-heading-m">Useful information</h3>
-              <p class="govuk-body-s"><a href="application_newtab" target="_blank">Application form (opens in a new tab)</a></p>
-              <!-- Not MVP <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
-      
-              <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
-        
-              <h3 class="govuk-heading-m">Guidance</h3>
-              
-                
-                  <p class="govuk-body-s"><a href="#">Guidance on deficits</a><p>
-                    <p class="govuk-body-s"><a href="#">Full guidance</a><p> -->
-          
-            
-          </div> 
-      </div>
-    </div>
-
-
-</div>
-        </div>
-        
-        </main>
-
-
-
-    
+  </main>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     
