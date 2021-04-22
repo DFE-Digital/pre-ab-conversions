@@ -142,12 +142,12 @@ Viability issues
        
               {
                 value: "Yes",
-           
+                checked:  data['viability'] === "Yes",
                 text: "Yes"
               },
               {
                 value: "No",
-             
+                checked:  data['viability'] === "No",
                 text: "No"
               }
               
@@ -155,7 +155,7 @@ Viability issues
           }) }}
   
           {{ govukButton({
-            text: "Continue"
+            text: "Save and continue"
           }) }}
           {% endblock %}
           

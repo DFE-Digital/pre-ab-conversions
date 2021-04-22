@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template ">
   <head>
     <meta charset="utf-8">
-    <title>General information</title>
+    <title>Confirm general information</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
     
@@ -68,9 +68,9 @@
           
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <h1 class="govuk-heading-l">General information</h1>
+          <h1 class="govuk-heading-l">Confirm general information</h1>
           <p>This information is pre-populated from TRAMS and the school's application form.</p>
-          <p>TRAMS last updated on: 23 March 2021</p>
+          <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
           <br>
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -190,7 +190,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if data['goodschools']%}
-                  {{data['goodschools']}}
+                  {{data['goodschools']}}%
                 {% else %} 
                 <span class="empty">Empty</span>
                   {% endif %}
@@ -205,9 +205,14 @@
                 <dt class="govuk-summary-list__key">
                 Distance from the school to the trust headquarters
                 </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['distance'] }}
-                </dd>
+              
+                  <dd class="govuk-summary-list__value">
+                    {% if data['distance']%}
+                    {{data['distance'] | safe }} Miles
+                    {% else %} 
+                    <span class="empty">Empty</span>
+                    {% endif %}</dd>
+              
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="/general-info/distance">Change
                   </a>
@@ -237,12 +242,12 @@
                 items: [
                   {
                     value: "Complete",
-                    text: "This section is ready to be included in the HTB template"
+                    text: "Mark this section as complete, you can still make changes later"
                   }
                   ]
                 }) }}
               {{ govukButton({
-                text: "Continue"
+                text: "Save and continue"
               }) }}
             
               </form>

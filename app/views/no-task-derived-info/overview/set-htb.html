@@ -120,13 +120,13 @@ Set HTB date
   {% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/overview/summary1" method="post" novalidate>
+        <form a href="#" method="post" novalidate>
           <fieldset class="govuk-fieldset"> 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">Choose the HTB date for this project</h1>
         </legend>
         
-  <p>Read through the <a href="/related/application">application form</a> to help you choose the best HTB date to aim for.</p>
+  <p>Read through the <a href="/application_newtab" target="application">application form (opens in a new tab)</a> to help you choose the best HTB date to aim for.</p>
    
 
   {{ govukRadios({
@@ -186,7 +186,7 @@ Set HTB date
           }) }}
   
           {{ govukButton({
-            text: "Continue"
+            text: "Save and continue"
           }) }}
           {% endblock %}
         </fieldset>   

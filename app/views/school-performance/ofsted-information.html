@@ -113,30 +113,108 @@ School performance (Ofsted information)
 
   <h1 class="govuk-heading-l">School performance (Ofsted information)</h1>
   <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS. The table will populate into your HTB template.</p>
-  <table class="govuk-table">
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell govuk-!-width-one-half"><strong>Ofsted judgement date:</strong> 1 February 2017</td>
-        <td class="govuk-table__cell govuk-table__cell govuk-!-width-one-half"></td>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell"><strong>Outcomes for pupils:</strong></br>Good</td>
-        <td scope="row" class="govuk-table__cell"><strong>Quality of teaching, learning and assessment:</strong></br>Good</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell"><strong>Effectiveness of leadership and management:</strong></br>Good</td>
-        <td scope="row" class="govuk-table__cell"><strong>Personal development, behaviour and welfare:</strong></br>Outstanding</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell"><strong>Early years provision /11-18/16-19:</strong></br>Good</td>
-        <td scope="row" class="govuk-table__cell"><strong>Overall effectiveness:</strong></br>Good</td>
-  
-      </tr>
-    </tbody>
-  </table>
-  
- 
+
+  <table>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Ofsted judgement date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 February 2017
+      </dd>      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Outcome for pupils
+      </dt>
+      <dd class="govuk-summary-list__value">
+       Good</p>
+      </dd>      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Quality of teaching, learning and assessment
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Good</p>
+      </dd>      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Effectiveness of leadership and management
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Good</p>
+      </dd>      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Personal development, behaviour and welfare
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Outstanding</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Early years provision /11-18/16-19
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Good</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Overall effectiveness
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Good</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Optional comments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">   {% if data['finance-comments']%}
+        {{data['finance-comments']}}
+       {% else %} 
+       <span class="empty">Empty</span>
+      {% endif %}</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="ofsted-comments">
+        Change<span class="govuk-visually-hidden"> comments</span>
+      </a>
+    </dd>
   </div>
-  
+</dl>
+</div>
+</table>
+<form action="/task_list1" method="post" novalidate>
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+</form>
+<p><a href="javascript:history.back();">Cancel</a></p>
+</main>
+</main> 
+</div></div></div>
   </main>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">

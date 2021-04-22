@@ -132,10 +132,12 @@ Academy order required
        
               {
                 value: "Yes",
+                checked:  data['aorequired'] === "Yes",
                 text: "Yes"
               },
               {
                 value: "No",
+                checked:  data['aorequired'] === "No",
                 text: "No"
               }
               
@@ -143,12 +145,24 @@ Academy order required
           }) }}
   
           {{ govukButton({
-            text: "Continue"
+            text: "Save and continue"
           }) }}
           {% endblock %}
-        
-          <p><a href="javascript:history.back();">Cancel</a></p>
-      </form>
+
+      
+        </form>
+        <p><a href="javascript:history.back();">Cancel</a></p>
+      </div><div class="govuk-grid-column-one-third">
+      
+        <div class="status-box">
+            
+              <h3 class="govuk-heading-m">Useful information</h3>
+              <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+              
+          </div>
+      </div>
+    </div>
+
 
 </div>
         </div>
