@@ -151,7 +151,7 @@ Key stage performance tables
    </tbody></table>
 <br>
    <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--l">2018 key stage 2</caption>
+    <caption class="govuk-table__caption govuk-table__caption--m">2018 key stage 2</caption>
     <th scope="row" class="govuk-table__cell"></th>
     <th scope="row" class="govuk-table__cell">% meeting expected standard in RWM (PP)</th>
     <th scope="row" class="govuk-table__cell">% meeting higher standard in RWM (PP)</th>
@@ -222,7 +222,34 @@ Key stage performance tables
 
 </tbody></table>
   
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "finance-more-detail",
+  id: "finance-more-detail",
+  label: {
+    text: "Comments (optional)",
+    classes: "govuk-label--s"
+  }
+}) }}
+
+<form action="/task_list1" method="post"> 
+
  
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+</form>
+
+</div></div>
   </div>
   
   </main>
