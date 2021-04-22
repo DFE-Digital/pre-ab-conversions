@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Change school budget information
+School budget information
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -110,12 +110,12 @@ Change school budget information
 
 <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 
-<main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  <form action="buget-information" method="post">
-  <h1 class="govuk-heading-l">School budget information</h1>
-  <div class="govuk-width-three-quaters">
-    <p class="govuk-body govuk-!-margin-bottom-7">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab). </a>The table will populate into your HTB template.</p>
+    <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">School budget information</h1>
+
+
  
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -126,13 +126,10 @@ Change school budget information
       classes: "govuk-label--s",
       isPageHeading: true
     },
-    classes: "govuk-input--width-5",
+    classes: "govuk-input--width-10",
     id: "finance-current-year-2021",
     name: "finance-current-year-2021",
-    prefix: {
-    text: "£"
-  },
-  value: data["finance-urrent-year-2021"]
+  value: data["finance-current-year-2021"]
   }) }}
 
 
@@ -143,12 +140,9 @@ Change school budget information
       classes: "govuk-label--s",
       isPageHeading: true
     },
-    classes: "govuk-input--width-5",
+    classes: "govuk-input--width-10",
     id: "finance-following-year-2022",
     name: "finance-following-year-2022",
-    prefix: {
-    text: "£"
-  },
   value: data["finance-following-year-2022"]
   }) }}
 
@@ -160,13 +154,11 @@ Change school budget information
       classes: "govuk-label--s",
       isPageHeading: true
     },
-    classes: "govuk-input--width-5",
-    id: "forward-current-year",
-    name: "finance- forward-current-year",
-    prefix: {
-    text: "£"
-    },
-    value: data["finance-forward-current-year"]
+    classes: "govuk-input--width-10",
+    id: "finance-forward-2021",
+    name: "finance-forward-2021",
+  
+    value: data["finance-forward-2021"]
   }) }}
 
 
@@ -181,13 +173,11 @@ Change school budget information
       classes: "govuk-label--s",
       isPageHeading: true
     },
-    classes: "govuk-input--width-5",
-    id: "finance-forward-following-year",
-    name: "finance-forward-following-year",
-    prefix: {
-    text: "£"
-    },
-    value: data["finance-forward-following-year"]
+    classes: "govuk-input--width-10",
+    id: "finance-forward-2022",
+    name: "finance-forward-2022",
+ 
+    value: data["finance-forward-2022"]
   }) }}
 
 
@@ -197,7 +187,7 @@ Change school budget information
     name: "finance-more-detail",
     id: "finance-more-detail",
     label: {
-      text: "Can you provide more detail?",
+      text: "Optional comments",
       classes: "govuk-label--s"
     }
   }) }}
@@ -205,13 +195,32 @@ Change school budget information
 
 
 
-  <p><a href="javascript:history.back();">Cancel</a></p>
-</form>
-
-  </div>
-  </div>
+  <form action="budget-information" method="post"> 
   
-  </main>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+    </form>
+    
+<p><a href="javascript:history.back();">Cancel</a></p>
+</div><div class="govuk-grid-column-one-third">
+
+<div class="status-box">
+  
+      <h3 class="govuk-heading-m">Useful information</h3>
+      <p class="govuk-body-s"><a href="/related/application_newtab" target="_blank">School application form (opens in a new tab)</a></p>
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</main>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     

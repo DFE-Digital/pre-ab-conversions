@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-School budget information
+Confirm school budget information
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -110,17 +110,19 @@ School budget information
 
       <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-
-  <h1 class="govuk-heading-l">School budget information</h1>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Confirm school budget information</h1>
   <p class="govuk-body govuk-!-margin-bottom-7">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab). </a>The table will populate into your HTB template.</p>
- 
+</div></div>
+
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Revenue carry forward at end-March (current year) 2021
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['finance-current-year-2021']}}
+        {{ data['finance-current-year-2021'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
@@ -146,7 +148,7 @@ School budget information
         Capital carry forward at end-March (current year)
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['finance-forward-2021']}}
+        {{ data ['finance-forward-2021']}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
@@ -159,7 +161,7 @@ School budget information
         Capital carry forward at end-March (following year)
       </dt>
       <dd class="govuk-summary-list__value">
-        <p class="govuk-body">  {{ data['finance-forward-2022']}}</p>
+        <p class="govuk-body"> £ {{ data['finance-forward-2022']}}</p>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
@@ -173,7 +175,7 @@ School budget information
       </dt>
       <dd class="govuk-summary-list__value">
         <p class="govuk-body">   {% if data['finance-comments']%}
-          {{data['finance-comments']}}
+          {{data['finance-comments']}} 
          {% else %} 
          <span class="empty">Empty</span>
         {% endif %}</p>
@@ -185,6 +187,8 @@ School budget information
       </dd>
     </div>
   </dl>
+
+  
   
   <form action="/task_list1" method="post"> 
 
@@ -203,13 +207,13 @@ School budget information
       items: [
         {
           value: "Complete",
-          text: "This section is ready to be included in the HTB template"
+          text: "Mark this section as complete, you can still make changes later"
         }
       ]
     }) }}
 
     {{ govukButton({
-      text: "Continue"
+      text: "Save and continue"
     }) }}
 
   </form>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Diocesan MAT
+School performance (Ofsted) comments
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -25,7 +25,7 @@ Diocesan MAT
 <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
 <!--[if lte IE 8]><link href="/public/stylesheets/docs-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]--> 
 
 
     
@@ -110,77 +110,33 @@ Diocesan MAT
 
       <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">School performance (Ofsted) comments</h1>
+  <form action="ofsted-information" method="post"> 
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{{ govukTextarea({
+  name: "finance-comments",
+  id: "finance-comments",
+  value: data["finance-comments"],
+  label: {
+    text: "Add optional comments"
+  }
+}) }}
+
+  
   {% from "govuk/components/button/macro.njk" import govukButton %}
-  
-
-  
-  {% block content %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/general-info/summary1" method="post">
-  <h1 class="govuk-heading-l">Is this a diocesan multi-academy trust (MAT)?</h1>
 
 
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+</form>
+<p><a href="javascript:history.back();">Cancel</a></p>
 
-          {{ govukRadios({
-            idPrefix: "diocesan",
-            name: "diocesan",
-      
-            items: [
-       
-              {
-                value: "Yes",
-                checked:  data['diocesan'] === "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                checked:  data['diocesan'] === "No",
-                text: "No"
-              }
-              
-            ]
-          }) }}
-  
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-          {% endblock %}
-        </form>
-        <p><a href="javascript:history.back();">Cancel</a></p>
-      </div>
-      <!-- Not MVP <div class="govuk-grid-column-one-third">
-        <div class="status-box">
-            
-              <h3 class="govuk-heading-m">Useful information</h3>
-              <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
-              <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
-      
-              <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
-        
-              <h3 class="govuk-heading-m">Guidance</h3>
-              
-                
-                  <p class="govuk-body-s"><a href="#">Guidance on diocesan schools</a><p>
-                    <p class="govuk-body-s"><a href="#">Full guidance</a><p>
-          
-            
-          </div> -->
-      </div>
-    </div>
-
-
-</div>
-        </div>
-        
-        </main>
-
-
-
-    
+  </div></div></div>
+  </main>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     

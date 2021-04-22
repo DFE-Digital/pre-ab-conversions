@@ -120,19 +120,27 @@ Set HTB date
   {% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/overview/summary1" method="post" novalidate>
+        <form action="/overview/summary1" method="post">
           <fieldset class="govuk-fieldset"> 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">Choose the HTB date for this project</h1>
         </legend>
         
   <p>Read through the <a href="/related/application_newtab" target="application">application form (opens in a new tab)</a> to help you choose the best HTB date to aim for.</p>
+
    
 
   {{ govukRadios({
-            idPrefix: "htb-date",
-            name: "htb-date",
-      
+    idPrefix: "htb-date",
+    name: "htb-date",
+    fieldset: {
+      legend: {
+        text: "These dates are for the North region",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+
             items: [
               {
                 value: "Thursday 19 January 2021",
@@ -186,29 +194,19 @@ Set HTB date
           }) }}
   
           {{ govukButton({
-            text: "Continue"
+            text: "Save and continue"
           }) }}
           {% endblock %}
         </fieldset>   
         </form>
         <p><a href="javascript:history.back();">Cancel</a></p>
-      </div><!--Not MVP <div class="govuk-grid-column-one-third">
+      </div><div class="govuk-grid-column-one-third">
         <div class="status-box">
             
               <h3 class="govuk-heading-m">Useful information</h3>
-              <p class="govuk-body-s"><a href="#">School information on TRAMS (opens in a new tab)</a></p>
-              <p class="govuk-body-s"><a href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/111315">GIAS school information (opens in a new tab)</a></p>
-      
-              <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
-        
-              <h3 class="govuk-heading-m">Guidance</h3>
+              <p class="govuk-body-s"><a href="/application_newtab" target="application">School application (opens in a new tab)</a></p>
               
-                
-                  <p class="govuk-body-s"><a href="#">Guidance on setting a HTB date</a><p>
-                    <p class="govuk-body-s"><a href="#">Full guidance</a><p>
-          
-            
-          </div> -->
+          </div>
       </div>
     </div>
 

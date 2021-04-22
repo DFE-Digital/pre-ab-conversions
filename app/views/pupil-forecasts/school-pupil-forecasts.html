@@ -147,8 +147,38 @@ School pupil forecasts
         <td class="govuk-table__cell">189</td>
         <td class="govuk-table__cell">80%</td>
       </tr>
+         <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
+        <td class="govuk-table__cell">236</td>
+        <td class="govuk-table__cell">189</td>
+        <td class="govuk-table__cell">80%</td>
+      </tr>
     </tbody>
   </table>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Optional comments
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value">   {% if data['pupil-forcasts-comments']%}
+          {{data['pupil-forcasts-comments']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}</dd>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+  
+        </a>
+      </dd>
+    </div>
+  </dl>
   </div>
   
   </main>
