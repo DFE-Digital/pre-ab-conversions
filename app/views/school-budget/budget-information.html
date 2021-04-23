@@ -161,7 +161,7 @@ Confirm school budget information
         Capital carry forward at end-March (following year)
       </dt>
       <dd class="govuk-summary-list__value">
-        <p class="govuk-body"> £ {{ data['finance-forward-2022']}}</p>
+        <p class="govuk-body"> {{ data['finance-forward-2022']}}</p>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
@@ -199,11 +199,11 @@ Confirm school budget information
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukCheckboxes({
-      idPrefix: "rationale-status-htb",
-      name: "rationale-status-htb",
+      idPrefix: "school-budget-status",
+      name: "school-budget-status",
       items: [
         {
-          value: "Complete",
+          value: "{{ data['school-budget-status'] }}",
           text: "Mark this section as complete, you can still make changes later"
         }
       ]

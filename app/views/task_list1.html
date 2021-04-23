@@ -215,7 +215,15 @@
               School budget information
             </a>
           </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-budget-informatiion">Not started</strong>
+          <strong class="{{data|schoolBudgetInfoStatusClass(['school-budget-status'],
+              ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022'] )}} 
+              app-task-list__tag" 
+              id="school-budget-informatiion">
+            {{data|schoolBudgetInfoStatusText(
+              ['school-budget-status'],
+              ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022']
+            )}} 
+          </strong>
         </li>
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
