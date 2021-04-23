@@ -32,7 +32,7 @@ module.exports = {
   /* general info */
   "deficit": "There are no financial issues at the school",
   "diocesan": "Yes",
-  "distance": "20.1",
+
 
   /* finance data */
   "finance-current-year-2021": "£0.00",
