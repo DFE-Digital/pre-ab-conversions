@@ -72,7 +72,6 @@ module.exports = function (env) {
 
   // General Info
   filters.generalInfoStatusClass = function (data, completedFields, distance, financial, diocesan, inProgressFields) {
-    let checkDistance = data[distance] === "20.1" ? false : true;
     let checkDeficit = data[financial] === "There are no financial issues at the school" ? false : true;
     let checkDiocesan = data[diocesan] === "Yes" ? false : true;
     
@@ -81,7 +80,7 @@ module.exports = function (env) {
     if (data[completedFields]){
       return "govuk-tag";
     }
-    else if (checkDeficit ||  checkDiocesan || checkDistance || flag){
+    else if (checkDeficit ||  checkDiocesan || data[distance] || flag){
       return "govuk-tag govuk-tag--blue"
     }
     else {
@@ -90,7 +89,6 @@ module.exports = function (env) {
   }
 
   filters.generalInfoStatusText = function (data, completedFields, distance, financial, diocesan, inProgressFields) {
-    let checkDistance = data[distance] === "20.1" ? false : true;
     let checkDeficit = data[financial] === "There are no financial issues at the school" ? false : true;
     let checkDiocesan = data[diocesan] === "Yes" ? false : true;
     
@@ -99,7 +97,7 @@ module.exports = function (env) {
     if (data[completedFields]){
       return "Complete";
     }
-    else if (checkDeficit ||  checkDiocesan || checkDistance || flag){
+    else if (checkDeficit ||  checkDiocesan || data[distance] || flag){
       return "In Progress"
     }
     else {
