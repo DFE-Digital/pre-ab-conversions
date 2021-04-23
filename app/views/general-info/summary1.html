@@ -211,8 +211,11 @@
                     {{data['distance'] | safe }} Miles
                     {% else %} 
                     <span class="empty">Empty</span>
-                    {% endif %}</dd>
+                    {% endif %}</br>
+                    {{data['distance-more-detail']}}
+                  </dd>
               
+                   
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="/general-info/distance">Change
                   </a>
