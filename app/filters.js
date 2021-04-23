@@ -256,6 +256,17 @@ module.exports = function (env) {
       }
     }
 
+    // pupil forecast
+
+    filters.getSchoolPupilForecastNextPageLink = function (data, additionalInfo) {
+      if (data[additionalInfo]){
+        return "/pupil-forecasts/school-pupil-forecasts-summary";
+      }
+      else {
+        return "/pupil-forecasts/school-pupil-forecasts";
+      }
+    }
+
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
