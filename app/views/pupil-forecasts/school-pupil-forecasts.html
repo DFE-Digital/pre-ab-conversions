@@ -157,30 +157,26 @@ School pupil forecasts
   </table>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-  {{ govukTextarea({
-    name: "finance-more-detail",
-    id: "finance-more-detail",
-    label: {
-      text: "Comments (optional)",
-      classes: "govuk-label--s"
-    }
-  }) }}
-
-  <form action="/task_list1" method="post"> 
-
-   
-    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    
-
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
-
-  </form>
+      
+      <form action="school-pupil-forecasts-summary" method="post"> 
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      
+        {{ govukTextarea({
+          name: "finance-more-detail",
+          id: "finance-more-detail",
+          value: data['finance-more-detail'],
+          label: {
+            text: "Comments (optional)",
+            classes: "govuk-label--s"
+          }
+        }) }}
+      
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
 
 </div></div>
   </div>

@@ -134,8 +134,18 @@
 
        <ul class="app-task-list__items govuk-!-padding-left-0">
         <li class="app-task-list__item">
-         <span class="app-task-list__task-name"> <a href="LA-proforma/local-authority-template" aria-describedby="LA information template">Record sent and return date for LA information template </a>
-       </a></span>
+          <span class="app-task-list__task-name">
+            <a 
+              href="{{data|laProformaNextPageLink(
+                    ['overview-status'],
+                    ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                    'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                    'la-comments', 'la-sharepoint-link']                
+                  )}}" 
+              aria-describedby="LA-infromation-template">
+            Send the LA information template 
+            </a>
+          </span>
           <strong class="{{data|laProformaStatusClass(
                     ['la-proforma-status'],
                     ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
@@ -245,9 +255,13 @@
         </li>
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="/pupil-forecasts/school-pupil-forecasts" aria-describedby="school-pupil-forecast">
-              School pupil forecast
-            </a>
+            <a 
+            href="{{data|getSchoolPupilForecastNextPageLink(
+                  ['finance-more-detail']               
+                )}}" 
+            aria-describedby="school-pupil-forecast">
+            School pupil forecasts
+          </a>
           </span>
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
         </li>
