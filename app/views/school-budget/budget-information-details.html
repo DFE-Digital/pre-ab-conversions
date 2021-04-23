@@ -117,92 +117,72 @@ School budget information
 
 
  
+      <form action="budget-information" method="post"> 
+        {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Revenue carry forward at end-March (current year) 2021",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "finance-current-year-2021",
+          name: "finance-current-year-2021",
+          value: data["finance-current-year-2021"]
+        }) }}
 
-  {{ govukInput({
-    label: {
-      text: "Revenue carry forward at end-March (current year) 2021:",
-      classes: "govuk-label--s",
-      isPageHeading: true
-    },
-    classes: "govuk-input--width-10",
-    id: "finance-current-year-2021",
-    name: "finance-current-year-2021",
-  value: data["finance-current-year-2021"]
-  }) }}
+        {{ govukInput({
+          label: {
+            text: "Projected revenue balance at end-March (following year) 2022",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "finance-following-year-2022",
+          name: "finance-following-year-2022",
+          value: data["finance-following-year-2022"]
+        }) }}
 
+        {{ govukInput({
+          label: {
+            text: "Capital carry forward at end-March (current year)",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "finance-forward-2021",
+          name: "finance-forward-2021",
+          value: data["finance-forward-2021"]
+        }) }}
 
-
-  {{ govukInput({
-    label: {
-      text: "Projected revenue balance at end-March (following year) 2022",
-      classes: "govuk-label--s",
-      isPageHeading: true
-    },
-    classes: "govuk-input--width-10",
-    id: "finance-following-year-2022",
-    name: "finance-following-year-2022",
-  value: data["finance-following-year-2022"]
-  }) }}
-
-
-
-  {{ govukInput({
-    label: {
-      text: "Capital carry forward at end-March (current year)",
-      classes: "govuk-label--s",
-      isPageHeading: true
-    },
-    classes: "govuk-input--width-10",
-    id: "finance-forward-2021",
-    name: "finance-forward-2021",
-  
-    value: data["finance-forward-2021"]
-  }) }}
-
-
- 
-
-  {{ govukInput({
-    label: {
-      text: "forward-following-year"
-    },
-    label: {
-      text: "Capital carry forward at end-March (following year)",
-      classes: "govuk-label--s",
-      isPageHeading: true
-    },
-    classes: "govuk-input--width-10",
-    id: "finance-forward-2022",
-    name: "finance-forward-2022",
- 
-    value: data["finance-forward-2022"]
-  }) }}
+        {{ govukInput({
+          label: {
+            text: "forward-following-year"
+          },
+          label: {
+            text: "Capital carry forward at end-March (following year)",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "finance-forward-2022",
+          name: "finance-forward-2022",
+          value: data["finance-forward-2022"]
+        }) }}
 
 
-  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-  {{ govukTextarea({
-    name: "finance-more-detail",
-    id: "finance-more-detail",
-    label: {
-      text: "Optional comments",
-      classes: "govuk-label--s"
-    }
-  }) }}
+        {{ govukTextarea({
+          name: "finance-more-detail",
+          id: "finance-more-detail",
+          label: {
+            text: "Optional comments",
+            classes: "govuk-label--s"
+          }
+        }) }}
 
-
-
-
-  <form action="budget-information" method="post"> 
-  
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-  
-
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
     </form>
     
 <p><a href="javascript:history.back();">Cancel</a></p>

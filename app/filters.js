@@ -220,6 +220,42 @@ module.exports = function (env) {
       }
     }
 
+    // school budget info
+
+    filters.schoolBudgetInfoStatusText = function(data, completedFields, inProgressFields) {
+      var checkCurrentYear = data['finance-current-year-2021'] === "£0.00" ? false : true;
+      var checkFollowingYear = data['finance-following-year-2022'] === "£143,931.00" ? false : true;
+      var checkFinanceForwardThisYear = data['finance-forward-2021'] === "£0.00" ? false : true;
+      var checkFinanceForwardNextYear = data['finance-forward-2022'] === "£0.00" ? false : true;
+
+      if (data[completedFields]) {
+        return 'Complete';
+      }
+      else if (checkCurrentYear || checkFollowingYear || checkFinanceForwardThisYear || checkFinanceForwardNextYear) {
+        return 'In Progress';
+      }
+      else {
+        return 'Not Started';
+      }
+    }
+
+    filters.schoolBudgetInfoStatusClass = function (data, completedFields, inProgressFields){
+      var checkCurrentYear = data['finance-current-year-2021'] === "£0.00" ? false : true;
+      var checkFollowingYear = data['finance-following-year-2022'] === "£143,931.00" ? false : true;
+      var checkFinanceForwardThisYear = data['finance-forward-2021'] === "£0.00" ? false : true;
+      var checkFinanceForwardNextYear = data['finance-forward-2022'] === "£0.00" ? false : true;
+
+      if (data[completedFields]) {
+        return "govuk-tag";
+      }
+      else if (checkCurrentYear || checkFollowingYear || checkFinanceForwardThisYear || checkFinanceForwardNextYear) {
+        return "govuk-tag govuk-tag--blue"
+      }
+      else {
+        return "govuk-tag govuk-tag--grey";
+      }
+    }
+
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
