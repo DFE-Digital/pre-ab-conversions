@@ -25,6 +25,25 @@
         <div class="govuk-header__content">
           <a href="/" class="govuk-header__link govuk-header__link--service-name">Manage trusts and academy schools</a>
           <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+          <nav>
+            <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+              
+                
+              
+                
+                  <li class="govuk-header__navigation-item">
+                    
+                      <a class="govuk-header__link" href="/transfers/sign-in-1">
+                    
+                      Sign out
+                    
+                      </a>
+                    
+                  </li>
+                
+              
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -110,18 +129,13 @@
 
 
       <ol class="app-task-list">
-         
-          <ul class="app-task-list__items">
-         
+         <li>
+          <h2 class="app-task-list__section">Local authority (LA) information template dates</h2>
 
-
-      <h2 class="app-task-list__section">Local authority (LA) information template dates</h2>
-       <ul class="app-task-list">
+       <ul class="app-task-list__items govuk-!-padding-left-0">
         <li class="app-task-list__item">
-        Conversion 
-       
-            </a>
-          </span>
+         <span class="app-task-list__task-name"> <a href="LA-proforma/local-authority-template" aria-describedby="LA information template">Record sent and return date for LA information template </a>
+       </a></span>
           <strong class="{{data|laProformaStatusClass(
                     ['la-proforma-status'],
                     ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
@@ -136,11 +150,15 @@
             )}} 
           </strong>            
         </li>
-      </ol>
+      </ul>
+</li>
+<li>
+  <ol class="app-task-list">
+    <li>
+     <h2 class="app-task-list__section">Create headteacher board (HTB) template</h2>
 
-      <h2 class="app-task-list__section">Create headteacher board (HTB) template</h2>
-      <ol class="app-task-list govuk-!-margin-bottom-8" aria-label="list of tasks">
-        <li class="app-task-list__item">
+  <ul class="app-task-list__items govuk-!-padding-left-0">
+   <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="overview/summary1.html"  aria-describedby="project-overview">
               Conversion overview
@@ -250,11 +268,14 @@
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="supporting-information">Not started</strong>
         </li>
       </ol>
-      <h2 class="app-task-list__section">
-        Trust template</h2>
-      <ol class="app-task-list govuk-!-margin-bottom-8">
-        <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
+      </li>
+      <li>
+        <ol class="app-task-list">
+          <li>
+           <h2 class="app-task-list__section">Trust template</h2>
+ 
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+         <li class="app-task-list__item">    <span class="app-task-list__task-name">
             <a href="#" aria-describedby="sponsor-template">
               Check and edit the trust template
             </a>
@@ -267,6 +288,7 @@
       <ol class="app-task-list govuk-!-margin-bottom-8">
         <a href="generate/generate_summary" class="govuk-button govuk-!-margin-bottom-2">Preview HTB template</a>
       </ol>
+      </li>
       </div>
 
     
