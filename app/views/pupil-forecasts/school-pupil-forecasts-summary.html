@@ -21,7 +21,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
-    <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS and the school's application form. The table will populate into your HTB template.</p>
+    <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS and the school's application form. The table will populate into your HTB template. You can add <a href="#additional_info">additional information</a> if you need to but it is optional.</p>
   </div>
 </div>
 <div>
@@ -78,10 +78,10 @@
 <div>
   <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Addtional Information</dt>
+        <a href="#" name="additional_info"></a>   <dt class="govuk-summary-list__key">Addtional Information</dt>
           <dd class="govuk-summary-list__value">
-              {% if data['finance-more-detail'] %}
-                  {{data['finance-more-detail']}}
+              {% if data['pupil-more-detail'] %}
+                  {{data['pupil-more-detail']}}
               {% else %}
                   <span class="empty">Empty</span>
               {% endif %}
