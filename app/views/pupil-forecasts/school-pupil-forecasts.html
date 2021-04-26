@@ -110,48 +110,50 @@ School pupil forecasts
 
       <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
   <h1 class="govuk-heading-l">School pupil forecasts</h1>
   <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS and the school's application form. The table will populate into your HTB template.</p>
+</div></div>
   <table class="govuk-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Year</th>
-        <th scope="col" class="govuk-table__header">Capacity</th>
-        <th scope="col" class="govuk-table__header">Total pupil numbers</th>
-        <th scope="col" class="govuk-table__header">Percentage full</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Current year</th>
-        <td class="govuk-table__cell">236</td>
-        <td class="govuk-table__cell">226</td>
-        <td class="govuk-table__cell">96%</td>
+        <th scope="row" class="govuk-table__header ">Current year</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">226</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">96%</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">2021 to 2022 forecast</th>
-        <td class="govuk-table__cell">236</td>
-        <td class="govuk-table__cell">189</td>
-        <td class="govuk-table__cell">80%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">2022 to 2023 forecast</th>
-        <td class="govuk-table__cell">236</td>
-        <td class="govuk-table__cell">189</td>
-        <td class="govuk-table__cell">80%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
-        <td class="govuk-table__cell">236</td>
-        <td class="govuk-table__cell">189</td>
-        <td class="govuk-table__cell">80%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
       </tr>
          <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
-        <td class="govuk-table__cell">236</td>
-        <td class="govuk-table__cell">189</td>
-        <td class="govuk-table__cell">80%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
       </tr>
     </tbody>
   </table>
@@ -164,10 +166,12 @@ School pupil forecasts
         {{ govukTextarea({
           name: "finance-more-detail",
           id: "finance-more-detail",
-          value: data['finance-more-detail'],
           label: {
-            text: "Comments (optional)",
-            classes: "govuk-label--s"
+            text: "Additional information (optional)",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text:"This additional information will accompany the school budget information in the HTB template"
           }
         }) }}
       
@@ -177,7 +181,7 @@ School pupil forecasts
           text: "Save and continue"
         }) }}
       </form>
-
+ <p><a href="javascript:history.back();">Cancel</a></p>
 </div></div>
   </div>
   
