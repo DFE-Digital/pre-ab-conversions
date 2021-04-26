@@ -110,10 +110,13 @@ School performance (Ofsted information)
 
       <div class="govuk-width-container"><a href="javascript:history.back();" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
-
   <h1 class="govuk-heading-l">School performance (Ofsted information)</h1>
-  <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS. The table will populate into your HTB template.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
+  <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS. The table will populate into your HTB template. You can add <a href="#additional_info">additional information</a> if you need to but it is optional.</p></p>
+</div></div>
+<div>
   <table>
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -182,40 +185,39 @@ School performance (Ofsted information)
       <dd class="govuk-summary-list__actions">
       </dd>
     </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Optional comments
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <p class="govuk-body">   {% if data['finance-comments']%}
-        {{data['finance-comments']}}
-       {% else %} 
-       <span class="empty">Empty</span>
-      {% endif %}</p>
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="ofsted-comments">
-        Change<span class="govuk-visually-hidden"> comments</span>
-      </a>
-    </dd>
-  </div>
+  
 </dl>
-</div>
 </table>
-<form action="/task_list1" method="post" novalidate>
-{% from "govuk/components/button/macro.njk" import govukButton %}
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="ofsted-comments" method="post"> 
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    
+      {{ govukTextarea({
+        name: "ofsted-more-detail",
+        id: "ofsted-more-detail",
+        label: {
+          text: "Additional information (optional)",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text:"This additional information will accompany the school performance information in the HTB template"
+        }
+      }) }}
+    
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+    <p><a href="javascript:history.back();">Cancel</a></p>
+</div></div>
 
-
-{{ govukButton({
-  text: "Save and continue"
-}) }}
-
-</form>
-<p><a href="javascript:history.back();">Cancel</a></p>
 </main>
-</main> 
-</div></div></div>
-  </main>
+</div>
   <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
     
