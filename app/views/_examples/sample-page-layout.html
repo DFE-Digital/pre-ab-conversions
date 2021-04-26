@@ -1,0 +1,34 @@
+<!-- 
+    1. At the below code to the top of your page
+    By extending the layout.html file you will bring in the default:
+    - Header
+    - Sign-out button
+    - Footer
+-->
+
+{% extends "layout.html" %}
+
+<!-- 
+    2. Add the back link
+    - The back link has to exist outside of the <main> element
+    - To allow this, the Prototype Kit has a beforeContent 'block'
+    - The below code includes the navigation element
+    - The copy and href destination are editable
+-->
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+<!-- 
+    3. Add the content block 
+-->
+
+{% block content %}
+
+<!-- 
+    4. ALL of the page's unique content needs to be inside these two lines of code
+    - the 'content' block has its own CSS styling, so borders, padding and margin is already taken care of
+-->
+
+{% endblock %}
