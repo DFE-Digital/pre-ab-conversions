@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="index" class="govuk-back-link">Back to all conversion projects</a>
+<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
       <span class="govuk-caption-xl">AS_102062</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
         St. Wilfrid's Primary School
-         <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-0">Pre HTB</strong></h1>
+         <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-0">Pre HTB</strong></h1>
         {% if data['htb-date']%}
         <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
         <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
