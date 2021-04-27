@@ -69,6 +69,22 @@
         </a>
       </dd>
     </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+   Additional information
+  </dt>
+
+  <dd class="govuk-summary-list__value">   {% if data['finance-more-detail']%}
+    {{data['finance-more-detail']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="budget-information-details#additional_info">
+      Change<span class="govuk-visually-hidden"> Additional information</span>
+    </a>
+  </dd>
+</div>
   
   </dl>
   {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -78,32 +94,7 @@
     classes: "govuk-button--secondary"
   }) }}
   
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-  <a name="additional_info"></a><h3 class="govuk-heading-m govuk-!-margin-top-8">Additional information (optional)</h3>
-  <p class="govuk-body">This additional information will acompany the school budget information in the HTB template</p>
 
-</div>
-</div>
-
-<dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-     Additional information
-    </dt>
-
-    <dd class="govuk-summary-list__value">   {% if data['finance-more-detail']%}
-      {{data['finance-more-detail']}}
-     {% else %} 
-     <span class="empty">Empty</span>
-    {% endif %}</dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="budget-information-details#additional_info">
-        Change<span class="govuk-visually-hidden"> Additional information</span>
-      </a>
-    </dd>
-  </div>
-</dl>
 
   <form action="/task_list1" method="post"> 
 

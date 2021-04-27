@@ -5,7 +5,19 @@
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
 {% block content %}
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/school-performance/ofsted-comments" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
 
 <h1 class="govuk-heading-l">School performance (Ofsted information)</h1>
 <div class="govuk-grid-row">
@@ -89,7 +101,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="ofsted-comments" method="post"> 
-      <a name="additional_info"></a>
+      <a href="#" name="additional_info"></a>
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
     
       {{ govukTextarea({

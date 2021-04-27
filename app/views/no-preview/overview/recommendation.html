@@ -112,15 +112,18 @@ Academy order required
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
 
   {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
   
-
-  
-  {% block content %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/no-preview/overview/summary1" method="post">
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/overview/summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
   <h1 class="govuk-heading-l">What is your recommendation for this project?</h1>
 
 

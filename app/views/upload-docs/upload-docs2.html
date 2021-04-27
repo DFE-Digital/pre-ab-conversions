@@ -1,15 +1,24 @@
+
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-
-<a href="upload-docs" class="govuk-back-link">Back</a>
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
 {% block content %}
-          
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/upload-docs/upload-docs" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
     <h1 class="govuk-heading-l">Uploaded supporting documentation</h1>
     <h1 class="govuk-heading-m">Files added</h1>
       <form method="post">
@@ -66,10 +75,12 @@
     </div>
   </fieldset>
 </div>
-
-<a href="/task_list1.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
-  Continue
-</a>
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+</form>
         
 <p><a href="/task_list1">Cancel</a></p>
 {% endblock %}
