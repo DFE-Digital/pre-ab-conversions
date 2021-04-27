@@ -265,6 +265,37 @@ module.exports = function (env) {
       }
     }
 
+  filters.displayNumberOfWords = (data, numberOfWords) => {
+    const htmlTagOpenings = /<(ol|ul|b|i|u|div|li)>/g
+    const htmlTagClosings = /<\/(ol|ul|b|i|u|div|li)>/g
+
+    const splitData = data.split(' ')
+    const dataToDisplay = splitData.slice(0, numberOfWords)
+
+    console.log(dataToDisplay)
+
+    let tagsToClose = []
+    dataToDisplay.forEach(word => {
+      const openingTags = word.match(htmlTagOpenings)
+      const closingTags = word.match(htmlTagClosings)
+
+      if (openingTags) {
+        openingTags.forEach(tag => tagsToClose.push(tag))
+      }
+
+      if (closingTags) {
+        const tagsToRemove = closingTags.map(tag => tag.replace('/', ''))
+        tagsToRemove.forEach(tagToRemove => {
+          const indexToReplace = tagsToClose.findIndex((tag) => tag === tagToRemove)
+          tagsToClose.splice(indexToReplace, 1)
+        })
+      }
+    })
+
+    tagsToClose = tagsToClose.map(tag => tag.replace('<', '</'))
+    return dataToDisplay.join(' ') + '...' + tagsToClose.join('')
+  }
+
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
