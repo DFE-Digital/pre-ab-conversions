@@ -92,7 +92,7 @@
         
           <dd class="govuk-summary-list__actions">
             
-            <a class="govuk-link" href="/overview/set-HTB?returnToSummary=yes">
+            <a class="govuk-link" href="/overview/set-htb?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">Set HTB</span>
                 </a>
             
@@ -125,8 +125,8 @@
          Is an academy order (AO) required?
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['ao-required']%}
-                {{data['ao-required']}}
+          {% if data['aorequired']%}
+                {{data['aorequired']}}
                {% else %} 
                <span class="empty">Empty</span>
               {% endif %}
@@ -491,13 +491,13 @@ Early years provision
    Additional information (optional)
       </dt>
       <dd class="govuk-summary-list__value">
-        {% if data['ofsted-additional-info']%}
-        {{data['ofsted-additional-info']}}
+        {% if data['ofsted-more-detail']%}
+        {{data['ofsted-more-detail']}}
        {% else %} 
        <span class="empty">Empty</span>
       {% endif %}
       </dd>
-      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-performance/ofsted-information#additional_info?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
+      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-performance/ofsted-information?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
     </div>
 
 </dl>
@@ -610,7 +610,7 @@ Early years provision
           Revenue carry forward at end-March (current year) 2021:
         </dt>
         <dd class="govuk-summary-list__value">
-        £0.00</dd>
+          £{{ data["finance-current-year-2021"] }}</dd>
         <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
       </div>
 
@@ -619,7 +619,7 @@ Early years provision
           Projected revenue balance at end-March (following year) 2022:
         </dt>
         <dd class="govuk-summary-list__value">
-          £143,931.00
+          £{{ data["finance-following-year-2022"] }}
         </dd>
         
         <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
@@ -629,7 +629,7 @@ Early years provision
     Capital carry forward at end-March (current year):
   </dt>
   <dd class="govuk-summary-list__value">
-    £0.00
+    £{{ data["finance-forward-2021"] }}
   </dd>
   
   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
@@ -639,7 +639,7 @@ Early years provision
     Capital carry forward at end-March (following year):
   </dt>
   <dd class="govuk-summary-list__value">
-£0.00
+   £{{ data["finance-forward-2022"]}}
   </dd>
   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
 </div>
@@ -648,8 +648,8 @@ Early years provision
 Additional information (optional)
   </dt>
   <dd class="govuk-summary-list__value">
-    {% if data['ofsted-additional-info']%}
-    {{data['ofsted-additional-info']}}
+    {% if data['finance-more-detail']%}
+    {{data['finance-more-detail']}}
    {% else %} 
    <span class="empty">Empty</span>
   {% endif %}
@@ -865,7 +865,7 @@ Additional information (optional)
            <span class="empty">Empty</span>
           {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/key-stage/key-stage-performance-comments?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/key-stage/key-stage-performance-tables?returnToSummary=yes">  Change</a><span class="govuk-visually-hidden">Comments on ofsted information</span></dd>
         </div>
         </dl>
         

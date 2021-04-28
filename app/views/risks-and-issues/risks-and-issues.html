@@ -5,9 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="risks-summary1" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/pupil-forecasts/school-pupil-forecasts-summary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
       <h1 class="govuk-heading-l">Write about any risks or issues for this conversion</h1>
 
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
