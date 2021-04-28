@@ -1,13 +1,23 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-
+  
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
-{% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/pupil-forecasts/school-pupil-forecasts-summary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
     <p class="govuk-body">This information comes from TRAMS and the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your HTB template.</p><p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your HTB template.</p><br>
   </div>

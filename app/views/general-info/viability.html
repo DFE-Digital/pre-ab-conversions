@@ -4,16 +4,19 @@
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
-  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
   
-
-  
-  {% block content %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
         <form action="/general-info/summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
   <h1 class="govuk-heading-l">Are there viability issues at the school?</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">

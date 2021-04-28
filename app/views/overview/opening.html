@@ -1,20 +1,24 @@
+
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-
-  <a href="javascript:history.back();" class="govuk-back-link">Back</a>
-
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-
+  
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/overview/summary1" method="post">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/overview/summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
       <h1 class="govuk-heading-l">Choose the opening date for the academy</h1>
       <p>Acadamies must open on the first day of every month. You should tell the school and the trust what the opening date will be if you change their preferred date.</p>
 

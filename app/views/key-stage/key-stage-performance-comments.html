@@ -1,12 +1,23 @@
+
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-
-
+  
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
 {% block content %}
+ 
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/task_list1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
