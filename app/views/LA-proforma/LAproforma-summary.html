@@ -11,7 +11,7 @@ Confirm local authority information template</h1>
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Date you sent the template to the local authority
+      Date you sent the template
     </dt>
     <dd class="govuk-summary-list__value">
       {% if data['la-sent-date-day'] and data['la-sent-date-month'] and data['la-sent-date-year']%}
@@ -30,7 +30,7 @@ Confirm local authority information template</h1>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Date the local authority sent the template back
+      Date you want the template returned
     </dt>
     <dd class="govuk-summary-list__value">
       {% if data['la-sent-back-day'] and data['la-sent-back-month'] and data['la-sent-back-year']%}

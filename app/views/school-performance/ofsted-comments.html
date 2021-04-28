@@ -20,7 +20,8 @@
     <h1 class="govuk-heading-l">School performance (Ofsted information)</h1>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body govuk-!-margin-bottom-7">This information comes from TRAMS. The table will populate into your HTB template. You can add <a href="#additional_info">additional information</a> if you need to but it is optional.</p></p>
+        <p class="govuk-body">This information comes from TRAMS. The table will populate into your HTB template.</p> 
+        <p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your HTB template.</p><br>
       </div>
     </div>
   <div>
@@ -74,7 +75,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Early years provision /11-18/16-19
+        Early years provision, 11 to 18, 16 to 19
         </dt>
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">Good</p>
@@ -98,13 +99,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <a name="additional_info"></a>  <h3 class="govuk-heading-m govuk-!-margin-top-8">Additional information (optional)</h3>
-        <p>This additional information will accompany the school performance information in the HTB template. </p>
+        <p>This information will populate into your HTB template under the school performance (Ofsted information) section.</p>
       </div></div>
       <div>
         <br>
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
-              <a href="#" name="additional_info"></a> <dt class="govuk-summary-list__key">Addtional Information</dt>
+                <dt class="govuk-summary-list__key">Addtional information</dt>
                 <dd class="govuk-summary-list__value">
                     {% if data['ofsted-more-detail'] %}
                         {{data['ofsted-more-detail']}}

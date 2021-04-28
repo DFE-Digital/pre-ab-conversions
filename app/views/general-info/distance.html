@@ -18,11 +18,12 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
         <h1 class="govuk-heading-l">What is the distance from the school to the trust headquaters?</h1>
+          
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           hint: {
-            text: "Answer in miles. For example, 25.3 miles"
+            text: "For example, 20"
           },
           classes: "govuk-input--width-5",
           id: "distance",
@@ -41,7 +42,7 @@
             classes: "govuk-label--m"
           },
           hint: {
-            text:"This additional information will acompany the distance information in the HTB template"
+            text:"This information will populate into your HTB template under the distance to the trust headquarters section."
           }
         }) }}
 
