@@ -21,8 +21,9 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['project-rationale']%}
-                {{data['project-rationale'] | displayNumberOfWords(100) | safe }}
+                {{data['project-rationale'] | safe }}
               {% else %} 
+              <!-- | displayNumberOfWords(100) -->|
               <span class="empty">Empty</span>
               {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
