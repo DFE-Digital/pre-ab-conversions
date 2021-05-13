@@ -22,8 +22,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['project-rationale']%}
-              {{data['project-rationale'] | safe}}
-              {{ data|displayNumberOfWords(100) }}
+              {{data['project-rationale'] | displayNumberOfWords(100) | safe}}
           {% else %}
              
               
@@ -42,7 +41,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['trust-rationale']%}
-              {{data['trust-rationale'] | safe }} 
+              {{data['trust-rationale'] | displayNumberOfWords(100) | safe }}
               {% else %} 
               <span class="empty">Empty</span>
               {% endif %}

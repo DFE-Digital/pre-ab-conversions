@@ -273,8 +273,6 @@ module.exports = function (env) {
  
    const dataToDisplay = splitData.slice(0, numberOfWords)
 
-    console.log(dataToDisplay)
-
     let tagsToClose = []
     dataToDisplay.forEach(word => {
       const openingTags = word.match(htmlTagOpenings)

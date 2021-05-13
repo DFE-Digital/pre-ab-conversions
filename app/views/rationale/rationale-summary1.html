@@ -39,9 +39,8 @@
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list">
                   <span class="govuk-body">{% if data['project-rationale']%}
-                      {{data['project-rationale'] | safe}}
-                     <!-- | displayNumberOfWords(100) -->
-                  </span>     
+                      {{data['project-rationale'] | displayNumberOfWords(100) | safe}}
+                  </span>
                       {% else %} 
                      
                       <span class="empty">Empty</span>
@@ -79,7 +78,7 @@
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
                   <span class="govuk-body">{% if data['project-rationale']%}
-                      {{data['project-rationale'] | safe }}
+                      {{data['project-rationale'] | displayNumberOfWords(100) | safe }}
                   </span>     
                       {% else %} 
                      
