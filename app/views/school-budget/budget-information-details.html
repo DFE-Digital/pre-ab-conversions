@@ -18,6 +18,7 @@
         <form action="/school-budget/budget-information" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">School budget information</h1>
 
 
@@ -77,21 +78,6 @@
       }) }}
 
 
-      <a name="additional_info"></a>
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-      {{ govukTextarea({
-        name: "finance-more-detail",
-        id: "finance-more-detail",
-        value: data["finance-more-detail"],
-        label: {
-          text: "Additional information (optional)",
-          classes: "govuk-label--m"
-        },
-        hint: {
-          text:"This information will populate into your HTB template under the school budget information section."
-        }
-      }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

@@ -293,7 +293,7 @@ module.exports = function (env) {
 
     tagsToClose = tagsToClose.map(tag => tag.replace('<', '</'))
     var test=dataToDisplay.join(' ');
-    return dataToDisplay.join(' ') + '...' + tagsToClose.join('')
+    return dataToDisplay.join(' ') + '.......' + tagsToClose.join('')
   }
 
   /* ------------------------------------------------------------------

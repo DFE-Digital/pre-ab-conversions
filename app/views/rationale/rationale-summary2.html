@@ -9,9 +9,9 @@
   
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">Confirm project and trust rationale</h1>
-      <p>This information is pre-populated from the school's application form.</p>
+      <p class="govuk-">This information is pre-populated from the school's application form.</p>
 
       <br>
         <dl class="govuk-summary-list">
@@ -22,7 +22,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['project-rationale']%}
-              {{data['project-rationale'] | displayNumberOfWords(100) | safe}}
+              {{data['project-rationale'] | displayNumberOfWords(50) | safe}}
           {% else %}
              
               
@@ -30,7 +30,7 @@
               {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="project-rationale.html">
-                Change<span class="govuk-visually-hidden">project rationale</span>
+                Change full rationale<span class="govuk-visually-hidden">project rationale</span>
               </a>
             </dd>
           </div>
@@ -41,14 +41,15 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['trust-rationale']%}
-              {{data['trust-rationale'] | displayNumberOfWords(100) | safe }}
+              {{data['trust-rationale'] | displayNumberOfWords(50) | safe }}
               {% else %} 
               <span class="empty">Empty</span>
               {% endif %}
+              
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="sponsor-rationale.html">
-                Change<span class="govuk-visually-hidden">sponsor rationale</span>
+                Change full rationale<span class="govuk-visually-hidden">sponsor rationale</span>
               </a>
             </dd>
           </div>

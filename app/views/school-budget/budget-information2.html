@@ -7,7 +7,17 @@
 
 
 {% block content %}
-
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" >
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2></div>
+</div>
+<div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -75,51 +85,58 @@
 
   
   </dl>
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     <a name="additional_info"></a>  <h3 class="govuk-heading-m govuk-!-margin-top-8">Additional information (optional)</h3>
+        <p>This information will populate into your HTB template under the school budget information section.</p>
+      </div></div>
+      <div>
+        <br>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Addtional information</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['budget-more-detail'] %}
+                        {{data['budget-more-detail']}}
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="budget-information">
+                      Change<span class="govuk-visually-hidden">change budget comments</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
     
     
-    <form action="budget-information2" method="post"> 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-    <a name="additional_info"></a>
-      {{ govukTextarea({
-        name: "budget-more-detail",
-        id: "budget-more-detail",
-        value: data["budget-more-detail"],
-        label: {
-          text: "Additional information (optional)",
-          classes: "govuk-label--m"
-        },
-        hint: {
-          text:"This information will populate into your HTB template under school the budget information section."
-        }
-      }) }}
+  
+        <form action="/task_list1" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
     
- 
-    <form action="budget-information2" method="post"> 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukCheckboxes({
-        idPrefix: "budget-status-htb",
-        name: "budget-status-htb",
-        items: [
-          {
-            value: "Complete",
-            text: "Mark this section as complete, you can still make changes later"
-          }
-        ]
-      }) }}
-
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-
-    </form>
+          {{ govukCheckboxes({
+            idPrefix: "budget-status-htb",
+            name: "budget-status-htb",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark this section as complete, you can still make changes later"
+              }
+            ]
+          }) }}
+    
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+    
+        </form>
     <p><a href="javascript:history.back();">Cancel</a></p>
     </div>
     </div>
-
-  {% endblock %}
+    {% endblock %}
