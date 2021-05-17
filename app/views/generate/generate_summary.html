@@ -10,6 +10,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-column-three-quaters">
+      <span class="govuk-caption-xl">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-xl">Preview headteacher board (HTB) template</h1>
     </div>
     <div class="govuk-grid-column-full-width">
@@ -40,14 +41,14 @@
     </div>    
     </section>  
   <h2 class="govuk-heading-m">
-   Headteacher board (HTB) template
+    School and trust information and project dates
    </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
    
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     School and trust information and project dates
+     School and trust information and project date details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -219,13 +220,15 @@
   </div>
   
 </section>    
-
+<h2 class="govuk-heading-m">
+  General information
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     General information
+     General information details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -405,13 +408,15 @@
 </dl>
   </div>
 </section>  
-
+<h2 class="govuk-heading-m">
+  School performance (Ofsted information)
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     School performance (Ofsted information)
+     School performance (Ofsted information) details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -505,63 +510,73 @@ Early years provision
 </section>  
 
 </section> 
+<h2 class="govuk-heading-m">
+  Rationales
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     Rationale
+     Rationale details
     </h2>
   </header>
   <div class="app-summary-card__body">
 
   
-<dl class="govuk-summary-list">
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Rationale for project
-        </dt>
-        <dd class="govuk-summary-list__value"> 
+    <dl class="govuk-summary-list">
+      
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Project rationale</dt>
+
+            <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
+            </a></dt> </div>
+          </dl>
+
           {% if data['project-rationale']%}
           {{data['project-rationale'] | safe  }} 
-          {% else %} 
+          {% else %} </p>
           <span class="empty">Empty</span>
           {% endif %}
-        </dd>
-
-  <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">rationale for project</span>
-  </a>
-</dd> </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Rationale for the trust or sponsor
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['trust-rationale']%}
-          {{data['trust-rationale'] }} 
-          {% else %} 
-          <span class="empty">Empty</span>
-          {% endif %}
-        </dd>
         
-<dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/rationale/sponsor-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">rationale for trust or sponsor</span>
-</a>
-
-</dd></div>
-
+      
+ </div>
 </dl>
-  </div>
-</section> 
+<div class="app-summary-card__body">
+<dl class="govuk-summary-list">
+      
+        
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Rational for the trust/sponsor</dt>
 
+    <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
+    </a></dt> </div>
+  </dl>
+
+  {% if data['trust-rationale']%}
+  {{data['trust-rationale'] | safe  }} 
+  {% else %} </p>
+  <span class="empty">Empty</span>
+  {% endif %}
+
+
+
+</div>
+</dl>
+</div>
+
+      
+</section> 
+<h2 class="govuk-heading-m">
+Risks and isuues
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     Risks and issues
+     Risks and issues details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -590,13 +605,15 @@ Early years provision
   </div>
 </section> 
 
-
+<h2 class="govuk-heading-m">
+School budget information
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     School budget information
+     School budget information details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -657,13 +674,15 @@ Additional information (optional)
   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">budget additional information</span></a></dd>
 </div>
 </section>  
-
+<h2 class="govuk-heading-m">
+School pupil forecasts
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     School pupil forecasts
+     School pupil forecast details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -722,13 +741,15 @@ Additional information (optional)
 </dl>
 
 </section> 
-
+<h2 class="govuk-heading-m">
+Key performance tables
+ </h2>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
-     Key stage performanace tables
+     Key stage performanace table details
     </h2>
   </header>
   <div class="app-summary-card__body">
@@ -858,7 +879,7 @@ Additional information (optional)
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Additional information</dt>
-          <dd class="govuk-summary-list__key">
+          <dd class="govuk-summary-list__value">
             {% if data['key-stage-more-detail']%}
             {{data['key-stage-more-detail']}}
            {% else %} 
@@ -870,13 +891,15 @@ Additional information (optional)
         </dl>
         
         </section> 
-
+        <h2 class="govuk-heading-m">
+          Supporting documentation
+           </h2>
   <section class="app-summary-card govuk-!-margin-bottom-6">
-    
+ 
     <header class="app-summary-card__header">
       
       <h2 class="app-summary-card__title">
-       Supporting documentation
+       Supporting documentation details
       </h2>
     </header>
     <div class="app-summary-card__body">

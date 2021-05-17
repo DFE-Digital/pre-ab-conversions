@@ -270,9 +270,8 @@ module.exports = function (env) {
     const htmlTagClosings = /<\/(ol|ul|b|i|u|div|li)>/g
 
     const splitData = data.split(' ')
-    const dataToDisplay = splitData.slice(0, numberOfWords)
-
-    console.log(dataToDisplay)
+ 
+   const dataToDisplay = splitData.slice(0, numberOfWords)
 
     let tagsToClose = []
     dataToDisplay.forEach(word => {
@@ -293,7 +292,8 @@ module.exports = function (env) {
     })
 
     tagsToClose = tagsToClose.map(tag => tag.replace('<', '</'))
-    return dataToDisplay.join(' ') + '...' + tagsToClose.join('')
+    var test=dataToDisplay.join(' ');
+    return dataToDisplay.join(' ') + '.......' + tagsToClose.join('')
   }
 
   /* ------------------------------------------------------------------
