@@ -13,7 +13,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">Confirm school budget information</h1>
-    <p class="govuk-body">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your HTB template.</p>
+    <p class="govuk-body">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your headteacher board (HTB) template.</p>
     <p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your HTB template.</p><br>
   </div>
 </div>
@@ -28,7 +28,7 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden"> Revenue carry forward at end-March (current year) 2021</span>
+          Change<span class="govuk-visually-hidden">revenue carry forward for current year</span>
         </a>
       </dd>
     </div>
@@ -41,7 +41,7 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">Projected revenue balance at end-March (following year) 202</span>
+          Change<span class="govuk-visually-hidden">projected revenue balance for following year</span>
         </a>
       </dd>
     </div>
@@ -54,7 +54,7 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">  Capital carry forward at end-March (current year)</span>
+          Change<span class="govuk-visually-hidden">capital carry forward for current year</span>
         </a>
       </dd>
     </div>
@@ -67,13 +67,26 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden"> capital carry forward 22</span>
+          Change<span class="govuk-visually-hidden">capital carry forward for following year</span>
         </a>
       </dd>
     </div>
-    
 
-  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Additional information (optional)
+      </dt>
+      <dd class="govuk-summary-list__value">  {% if data['finance-more-detail']%}
+        {{data['finance-more-detail']}}
+       {% else %} 
+       <span class="empty">Empty</span>
+      {% endif %}</dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="budget-information-details#additional_info">
+          Change<span class="govuk-visually-hidden">budget additional information</span></a>
+        </a>
+      </dd>
+    </div>
   </dl>
 
 

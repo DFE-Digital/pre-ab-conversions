@@ -22,7 +22,7 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
-    <p class="govuk-body">This information comes from TRAMS and the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your HTB template.</p><p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your HTB template.</p><br>
+    <p class="govuk-body">This information comes from TRAMS and the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your headteacher board (HTB) template.</p><p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your HTB template.</p><br>
   </div>
 </div>
 <div>
@@ -79,7 +79,7 @@
 <div>
   <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <a href="#" name="additional_info"></a>   <dt class="govuk-summary-list__key">Addtional Information</dt>
+        <a href="#" name="additional_info"></a>   <dt class="govuk-summary-list__key">Addtional information</dt>
           <dd class="govuk-summary-list__value">
               {% if data['pupil-more-detail'] %}
                   {{data['pupil-more-detail']}}
@@ -89,7 +89,7 @@
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="school-pupil-forecasts">
-                Change<span class="govuk-visually-hidden">recomendation</span>
+                Change<span class="govuk-visually-hidden">pupil forecast additional information</span>
               </a>
           </dd>
       </div>
