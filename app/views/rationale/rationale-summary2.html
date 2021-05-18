@@ -7,57 +7,48 @@
 
 {% block content %}
   
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row"><div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">Confirm project and trust rationale</h1>
-      <p class="govuk-">This information is pre-populated from the school's application form.</p>
+      <p>This information is pre-populated from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
+</div></div>
 
-      <br>
-        <dl class="govuk-summary-list">
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Rationale for project
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['project-rationale']%}
-              {{data['project-rationale'] | displayNumberOfWords(50) | safe}}
-          {% else %}
-             
-              
-              <span class="empty">Empty</span>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+            <dl class="govuk-summary-list">
+              <dt class="govuk-summary-list__key">Rationale for project</dt>
+            <dd class="govuk-summary-list__key"></dd>
+          </dl>
+            <dd class="govuk-summary-list__value"><p>{% if data['project-rationale']%}
+              {{data['project-rationale']  | safe}}
+          {% else %} </p> 
+<span class="empty">Empty</span>
               {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="project-rationale.html">
-                Change full rationale<span class="govuk-visually-hidden">project rationale</span>
-              </a>
+             <p><a href="project-rationale.html">
+                Change<span class="govuk-visually-hidden">project rationale</span></a></p> 
             </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Rationale for the trust or sponsor
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['trust-rationale']%}
-              {{data['trust-rationale'] | displayNumberOfWords(50) | safe }}
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}
-              
-            </dd>
+            </dl>
+            <dl class="govuk-summary-list  govuk-!-margin-top-8">
+              <dt class="govuk-summary-list__key">Rationale for trust or sponsor</dt>
+            <dd class="govuk-summary-list__key"></dd>
+          </dl>
+            <dd class="govuk-summary-list__value"><p>{% if data['project-rationale']%}
+              {{data['project-rationale'] | safe}}
+          {% else %} </p> 
+<span class="empty">Empty</span>
+              {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="sponsor-rationale.html">
-                Change full rationale<span class="govuk-visually-hidden">sponsor rationale</span>
-              </a>
+            <p> <a href="project-rationale.html">
+                Change<span class="govuk-visually-hidden">project rationale</span></a></p>
             </dd>
-          </div>
-        </dl>
+            </dl>
+          </div></div>
 
+        
+&nbsp;
+&nbsp;
 
-
-  
         <form action="/task_list1" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}

@@ -32,7 +32,7 @@
             </h2>
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="/overview/set-htb.html">Set an HTB date</a>, this is the minimum amount of information we need before you can generate your template</li>
+                <a class="govuk-link" href="/overview/set-htb?returnToSummary=yes">, Set an HTB date</a>, this is the minimum amount of information we need before you can generate your template</li>
             </ul> 
           </div>
         </div>
@@ -533,7 +533,11 @@ Early years provision
             <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
             </a></dt> </div>
           </dl>
-
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+         
+          <div class="govuk-summary-list__row">
+            <div class="govuk-grid-column-full">
+              <p>
           {% if data['project-rationale']%}
           {{data['project-rationale'] | safe  }} 
           {% else %} </p>
@@ -550,10 +554,11 @@ Early years provision
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">Rational for the trust/sponsor</dt>
 
-    <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
+    <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/sponsor-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
     </a></dt> </div>
   </dl>
-
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  
   {% if data['trust-rationale']%}
   {{data['trust-rationale'] | safe  }} 
   {% else %} </p>
@@ -565,7 +570,7 @@ Early years provision
 </div>
 </dl>
 </div>
-
+</div></div>
       
 </section> 
 <h2 class="govuk-heading-m">
