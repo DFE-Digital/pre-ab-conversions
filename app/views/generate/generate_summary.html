@@ -79,7 +79,64 @@
           </dd>
         
       </div>
-
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Author
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Delivery Officer
+          <dd class="govuk-summary-list__actions">
+       
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created on
+          </dt>
+          <dd class="govuk-summary-list__value">
+          19 June 2021
+          </dd>
+ <dd class="govuk-summary-list__actions">  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Cleared by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['cleared']%}
+        {{data['cleared']}}
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/overview/cleared.html?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">cleared by</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Is an academy order (AO) required?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['aorequired']%}
+              {{data['aorequired']}}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}
+      </dd>
+      
+        <dd class="govuk-summary-list__actions">
+          
+            <a class="govuk-link" href="/overview/aorequired?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">academy order required</span>
+              </a>
+          
+        </dd>
+      
+    </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of HTB
@@ -99,88 +156,19 @@
                 </a>
             
           </dd>
-        
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Previous HTB
         </dt>
         <dd class="govuk-summary-list__value">
-        12th November 2020 <br>
+        12 November 2020 <br>
         <a class="govuk-link" href="#?returnToSummary=yes">St_Wilfreds_Primary_Nov20</a>
         </dd>
         <dd class="govuk-summary-list__actions">
        
         </dd>
       </div>
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Author
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Delivery Officer
-          <dd class="govuk-summary-list__actions">
-       
-          </dd>
-        </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Created on
-            </dt>
-            <dd class="govuk-summary-list__value">
-            19th June 2021
-            </dd>
-   <dd class="govuk-summary-list__actions">  
-        </dd>
-      </div>
-
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Cleared by
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['cleared']%}
-          {{data['cleared']}}
-          {% else %} 
-          <span class="empty">Empty</span>
-        {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/overview/cleared.html?returnToSummary=yes">
-            Change<span class="govuk-visually-hidden">cleared</span>
-          </a>
-        </dd>
-      </div>
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Is an academy order (AO) required?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['aorequired']%}
-                {{data['aorequired']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-        </dd>
-        
-          <dd class="govuk-summary-list__actions">
-            
-              <a class="govuk-link" href="/overview/aorequired?returnToSummary=yes">
-                Change<span class="govuk-visually-hidden">academy order required</span>
-                </a>
-            
-          </dd>
-        
-      </div>
-    
-  
-    
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           School name
@@ -648,8 +636,7 @@ Risks and issues
          Has an Equalities Impact Assessment been considered?
         </dt>
         <dd class="govuk-summary-list__value"> 
-          
-The equalities duty has been considered abd the Secretary of State's decision is unlikely to affect disproportionately any particular person or group who shared protected characteristics.
+          The equalities duty has been considered and the Secretary of State’s decision is unlikely to affect disproportionately any particular person or group who share protected characteristics
         <dd class="govuk-summary-list__actions">
         
         </dd>
