@@ -46,6 +46,36 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Created on
+        </dt>
+        <dd class="govuk-summary-list__value">
+        19th June 2021
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      
+        </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+   Cleared by
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['cleared']%}
+    {{data['cleared']}}
+    {% else %} 
+    <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="cleared.html">
+      Change<span class="govuk-visually-hidden">cleared</span>
+    </a>
+  </dd>
+</div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Is an academy order (AO) required?
         </dt>
         <dd class="govuk-summary-list__value">
@@ -60,7 +90,8 @@
             Change<span class="govuk-visually-hidden">academy order required</span>
           </a>
         </dd>
-      </div>
+</div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of HTB
@@ -78,6 +109,20 @@
           </a>
         </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous HTB
+        </dt>
+        <dd class="govuk-summary-list__value">
+        12th November 2020 <br>
+        <a class="govuk-link" href="#">St_Wilfreds_Primary_Nov20</a>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           School name

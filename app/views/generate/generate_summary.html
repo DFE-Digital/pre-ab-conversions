@@ -101,7 +101,18 @@
           </dd>
         
       </div>
-    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous HTB
+        </dt>
+        <dd class="govuk-summary-list__value">
+        12th November 2020 <br>
+        <a class="govuk-link" href="#?returnToSummary=yes">St_Wilfreds_Primary_Nov20</a>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
   
     
       <div class="govuk-summary-list__row">
@@ -110,16 +121,40 @@
         </dt>
         <dd class="govuk-summary-list__value">
           Delivery Officer
-        </dd>
-        
           <dd class="govuk-summary-list__actions">
-            
-             
-            
+       
           </dd>
-        
+        </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Created on
+            </dt>
+            <dd class="govuk-summary-list__value">
+            19th June 2021
+            </dd>
+   <dd class="govuk-summary-list__actions">  
+        </dd>
       </div>
+
     
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Cleared by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['cleared']%}
+          {{data['cleared']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/overview/cleared.html?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden">cleared</span>
+          </a>
+        </dd>
+      </div>
   
     
       <div class="govuk-summary-list__row">
@@ -606,6 +641,17 @@ Risks and issues
 
         <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="/risks-and-issues/risks-and-issues?returnToSummary=yes">  Change<span class="govuk-visually-hidden">risks and issues</span>
         </a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Has an Equalities Impact Assessment been considered?
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          
+The equalities duty has been considered abd the Secretary of State's decision is unlikely to affect disproportionately any particular person or group who shared protected characteristics.
+        <dd class="govuk-summary-list__actions">
+        
         </dd>
       </div>
     </dl>
