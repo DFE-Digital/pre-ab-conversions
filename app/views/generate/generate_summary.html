@@ -59,7 +59,7 @@
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds"><a name="recommendation"></a>
           Recommendation
         </dt>
         <dd class="govuk-summary-list__value">
@@ -100,7 +100,7 @@
       </dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key"><a name="clearedby"></a>
        Cleared by
       </dt>
       <dd class="govuk-summary-list__value">
@@ -117,7 +117,7 @@
       </dd>
     </div>
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key"><a name="aorequired"></a>
        Is an academy order (AO) required?
       </dt>
       <dd class="govuk-summary-list__value">
@@ -138,7 +138,7 @@
       
     </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="htbdate"></a>
           Date of HTB
         </dt>
         <dd class="govuk-summary-list__value">
@@ -226,7 +226,7 @@
           <dd class="govuk-summary-list__actions"></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="opening"></a>
          Proposed academy opening date
         </dt>
         <dd class="govuk-summary-list__value">
@@ -262,7 +262,7 @@
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           School phase
         </dt>
         <dd class="govuk-summary-list__value">
@@ -364,7 +364,8 @@
         <dt class="govuk-summary-list__key">
           Viability issues
         </dt>
-        <dd class="govuk-summary-list__value">  {% if data['viability']%}
+        <dd class="govuk-summary-list__value"><a name="viability"></a>
+          {% if data['viability']%}
           {{data['viability']}}
          {% else %} 
          <span class="empty">Empty</span>
@@ -372,7 +373,7 @@
           <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/viability?returnToSummary=yes">Change<span class="govuk-visually-hidden">viability issues</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="deficit"></a>
          Financial surplus or deficit
         </dt>
         <dd class="govuk-summary-list__value">  {% if data['deficit']%}
@@ -383,7 +384,7 @@
           <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/deficit?returnToSummary=yes">Change<span class="govuk-visually-hidden">financial surplus or deficit</span></a> </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="diocsean"></a>
           Is this a Diocesan multi-academy trust (MAT)?
         </dt>
         <dd class="govuk-summary-list__value"> {% if data['diocesan']%}
@@ -394,7 +395,7 @@
         <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/diocesan?returnToSummary=yes">Change<span class="govuk-visually-hidden">diocesan multi-academy trust</span></a> </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="goodschools"></a>
         Percentage of good or outstanding schools in the diocesan trust
         </dt>
         <dd class="govuk-summary-list__value">  {% if data['goodschools']%}
@@ -405,7 +406,7 @@
         <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a> </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="distance"></a>
         Distance from the school to the trust headquaters
         </dt>
         <dd class="govuk-summary-list__value">  {% if data['distance']%}
@@ -441,7 +442,7 @@
     
     <h2 class="app-summary-card__title">
      School performance (Ofsted information) details
-    </h2>
+    </h2><a name="ofsted"></a>
   </header>
   <div class="app-summary-card__body">
 
@@ -450,7 +451,7 @@
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
          Ofsted judgement date
         </dt>
         <dd class="govuk-summary-list__value">
@@ -542,6 +543,7 @@ Early years provision
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
+      <a name="rationale"></a>
      Rationale details
     </h2>
   </header>
@@ -552,47 +554,41 @@ Early years provision
       
         
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Project rationale</dt>
 
-            <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">rationale for project</span>
-            </a></dt> </div>
-          </dl>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-         
+            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+              Rationale for project
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-full">
+              {% if data['project-rationale']%}
+              {{data['project-rationale'] | safe}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/rationale/project-rationale?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">project rationale</span>
+              </a>
+            </dd>
+          </div>
+        
           <div class="govuk-summary-list__row">
-            <div class="govuk-grid-column-full">
-              <p>
-          {% if data['project-rationale']%}
-          {{data['project-rationale'] | safe  }} 
-          {% else %} </p>
-          <span class="empty">Empty</span>
-          {% endif %}
-        
+
+            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+              Trust rationale
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-full">
+              {% if data['trust-rationale']%}
+              {{data['trust-rationale'] | safe}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/rationale/sponsor-rationale?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">project rationale</span>
+              </a>
+            </dd>
+          </div>
       
- </div>
-</dl>
-<div class="app-summary-card__body">
-<dl class="govuk-summary-list">
-      
-        
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Rational for trust or sponsor</dt>
-
-    <dt class="govuk-summary-list__actions govuk-table__cell--numeric"><a class="govuk-link" href="/rationale/sponsor-rationale?returnToSummary=yes">  Change<span class="govuk-visually-hidden">project rationale</span>
-
-    </a></dt> </div>
-  </dl>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  
-  {% if data['trust-rationale']%}
-  {{data['trust-rationale'] | safe  }} 
-  {% else %} </p>
-  <span class="empty">Empty</span>
-  {% endif %}
-
-
-
-</div>
 </dl>
 </div>
 
@@ -607,7 +603,7 @@ Risks and issues
     
     <h2 class="app-summary-card__title">
      Risks and issues details
-    </h2>
+    </h2> <a name="risks"></a>
   </header>
   <div class="app-summary-card__body">
 
@@ -616,7 +612,7 @@ Risks and issues
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
          Risks and issues
         </dt>
         <dd class="govuk-summary-list__value"> 
@@ -654,7 +650,7 @@ School budget information
     
     <h2 class="app-summary-card__title">
      School budget information details
-    </h2>
+    </h2> <a name="budget"></a>
   </header>
   <div class="app-summary-card__body">
 
@@ -663,7 +659,7 @@ School budget information
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           Revenue carry forward at end-March (current year) 2021:
         </dt>
         <dd class="govuk-summary-list__value">
@@ -723,7 +719,7 @@ School pupil forecasts
     
     <h2 class="app-summary-card__title">
      School pupil forecast details
-    </h2>
+    </h2> <a name="pupil"></a>
   </header>
   <div class="app-summary-card__body">
 
@@ -769,7 +765,7 @@ School pupil forecasts
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">Additional information</dt>
-  <dd class="govuk-summary-list__key">
+  <dd class="govuk-summary-list__value">
     {% if data['pupil-more-detail']%}
     {{data['pupil-more-detail']}}
    {% else %} 
@@ -783,7 +779,7 @@ School pupil forecasts
 </section> 
 <h2 class="govuk-heading-m">
 Key stage performance tables
- </h2>
+ </h2> <a name="ofsted"></a>
 <section class="app-summary-card govuk-!-margin-bottom-6">
   
   <header class="app-summary-card__header">

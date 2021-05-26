@@ -14,33 +14,41 @@
 </div></div>
 
 <div class="govuk-grid-row">
+
 <div class="govuk-grid-column-full">
             <dl class="govuk-summary-list">
               <dt class="govuk-summary-list__key">Rationale for project</dt>
             <dd class="govuk-summary-list__key"></dd>
           </dl>
-            <dd class="govuk-summary-list__value"><p>{% if data['project-rationale']%}
+          <dl class="govuk-summary-list__row--no-border">
+            <dd class="govuk-summary-list__value  govuk-body">{% if data['project-rationale']%}
               {{data['project-rationale']  | safe}}
-          {% else %} </p> 
+          {% else %} 
 <span class="empty">Empty</span>
               {% endif %}</dd>
+
             <dd class="govuk-summary-list__actions">
              <p><a href="project-rationale.html">
                 Change<span class="govuk-visually-hidden">project rationale</span></a></p> 
             </dd>
             </dl>
-            <dl class="govuk-summary-list  govuk-!-margin-top-8">
-              <dt class="govuk-summary-list__key">Rationale for trust or sponsor</dt>
-            <dd class="govuk-summary-list__key"></dd>
-          </dl>
-            <dd class="govuk-summary-list__value"><p>{% if data['project-rationale']%}
-              {{data['project-rationale'] | safe}}
-          {% else %} </p> 
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                          <dl class="govuk-summary-list govuk-!-margin-top-">
+                            <dt class="govuk-summary-list__key">Rationale for trust or sponsor</dt>
+                          <dd class="govuk-summary-list__key"></dd>
+                        </dl>
+            <dl class="govuk-summary-list">
+    
+            <dd class="govuk-summary-list__value govuk-body">{% if data['trust-rationale']%}
+              {{data['trust-rationale'] | safe}}
+          {% else %} 
 <span class="empty">Empty</span>
               {% endif %}</dd>
-            <dd class="govuk-summary-list__actions">
-            <p> <a href="project-rationale.html">
-                Change<span class="govuk-visually-hidden">project rationale</span></a></p>
+            <dd class="govuk-summary-list__actions govuk-body">
+            <p> <a href="sponsor-rationale.html">
+                Change<span class="govuk-visually-hidden">sponsor rationale</span></a></p>
             </dd>
             </dl>
           </div></div>
