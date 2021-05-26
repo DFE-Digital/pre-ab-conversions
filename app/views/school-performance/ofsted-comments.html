@@ -13,7 +13,8 @@
       Success
     </h2>
   </div>
-  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2></div>
+  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2>
+  <p><a href="/task_list1">Back to task list</a></p></div>
 </div>
 <div>
   <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -123,13 +124,7 @@
     </div>
 
   <form action="/task_list1" method="post"> 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  {{ govukButton({
-    text: "Save and continue"
-  }) }}
 
-  </form>
-  <p><a href="javascript:history.back();">Cancel</a></p>
 
 </div>
 {% endblock %}

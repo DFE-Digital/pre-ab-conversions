@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary" method="post">
+        <form action="/generate/generate_summary#pupil" method="post">
         {% else %}
         <form action="/pupil-forecasts/school-pupil-forecasts-summary" method="post">
       {% endif %}

@@ -13,7 +13,7 @@
 {% block content %}
 
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary" method="post">
+        <form action="/generate/generate_summary#ofsted" method="post">
         {% else %}
         <form action="/school-performance/ofsted-comments" method="post">
       {% endif %}

@@ -6,14 +6,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    {% if data['returnToSummary'] == 'yes' %}
-    <form action="/generate/generate_summary#rationale" method="post">
-      {% else %}
-      <form action="/rationale/rationale-summary1" method="post">
-    {% endif %}
-    <input hidden type="text" name="returnToSummary" value="no"/>
   
 <div class="govuk-grid-row"><div class="govuk-grid-column-two-thirds">
   <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -25,12 +17,12 @@
         <dl class="govuk-summary-list">
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            <dt class="govuk-summary-list__key">
               Rationale for project
             </dt>
-            <dd class="govuk-summary-list__value govuk-!-width-full">
+            <dd class="govuk-summary-list__value">
               {% if data['project-rationale']%}
-              {{data['project-rationale'] | safe}}
+              {{data['project-rationale'] | displayNumberOfWords(50) | safe}}
               {% else %} 
               <span class="empty">Empty</span>
               {% endif %}</dd>
@@ -42,10 +34,10 @@
           </div>
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            <dt class="govuk-summary-list__key">
               Rationale for the trust or sponsor
             </dt>
-            <dd class="govuk-summary-list__value  govuk-!-width-two-thirds">
+            <dd class="govuk-summary-list__value">
               {% if data['trust-rationale']%}
               {{data['trust-rationale'] | safe }} 
               {% else %} 
