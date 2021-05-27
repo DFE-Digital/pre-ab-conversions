@@ -11,7 +11,7 @@
     {% if data['returnToSummary'] == 'yes' %}
     <form action="/generate/generate_summary#rationale" method="post">
       {% else %}
-      <form action="/rationale/rationale-summary1" method="post">
+      <form action="/task_list1" method="post">
     {% endif %}
     <input hidden type="text" name="returnToSummary" value="no"/>
   
@@ -83,7 +83,7 @@
           }) }}
 
         </form>
-        <p><a href="javascript:history.back();">Cancel</a></p>
+   
       </main>
     </main>   
     </div>

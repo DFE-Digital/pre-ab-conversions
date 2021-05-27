@@ -7,7 +7,7 @@
 
 
 {% block content %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+<!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -18,7 +18,7 @@
   <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2>
     <p><a href="/task_list1">Return to task list</a></p></div>
 </div>
-<div>
+<div> -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -31,7 +31,7 @@
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
         Revenue carry forward at end-March (current year) 2021
       </dt>
       <dd class="govuk-summary-list__value">
@@ -138,6 +138,18 @@
     
         </form>
     <p><a href="javascript:history.back();">Cancel</a></p>-->
+    <form action="/task_list1" method="post"> 
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+
+    </form>
+
     </div>
     </div>
-    {% endblock %}
+
+  {% endblock %}
