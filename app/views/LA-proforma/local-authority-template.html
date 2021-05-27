@@ -16,7 +16,7 @@
           <div class="govuk-form-group">
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-            {{ govukDateInput({
+          <a name="sent"></a>  {{ govukDateInput({
               id: "la-sent-date",
               namePrefix: "la-sent-date",
               fieldset: {
@@ -49,7 +49,7 @@
           
             <br></br>
 
-            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+            <a name="returned"></a>       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
               {{ govukDateInput({
                 id: "la-sent-back",
@@ -84,7 +84,7 @@
 
             <br></br>
 
-            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+            <a name="comments"></a>     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
               name: "la-comments",
@@ -100,7 +100,7 @@
             
             <br><br>
 
-            {% from "govuk/components/input/macro.njk" import govukInput %}
+            <a name="location"></a>  {% from "govuk/components/input/macro.njk" import govukInput %}
 
             {{ govukInput({
               label: {
@@ -119,7 +119,6 @@
               text: "Save and continue"
             }) }}
 
-            <p><a href="javascript:history.back();">Cancel</a></p>
 
           </div>
         </form>

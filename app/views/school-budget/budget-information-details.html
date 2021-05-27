@@ -108,6 +108,16 @@
     </nav>
 
     </aside>
+    {{ govukCheckboxes({
+      idPrefix: "budget-status-htb",
+      name: "budget-status-htb",
+      items: [
+        {
+          value: "Complete",
+          text: "Mark this section as complete, you can still make changes later"
+        }
+      ]
+    }) }}
   </div>
   </div>
 {% endblock %}

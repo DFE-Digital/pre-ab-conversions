@@ -9,11 +9,12 @@
   <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
 <h1 class="govuk-heading-l">
-Confirm local authority information template</h1>
+Confirm dates for local authority information template</h1>
 </div></div>
+
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
       Date you sent the template
     </dt>
     <dd class="govuk-summary-list__value">
@@ -26,7 +27,7 @@ Confirm local authority information template</h1>
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/LA-proforma/local-authority-template">
+      <a class="govuk-link" href="/LA-proforma/local-authority-template#sent">
         Change<span class="govuk-visually-hidden">date LA proforma was sent to LA</span>
       </a>
     </dd>
@@ -45,7 +46,7 @@ Confirm local authority information template</h1>
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/LA-proforma/local-authority-template">
+      <a class="govuk-link" href="/LA-proforma/local-authority-template#returned">
         Change<span class="govuk-visually-hidden">date LA proforma was sent back from LA</span>
       </a>
     </dd>
@@ -63,7 +64,7 @@ Confirm local authority information template</h1>
     </dd>
 
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/LA-proforma/local-authority-template">
+      <a class="govuk-link" href="/LA-proforma/local-authority-template#comments">
         Change<span class="govuk-visually-hidden">comments</span>
       </a>
     </dd>
@@ -80,7 +81,7 @@ Confirm local authority information template</h1>
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/LA-proforma/local-authority-template">
+      <a class="govuk-link" href="/LA-proforma/local-authority-template#location">
         Change<span class="govuk-visually-hidden">sharepoint link</span>
       </a>
     </dd>
@@ -104,10 +105,10 @@ text: "Mark this section as complete, you can still make changes later"
 }) }}
 
 {{ govukButton({
-text: "Save and continue"
+text: "Confirm and continue"
 }) }}
 
 </form>
-<p><a href="javascript:history.back();">Cancel</a></p>
+
 
 {% endblock %}
