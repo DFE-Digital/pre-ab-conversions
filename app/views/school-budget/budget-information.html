@@ -101,23 +101,14 @@
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukCheckboxes({
-        idPrefix: "budget-status-htb",
-        name: "budget-status-htb",
-        items: [
-          {
-            value: "Complete",
-            text: "Mark this section as complete, you can still make changes later"
-          }
-        ]
-      }) }}
+      
 
       {{ govukButton({
         text: "Save and continue"
       }) }}
 
     </form>
-    <p><a href="javascript:history.back();">Cancel</a></p>
+
     </div>
     </div>
 
