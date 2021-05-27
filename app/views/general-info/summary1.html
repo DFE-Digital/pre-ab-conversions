@@ -38,16 +38,13 @@
           <dt class="govuk-summary-list__key">Number on roll (NOR)</dt>
           <dd class="govuk-summary-list__value">226</dd>
           <dd class="govuk-summary-list__actions"></dd>
-    
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Percentage the school is full</dt>
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">80%</p>
           </dd>
-          <dd class="govuk-summary-list__actions">
-           <dd>
-          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -64,13 +61,9 @@
           Published admissions number (PAN)
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">    {% if data['PAN']%}
-              {{data['PAN']}}
-              {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}</p>
+            <p class="govuk-body">210</p>
           </dd>
-          <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="/general-info/PAN">Change<span class="govuk-visually-hidden">percentage of school full</span></a>
+          <dd class="govuk-summary-list__actions">
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -132,7 +125,7 @@
             {{ data['diocesan'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/general-info/diocesan">Change<span class="govuk-visually-hidden">diocesan multi-academy trust</span>
+            <a class="govuk-link" href="/general-info/diocesan">Change<span class="govuk-visually-hidden">diocesan multi-academy trust</span>
             </a>
           </dd>
         </div>
@@ -142,11 +135,15 @@
           Percentage of good or outstanding schools in the diocesan trust
           </dt>
           <dd class="govuk-summary-list__value">
-        80%
+            {% if data['goodschools']%}
+            {{data['goodschools']}}%
+          {% else %} 
+          <span class="empty">Empty</span>
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="/general-info/goodschools">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span>
-            </a> -->
+            <a class="govuk-link" href="/general-info/goodschools">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span>
+            </a>
           </dd>
         </div>
 
@@ -173,10 +170,10 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-          MP (party)
+          MP details
           </dt>
           <dd class="govuk-summary-list__value">
-          Conservatives
+          Gregg Davies, Warrington South
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -202,7 +199,7 @@
         }) }}
       
         </form>
-
+        <p><a href="javascript:history.back();">Cancel</a></p>
   </div>
 </div>
 

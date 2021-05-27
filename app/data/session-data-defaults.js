@@ -32,7 +32,6 @@ module.exports = {
   /* general info */
   "deficit": "There are no financial issues at the school",
   "diocesan": "Yes",
-  "PAN": "208",
 
 
   /* finance data */
