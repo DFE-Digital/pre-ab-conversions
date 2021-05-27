@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -18,7 +18,7 @@
     <h2 class="govuk-heading-m">Additional information added</h2>
     <p><a href="/task_list1">Back to task list</a></p>
   </div>
-</div> -->
+</div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -96,17 +96,7 @@
       </div>
   </dl>
 </div>
-<form action="/task_list1" method="post"> 
-  <a href="#" name="additional_info"></a>   {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-   
-  
-   
-     {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-     {% from "govuk/components/button/macro.njk" import govukButton %}
-     {{ govukButton({
-       text: "Confirm and continue"
-     }) }}
-   </form>         
+                
 
 
 {% endblock %}

@@ -11,11 +11,11 @@
     {% if data['returnToSummary'] == 'yes' %}
     <form action="/generate/generate_summary#rationale" method="post">
       {% else %}
-      <form action="../task_list1" method="post">
+      <form action="/rationale/rationale-summary1" method="post">
     {% endif %}
     <input hidden type="text" name="returnToSummary" value="no"/>
   
-<div class="govuk-grid-row"><div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row"><div class="govuk-grid-column-full">
   <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
   <h1 class="govuk-heading-l">Confirm project and trust rationale</h1>
   <p>This information is pre-populated from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
@@ -83,7 +83,7 @@
           }) }}
 
         </form>
-
+        <p><a href="javascript:history.back();">Cancel</a></p>
       </main>
     </main>   
     </div>
