@@ -139,8 +139,21 @@
         </form>
     <p><a href="javascript:history.back();">Cancel</a></p>-->
     <form action="/task_list1" method="post"> 
+
+
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukCheckboxes({
+        idPrefix: "school-budget-status",
+        name: "school-budget-status",
+        items: [
+          {
+            value: "Complete",
+            text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
 
 
       {{ govukButton({
