@@ -10,8 +10,8 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">
-        Record dates for for local authority information template</h1>
-        <p>Send the LA information template like you normally would on your email. Then record the date you sent it and when you want it returned to you.</p>
+        Record dates for the local authority information template</h1>
+        <p>Send the local authority information template like you normally would on your email. Then record the date you sent it and when you want it returned to you.</p>
         <form method="post"  action="/LA-proforma/LAproforma-summary">
           <div class="govuk-form-group">
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
@@ -118,8 +118,6 @@
             {{ govukButton({
               text: "Save and continue"
             }) }}
-
-            <p><a href="javascript:history.back();">Cancel</a></p>
 
           </div>
         </form>

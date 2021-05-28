@@ -19,13 +19,13 @@
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       
-        <h1 class="govuk-heading-l">Published admission numbers</h1>
+        <h1 class="govuk-heading-l">Update the school's published admission number (PAN) if it's not correct</h1>
           
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           hint: {
-            text: "Update the school's published administration numbers (PAN)"
+            text: "For example, 30"
           },
           classes: "govuk-input--width-5",
           id: "PAN",
