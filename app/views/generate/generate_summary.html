@@ -340,11 +340,11 @@
           <dd class="govuk-summary-list__actions"></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key"><a name="PAN"></a>
           Published admissions number (PAN)
         </dt>
         <dd class="govuk-summary-list__value">210</dd>
-          <dd class="govuk-summary-list__actions"></dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/PAN?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -398,12 +398,9 @@
         <dt class="govuk-summary-list__key"><a name="goodschools"></a>
         Percentage of good or outstanding schools in the diocesan trust
         </dt>
-        <dd class="govuk-summary-list__value">  {% if data['goodschools']%}
-          {{data['goodschools']}}
-         {% else %} 
-         <span class="empty">Empty</span>
-        {% endif %}
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a> </dd>
+        <dd class="govuk-summary-list__value"> 80%
+  
+        <dd class="govuk-summary-list__actions"><!-- <a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a> --></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="distance"></a>
@@ -423,9 +420,9 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        MP details
+        MP (party)
         </dt>
-        <dd class="govuk-summary-list__value"> Greg Davies, Warrington South
+        <dd class="govuk-summary-list__value"> Conservatives
         <dd class="govuk-summary-list__actions">
    
         </dd>
@@ -612,7 +609,7 @@ Risks and issues
   
     
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+        <dt class="govuk-summary-list__key">
          Risks and issues
         </dt>
         <dd class="govuk-summary-list__value"> 
