@@ -397,8 +397,54 @@ $govuk-assets-path: '/govuk/assets/';
 .overdue {
   display: inline-block;
   border: 2px solid;
-  outline-offset: -2px;
+  outline-offset: -0px;
   color: #d4351c;
+  background-color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 3px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
+.withdrawn {
+  display: inline-block;
+  border: 2px solid;
+  outline-offset: -2px;
+  color: #912B88;
+  background-color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 3px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
+.approved {
+  display: inline-block;
+  border: 2px solid;
+  outline-offset: -2px;
+  color: #00703c;
   background-color: #ffffff;
   letter-spacing: 1px;
   text-decoration: none;
@@ -421,7 +467,7 @@ $govuk-assets-path: '/govuk/assets/';
   display: inline-block;
   border: 2px solid;
   outline-offset: -2px;
-  color: #912B88;
+  color: #005DA6;
   background-color: #ffffff;
   letter-spacing: 1px;
   text-decoration: none;

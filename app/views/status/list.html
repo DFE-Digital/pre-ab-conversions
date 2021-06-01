@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back to tasklist</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary#htbdate" method="post">
+        {% else %}
+        <form action="/task_list1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+        <h1 class="govuk-heading-l">Change the status for this project</h1>
+      </legend>
+      
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "Status-status",
+        name: "Status-status",
+        fieldset: {
+          legend: {
+
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+    
+        items: [
+        {
+          value: "active",
+          checked:  data['Status-status'] === "Active",
+          text: "Active",
+          hint: {
+            text: "Default status for projects you are currently working on, will appear in your active projects list."
+          }
+        },
+
+
+  
+
+
+        {
+            value: "approved",
+            checked:  data['Status-status'] === "Approved",
+            text: "Approved",
+            hint: {
+              text: "For a project that has been approved at HTB. Changing the staus will be moved to your archieved projects list and will start a new post-HTB project."
+            }
+          },
+          {
+            value: "Rejected",
+            checked:  data['Status-status'] === "Rejected",
+            text: "Rejected",
+            hint: {
+              text: "Projects that were rejected at HTB, will appear be moved to your achived projects list."
+            }
+          },
+          {
+            value: "Onhold",
+            text: "On hold",
+            checked:  data['Status-status'] === "Onhold",
+            hint: {
+              text: "For projects you want to highlight as on hold. This will stiall appear in your active projects list."
+            }
+          },
+          {
+            value: "",
+            checked:  data['Status-status'] === "Withdrawn",
+            text: "Withdrawn",
+            hint: {
+              text: "Projects that have been withdrawn byt the school or trust, will move to your archived projects list."
+            }
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </fieldset>   
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav 
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Useful information
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+          </li>
+          
+        </ul>
+      </nav>
+      
+    </aside>
+  </div> -->   
+</div>
+{% endblock %}
+  
+  
+  
+  

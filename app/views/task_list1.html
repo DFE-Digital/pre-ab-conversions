@@ -4,15 +4,39 @@
 <a href="index" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
+
 {% block content %}
-   
+{% if data['Status-status']%}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">You need to <a href="status/list">change the status of this project</a> before you can make any changes.</p>
+  </div>
+</div>
+{% else %} 
+ 
+{% endif %}
+
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl" >URN 102062</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      St. Wilfrid's Primary School
-        <strong class="govuk-tag govuk-tag--yellow">Pre HTB</strong>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      St. Wilfrid's Primary School 
+        {% if data['Status-status']%}<span class="overdue">REJECTED</span>{% else %}{% endif %}
+  <strong class="govuk-tag govuk-tag--yellow">Pre HTB</strong> 
     </h1>
+
+
+    <a href="status/list"  aria-describedby="status-list">
+      Change the status of this project
+    </a>
       {% if data['htb-date']%}
     <div class="govuk-inset-text">
       <h4 class="govuk-heading-m">HTB date</h4>
@@ -23,7 +47,7 @@
 
     <nav class="app-sub-navigation" aria-label="sub menu">
 
-      <ul class="app-sub-navigation__list">
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" aria-current="page" href="task_list1">Task list</a>
