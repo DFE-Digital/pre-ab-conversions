@@ -5,12 +5,15 @@
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
-
 {% block content %}
-
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary#bedget" method="post">
+        {% else %}
+        <form action="/school-budget/budget-information2#additional_info" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
     <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">Confirm school budget information</h1>
     <p class="govuk-body">This information comes from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will populate into your headteacher board (HTB) template.</p>
@@ -98,7 +101,7 @@
       }) }}
     
  
-    <form action="budget-information2" method="post"> 
+    <form action="budget-information2#additional_info" method="post"> 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
