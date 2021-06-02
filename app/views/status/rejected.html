@@ -10,7 +10,7 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="/generate/generate_summary#risks" method="post">
         {% else %}
-        <form action="task_list1" method="post">
+        <form action="dates" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -21,11 +21,11 @@
       {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
       {{ govukTextarea({
-        id: 'risks',
-        name: 'risks',
+        id: 'status-reasons',
+        name: 'status-reasons',
         maxlength: 500,
         rows: 10,
-        value: data["risks"]
+        value: data["reasons"]
 
         }) 
       }} 
@@ -33,7 +33,7 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Continue"
       }) }}
 
   

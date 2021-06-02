@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a href="/task_list1.html" class="govuk-back-link">Back to task list</a>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}    
@@ -29,9 +29,11 @@
              Reason for status change
             </dt>
             <dd class="govuk-summary-list__value">               
-{{ data['status-reason']}} 
+{{ data['status-reasons']}} 
             <dd class="govuk-summary-list__actions">
-            
+              <a class="govuk-link" href="rejected.html">
+                Change<span class="govuk-visually-hidden">risks and issues</span>
+              </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -42,7 +44,9 @@
               
 +  {{ data['status-date']}} 
             <dd class="govuk-summary-list__actions">
-            
+              <a class="govuk-link" href="dates.html">
+                Change<span class="govuk-visually-hidden">risks and issues</span>
+              </a>
             </dd>
           </div>
 
@@ -51,13 +55,14 @@
 
 
   
-        <form action="/task_list1" method="post"> 
+        <form action="/task_list2" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
-         
+         <p>This action cannot be reversed.</p>
           {{ govukButton({
-            text: "Confirm and continue"
+            text: "Reject project",
+            classes: "govuk-button--warning"
           }) }}
 
         </form>
