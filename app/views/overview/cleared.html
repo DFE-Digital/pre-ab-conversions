@@ -20,13 +20,13 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-      <h1 class="govuk-heading-l">Who will clear this headteacher board (HTB) template?</h1>
+      <h1 class="govuk-heading-l">Enter the full name of the person who will clear the HTB template</h1>
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
         hint: {
-          text: "Add the name of the person who will approve the HTB template. This will not send the template to them, you will still need to add the template to Sharepoint when you download it."
+          text: "Entering the person's name will not send the template to them. You will still need to add the template to Sharepoint when you download it."
         },
         classes: "govuk-input--width-20",
         id: "cleared",
