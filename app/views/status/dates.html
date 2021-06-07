@@ -8,14 +8,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary#risks" method="post">
+        <form action="summary1" method="post">
         {% else %}
         <form action="summary1" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
  
-
+      <h1 class="govuk-heading-l">Date project was rejected at HTB</h1>
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -35,11 +35,13 @@
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
       {{ govukDateInput({
-        id: "passport-issued",
-        namePrefix: "passport-issued",
+  
+        id: "date_rejected",
+        namePrefix: "rejected-date",
+        value: data["rejected-date-day"]["rejected-date-month"]["rejected-date-year"],
         fieldset: {
           legend: {
-            text: "Enter the date the project was rejected",
+            html: pageHeading,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }

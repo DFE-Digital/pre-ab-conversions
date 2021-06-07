@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+<a href="/task_list1" class="govuk-back-link">Back to tasklist</a>
 {% endblock %}
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
@@ -12,9 +12,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary#htbdate" method="post">
+        <form action="summary1" method="post">
         {% else %}
-        <form action="rejected" method="post">
+        <form action="/status-answer" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -26,6 +26,7 @@
       {{ govukRadios({
         idPrefix: "Status-status",
         name: "Status-status",
+
         fieldset: {
           legend: {
 
@@ -35,31 +36,22 @@
         },
     
         items: [
-        {
-          value: "active",
-          checked:  data['Status-status'] === "Active",
-          text: "Active",
-          hint: {
-            text: "Default status for projects you’re currently working on. Active projects will appear in your active project list."
-          }
-        },
-
-
-  
-
+      
 
         {
-            value: "approved",
+            value: "Approved",
             checked:  data['Status-status'] === "Approved",
             text: "Approved",
+            classes:"govuk-!-font-weight-bold",
             hint: {
               text: "For projects approved by a headteacher board (HTB). This status will move the project to your archive list and a new post HTB project will start."
             }
           },
           {
-            value: "Rejected",
-            checked:  data['Status-status'] === "Rejected",
-            text: "Rejected",
+            value: "Declined",
+            checked:  data['Status-status'] === "Declined",
+            text: "Declined",
+             classes:"govuk-label govuk-radios__label govuk-label—s",
             hint: {
               text: "For projects rejected by an HTB. This status will move this project to your archive project list."
             }
@@ -73,7 +65,7 @@
             }
           },
           {
-            value: "",
+            value: "Withdrawn",
             checked:  data['Status-status'] === "Withdrawn",
             text: "Withdrawn",
             hint: {

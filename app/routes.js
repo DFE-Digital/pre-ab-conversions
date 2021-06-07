@@ -22,3 +22,21 @@ router.post('/status-answer', function (req, res) {
     }
   
   })
+
+  //sending users to different pages
+
+router.post('status-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'juggling-balls'
+  var projectStatus = req.session.data['status']
+
+  // Check whether the variable matches a condition
+  if (projectStatus == "Declined"){
+    // Send user to next page
+    res.redirect('status/declined')
+  } else {
+    // Send user to ineligible page
+    res.redirect('summary1')
+  }
+
+})
