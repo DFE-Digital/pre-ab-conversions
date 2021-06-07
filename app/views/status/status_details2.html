@@ -7,16 +7,7 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-     Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">Project rejected</p>
-  </div>
-</div>
+
 
 
 
@@ -24,9 +15,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl" >URN 102062</span>
+    <span class="govuk-caption-xl" >URN 902032</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
-      St. Wilfrid's Primary School 
+      St. Benedicts's High School
 
  <span class="overdue">REJECTED</span>
     </h1>
@@ -35,10 +26,10 @@
       <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"href="task_list2">HTB template</a>
+              <a class="app-sub-navigation__link"href="task_list3">HTB template</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  aria-current="page"  href="/status/status_details">Status information</a>
+              <a class="app-sub-navigation__link"  aria-current="page"  href="/status/status_details2">Status information</a>
             </li>
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
@@ -72,13 +63,13 @@
               Status
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['Status-status']}} </dd>
+              Rejected </dd>
             <dd class="govuk-summary-list__actions"></dd>
           </div>
     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Rejection reason
+             Performance
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['reason']}} 
@@ -91,13 +82,13 @@
        Rejection date
       </dt>
       <dd class="govuk-summary-list__value">
-            {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
-              <span>{{ data['rejected-date-day'] }} </span>
-              <span>{{ data['rejected-date-month'] }} </span>
-              <span>{{ data['rejected-date-year'] }}</span>
-              {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
+        {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
+        <span>{{ data['rejected-date-day'] }} </span>
+        <span>{{ data['rejected-date-month'] }} </span>
+        <span>{{ data['rejected-date-year'] }}</span>
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
       </dd>
       
       <dd class="govuk-summary-list__actions"></dd>

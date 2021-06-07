@@ -3,7 +3,6 @@
 {% block beforeContent %}
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
-
 {% block content %}    
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -18,8 +17,8 @@
             </dt>
             <dd class="govuk-summary-list__value">{{ data['Status-status']}} </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="list.html">
-                Change<span class="govuk-visually-hidden">risks and issues</span>
+              <a class="govuk-link" href="list.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">status</span>
               </a>
             </dd>
           </div>
@@ -29,10 +28,10 @@
              Rejection reason
             </dt>
             <dd class="govuk-summary-list__value">               
-{{ data['status-reasons']}} 
+{{ data['reason']}} 
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="rejected.html">
-                Change<span class="govuk-visually-hidden">risks and issues</span>
+              <a class="govuk-link" href="rejected.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">rejected-reason</span>
               </a>
             </dd>
           </div>
@@ -40,12 +39,18 @@
             <dt class="govuk-summary-list__key">
              Rejection date
             </dt>
-            <dd class="govuk-summary-list__value"> 
-              
-+  {{ data['status-date']}} 
+            <dd class="govuk-summary-list__value">
+              {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
+              <span>{{ data['rejected-date-day'] }} </span>
+              <span>{{ data['rejected-date-month'] }} </span>
+              <span>{{ data['rejected-date-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+              </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="dates.html">
-                Change<span class="govuk-visually-hidden">risks and issues</span>
+              <a class="govuk-link" href="dates.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">date rejected</span>
               </a>
             </dd>
           </div>

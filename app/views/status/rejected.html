@@ -8,28 +8,68 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary#risks" method="post">
+        <form action="summary1" method="post">
         {% else %}
         <form action="dates" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-      <h1 class="govuk-heading-l">Why was this project rejected by a headteacher board?</h1>
+      
 
+     
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+     
 
-    
-      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
-
-      {{ govukTextarea({
-        id: 'status-reasons',
-        name: 'status-reasons',
-        maxlength: 500,
-        rows: 10,
-        value: data["reasons"]
-
-        }) 
-      }} 
-
+          
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "reason",
+            name: "reason",
+            type: "reason",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Give reasons"
+            }
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "reason",
+            name: "reason",
+            fieldset: {
+              legend: {
+                text: "Reson for HTB rejecting this project?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select one option."
+            },
+            items: [
+              {
+                value: "Finance",
+                checked:  data['reason'] === "finance",
+                text: "Finance"
+              },
+              {
+                value: "Performance",
+                checked:  data['reason'] === "Performance",
+                text: "Performance"
+              },
+              {
+                value: "Other",
+                checked:  data['reason'] === "Other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+  
+          
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
