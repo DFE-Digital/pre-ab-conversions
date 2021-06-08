@@ -10,12 +10,12 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="summary1" method="post">
         {% else %}
-        <form action="summary1" method="post">
+        <form action="dates" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
- 
-      <h1 class="govuk-heading-l">Date project was withdrawn</h1>
+      <h1 class="govuk-heading-l">What are the reasons for this project being withdrawn?</h1>
+
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -32,24 +32,17 @@
         </div>
       </details> -->
     
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
-      {{ govukDateInput({
-  
-        id: "date_withdrawn",
-        namePrefix: "withdrawn-date",
-        value: data["withdrawn-date-day"]["withdrawn-date-month"]["withdrawn-date-year"],
-        fieldset: {
-          legend: {
-            html: pageHeading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
+      {{ govukTextarea({
+        id: 'onhold_reasons',
+        name: 'onhold_reasons',
+        maxlength: 500,
+        rows: 10,
+        value: data["onhold_reason"]
+        
+        }) 
+      }} 
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -62,27 +55,6 @@
 
   </div>  
   
-  <!-- right hand nav 
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-    <h2 class="govuk-heading-s" id="subsection-title">
-    Useful information
-    </h2>
-    <nav role="navigation" aria-labelledby="subsection-title">
-    <ul class="govuk-list govuk-!-font-size-16">
-    <li>
-    <a class="govuk-link" href="#">
   
-    </a>
-    </li>
-    <li>
-      <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
-    </li>
-  
-    </ul>
-    </nav>
-  
-    </aside>
-  </div>-->    
 </div>
 {% endblock %}

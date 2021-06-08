@@ -37,7 +37,15 @@
     
         items: [
       
-
+        {
+          value: "Active",
+          checked:  data['Status-status'] === "Active",
+          text: "Active",
+          classes:"govuk-!-font-weight-bold",
+          hint: {
+            text: "Will return this project to active to allow you to work on it"
+          }
+        },
         {
             value: "Approved",
             checked:  data['Status-status'] === "Approved",

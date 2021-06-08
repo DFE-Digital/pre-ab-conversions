@@ -15,7 +15,7 @@
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
  
-      <h1 class="govuk-heading-l">Date project was withdrawn</h1>
+      <h1 class="govuk-heading-l">Date project was put onhold</h1>
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -36,9 +36,9 @@
 
       {{ govukDateInput({
   
-        id: "date_withdrawn",
-        namePrefix: "withdrawn-date",
-        value: data["withdrawn-date-day"]["withdrawn-date-month"]["withdrawn-date-year"],
+        id: "onhold-date",
+        namePrefix: "onhold-date",
+        value: data["onhold-date-day"]["onhold-date-month"]["onhold-date-year"],
         fieldset: {
           legend: {
             html: pageHeading,
