@@ -19,7 +19,7 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
       St. Benedicts's High School
 
- <span class="overdue">REJECTED</span>
+ <span class="overdue">DECLINED</span>
     </h1>
     <nav class="app-sub-navigation" aria-label="sub menu">
 
@@ -63,13 +63,13 @@
               Status
             </dt>
             <dd class="govuk-summary-list__value">
-              Rejected </dd>
+              Declined</dd>
             <dd class="govuk-summary-list__actions"></dd>
           </div>
     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Performance
+             Reason for decline
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['reason']}} 
@@ -79,7 +79,7 @@
           </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-       Rejection date
+       Declined date
       </dt>
       <dd class="govuk-summary-list__value">
         {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
