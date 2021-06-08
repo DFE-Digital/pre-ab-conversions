@@ -58,7 +58,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-          Published admissions number (PAN)
+          Published admission number (PAN)
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['PAN']%}
@@ -116,7 +116,11 @@
           Financial deficit
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['deficit'] }}
+            {% if data['deficit']%}
+            {{data['deficit']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/general-info/deficit">Change<span class="govuk-visually-hidden">financial surplus or deficit</span>
