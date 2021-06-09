@@ -69,8 +69,10 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
        
+          <p>This action cannot be reversed.</p>
           {{ govukButton({
-            text: "Withdraw this project"
+            text: "Withdraw project",
+            classes: "govuk-button--warning"
           }) }}
 
         </form>

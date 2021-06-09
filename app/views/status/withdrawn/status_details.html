@@ -7,20 +7,6 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-     Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">Project withdrawn</p>
-  </div>
-</div>
-
-
-
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -37,9 +23,7 @@
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"href="task_list2">HTB template</a>
             </li>
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  aria-current="page"  href="/status/status_details">Status information</a>
-            </li>
+           
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
             </li>
@@ -48,6 +32,9 @@
             </li> -->
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  aria-current="page"  href="/status/status_details">Status information</a>
             </li>
         </ul>
 
@@ -101,6 +88,16 @@
         {% else %} 
         <span class="empty">Empty</span>
       {% endif %}
+      </dd>
+      
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Delivery officer
+      </dt>
+      <dd class="govuk-summary-list__value">
+       Joe Bloggs
       </dd>
       
       <dd class="govuk-summary-list__actions"></dd>
