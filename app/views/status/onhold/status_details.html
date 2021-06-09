@@ -8,18 +8,13 @@
 {% block content %}
 
 
-
-
-
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl" >URN 102062</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
       St. Wilfrid's Primary School 
 
- <span class="overdue">DECLINED</span>
+ <span class="onhold">onhold</span>
     </h1>
     <nav class="app-sub-navigation" aria-label="sub menu">
 
@@ -28,7 +23,7 @@
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"href="task_list2">HTB template</a>
             </li>
-          
+        
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
             </li>
@@ -70,36 +65,39 @@
     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Reason for decline
+              On hold reason
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['reason']}} 
+              {% if data['onhold_reasons']%}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
             </dd>
             
             <dd class="govuk-summary-list__actions"> </dd>
           </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-       Declined date
+       On hold date
       </dt>
       <dd class="govuk-summary-list__value">
-            {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
-              <span>{{ data['rejected-date-day'] }} </span>
-              <span>{{ data['rejected-date-month'] }} </span>
-              <span>{{ data['rejected-date-year'] }}</span>
-              {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
+        {% if data['onhold-date-day'] and data['onhold-date-month'] and data['onhold-date-year']%}
+        <span>{{ data['onhold-date-day'] }} </span>
+        <span>{{ data['onhold-date-month'] }} </span>
+        <span>{{ data['onhold-date-year'] }}</span>
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
       </dd>
       
       <dd class="govuk-summary-list__actions"></dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-       Delivery officer
+      Delivery officer
       </dt>
       <dd class="govuk-summary-list__value">
-          Joe Bloggs
+       Joe Bloggs
       </dd>
       
       <dd class="govuk-summary-list__actions"></dd>

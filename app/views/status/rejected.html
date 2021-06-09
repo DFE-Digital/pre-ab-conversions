@@ -26,12 +26,17 @@
           {{ govukInput({
             id: "reason",
             name: "reason",
+            rows: 15,
             type: "reason",
             classes: "govuk-!-width-full",
             label: {
               text: "Give reasons"
             }
           }) }}
+
+
+        
+
           {% endset -%}
           
           {{ govukRadios({
@@ -53,13 +58,20 @@
                 checked:  data['reason'] === "finance",
                 text: "Finance"
               },
+
               {
                 value: "Performance",
                 checked:  data['reason'] === "Performance",
                 text: "Performance"
               },
+
               {
-                value: "Other",
+                value: "Finances and performance",
+                checked:  data['reason'] === "Finances and performance",
+                text: "Finances and performance"
+              },
+              {
+                value: "Other - ",
                 checked:  data['reason'] === "Other",
                 text: "Other",
                 conditional: {
