@@ -27,7 +27,12 @@
             <dt class="govuk-summary-list__key">
              Reason for decline
             </dt>
-            <dd class="govuk-summary-list__value">{{ data['reason']}} 
+            <dd class="govuk-summary-list__value">
+              {% if data['reason']%}
+              {{data['reason']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="rejected.html?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">rejected-reason</span>

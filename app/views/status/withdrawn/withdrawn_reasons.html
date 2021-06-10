@@ -35,14 +35,15 @@
       {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
       {{ govukTextarea({
-        id: 'onhold_reasons',
-        name: 'onhold_reasons',
+        id: 'withdraw_reasons',
+        name: 'withdraw_reasons',
         maxlength: 500,
         rows: 10,
-        value: data["onhold_reason"]
+        value: data["withdraw_reason"]
         
         }) 
       }} 
+ 
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 

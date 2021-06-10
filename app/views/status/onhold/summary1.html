@@ -27,11 +27,17 @@
             <dt class="govuk-summary-list__key">
             Reasons for on hold
             </dt>
-            <dd class="govuk-summary-list__value">               
+            <dd class="govuk-summary-list__value">  
+                
               {% if data['onhold_reasons']%}
+              {{data['onhold_reasons']}}
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
+
+        
+
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="onhold_reasons.html?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">rejected-reason</span>
