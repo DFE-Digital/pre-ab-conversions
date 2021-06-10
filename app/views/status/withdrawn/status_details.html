@@ -68,7 +68,8 @@
               Withdrawn reason
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['withdrawn_reasons']%}
+              {% if data['withdraw_reasons']%}
+              {{data['withdrawn_reasons']}}
               {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
