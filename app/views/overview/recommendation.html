@@ -20,9 +20,12 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-      <h1 class="govuk-heading-l">What is your recommendation for this project?</h1>
+      <h1 class="govuk-heading-l">Recommendation</h1>
 
-
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="recommendation">
+          What is the recommendation for this project?
+        </label>
         {{ govukRadios({
           idPrefix: "recomendation",
           name: "recomendation",
@@ -47,15 +50,38 @@
 
           ]
         }) }}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="recommendation">
+            Enter the full name of the author of this headteacher board (HTB) template
+          </label>
+   
 
-        {{ govukButton({
-          text: "Save and continue"
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+        {{ govukInput({
+         
+          classes: "govuk-input--width-20",
+          id: "author",
+          name: "author",
+      
+          value: data["author"]
         }) }}
+         
+     
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+ <div>
 
       </form>
 
     </div>
 
+  </div>
+</div>
     <!-- right hand nav -->
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">

@@ -30,7 +30,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="recommendation">
-            Change<span class="govuk-visually-hidden">recommendation</span>
+            Change<span class="govuk-visually-hidden">recommendation and author</span>
           </a>
         </dd>
       </div>
@@ -39,9 +39,16 @@
           Author
         </dt>
         <dd class="govuk-summary-list__value">
-          Delivery Officer
+          {% if data['author']%}
+          {{data['author']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="recommendation">
+            Change<span class="govuk-visually-hidden">recommendation and author</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
