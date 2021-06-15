@@ -12,7 +12,7 @@
 {% block content %}
  
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="/generate/generate_summary" method="post">
+      <form action="/generate/generate_summary#ofsted" method="post">
         {% else %}
         <form action="key-stage-performance-comments#additional_info" method="post">
       {% endif %}
@@ -144,7 +144,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-<form action="key-stage-performance-comments" method="post"> 
+
   {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 <a name="additional_info"></a>
   {{ govukTextarea({
