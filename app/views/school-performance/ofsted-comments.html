@@ -5,6 +5,14 @@
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['returnToSummary'] == 'yes' %}
+      <form action="/ofsted-comments" method="post">
+      {% else %}
+      <form action="/task_list1" method="post">
+    {% endif %}
+      </div>  </div>
 <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -116,7 +124,7 @@
                     {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="ofsted-information">
+                    <a class="govuk-link" href="ofsted-information#additional_info">
                       Change<span class="govuk-visually-hidden">Ofsted additional information</span>
                     </a>
                 </dd>
@@ -126,7 +134,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/task_list1" method="post"> 
+        <form action="ofsted-information" method="post"> 
           <a href="#" name="additional_info"></a>
           
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
