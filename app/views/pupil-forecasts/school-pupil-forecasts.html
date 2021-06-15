@@ -12,7 +12,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-  
+      {% if data['returnToSummary'] == 'yes' %}
+      <form action="/generate/generate_summary#forecasts" method="post">
+      {% else %}
+      <form action="/task_list1" method="post">
+    {% endif %}
+     
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
@@ -65,7 +70,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form action="school-pupil-forecasts-summary" method="post"> 
+
    <a href="#" name="additional_info"></a>   {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
     
       {{ govukTextarea({

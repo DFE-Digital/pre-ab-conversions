@@ -533,7 +533,7 @@ Early years provision
        <span class="empty">Empty</span>
       {% endif %}
       </dd>
-      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-performance/ofsted-information?returnToSummary=yes">  Change<span class="govuk-visually-hidden">Ofsted additional information</span></a></dd>
+      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-performance/ofsted-information#?returnToSummary=yes">  Change<span class="govuk-visually-hidden">Ofsted additional information</span></a></dd>
     </div>
 
 </dl>
@@ -707,15 +707,17 @@ School budget information
 Additional information (optional)
   </dt>
   <dd class="govuk-summary-list__value">
-    {% if data['finance-more-detail']%}
-    {{data['finance-more-detail']}}
+    {% if data['budget-more-detail']%}
+    {{data['budget-more-detail']}}
    {% else %} 
    <span class="empty">Empty</span>
   {% endif %}
   </dd>
-  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">budget additional information</span></a></dd>
+  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/school-budget/budget-information?returnToSummary=yes">  Change<span class="govuk-visually-hidden">budget additional information</span></a></dd>
 </div>
 </section>  
+<a name="forecasts"></a>
+
 <h2 class="govuk-heading-s">
 School pupil forecasts
  </h2>
@@ -909,7 +911,7 @@ Key stage performance tables
 
 
 
-        <h3 class="govuk-heading-s  govuk-!-margin-top-8">Additional information (optional)</h3> 
+<a name="performance"></a>        <h3 class="govuk-heading-s  govuk-!-margin-top-8">Additional information (optional)</h3> 
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Additional information</dt>
@@ -920,15 +922,15 @@ Key stage performance tables
            <span class="empty">Empty</span>
           {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/key-stage/key-stage-performance-tables?returnToSummary=yes">  Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/key-stage/key-stage-performance-tables#?returnToSummary=yes">  Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
         </div>
         </dl>
         
         </section> 
-        <h2 class="govuk-heading-s">
+     <!--      <h2 class="govuk-heading-s">
           Supporting documents
            </h2>
-  <section class="app-summary-card govuk-!-margin-bottom-6">
+<section class="app-summary-card govuk-!-margin-bottom-6">
  
     <header class="app-summary-card__header">
       
@@ -957,7 +959,7 @@ Key stage performance tables
           <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2?returnToSummary=yes">Change<span class="govuk-visually-hidden">file 2</span></a> </dd>        </div>
   </dl>
     </div>
-  </section> 
+  </section> -->
 
   <h2 class="govuk-heading-s">
    Trust template
