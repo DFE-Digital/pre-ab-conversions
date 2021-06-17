@@ -53,100 +53,7 @@
         </ul>
 
     </nav>
-    <h2 class="govuk-heading-m govuk-!-margin-top-8">
-      Local authority (LA) information template details
-    </h2>
-    <section class="app-summary-card govuk-!-margin-bottom-6">
-   
-      <header class="app-summary-card__header">
-        
-        <h3 class="app-summary-card__title">
-         Local authority (LA) information template details
-        </3>
-      </header>
-      <div class="app-summary-card__body">
-    
-      
-    <dl class="govuk-summary-list">
-      
-        
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-two-thirds"><a name="recommendation"></a>
-           Date you sent the template
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if data['la-sent-date-day'] and data['la-sent-date-month'] and data['la-sent-date-year']%}
-             <span>{{ data['la-sent-date-day'] }} </span>
-             <span>{{ data['la-sent-date-month'] }} </span>
-             <span>{{ data['la-sent-date-year'] }}</span>
-             {% else %} 
-             <span class="empty">Empty</span>
-           {% endif %}
-            </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-             
-                
-              </dd>
-            
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key"><a name="author"></a>
-             Date the want the template returned to you
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {% if data['la-sent-back-day'] and data['la-sent-back-month'] and data['la-sent-back-year']%}
-             <span>{{ data['la-sent-back-day'] }} </span>
-             <span>{{ data['la-sent-back-month'] }} </span>
-             <span>{{ data['la-sent-back-year'] }}</span>
-             {% else %} 
-             <span class="empty">Empty</span>
-           {% endif %}
-   
-              <dd class="govuk-summary-list__actions">
-             
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-              Comments
-              </dt>
-              <dd class="govuk-summary-list__value">
-               {% if data['la-comments']%}
-               {{data['la-comments']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-             {% endif %}
-              </dd>
-     <dd class="govuk-summary-list__actions">  
-     </dd>
-        </div>
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key"><a name="clearedby"></a>
-          Link to Sharepoint
-          </dt>
-          <dd class="govuk-summary-list__value">
-           {% if data["la-sharepoint-link"] %}
-           {{ data["la-sharepoint-link"] }}
-           {% else %} 
-           <span class="empty">Empty</span>
-         {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-           
-            </a>
-          </dd>
-        </div>
-        
-       
-    </dl>
-    
-    
-      </div>
-      
-    </section> 
+
     <h2 class="govuk-heading-m govuk-!-margin-top-8">
       School and trust information and project dates
      </h2>
@@ -1014,9 +921,38 @@
           
           </section> 
           <h2 class="govuk-heading-m">
-
+            Supporting documents
+             </h2>
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+   
+      <header class="app-summary-card__header">
         
+        <h2 class="app-summary-card__title">
+         Supporting documents details
+        </h2>
+      </header>
+      <div class="app-summary-card__body">
+    
+      
+    <dl class="govuk-summary-list">
+      
         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">File 1</dt>
+            <dd class="govuk-summary-list__value">Ofsted_interim-report.docx</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+       
+          </div>
+  
+                 
+          <div class="govuk-summary-list__row">
+  
+            <dt class="govuk-summary-list__key">File 2</dt>
+            <dd class="govuk-summary-list__value">google-map.jpg</dd>
+            <dd class="govuk-summary-list__actions"></dd>        </div>
+    </dl>
+      </div>
+    </section> 
   
     <h2 class="govuk-heading-m">
      Trust template
