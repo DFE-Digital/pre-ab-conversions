@@ -832,6 +832,9 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: 0;
 }
 
+/* ==========================================================================
+   #DOCUMNENT ICONS
+   ========================================================================== */
 $thumbnail-width: 99px;
 $thumbnail-height: 140px;
 $thumbnail-border-width: 5px;
@@ -900,3 +903,144 @@ $thumbnail-icon-border-colour: govuk-colour("mid-grey", $legacy: "grey-3");
   text-decoration: none;
   cursor: help;
 }
+
+/* ==========================================================================
+   #BUTTON GROUP
+   ========================================================================== */
+   .moj-button-menu {
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* TOGGLE BUTTON */
+  .moj-button-menu__toggle-button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  
+  .moj-button-menu__toggle-button:last-child {
+    margin-right: 0;
+  }
+  
+  .moj-button-menu__toggle-button:after {
+    background-repeat: no-repeat;
+    background-image: url(/assets/images/icon-arrow-white-down.svg);
+    content: '';
+    display: inline-block;
+    height: 5px;
+    margin-left: 10px;
+    width: 10px;
+    vertical-align: middle;
+  }
+  
+  .moj-button-menu__toggle-button:focus:after {
+    background-image: url(/assets/images/icon-arrow-black-down.svg);
+  }
+  
+  .moj-button-menu__toggle-button[aria-expanded="true"]:focus:after {
+    background-image: url(/assets/images/icon-arrow-black-up.svg);
+  }
+  
+  .moj-button-menu__toggle-button:hover:after {
+    background-image: url(/assets/images/icon-arrow-white-down.svg);
+  }
+  
+  .moj-button-menu__toggle-button[aria-expanded="true"]:hover:after {
+    background-image: url(/assets/images/icon-arrow-white-up.svg);
+  }
+  
+  .moj-button-menu__toggle-button[aria-expanded="true"]:after {
+    background-image: url(/assets/images/icon-arrow-white-up.svg);
+  }
+  
+  .moj-button-menu__toggle-button--secondary {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+  
+  .moj-button-menu__toggle-button--secondary:after {
+    background-image: url(/assets/images/icon-arrow-black-down.svg);
+  }
+  
+  .moj-button-menu__toggle-button--secondary[aria-expanded="true"]:after {
+    background-image: url(/assets/images/icon-arrow-black-up.svg);
+  }
+  
+  .moj-button-menu__toggle-button--secondary:hover:after {
+    background-image: url(/assets/images/icon-arrow-black-down.svg);
+  }
+  
+  .moj-button-menu__toggle-button--secondary[aria-expanded="true"]:hover:after {
+    background-image: url(/assets/images/icon-arrow-black-up.svg);
+  }
+  
+  /* MENU ITEM */
+  .moj-button-menu__item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  
+  .moj-button-menu__item:last-child {
+    margin-right: 0;
+  }
+  
+  .moj-button-menu [role=menuitem] {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    background-color: #f3f2f1;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+  }
+  
+  @media print {
+    .moj-button-menu [role=menuitem] {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .moj-button-menu [role=menuitem] {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+  }
+  
+  @media print {
+    .moj-button-menu [role=menuitem] {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  
+  .moj-button-menu [role=menuitem]:link, .moj-button-menu [role=menuitem]:visited {
+    text-decoration: none;
+    color: #0b0c0c;
+  }
+  
+  .moj-button-menu [role=menuitem]:hover {
+    background-color: #b1b4b6;
+  }
+  
+  .moj-button-menu [role=menuitem]:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    position: relative;
+    z-index: 10;
+  }
