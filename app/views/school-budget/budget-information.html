@@ -21,20 +21,17 @@
   <br>
   </div>
 </div>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
         Revenue carry forward at end-March (current year) 2021
       </dt>
-      <dd class="govuk-summary-list__value">
+      <dd class="govuk-summary-list__value govuk-!-width-one-third">
         £{{ data['finance-current-year-2021'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">revenue carry forward for current year</span>
-        </a>
-      </dd>
+  
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -43,11 +40,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['finance-following-year-2022']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">projected revenue balance for following year</span>
-        </a>
-      </dd>
+      
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -56,11 +49,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['finance-forward-2021']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">capital carry forward for current year</span>
-        </a>
-      </dd>
+     
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -69,16 +58,12 @@
       <dd class="govuk-summary-list__value">
         <p class="govuk-body"> £{{ data['finance-forward-2022']}}</p>
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="budget-information-details">
-          Change<span class="govuk-visually-hidden">capital carry forward for following year</span>
-        </a>
-      </dd>
+      
     </div>
 
     
   </dl>
-
+</div></div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
