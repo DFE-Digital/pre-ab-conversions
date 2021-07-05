@@ -47,7 +47,7 @@
     
     <div class="govuk-header__content">
     
-    <a href="/" class="govuk-header__link govuk-header__link--service-name">
+    <a href="/index" class="govuk-header__link govuk-header__link--service-name">
       Manage trusts and academy schools
     </a>
     
@@ -90,7 +90,7 @@
 
          <ul class="app-primary-navigation__list">
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="/index">Academy conversions (4)</a>
+              <a class="app-primary-navigation__link" aria-current="index" href="../index">Academy conversions (4)</a>
             </li>
           
             <li class="app-primary-navigation__item">
@@ -108,7 +108,7 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/no-task-derived-info/task_list1.html" class="govuk-back-link">Back to task list</a>
+      <div class="govuk-width-container"><a href="../task_list1.html" class="govuk-back-link">Back to task list</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
@@ -123,7 +123,7 @@
             </dt>
             <dd class="govuk-summary-list__value">{{ data["project-rationale"] }}</dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/no-task-derived-info/rationale/project-rationale">
+              <a class="govuk-link" href="project-rationale">
                 Change<span class="govuk-visually-hidden">project rationale</span>
               </a>
             </dd>
@@ -141,7 +141,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/no-task-derived-info/rationale/sponsor-rationale">
+              <a class="govuk-link" href="sponsor-rationale">
                 Change<span class="govuk-visually-hidden">sponsor rationale</span>
               </a>
             </dd>
@@ -151,7 +151,7 @@
 
 
   
-        <form action="/no-task-derived-info/task_list1" method="post"> 
+        <form action="..//task_list1" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
