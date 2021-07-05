@@ -48,7 +48,7 @@
     
     <div class="govuk-header__content">
     
-    <a href="/" class="govuk-header__link govuk-header__link--service-name">
+    <a href="../../index" class="govuk-header__link govuk-header__link--service-name">
       Manage trusts and academy schools
     </a>
     
@@ -91,7 +91,7 @@
 
          <ul class="app-primary-navigation__list">
             <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="/no-task-derived-info/task_list1">Academy conversions (4)</a>
+              <a class="app-primary-navigation__link" aria-current="index" href="task_list1">Academy conversions (4)</a>
             </li>
           
             <li class="app-primary-navigation__item">
@@ -109,7 +109,7 @@
     </div></div>
 </div>
 
-      <div class="govuk-width-container"><a href="/no-task-derived-info/index" class="govuk-back-link">Back to all conversion projects</a>
+      <div class="govuk-width-container"><a href="index" class="govuk-back-link">Back to all conversion projects</a>
 <main class="govuk-main-wrapper gov-main-wrapper--auto-spacing" id="main-content" role="main">
           
   <div class="govuk-grid-row">
@@ -129,16 +129,16 @@
   <ul class="app-sub-navigation__list">
 
         <li class="app-sub-navigation__item">
-          <a class="app-sub-navigation__link" aria-current="page" href="/no-task-derived-info/task_list1">Task list</a>
+          <a class="app-sub-navigation__link" aria-current="page" href="task_list1">Task list</a>
         </li>
         <li class="app-sub-navigation__item">
-          <a class="app-sub-navigation__link"  href="/no-task-derived-info/related/application">Application form</a>
+          <a class="app-sub-navigation__link"  href="related/application">Application form</a>
         </li>
-        <!-- Not MVP <li class="app-sub-navigation__item">
-          <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
-        </li> -->
+       <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="related/dates">Project dates</a>
+        </li> 
         <li class="app-sub-navigation__item">
-          <a class="app-sub-navigation__link"  href="/no-task-derived-info/related/notes.html">Project notes</a>
+          <a class="app-sub-navigation__link"  href="related/notes.html">Project notes</a>
         </li>
     </ul>
 
@@ -159,7 +159,7 @@
           <ol class="app-task-list govuk-!-margin-bottom-8">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/no-task-derived-info/LA-proforma/local-authority-template" aria-describedby="LA-infromation-template">
+                <a href="LA-proforma/local-authority-template" aria-describedby="LA-infromation-template">
                 Send the LA information template
                 </a>
               </span>
@@ -173,38 +173,40 @@
           <ol class="app-task-list govuk-!-margin-bottom-8" aria-label="list of tasks">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/no-task-derived-info/overview/summary1.html"  aria-describedby="project-overview">
+                <a href="overview/summary1.html"  aria-describedby="project-overview">
                   Conversion overview
                 </a>
               </span>
               <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
-                  {{data|conversionOverviewStatusText(
-                    ['overview-status'],
-                    ['htb-date','recomendation'],
-                    ['opening-date', 'aorequired']
-                  )}} 
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
               </strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/no-task-derived-info/general-info/summary1" aria-describedby="general-information">
+                <a href="general-info/summary1.html" aria-describedby="general-information">
                   General information
                 </a>
               </span>
-              <strong class="{{data|generalInfoStatusClass(['general-info-status'],['goodschools'], ['viability','deficit','diocesan','distance'] )}} app-task-list__tag" id="general-information">  
+              <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
                 {{data|generalInfoStatusText(
                   ['general-info-status'],
-                  ['goodschools'],
-                  ['viability','deficit','diocesan','distance']
+                  ['distance'],
+                  ['deficit'],
+                  ['diocesan'],
+                  ['goodschools','viability' ]
                 )}} 
-            </strong>
+              </strong>
           </strong>
           
             </li>
             
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/no-task-derived-info/rationale/rationale-summary1.html" aria-describedby="rationale-status">
+                <a href="rationale/rationale-summary1.html" aria-describedby="rationale-status">
                   Rationale
                 </a>
               </span>
@@ -226,7 +228,7 @@
             
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/no-task-derived-info/upload-docs/upload-docs.html"  aria-describedby="supporting-information">
+                <a href="upload-docs/upload-docs.html"  aria-describedby="supporting-information">
                   Upload supporting documentation
                 </a>
               </span>
@@ -263,7 +265,7 @@
                   
                     
                       <p class="govuk-body-s">You can make changes after generating the HTB papers. <p>
-                      <a href="/no-task-derived-info/generate/generate_summary" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
+                      <a href="generate/generate_summary" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
                   </p>
                 
               </div>

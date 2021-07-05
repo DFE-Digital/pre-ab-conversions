@@ -183,10 +183,10 @@ module.exports = function (env) {
       const flag = inProgressFields.some(field => data[field]);
   
       if (data[completedFields] || flag ){
-        return "/LA-proforma/LAproforma-summary";
+        return "LA-proforma/LAproforma-summary";
       }
       else {
-        return "/LA-proforma/local-authority-template";
+        return "LA-proforma/local-authority-template";
       }
     }
 
