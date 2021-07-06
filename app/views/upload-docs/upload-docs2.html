@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="/generate/generate_summary" method="post">
+        {% else %}
+        <form action="/upload-docs/upload-docs" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+    <h1 class="govuk-heading-l">Uploaded supporting documentation</h1>
+
+    <h1 class="govuk-heading-m">Files added</h1>
+      <form method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">Ofsted_interim_report.docx</a> 2MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"> file 1</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">Distance_from_MAT.jpg</a> 5MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"> file 2</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </form>
+  </div>
+</div>
+    
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      Do you want to upload another document?
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="another" name="another" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="another">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="another-2" name="another" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="another-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+</form>
+        
+<p><a href="/task_list1">Cancel</a></p>
+{% endblock %}

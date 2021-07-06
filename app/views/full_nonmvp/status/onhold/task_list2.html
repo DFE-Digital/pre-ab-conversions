@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
+
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Project on hold</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-0" >URN 102062</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      St. Wilfrid's Primary School 
+
+      <span class="onhold">ON HOLD</span>
+    </h1>
+
+
+    <a href="list"  aria-describedby="status-list">
+      Change the status of this project
+    </a>
+      {% if data['htb-date']%}
+    <div class="govuk-inset-text">
+      <h4 class="govuk-heading-m">HTB date</h4>
+      <p>HTB date for this project is {{ data['htb-date']}}</p>
+    </div> 
+      {% else %} 
+      {% endif %}
+
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="task_list1">Task list</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="status_details.html">Status information</a>
+            </li>
+        </ul>
+
+    </nav>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Task list</h2>
+    <p class="govuk-body">The task list will help you prepare for the headteacher board (HTB) meeting. You can complete the tasks in any order.</p>
+  
+    <ol class="app-task-list">
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Local authority (LA) information template</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template">
+              Record dates for the LA information template 
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>        
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ol class="app-task-list">
+          <li>
+          <h3 class="app-task-list__section govuk-!-margin-top-0">Create headteacher board (HTB) template</h3>
+
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="overview/summary1.html"  aria-describedby="project-overview">
+                School and trust information and project dates
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/general-info/summary1" aria-describedby="general-information">
+                General information
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/school-performance/ofsted-information.html" aria-describedby="school-performance">
+                School performance (Ofsted information)
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="rationale/rationale-summary1.html" aria-describedby="rationale-status">
+                Rationale
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="risks-and-issues/risks-summary1">
+                Risks and issues
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/school-budget/budget-information.html" aria-describedby="school-budget-information">
+                School budget information
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+              href="{{data|getSchoolPupilForecastNextPageLink(
+                    ['finance-more-detail']               
+                  )}}" 
+              aria-describedby="school-pupil-forecast">
+              School pupil forecasts
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/key-stage/key-stage-performance-tables.html" aria-describedby="performance-tables">
+                Key stage performance tables
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="performance-tables">Reference only</strong>
+          </li>
+         <!-- <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="upload-docs/upload-docs.html"  aria-describedby="supporting-information">
+                Upload supporting documents (optional)
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="supporting-information">Not started</strong>
+          </li>-->
+        </ol>
+      </li>
+      <li>
+          <ol class="app-task-list">
+            <li>
+            <h3 class="app-task-list__section">Trust template</h3>
+  
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">    <span class="app-task-list__task-name">
+              <a href="MAT_Sponsor_Template.docx" aria-describedby="sponsor-template">
+                Check and edit the trust template
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">Reference only</strong>
+          </li>
+        </ol>
+
+        
+      
+      </li>
+  </div>
+
+    
+       <!-- <div class="govuk-grid-column-one-third">
+          <div class="status-box">
+            <h3 class="govuk-heading-m">Preview HTB template</h3>
+            <p class="govuk-body-s">Preview your HTB template to see how your content looks.</p>
+            <p class="govuk-body-s">You can also check your HTB template for any mistakes before you generate it and send it for review.</p>
+            <p class="govuk-body-s">
+              <a href="preview-templates/preview">Preview HTB template</a>
+            </p>
+            <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m" />
+      
+            <h3 class="govuk-heading-m">Generate HTB papers</h3>
+              <p class="govuk-body-s">You can make changes after generating the HTB papers. <p>
+              <a href="generate/generate_summary" class="govuk-button govuk-!-margin-bottom-2">Generate HTB papers</a>
+            </p>
+            </div>-->
+        </div>
+      </div>
+      {% endblock %}
+

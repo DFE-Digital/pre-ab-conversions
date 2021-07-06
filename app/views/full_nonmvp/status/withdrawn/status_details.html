@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl" >URN 102062</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      St. Wilfrid's Primary School 
+
+ <span class="withdrawn">withdrawn</span>
+    </h1>
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"href="task_list2">HTB template</a>
+            </li>
+           
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  aria-current="page"  href="/status/status_details">Status information</a>
+            </li>
+        </ul>
+
+    </nav>
+    <h1 class="govuk-heading-l">Status information</h1>
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+
+        <h2 class="app-summary-card__title">
+         Status information details
+        </h2> <a name="budget"></a>
+      </header>
+      <div class="app-summary-card__body">
+    
+      
+    <dl class="govuk-summary-list">
+      
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['Status-status']}} </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+          </div>
+    
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Withdrawn reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['withdraw_reasons']%}
+              {{data['withdrawn_reasons']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+            </dd>
+            
+            <dd class="govuk-summary-list__actions"> </dd>
+          </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Withdrawn date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['withdrawn-date-day'] and data['withdrawn-date-month'] and data['withdrawn-date-year']%}
+        <span>{{ data['withdrawn-date-day'] }} </span>
+        <span>{{ data['withdrawn-date-month'] }} </span>
+        <span>{{ data['withdrawn-date-year'] }}</span>
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
+      </dd>
+      
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Delivery officer
+      </dt>
+      <dd class="govuk-summary-list__value">
+       Joe Bloggs
+      </dd>
+      
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    </section>  
+  
+  
+  {% endblock %}
+  
