@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
+<a href="../../index" class="govuk-back-link">Back to all conversion projects</a>
 
 
 
@@ -25,7 +25,7 @@
     </h1>
 
 
-    <a href="list"  aria-describedby="status-list">
+    <a href="../list"  aria-describedby="status-list">
       Change the status of this project
     </a>
       {% if data['htb-date']%}
@@ -41,16 +41,16 @@
       <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="page" href="task_list1">Task list</a>
+              <a class="app-sub-navigation__link" aria-current="page" href="../task_list1">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
+              <a class="app-sub-navigation__link"  href="../../related/application">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+              <a class="app-sub-navigation__link"  href="../../related/notes.html">Project notes</a>
             </li>
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="status_details.html">Status information</a>
@@ -60,6 +60,10 @@
     </nav>
   </div>
   <div class="govuk-grid-column-two-thirds">
+
+
+
+
     <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Task list</h2>
     <p class="govuk-body">The task list will help you prepare for the headteacher board (HTB) meeting. You can complete the tasks in any order.</p>
   

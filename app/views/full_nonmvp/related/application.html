@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
-{% endblock %}
-
-{% block content %}
-          
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-      <span class="govuk-caption-xl">URN 102062</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+<a href="../index" class="govuk-back-link">Back to all conversion projects</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
         St. Wilfrid's Primary School</h1>
+    <a href="../status/list"  aria-describedby="status-list">
+      Change the status of this project
+    </a>
+
         {% if data['htb-date']%}
         <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
         <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
@@ -19,10 +19,10 @@
          {% endif %}
 <nav class="app-sub-navigation" aria-label="sub menu">
 
-  <ul class="app-sub-navigation__list">
+  <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
     <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link" href="/task_list1">Task list</a>
+      <a class="app-sub-navigation__link" href="../task_list1">Task list</a>
     </li>
         <li class="app-sub-navigation__item">
           <a class="app-sub-navigation__link"   aria-current="page"  href="#">School application form</a>

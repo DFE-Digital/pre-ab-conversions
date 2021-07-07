@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
+<a href="../../index" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 
@@ -39,13 +39,13 @@
             </li>
           
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
+              <a class="app-sub-navigation__link"  href="../../related/application">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+              <a class="app-sub-navigation__link"  href="../../related/notes.html">Project notes</a>
             </li>
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="status_details">Status information</a>
@@ -53,6 +53,92 @@
         </ul>
 
     </nav>
+
+    <h2 class="govuk-heading-m">
+      Confirm local authority information template dates details</h2>
+    
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+     
+      <header class="app-summary-card__header">
+        
+        <h2 class="app-summary-card__title">
+      Confirm local authority information template dates details</h2>
+        </header>
+        <div class="app-summary-card__body">
+  
+    
+          <dl class="govuk-summary-list">
+            
+              
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+            Date you sent the template
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['la-sent-date-day'] and data['la-sent-date-month'] and data['la-sent-date-year']%}
+              <span>{{ data['la-sent-date-day'] }} </span>
+              <span>{{ data['la-sent-date-month'] }} </span>
+              <span>{{ data['la-sent-date-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date you want the template returned
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['la-sent-back-day'] and data['la-sent-back-month'] and data['la-sent-back-year']%}
+              <span>{{ data['la-sent-back-day'] }} </span>
+              <span>{{ data['la-sent-back-month'] }} </span>
+              <span>{{ data['la-sent-back-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Comments (optional)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['la-comments']%}
+              {{data['la-comments']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+      
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add a link to where you have stored the template in Sharepoint
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["la-sharepoint-link"] %}
+              {{ data["la-sharepoint-link"] }}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+         
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>  
+
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">
       School and trust information and project dates
