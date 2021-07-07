@@ -15,19 +15,19 @@ router.post('/status-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (projectStatus == "Declined"){
     // Send user to next page
-    res.redirect('/status/rejected')
+    res.redirect('full_nonmvp/status/rejected')
 
   } else if (projectStatus == "Approved"){
-  res.redirect('/status/approved/conditions')
+  res.redirect('full_nonmvp/status/approved/conditions')
   
 } else if (projectStatus == "Withdrawn"){
-  res.redirect('/status/withdrawn/withdrawn_reasons')
+  res.redirect('full_nonmvp/status/withdrawn/withdrawn_reasons')
 
 } else if (projectStatus == "Onhold"){
-  res.redirect('/status/onhold/onhold_reasons')
+  res.redirect('full_nonmvp/status/onhold/onhold_reasons')
 
 } else if (projectStatus == "Active"){
-  res.redirect('/task_list1')
+  res.redirect('full_nonmvp/task_list1')
   }
   
 
@@ -42,10 +42,10 @@ router.post('/conditions-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (projectConditions == "Yes"){
     // Send user to next page
-    res.redirect('/status/approved/conditions_yes')
+    res.redirect('full_nonmvp/status/approved/conditions_yes')
 
   } else if (projectConditions == "No"){
-  res.redirect('/status/approved/dates')
+  res.redirect('full_nonmvp/status/approved/dates')
   }
   
 
