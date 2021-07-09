@@ -124,11 +124,27 @@
           Previous HTB
         </dt>
         <dd class="govuk-summary-list__value">
-        12 November 2020 <br>
-        <a class="govuk-link" href="#">St_Wilfreds_Primary_Nov20</a>
+
+          {% if data['Conditions2']%}
+          {{data['Conditions2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+
+          {{ data['']}} </br>
+          {% if data['previousHTB-date-day'] and data['previousHTB-date-month'] and data['previousHTB-date-year']%}
+          <span>{{ data['previousHTB-date-day'] }} </span>
+          <span>{{ data['previousHTB-date-month'] }} </span>
+          <span>{{ data['previousHTB-date-year'] }}</span>
+          {% else %} 
+   
+        {% endif %}
+   
         </dd>
         <dd class="govuk-summary-list__actions">
-       
+          <a class="govuk-link" href="previous-htb.html">
+            Change<span class="govuk-visually-hidden">perevious head teacher board date</span>
+          </a>
         </dd>
       </div>
 

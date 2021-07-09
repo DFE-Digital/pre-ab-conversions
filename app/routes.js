@@ -29,7 +29,6 @@ router.post('/status-answer', function (req, res) {
 } else if (projectStatus == "Active"){
   res.redirect('full_nonmvp/task_list1')
   }
-  
 
 
 })
@@ -48,8 +47,22 @@ router.post('/conditions-answer', function (req, res) {
   res.redirect('full_nonmvp/status/approved/dates')
   }
   
+})
 
+router.post('/conditions2-previous', function (req, res) {
 
+  // Make a variable and give it the value from 'list'
+  var projectConditions2 = req.session.data['Conditions2']
+
+  // Check whether the variable matches a condition
+  if (projectConditions2 == "Yes"){
+    // Send user to next page
+    res.redirect('MVP/overview/previous-yes')
+
+  } else if (projectConditions2 == "No"){
+  res.redirect('/MVP/overview/summary1')
+  }
+  
 })
 
 module.exports = router
