@@ -223,9 +223,13 @@
           Academy type and route
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Converter, grant only £25000</p>
+          <p class="govuk-body">    Convertor - £{{ data['routes']}}<br>
+            {{ data['routes-funding']}} </p>
         </dd>
         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route">
+            Change<span class="govuk-visually-hidden">route"</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
