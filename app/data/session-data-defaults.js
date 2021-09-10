@@ -43,7 +43,10 @@ module.exports = {
 /* rejectiondates */
 "rejected-date-day": "15",
 "rejected-date-month": "6",
-"rejected-date-year": "2021"
+"rejected-date-year": "2021",
+
+/* routes */
+"routes": "25,000",
 
 }
 
