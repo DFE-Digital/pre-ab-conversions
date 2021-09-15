@@ -20,16 +20,16 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-      <h1 class="govuk-heading-l">What is the route type and funding entitlement for this conversion?</h1>
+      <h1 class="govuk-heading-l">Change the amount of the conversion support grant if it needs to be less than £25,000</h1>
 
-      <p class="govuk-body-m gov"><b>This is a convertor route project</b></p>
+      <p class="govuk-body-m gov"><b>Academy route: Converter</b></p>
 
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           hint: {
-            text: "If for any reason the funding entitilement is less than £25,000 please amend the value for the correct funding."
+            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its support grant, so you can decrease the amount for this project if you need to."
           },
           classes: "govuk-input--width-5",
           id: "routes",
@@ -44,11 +44,11 @@
           name: "routes-funding",
           id: "routes-funding",
           label: {
-            text: "Additional information (optional)",
+            text: "If you changed the amount of the support grant, give a reason why",
             classes: "govuk-label--m",
             value: data["routes-funding"]   },
           hint: {
-            text:"If you have amended the funding entitlement value please give the reason why."
+            text:""
           }
         }) }}
        
