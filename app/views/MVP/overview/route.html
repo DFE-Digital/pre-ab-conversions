@@ -20,9 +20,9 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-      <h1 class="govuk-heading-l">Change the amount of the conversion support grant if it needs to be less than £25,000</h1>
-
-      <p class="govuk-body-m gov"><b>Academy route: Converter</b></p>
+      <h1 class="govuk-heading-l">Academy type and route and conversion support grant</h1>
+<h2 class="govuk-heading-m">Academy type and route (cannot be changed for this private beta)</h2>
+      <p class="govuk-body-m gov">Academy route: Converter</p>
 
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -35,7 +35,11 @@
           id: "routes",
           name: "routes",
           prefix: {text:"£"}, 
-          value: data["routes"]
+          value: data["routes"],
+          label: {
+            text: "Change the conversion support grant if it needs to be less than £25,000",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
         }) }}
 
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
@@ -46,10 +50,7 @@
           label: {
             text: "If you changed the amount of the support grant, give a reason why",
             classes: "govuk-label--m",
-            value: data["routes-funding"]   },
-          hint: {
-            text:""
-          }
+            value: data["routes-funding"]   }
         }) }}
        
  
