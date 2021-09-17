@@ -21,15 +21,15 @@
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">Academy type and route and conversion support grant</h1>
-<h2 class="govuk-heading-m">Academy type and route (cannot be changed for this private beta)</h2>
-      <p class="govuk-body-m gov">Academy route: Converter</p>
+<h2 class="govuk-heading-m">Academy type and route</h2>
+      <p class="govuk-body-m gov">Converter (cannot be changed for this private beta)</p>
 
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           hint: {
-            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its support grant, so you can decrease the amount for this project if you need to."
+            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its support grant, so you can decrease the amount for this project if you need to. For example, £20,000"
           },
           classes: "govuk-input--width-5",
           id: "routes",
