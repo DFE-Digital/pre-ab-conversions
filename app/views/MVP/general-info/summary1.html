@@ -184,14 +184,24 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-          Local MP and political party
+          Local MP
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['local-mp']%}
-            {{data['local-mp']}},
-            {% else %} 
-            <span class="empty">Empty</span>
-          {% endif %}
+              {% if data['local-mp']%}
+              {{data['local-mp']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="local-mp">Change<span class="govuk-visually-hidden">Local MP</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          MP's political party
+          </dt>
+          <dd class="govuk-summary-list__value">
           {% if data['party']%}
            {{data['party']}}
           {% else %} 
@@ -200,7 +210,7 @@
           
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="local-mp">Change<span class="govuk-visually-hidden">Local MP</span>
+            <a class="govuk-link" href="local-mp">Change<span class="govuk-visually-hidden">Political party</span>
             </a>
           </dd>
         </div>
