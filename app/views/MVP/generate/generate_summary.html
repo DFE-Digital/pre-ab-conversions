@@ -432,15 +432,41 @@
             Change<span class="govuk-visually-hidden">distance to trust headquarters</span>
           </a>
         </dd>
+      </div><a name="local-mp"></a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Parlimentary consituency
+        </dt>
+        <dd class="govuk-summary-list__value"> Warrington South
+        <dd class="govuk-summary-list__actions"></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        MP (party)
+        MP name
         </dt>
-        <dd class="govuk-summary-list__value"> Conservatives
-        <dd class="govuk-summary-list__actions">
-   
-        </dd>
+        <dd class="govuk-summary-list__value">
+          {% if data['local-mp']%}
+          {{data['local-mp']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/local-mp?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">MP name</span>
+        </a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        MP political party
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          {% if data['party']%}
+          {{data['party']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+       {% endif %}
+        <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="../general-info/local-mp?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">MP political party</span>
+        </a></dd>
       </div>
 </dl>
   </div>
