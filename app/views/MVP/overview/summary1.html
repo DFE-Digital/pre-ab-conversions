@@ -17,6 +17,47 @@
       <div class="govuk-grid-column-full">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">St. Wilfrid's Primary School</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unique reference number (URN)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">120620</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Trust name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Dynamics Trust</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Trust reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">TRO1318</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           Recommendation
         </dt>
@@ -34,52 +75,6 @@
           </a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Author
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['author']%}
-          {{data['author']}}
-          {% else %} 
-          <span class="empty">Empty</span>
-        {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="author">
-            Change<span class="govuk-visually-hidden">author</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Version
-        </dt>
-        <dd class="govuk-summary-list__value">
-        19 June 2021
-        </dd>
-        <dd class="govuk-summary-list__actions">
-      
-        </dd>
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-   Cleared by
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {% if data['cleared']%}
-    {{data['cleared']}}
-    {% else %} 
-    <span class="empty">Empty</span>
-  {% endif %}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="cleared.html">
-      Change<span class="govuk-visually-hidden">cleared by</span>
-    </a>
-  </dd>
-</div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -101,6 +96,21 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Academy type and route
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">    Converter, £{{ data['routes']}}<br>
+            {{ data['routes-funding']}} </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route">
+            Change<span class="govuk-visually-hidden">route"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Date of Advisory Board
         </dt>
         <dd class="govuk-summary-list__value">
@@ -119,6 +129,20 @@
         </dd>
       </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Proposed academy opening date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['opening-date']}} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="opening">
+            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
+          </a>
+        </dd>
+      </div>
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Previous Advisory Board
@@ -150,26 +174,6 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          School name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">St. Wilfrid's Primary School</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unique reference number (URN)
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">120620</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
           Local authority
         </dt>
         <dd class="govuk-summary-list__value">
@@ -178,26 +182,18 @@
         <dd class="govuk-summary-list__actions">
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Trust reference number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">TRO1318</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name of trust
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Dynamics Trust</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
+
+            
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Sponsor name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Diocese of Warrington</p>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+</div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
         Sponsor reference number
@@ -208,43 +204,49 @@
         <dd class="govuk-summary-list__actions">
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Sponsor name
+          Author
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Diocese of Warrington</p>
+          {% if data['author']%}
+          {{data['author']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Academy type and route
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">    Converter, £{{ data['routes']}}<br>
-            {{ data['routes-funding']}} </p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="route">
-            Change<span class="govuk-visually-hidden">route"</span>
+          <a class="govuk-link" href="author">
+            Change<span class="govuk-visually-hidden">author</span>
           </a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Proposed academy opening date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['opening-date']}} 
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="opening">
-            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
-          </a>
-        </dd>
-      </div>
+      
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+   Cleared by
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['cleared']%}
+    {{data['cleared']}}
+    {% else %} 
+    <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="cleared.html">
+      Change<span class="govuk-visually-hidden">cleared by</span>
+    </a>
+  </dd>
+</div>
+
+      
+     
+
+      
+      
+     
     </dl>
     <form action="../task_list1" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}

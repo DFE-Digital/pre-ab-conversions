@@ -52,7 +52,38 @@
   
 <dl class="govuk-summary-list">
   
-    
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      School name
+    </dt>
+    <dd class="govuk-summary-list__value">St. Wilfrid's Primary School</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Unique reference number (URN)
+    </dt>
+    <dd class="govuk-summary-list__value">120620</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Trust name
+    </dt>
+    <dd class="govuk-summary-list__value">Dynamics Trust</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Trust reference number
+    </dt>
+    <dd class="govuk-summary-list__value">TR01318</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds"><a name="recommendation"></a>
           Recommendation
@@ -64,80 +95,44 @@
                <span class="empty">Empty</span>
               {% endif %}
         </dd>
-        
           <dd class="govuk-summary-list__actions">
             
               <a class="govuk-link" href="../overview/recommendation?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">recommendation</span>
                 </a>
-            
           </dd>
-        
       </div>
+
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key"><a name="author"></a>
-          Author
+        <dt class="govuk-summary-list__key"><a name="aorequired"></a>
+         Is an academy order (AO) required?
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['author']%}
-          {{data['author']}}
-         {% else %} 
-         <span class="empty">Empty</span>
-        {% endif %}
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../overview/author?returnToSummary=yes">
-              Change<span class="govuk-visually-hidden">recommendation</span>
-              </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Version
-          </dt>
-          <dd class="govuk-summary-list__value">
-          19 June 2021
-          </dd>
- <dd class="govuk-summary-list__actions">  
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key"><a name="clearedby"></a>
-       Cleared by
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {% if data['cleared']%}
-        {{data['cleared']}}
-        {% else %} 
-        <span class="empty">Empty</span>
-      {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../overview/cleared.html?returnToSummary=yes">
-          Change<span class="govuk-visually-hidden">cleared by</span>
-        </a>
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key"><a name="aorequired"></a>
-       Is an academy order (AO) required?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {% if data['aorequired']%}
-              {{data['aorequired']}}
-             {% else %} 
-             <span class="empty">Empty</span>
-            {% endif %}
-      </dd>
-      
-        <dd class="govuk-summary-list__actions">
-          
-            <a class="govuk-link" href="../overview/aorequired?returnToSummary=yes">
-              Change<span class="govuk-visually-hidden">academy order required</span>
-              </a>
-          
+          {% if data['aorequired']%}
+                {{data['aorequired']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
         </dd>
-      
-    </div>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../overview/aorequired?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">academy order required</span>
+                </a>
+              </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="routes"></a>
+          Academy type and route
+        </dt>
+        <dd class="govuk-summary-list__value">Converter, grant only £25000</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/route?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">route and grant</span>
+            </a>
+          </dd>   
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="htbdate"></a>
           Date of Advisory Board
@@ -149,15 +144,27 @@
                <span class="empty">Empty</span>
               {% endif %}
         </dd>
-        
           <dd class="govuk-summary-list__actions">
-            
             <a class="govuk-link" href="../overview/set-htb?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">headteacher board date</span>
                 </a>
-            
           </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="opening"></a>
+         Proposed academy opening date
+        </dt>
+        <dd class="govuk-summary-list__value">
+         {{ data['opening-date']}} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../overview/opening?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
+          </a>
+        </dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Previous Advisory Board
@@ -184,20 +191,7 @@
             </a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          School name
-        </dt>
-        <dd class="govuk-summary-list__value">St. Wilfrid's Primary School</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unique reference number (URN)
-        </dt>
-        <dd class="govuk-summary-list__value">120620</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Local authority
@@ -205,27 +199,7 @@
         <dd class="govuk-summary-list__value">Warrington</dd>
           <dd class="govuk-summary-list__actions"></dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Trust reference number
-        </dt>
-        <dd class="govuk-summary-list__value">TR01318</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name of trust
-        </dt>
-        <dd class="govuk-summary-list__value">Dynamics Trust</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sponsor reference number
-        </dt>
-        <dd class="govuk-summary-list__value">SP00170</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Sponsor name
@@ -233,36 +207,54 @@
         <dd class="govuk-summary-list__value">Diocese of Warrington</dd>
           <dd class="govuk-summary-list__actions"></dd>
       </div>
+
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key"><a name="routes"></a>
-          Academy type and route
+        <dt class="govuk-summary-list__key">
+          Sponsor reference number
         </dt>
-        <dd class="govuk-summary-list__value">Converter, grant only £25000</dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../overview/route?returnToSummary=yes">
-              Change<span class="govuk-visually-hidden">route and grant</span>
-            </a>
-          </dd>   
+        <dd class="govuk-summary-list__value">SP00170</dd>
+          <dd class="govuk-summary-list__actions"></dd>
       </div>
+
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key"><a name="opening"></a>
-         Proposed academy opening date
+        <dt class="govuk-summary-list__key"><a name="author"></a>
+          Author
         </dt>
         <dd class="govuk-summary-list__value">
-         {{ data['opening-date']}} 
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="../overview/opening?returnToSummary=yes">
-            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
-          </a>
-        </dd>
-      </div>
+          {% if data['author']%}
+          {{data['author']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/author?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">recommendation</span>
+              </a>
+          </dd>
+        </div>
+        
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key"><a name="clearedby"></a>
+       Cleared by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['cleared']%}
+        {{data['cleared']}}
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../overview/cleared.html?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">cleared by</span>
+        </a>
+      </dd>
+    </div>    
 </dl>
-
-
   </div>
-  
 </section>    
+
+<!-- start here-->
 <h2 class="govuk-heading-s">
   General information
  </h2>
@@ -278,6 +270,17 @@
 
   
 <dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     School type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Voluntary aided school
+    </dd> 
+      <dd class="govuk-summary-list__actions">
+      </dd>
+  </div>
   
     
       <div class="govuk-summary-list__row">
@@ -286,14 +289,9 @@
         </dt>
         <dd class="govuk-summary-list__value">
          Primary
-  
         </dd>
-        
           <dd class="govuk-summary-list__actions">
-
-            
-          </dd>
-        
+ </dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -303,33 +301,26 @@
         <dd class="govuk-summary-list__value">
          3 to 11
         </dd>
-        
-          <dd class="govuk-summary-list__actions">
-            
-           
-            
+          <dd class="govuk-summary-list__actions">  
           </dd>
-        
       </div>
-    
-  
-    
+ 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-         School type
+          Capacity
         </dt>
-        <dd class="govuk-summary-list__value">
-          Voluntary aided school
-        </dd>
-        
-          <dd class="govuk-summary-list__actions">
-    
-          </dd>
-        
+        <dd class="govuk-summary-list__value">236</dd>
+          <dd class="govuk-summary-list__actions"></dd>
       </div>
-    
-  
-    
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="PAN"></a>
+          Published admission number (PAN)
+        </dt>
+        <dd class="govuk-summary-list__value">210</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/PAN?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
        Number on roll (NOR)
@@ -338,11 +329,8 @@
         226
         </dd>
           <dd class="govuk-summary-list__actions">
-
           </dd>
       </div>
-    
-  
     
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -351,20 +339,7 @@
         <dd class="govuk-summary-list__value">80%</dd>
           <dd class="govuk-summary-list__actions"></dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Capacity
-        </dt>
-        <dd class="govuk-summary-list__value">236</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key"><a name="PAN"></a>
-          Published admission number (PAN)
-        </dt>
-        <dd class="govuk-summary-list__value">210</dd>
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/PAN?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
-      </div>
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Percentage of free school meals at the school (%FSM)
@@ -372,13 +347,7 @@
         <dd class="govuk-summary-list__value">23.8%</dd>
           <dd class="govuk-summary-list__actions"></dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Part of private finance initiative (PFI) scheme
-        </dt>
-        <dd class="govuk-summary-list__value">No</dd>
-          <dd class="govuk-summary-list__actions"></dd>
-      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Viability issues
@@ -391,6 +360,7 @@
         {% endif %}
           <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/viability?returnToSummary=yes">Change<span class="govuk-visually-hidden">viability issues</span></a></dd>
       </div>
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="deficit"></a>
          Financial deficit
@@ -402,6 +372,16 @@
         {% endif %}
           <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/deficit?returnToSummary=yes">Change<span class="govuk-visually-hidden">financial surplus or deficit</span></a> </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Part of private finance initiative (PFI) scheme
+        </dt>
+        <dd class="govuk-summary-list__value">No</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="diocsean"></a>
           Is the school linked to a diocese?
@@ -409,14 +389,14 @@
         <dd class="govuk-summary-list__value">Yes, Diocese of Warrington</dd>
           <dd class="govuk-summary-list__actions"></dd>
       </div>
-      <div class="govuk-summary-list__row">
+     <!--<div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="goodschools"></a>
         Percentage of good or outstanding schools in the diocesan trust
         </dt>
         <dd class="govuk-summary-list__value"> 80%
   
-        <dd class="govuk-summary-list__actions"><!-- <a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a> --></dd>
-      </div>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a></dd>
+      </div> --> 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="distance"></a>
         Distance from the school to the trust headquaters
@@ -608,23 +588,7 @@ Early years provision
             </dd>
           </div>
         
-          <div class="govuk-summary-list__row">
-
-            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
-              Trust rationale   <a name="sponsor"></a>
-            </dt>
-            <dd class="govuk-summary-list__value govuk-!-width-full">
-              {% if data['trust-rationale']%}
-              {{data['trust-rationale'] | safe}}
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}</dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../rationale/sponsor-rationale?returnToSummary=yes">
-                Change<span class="govuk-visually-hidden">project rationale</span>
-              </a>
-            </dd>
-          </div>
+         
       
 </dl>
 </div>
