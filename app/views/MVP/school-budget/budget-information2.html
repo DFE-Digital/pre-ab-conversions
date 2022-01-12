@@ -11,18 +11,7 @@
 <form action="../task_list1" method="post">
 {% endif %}
 {% block content %}
-<!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" >
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2>
-    <p><a href="/task_list1">Return to task list</a></p></div>
-</div>
-<div> -->
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -37,7 +26,7 @@
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining revenue on 31st March</h3></dt>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining revenue on 31 March</h3></dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
         <a class="govuk-link" href="revenue">
           Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
@@ -82,7 +71,7 @@
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining capital on 31st March</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining capital on 31 March</h3>
       </dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
         <a class="govuk-link" href="capital">
@@ -154,7 +143,7 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Total loan amounts
+        Total loan amount
       </dt>
       <dd class="govuk-summary-list__value">
         £{{ data['total-loan-amounts'] }}
@@ -245,33 +234,7 @@
  
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-    
-    
-  
-      <!--  <form action="/task_list1" method="post"> 
-          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-    
-          {{ govukCheckboxes({
-            idPrefix: "budget-status-htb",
-            name: "budget-status-htb",
-            items: [
-              {
-                value: "Complete",
-                text: "Mark this section as complete, you can still make changes later"
-              }
-            ]
-          }) }}
-    
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-    
-        </form>
-    <p><a href="javascript:history.back();">Cancel</a></p>-->
-    <form action="../task_list1" method="post"> 
-
-
+     
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
