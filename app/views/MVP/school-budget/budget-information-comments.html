@@ -4,27 +4,8 @@
         
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
-
+<form action="budget-information2#additional_info" method="post"></form>
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% if data['returnToSummary'] == 'yes' %}
-      <form action="budget-information2" method="post">
-      {% else %}
-      <form action="budget-information2" method="post">
-    {% endif %}
-<!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" >
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2>
-    <p><a href="/task_list1">Return to task list</a></p></div>
-</div>
-<div> -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -35,11 +16,10 @@
  <br>
   </div>
 </div>
-
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining revenue on 31st March</h3></dt>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining revenue on 31 March</h3></dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
         <a class="govuk-link" href="revenue">
           Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
@@ -53,9 +33,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['revenue-previous-year'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+   
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -64,9 +42,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['revenue-current-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+   
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -75,16 +51,14 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['revenue-next-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
+   
     </div>
   </dl>
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining capital on 31st March</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining capital on 31 March</h3>
       </dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
         <a class="govuk-link" href="capital">
@@ -96,12 +70,8 @@
       <dt class="govuk-summary-list__key">
         Previous financial year
       </dt>
-      <dd class="govuk-summary-list__value">
-        £{{ data['capital-previous-year'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+   
+    
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -110,9 +80,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['capital-current-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+    
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -121,9 +89,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['capital-next-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
+   
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -136,9 +102,7 @@
         <span class="empty">Empty</span>
     {% endif %}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
+     
     </div>
   </dl>
 
@@ -146,7 +110,7 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
         <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Loans and financial leases</h3>
-        <p class="govuk-body-s govuk-!-margin-bottom-0"><a href="http://localhost:3000/MVP/related/application_newtab#finances" target="_application">View full loans and financial leases information (opens in a new tab)</a></p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0"><a href="../related/application_newtab#finances" target="_application">View full loans and financial leases information (opens in a new tab)</a></p>
       </dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
        <br><a class="govuk-link" href="loans-leases">
@@ -156,14 +120,12 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Total loan amounts
+        Total loan amount
       </dt>
       <dd class="govuk-summary-list__value">
         £{{ data['total-loan-amounts'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -171,9 +133,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['purpose-of-loans']}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -183,9 +142,6 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['total-lease-repayments']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -193,9 +149,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data ['purpose-of-leases']}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-  
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -208,18 +161,17 @@
     {% else %}
         <span class="empty">Empty</span>
     {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
-    </div>
-  </dl>
+</dd>
+</div>
+</dl>
 
 
 
-  <div class="govuk-grid-row">
-    <div class="">
-      <a name="additional_info"></a>      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <form action="budget-information2" method="post">
+      <a name="additional_info"></a>
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
     
       {{ govukTextarea({
         name: "budget-more-detail",
@@ -230,23 +182,17 @@
           classes: "govuk-label--m"
         },
         hint: {
-          text:"This information will populate into your project template under the school pupil forecasts section."
+          text:"This information will populate into your project template under the school budget section."
         }
       }) }}
     
-
-
-
-  
-
-
       {{ govukButton({
         text: "Confirm and continue"
       }) }}
-
     </form>
 
-    </div>
-    </div>
+  </div>
+  </div>
+
 
   {% endblock %}
