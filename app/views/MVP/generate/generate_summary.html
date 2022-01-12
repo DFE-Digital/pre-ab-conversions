@@ -653,63 +653,189 @@ School budget information
      School budget information details
     </h2> <a name="budget"></a>
   </header>
+
   <div class="app-summary-card__body">
 
-  
 <dl class="govuk-summary-list">
-  
-    
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  <h3 class="govuk-!-margin-bottom-2">Remaining revenue on 31 March</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/revenue?returnToSummary=yes">
+  Change remaining revenue<span class="govuk-visually-hidden">Change data in remaining revenue section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          Revenue carry forward at end-March (current year) 2021:
+          Previous financial year
         </dt>
         <dd class="govuk-summary-list__value">
-          £{{ data["finance-current-year-2021"] }}</dd>
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">revenue carry forward for current year</span></a></dd>
-      </div>
+          £{{ data['revenue-previous-year'] }} </dd>
 
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Current financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['revenue-current-year'] }}
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+ Next financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['revenue-next-year'] }}
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+  <h3 class="govuk-!-margin-bottom-2">Remaining capital on 31 March</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/capital?returnToSummary=yes">
+  Change remaining capital<span class="govuk-visually-hidden">Change data in remaining capital section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Projected revenue balance at end-March (following year) 2022:
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Previous financial year
         </dt>
         <dd class="govuk-summary-list__value">
-          £{{ data["finance-following-year-2022"] }}
-        </dd>
-        
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">projected revenue balance for following year</span></a></dd>
-      </div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Capital carry forward at end-March (current year):
-  </dt>
-  <dd class="govuk-summary-list__value">
-    £{{ data["finance-forward-2021"] }}
-  </dd>
-  
-  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">capital carry forward for current year</span></a></dd>
+          £{{ data['capital-previous-year'] }} </dd>
+
 </div>
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Projected capital balance at end-March (following year):
+Current financial year (forecasted)
   </dt>
   <dd class="govuk-summary-list__value">
-   £{{ data["finance-forward-2022"]}}
-  </dd>
-  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/budget-information-details?returnToSummary=yes">  Change<span class="govuk-visually-hidden">capital carry forward for following year</span></a></dd>
+    £{{ data['capital-current-year'] }}
 </div>
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-Additional information
+ Next financial year (forecasted)
   </dt>
   <dd class="govuk-summary-list__value">
-    {% if data['budget-more-detail']%}
-    {{data['budget-more-detail']}}
+    £{{ data['capital-next-year'] }}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Reason for deficit
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['reason-for-deficit']%}
+    {{data['reason-for-deficit']}}
    {% else %} 
    <span class="empty">Empty</span>
   {% endif %}
   </dd>
-  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/budget-information2?returnToSummary=yes">  Change<span class="govuk-visually-hidden">budget additional information</span></a></dd>
 </div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+  <h3 class="govuk-!-margin-bottom-2">Loans and financial leases</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loansleases?returnToSummary=yes">
+  Change loans and leases<span class="govuk-visually-hidden">Change data in loans and leases section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Total loan amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £{{ data['total-loan-amounts'] }} </dd>
+
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Purpose of loan
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['purpose-of-loans'] }}
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Total annual lease repayment amount
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['total-lease-repayments'] }}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Purpose of the leases
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['purpose-of-leases']%}
+    {{data['purpose-of-leases']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Has the ESFA approved the loans and leases?
+  </dt>
+  <dd class="govuk-summary-list__value">        {% if data['esfa-approved'] %}
+    {{data['esfa-approved']}}
+{% else %}
+    <span class="empty">Empty</span>
+{% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+  <span class=" govuk-!-margin-top-8">Additional information</span>
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
+      {% if data['budget-more-detail']%}
+      {{data['budget-more-detail']}}
+     {% else %} 
+     <span class="empty">Empty</span>
+    {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information2#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+  </div>
+
 </section>  
 <a name="forecasts"></a>
 
@@ -764,7 +890,7 @@ School pupil forecasts
   <dt class="govuk-summary-list__key">
 Additional information
   </dt>
-  <dd class="govuk-summary-list__value">
+ 
   <dd class="govuk-summary-list__value">
     {% if data['pupil-more-detail']%}
     {{data['pupil-more-detail']}}

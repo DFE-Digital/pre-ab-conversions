@@ -5,12 +5,14 @@
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 
-{% if data['returnToSummary'] == 'yes' %}
-<form action="budget-information2" method="post">
-{% else %}
-<form action="budgetinformation2" method="post">
-{% endif %}
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+      <form action="budget-information2" method="post">
+      {% else %}
+      <form action="budget-information2" method="post">
+    {% endif %}
 <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -216,7 +218,7 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="">
       <a name="additional_info"></a>      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
     
       {{ govukTextarea({
@@ -228,13 +230,11 @@
           classes: "govuk-label--m"
         },
         hint: {
-          text:"This information will populate into your project template under the school performance (Ofsted information) section."
+          text:"This information will populate into your project template under the school pupil forecasts section."
         }
       }) }}
     
-  
-     
-    <form action="budget-information2#additional_info" method="post"> 
+
 
 
   
