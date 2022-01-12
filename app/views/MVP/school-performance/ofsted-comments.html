@@ -35,36 +35,56 @@
         <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p><br>
       </div>
     </div>
-  <div>
+
+    <div class="govuk-grid-column-full-width">
+      <table>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <span class="govuk-body-l">Short inspection</span>
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Ofsted inspection date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 February 2020
+              </dd>      
+            </div>
+      </table>
+    </div>
+
+  
+
+  <div class="govuk-grid-column-full-width">
     <table>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          <dt class="govuk-summary-list__key">
+            <span class="govuk-body-l">Last full inspection <b>Good</b></span>
+          </dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-width-two-thirds">
             Ofsted inspection date
           </dt>
           <dd class="govuk-summary-list__value">
             1 February 2017
-          </dd>      <dd class="govuk-summary-list__actions">
-          </dd>
+          </dd>     
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Overall effectiveness
-          </dt>
-          <dd class="govuk-summary-list__value">
-           Good</p>
-          </dd>      <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Effectiveness of leadership and management
           </dt>
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">Good</p>
-          </dd>      <dd class="govuk-summary-list__actions">
-          </dd>
+          </dd>    
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -72,8 +92,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Good</p>
-          </dd>      <dd class="govuk-summary-list__actions">
-          </dd>
+          </dd> 
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -82,8 +101,7 @@
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">Outstanding</p>
           </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
+       
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -92,8 +110,7 @@
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">Good</p>
           </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
+        
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -102,11 +119,12 @@
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">Good</p>
           </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
+       
         </div>
+        
   </dl> 
 </table>
+<p class="govuk-body"><a href="https://reports.ofsted.gov.uk/provider/21/111315" target="blank">View latest inspection report on Ofsted's website (opens in a new tab)</a></p>
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -126,7 +144,7 @@
                     {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="ofsted-information#additional_info">
+                    <a class="govuk-link" href="ofsted-information#additional_info#additional_info">
                       Change<span class="govuk-visually-hidden">Ofsted additional information</span>
                     </a>
                 </dd>
@@ -136,7 +154,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-  
+       
           <a href="#" name="additional_info"></a>
           
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}

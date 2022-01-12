@@ -35,10 +35,18 @@ module.exports = {
 
 
   /* finance data */
-  "finance-current-year-2021": "0.00",
-  "finance-following-year-2022": "143,931.00",
-  "finance-forward-2021": "0.00",
-  "finance-forward-2022": "0.00",
+  "revenue-previous-year": "143,932.00",
+  "revenue-current-year": "100,984,00",
+  "revenue-next-year": "50,678.03",
+  "capital-previous-year": "120,932.00",
+  "capital-current-year": "50,984,00",
+  "capital-next-year": "-10,482,34",
+  "total-loan-amounts": "3000",
+  "purpose-of-loans": "Purchase of a minibus, new astro turf pitch",
+  "total-lease-repayments": "600",
+  "purpose-of-leases": "Photocopiers",
+
+
 
 /* rejectiondates */
 "rejected-date-day": "15",
