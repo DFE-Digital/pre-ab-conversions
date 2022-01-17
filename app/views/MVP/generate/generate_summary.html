@@ -690,6 +690,7 @@ School budget information
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
+    <a name="revenue"></a>
   <h3 class="govuk-!-margin-bottom-2">Remaining revenue on 31 March</h3>
 </dt>
 <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/revenue?returnToSummary=yes">
@@ -725,6 +726,19 @@ Current financial year (forecasted)
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
+If the school has a deficit, explain why
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['revenue-reason-for-deficit']%}
+    {{data['revenue-reason-for-deficit']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
   </dt>
   <dd class="govuk-summary-list__value">
   </dd>
@@ -735,6 +749,7 @@ Current financial year (forecasted)
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+    <a name="capital"></a>
   <h3 class="govuk-!-margin-bottom-2">Remaining capital on 31 March</h3>
 </dt>
 <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/capital?returnToSummary=yes">
@@ -769,7 +784,7 @@ Current financial year (forecasted)
 </div>
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-Reason for deficit
+If the school has a deficit, explain why
   </dt>
   <dd class="govuk-summary-list__value">
     {% if data['reason-for-deficit']%}
@@ -790,9 +805,10 @@ Reason for deficit
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+    <a name="loans-leases"></a>
   <h3 class="govuk-!-margin-bottom-2">Loans and financial leases</h3>
 </dt>
-<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loansleases?returnToSummary=yes">
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loans-leases?returnToSummary=yes">
   Change loans and leases<span class="govuk-visually-hidden">Change data in loans and leases section</span>
 </a>
 </dd>
@@ -855,6 +871,7 @@ Purpose of the leases
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      <a name="loans-additional-info"></a>
   <span class=" govuk-!-margin-top-8">Additional information</span>
     </dt>
     <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
@@ -864,7 +881,7 @@ Purpose of the leases
      <span class="empty">Empty</span>
     {% endif %}
     </dd>
-    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information2#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information-comments#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
   </div>
 
 </section>  

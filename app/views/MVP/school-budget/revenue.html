@@ -70,13 +70,20 @@
     value: data["revenue-next-year"],
     prefix: {text:"£"}
   }) }}
-
-
+  {{ govukTextarea({
+    name: "revenue-reason-for-deficit",
+    id: "rrevenue-eason-for-deficit",
+    value: data["revenue-reason-for-deficit"],
+    label: {
+      text: "If the school has a financial deficit, explain why",
+      classes: "govuk-label--s"
+    }
+  }) }}
   
           {{ govukButton({
             text: "Save and continue"
           }) }}
-          
+
         </form>
    
       </div>

@@ -3,14 +3,11 @@
 {% block beforeContent %}
         
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
-{% endblock %}
 
-{% if data['returnToSummary'] == 'yes' %}
-<form action="budget-information2" method="post">
-{% else %}
+
+
 <form action="../task_list1" method="post">
-{% endif %}
-{% block content %}
+
 
 
 <div class="govuk-grid-row">
@@ -18,7 +15,7 @@
     <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">Confirm school budget information</h1>
     <p class="govuk-body">This information comes from the <a href="../related/application_newtab" target="_application">school's application form (opens in a new tab)</a>. The table will populate into your project template.</p>
-    <p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your project template.</p>
+    <p>You can<a href="#additional_info"> add additional information</a> if you need to, this will also go into your project template.</p>
  <br>
   </div>
 </div>
@@ -61,6 +58,21 @@
       </dt>
       <dd class="govuk-summary-list__value">
         £{{ data ['revenue-next-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       If the school has a financial deficit, explain why?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['revenue-reason-for-deficit'] %}
+        {{data['revenue-reason-for-deficit']}}
+    {% else %}
+        <span class="empty">Empty</span>
+    {% endif %}
       </dd>
       <dd class="govuk-summary-list__actions">
   
@@ -114,7 +126,7 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-       Reason for deficit
+       If the school has a financial deficit, explain why?
       </dt>
       <dd class="govuk-summary-list__value">
         {% if data['reason-for-deficit'] %}
@@ -212,6 +224,7 @@
       <div>
         <br>
         <dl class="govuk-summary-list">
+          <a name="additional_info"></a>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Addtional information</dt>
                 <dd class="govuk-summary-list__value">
@@ -223,7 +236,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="budget-information-comments#additional_info">
+                    <a class="govuk-link" href="budget-information-comments##udget_additional_info">
                       Change<span class="govuk-visually-hidden">Change budget comments</span>
                     </a>
                 </dd>
