@@ -8,11 +8,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data['returnToSummary'] == 'yes' %}
-    <form action="../generate/generate_summary#ofsted" method="post">
-    {% else %}
+
     <form action="../task_list1" method="post">
-  {% endif %}
       </div>  </div>
 <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
@@ -31,7 +28,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <p class="govuk-body">This information comes from TRAMS. The table will populate into your project template.</p> 
-        <p>You can add <a href="#additional_info">additional information</a> if you need to, this will also go into your project template.</p>    
+        <p>You can <a href="#additional_info">add additional information</a> if you need to, this will also go into your project template.</p>    
         <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p><br>
       </div>
     </div>
@@ -143,7 +140,7 @@
                     {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="ofsted-information#additional_info#additional_info">
+                    <a class="govuk-link" href="ofsted-information#additional_info">
                       Change<span class="govuk-visually-hidden">Ofsted additional information</span>
                     </a>
                 </dd>
