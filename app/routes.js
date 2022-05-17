@@ -6,7 +6,6 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 //sending users to different pages
 
-
 router.post('/status-answer', function (req, res) {
 
   // Make a variable and give it the value from 'list'
@@ -64,5 +63,30 @@ router.post('/conditions2-previous', function (req, res) {
   }
   
 })
+
+
+
+router.post('/type-answer', function (req, res) {
+  // Make a variable to give it the value from the radio buttons on the index page  
+  var Task = req.session.data['control-name']
+  console.log('slkdjlsj')
+  // Check whether the variable matches a condition
+
+  if (Task == "conversions") { 
+    // Send user to next page 
+      res.redirect('MVP/projects-list')
+      console.log('conv');
+
+  } 
+  
+  else if (Task == "transfers") {
+  //send user to transfers prototype
+      res.redirect('https://academy-transfers-prototype.london.cloudapps.digital/version-4/dashboard-home')
+      console.log('trans');
+  }
+
+
+  })
+
 
 module.exports = router
