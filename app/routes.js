@@ -79,7 +79,7 @@ router.post('/type-answer', function (req, res) {
   
   else if (Task == "transfers") {
   //send user to transfers prototype
-      res.redirect('https://academy-transfers-prototype.london.cloudapps.digital/version-4/dashboard-home')
+      res.redirect('https://pre-ab-transfers.herokuapp.com/version-4/dashboard-home')
   }
 
 
