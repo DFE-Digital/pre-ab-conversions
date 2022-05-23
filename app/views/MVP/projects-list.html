@@ -1,0 +1,79 @@
+
+{% extends "layout.html" %}
+
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Manage an academy conversion</h1>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Projects (4)</h2>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> URN 102062</h2>
+            
+                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
+               Local authority: Warrington</P></td>
+      
+         
+              <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
+                <p class="govuk-tag govuk-tag--yellow  govuk-!-margin-top-0">Pre Advisory Board</p>
+                <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                  Opening date:  {{ data['opening-date']}}</p>  
+                  {% else %}               
+                 <!-- Not MVP <span class="empty">NEW</span>--> <p class="govuk-tag govuk-tag--yellow govuk-!-margin-top-0  govuk-!-margin-bottom-3">Pre advisory board</p>
+                <p class="govuk-hint govuk-!-margin-top-0">Application received: 29 March 2021</br>
+                  Assigned to me: 1 April 2021</p>
+                  {% endif %}
+                </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
+            <p class="govuk-!-margin-top-3">Application to form a trust: Oak Hill Trust</br>
+             Local authority: Warrington</P></td>
+              <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--yellow">Pre Advisory Board</p> 
+                <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: 15 April 2021</br>
+                  Opening date: 1 October 2021</p></td>  
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../task_list1">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
+                <p class="govuk-!-margin-top-3">
+                  Application to join a trust: Kingfisher learning trust</br>
+               Local authority: Warrington</P></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+                  <p class="govuk-hint  govuk-!-margin-top-0">
+                    Advisory board date: 1 June 2021</div></br>
+                    Opening date: 1 July 2021</p></td>   
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../task_list1">Bolton Spa Primary</a></strong> URN 112456</h2>
+                <p class="govuk-!-margin-top-3">
+                Application to join a trust: Oak Hill Trust</br>
+               Local authority: Bolton</P></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><!-- <span class="onhold">ON HOLD</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p>
+                  <p class="govuk-hint  govuk-!-margin-top-0">
+                    Advisory Board date: 1 June 2021</div></br>
+                    Opening date: 1 July 2021</p></td>   </td>   
+            </tr>
+        
+            
+          </tbody>
+        </table>
+
+        </div>
+        {% endblock %}
