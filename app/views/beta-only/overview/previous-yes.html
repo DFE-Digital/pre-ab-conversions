@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#previousHTB" method="post">
+        {% else %}
+        <form action="summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Date of previous Advisory Board</h1>
+
+      <div class="govuk-form-group">
+    
+
+        </div>
+     <div class="govuk-form-group">
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "previousHTB-date",
+        namePrefix: "previousHTB-date",
+        fieldset: {
+          legend: {
+     
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2021"
+        },
+        items: [
+          {
+            name: "day",
+            value: data["previousHTB-date-day"],
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "month",
+            value: data["previousHTB-date-month"],
+            classes: "govuk-input--width-2"
+          },                
+          {
+            name: "year",
+            value: data["previousHTB-date-year"],
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+     
+
+          <!--    <label class="govuk-label govuk-label--m" for="recommendation">
+            Enter the full name of the author of this headteacher board (HTB) template
+          </label>
+   
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+        {{ govukInput({
+         
+          classes: "govuk-input--width-20",
+          id: "author",
+          name: "author",
+      
+          value: data["author"]
+        }) }}-->
+         
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+ <div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">
+          Useful information
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#">
+
+              </a>
+            </li>
+            <li>
+              <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+            </li>
+
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+{% endblock %}

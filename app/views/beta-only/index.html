@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+
+<!--The radio button options -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+   
+    <form class="form" action="/type-answer" method="post">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What do you want to do?
+          </h1>
+        </legend>
+        
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-on-1" name="control-name" type="radio" value="conversions">
+            <label class="govuk-label govuk-radios__label" for="work-on-1">
+              Manage an academy conversion
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-on-2" name="control-name" type="radio" value="transfers">
+            <label class="govuk-label govuk-radios__label" for="work-on-2">
+              Manage an academy transfer
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+<!--the button-->
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}
