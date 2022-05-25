@@ -1,0 +1,65 @@
+{% extends "beta-only/includes/form-template.html" %}
+
+{% set pageTitle = "Select a project – GOV.UK" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Choose your project
+                    </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio"
+                            value="england">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                            Green Acres Primary School
+                        </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">URN 102023
+                        </div> 
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live"
+                            type="radio" value="scotland">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                            Green Acres Secondary School
+                        </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">URN 675011
+                        </div> 
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                            type="radio" value="wales">
+                        <label class="govuk-label govuk-radios__label govuk-!-margin-top-0" for="where-do-you-live-3">
+                            Greenslade Primary School
+                        </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">URN 243467
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                            type="radio" value="wales">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                            Greenwich Primary School
+                        </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">URN 239843
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <a href="green-acres-primary" role="button" draggable="false" class="govuk-button govuk-button govuk-!-margin-top-9" data-module="govuk-button">
+                  View project
+                  </a>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
