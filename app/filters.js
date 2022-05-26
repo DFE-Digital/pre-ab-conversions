@@ -492,6 +492,27 @@ if (m.minutes() > 0) {
 }
 }
  
+
+filters.trustsToCheckboxes = (trusts) => {
+  return trusts.map(trust => ({
+    value: trust.id,
+    html: `${trust.trust_name} (${trust.ukprn})`,
+    hint: { text: `Companies house number: ${trust.companies_house_number}` }
+  }))
+}
+
+filters.trustsBySearchString = (trusts) =>
+  trusts.map(trust => `${trust.trust_name}, ${trust.trust_reference_number}, ${trust.companies_house_number}`)
+
+filters.filterTrustsBySearchString = (trusts, searchString) => {
+  searchString = searchString.toLowerCase()
+  return trusts.filter(trust => {
+    return trust.trust_name.toLowerCase().includes(searchString) ||
+      trust.ukprn.toLowerCase().includes(searchString) ||
+      trust.companies_house_number.toLowerCase().includes(searchString)
+  })
+}
+
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
