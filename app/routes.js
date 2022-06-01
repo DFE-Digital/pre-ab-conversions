@@ -42,7 +42,7 @@ router.post('/conditions-answer', function (req, res) {
     // Send user to next page
     res.redirect('full_nonmvp/status/approved/conditions_yes')
 
-  } else if (projectConditions == "No"){
+  } else {
   res.redirect('full_nonmvp/status/approved/dates')
   }
   
@@ -65,7 +65,7 @@ router.post('/conditions2-previous', function (req, res) {
 })
 
 
-
+//choosing to look at project list for conversions or transfers
 router.post('/type-answer', function (req, res) {
   // Make a variable to give it the value from the radio buttons on the index page  
   var Task = req.session.data['control-name']

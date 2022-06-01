@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="dates" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      
+
+     
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+     
+
+          
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "reason",
+            name: "reason",
+            rows: 15,
+            type: "reason",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Give reasons"
+            }
+          }) }}
+
+
+        
+
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "reason",
+            name: "reason",
+            fieldset: {
+              legend: {
+                text: "What is the reason for declining this project?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select one option."
+            },
+            items: [
+              {
+                value: "Finance",
+                checked:  data['reason'] === "finance",
+                text: "Finance"
+              },
+
+              {
+                value: "Performance",
+                checked:  data['reason'] === "Performance",
+                text: "Performance"
+              },
+
+              {
+                value: "Finances and performance",
+                checked:  data['reason'] === "Finances and performance",
+                text: "Finances and performance"
+              },
+              {
+                value: "Other - ",
+                checked:  data['reason'] === "Other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+  
+          
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+  
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav 
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+    <h2 class="govuk-heading-s" id="subsection-title">
+    Useful information
+    </h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+    <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+    <a class="govuk-link" href="#">
+  
+    </a>
+    </li>
+    <li>
+      <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+    </li>
+  
+    </ul>
+    </nav>
+  
+    </aside>
+  </div>-->    
+</div>
+{% endblock %}

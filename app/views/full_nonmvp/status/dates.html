@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+ 
+      <h1 class="govuk-heading-l">Date project was declined</h1>
+
+    <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with writing a rationale 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">To write your rationale, you could include information about:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how governance will work between the school and the trust</li>
+            <li>who will be the head of the school and how will the school be managed</li>
+            <li>if the school has any feeder links that would be important for the HTB to know about</li>
+          </ul>
+        </div>
+      </details> -->
+    
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+  
+        id: "date_withdrawn",
+        namePrefix: "withdrawn-date",
+        value: data["withdrawn-date-day"]["withdrawn-date-month"]["withdrawn-date-year"],
+        fieldset: {
+          legend: {
+            html: pageHeading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+  
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav 
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+    <h2 class="govuk-heading-s" id="subsection-title">
+    Useful information
+    </h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+    <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+    <a class="govuk-link" href="#">
+  
+    </a>
+    </li>
+    <li>
+      <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+    </li>
+  
+    </ul>
+    </nav>
+  
+    </aside>
+  </div>-->    
+</div>
+{% endblock %}
