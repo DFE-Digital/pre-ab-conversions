@@ -20,8 +20,42 @@
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
         <h1 class="govuk-heading-l">Change the status for this project</h1>
       </legend>
+
+
+      <!--radio buttons-->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="Status-status" name="Status-status" type="radio" value="Approved">
+              <label class="govuk-label govuk-radios__label" for="Status-status">
+                Approved
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                For projects approved by the regional schools commissioner (RSC). This status will move the project to your archive list and a new post HTB project will start.
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="Status-status" name="Status-status" type="radio" value="Declined">
+              <label class="govuk-label govuk-radios__label" for="Status-status">
+                Declined
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list.
+              </div>
+            </div>
+           
+          
+          </div>
       
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        </fieldset>
+      </div>
+      
+      <!-- nunjucks radio buttons
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         idPrefix: "Status-status",
@@ -55,25 +89,20 @@
             hint: {
               text: "For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list."
             }
-          },
+          
+         },
+          
           {
-            value: "Onhold",
-            text: "On hold",
-            checked:  data['Status-status'] === "Onhold",
+            value: "Declined",
+            checked:  data['Status-status'] === "Declined",
+            text: "Declined",
+             classes:"govuk-label govuk-radios__label govuk-label—s",
             hint: {
-              text: "For projects you cannot work on or are delayed. This status will keep the project in your active project list."
-            }
-          },
-          {
-            value: "Withdrawn",
-            checked:  data['Status-status'] === "Withdrawn",
-            text: "Withdrawn",
-            hint: {
-              text: "For projects where the school or trust have withdrawn their application. This status will move the project to your archive project list."
-            }
-          }
+              text: "For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list."
+         }
+          } 
         ]
-      }) }}
+      }) }} -->
 
         {{ govukButton({
           text: "Continue"

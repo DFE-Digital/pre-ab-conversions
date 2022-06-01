@@ -18,16 +18,16 @@ router.post('/status-answer', function (req, res) {
 
   } else if (projectStatus == "Approved"){
   res.redirect('full_nonmvp/status/approved/conditions')
-  
-} else if (projectStatus == "Withdrawn"){
-  res.redirect('full_nonmvp/status/withdrawn/withdrawn_reasons')
-
-} else if (projectStatus == "Onhold"){
-  res.redirect('full_nonmvp/status/onhold/onhold_reasons')
-
-} else if (projectStatus == "Active"){
-  res.redirect('full_nonmvp/task_list1')
   }
+// } else if (projectStatus == "Withdrawn"){
+//   res.redirect('full_nonmvp/status/withdrawn/withdrawn_reasons')
+
+// } else if (projectStatus == "Onhold"){
+//   res.redirect('full_nonmvp/status/onhold/onhold_reasons')
+
+// } else if (projectStatus == "Active"){
+//   res.redirect('full_nonmvp/task_list1')
+//   }
 
 
 })
