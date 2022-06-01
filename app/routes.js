@@ -19,6 +19,9 @@ router.post('/status-answer', function (req, res) {
   } else if (projectStatus == "Approved"){
   res.redirect('full_nonmvp/status/approved/conditions')
   }
+
+// Add route for 'deferred' once we know what content / action is needed
+
 // } else if (projectStatus == "Withdrawn"){
 //   res.redirect('full_nonmvp/status/withdrawn/withdrawn_reasons')
 
