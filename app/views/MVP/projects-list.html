@@ -23,28 +23,44 @@
           <tbody class="govuk-table__body">
             
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> URN 102062</h2>
+              <td class="govuk-table__cell">
+                <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+                  <strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> URN 102062
+                </h2>
             
                 <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
-               Local authority: Warrington</P></td>
+               Local authority: Warrington</p>
+
+                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+                  <a href="status/list">Record advisory board decision</a>
+                </p>
+              </td>
       
          
-              <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
-                <p class="govuk-tag govuk-tag--yellow  govuk-!-margin-top-0">Pre Advisory Board</p>
-                <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
-                  Opening date:  {{ data['opening-date']}}</p>  
-                  {% else %}               
-                 <!-- Not MVP <span class="empty">NEW</span>--> <p class="govuk-tag govuk-tag--yellow govuk-!-margin-top-0  govuk-!-margin-bottom-3">Pre advisory board</p>
-                <p class="govuk-hint govuk-!-margin-top-0">Application received: 29 March 2021</br>
-                  Assigned to me: 1 April 2021</p>
-                  {% endif %}
-                </td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">  
+                {% if data['htb-date']%}
+                  <p class="govuk-tag govuk-tag--yellow  govuk-!-margin-top-0">Pre Advisory Board</p>
+                  <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                    Opening date:  {{ data['opening-date']}}
+                  </p>  
+                {% else %}               
+                   <!-- Not MVP <span class="empty">NEW</span>--> 
+                   <p class="govuk-tag govuk-tag--yellow govuk-!-margin-top-0  govuk-!-margin-bottom-3">Pre advisory board</p>
+                  <p class="govuk-hint govuk-!-margin-top-0">Application received: 29 March 2021</br>
+                    Assigned to me: 1 April 2021
+                  </p>
+                {% endif %}
+              </td>
 
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
             <p class="govuk-!-margin-top-3">Application to form a trust: Oak Hill Trust</br>
-             Local authority: Warrington</P></td>
+             Local authority: Warrington</P>
+              <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+                <a href="#">Record advisory board decision</a>
+              </p>
+           </td>
               <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><p class="govuk-tag govuk-tag--yellow">Pre Advisory Board</p> 
                 <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: 15 April 2021</br>
                   Opening date: 1 October 2021</p></td>  
@@ -54,7 +70,11 @@
               <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../task_list1">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
                 <p class="govuk-!-margin-top-3">
                   Application to join a trust: Kingfisher learning trust</br>
-               Local authority: Warrington</P></td>
+               Local authority: Warrington</P>
+                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+                  <a href="#">Record advisory board decision</a>
+                </p>
+             </td>
                 <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
                   <p class="govuk-hint  govuk-!-margin-top-0">
                     Advisory board date: 1 June 2021</div></br>
@@ -64,7 +84,11 @@
               <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../task_list1">Bolton Spa Primary</a></strong> URN 112456</h2>
                 <p class="govuk-!-margin-top-3">
                 Application to join a trust: Oak Hill Trust</br>
-               Local authority: Bolton</P></td>
+               Local authority: Bolton</P>
+                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+                  <a href="#">Record advisory board decision</a>
+                </p>
+             </td>
                 <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><!-- <span class="onhold">ON HOLD</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p>
                   <p class="govuk-hint  govuk-!-margin-top-0">
                     Advisory Board date: 1 June 2021</div></br>

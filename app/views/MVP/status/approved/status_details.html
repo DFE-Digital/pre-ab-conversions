@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="/index" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl" >URN 102062</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      St. Wilfrid's Primary School 
+
+ <span class="approved">approved</span>
+    </h1>
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"href="task_list2">AB template</a>
+            </li>
+    
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/application">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="/related/notes.html">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="status_details">Decision</a>
+            </li>
+        </ul>
+
+    </nav>
+    <h1 class="govuk-heading-l">Decision</h1>
+
+    
+      
+    <dl class="govuk-summary-list">
+      
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+              Decision
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['Status-status']}} </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+          </div>
+    
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['Conditions']}} 
+            </dd>
+            
+            <dd class="govuk-summary-list__actions"> </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+          Details of conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['conditions_yes']%}
+              {{data['conditions_yes']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            
+            <dd class="govuk-summary-list__actions"> </dd>
+          </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Approval date
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {% if data['approval-date-day'] and data['approval-date-month'] and data['approval-date-year']%}
+              <span>{{ data['approval-date-day'] }} </span>
+              <span>{{ data['approval-date-month'] }} </span>
+              <span>{{ data['approval-date-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+      </dd>
+      
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Delivery officer
+      </dt>
+      <dd class="govuk-summary-list__value">
+   Joe Bloggs
+      </dd>
+      
+      <dd class="govuk-summary-list__actions"></dd>
+
+  
+  {% endblock %}
+  

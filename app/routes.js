@@ -14,10 +14,10 @@ router.post('/status-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (projectStatus == "Declined"){
     // Send user to next page
-    res.redirect('full_nonmvp/status/rejected')
+    res.redirect('MVP/status/rejected')
 
   } else if (projectStatus == "Approved"){
-  res.redirect('full_nonmvp/status/approved/conditions')
+  res.redirect('MVP/status/approved/conditions')
   }
 
 // Add route for 'deferred' once we know what content / action is needed
@@ -43,10 +43,10 @@ router.post('/conditions-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (projectConditions == "Yes"){
     // Send user to next page
-    res.redirect('full_nonmvp/status/approved/conditions_yes')
+    res.redirect('MVP/status/approved/conditions_yes')
 
   } else {
-  res.redirect('full_nonmvp/status/approved/dates')
+  res.redirect('MVP/status/approved/dates')
   }
   
 })
