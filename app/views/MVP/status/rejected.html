@@ -53,6 +53,13 @@
               text: "Select one option."
             },
             items: [
+
+            {
+              value: "Choice of trust",
+              checked:  data['reason'] === "Choice of trust",
+              text: "Choice of trust"
+            },
+
               {
                 value: "Finance",
                 checked:  data['reason'] === "finance",
@@ -71,12 +78,7 @@
                 text: "Finances and performance"
               },
 
-              {
-                value: "Outgoing trust issues",
-                checked:  data['reason'] === "Outgoing trust issues",
-                text: "Outgoing trust issues"
-              },
-
+              
               {
                 value: "Other - ",
                 checked:  data['reason'] === "Other",
