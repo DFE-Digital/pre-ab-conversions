@@ -25,7 +25,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Reason for decline
+             Reason
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['reason']%}
@@ -41,7 +41,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Declined date
+             Date of decision
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
@@ -68,10 +68,10 @@
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
-         <p>Recording this decision is final. A new application will need to go to advisory board to change the decision.</p>
+         <!--<p>Recording this decision is final. A new application will need to go to advisory board to change the decision.</p>-->
           {{ govukButton({
             text: "Record this decision",
-            classes: "govuk-button--warning"
+            classes: "govuk-button"
           }) }}
 
         </form>

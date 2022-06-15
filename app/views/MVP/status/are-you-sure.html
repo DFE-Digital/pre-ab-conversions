@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      <h1 class="govuk-heading-l">Are you sure you want to decline this project?</h1>
+
+        
+      <p>Recording this decision is final. A new application will need to go to advisory board to change the decision.
+      </p>
+  
+        <form action="task_list2" method="post" class="govuk-!-margin-top-7"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+         <!--<p>Recording this decision is final. A new application will need to go to advisory board to change the decision.</p>-->
+          {{ govukButton({
+            text: "Yes, decline this project",
+            classes: "govuk-button--warning"
+          }) }}
+
+        </form>
+  
+      </main>
+    </main>   
+    </div>
+  </div>
+{% endblock %}
