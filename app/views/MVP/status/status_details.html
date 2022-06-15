@@ -44,7 +44,7 @@
         </ul>
 
     </nav>
-    <h1 class="govuk-heading-l">Decision</h1>
+    <h1 class="govuk-heading-l">Decision details</h1>
 
       <div class="app-summary-card__body">
     
@@ -63,7 +63,7 @@
     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Reason for decline
+              Reason
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['reason']}} 
@@ -73,7 +73,7 @@
           </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-       Declined date
+       Date of decision
       </dt>
       <dd class="govuk-summary-list__value">
             {% if data['rejected-date-day'] and data['rejected-date-month'] and data['rejected-date-year']%}
@@ -87,7 +87,7 @@
       
       <dd class="govuk-summary-list__actions"></dd>
     </div>
-    <div class="govuk-summary-list__row">
+   <!--<div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
        Delivery officer
       </dt>
@@ -95,7 +95,7 @@
           Joe Bloggs
       </dd>
       
-      <dd class="govuk-summary-list__actions"></dd>
+      <dd class="govuk-summary-list__actions"></dd>--> 
 
   
   
