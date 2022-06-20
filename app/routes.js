@@ -38,7 +38,7 @@ router.post('/status-answer', function (req, res) {
 router.post('/conditions-answer', function (req, res) {
 
   // Make a variable and give it the value from 'list'
-  var projectConditions = req.session.data['Conditions']
+  var projectConditions = req.session.data['conditions']
 
   // Check whether the variable matches a condition
   if (projectConditions == "Yes"){

@@ -31,14 +31,14 @@
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="Conditions" name="Conditions" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="conditions-yes" name="conditions" {{checked("conditions", "Yes")}} type="radio" value="Yes">
               <label class="govuk-label govuk-radios__label" for="Conditions">
                 Yes
               </label>
               
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="Conditions" name="Conditions" type="radio" value="No">
+              <input class="govuk-radios__input" id="conditions-no" name="conditions" {{checked("conditions", "No")}} type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="Conditions">
                 No
               </label>

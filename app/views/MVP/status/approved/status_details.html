@@ -40,7 +40,7 @@
         </ul>
 
     </nav>
-    <h1 class="govuk-heading-l">Decision details</h1>
+    <h1 class="govuk-heading-l">Decision</h1>
 
     
       
@@ -58,28 +58,25 @@
     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Conditions
+            Were any conditions set
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['Conditions']}} 
+              {{ data['conditions']}} 
             </dd>
             
             <dd class="govuk-summary-list__actions"> </dd>
           </div>
+          {% if data['conditions'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-          Details of conditions
+              Details of conditions
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['conditions_yes']%}
               {{data['conditions_yes']}}
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}
             </dd>
-            
             <dd class="govuk-summary-list__actions"> </dd>
           </div>
+          {% endif %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
        Date of decision

@@ -28,32 +28,31 @@
             Were any conditions set
             </dt>
             <dd class="govuk-summary-list__value">               
-{{ data['Conditions']}} 
+            {{ data['conditions']}} 
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="conditions.html?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">rejected-reason</span>
               </a>
             </dd>
           </div>
+          {% if data['conditions'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Details of the conditions
+              Details of the conditions
             </dt>
             <dd class="govuk-summary-list__value">               
-{% if data['conditions_yes']%}
-{{data['conditions_yes']}}
-{% else %} 
-<span class="empty">Empty</span>
-{% endif %}
+              {{data['conditions_yes']}}
+            </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="conditions_yes.html?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">rejected-reason</span>
               </a>
             </dd>
           </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Approval date
+             Date of decision
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['approval-date-day'] and data['approval-date-month'] and data['approval-date-year']%}
