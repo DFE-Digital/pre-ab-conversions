@@ -16,35 +16,27 @@
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       
 
-     
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-          {% from "govuk/components/input/macro.njk" import govukInput %}
-     
-
           
           {% set otherHtml %}
           {{ govukInput({
-            id: "reason",
-            name: "reason",
+            id: "other-reason",
+            name: "other-reason",
             rows: 15,
-            type: "reason",
+            value: data['other-reason'],
             classes: "govuk-!-width-full",
             label: {
               text: "Give reasons"
             }
           }) }}
-
-
-        
-
           {% endset -%}
           
-          {{ govukRadios({
-            idPrefix: "reason",
-            name: "reason",
+
+          {{ govukCheckboxes({
+            idPrefix: "declined-reasons",
+            name: "declined-reasons",
             fieldset: {
               legend: {
-                text: "What is the reason for declining this project?",
+                text: "Why was this project declined?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -56,32 +48,25 @@
 
             {
               value: "Choice of trust",
-              checked:  data['reason'] === "Choice of trust",
+              checked: checked("declined-reasons", "Choice of trust"),
               text: "Choice of trust"
             },
 
               {
                 value: "Finance",
-                checked:  data['reason'] === "finance",
+                checked: checked("declined-reasons", "Finance"),
                 text: "Finance"
               },
 
               {
                 value: "Performance",
-                checked:  data['reason'] === "Performance",
+                checked: checked("declined-reasons", "Performance"),
                 text: "Performance"
               },
-
-              {
-                value: "Finances and performance",
-                checked:  data['reason'] === "Finances and performance",
-                text: "Finances and performance"
-              },
-
               
               {
-                value: "Other - ",
-                checked:  data['reason'] === "Other",
+                value: "Other",
+                checked: checked("declined-reasons", "Other"),
                 text: "Other",
                 conditional: {
                   html: otherHtml

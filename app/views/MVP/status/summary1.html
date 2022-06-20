@@ -25,14 +25,25 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Reason
+              Reasons
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['reason']%}
-              {{data['reason']}}
-              {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
+              {% for reason in data['declined-reasons'] %}
+
+                {% if reason != "Other" %}
+                  {% if loop.last == false %} 
+                    <span>{{ reason }}, </span> 
+                  {% else %}
+                    <span>{{ reason }}</span> 
+                  {% endif %}
+                {% else %}
+                  {% if data['other-reason'] %} 
+                    <div>Other - {{data['other-reason']}} </div>
+                  {% endif %}
+                {% endif %}
+
+              {% endfor %}
+            </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="rejected.html?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">rejected-reason</span>
