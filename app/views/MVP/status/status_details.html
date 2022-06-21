@@ -39,12 +39,12 @@
               <a class="app-sub-navigation__link"  href="../../related/notes.html">Project notes</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  aria-current="page"  href="../status/status_details">Decision</a>
+              <a class="app-sub-navigation__link"  aria-current="page"  href="../status/status_details">Decision details</a>
             </li>
         </ul>
 
     </nav>
-    <h1 class="govuk-heading-l">Decision</h1>
+    <h1 class="govuk-heading-l">Decision details</h1>
 
       <div class="app-summary-card__body">
     
@@ -69,14 +69,10 @@
               {% for reason in data['declined-reasons'] %}
 
                 {% if reason != "Other" %}
-                  {% if loop.last == false %} 
-                    <span>{{ reason }}, </span> 
-                  {% else %}
-                    <span>{{ reason }}</span> 
-                  {% endif %}
+                    <div>{{ reason }}</div>
                 {% else %}
                   {% if data['other-reason'] %} 
-                    <div>Other - {{data['other-reason']}} </div>
+                    <div>{{data['other-reason']}} </div>
                   {% endif %}
                 {% endif %}
 

@@ -31,14 +31,10 @@
               {% for reason in data['declined-reasons'] %}
 
                 {% if reason != "Other" %}
-                  {% if loop.last == false %} 
-                    <span>{{ reason }}, </span> 
-                  {% else %}
-                    <span>{{ reason }}</span> 
-                  {% endif %}
+                    <div>{{ reason }}</div>
                 {% else %}
                   {% if data['other-reason'] %} 
-                    <div>Other - {{data['other-reason']}} </div>
+                    <div>{{data['other-reason']}} </div>
                   {% endif %}
                 {% endif %}
 
