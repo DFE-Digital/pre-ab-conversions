@@ -9,15 +9,18 @@ const router = express.Router()
 router.post('/status-answer', function (req, res) {
 
   // Make a variable and give it the value from 'list'
-  var projectStatus = req.session.data['Status-status']
+  var projectStatus = req.session.data['decision-status']
 
   // Check whether the variable matches a condition
   if (projectStatus == "Declined"){
     // Send user to next page
     res.redirect('MVP/status/rejected')
-
-  } else if (projectStatus == "Approved"){
-  res.redirect('MVP/status/approved/conditions')
+  } 
+  else if (projectStatus == "Deferred") {
+    res.redirect('MVP/status/deferred/reasons-for-deferral')
+  }
+  else if (projectStatus == "Approved"){
+    res.redirect('MVP/status/approved/conditions')
   }
 
 // Add route for 'deferred' once we know what content / action is needed

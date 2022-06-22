@@ -30,88 +30,28 @@
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="Status-status" name="Status-status" type="radio" value="Approved">
-              <label class="govuk-label govuk-radios__label" for="Status-status">
+              <input class="govuk-radios__input" id="decision-status-approved" name="decision-status" {{checked("decision-status", "Approved")}} type="radio" value="Approved">
+              <label class="govuk-label govuk-radios__label" for="decision-status-approved">
                 Approved
               </label>
-              <!--div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                For projects approved by the regional schools commissioner (RSC). This status will move the project to your archive list and a new post HTB project will start.
-              </div-->
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="Status-status" name="Status-status" type="radio" value="Declined">
-              <label class="govuk-label govuk-radios__label" for="Status-status">
+              <input class="govuk-radios__input" id="decision-status-declined" name="decision-status" {{checked("decision-status", "Declined")}} type="radio" value="Declined">
+              <label class="govuk-label govuk-radios__label" for="decision-status-declined">
                 Declined
               </label>
-              <!--div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list.
-              </div-->
             </div>
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="Status-status" name="Status-status" type="radio" value="Deferred">
-              <label class="govuk-label govuk-radios__label" for="Status-status">
+              <input class="govuk-radios__input" id="decision-status-deferred" name="decision-status" {{checked("decision-status", "Deferred")}} type="radio" value="Deferred">
+              <label class="govuk-label govuk-radios__label" for="decision-status-deferred">
                 Deferred
               </label>
-              <!--div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                *** copy which explains this option needs adding *** 
-              </div-->
-            </div>
-          
+            </div>          
           </div>
       
         </fieldset>
       </div>
       
-      <!-- nunjucks radio buttons
-         {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        idPrefix: "Status-status",
-        name: "Status-status",
-
-        fieldset: {
-          legend: {
-
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-    
-        items: [
-      
-
-        {
-            value: "Approved",
-            checked:  data['Status-status'] === "Approved",
-            text: "Approved",
-            classes:"govuk-!-font-weight-bold",
-            hint: {
-              text: "For projects approved by the regional schools commissioner (RSC). This status will move the project to your archive list and a new post HTB project will start."
-            }
-          },
-          {
-            value: "Declined",
-            checked:  data['Status-status'] === "Declined",
-            text: "Declined",
-             classes:"govuk-label govuk-radios__label govuk-label—s",
-            hint: {
-              text: "For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list."
-            }
-          
-         },
-          
-          {
-            value: "Declined",
-            checked:  data['Status-status'] === "Declined",
-            text: "Declined",
-             classes:"govuk-label govuk-radios__label govuk-label—s",
-            hint: {
-              text: "For projects declined by the regional schools commissioner (RSC). This status will move this project to your archive project list."
-         }
-          } 
-        ]
-      }) }} -->
 
         {{ govukButton({
           text: "Continue"
@@ -119,7 +59,6 @@
       </fieldset>   
     </form>
 
-  </div>  
   </div>  
 </div>
 {% endblock %}
