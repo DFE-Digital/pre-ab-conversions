@@ -25,7 +25,7 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
-                  <strong><a href="task_list1">St. Wilfrid's Primary School</a></strong> URN 102062
+                  <strong><a href="task_list?justRecorded=no">St. Wilfrid's Primary School</a></strong> URN 102062
                 </h2>
             
                 <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
@@ -43,7 +43,7 @@
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
                     {% else %} 
-                    <strong class="govuk-tag govuk-tag--orange">Pre Advisory Board</strong>
+                      <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
                     {% endif %} 
                   </p>
                   <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
@@ -58,7 +58,7 @@
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
                     {% else %} 
-                    <strong class="govuk-tag govuk-tag--orange">Pre Advisory Board</strong>
+                      <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
                     {% endif %} 
                   </p>
                   <p class="govuk-hint govuk-!-margin-top-0">Application received: 29 March 2021</br>

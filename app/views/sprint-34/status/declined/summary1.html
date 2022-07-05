@@ -83,11 +83,8 @@
 
 
   
-        <form action="../../task_list2" method="post"> 
-          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+        <form action="../../task_list?justRecorded=yes" method="post"> 
 
-         <!--<p>Recording this decision is final. A new application will need to go to advisory board to change the decision.</p>-->
           {{ govukButton({
             text: "Record this decision",
             classes: "govuk-button"
