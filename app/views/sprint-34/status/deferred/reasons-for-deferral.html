@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Reasons for deferral
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="dates" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      
+
+      {% set otherHtml %}
+      {{ govukTextarea({
+        id: "other-reason",
+        name: "other-reason",
+        value: data['other-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "deferred-reasons",
+        name: "deferred-reasons",
+        fieldset: {
+          legend: {
+            text: "Why was this project deferred?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select at least one option."
+        },
+        items: [
+
+          {
+            value: "Additional information needed",
+            checked: checked("deferred-reasons", "Additional information needed"),
+            text: "Additional information needed"
+          },
+          
+          {
+            value: "Local sensitivity concerns",
+            checked: checked("deferred-reasons", "Local sensitivity concerns"),
+            text: "Local sensitivity concerns"
+          },
+          
+          {
+            value: "Performance concerns",
+            checked: checked("deferred-reasons", "Performance concerns"),
+            text: "Performance concerns"
+          },
+
+          {
+            value: "Trust to engage more with stakeholders",
+            checked: checked("deferred-reasons", "Trust to engage more with stakeholders"),
+            text: "Trust to engage more with stakeholders"
+          },
+
+          {
+            value: "Other",
+            checked: checked("deferred-reasons", "Other"),
+            text: "Other",
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }} 
+    </form>
+
+  </div>  
+  </div>  
+</div>
+{% endblock %}
+  
+  
+  
+  

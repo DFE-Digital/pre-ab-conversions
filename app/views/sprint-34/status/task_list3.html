@@ -1,0 +1,1003 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../../index" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl" >URN 902032</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      St. Benedicts's High School
+
+ <span class="overdue">REJECTED</span>
+    </h1>
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="task_list3">AB template</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="../status/status_details2">Status information</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="../../related/application">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="../../related/notes.html">Project notes</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">
+      School and trust information and project dates
+     </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+     
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       School and trust information and project date details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds"><a name="recommendation"></a>
+            Recommendation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['recomendation']%}
+                  {{data['recomendation']}}
+                 {% else %} 
+                 <span class="empty">Empty</span>
+                {% endif %}
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+        
+              
+            </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Author
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Delivery Officer
+            <dd class="govuk-summary-list__actions">
+         
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Version
+            </dt>
+            <dd class="govuk-summary-list__value">
+            19 June 2021
+            </dd>
+   <dd class="govuk-summary-list__actions">  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="clearedby"></a>
+         Cleared by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['cleared']%}
+          {{data['cleared']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="aorequired"></a>
+         Is an academy order (AO) required?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['aorequired']%}
+                {{data['aorequired']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+        </dd>
+        
+          <dd class="govuk-summary-list__actions">
+            
+          
+            
+          </dd>
+        
+      </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="htbdate"></a>
+            Date of HTB
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['htb-date']%}
+                  {{data['htb-date']}}
+                 {% else %} 
+                 <span class="empty">Empty</span>
+                {% endif %}
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+     
+              
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Previous HTB
+          </dt>
+          <dd class="govuk-summary-list__value">
+          12 November 2020 <br>
+     
+          </dd>
+          <dd class="govuk-summary-list__actions">
+         
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School name
+          </dt>
+          <dd class="govuk-summary-list__value">St. Wilfrid's Primary School</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unique reference number (URN)
+          </dt>
+          <dd class="govuk-summary-list__value">120620</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Local authority
+          </dt>
+          <dd class="govuk-summary-list__value">Warrington</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Trust reference number
+          </dt>
+          <dd class="govuk-summary-list__value">TR01318</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of trust
+          </dt>
+          <dd class="govuk-summary-list__value">Dynamics Trust</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sponsor reference number
+          </dt>
+          <dd class="govuk-summary-list__value">SP00170</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sponsor name
+          </dt>
+          <dd class="govuk-summary-list__value">Diocese of Warrington</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Academy type and route
+          </dt>
+          <dd class="govuk-summary-list__value">Converter, grant only £25000</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="opening"></a>
+           Proposed academy opening date
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['opening-date']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+  </dl>
+  
+  
+    </div>
+    
+  </section>    
+  <h2 class="govuk-heading-m">
+    General information
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       General information details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+            School phase
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Primary
+    
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+  
+              
+            </dd>
+          
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Age range
+          </dt>
+          <dd class="govuk-summary-list__value">
+           3 to 11
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+             
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           School type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Voluntary aided school
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+      
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+         Number on roll (NOR)
+          </dt>
+          <dd class="govuk-summary-list__value">
+          226
+          </dd>
+            <dd class="govuk-summary-list__actions">
+  
+            </dd>
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Percentage the school is full
+          </dt>
+          <dd class="govuk-summary-list__value">80%</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capacity
+          </dt>
+          <dd class="govuk-summary-list__value">236</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="PAN"></a>
+            Published admissions number (PAN)
+          </dt>
+          <dd class="govuk-summary-list__value">210</dd>
+          <dd class="govuk-summary-list__actions"></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Percentage of free school meals at the school (%FSM)
+          </dt>
+          <dd class="govuk-summary-list__value">23.8%</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Part of private finance initiative (PFI) scheme
+          </dt>
+          <dd class="govuk-summary-list__value">No</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Viability issues
+          </dt>
+          <dd class="govuk-summary-list__value"><a name="viability"></a>
+            {% if data['viability']%}
+            {{data['viability']}}
+           {% else %} 
+           <span class="empty">Empty</span>
+          {% endif %}
+            <dd class="govuk-summary-list__actions"></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="deficit"></a>
+           Financial surplus or deficit
+          </dt>
+          <dd class="govuk-summary-list__value">  {% if data['deficit']%}
+            {{data['deficit']}}
+           {% else %} 
+           <span class="empty">Empty</span>
+          {% endif %}
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="diocsean"></a>
+            Is this a Diocesan multi-academy trust (MAT)?
+          </dt>
+          <dd class="govuk-summary-list__value"> {% if data['diocesan']%}
+            {{data['diocesan']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+           {% endif %}</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="goodschools"></a>
+          Percentage of good or outstanding schools in the diocesan trust
+          </dt>
+          <dd class="govuk-summary-list__value"> 80%
+    
+          <dd class="govuk-summary-list__actions"><!-- <a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a> --></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"><a name="distance"></a>
+          Distance from the school to the trust headquaters
+          </dt>
+          <dd class="govuk-summary-list__value">  {% if data['distance']%}
+            {{data['distance']}}
+           {% else %} 
+           <span class="empty">Empty</span>
+          {% endif %}<br>
+          {{data['distance-more-detail']}}
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          MP (party)
+          </dt>
+          <dd class="govuk-summary-list__value"> Conservatives
+          <dd class="govuk-summary-list__actions">
+     
+          </dd>
+        </div>
+  </dl>
+    </div>
+  </section>  
+  <h2 class="govuk-heading-m">
+    School performance (Ofsted information)
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       School performance (Ofsted information) details
+      </h2><a name="ofsted"></a>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+           Ofsted judgement date
+          </dt>
+          <dd class="govuk-summary-list__value">
+          1 February 2017 </dd>
+  <dd class="govuk-summary-list__actions"></dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+     Current framework
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Yes </dd>
+  <dd class="govuk-summary-list__actions"></dd>
+  </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Outcome for pupils
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Good
+          </dd>
+          
+  <dd class="govuk-summary-list__actions">
+  </dd></div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+  Quality of teaching and learning assessment
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Good
+    </dd>
+    
+  <dd class="govuk-summary-list__actions">
+  </dd></div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+   Effectiveness of leadership and management
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Good
+    </dd>
+    
+  <dd class="govuk-summary-list__actions">
+  </dd></div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+  Personal development, behaviour and welfare
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Outstanding
+    </dd>
+    
+  <dd class="govuk-summary-list__actions">
+  </dd></div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+  Early years provision
+    </dt>
+    <dd class="govuk-summary-list__value">
+   Good
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd></div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+   Overall effectiveness
+      </dt>
+      <dd class="govuk-summary-list__value">
+    Good
+    <dd class="govuk-summary-list__actions">
+    </dd></div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+     Additional information (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['ofsted-more-detail']%}
+          {{data['ofsted-more-detail']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+  
+  </dl>
+    </div>
+  </section>  
+  
+  </section> 
+  <h2 class="govuk-heading-m">
+    Rationale
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+        <a name="rationale"></a>
+       Rationale details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+      <dl class="govuk-summary-list">
+        
+          
+            <div class="govuk-summary-list__row">
+  
+              <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+                Rationale for project
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-width-full">
+                {% if data['project-rationale']%}
+                {{data['project-rationale'] | safe}}
+                {% else %} 
+                <span class="empty">Empty</span>
+                {% endif %}</dd>
+              <dd class="govuk-summary-list__actions">
+               
+              </dd>
+            </div>
+          
+            <div class="govuk-summary-list__row">
+  
+              <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+                Trust rationale
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-width-full">
+                {% if data['trust-rationale']%}
+                {{data['trust-rationale'] | safe}}
+                {% else %} 
+                <span class="empty">Empty</span>
+                {% endif %}</dd>
+              <dd class="govuk-summary-list__actions">
+               
+              </dd>
+            </div>
+        
+  </dl>
+  </div>
+  
+        
+  </section> 
+  <h2 class="govuk-heading-m">
+  Risks and issues
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       Risks and issues details
+      </h2> <a name="risks"></a>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Risks and issues
+          </dt>
+          <dd class="govuk-summary-list__value"> 
+            {% if data['risks']%}
+            {{data['risks'] | safe  }} 
+            {% else %} 
+            <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+  
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Has an Equalities Impact Assessment been considered?
+          </dt>
+          <dd class="govuk-summary-list__value"> 
+            The equalities duty has been considered and the Secretary of State’s decision is unlikely to affect disproportionately any particular person or group who share protected characteristics
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section> 
+  
+  <h2 class="govuk-heading-m">
+  School budget information
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       School budget information details
+      </h2> <a name="budget"></a>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+            Revenue carry forward at end-March (current year) 2021:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data["finance-current-year-2021"] }}</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Projected revenue balance at end-March (following year) 2022:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data["finance-following-year-2022"] }}
+          </dd>
+          
+          <dd class="govuk-summary-list__actions"> </dd>
+        </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Capital carry forward at end-March (current year):
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £{{ data["finance-forward-2021"] }}
+    </dd>
+    
+    <dd class="govuk-summary-list__actions"></dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Capital carry forward at end-March (following year):
+    </dt>
+    <dd class="govuk-summary-list__value">
+     £{{ data["finance-forward-2022"]}}
+    </dd>
+    <dd class="govuk-summary-list__actions"></a></dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+  Additional information (optional)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if data['finance-more-detail']%}
+      {{data['finance-more-detail']}}
+     {% else %} 
+     <span class="empty">Empty</span>
+    {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions"></dd>
+  </div>
+  </section>  
+  <h2 class="govuk-heading-m">
+  School pupil forecasts
+   </h2>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       School pupil forecast details
+      </h2> <a name="pupil"></a>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Year</dt>
+          <dt class="govuk-summary-list__key govuk-table__header--numeric">Capacity </dt>
+          <dt class="govuk-summary-list__key govuk-table__header--numeric">Total pupil numbers</dt>
+          <dt class="govuk-summary-list__key govuk-table__header--numeric">Percentage full</dt> </div>
+               
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Current year</dt>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric">236</dd>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric">226</dd>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric">96%</dd> </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">2021 to 2020 forecast</dt>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric">236</dd>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric">80%</dd> </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">2022 to 2023 forecast</dt>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric">236</dd>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric ">80%</dd> </div>
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">2023 to 2024 forecast</dt>
+                <dd class="govuk-summary-list__value govuk-table__cell--numeric">236</dd>
+                <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+                <dd class="govuk-summary-list__value govuk-table__cell--numeric">80%</dd> </div>
+   
+  </dl>
+  
+  
+  
+  <h3 class="govuk-heading-m  govuk-!-margin-top-8">Additional information (optional)</h3> 
+  <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Additional information</dt>
+    <dd class="govuk-summary-list__value">
+      {% if data['pupil-more-detail']%}
+      {{data['pupil-more-detail']}}
+     {% else %} 
+     <span class="empty">Empty</span>
+    {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions"></dd>
+  </div>
+  </dl>
+  
+  </section> 
+  <h2 class="govuk-heading-m">
+  Key stage performance tables
+   </h2> <a name="ofsted"></a>
+  <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       Key stage performanace table details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    <h3> 2019 key stage 2</h3>
+  <dl class="govuk-summary-list">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">2019 key stage 2</caption>
+      <tbody class="govuk-table__body">
+          <th scope="row" class="govuk-table__cell"></th>
+          <th scope="row" class="govuk-table__cell ">Percentage meeting expected standard in reading, writing and maths</th>
+          <th scope="row" class="govuk-table__cell ">Percentage achieving a higher standard in reading, writing and maths</th>
+          <th scope="row" class="govuk-table__cell ">Reading progress scores</th>
+          <th scope="row" class="govuk-table__cell ">Writing progress scores</th> 
+          <th scope="row" class="govuk-table__cell ">Maths progress scores</th>        
+     </tr>
+     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">St Wilfrid's Primary School</th>
+      <td scope="row" class="govuk-table__cell ">61% (pupil premium 20%)</td>
+      <td scope="row" class="govuk-table__cell ">4%</td>
+      <td scope="row" class="govuk-table__cell ">-0.4 <br>(pupil premium 0.1)</td>
+      <td scope="row" class="govuk-table__cell ">-0.9 <br>(pupil premium -2.1)</td>
+      <td scope="row" class="govuk-table__cell ">-2.2 <br>(pupil premium -0.2)</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">Warrington local authority</th>
+  <td scope="row" class="govuk-table__cell ">61% (pupil premium 9%)</td>
+  <td scope="row" class="govuk-table__cell">12%</td>
+  <td scope="row" class="govuk-table__cell">1.5</td>
+  <td scope="row" class="govuk-table__cell">1.4</td>
+  <td scope="row" class="govuk-table__cell">1.5</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">National average</th>
+  <td scope="row" class="govuk-table__cell">65% (pupil premium 51%)</td>
+  <td scope="row" class="govuk-table__cell ">11%</td>
+  <td scope="row" class="govuk-table__cell ">0</td>
+  <td scope="row" class="govuk-table__cell ">0</td>
+  <td scope="row" class="govuk-table__cell ">0</td>
+  </tr>
+  
+     </tbody></table>
+  <br>
+     <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">2018 key stage 2</caption>
+      <th scope="row" class="govuk-table__cell"></th>
+      <th scope="row" class="govuk-table__cell">Percentage meeting expected standard in reading, writing and maths</th>
+      <th scope="row" class="govuk-table__cell">Percentage achieving a higher standard in reading, writing and maths</th>
+      <th scope="row" class="govuk-table__cell">Reading progress scores</th>
+      <th scope="row" class="govuk-table__cell">Writing progress scores</th> 
+      <th scope="row" class="govuk-table__cell">Maths progress scores</th>        
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">St Wilfrid's Primary School</th>
+  <td scope="row" class="govuk-table__cell">64% (pupil premium 18%)</td>
+  <td scope="row" class="govuk-table__cell">11%</td>
+  <td scope="row" class="govuk-table__cell">1.2 <br>(pupil premium -1.1)</td>
+  <td scope="row" class="govuk-table__cell">2.3 <br>(pupil premium -0.4)</td>
+  <td scope="row" class="govuk-table__cell">- 0.2 <br>(pupil premium -0.1)</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">Warrington local authority</th>
+  <td scope="row" class="govuk-table__cell">70% (pupil premium 8%)</td>
+  <td scope="row" class="govuk-table__cell">12%</td>
+  <td scope="row" class="govuk-table__cell">1.6</td>
+  <td scope="row" class="govuk-table__cell">1.4</td>
+  <td scope="row" class="govuk-table__cell">1.5</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">National average</th>
+  <td scope="row" class="govuk-table__cell">64% (pupil premium 51%)</td>
+  <td scope="row" class="govuk-table__cell">10%</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  </tr>
+  
+  </tbody></table>
+  <br>
+  <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">2017 key stage 2</caption>
+  <th scope="row" class="govuk-table__cell"></th>
+  <th scope="row" class="govuk-table__cell">Percentage meeting expected standard in reading, writing and maths</th>
+  <th scope="row" class="govuk-table__cell">Percentage achieving a higher standard in reading, writing and maths</th>
+  <th scope="row" class="govuk-table__cell">Reading progress scores</th>
+  <th scope="row" class="govuk-table__cell">Writing progress scores</th> 
+  <th scope="row" class="govuk-table__cell">Maths progress scores</th>        
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">St Wilfrid's Primary School</th>
+  <td scope="row" class="govuk-table__cell">48% (pupil premium 45%)</td>
+  <td scope="row" class="govuk-table__cell">0%</td>
+  <td scope="row" class="govuk-table__cell">2.7 <br>(pupil premium -0.2)</td>
+  <td scope="row" class="govuk-table__cell">1.1 <br>(pupil premium 1.7)</td>
+  <td scope="row" class="govuk-table__cell">0.6 <br>(pupil premium 0.1)</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">Warrington local authority</th>
+  <td scope="row" class="govuk-table__cell">63% (pupil premium 7%)</td>
+  <td scope="row" class="govuk-table__cell">9%</td>
+  <td scope="row" class="govuk-table__cell">1.7</td>
+  <td scope="row" class="govuk-table__cell">1</td>
+  <td scope="row" class="govuk-table__cell">1.3</td>
+  </tr>
+  <tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell">National average</th>
+  <td scope="row" class="govuk-table__cell">61% (pupil premium 47%)</td>
+  <td scope="row" class="govuk-table__cell">9%</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  <td scope="row" class="govuk-table__cell">0</td>
+  </tr>
+  
+  </tbody></table>
+  
+  
+  
+          <h3 class="govuk-heading-m  govuk-!-margin-top-8">Additional information (optional)</h3> 
+          <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Additional information</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['key-stage-more-detail']%}
+              {{data['key-stage-more-detail']}}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+          </div>
+          </dl>
+          
+          </section> 
+          <h2 class="govuk-heading-m">
+            Supporting documents
+             </h2>
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+   
+      <header class="app-summary-card__header">
+        
+        <h2 class="app-summary-card__title">
+         Supporting documents details
+        </h2>
+      </header>
+      <div class="app-summary-card__body">
+    
+      
+    <dl class="govuk-summary-list">
+      
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">File 1</dt>
+            <dd class="govuk-summary-list__value">Ofsted_interim-report.docx</dd>
+            <dd class="govuk-summary-list__actions"></dd>
+       
+          </div>
+  
+                 
+          <div class="govuk-summary-list__row">
+  
+            <dt class="govuk-summary-list__key">File 2</dt>
+            <dd class="govuk-summary-list__value">google-map.jpg</dd>
+            <dd class="govuk-summary-list__actions"></dd>        </div>
+    </dl>
+      </div>
+    </section> 
+  
+    <h2 class="govuk-heading-m">
+     Trust template
+          </h2>
+        <section class="app-summary-card govuk-!-margin-bottom-6">
+          
+          <header class="app-summary-card__header">
+            
+            <h2 class="app-summary-card__title">
+             Trust template details
+            </h2>
+          </header>
+          <div class="app-summary-card__body">
+        
+          
+        <dl class="govuk-summary-list">
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Trust template</dt>
+                <dd class="govuk-summary-list__value">Dynamics-trust-temp-13-March-2021.docx</dd>
+                <dd class="govuk-summary-list__actions"></dd>
+              </div>
+      
+              
+        </dl>
+          </div>
+        </section> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- missing information style
+  <div class="app-banner app-banner--missing-section">
+  
+    <div class="app-banner__message">
+      
+    <p class="govuk-body" id="missing-degree-details">Risks and issue section is not marked as complete</p>
+    <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
+  </div>
+  </div> 
+  <h2 class="govuk-heading-m">
+  Trust template
+   </h2>
+  <div class="app-banner app-banner--missing-section">
+  
+    <div class="app-banner__message">
+      
+    <p class="govuk-body" id="missing-degree-details">Trust template section is not marked as complete</p>
+    <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
+  </div>
+  </div> -->
+  
+
+  </div>
+  {% endblock %}
+  

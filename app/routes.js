@@ -1,10 +1,62 @@
 const express = require('express')
 const router = express.Router()
 
-
-
 // Add your routes here - above the module.exports line
-//sending users to different pages
+
+//***********
+//* SPRINT 34
+//***********
+
+router.post('/sprint-34/status/approved/conditions-answer', function(req, res) {
+
+  const approvedCondition = req.body["approved-conditions"];
+
+  if (approvedCondition == "Yes"){
+    // Send user to next page
+    res.redirect('conditions_yes');
+  } 
+  else if (approvedCondition == "No") {
+    res.redirect('dates');
+  }
+
+});
+
+router.post('/sprint-34/status/status-answer', function(req, res) {
+
+  const projectStatus = req.body["decision-status"];
+
+  if (projectStatus == "Declined"){
+    // Send user to next page
+    res.redirect('declined/declined-reasons')
+  } 
+  else if (projectStatus == "Deferred") {
+    res.redirect('deferred/reasons-for-deferral')
+  }
+  else if (projectStatus == "Approved"){
+    res.redirect('approved/conditions')
+  }
+
+});
+
+router.post('/sprint-34/type-answer', function (req, res) {
+  // Make a variable to give it the value from the radio buttons on the index page  
+  var Task = req.session.data['control-name']
+
+  // Check whether the variable matches a condition
+  if (Task == "conversions") { 
+    // Send user to next page 
+    res.redirect('projects-list')
+
+  }   
+  else if (Task == "transfers") {
+    //send user to transfers prototype
+    res.redirect('https://pre-ab-transfers.herokuapp.com/version-4/dashboard-home')
+  }
+
+
+})
+
+
 
 router.post('/status-answer', function (req, res) {
 

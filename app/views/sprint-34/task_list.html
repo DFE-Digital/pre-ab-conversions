@@ -1,0 +1,436 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  St. Wilfrid's Primary School - task list
+{% endblock %}
+
+{% block beforeContent %}
+<a href="projects-list" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Decision recorded</p>
+  </div>
+</div>
+<!--comment to be deleted-->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
+    <h1 class="govuk-heading-xl">
+      St. Wilfrid's Primary School 
+    </h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if (data['decision-status'] == "Approved") %}
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Were any conditions set
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {{ data['approved-conditions']}}
+          </dd>
+        </div>
+        {% if data['approved-conditions'] == "Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Details of the conditions
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {{data['conditions_yes']}}
+          </dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['approval-date-day'] and data['approval-date-month'] and data['approval-date-year']%}
+              <span>{{ data['approval-date-day'] }} </span>
+              <span>{{ data['approval-date-month'] }} </span>
+              <span>{{ data['approval-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>      
+    {% elseif (data['decision-status'] == "Declined") %}  
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reasons
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% for reason in data['declined-reasons'] %}
+
+            {% if reason != "Other" %}
+                <div>{{ reason }}</div>
+            {% else %}
+              {% if data['other-reason'] %} 
+                <div>{{data['other-reason']}} </div>
+              {% endif %}
+            {% endif %}
+
+          {% endfor %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['declined-date-day'] and data['declined-date-month'] and data['declined-date-year']%}
+              <span>{{ data['declined-date-day'] }} </span>
+              <span>{{ data['declined-date-month'] }} </span>
+              <span>{{ data['declined-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+
+    {% elseif (data['decision-status'] == "Deferred") %} 
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['decision-status'] == "Approved") %}
+              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+            {% elseif (data['decision-status'] == "Declined") %}  
+              <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
+            {% elseif (data['decision-status'] == "Deferred") %} 
+              <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+            {% endif %} 
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Why was this project deferred
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% for reason in data['deferred-reasons'] %}
+
+              {% if reason != "Other" %}
+                  <div class="summary-list-reason-item">{{ reason }}</div>
+              {% else %}
+                {% if data['other-reason'] %} 
+                  <div class="summary-list-reason-item">{{data['other-reason']}} </div>
+                {% endif %}
+              {% endif %}
+
+            {% endfor %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+    {% endif %} 
+    
+    {% if (data['decision-status'] == "") %}
+      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+        You have not recorded the decision for this project. You can record the decision once it has been made.
+      </p>
+      <form action="status/list" method="post" class="form">
+        {{ govukButton({
+          text: "Record a decision"
+        }) }}
+      </form>
+    {% else %}  
+      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+        You can click the button to change the recorded decision.
+      </p>
+      <form action="status/list" method="post" class="form">
+        {{ govukButton({
+          text: "Change the decision"
+        }) }}
+      </form>
+    {% endif %} 
+
+
+    {% if data['htb-date']%}
+    <div class="govuk-inset-text">
+      <h4 class="govuk-heading-m">HTB date</h4>
+      <p>HTB date for this project is {{ data['htb-date']}}</p>
+    </div> 
+    {% else %} 
+    {% endif %}
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="task_list1">Task list</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/application">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/notes.html">Project notes</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Task list</h2>
+    <p class="govuk-body">The task list will help you prepare for the Advisory Board meeting (formally headteacher board). You can complete the tasks in any order.</p>
+  
+    <ul class="app-task-list">
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Local authority (LA) information template</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template">
+                Record dates for the LA information template 
+              </a>
+            </span>
+            <strong class="{{data|laProformaStatusClass(
+                      ['la-proforma-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']  
+              )}} app-task-list__tag" id="LA-infromation-template">  
+              {{data|laProformaStatusText(
+                ['la-proforma-status'],
+                ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                'la-comments', 'la-sharepoint-link']               
+              )}} 
+            </strong>            
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Trust template guidance</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trust-template/index.html"  aria-describedby="trust-template">
+          Prepare your trust template
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Create project template</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="overview/summary1.html"  aria-describedby="project-overview">
+                School and trust information and project dates
+              </a>
+            </span>
+            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="general-info/summary1" aria-describedby="general-information">
+                General information
+              </a>
+            </span>
+            <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
+              {{data|generalInfoStatusText(
+                ['general-info-status'],
+                ['distance'],
+                ['deficit'],
+                ['diocesan'],
+                ['goodschools','viability' ]
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-performance/ofsted-comments.html" aria-describedby="school-performance">
+                School performance (Ofsted information)
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">
+              Reference only
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="rationale/rationale-summary1.html" aria-describedby="rationale-status">
+                Rationale
+              </a>
+            </span>
+            <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
+              {{data|rationaleOverviewStatusText(
+                ['rationale-status-htb'],
+                ['trust-rationale'],
+                ['project-rationale']
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="risks-and-issues/risks-summary1">
+                Risks and issues
+              </a>
+            </span>
+            <strong class="{{data|riskStatusClass(['risks-status'],['risks'] )}} app-task-list__tag" id="risks-status">  
+              {{data|riskStatusText(
+                ['risks-status'],
+                ['risks']
+              )}} 
+              </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-budget/budget-information2.html" aria-describedby="school-budget-information">
+                School budget information
+              </a>
+            </span>
+            <strong class="{{data|schoolBudgetInfoStatusClass(['school-budget-status'],
+                ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022'] )}} 
+                app-task-list__tag" 
+                id="school-budget-informatiion">
+              {{data|schoolBudgetInfoStatusText(
+                ['school-budget-status'],
+                ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022']
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+              href="pupil-forecasts/school-pupil-forecasts-summary" 
+              aria-describedby="school-pupil-forecast">
+              School pupil forecasts
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-pupil-forecast">
+              Reference only
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-performance-comments.html" aria-describedby="key-stage-2-performance-tables">
+                Key stage 2 performance tables
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="performance-tables">
+              Reference only
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-4-performance-comments.html" aria-describedby="key-stage-4-performance-tables">
+                Key stage 4 performance tables
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="performance-tables">
+              Reference only
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-5-performance-comments.html" aria-describedby="key-stage-4-performance-tables">
+                Key stage 5 performance tables
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="performance-tables">
+              Reference only
+            </strong>
+          </li>
+        </ul>
+      </li>
+
+      <h2 class="govuk-heading-l">Preview or generate project template</h2>
+      <p>Preview your template before you generate it into a Word document. Or, you can generate the document without previewing it.</p>
+
+      <div class="govuk-button-group">
+        <a href="generate/generate_summary" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+          Preview project template
+        </a>
+        <a href="generate/generate_documents" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Generate project template
+        </a>
+      </div>
+    </ul>
+  </div>
+  
+</div>
+  {% endblock %}
+  
