@@ -40,6 +40,8 @@
                       <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
                     {% elseif (data['decision-status'] == "Approved") %}
                       <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                    {% elseif (data['decision-status'] == "Declined") %} 
+                      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>  
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
                     {% else %} 
@@ -55,6 +57,8 @@
                       <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
                     {% elseif (data['decision-status'] == "Approved") %}
                       <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                    {% elseif (data['decision-status'] == "Declined") %} 
+                      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>    
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
                     {% else %} 
