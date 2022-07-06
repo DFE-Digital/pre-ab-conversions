@@ -40,10 +40,10 @@
                       <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
                     {% elseif (data['decision-status'] == "Approved") %}
                       <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
-                    {% elseif (data['decision-status'] == "Declined") %}  
-                      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                    {% else %} 
+                      <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
                     {% endif %} 
                   </p>
                   <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
@@ -55,10 +55,10 @@
                       <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
                     {% elseif (data['decision-status'] == "Approved") %}
                       <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
-                    {% elseif (data['decision-status'] == "Declined") %}  
-                      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
                     {% elseif (data['decision-status'] == "Deferred") %} 
                       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                    {% else %} 
+                      <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
                     {% endif %} 
                   </p>
                   <p class="govuk-hint govuk-!-margin-top-0">Application received: 29 March 2021</br>
