@@ -44,7 +44,11 @@
             Decision
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+            <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+            {% else %}
               <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+            {% endif %} 
           </dd>
         </div>
 
