@@ -51,7 +51,14 @@
             {% endif %} 
           </dd>
         </div>
-
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {{ data['who-decided']}} 
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Were any conditions set
@@ -97,7 +104,14 @@
             <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
           </dd>
         </div>
-
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {{ data['who-decided']}} 
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reasons
@@ -150,7 +164,14 @@
             {% endif %} 
           </dd>
         </div>
-
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {{ data['who-decided']}} 
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Why was this project deferred

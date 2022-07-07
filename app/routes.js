@@ -27,6 +27,18 @@ router.post('/sprint-34/status/status-answer', function(req, res) {
 
   if (projectStatus == "Declined"){
     // Send user to next page
+    res.redirect('declined/who-made-this-decision')
+  } 
+  else if (projectStatus == "Deferred") {
+    res.redirect('deferred//who-made-this-decision')
+  }
+  else if (projectStatus == "Approved"){
+    res.redirect('approved/who-made-this-decision')
+  }
+
+  /*
+  if (projectStatus == "Declined"){
+    // Send user to next page
     res.redirect('declined/declined-reasons')
   } 
   else if (projectStatus == "Deferred") {
@@ -35,7 +47,8 @@ router.post('/sprint-34/status/status-answer', function(req, res) {
   else if (projectStatus == "Approved"){
     res.redirect('approved/conditions')
   }
-
+  */
+    
 });
 
 router.post('/sprint-34/type-answer', function (req, res) {
