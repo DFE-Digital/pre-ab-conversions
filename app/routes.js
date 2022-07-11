@@ -30,7 +30,7 @@ router.post('/sprint-34/status/status-answer', function(req, res) {
     res.redirect('declined/who-made-this-decision')
   } 
   else if (projectStatus == "Deferred") {
-    res.redirect('deferred//who-made-this-decision')
+    res.redirect('deferred/who-made-this-decision')
   }
   else if (projectStatus == "Approved"){
     res.redirect('approved/who-made-this-decision')
