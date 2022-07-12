@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Check your answers before recording this decision</h1>
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Decision
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+              {% elseif (data['decision-status'] == "Approved") %}
+                <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+              {% elseif (data['decision-status'] == "Declined") %}  
+                <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
+              {% elseif (data['decision-status'] == "Deferred") %} 
+                <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../list.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">decision</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who made this decision
+            </dt>
+            <dd class="govuk-summary-list__value">               
+              {{ data['who-decided']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="who-made-this-decision.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">who made this decision</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Why was this project deferred
+            </dt>
+            <dd class="govuk-summary-list__value">               
+              {% for reason in data['deferred-reasons'] %}
+
+                {% if reason != "Other" %}
+                    <div class="summary-list-reason-item">{{ reason }}</div>
+                {% else %}
+                  {% if data['other-reason'] %} 
+                    <div class="summary-list-reason-item">{{data['other-reason']}} </div>
+                  {% endif %}
+                {% endif %}
+
+              {% endfor %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="reasons-for-deferral.html">
+                Change<span class="govuk-visually-hidden">reasons for deferral</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Date of decision
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+                <span>{{ data['decision-date-day'] }} </span>
+                <span>{{ data['decision-date-month'] }} </span>
+                <span>{{ data['decision-date-year'] }}</span>
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="dates.html?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">date of decision</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+
+  
+        <form action="../../task_list?justRecorded=yes" method="post"> 
+
+          {{ govukButton({
+            text: "Record this decision"
+          }) }}
+
+        </form>
+  
+      </main>
+    </main>   
+    </div>
+  </div>
+{% endblock %}
