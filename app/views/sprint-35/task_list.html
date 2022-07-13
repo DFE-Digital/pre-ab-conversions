@@ -56,7 +56,13 @@
             Who made this decision
           </dt>
           <dd class="govuk-summary-list__value">               
-            {{ data['who-decided']}} 
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -109,7 +115,13 @@
             Who made this decision
           </dt>
           <dd class="govuk-summary-list__value">               
-            {{ data['who-decided']}} 
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -169,7 +181,13 @@
             Who made this decision
           </dt>
           <dd class="govuk-summary-list__value">               
-            {{ data['who-decided']}} 
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">

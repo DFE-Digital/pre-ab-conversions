@@ -41,7 +41,13 @@
               Who made this decision
             </dt>
             <dd class="govuk-summary-list__value">               
-              {{ data['who-decided']}} 
+              {% if data['who-decided'] != "Other" %}
+                  <div>{{ data['who-decided']}} </div>
+              {% else %}
+                {% if data['who-decided-other-details'] %} 
+                  <div>{{data['who-decided-other-details']}} </div>
+                {% endif %}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="who-made-this-decision.html?returnToSummary=yes">

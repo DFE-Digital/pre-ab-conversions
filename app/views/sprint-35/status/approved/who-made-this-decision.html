@@ -35,44 +35,37 @@
               <label class="govuk-label govuk-radios__label" for="who-decided">
                 Regional Director for the region
               </label>
-              <div class="govuk-hint govuk-radios__hint">
-                Regional Directors were formerly Regional Schools Commissioners.
-              </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="who-decided-a-different-regional-director" name="who-decided" {{checked("who-decided", "A different Regional Director")}} type="radio" value="A different Regional Director">
               <label class="govuk-label govuk-radios__label" for="who-decided">
                 A different Regional Director
               </label>
-              <div class="govuk-hint govuk-radios__hint">
-                If they do not agree with the original decision made.
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="who-decided-minister" name="who-decided" {{checked("who-decided", "Minister")}} type="radio" value="Minister">
-              <label class="govuk-label govuk-radios__label" for="who-decided">
-                Minister
-              </label>
-              <div class="govuk-hint govuk-radios__hint">
-                If a school or academy challenged the Regional Director’s decision.
-              </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="who-decided-director-general" name="who-decided" {{checked("who-decided", "Director General")}} type="radio" value="Director General">
               <label class="govuk-label govuk-radios__label" for="who-decided">
                 Director General
               </label>
-              <div class="govuk-hint govuk-radios__hint">
-                Director General was formerly the National Schools Commissioner.
-              </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="who-decided-none" name="who-decided" {{checked("who-decided", "None")}} type="radio" value="None">
+              <input class="govuk-radios__input" id="who-decided-minister" name="who-decided" {{checked("who-decided", "Minister")}} type="radio" value="Minister">
               <label class="govuk-label govuk-radios__label" for="who-decided">
-                None
+                Minister
               </label>
-              <div class="govuk-hint govuk-radios__hint">
-                The decision was made in between advisory board meetings.
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-other" name="who-decided"  {{checked("who-decided", "Other")}} type="radio" value="Other" data-aria-controls="otherHtml">
+              <label class="govuk-label govuk-radios__label" for="who-decided-other">
+                Other
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="otherHtml">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="who-decided-other-details">
+                  Who made the decision
+                </label>
+                <input class="govuk-input" id="who-decided-other-details" name="who-decided-other-details" value="{{data['who-decided-other-details']}}">
               </div>
             </div>
           </div>
