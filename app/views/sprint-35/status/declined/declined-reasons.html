@@ -16,58 +16,86 @@
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       
 
-          
-          {% set otherHtml %}
-          {{ govukInput({
-            id: "other-reason",
-            name: "other-reason",
-            rows: 15,
-            value: data['other-reason'],
-            classes: "govuk-!-width-full",
-            label: {
-              text: "Give reasons"
+      {% set financeHtml %}
+      {{ govukTextarea({
+        id: "finance-reason",
+        name: "finance-reason",
+        value: data['finance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set performanceHtml %}
+      {{ govukTextarea({
+        id: "performance-reason",
+        name: "performance-reason",
+        value: data['performance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+      
+      {% set otherHtml %}
+      {{ govukTextarea({
+        id: "other-reason",
+        name: "other-reason",
+        value: data['other-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+      
+
+      {{ govukCheckboxes({
+        idPrefix: "declined-reasons",
+        name: "declined-reasons",
+        fieldset: {
+          legend: {
+            text: "Why was this project declined?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select at least one option."
+        },
+        items: [
+
+          {
+            value: "Finance",
+            checked: checked("declined-reasons", "Finance"),
+            text: "Finance",
+            conditional: {
+              html: financeHtml
             }
-          }) }}
-          {% endset -%}
+          },
+
+          {
+            value: "Performance",
+            checked: checked("declined-reasons", "Performance"),
+            text: "Performance",
+            conditional: {
+              html: performanceHtml
+            }
+          },
           
-
-          {{ govukCheckboxes({
-            idPrefix: "declined-reasons",
-            name: "declined-reasons",
-            fieldset: {
-              legend: {
-                text: "Why was this project declined?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            hint: {
-              text: "Select at least one option."
-            },
-            items: [
-
-              {
-                value: "Finance",
-                checked: checked("declined-reasons", "Finance"),
-                text: "Finance"
-              },
-
-              {
-                value: "Performance",
-                checked: checked("declined-reasons", "Performance"),
-                text: "Performance"
-              },
-              
-              {
-                value: "Other",
-                checked: checked("declined-reasons", "Other"),
-                text: "Other",
-                conditional: {
-                  html: otherHtml
-                }
-              }
-            ]
-          }) }}
+          {
+            value: "Other",
+            checked: checked("declined-reasons", "Other"),
+            text: "Other",
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
   
           
       {% from "govuk/components/button/macro.njk" import govukButton %}

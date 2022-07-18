@@ -62,12 +62,29 @@
             <dd class="govuk-summary-list__value">               
               {% for reason in data['deferred-reasons'] %}
 
-                {% if reason != "Other" %}
-                    <div class="summary-list-reason-item">{{ reason }}</div>
-                {% else %}
-                  {% if data['other-reason'] %} 
-                    <div class="summary-list-reason-item">{{data['other-reason']}} </div>
-                  {% endif %}
+                {% if reason == "Additional information needed" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['additional-information-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Local sensitivity concerns" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['local-sensitivity-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Performance concerns" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['performance-concerns-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Trust to engage more with stakeholders" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['trust-reason']}} </div>
+                {% endif %}
+                
+                {% if reason == "Other" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
                 {% endif %}
 
               {% endfor %}

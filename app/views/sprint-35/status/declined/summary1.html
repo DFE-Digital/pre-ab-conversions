@@ -62,12 +62,19 @@
             <dd class="govuk-summary-list__value">
               {% for reason in data['declined-reasons'] %}
 
-                {% if reason != "Other" %}
-                    <div>{{ reason }}</div>
-                {% else %}
-                  {% if data['other-reason'] %} 
-                    <div>{{data['other-reason']}} </div>
-                  {% endif %}
+                {% if reason == "Finance" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['finance-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Performance" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['performance-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Other" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
                 {% endif %}
 
               {% endfor %}

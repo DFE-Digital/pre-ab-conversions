@@ -23,6 +23,53 @@
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
       
+      {% set additionalInformationHtml %}
+      {{ govukTextarea({
+        id: "additional-information-reason",
+        name: "additional-information-reason",
+        value: data['additional-information-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set localSensitivityHtml %}
+      {{ govukTextarea({
+        id: "local-sensitivity-reason",
+        name: "local-sensitivity-reason",
+        value: data['local-sensitivity-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set performanceConcernsHtml %}
+      {{ govukTextarea({
+        id: "performance-concerns-reason",
+        name: "performance-concerns-reason",
+        value: data['performance-concerns-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+  
+      {% set trustHtml %}
+      {{ govukTextarea({
+        id: "trust-reason",
+        name: "trust-reason",
+        value: data['trust-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
 
       {% set otherHtml %}
       {{ govukTextarea({
@@ -54,25 +101,37 @@
           {
             value: "Additional information needed",
             checked: checked("deferred-reasons", "Additional information needed"),
-            text: "Additional information needed"
+            text: "Additional information needed",
+            conditional: {
+              html: additionalInformationHtml
+            }
           },
           
           {
             value: "Local sensitivity concerns",
             checked: checked("deferred-reasons", "Local sensitivity concerns"),
-            text: "Local sensitivity concerns"
+            text: "Local sensitivity concerns",
+            conditional: {
+              html: localSensitivityHtml
+            }
           },
           
           {
             value: "Performance concerns",
             checked: checked("deferred-reasons", "Performance concerns"),
-            text: "Performance concerns"
+            text: "Performance concerns",
+            conditional: {
+              html: performanceConcernsHtml
+            }
           },
 
           {
             value: "Trust to engage more with stakeholders",
             checked: checked("deferred-reasons", "Trust to engage more with stakeholders"),
-            text: "Trust to engage more with stakeholders"
+            text: "Trust to engage more with stakeholders",
+            conditional: {
+              html: trustHtml
+            }
           },
 
           {
