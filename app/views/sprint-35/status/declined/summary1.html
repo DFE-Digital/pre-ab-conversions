@@ -72,7 +72,17 @@
                   <div class="govuk-!-margin-bottom-2">{{data['performance-reason']}} </div>
                 {% endif %}
 
-                {% if reason == "Other" %} 
+                {% if reason == "Governance" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['governance-reason']}} </div>
+                {% endif %}
+
+                {% if reason == "Choice of trust" %} 
+                  <div>{{ reason }}:</div>
+                  <div class="govuk-!-margin-bottom-2">{{data['choice-of-trust-reason']}} </div>
+                {% endif %}
+                
+                  {% if reason == "Other" %} 
                   <div>{{ reason }}:</div>
                   <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
                 {% endif %}

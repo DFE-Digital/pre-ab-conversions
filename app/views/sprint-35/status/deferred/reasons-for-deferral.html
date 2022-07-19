@@ -35,11 +35,11 @@
       }) }}
       {% endset -%}
 
-      {% set localSensitivityHtml %}
+      {% set awaitingOfstedHtml %}
       {{ govukTextarea({
-        id: "local-sensitivity-reason",
-        name: "local-sensitivity-reason",
-        value: data['local-sensitivity-reason'],
+        id: "awaiting-ofsted-reason",
+        name: "awaiting-ofsted-reason",
+        value: data['awaiting-ofsted-reason'],
         classes: "govuk-!-width-full",
         label: {
           text: "Give reasons"
@@ -59,11 +59,11 @@
       }) }}
       {% endset -%}
   
-      {% set trustHtml %}
+      {% set schoolHtml %}
       {{ govukTextarea({
-        id: "trust-reason",
-        name: "trust-reason",
-        value: data['trust-reason'],
+        id: "school-reason",
+        name: "school-reason",
+        value: data['school-reason'],
         classes: "govuk-!-width-full",
         label: {
           text: "Give reasons"
@@ -108,11 +108,11 @@
           },
           
           {
-            value: "Local sensitivity concerns",
-            checked: checked("deferred-reasons", "Local sensitivity concerns"),
-            text: "Local sensitivity concerns",
+            value: "Awaiting next Ofsted report",
+            checked: checked("deferred-reasons", "Awaiting next Ofsted report"),
+            text: "Awaiting next Ofsted report",
             conditional: {
-              html: localSensitivityHtml
+              html: awaitingOfstedHtml
             }
           },
           
@@ -126,11 +126,11 @@
           },
 
           {
-            value: "Trust to engage more with stakeholders",
-            checked: checked("deferred-reasons", "Trust to engage more with stakeholders"),
-            text: "Trust to engage more with stakeholders",
+            value: "School to engage more with stakeholders",
+            checked: checked("deferred-reasons", "School to engage more with stakeholders"),
+            text: "School to engage more with stakeholders",
             conditional: {
-              html: trustHtml
+              html: schoolHtml
             }
           },
 

@@ -40,6 +40,30 @@
       }) }}
       {% endset -%}
       
+      {% set governanceHtml %}
+      {{ govukTextarea({
+        id: "governance-reason",
+        name: "governance-reason",
+        value: data['governance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set choiceOfTrustHtml %}
+      {{ govukTextarea({
+        id: "choice-of-trust-reason",
+        name: "choice-of-trust-reason",
+        value: data['choice-of-trust-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
       {% set otherHtml %}
       {{ govukTextarea({
         id: "other-reason",
@@ -85,7 +109,25 @@
               html: performanceHtml
             }
           },
-          
+
+          {
+            value: "Governance",
+            checked: checked("declined-reasons", "Governance"),
+            text: "Governance",
+            conditional: {
+              html: governanceHtml
+            }
+          },
+
+          {
+            value: "Choice of trust",
+            checked: checked("declined-reasons", "Choice of trust"),
+            text: "Choice of trust",
+            conditional: {
+              html: choiceOfTrustHtml
+            }
+          },
+
           {
             value: "Other",
             checked: checked("declined-reasons", "Other"),

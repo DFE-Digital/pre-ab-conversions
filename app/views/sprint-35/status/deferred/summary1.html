@@ -67,9 +67,9 @@
                   <div class="govuk-!-margin-bottom-2">{{data['additional-information-reason']}} </div>
                 {% endif %}
 
-                {% if reason == "Local sensitivity concerns" %} 
+                {% if reason == "Awaiting next Ofsted report" %} 
                   <div>{{ reason }}:</div>
-                  <div class="govuk-!-margin-bottom-2">{{data['local-sensitivity-reason']}} </div>
+                  <div class="govuk-!-margin-bottom-2">{{data['awaiting-ofsted-reason']}} </div>
                 {% endif %}
 
                 {% if reason == "Performance concerns" %} 
@@ -77,9 +77,9 @@
                   <div class="govuk-!-margin-bottom-2">{{data['performance-concerns-reason']}} </div>
                 {% endif %}
 
-                {% if reason == "Trust to engage more with stakeholders" %} 
+                {% if reason == "School to engage more with stakeholders" %} 
                   <div>{{ reason }}:</div>
-                  <div class="govuk-!-margin-bottom-2">{{data['trust-reason']}} </div>
+                  <div class="govuk-!-margin-bottom-2">{{data['school-reason']}} </div>
                 {% endif %}
                 
                 {% if reason == "Other" %} 
