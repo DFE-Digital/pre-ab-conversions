@@ -2,7 +2,7 @@
 
 {% block beforeContent %}
 
-<a href="../task_list1.html" class="govuk-back-link">Back to task list</a>
+<a href="../task_list.html" class="govuk-back-link">Back to task list</a>
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
     {% if data['returnToSummary'] == 'yes' %}
     <form action="../generate/generate_summary#rationale" method="post">
       {% else %}
-      <form action="../task_list1" method="post">
+      <form action="../task_list" method="post">
     {% endif %}
     <input hidden type="text" name="returnToSummary" value="no"/>
   
@@ -63,7 +63,7 @@
 
 
   
-        <form action="../task_list1" method="post"> 
+        <form action="../task_list" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 

@@ -15,20 +15,10 @@
       {% if data['returnToSummary'] == 'yes' %}
       <form action="/..generate/generate_summary#performance4" method="post">
         {% else %}
-        <form action="../task_list1" method="post">
+        <form action="../task_list" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-  <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" >
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content"><h2 class="govuk-heading-m">Additional information added</h2>
-  <p><a href="/task_list1">Return to task list</a></p></div>
-</div> -->
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
@@ -1327,7 +1317,7 @@
       </dl>
   </div>
 
-<form action="/task_list1" method="post"> 
+<form action="/task_list" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
   {{ govukButton({

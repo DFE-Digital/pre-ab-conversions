@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a href="../task_list1.html" class="govuk-back-link">Back to task list</a>
+  <a href="../task_list.html" class="govuk-back-link">Back to task list</a>
 {% endblock %}
 
 {% block content %}    
@@ -45,7 +45,7 @@ The equalities duty has been considered and the Secretary of State’s decision 
 
 
   
-        <form action="../task_list1" method="post"> 
+        <form action="../task_list" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 

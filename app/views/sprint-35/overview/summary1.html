@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="../task_list1" class="govuk-back-link">Back to task list</a>
+<a href="../task_list" class="govuk-back-link">Back to task list</a>
 {% endblock %}
  
 {% block content %}
@@ -248,7 +248,7 @@
       
      
     </dl>
-    <form action="../task_list1" method="post"> 
+    <form action="../task_list" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
