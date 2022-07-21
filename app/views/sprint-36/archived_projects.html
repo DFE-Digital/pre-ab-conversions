@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Archived projects (4)</h1>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header govuk-!-width-two-thirds">Application information
+          
+           
+                <th class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-third">Project status and dates</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../status/task_list3">St. Benedicts's High School</a></strong> URN 902032</h2>
+            
+                <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
+               Local authority: Macclesfield</P></td>
+      
+         
+              <td class="govuk-table__cell govuk-table__cell--numeric">  {% if data['htb-date']%}
+                <p class="govuk-tag govuk-tag--yellow  govuk-!-margin-top-0">Pre Advisory Board</p>
+                <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                  Opening date:  {{ data['opening-date']}}</p>  
+                  {% else %}               
+                 <span class="overdue">REJECTED</span> <p class="govuk-tag govuk-tag--yellow govuk-!-margin-top-0  govuk-!-margin-bottom-3">Pre Advisory Board</p>
+                <p class="govuk-hint govuk-!-margin-top-0">Application rejected: 12 June 2021</p>
+                  {% endif %}
+                </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Sankey Valley High School</a></strong> URN 255921</h2>
+            <p class="govuk-!-margin-top-3">Application to join a trust: Oak Hill Trust</br>
+             Local authority: Bolton</P></td>
+              <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"> <span class="withdrawn">WITHDRAWN</span> <p class="govuk-tag govuk-tag--yellow">Pre Advisory Board</p> 
+                <p class="govuk-hint govuk-!-margin-top-0">Withdrawn date: 15 April 2021</p></td>  
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../no-task-derived-info/task_list">Bridgewater High School</a></strong> URN 253929 </h2>
+                <p class="govuk-!-margin-top-3">
+                  Application to join a trust: Challange learning trust</br>
+               Local authority: Warrington</P></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><span class="approved">APPROVED</span><p class="govuk-tag govuk-tag--yellow">Pre Advisory Board</p> 
+                  <p class="govuk-hint  govuk-!-margin-top-0">
+                    Approved date: 1 June 2021</div></td>   
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="../no-task-derived-info/task_list">St. Monicas's Catholic Primary School</a></strong> URN 123920 </h2>
+                <p class="govuk-!-margin-top-3">
+                  Application to join a trust: Kingfisher learning trust</br>
+               Local authority: Huyton</P></td>
+                <td class="govuk-table__cell govuk-table__cell govuk-table__cell--numeric"><span class="approved">OPENED</span><p class="govuk-tag govuk-tag--purple">Post Advisory Board</p> 
+                  <p class="govuk-hint  govuk-!-margin-top-0">
+                    Date opened: 01 May 2021</div></td>   
+            </tr>
+            
+          </tbody>
+        </table>
+       <p> <a href="../index">Back to active conversion projects</a></p>
+        </div>
+        {% endblock %}
