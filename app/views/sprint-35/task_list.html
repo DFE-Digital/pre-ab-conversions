@@ -88,10 +88,10 @@
           Date of decision
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['approval-date-day'] and data['approval-date-month'] and data['approval-date-year']%}
-              <span>{{ data['approval-date-day'] }} </span>
-              <span>{{ data['approval-date-month'] }} </span>
-              <span>{{ data['approval-date-year'] }}</span>
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
             {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
@@ -164,10 +164,10 @@
           Date of decision
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['declined-date-day'] and data['declined-date-month'] and data['declined-date-year']%}
-              <span>{{ data['declined-date-day'] }} </span>
-              <span>{{ data['declined-date-month'] }} </span>
-              <span>{{ data['declined-date-year'] }}</span>
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
             {% else %} 
               <span class="empty">Empty</span>
             {% endif %}
