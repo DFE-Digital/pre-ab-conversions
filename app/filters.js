@@ -136,19 +136,20 @@ module.exports = function (env) {
     }
   }
 
-    // Risks & Issues
+  // Risks & Issues
 
-    filters.riskAndIssuesNextPageLink = function (data, completedFields, inProgressFields) {
-      const flag = inProgressFields.some(field => data[field]);
-      var check = data["risks"] === "Empty" ? false : true;
+  filters.riskAndIssuesNextPageLink = function (data, completedFields, inProgressFields) {
+    const flag = inProgressFields.some(field => data[field]);
+    var check = data["risks"] === "Empty" ? false : true;
 
-      if (flag || data[completedFields] == "Complete"){
-        return "/risks-and-issues/risks-summary1";
-      }
-      else {
-        return "/risks-and-issues/risks-and-issues";
-      }
+    if (flag || data[completedFields] == "Complete"){
+      return "/risks-and-issues/risks-summary1";
     }
+    else {
+      return "/risks-and-issues/risks-and-issues";
+    }
+  }
+
   filters.riskStatusClass = function (data, completedFields, inProgressFields) {
     const flag = inProgressFields.some(field => data[field]);
 
@@ -170,6 +171,43 @@ module.exports = function (env) {
       return "Completed";
     }
     else if (flag){
+      return "In Progress"
+    }
+    else {
+      return "Not Started";
+    }
+  }
+
+  // Legal requirements
+  
+  filters.legalStatusClass = function (data, completedFields, legalGoverningBody, legalDiocesanConsent, legalFoundationConsent, legalConsultation) {
+    let checkGoverningBody = data["legal-governing-body-checked"]  == "Yes" || data["legal-governing-body-checked"]  == "No" || data["legal-governing-body-checked"]  == "Not applicable" ? true : false;
+    let checkDiocesanConsent = data["legal-diocesan-consent-checked"]  == "Yes" || data["legal-diocesan-consent-checked"]  == "No" || data["legal-diocesan-consent-checked"]  == "Not applicable" ? true : false;
+    let checkFoundationConsent = data["legal-foundation-consent-checked"]  == "Yes" || data["legal-foundation-consent-checked"]  == "No" || data["legal-foundation-consent-checked"]  == "Not applicable" ? true : false;
+    let checkConsultation = data["legal-consultation-checked"]  == "Yes" || data["legal-consultation-checked"]  == "No" || data["legal-consultation-checked"]  == "Not applicable" ? true : false;
+
+    if (data[completedFields] == "Complete"){
+      return "govuk-tag";
+    }
+    else if (checkGoverningBody || checkDiocesanConsent || checkFoundationConsent || checkConsultation){
+      return "govuk-tag govuk-tag--blue"
+    }
+    else {
+      return "govuk-tag govuk-tag--grey";
+    }
+  }
+
+  filters.legalStatusText = function (data, completedFields, legalGoverningBody, legalDiocesanConsent, legalFoundationConsent, legalConsultation) {
+    let checkGoverningBody = data["legal-governing-body-checked"]  == "Yes" || data["legal-governing-body-checked"]  == "No" || data["legal-governing-body-checked"]  == "Not applicable" ? true : false;
+    let checkDiocesanConsent = data["legal-diocesan-consent-checked"]  == "Yes" || data["legal-diocesan-consent-checked"]  == "No" || data["legal-diocesan-consent-checked"]  == "Not applicable" ? true : false;
+    let checkFoundationConsent = data["legal-foundation-consent-checked"]  == "Yes" || data["legal-foundation-consent-checked"]  == "No" || data["legal-foundation-consent-checked"]  == "Not applicable" ? true : false;
+    let checkConsultation = data["legal-consultation-checked"]  == "Yes" || data["legal-consultation-checked"]  == "No" || data["legal-consultation-checked"]  == "Not applicable" ? true : false;
+
+    
+    if (data[completedFields] == "Complete"){
+      return "Completed";
+    }
+    else if (checkGoverningBody || checkDiocesanConsent || checkFoundationConsent || checkConsultation){
       return "In Progress"
     }
     else {
