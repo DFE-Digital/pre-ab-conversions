@@ -440,11 +440,13 @@
                 Legal requirements
               </a>
             </span>
-            <strong class="{{data|legalStatusClass(['legal-status'],['legal-governing-body-checked'],['legal-diocesan-consent-checked'] )}} app-task-list__tag" id="legal-status">  
+            <strong class="{{data|legalStatusClass(['legal-status'],['legal-governing-body-checked'],['legal-consultation-checked'],['legal-diocesan-consent-checked'],['legal-foundation-consent-checked'] )}} app-task-list__tag" id="legal-status">  
               {{data|legalStatusText(
                 ['legal-status'],
                 ['legal-governing-body-checked'],
-                ['legal-diocesan-consent-checked']
+                ['legal-consultation-checked'],
+                ['legal-diocesan-consent-checked'],
+                ['legal-foundation-consent-checked']
               )}} 
             </strong>
           </li>

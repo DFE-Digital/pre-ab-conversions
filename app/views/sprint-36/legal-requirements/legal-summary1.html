@@ -14,7 +14,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Is the governing body resolution checked?
+              Governing body resolution
             </dt>
             <dd class="govuk-summary-list__value">             
               {% if data['legal-governing-body-checked']%}
@@ -25,47 +25,13 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="legal-governing-body.html">
-                Change<span class="govuk-visually-hidden">governing body checked</span>
+                Change<span class="govuk-visually-hidden"> governing body resolution</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Is the diocesan consent checked?
-            </dt>
-            <dd class="govuk-summary-list__value">             
-              {% if data['legal-diocesan-consent-checked']%}
-                {{data['legal-diocesan-consent-checked']}}
-              {% else %} 
-                <span class="empty">Empty</span>
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="legal-diocesan-consent.html">
-                Change<span class="govuk-visually-hidden">diocesan consent checked</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is the foundation consent checked?
-            </dt>
-            <dd class="govuk-summary-list__value">             
-              {% if data['legal-foundation-consent-checked']%}
-                {{data['legal-foundation-consent-checked']}}
-              {% else %} 
-                <span class="empty">Empty</span>
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="legal-foundation-consent.html">
-                Change<span class="govuk-visually-hidden">foundation consent checked</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Is the consultation checked?
+              Consultation
             </dt>
             <dd class="govuk-summary-list__value">             
               {% if data['legal-consultation-checked']%}
@@ -76,7 +42,41 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="legal-consultation.html">
-                Change<span class="govuk-visually-hidden">consultation checked</span>
+                Change<span class="govuk-visually-hidden"> consultation</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Diocesan approval
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-diocesan-consent-checked']%}
+                {{data['legal-diocesan-consent-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-diocesan-consent.html">
+                Change<span class="govuk-visually-hidden"> diocesan approval</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Foundation agreement
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-foundation-consent-checked']%}
+                {{data['legal-foundation-consent-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-foundation-consent.html">
+                Change<span class="govuk-visually-hidden"> foundation agreement</span>
               </a>
             </dd>
           </div>
