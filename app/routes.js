@@ -4,6 +4,13 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 //***********
+//* SPRINT 37
+//***********
+require('./routes/sprint-37/routes.js')(router);
+
+// Add your routes here - above the module.exports line
+
+//***********
 //* SPRINT 36
 //***********
 
@@ -245,7 +252,7 @@ router.post('/type-answer', function (req, res) {
   }
 
 
-  })
+})
 
 
 module.exports = router

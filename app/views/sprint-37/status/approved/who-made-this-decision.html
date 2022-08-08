@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Who made this decision?
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="conditions" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+
+      <!--radio buttons-->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+            <h1 class="govuk-heading-l">Who made this decision?</h1>            
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-regional-director-for-the-region" name="who-decided" {{checked("who-decided", "Regional Director for the region")}} type="radio" value="Regional Director for the region">
+              <label class="govuk-label govuk-radios__label" for="who-decided">
+                Regional Director for the region
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-a-different-regional-director" name="who-decided" {{checked("who-decided", "A different Regional Director")}} type="radio" value="A different Regional Director">
+              <label class="govuk-label govuk-radios__label" for="who-decided">
+                A different Regional Director
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-director-general" name="who-decided" {{checked("who-decided", "Director General")}} type="radio" value="Director General">
+              <label class="govuk-label govuk-radios__label" for="who-decided">
+                Director General
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-minister" name="who-decided" {{checked("who-decided", "Minister")}} type="radio" value="Minister">
+              <label class="govuk-label govuk-radios__label" for="who-decided">
+                Minister
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="who-decided-other" name="who-decided"  {{checked("who-decided", "Other")}} type="radio" value="Other" data-aria-controls="otherHtml">
+              <label class="govuk-label govuk-radios__label" for="who-decided-other">
+                Other
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="otherHtml">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="who-decided-other-details">
+                  Who made the decision
+                </label>
+                <input class="govuk-input" id="who-decided-other-details" name="who-decided-other-details" value="{{data['who-decided-other-details']}}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </fieldset>   
+    </form>
+
+  </div>  
+  </div>  
+</div>
+{% endblock %}
+  
+  
+  
+  
