@@ -58,18 +58,6 @@
         }
       }) }}
       {% endset -%}
-  
-      {% set schoolHtml %}
-      {{ govukTextarea({
-        id: "school-reason",
-        name: "school-reason",
-        value: data['school-reason'],
-        classes: "govuk-!-width-full",
-        label: {
-          text: "Give reasons"
-        }
-      }) }}
-      {% endset -%}
 
       {% set otherHtml %}
       {{ govukTextarea({
@@ -122,15 +110,6 @@
             text: "Performance concerns",
             conditional: {
               html: performanceConcernsHtml
-            }
-          },
-
-          {
-            value: "School to engage more with stakeholders",
-            checked: checked("deferred-reasons", "School to engage more with stakeholders"),
-            text: "School to engage more with stakeholders",
-            conditional: {
-              html: schoolHtml
             }
           },
 
