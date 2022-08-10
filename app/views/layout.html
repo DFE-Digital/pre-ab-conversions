@@ -56,6 +56,16 @@
       <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
       <nav>
         <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+          <!--
+          {% if data['userName'] %}
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#4">
+              Hi {{ data['userName'] }}
+            </a>
+            <span style="margin-left:1em;">|</span>
+          </li>
+          {% endif %}
+          -->
           <li class="govuk-header__navigation-item">
             <a class="govuk-header__link" href="#4">
               Sign out

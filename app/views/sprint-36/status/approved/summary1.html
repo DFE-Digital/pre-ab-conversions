@@ -60,7 +60,14 @@
               Were any conditions set
             </dt>
             <dd class="govuk-summary-list__value">               
-              {{ data['approved-conditions']}} 
+              {% if data['approved-conditions'] == "Yes" %}
+              <p>Yes:</p>
+                {% if data['approved-conditions-yes-details'] %} 
+                  <p class="govuk-!-margin-bottom-2">{{ data['approved-conditions-yes-details'] }} </p>
+                {% endif %}
+              {% else %}
+              <p>No</p>
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="conditions.html?returnToSummary=yes">
@@ -68,21 +75,6 @@
               </a>
             </dd>
           </div>
-          {% if data['approved-conditions'] == "Yes" %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Details of the conditions
-            </dt>
-            <dd class="govuk-summary-list__value">               
-              {{data['conditions_yes']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="conditions_yes.html?returnToSummary=yes">
-                Change<span class="govuk-visually-hidden">details of the conditions</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date of decision

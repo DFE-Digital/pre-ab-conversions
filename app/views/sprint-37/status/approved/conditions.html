@@ -18,81 +18,55 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="summary1" method="post">
         {% else %}
-        <form action="conditions-answer" method="post">
+        <form action="dates" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-        <h1 class="govuk-heading-l">Were any conditions set?</h1>
-      </legend>
       
-
-
-      <!--radio buttons-->
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approved-conditions-yes" name="approved-conditions" {{checked("approved-conditions", "Yes")}} type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="approved-conditions">
-                Yes
-              </label>
-              
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approved-conditions-no" name="approved-conditions" {{checked("approved-conditions", "No")}} type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="approved-conditions">
-                No
-              </label>
-              
-            </div>
-           
-          
-          </div>
-      
-        </fieldset>
-      </div>
-      <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% set yesHtml %}
+      {{ govukTextarea({
+        id: "approved-conditions-yes-details",
+        name: "approved-conditions-yes-details",
+        value: data['approved-conditions-yes-details'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "What conditions were set?"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukRadios({
-        idPrefix: "Conditions",
-        name: "Conditions",
-
+        idPrefix: "approved-conditions",
+        name: "approved-conditions",
         fieldset: {
           legend: {
-
+            text: "Were any conditions set?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
-    
         items: [
-      
-
-        {
+          {
             value: "Yes",
-            checked:  data['Conditions'] === "Yes",
+            checked: checked("approved-conditions", "Yes"),
             text: "Yes",
-            classes:"govuk-!-font-weight-bold"
-            
+            conditional: {
+              html: yesHtml
+            }
           },
           {
-            value: "None",
-            checked:  data['Conditions'] === "No",
-            text: "No",
-             classes:"govuk-label govuk-radios__label govuk-label—s"
-   
+            value: "No",
+            checked: checked("approved-conditions", "No"),
+            text: "No"
           }
-          
-        ]
-      }) }} -->
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </fieldset>   
+        ]
+      }) }} 
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
     </form>
 
   </div>  

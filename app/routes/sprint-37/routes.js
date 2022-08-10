@@ -5,21 +5,9 @@
 //***********
 module.exports = function (router) {
 
-  router.post('/sprint-37/status/approved/conditions-answer', function(req, res) {
+  var version = "sprint-37";
 
-    const approvedCondition = req.body["approved-conditions"];
-
-    if (approvedCondition == "Yes"){
-      // Send user to next page
-      res.redirect('conditions_yes');
-    } 
-    else if (approvedCondition == "No") {
-      res.redirect('dates');
-    }
-
-  });
-
-  router.post('/sprint-37/status/status-answer', function(req, res) {
+  router.post('/' + version + '/status/status-answer', function(req, res) {
 
     const projectStatus = req.body["decision-status"];
 
@@ -36,7 +24,7 @@ module.exports = function (router) {
       
   });
 
-  router.post('/sprint-37/type-answer', function (req, res) {
+  router.post('/' + version + '/type-answer', function (req, res) {
     // Make a variable to give it the value from the radio buttons on the index page  
     var Task = req.session.data['control-name']
 

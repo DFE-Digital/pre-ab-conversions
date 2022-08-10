@@ -14,20 +14,6 @@ require('./routes/sprint-37/routes.js')(router);
 //* SPRINT 36
 //***********
 
-router.post('/sprint-36/status/approved/conditions-answer', function(req, res) {
-
-  const approvedCondition = req.body["approved-conditions"];
-
-  if (approvedCondition == "Yes"){
-    // Send user to next page
-    res.redirect('conditions_yes');
-  } 
-  else if (approvedCondition == "No") {
-    res.redirect('dates');
-  }
-
-});
-
 router.post('/sprint-36/status/status-answer', function(req, res) {
 
   const projectStatus = req.body["decision-status"];
