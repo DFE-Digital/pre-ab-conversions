@@ -4,6 +4,11 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 //***********
+//* SPRINT 39
+//***********
+require('./routes/sprint-39/routes.js')(router);
+
+//***********
 //* SPRINT 37
 //***********
 require('./routes/sprint-37/routes.js')(router);

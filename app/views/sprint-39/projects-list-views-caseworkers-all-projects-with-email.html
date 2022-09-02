@@ -1,0 +1,342 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project list
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">Alex, Delivery Officer</span>
+      Manage an academy conversion
+    </h1>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects (4032)</h2>
+
+    <div class="sort-component">
+      <nav class="govuk-body sort-component__nav">
+        <span class="govuk-!-font-weight-bold">Sort by:</span>
+        <ul class="sort-component__list">
+          <li class="sort-component__list-item">Application received</li>
+          <li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-2"><span class="govuk-visually-hidden">Sort by </span>Project title</a></li>
+          <li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-3"><span class="govuk-visually-hidden">Sort by </span>Opening date</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Application information
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Project status and dates
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: Oak Hill Trust</br>
+            Local authority: Bolton</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>alex.j@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 5 January 2021</br>
+              Advisory Board date: 1 June 2021</br>
+              Opening date: 1 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+              <strong><a href="task_list?justRecorded=no">St. Wilfrid's Primary School</a></strong> URN 102062
+            </h2>
+
+            <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
+            Local authority: Warrington</br>
+            Case owner: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell prepare-text-align-right">  
+            {% if data['htb-date']%}
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>  
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                Opening date:  {{ data['opening-date']}}
+              </p>  
+            {% else %}               
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>    
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">
+                Application received: 29 January 2021</br>
+                Advisory Board date: 15 April 2021</br>
+                Opening date: 1 September 2021
+              </p>
+            {% endif %}
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
+            <p class="govuk-!-margin-top-3">
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Warrington</br>
+              Case owner: <!--span class="empty">Empty</span--><strong>paul.m@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
+            <p class="govuk-!-margin-top-3">
+              Application to form a trust: Oak Hill Trust</br>
+              Local authority: Warrington</br>
+              Case owner: <!--span class="empty">Empty</span--><strong>alex.j@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 4 March 2021</br>
+              Advisory Board date: 15 April 2021</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>  
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>paul.m@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>paul.m@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 29 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Case owner: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 April 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>paul.m@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 May 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>alex.j@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 June 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Hackney</br>
+            Case owner: <!--span class="empty">Empty</span--><strong>paul.m@education.gov.uk</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: AURORA ACADEMIES TRUST</br>
+            Local authority: Brighton and Hove</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 21 September 2021</br>
+              Advisory board date: 7 November 2021</br>
+              Opening date: 30 December 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: THE WHITE HORSE FEDERATIONG</br>
+            Local authority: Reading</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 November 2021</br>
+              Advisory Board date: 7 February 2022</br>
+              Opening date: 10 May 2022
+            </p>
+          </td>   
+        </tr>
+
+      </tbody>
+    </table>
+
+    <nav class="moj-pagination" id="pagination-label">
+      <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+      <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active">1</li>
+          <li class="moj-pagination__item">
+              <a class="moj-pagination__link" href="#">2</a>
+          </li>
+          <li class="moj-pagination__item  moj-pagination__item--next">
+              <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+      </ul>
+      <p class="moj-pagination__results"></p>
+    </nav>
+
+  </div>
+</div>
+{% endblock %}

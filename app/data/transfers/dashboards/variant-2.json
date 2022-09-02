@@ -1,0 +1,111 @@
+[
+  {
+    "name": "St Wilfred's primary school",
+    "joining": "Dynamics academy",
+    "la": "Warrington LA",
+    "status": "newly_assigned",
+    "reference": "AS_6759840",
+    "daysUntilHTB": 2,
+    "date": "12 January 2021",
+    "project": "a2b",
+    "urgent": true
+  },
+  {
+    "name": "Alsager Primary School",
+    "joining": "Focus academy",
+    "la": "Cheshire LA",
+    "status": "newly_assigned",
+    "reference": "AS_1234567",
+    "daysUntilHTB": 3,
+    "project": "concerns",
+    "date": "2 March 2021"
+  },
+
+  {
+    "name": "Portland Academy",
+    "joining": "The Ascent Academies' Trust",
+    "la": "Portland LA",
+    "status": "in_progress",
+    "reference": "AS_2345678",
+    "daysUntilHTB": 13,
+    "date": "21 April 2021",
+    "project": "concerns",
+    "urgent": true
+  },
+  {
+    "name": "Altrincham College Green Lane",
+    "joining": "South Manchester Learning Trust",
+    "la": "Manchester LA",
+    "status": "in_progress",
+    "reference": "AS_6759840",
+    "daysUntilHTB": 22,
+    "project": "transfers",
+    "date": "12 January 2021"
+  },
+  {
+    "name": "Altrincham Grammar School For Boys",
+    "joining": "The Hamblin Education Trust",
+    "la": "Altrincham LA",
+    "status": "in_progress",
+    "reference": "AS_6752340",
+    "daysUntilHTB": 10,
+    "date": "1 January 2021",
+    "project": "a2b",
+    "urgent": true
+  },
+  {
+    "name": "Wigston Academy",
+    "joining": "Wigston Academies Trust",
+    "la": "Wingston LA",
+    "status": "in_progress",
+    "reference": "AS_6321840",
+    "daysUntilHTB": 23,
+    "project": "transfers",
+    "date": "12 January 2021"
+  },
+
+  {
+    "name": "Ash Grove Academy",
+    "joining": "The Aspire Educational Trust",
+    "la": "Macclesfield LA",
+    "status": "at_review",
+    "reference": "AS_1239840",
+    "daysUntilHTB": 5,
+    "date": "12 August 2021",
+    "project": "a2b",
+    "urgent": true
+  },
+  {
+    "name": "Ridgewood School Barnsley Road",
+    "joining": "The Academy @ Ridgewood Trust",
+    "la": "Scawsby LA",
+    "status": "at_review",
+    "reference": "AS_6750000",
+    "daysUntilHTB": 29,
+    "project": "change",
+    "date": "9 September 2021"
+  },
+  {
+    "name": "Ashfield School",
+    "joining": "The Two Counties Trust",
+    "la": "Ashfield LA",
+    "status": "at_review",
+    "reference": "AS_5432140",
+    "daysUntilHTB": 52,
+    "project": "change",
+    "date": "1 January 2021"
+  },
+
+  {
+    "name": "Flourish House",
+    "joining": "he Bath And Wells Diocesan Academies Trust",
+    "la": "Somerset LA",
+    "status": "awaiting_htb",
+    "reference": "AS_6339840",
+    "daysUntilHTB": 21,
+    "date": "30 May 2021",
+    "project": "a2b",
+    "urgent": true
+  }
+]
+

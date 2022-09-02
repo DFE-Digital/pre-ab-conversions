@@ -1,0 +1,61 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Recommendation – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+
+{% block formQuestions %}
+  <span class="govuk-caption-l">
+    {{ projectData.name }}
+  </span>
+  <h1 class="govuk-heading-l">
+    Recommendation
+  </h1>
+
+  <form action="../general-information" method="post" novalidate>
+
+    {{ govukRadios({
+      idPrefix: "recommendation",
+      name: "recommendation",
+      fieldset: {
+        legend: {
+          text: "What is the recommendation for this project?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Approve",
+          text: "Approve"
+        },
+        {
+          value: "Defer",
+          text: "Defer"
+        },
+        {
+          value: "Decline",
+          text: "Decline"
+        }
+      ]
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Enter the full name of the author of this headteacher board (HTB) template",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "name-of-author",
+      name: "name-of-author"
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

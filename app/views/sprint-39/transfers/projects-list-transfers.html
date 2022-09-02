@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Academy transfer projects – Transfer an academy – GOV.UK" %}
+
+
+{% block beforeContent %}
+<a href="../service-selection" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Manage an academy transfer
+          <!--Academy transfer projects-->
+      </h1>
+
+      <p class="govuk-body-l">
+        Use this service to start a new academy transfer project or update an existing project.
+      </p>
+
+      {{ govukButton({
+        text: "Start a new transfer project",
+        href: "#",
+        isStartButton: true
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">
+          Projects
+      </h2>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (1)</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header app-!-width-three-fifths">
+              Application information
+            </th>
+            <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+              Project status
+            </th>  
+          </tr>
+        </thead>
+  
+        <tbody class="govuk-table__body">
+  
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="pre-htb/task-list-transfers.html">Rutland And District Schools' Federation</a></strong> UKPRN 10058584</h2>
+              <p class="govuk-!-margin-top-3">
+                Project reference: SAT-10002142</br>
+                Outgoing trust: The Hoddesdon School Trust
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+            </td>   
+          </tr>
+  
+        </tbody>
+      </table>
+
+      {% for project in data['records'] %}
+        {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+        <div class="app-application-card">
+          <div class="app-application-card--project-info">
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+              <a class="govuk-link govuk-!-margin-right-1" href="./pre-htb/school-1/st-wilfreds-ps">
+                {{ project.project_reference }}
+              </a>
+            </h4>
+            <p class="govuk-body govuk-!-margin-bottom-1">
+              <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+                Outgoing trust:
+              </span>
+              {{ project.name }}
+            </p>
+            <p class="govuk-body">
+              <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+                Incoming trust:
+              </span>
+              Moordown St John's Church Of England Primary School
+            </p>
+          </div>
+          <!--Disabling statuses for the time being until we learn more about the needs to use it
+          <div class="app-application-card--statuses">
+            <span class="govuk-tag govuk-tag--orange">
+              SAT
+            </span>
+            <span class="govuk-tag govuk-tag--green">
+              SW
+            </span>
+          </div>
+          <!-->
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+    
+{% endblock %}
