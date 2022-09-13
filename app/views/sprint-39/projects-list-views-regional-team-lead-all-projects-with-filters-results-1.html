@@ -255,6 +255,9 @@
 
       <tbody class="govuk-table__body">
 
+        {% for projectLead in data['filter-project-leads'] %}
+
+        {% if projectLead == "Alex J" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
             <p class="govuk-!-margin-top-3">
@@ -274,7 +277,82 @@
             </p>
           </td>   
         </tr>
+        {% endif %}
 
+        {% if projectLead == "Not assigned" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+              <strong><a href="task_list?justRecorded=no">St. Wilfrid's Primary School</a></strong> URN 102062
+            </h2>
+
+            <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
+            Local authority: Warrington</br>
+            Project lead: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell prepare-text-align-right">  
+            {% if data['htb-date']%}
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>  
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                Opening date:  {{ data['opening-date']}}
+              </p>  
+            {% else %}               
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>    
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">
+                Application received: 29 January 2021</br>
+                Advisory Board date: 15 April 2021</br>
+                Opening date: 1 September 2021
+              </p>
+            {% endif %}
+          </td>
+        </tr>
+        {% endif %}
+        
+        {% if projectLead == "Paul M" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
+            <p class="govuk-!-margin-top-3">
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Warrington</br>
+              Project lead: <!--span class="empty">Empty</span--><strong>Paul M</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Alex J" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
             <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
@@ -295,7 +373,97 @@
             </p>
           </td>  
         </tr>
+        {% endif %}
 
+        {% if projectLead == "Paul M" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Project lead: <!--span class="empty">Empty</span--><strong>Paul M</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Paul M" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Project lead: <!--span class="empty">Empty</span--><strong>Paul M</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 29 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Not assigned" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Project lead: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 April 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Paul M" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Project lead: <!--span class="empty">Empty</span--><strong>Paul M</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 May 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Alex J" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
             <p class="govuk-!-margin-top-3">
@@ -315,6 +483,75 @@
             </p>
           </td>   
         </tr>
+        {% endif %}
+      
+        {% if projectLead == "Paul M" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Hackney</br>
+            Project lead: <!--span class="empty">Empty</span--><strong>Paul M</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% if projectLead == "Not assigned" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: AURORA ACADEMIES TRUST</br>
+            Local authority: Brighton and Hove</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 21 September 2021</br>
+              Advisory board date: 7 November 2021</br>
+              Opening date: 30 December 2021
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+        
+        {% if projectLead == "Not assigned" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: THE WHITE HORSE FEDERATIONG</br>
+            Local authority: Reading</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 November 2021</br>
+              Advisory Board date: 7 February 2022</br>
+              Opening date: 10 May 2022
+            </p>
+          </td>   
+        </tr>
+        {% endif %}
+
+        {% endfor %}
 
       </tbody>
     </table>
