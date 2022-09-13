@@ -23,10 +23,6 @@ console.log(records)
 
 
 module.exports = {
-
-  records,
-  settings,
-  trusts
   
   /* overview */
   "opening-date": "Monday 1 March 2021",
