@@ -1,0 +1,74 @@
+{% extends "version-4/layout.html" %}
+
+{% set pageTitle = "The Richard Crosse Cofe Primary School – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  {% include "version-4/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-l">Project reference: {{ projectData.project_reference }}</span>
+      <h1 class="govuk-heading-xl">
+        The Richard Crosse Cofe Primary School
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="app-task-list__section">
+        School characteristics
+      </h2>
+      <ul class="govuk-list govuk-list--spaced">
+        <li>
+          <a href="./general-information">
+            General information
+          </a>
+        </li>
+
+        <li>
+          <a href="./pupil-number">
+            Pupil numbers
+          </a>
+        </li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="app-task-list__section">
+        School performance
+      </h2>
+      <ul class="govuk-list govuk-list--spaced">
+        <li>
+          <a href="./latest-ofsted-judgement">
+            Latest Ofsted report
+          </a>
+        </li>
+
+        <li>
+          <a href="./key-stage-2-performance-tables">
+            Key stage 2 performance
+          </a>
+        </li>
+
+        <li>
+          <a href="./key-stage-4-performance-tables">
+            Key stage 4 performance
+          </a>
+        </li>
+
+        <li>
+          <a href="./key-stage-5-performance-tables">
+            Key stage 5 performance
+          </a>
+        </li>
+      </ul>
+
+    <hr class="govuk-section-break govuk-section-break--m">
+    </div>
+
+  </div>
+
+{% endblock %}

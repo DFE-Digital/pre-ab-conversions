@@ -1,0 +1,37 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "What are the finance and debt concerns? – Manage an academy transfer" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="/submit-finance-debt-concern" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      What are the finance and debt concerns? (optional)
+    {% endset %}
+    
+
+    {{ govukTextarea({
+      name: "finance-and-debt-concerns-detail",
+      id: "finance-and-debt-concerns-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      },
+      value: data["finance-and-debt-concerns-detail"]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

@@ -22,7 +22,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
-
 // Overrides
 @import "overrides/govuk-header";
 
@@ -1395,4 +1394,9 @@ $thumbnail-icon-border-colour: govuk-colour("mid-grey", $legacy: "grey-3");
 
 .prepare-project-listing__button--apply:hover {
   background-color: govuk-colour("light-grey");
+}
+
+.autocomplete__wrapper {
+  font-family: 'GDS Transport', arial, sans-serif;
+  position: relative; 
 }

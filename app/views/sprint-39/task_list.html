@@ -25,13 +25,34 @@
 {% endif %}
 <input hidden type="text" name="justRecorded" value="no"/>
 
+{% if data['JustAssigned'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Project is assigned</p>
+  </div>
+</div>
+{% endif %}
+<input hidden type="text" name="justAssigned" value="no"/>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
       St. Wilfrid's Primary School 
     </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">Delivery officer: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+    </p>
   </div>
 
   <div class="govuk-grid-column-two-thirds">

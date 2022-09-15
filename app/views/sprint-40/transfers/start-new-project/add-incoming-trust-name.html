@@ -1,0 +1,32 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Add the incoming trust name – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./select-incoming-trust" method="post" novalidate>
+        {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+
+        {% set pageHeading %}
+            What is the incoming trust name?
+        {% endset %}
+
+        {{ govukInput({
+            label: {
+                html: pageHeading,
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+                text: "Search by name, trust reference number or companies house number"
+            },
+            id: "incoming-trust-query",
+            name: "incoming-trust-query"
+        }) }}
+
+        {{ govukButton({
+            text: "Search"
+        }) }}
+    </form>
+
+{% endblock %}

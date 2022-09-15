@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+<script type="text/javascript" src="assets/javascript/accessible-autocomplete.min.js"></script>
+<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+
+{% block pageTitle %}
+  Were any conditions set?
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="../task_list?JustAssigned=yes" method="post">
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Who will be on this project?</h1>
+
+      <!--
+      <label for="my-autocomplete">Select delivery officer</label>
+      <div id="my-autocomplete-container"></div>
+      -->
+
+      
+      {{ govukInput({
+        hint: {
+          text: "The delivery officer responsible for this project"
+        },
+        id: "delivery-officer-assigned",
+        name: "delivery-officer-assigned",
+        value: data['delivery-officer-assigned']
+      }) }}
+      
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+ 
+  </div>  
+</div>
+
+{% endblock %}
+  
+  
+  
+  

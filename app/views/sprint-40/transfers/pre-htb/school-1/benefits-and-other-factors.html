@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Benefits and risks for " + projectData.name + " – Manage an academy transfer" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Project reference: {{ projectData.project_reference }}
+            </span>
+            <h1 class="govuk-heading-l">
+                Benefits and risks
+            </h1>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        What are the intended benefits of the transfer?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['benefits-of-transfer']%}
+                        <p class="govuk-body">{{ data['benefits-of-transfer'] }}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Are there any risks to consider for this transfer?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['risks-branching'] %}
+                        <p class="govuk-body">{{data['risks-branching']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-branch">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+
+                {% if checked("['risks-issues']", "There are complex land and building issues") %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Complex land and building issues
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['complex-land-and-building-detail'] %}
+                        <p class="govuk-body">{{data['complex-land-and-building-detail']}}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-complex-land-and-building-detail">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
+
+                {% if checked("['risks-issues']", "There are finance and debt concerns") %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Finance and debt concerns
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['finance-and-debt-concerns-detail'] %}
+                        <p class="govuk-body">{{data['finance-and-debt-concerns-detail']}}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
+
+
+
+                {% if checked("['risks-issues']", "This is a high profile transfer (ministers and media could be involved)") %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        High profile transfer
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['high-profile-detail'] %}
+                        <p class="govuk-body">{{data['high-profile-detail']}}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-high-profile-transfer">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
+
+                
+
+                  {% if checked("['risks-issues']", "There are outgoing trust issues") %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Outgoing trust issues
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['outgoing-trust-issues-detail'] %}
+                        <p class="govuk-body">{{data['outgoing-trust-issues-detail']}}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-risks">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
+
+               
+                {% if checked("['risks-issues']", "Other risks") %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Other risks
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['other-risks-detail'] %}
+                        <p class="govuk-body">{{data['other-risks-detail']}}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-other-risks">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
+        
+            </dl>
+
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            {% if data['benefits-of-transfer'] and data['risks-branching'] %}
+            {{ govukCheckboxes({
+            idPrefix: "benefits-risks-section-complete",
+            name: "benefits-risks-section-complete",
+            items: [
+                {
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['benefits-risks-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "benefits-risks-completed",
+                text: "Mark this section as complete, you can still make changes later"
+                }
+            ]
+            }) }}
+            {% endif %}
+
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}
