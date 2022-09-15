@@ -157,9 +157,9 @@
                     checked: checked("filter-delivery-officers", "Paul M")
                   },
                   {
-                    value: "Not assigned",
+                    value: "",
                     text: "Not assigned",
-                    checked: checked("filter-delivery-officers", "Not assigned")
+                    checked: checked("filter-delivery-officers", "")
                   }
                 ]
               }) }}
@@ -221,7 +221,7 @@
                   Apply filters
                 </button>
               
-                <a class="govuk-link" href="projects-list?filter-project-title=&filter-regions=&filter-delivery-officers=&filter-project-status=">Clear filters</a>
+                <a class="govuk-link" href="projects-list?filter-project-title=&filter-regions=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
               </div>
             </div>
           </div>
@@ -424,7 +424,7 @@
         </tr>
         {% endif %}
 
-        {% if deliveryOfficer == "Not assigned" %}
+        {% if deliveryOfficer == "" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
             <p class="govuk-!-margin-top-3">
@@ -512,7 +512,7 @@
         </tr>
         {% endif %}
 
-        {% if deliveryOfficer == "Not assigned" %}
+        {% if deliveryOfficer == "" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
             <p class="govuk-!-margin-top-3">
@@ -534,7 +534,7 @@
         </tr>
         {% endif %}
         
-        {% if deliveryOfficer == "Not assigned" %}
+        {% if deliveryOfficer == "" %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
             <p class="govuk-!-margin-top-3">
