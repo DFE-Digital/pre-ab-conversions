@@ -279,7 +279,7 @@
         </tr>
         {% endif %}
 
-        {% if deliveryOfficer == "Not assigned" %}
+        {% if deliveryOfficer == data['delivery-officer-assigned'] %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
             <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
@@ -288,7 +288,12 @@
 
             <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
             Local authority: Warrington</br>
-            Delivery officer: <span class="empty">Empty</span>
+            Delivery officer: 
+            {% if (data['delivery-officer-assigned']) %}
+              <strong>{{ data['delivery-officer-assigned'] }}</strong>
+            {% else %}
+              <span class="empty">Empty</span>
+            {% endif %}
             </p>
           </td>
           <td class="govuk-table__cell prepare-text-align-right">  
