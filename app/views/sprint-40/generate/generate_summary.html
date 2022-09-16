@@ -670,6 +670,90 @@
   <header class="app-summary-card__header">
     
     <h2 class="app-summary-card__title">
+     Legal requirements details
+    </h2> <a name="legal-requirements"></a>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Governing body resolution
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-governing-body-checked']%}
+            {{data['legal-governing-body-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="../legal-requirements/legal-governing-body?returnToSummary=yes">  Change<span class="govuk-visually-hidden">governing body resolution</span>
+        </a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consultation
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-consultation-checked']%}
+            {{data['legal-consultation-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-consultation?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> consultation</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Diocesan consent
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-diocesan-consent-checked']%}
+            {{data['legal-diocesan-consent-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-diocesan-consent?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> diocesan consent</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Foundation consent
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-foundation-consent-checked']%}
+            {{data['legal-foundation-consent-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-foundation-consent?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> foundation consent</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section> 
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
      School budget information details
     </h2> <a name="budget"></a>
   </header>
