@@ -45,7 +45,7 @@
         </span>
       </summary>
       <div class="govuk-details__text prepare-project-listing__filters-details">
-        <form action="projects-list-results-by-project-status" method="post" class="form">
+        <form action="projects-list-filter-by-regions-results" method="post" class="form">
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
@@ -226,7 +226,7 @@
                   Apply filters
                 </button>
               
-                <a class="govuk-link" href="projects-list-by-project-status?filter-project-title=&filter-regions=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+                <a class="govuk-link" href="projects-list-filter-by-regions?filter-project-title=&filter-regions=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
               </div>
             </div>
           </div>
@@ -260,9 +260,9 @@
 
       <tbody class="govuk-table__body">
 
-        {% for projectStatus in data['filter-project-status'] %}
+        {% for projectRegion in data['filter-regions'] %}
 
-          {% if projectStatus == "Deferred" %}
+          {% if projectRegion == "North West" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
               <p class="govuk-!-margin-top-3">
@@ -284,7 +284,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == data['decision-status'] %}
+          {% if projectRegion == "North West" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
@@ -343,7 +343,7 @@
           </tr>
           {% endif %}
           
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "North West" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
               <p class="govuk-!-margin-top-3">
@@ -362,7 +362,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "North West" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
@@ -385,7 +385,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Approved with conditions" %}
+          {% if projectRegion == "North East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -407,7 +407,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "North East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -429,7 +429,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Approved" %}
+          {% if projectRegion == "North East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -451,7 +451,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "North East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -473,7 +473,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "North East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -495,7 +495,7 @@
           </tr>
           {% endif %}
         
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "London" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
               <p class="govuk-!-margin-top-3">
@@ -517,7 +517,7 @@
           </tr>
           {% endif %}
 
-          {% if projectStatus == "Pre advisory board" %}
+          {% if projectRegion == "South East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
               <p class="govuk-!-margin-top-3">
@@ -539,7 +539,7 @@
           </tr>
           {% endif %}
           
-          {% if projectStatus == "Approved" %}
+          {% if projectRegion == "South East" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
               <p class="govuk-!-margin-top-3">
