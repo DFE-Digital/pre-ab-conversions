@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-l">Zara Laney, Regional Team Lead</span>
+      <span class="govuk-caption-l">{{data['userName']}}, {{data['userRole']}}</span>
       Manage an academy conversion
     </h1>
     <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects (4032)</h2>
@@ -213,7 +213,7 @@
                   Apply filters
                 </button>
               
-                <a class="govuk-link" href="projects-list-filter-by-regions?filter-project-title=&filter-regions=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+                <a class="govuk-link" href="projects-list-filter-by-regions?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
               </div>
             </div>
           </div>
@@ -325,10 +325,10 @@
         </tr>
         
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Blessed John Henry Newman Roman Catholic College</a></strong> URN 123920 </h2>
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Luke's Church of England Primary School</a></strong> URN 145616 </h2>
             <p class="govuk-!-margin-top-3">
               Application to join a trust: Kingfisher learning trust</br>
-              Local authority: Warrington</br>
+              Local authority: Lambeth</br>
               Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
             </p>
           </td>
@@ -363,6 +363,23 @@
         </tr>
 
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Thomas of Canterbury Catholic Primary School</a></strong> URN 100357 </h2>
+            <p class="govuk-!-margin-top-3">
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Hammersmith and Fulham</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
             <p class="govuk-!-margin-top-3">
             Application to join a trust: WISE ACADEMIES</br>
@@ -383,10 +400,10 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Lymington Junior School</a></strong> URN 116051</h2>
             <p class="govuk-!-margin-top-3">
-            Application to join a trust: WISE ACADEMIES</br>
-            Local authority: Newcastle upon Tyne</br>
+            Application to join a trust: THE KITE ACADEMY TRUST </br>
+            Local authority: Hampshire</br>
             Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
             </p>
           </td>
@@ -403,10 +420,10 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Marys Catholic Academy</a></strong> URN 140114</h2>
             <p class="govuk-!-margin-top-3">
-            Application to join a trust: WISE ACADEMIES</br>
-            Local authority: Newcastle upon Tyne</br>
+            Application to join a trust: CREATIVE EDUCATION TRUST</br>
+            Local authority: Stoke-on-Trent</br>
             Delivery officer: <span class="empty">Empty</span>
             </p>
           </td>
@@ -423,10 +440,10 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Binstead Primary School</a></strong> URN 118176</h2>
             <p class="govuk-!-margin-top-3">
-            Application to join a trust: WISE ACADEMIES</br>
-            Local authority: Newcastle upon Tyne</br>
+            Application to join a trust: UNITED LEARNING TRUST </br>
+            Local authority: Isle of Wight</br>
             Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
             </p>
           </td>
@@ -443,10 +460,10 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St James Catholic Primary School</a></strong> URN 141820</h2>
             <p class="govuk-!-margin-top-3">
-            Application to join a trust: WISE ACADEMIES</br>
-            Local authority: Newcastle upon Tyne</br>
+            Application to join a trust: ACADEMY TRANSFORMATION TRUST</br>
+            Local authority: Birmingham</br>
             Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
             </p>
           </td>
@@ -466,7 +483,7 @@
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
             <p class="govuk-!-margin-top-3">
             Application to join a trust: OASIS COMMUNITY LEARNING</br>
-            Local authority: Hackney</br>
+            Local authority: Bexley</br>
             Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
             </p>
           </td>
@@ -506,7 +523,7 @@
           <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
             <p class="govuk-!-margin-top-3">
             Application to join a trust: THE WHITE HORSE FEDERATIONG</br>
-            Local authority: Reading</br>
+            Local authority: Isle of Wight</br>
             Opening date: <span class="empty">Empty</span>
             </p>
           </td>
@@ -518,6 +535,26 @@
               Application received: 10 November 2021</br>
               Advisory Board date: 7 February 2022</br>
               Opening date: 10 May 2022
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Wickham Common Primary School</a></strong> URN 142301</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Bromley</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
             </p>
           </td>   
         </tr>

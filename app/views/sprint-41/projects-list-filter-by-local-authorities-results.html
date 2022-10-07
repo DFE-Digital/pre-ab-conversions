@@ -38,7 +38,7 @@
     </h1>
     <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects (5)</h2>
 
-    <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details">
+    <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details" open>
       <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
         <span class="govuk-details__summary-text govuk-button govuk-button--secondary prepare-project-listing__button--main">
           Filter projects
@@ -928,7 +928,7 @@
                   Apply filters
                 </button>
               
-                <a class="govuk-link" href="projects-list-filter-by-local-authorities?userName=Zara%20Laney&userRole=Regional%20Team%20Lead&filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+                <a class="govuk-link" href="projects-list-filter-by-local-authorities?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
               </div>
             </div>
           </div>
@@ -1084,6 +1084,25 @@
                 Opening date: <span class="empty">Empty</span>
               </p>
             </td>  
+          </tr>
+          {% endif %}
+
+          {% if projectLocalAuthority == "Hammersmith and Fulham" %} 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Thomas of Canterbury Catholic Primary School</a></strong> URN 100357 </h2>
+              <p class="govuk-!-margin-top-3">
+                Application to join a trust: Kingfisher learning trust</br>
+                Local authority: Hammersmith and Fulham</br>
+                Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Application received: 12 February 2021</br>
+                Advisory board date: 1 June 2021</br>
+                Opening date: 3 July 2021
+              </p>
+            </td>   
           </tr>
           {% endif %}
 
@@ -1290,21 +1309,7 @@
 
       </tbody>
     </table>
-
-    <nav class="moj-pagination" id="pagination-label">
-      <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
-      <ul class="moj-pagination__list">
-          <li class="moj-pagination__item moj-pagination__item--active">1</li>
-          <li class="moj-pagination__item">
-              <a class="moj-pagination__link" href="#">2</a>
-          </li>
-          <li class="moj-pagination__item  moj-pagination__item--next">
-              <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
-          </li>
-      </ul>
-      <p class="moj-pagination__results"></p>
-    </nav>
-
+    
   </div>
 </div>
 {% endblock %}

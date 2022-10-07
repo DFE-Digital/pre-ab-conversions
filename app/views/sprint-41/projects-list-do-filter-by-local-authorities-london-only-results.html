@@ -36,7 +36,7 @@
       <span class="govuk-caption-l">{{data['userName']}}, {{data['userRole']}}</span>
       Manage an academy conversion
     </h1>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects (4)</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects - London (2)</h2>
 
     <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details" open>
       <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
@@ -45,7 +45,7 @@
         </span>
       </summary>
       <div class="govuk-details__text prepare-project-listing__filters-details">
-        <form action="projects-list-filter-by-regions-results" method="post" class="form">
+        <form action="projects-list-do-filter-by-local-authorities-london-only-results" method="post" class="form">
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
@@ -66,68 +66,153 @@
             </div>
 
             <div class="govuk-grid-column-one-quarter">
-              {{ govukCheckboxes({
-                idPrefix: "filter-regions",
-                name: "filter-regions",
-                classes: "govuk-checkboxes--small prepare-project-listing__filter",
-                fieldset: {
-                  legend: {
-                    text: "Regions",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--s"
-                  }
-                },
-                hint: {
-                  text: "Select all that apply."
-                },
-                items: [
-                  {
-                    value: "East Midlands",
-                    text: "East Midlands",
-                    checked: checked("filter-regions", "East Midlands")
-                  },
-                  {
-                    value: "East of England",
-                    text: "East of England",
-                    checked: checked("filter-regions", "East of England")
-                  },
-                  {
-                    value: "London",
-                    text: "London",
-                    checked: checked("filter-regions", "London")
-                  },
-                  {
-                    value: "North East",
-                    text: "North East",
-                    checked: checked("filter-regions", "North East")
-                  },
-                  {
-                    value: "North West",
-                    text: "North West",
-                    checked: checked("filter-regions", "North West")
-                  },
-                  {
-                    value: "South East",
-                    text: "South East",
-                    checked: checked("filter-regions", "South East")
-                  },
-                  {
-                    value: "South West",
-                    text: "South West",
-                    checked: checked("filter-regions", "South West")
-                  },
-                  {
-                    value: "West Midlands",
-                    text: "West Midlands",
-                    checked: checked("filter-regions", "West Midlands")
-                  },
-                  {
-                    value: "Yorkshire and the Humber",
-                    text: "Yorkshire and the Humber",
-                    checked: checked("filter-regions", "Yorkshire and the Humber")
-                  }
-                ]
-              }) }}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-london-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                      Local authorities
+                    </h2>
+                  </legend>
+                  <div id="filter-local-authorities-london-hint" class="govuk-hint">
+                    Select all that apply
+                  </div>
+                  <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-barking-and-dagenham" name="filter-local-authorities" type="checkbox" value="Barking and Dagenham" {{ checked("filter-local-authorities", "Barking and Dagenham") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-barking-and-dagenham">
+                        Barking and Dagenham
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-barnet" name="filter-local-authorities" type="checkbox" value="Barnet" {{ checked("filter-local-authorities", "Barnet") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-barnet">
+                        Barnet
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-bexley" name="filter-local-authorities" type="checkbox" value="Bexley" {{ checked("filter-local-authorities", "Bexley") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bexley">
+                        Bexley
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-brent" name="filter-local-authorities" type="checkbox" value="Brent" {{ checked("filter-local-authorities", "Brent") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-brent">
+                        Brent
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-bromley" name="filter-local-authorities" type="checkbox" value="Bromley" {{ checked("filter-local-authorities", "Bromley") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bromley">
+                        Bromley
+                      </label>
+                    </div>
+                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-camden" name="filter-local-authorities" type="checkbox" value="Camden" {{ checked("filter-local-authorities", "Camden") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-camden">
+                        Camden
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-city-of-london" name="filter-local-authorities" type="checkbox" value="City of London" {{ checked("filter-local-authorities", "City of London") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-city-of-london">
+                        City of London
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-croydon" name="filter-local-authorities" type="checkbox" value="Croydon" {{ checked("filter-local-authorities", "Croydon") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-croydon">
+                        Croydon
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-ealing" name="filter-local-authorities" type="checkbox" value="Ealing" {{ checked("filter-local-authorities", "Ealing") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-ealing">
+                        Ealing
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-enfield" name="filter-local-authorities" type="checkbox" value="Enfield" {{ checked("filter-local-authorities", "Enfield") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-enfield">
+                        Enfield
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-greenwich" name="filter-local-authorities" type="checkbox" value="Greenwich" {{ checked("filter-local-authorities", "Greenwich") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-greenwich">
+                        Greenwich
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-hackney" name="filter-local-authorities" type="checkbox" value="Hackney" {{ checked("filter-local-authorities", "Hackney") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hackney">
+                        Hackney
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-hammersmith-and-fulham" name="filter-local-authorities" type="checkbox" value="Hammersmith and Fulham" {{ checked("filter-local-authorities", "Hammersmith and Fulham") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hammersmith-and-fulham">
+                        Hammersmith and Fulham
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-haringey" name="filter-local-authorities" type="checkbox" value="Haringey" {{ checked("filter-local-authorities", "Haringey") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-haringey">
+                        Haringey
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-harrow" name="filter-local-authorities" type="checkbox" value="Harrow" {{ checked("filter-local-authorities", "Harrow") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-harrow">
+                        Harrow
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-havering" name="filter-local-authorities" type="checkbox" value="Havering" {{ checked("filter-local-authorities", "Havering") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-havering">
+                        Havering
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-hillingdon" name="filter-local-authorities" type="checkbox" value="Hillingdon" {{ checked("filter-local-authorities", "Hillingdon") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hillingdon">
+                        Hillingdon
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-hounslow" name="filter-local-authorities" type="checkbox" value="Hounslow" {{ checked("filter-local-authorities", "Hounslow") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hounslow">
+                        Hounslow
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-local-authorities-lambeth" name="filter-local-authorities" type="checkbox" value="Lambeth" {{ checked("filter-local-authorities", "Lambeth") }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-lambeth">
+                        Lambeth
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
             </div>
 
             <div class="govuk-grid-column-one-quarter">
@@ -215,8 +300,6 @@
               }) }}
             </div>
 
-
-
           </div>
 
           <div class="govuk-grid-row">
@@ -226,7 +309,7 @@
                   Apply filters
                 </button>
               
-                <a class="govuk-link" href="projects-list-filter-by-regions?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+                <a class="govuk-link" href="projects-list-do-filter-by-local-authorities-london-only?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
               </div>
             </div>
           </div>
@@ -260,9 +343,9 @@
 
       <tbody class="govuk-table__body">
 
-        {% for projectRegion in data['filter-regions'] %}
+        {% for projectLocalAuthority in data['filter-local-authorities'] %}
 
-          {% if projectRegion == "North West" %}
+          {% if projectLocalAuthority == "Bolton" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
               <p class="govuk-!-margin-top-3">
@@ -284,7 +367,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "North West" %}
+          {% if projectLocalAuthority == "Warrington" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
@@ -343,7 +426,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "London" %}
+          {% if projectLocalAuthority == "Lambeth" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Luke's Church of England Primary School</a></strong> URN 145616 </h2>
               <p class="govuk-!-margin-top-3">
@@ -362,7 +445,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "North West" %}  
+          {% if projectLocalAuthority == "Warrington" %}  
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
@@ -385,7 +468,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "London" %} 
+          {% if projectLocalAuthority == "Hammersmith and Fulham" %} 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Thomas of Canterbury Catholic Primary School</a></strong> URN 100357 </h2>
               <p class="govuk-!-margin-top-3">
@@ -404,7 +487,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "North East" %} 
+          {% if projectLocalAuthority == "Newcastle upon Tyne" %} 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
               <p class="govuk-!-margin-top-3">
@@ -426,7 +509,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "South East" %}
+          {% if projectLocalAuthority == "Hampshire" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Lymington Junior School</a></strong> URN 116051</h2>
               <p class="govuk-!-margin-top-3">
@@ -448,7 +531,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "West Midlands" %}
+          {% if projectLocalAuthority == "Stoke-on-Trent" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Marys Catholic Academy</a></strong> URN 140114</h2>
               <p class="govuk-!-margin-top-3">
@@ -470,7 +553,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "South East" %}
+          {% if projectLocalAuthority == "Isle of Wight" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Binstead Primary School</a></strong> URN 118176</h2>
               <p class="govuk-!-margin-top-3">
@@ -492,7 +575,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "West Midlands" %}
+          {% if projectLocalAuthority == "Birmingham" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St James Catholic Primary School</a></strong> URN 141820</h2>
               <p class="govuk-!-margin-top-3">
@@ -514,7 +597,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "London" %}
+          {% if projectLocalAuthority == "Bexley" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
               <p class="govuk-!-margin-top-3">
@@ -536,7 +619,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "South East" %}
+          {% if projectLocalAuthority == "Brighton and Hove" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
               <p class="govuk-!-margin-top-3">
@@ -558,7 +641,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "South East" %}
+          {% if projectLocalAuthority == "Isle of Wight" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
               <p class="govuk-!-margin-top-3">
@@ -580,7 +663,7 @@
           </tr>
           {% endif %}
 
-          {% if projectRegion == "London" %}
+          {% if projectLocalAuthority == "Bromley" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Wickham Common Primary School</a></strong> URN 142301</h2>
               <p class="govuk-!-margin-top-3">
