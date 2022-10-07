@@ -1385,6 +1385,14 @@ $thumbnail-icon-border-colour: govuk-colour("mid-grey", $legacy: "grey-3");
 .prepare-project-listing__filter {
   background-color: govuk-colour("white");
   overflow-y: auto;
+  height: 200px;
+}
+
+.prepare-project-listing__conditional {
+  border: 0;
+  margin-left: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
 }
 
 .prepare-project-listing__button--apply {
