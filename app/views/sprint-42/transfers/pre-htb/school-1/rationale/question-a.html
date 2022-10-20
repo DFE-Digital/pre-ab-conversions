@@ -1,0 +1,39 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Write the rationale for the project – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+
+{% block formQuestions %}
+  <form action="../rationale" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      Write the rationale for the project
+    {% endset %}
+
+    {{ govukTextarea({
+      id: 'project-rationale',
+      name: 'project-rationale',
+      rows: "20",
+      hint: {
+        text: "Write about why the academy is transferring to the incoming trust."
+      },
+      label: {
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
