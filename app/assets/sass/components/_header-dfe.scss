@@ -8,44 +8,67 @@ $accent: #347ca9;
     }
     
     .govuk-header__container {
-        position: relative;
-        margin-bottom: -10px;
-        padding-top: 25px;
+        padding-top: 10px;
         padding-bottom: 15px;
         border-bottom: 10px solid $accent;
     }
     
-    .govuk-header__product-name, 
-    .govuk-header__logotype-text,
     .govuk-header__content {
+        line-height: 1.25;
+        font-size: 1rem;
+    }
+    
+    .govuk-header__product-name {
         line-height: 2.5rem !important;
-        font-size: 1.2rem;
+        font-size: 1.2rem; 
     }
-    
-    .govuk-header__logotype-crown-fallback-image {
-        height: 45px; 
-        width: 45px;
+
+    .govuk-header__product-name::before {
+        content: "Department for Education | ";
+        font-weight: 600;
+        background-image: url("/public/images/crest.png") !important;
+        padding: 8px 0px 10px 55px;
+        background-size: 45px;
+        background-repeat: no-repeat;
+        background-position-x: 0px;
+        background-position-y: -5px; 
     }
-    
-    .govuk-header__logotype {
-        margin-right: 0;
+
+    .govuk-header__navigation-list {
+        margin: 0;
+        padding: 0;
+        list-style: none; 
     }
-    
-    .govuk-header__logo {
-        @include mq ($from: desktop) {
-          width: 70%;
+
+    .govuk-header__navigation-item {
+        border-bottom: 1px solid govuk-colour("white");
+    }
+
+    .govuk-header__navigation-item:last-child {
+        border: 0;
+    }
+
+    @include mq ($from: desktop) {
+
+        .govuk-header__container {
+            padding-top: 25px;
         }
-      }
-      
-    .govuk-header__content {
-        @include mq ($from: desktop) {
+
+        .govuk-header__logo {
+            width: 65%;
+            padding-right: 15px;
+            float: left;
+            vertical-align: top;
+        }
+
+        .govuk-header__content {
             width: 30%;
             float: right;
         }
+
+        .govuk-header__navigation-item {
+            border: 0;
+        }
     }
-    
-    .govuk-header nav {
-        display: inline-block;
-        float: right;
-    }
+      
 }
