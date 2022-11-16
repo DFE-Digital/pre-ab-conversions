@@ -1,0 +1,30 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Add the transferring academies – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./add-incoming-trust-name" method="post" novalidate>
+        {% set trust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+        {{ govukCheckboxes({
+            idPrefix: "academies",
+            name: "outgoing-academies",
+            fieldset: {
+                legend: {
+                text: "Select the transferring academies",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            items: trust | trustAcademiesToCheckboxes
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
