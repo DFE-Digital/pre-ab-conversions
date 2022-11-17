@@ -10,63 +10,60 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
   
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% if data['returnToSummary'] == 'yes' %}
-      <form action="../generate/generate_summary#forecasts" method="post">
-      {% else %}
-      <form action="school-pupil-forecasts-summary" method="post">
-    {% endif %}
-     
-      <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['returnToSummary'] == 'yes' %}
+    <form action="../generate/generate_summary#forecasts" method="post">
+    {% else %}
+    <form action="school-pupil-forecasts-summary" method="post">
+  {% endif %}
+    
+    <input hidden type="text" name="returnToSummary" value="no"/>
+    
+    <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
-    <p class="govuk-body">This information comes from TRAMS and the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. The table will go into your project template.</p><p>You can <a href="#additional_info">add additional information</a> if you need to, this will also go into your project template.</p>
-    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p><br>
+    <p class="govuk-body">This comes from GIAS (Get Information about Schools) and the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. It will go into your project template.</p>
+    <p>Published on GIAS: <strong>June 2022</strong>.</p>
   </div>
 </div>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
+<div>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Year</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Year</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
     </tr>
-  </thead>
-  <tbody class="govuk-table__body">
+    </thead>
+    <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header ">Current year</th>
+      <th scope="row" class="govuk-table__header ">2022</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">226</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">96%</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">2021 to 2022 forecast</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+      <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 1)</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
       <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">2022 to 2023 forecast</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+      <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 2)</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
       <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
+      <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 3)</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
       <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     </tr>
-        <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">2023 to 2024 forecast</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">80%</td>
-    </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>   
+</div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
