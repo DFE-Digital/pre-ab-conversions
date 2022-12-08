@@ -1,0 +1,53 @@
+{% extends "version-4/layout.html" %}
+
+{% set pageTitle = "Download head teacher board (htb) template – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  
+    {% include "version-4/includes/phase-banner.html" %}
+
+    <!--setting for dynamic back link-->
+    {% if not backLink %}
+        {% set backLink = 'javascript:history.back();' %}
+    {% endif %}
+
+    {% if not backText %}
+        {% set backText = 'Back'  %}
+    {% endif %}
+
+    {% if backLink == 'false' %}
+        {% set backLink = false %}
+    {% endif %}
+
+    {% if backText == 'false' %}
+        {% set backText = '' %}
+    {% endif %}
+
+    {% block pageNavigation %}
+    {% if backLink %}
+        {{ govukBackLink({
+        text: backText,
+        href: backLink
+        }) }}
+    {% endif %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9">
+      <span class="govuk-caption-l">Project reference: {{ projectData.project_reference }}</span>
+      <h1 class="govuk-heading-xl">
+        Download project template
+      </h1>
+      {{ govukInsetText({
+        text: "Save these documents in the school's Sharepoint file."
+      }) }}
+
+      {% include "version-4/includes/attachment.html" %}
+    </div>
+{% endblock %}
