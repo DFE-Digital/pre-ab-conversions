@@ -31,18 +31,35 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                    Trust agreement
+                    Outgoing trust resolution
                     </dt>
                     <dd class="govuk-summary-list__value">             
-                    {% if data['legal-trust-agreement-checked']%}
-                        {{data['legal-trust-agreement-checked']}}
+                    {% if data['legal-outgoing-trust-resolution-checked']%}
+                        {{data['legal-outgoing-trust-resolution-checked']}}
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="legal-trust-agreement.html">
-                        Change<span class="govuk-visually-hidden"> trust agreement</span>
+                    <a class="govuk-link" href="legal-outgoing-trust-resolution.html">
+                        Change<span class="govuk-visually-hidden"> outgoing trust resolution</span>
+                    </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Incoming trust agreement
+                    </dt>
+                    <dd class="govuk-summary-list__value">             
+                    {% if data['legal-incoming-trust-agreement-checked']%}
+                        {{data['legal-incoming-trust-agreement-checked']}}
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="legal-incoming-trust-agreement.html">
+                        Change<span class="govuk-visually-hidden"> incoming trust agreement</span>
                     </a>
                     </dd>
                 </div>
@@ -63,30 +80,15 @@
                     </a>
                     </dd>
                 </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Foundation consent
-                    </dt>
-                    <dd class="govuk-summary-list__value">             
-                    {% if data['legal-foundation-consent-checked']%}
-                        {{data['legal-foundation-consent-checked']}}
-                    {% else %} 
-                        <span class="empty">Empty</span>
-                    {% endif %}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="legal-foundation-consent.html">
-                        Change<span class="govuk-visually-hidden"> foundation consent</span>
-                    </a>
-                    </dd>
-                </div>
             </dl>
                 
             <form action="../../task-list-transfers" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
 
-            {% if data['legal-trust-agreement-checked'] and data['legal-diocesan-consent-checked'] and data['legal-foundation-consent-checked'] %}
+            {% if data['legal-outgoing-trust-resolution-checked'] and data
+            ['legal-incoming-trust-agreement-checked'] and data
+            ['legal-diocesan-consent-checked'] %}
             {{ govukCheckboxes({
             idPrefix: "legal-requirements-section-complete",
             name: "legal-requirements-section-complete",
