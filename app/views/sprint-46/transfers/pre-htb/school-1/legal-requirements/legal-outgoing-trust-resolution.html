@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block pageTitle %}
+  Outgoing trust resolution - Manage an academy transfer
+{% endblock %}
+
 {% block beforeContent %}
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
@@ -19,12 +23,21 @@
         Project reference: {{ projectData.project_reference }}
         -->
       </span>
-      <h1 class="govuk-heading-l">Have you received a resolution from the outgoing trust?</h1>
+      
 
         {{ govukRadios({
           idPrefix: "legal-outgoing-trust-resolution-checked",
           name: "legal-outgoing-trust-resolution-checked",
-    
+          fieldset: {
+            legend: {
+              text: "Have you received a resolution from the outgoing trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Only voluntary transfers need a resolution from the outgoing trust."
+          },
           items: [
       
             {

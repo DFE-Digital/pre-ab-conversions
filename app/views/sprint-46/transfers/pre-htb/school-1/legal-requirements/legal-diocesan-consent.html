@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Diocesan consent
+Diocesan consent - Manage an academy transfer
 {% endblock %}
 
 
@@ -24,12 +24,21 @@ Diocesan consent
         Project reference: {{ projectData.project_reference }}
         -->
       </span>
-      <h1 class="govuk-heading-l">Have you spoken with the diocese about the incoming trust?</h1>
+    
 
         {{ govukRadios({
           idPrefix: "legal-diocesan-consent-checked",
           name: "legal-diocesan-consent-checked",
-    
+          fieldset: {
+            legend: {
+              text: "Have you spoken with the diocese about the incoming trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You'll need to speak with the diocese if the academy is part of one."
+          },
           items: [
       
             {
