@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a href="../task_list.html" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Confirm risks and issues</h1>
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Risks and issues
+            </dt>
+            <dd class="govuk-summary-list__value">   {% if data['risks']%}
+              {{data['risks'] | safe }}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="risks-and-issues.html">
+                Change<span class="govuk-visually-hidden">risks and issues</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Has an Equalities Impact Assessment been considered?
+            </dt>
+            <dd class="govuk-summary-list__value"> 
+              
+The equalities duty has been considered and the Secretary of State’s decision is unlikely to affect disproportionately any particular person or group who share protected characteristics
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+
+        </dl>
+
+
+
+  
+        <form action="../task_list" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukCheckboxes({
+            idPrefix: "risks-status",
+            name: "risks-status",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark this section as complete, you can still make changes later"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
+
+        </form>
+  
+      </main>
+    </main>   
+    </div>
+  </div>
+{% endblock %}

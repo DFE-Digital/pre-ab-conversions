@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  St. Wilfrid's Primary School - task list
+  Cheltenham Spa Primary School - task list
 {% endblock %}
 
 {% block beforeContent %}
@@ -41,12 +41,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-      St. Wilfrid's Primary School 
+      Cheltenham Spa Primary School 
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-8">
-      Route: Voluntary conversion</br>
+      Route: Involuntary conversion</br>
       Delivery officer: 
       {% if (data['delivery-officer-assigned']) %}
         <strong>{{ data['delivery-officer-assigned'] }}</strong>
@@ -54,7 +54,6 @@
         <span class="empty">Empty</span>
       {% endif %}
       <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
-      
     </p>
   </div>
 
@@ -315,13 +314,13 @@
               <a class="app-sub-navigation__link" aria-current="page" href="task_list">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/application">School application form</a>
+              <a class="app-sub-navigation__link"  href="related/application_involuntary_conversions.html">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/notes.html">Project notes</a>
+              <a class="app-sub-navigation__link"  href="related/notes_involuntary_conversions.html">Project notes</a>
             </li>
       </ul>
 
@@ -345,7 +344,7 @@
                       'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
                       'la-comments', 'la-sharepoint-link']                
                     )}}" 
-                aria-describedby="LA-infromation-template">
+                aria-describedby="LA-infromation-template-involuntary">
                 Record dates for the LA information template 
               </a>
             </span>
@@ -367,12 +366,12 @@
       </li>
 
       <li>
-        <h3 class="app-task-list__section govuk-!-margin-top-0">Trust template guidance</h3>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Sponsor template guidance</h3>
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="trust-template/index.html"  aria-describedby="trust-template">
-          Prepare your trust template
+              <a href="sponsor-template/index.html"  aria-describedby="trust-template">
+          Prepare your sponsor template
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
@@ -385,7 +384,7 @@
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="overview/summary1.html"  aria-describedby="project-overview">
+              <a href="overview/summary1-involuntary.html"  aria-describedby="project-overview">
                 School and trust information and project dates
               </a>
             </span>
@@ -399,7 +398,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="general-info/summary1" aria-describedby="general-information">
+              <a href="general-info/summary1-involuntary" aria-describedby="general-information">
                 General information
               </a>
             </span>
@@ -415,7 +414,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="school-performance/ofsted-comments.html" aria-describedby="school-performance">
+              <a href="school-performance/ofsted-comments-involuntary.html" aria-describedby="school-performance">
                 School performance (Ofsted information)
               </a>
             </span>
@@ -425,7 +424,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="rationale/rationale-summary1.html" aria-describedby="rationale-status">
+              <a href="rationale/rationale-summary1-involuntary.html" aria-describedby="rationale-status">
                 Rationale
               </a>
             </span>
@@ -439,7 +438,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="risks-and-issues/risks-summary1">
+              <a href="risks-and-issues/risks-summary1-involuntary">
                 Risks and issues
               </a>
             </span>
@@ -452,7 +451,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="legal-requirements/legal-summary1.html">
+              <a href="legal-requirements/legal-summary1-involuntary.html">
                 Legal requirements
               </a>
             </span>
@@ -468,7 +467,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="school-budget/budget-information2.html" aria-describedby="school-budget-information">
+              <a href="school-budget/budget-information2-involuntary.html" aria-describedby="school-budget-information">
                 School budget information
               </a>
             </span>
@@ -485,7 +484,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a 
-              href="pupil-forecasts/school-pupil-forecasts-summary" 
+              href="pupil-forecasts/school-pupil-forecasts-summary-involuntary" 
               aria-describedby="school-pupil-forecast">
               School pupil forecasts
             </a>
@@ -496,7 +495,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-performance-comments.html" aria-describedby="key-stage-2-performance-tables">
+              <a href="key-stage/key-stage-2-performance-comments-involuntary.html" aria-describedby="key-stage-2-performance-tables">
                 Key stage 2 performance tables
               </a>
             </span>
@@ -506,7 +505,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-4-performance-comments.html" aria-describedby="key-stage-4-performance-tables">
+              <a href="key-stage/key-stage-4-performance-comments-involuntary.html" aria-describedby="key-stage-4-performance-tables">
                 Key stage 4 performance tables
               </a>
             </span>
@@ -516,7 +515,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-5-performance-comments.html" aria-describedby="key-stage-4-performance-tables">
+              <a href="key-stage/key-stage-5-performance-comments-involuntary.html" aria-describedby="key-stage-4-performance-tables">
                 Key stage 5 performance tables
               </a>
             </span>
