@@ -34,10 +34,6 @@ module.exports = function (router) {
       res.redirect('projects-list')
 
     }   
-    else if (Task == "involuntary-conversions") {
-      //send user to transfers prototype
-      res.redirect('projects-list-involuntary-conversions-before')
-    }
     else if (Task == "transfers") {
       //send user to transfers prototype
       res.redirect('transfers/projects-list-transfers')
