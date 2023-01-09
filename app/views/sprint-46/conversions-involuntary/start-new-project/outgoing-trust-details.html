@@ -1,0 +1,64 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Confirm the outgoing trust details – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./add-transferring-academies" method="post" novalidate>
+        <h1 class="govuk-heading-xl">Outgoing trust details</h1>
+        {% set trust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+        {{ govukSummaryList({
+            classes: 'govuk-summary-list--no-border',
+            rows: [
+                {
+                    key: {
+                        text: "Trust name"
+                    },
+                    value: {
+                        text: trust.trust_name
+                    }
+                },
+                {
+                    key: {
+                        text: "Companies house number"
+                    },
+                    value: {
+                        text: trust.companies_house_number
+                    }
+                },
+                {
+                    key: {
+                        text: "Type"
+                    },
+                    value: {
+                        html: trust.establishment_type
+                    }
+                },
+                {
+                    key: {
+                        text: "UKPRN"
+                    },
+                    value: {
+                        html: trust.ukprn
+                    }
+                },
+                {
+                    key: {
+                        text: "Address"
+                    },
+                    value: {
+                        html: trust.address | trustAddressToHtml | safe
+                    }
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
