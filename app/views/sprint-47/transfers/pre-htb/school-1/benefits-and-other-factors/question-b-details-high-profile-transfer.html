@@ -1,0 +1,40 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Why is this a high profile transfer? – Manage an academy transfer" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="/submit-high-profile" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      Why is this a high profile transfer? (optional)
+      <div id="more-detail-hint" class="govuk-hint">
+        For example, ministers and media could be involved.
+      </div>
+    {% endset %}
+    
+
+    {{ govukTextarea({
+      name: "high-profile-detail",
+      id: "high-profile-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      },
+      value: data["high-profile-detail"]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

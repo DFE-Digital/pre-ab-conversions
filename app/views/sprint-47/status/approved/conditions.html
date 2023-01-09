@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Were any conditions set?
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="dates" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      
+      {% set yesHtml %}
+      {{ govukTextarea({
+        id: "approved-conditions-yes-details",
+        name: "approved-conditions-yes-details",
+        value: data['approved-conditions-yes-details'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "What conditions were set?"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "approved-conditions",
+        name: "approved-conditions",
+        fieldset: {
+          legend: {
+            text: "Were any conditions set?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            checked: checked("approved-conditions", "Yes"),
+            text: "Yes",
+            conditional: {
+              html: yesHtml
+            }
+          },
+          {
+            value: "No",
+            checked: checked("approved-conditions", "No"),
+            text: "No"
+          }
+
+        ]
+      }) }} 
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>  
+  </div>  
+</div>
+{% endblock %}
+  
+  
+  
+  

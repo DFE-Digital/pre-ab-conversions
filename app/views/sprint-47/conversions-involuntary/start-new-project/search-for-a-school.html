@@ -1,0 +1,32 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "Add the incoming trust name – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./select-school" method="post" novalidate>
+        
+
+        {% set pageHeading %}
+            What is the school name?
+        {% endset %}
+
+        {{ govukInput({
+            label: {
+                html: pageHeading,
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+                text: "Search by name or URN (Unique Reference Number)."
+            },
+            id: "school-name",
+            name: "school-name"
+        }) }}
+
+        {{ govukButton({
+            text: "Search"
+        }) }}
+    </form>
+
+{% endblock %}

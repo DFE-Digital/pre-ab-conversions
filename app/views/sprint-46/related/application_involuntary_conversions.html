@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+          
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-xl">URN 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Cheltenham Spa Primary School</h1>
+        {% if data['htb-date']%}
+        <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
+         {% else %} 
+         {% endif %}
+<nav class="app-sub-navigation" aria-label="sub menu">
+
+  <ul class="app-sub-navigation__list">
+
+    <li class="app-sub-navigation__item">
+      <a class="app-sub-navigation__link" href="../task_list_involuntary_conversions">Task list</a>
+    </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link"   aria-current="page"  href="#">School application form</a>
+        </li>
+       <!-- Not MVP <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link"  href="dates">Project dates</a>
+        </li> -->
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link"  href="notes_involuntary_conversions">Project notes</a>
+        </li>
+    </ul>
+
+</nav>
+</div>
+<div class="govuk-grid-column-full">
+
+<p><a href="application_newtab" target="application">Open school application form in a new tab</a></p>
+
+  
+  
+
+    {% endblock %}
