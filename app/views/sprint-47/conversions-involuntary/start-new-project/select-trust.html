@@ -1,0 +1,51 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "Select the trust – Involuntary conversions – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./check-school-and-trust-details" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "select-the-trust",
+          fieldset: {
+            legend: {
+              text: "Select the trust",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+          {
+            value: "the-gloucestershire-schools-multi-academy-trust",
+            text: "The Gloucestershire Academy Trust (10060980)",
+            hint: {
+              text: "Companies House number: 09613632"
+            }
+          },
+            {
+              value: "gloucestershire-north-schools-trust",
+              text: "Gloucestershire North Schools Trust (10058638)",
+              hint: {
+                text: "Companies House number: 07561574"
+              }
+            },
+            {
+              value: "gloucestershire-south-schools-trust",
+              text: "Gloucestershire South Schools Trust (10058757)",
+              hint: {
+                text: "Companies House number: 07641004"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
