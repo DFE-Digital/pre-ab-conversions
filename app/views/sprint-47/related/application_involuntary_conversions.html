@@ -37,11 +37,78 @@
 
 </nav>
 </div>
+
+
+
+{% if data['school-application-form-url'] %}
+
 <div class="govuk-grid-column-full">
 
-<p><a href="application_newtab" target="application">Open school application form in a new tab</a></p>
 
-  
-  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      SharePoint link
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
+      {% if data['school-application-form-url']%}
+   <a href="{{data['school-application-form-url']}}" target="_blank" aria-label="SharePoint link">{{data['school-application-form-url']}}</a>
+    {% else %} 
+    <span class="empty">Empty</span>
+  {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
 
-    {% endblock %}
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="application_form_url.html">
+        Change<span class="govuk-visually-hidden">school application form link</span>
+      </a>
+    </dd>
+  </div>
+  </dl>
+  </div>
+  </div>
+  </div>
+
+{% else %}
+
+<div class="govuk-grid-column-two-thirds">
+
+  {% if data['returnToSummary'] == 'yes' %}
+  <form action="../generate/generate_summary#author" method="post">
+  {% else %}
+  <form action="../related/application_involuntary_conversions" method="post">
+  {% endif %}
+  <input hidden type="text" name="returnToSummary" value="no"/>
+
+  <h1 class="govuk-heading-l">What is the link for the school application form?</h1>
+  
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+  {{ govukDetails({
+    summaryText: "How to find the school application form",
+    text: "This is the annex b form saved in your region's SharePoint folder."
+  }) }}
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+  {{ govukTextarea({
+    name: "school-application-form-url",
+    id: "school-application-form-url", 
+    title: "School application SharePoint link"
+  }) }}
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+  </form>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
