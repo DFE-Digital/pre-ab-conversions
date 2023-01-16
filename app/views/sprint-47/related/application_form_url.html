@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+  
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#application-form-url" method="post">
+        {% else %}
+        <form action="../related/application_involuntary_conversions" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">What is the link for the school application form?</h1>
+      
+      {{ govukDetails({
+        summaryText: "Where to find this link",
+        text: "This is the annex b form saved in your region's SharePoint folder."
+      }) }}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {{ govukTextarea({
+        name: "application-form-url",
+        id: "application-form-url",
+        value: data["application-form-url"],
+        title: "Sharepoint link"
+      }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <!--
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">
+          Useful information
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#">
+
+              </a>
+            </li>
+            <li>
+              <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+            </li>
+
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+-->
+  </div>
+{% endblock %}
