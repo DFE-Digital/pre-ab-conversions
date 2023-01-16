@@ -7,10 +7,10 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
     <h1 class="govuk-heading-l">
     Confirm school and trust information and project dates</h1>
-    <p>This information is pre-populated from TRAMS.</p>
+    <p>This information is pre-populated from TRAMS and the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
     <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
     </div></div>
     <div class="govuk-grid-row">
@@ -21,7 +21,7 @@
           School name
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">St. Wilfrid's Primary School</p>
+          <p class="govuk-body">Cheltenham Spa Primary School</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -31,7 +31,7 @@
           Unique reference number (URN)
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">120620</p>
+          <p class="govuk-body">100006</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -41,7 +41,7 @@
           Trust name
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Dynamics Trust</p>
+          <p class="govuk-body">Alstone Trust</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -51,7 +51,7 @@
           Trust reference number
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">TRO1318</p>
+          <p class="govuk-body">TRO4275</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -111,48 +111,6 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Form 7 received
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
-          <span>{{ data['form-7-date-day'] }} </span>
-          <span>{{ data['form-7-date-month'] }} </span>
-          <span>{{ data['form-7-date-year'] }}</span>
-          {% else %} 
-          <span class="empty">Empty</span>
-        {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="set-form-7-date.html">
-            Change<span class="govuk-visually-hidden">form 7 sent</span>
-          </a>
-        </dd>
-      </div>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Directive academy order (DAO) pack sent
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['dao-date-day'] and data['dao-date-month'] and data['dao-date-year']%}
-          <span>{{ data['dao-date-day'] }} </span>
-          <span>{{ data['dao-date-month'] }} </span>
-          <span>{{ data['dao-date-year'] }}</span>
-          {% else %} 
-          <span class="empty">Empty</span>
-        {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="set-dao-date.html">
-            Change<span class="govuk-visually-hidden">directive academy order (DAO) pack sent</span>
-          </a>
-        </dd>
-      </div>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
           Date of Advisory Board
         </dt>
         <dd class="govuk-summary-list__value">
@@ -209,7 +167,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="previous-htb.html">
-            Change<span class="govuk-visually-hidden">perevious head teacher board date</span>
+            Change<span class="govuk-visually-hidden">previous head teacher board date</span>
           </a>
         </dd>
       </div>
@@ -219,7 +177,7 @@
           Local authority
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Warrington</p>
+          <p class="govuk-body">Gloucestershire</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -231,7 +189,7 @@
   Sponsor name
   </dt>
   <dd class="govuk-summary-list__value">
-    <p class="govuk-body">Diocese of Warrington</p>
+    <p class="govuk-body">Diocese of Gloucestershire</p>
   </dd>
   <dd class="govuk-summary-list__actions">
   </dd>
@@ -241,7 +199,7 @@
         Sponsor reference number
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">SP00170</p>
+          <p class="govuk-body">SP00254</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>

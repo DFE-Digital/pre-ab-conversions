@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Diocesan consent - Manage an academy transfer
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#legal-diocesan-consent-checked" method="post">
+        {% else %}
+        <form action="legal-summary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">
+        Project reference: EMH-SAT-10000110
+        <!--
+        Project reference: {{ projectData.project_reference }}
+        -->
+      </span>
+    
+
+        {{ govukRadios({
+          idPrefix: "legal-diocesan-consent-checked",
+          name: "legal-diocesan-consent-checked",
+          fieldset: {
+            legend: {
+              text: "Have you spoken with the diocese about the incoming trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You'll need to speak with the diocese if the academy is part of one."
+          },
+          items: [
+      
+            {
+              value: "Yes",
+              checked:  data['legal-diocesan-consent-checked'] === "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              checked:  data['legal-diocesan-consent-checked'] === "No",
+              text: "No"
+            },
+            {
+              value: "Not applicable",
+              checked:  data['legal-diocesan-consent-checked'] === "Not applicable",
+              text: "Not applicable"
+            }
+            
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>  
+  
+  <!-- right hand nav -->    
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+    <h2 class="govuk-heading-s" id="subsection-title">
+    Useful information
+    </h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+    <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+    <a class="govuk-link" href="#">
+  
+    </a>
+    </li>
+    <li>
+      <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+    </li>
+  
+    </ul>
+    </nav>
+  
+    </aside>
+  </div>
+</div>
+{% endblock %}
