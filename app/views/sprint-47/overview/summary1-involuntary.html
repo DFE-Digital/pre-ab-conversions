@@ -10,7 +10,7 @@
     <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">
     Confirm school and trust information and project dates</h1>
-    <p>This information is pre-populated from TRAMS and the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
+    <p>This information is pre-populated from TRAMS.</p>
     <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
     </div></div>
     <div class="govuk-grid-row">
@@ -111,6 +111,48 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Form 7 received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
+          <span>{{ data['form-7-date-day'] }} </span>
+          <span>{{ data['form-7-date-month'] }} </span>
+          <span>{{ data['form-7-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-form-7-date.html">
+            Change<span class="govuk-visually-hidden">form 7 sent</span>
+          </a>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Directive academy order (DAO) pack sent
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['dao-date-day'] and data['dao-date-month'] and data['dao-date-year']%}
+          <span>{{ data['dao-date-day'] }} </span>
+          <span>{{ data['dao-date-month'] }} </span>
+          <span>{{ data['dao-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-dao-date.html">
+            Change<span class="govuk-visually-hidden">directive academy order (DAO) pack sent</span>
+          </a>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Date of Advisory Board
         </dt>
         <dd class="govuk-summary-list__value">
@@ -207,18 +249,18 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          SharePoint link
+          Author
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['school-application-form-url']%}
-          {{data['school-application-form-url']}}
+          {% if data['author']%}
+          {{data['author']}}
           {% else %} 
           <span class="empty">Empty</span>
         {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="author">
-            Change<span class="govuk-visually-hidden">school application form link</span>
+            Change<span class="govuk-visually-hidden">author</span>
           </a>
         </dd>
       </div>
