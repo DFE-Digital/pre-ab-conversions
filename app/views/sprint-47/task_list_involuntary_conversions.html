@@ -146,7 +146,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Reasons
+            <!--Reasons-->Why was this project deferred
           </dt>
           <dd class="govuk-summary-list__value">               
             {% for reason in data['declined-reasons'] %}
@@ -281,7 +281,7 @@
       </p>
       <form action="status/list" method="post" class="form">
         {{ govukButton({
-          text: "Change the decision"
+          text: "Change your decision"
         }) }}
       </form>   
     {% else %}  
