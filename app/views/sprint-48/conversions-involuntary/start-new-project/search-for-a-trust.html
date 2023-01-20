@@ -1,0 +1,32 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "What is the trust name? – Involuntary conversions – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./select-trust" method="post" novalidate>
+        
+
+        {% set pageHeading %}
+            What is the trust name?
+        {% endset %}
+
+        {{ govukInput({
+            label: {
+                html: pageHeading,
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+                text: "Search by name, UKPRN or Companies House Number."
+            },
+            id: "trust-name",
+            name: "trust-name"
+        }) }}
+
+        {{ govukButton({
+            text: "Search"
+        }) }}
+    </form>
+
+{% endblock %}

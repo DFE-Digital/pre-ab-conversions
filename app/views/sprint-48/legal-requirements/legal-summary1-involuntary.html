@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a href="../task_list.html" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Confirm legal requirements</h1>
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Governing body resolution
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-governing-body-checked']%}
+                {{data['legal-governing-body-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-governing-body.html">
+                Change<span class="govuk-visually-hidden"> governing body resolution</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Consultation
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-consultation-checked']%}
+                {{data['legal-consultation-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-consultation.html">
+                Change<span class="govuk-visually-hidden"> consultation</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Diocesan consent
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-diocesan-consent-checked']%}
+                {{data['legal-diocesan-consent-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-diocesan-consent.html">
+                Change<span class="govuk-visually-hidden"> diocesan consent</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Foundation consent
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              {% if data['legal-foundation-consent-checked']%}
+                {{data['legal-foundation-consent-checked']}}
+              {% else %} 
+                <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="legal-foundation-consent.html">
+                Change<span class="govuk-visually-hidden"> foundation consent</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+  
+        <form action="../task_list" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukCheckboxes({
+            idPrefix: "legal-status",
+            name: "legal-status",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark this section as complete, you can still make changes later"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
+
+        </form>
+  
+      </main>
+    </main>   
+    </div>
+  </div>
+{% endblock %}

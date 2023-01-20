@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+          
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-xl">URN 100006</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Cheltenham Spa Primary School</h1>
+        {% if data['htb-date']%}
+        <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
+        {% else %} 
+        {% endif %}
+        <nav class="app-sub-navigation" aria-label="sub menu">
+        <ul class="app-sub-navigation__list">
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="../task_list_involuntary_conversions">Task list</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"   aria-current="page"  href="#">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="dates">Project dates</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="notes_involuntary_conversions">Project notes</a>
+            </li>
+          </ul>
+        </nav>
+    
+    </div>
+
+    {% if data['application-form-url']%}
+    <div class="govuk-grid-column-full">
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            SharePoint link
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['application-form-url']%}
+              <a href="{{data['application-form-url']}}" target="_blank" aria-label="School application form (opens in a new tab)">{{data['application-form-url']}}</a>
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application_form_url.html">
+              Change<span class="govuk-visually-hidden">school application form url</span>
+            </a>
+          </dd>
+        </div>
+    </div>
+  </div>
+  {% else %} 
+  <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#application-form-url" method="post">
+        {% else %}
+        <form action="../related/application_involuntary_conversions" method="post">
+        {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+          <h1 class="govuk-heading-l">What is the link for the school application form?</h1>
+
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
+          {{ govukDetails({
+            summaryText: "Where to find this link",
+            text: "This is the annex b form saved in your region's SharePoint folder."
+          }) }}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+          {{ govukTextarea({
+            name: "application-form-url",
+            id: "application-form-url",
+            title: "Sharepoint link"
+          }) }}
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+       </form>
+  </div>
+{% endif %}
+
+{% endblock %}

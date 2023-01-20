@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Excell3 Independent Schools Ltd – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="/version-4/dashboard-home">Back to transfer projects</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!--Project heading-->
+      <h1 class="govuk-heading-xl">
+        {{ projectData.project_reference }}
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Create a project template
+      </h2>
+
+      <p class="govuk-body">
+        By completing the following sections, you can create a project template that will help you prepare for an advisory board meeting.
+      </p>
+
+      <p class="govuk-body">
+        You can complete them in any order.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--l">
+
+      <!--Task list section-->
+      <section class="govuk-!-margin-bottom-8">
+        <ol class="app-task-list govuk-!-margin-bottom-4">
+
+            <h3 class="app-task-list__section">
+              Transfer details
+            </h3>
+            <!--Task list items-->
+            <ul class="app-task-list__items govuk-!-margin-bottom-0 govuk-!-padding-left-0">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="./features-of-a-transfer.html" aria-describedby="features-of-a-transfer">
+                    Features of the transfer
+                  </a>
+                </span>
+                {% if data['reason-for-this-transfer'] and data['type-of-transfer'] %}
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
+                {% elif data['reason-for-this-transfer'] or data['type-of-transfer'] %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="./expected-transfer-dates.html" aria-describedby="set-transfer-dates">
+                    Transfer dates
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="set-transfer-dates">Not started</strong>
+              </li>
+              
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="./benefits-and-other-factors.html" aria-describedby="benefits-and-other-factors">
+                    Benefits and risks
+                  </a>
+                </span>
+                {% if checked("['benefits-risks-section-complete']", "Mark this section as complete, you can still make changes later") %}
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
+                {% elif data['benefits-of-transfer'] or data['risks-branching'] %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="./rationale" aria-describedby="rationale">
+                    Rationale
+                  </a>
+                </span>
+                {% if checked("['rationale-section-complete']", "Mark this section as complete, you can still make changes later") %}
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
+                {% elif data['project-rationale'] or data['trust-rationale'] %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="./academy-and-trust-information-and-project-dates" aria-describedby="general-information">
+                    Academy and trust information and project dates
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-information">Not started</strong>
+              </li>
+            </ul>
+
+        </ol>
+      </section>
+
+      <!--Reference section-->
+      <section class="govuk-!-margin-bottom-6">
+        <h3 class="app-task-list__section">
+          School data
+        </h3>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a href="./school-data">
+              The Richard Crosse Cofe Primary School
+            </a>
+          </li>
+          <li>
+            <a href="./school-data">
+              The Howard Primary School
+            </a>
+          </li>
+          <li>
+            <a href="./school-data">
+              Rosehill Methodist Primary Academy
+            </a>
+          </li>
+        </ul>
+      </section>
+    
+    <hr class="govuk-section-break govuk-section-break--l">
+
+      <!--Call to action section-->
+      <section class="govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-l">
+          Preview or generate project template
+        </h2>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">
+          Download the template as a Word document or preview its contents.
+        </p>
+
+        <div class="govuk-button-group">
+          <a href="./preview-htb-template" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+            Preview project template
+          </a>
+          <a href="/version-4/pre-htb/school-1/download" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+            Generate project template
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!--Project details (sidebar or aside)-->
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-s" id="subsection-title">
+              Outgoing trust
+          </h2>  
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <p class="govuk-body">
+              <a class="govuk-link" href="#">
+                Excell3 Independent Schools Ltd
+              </a>
+            </p>
+            <hr class="govuk-grid-one-third govuk-section-break govuk-section-break--m govuk-section-break--visible"></hr>
+          </nav>
+          <h2 class="govuk-heading-s" id="subsection-title">
+              Incoming trust
+          </h2>   
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <p class="govuk-body">
+              <a class="govuk-link" href="#">
+                Moordown St John's Church Of England Primary School
+              </a>
+            </p>
+          </nav>
+      </aside>
+    </div>
+
+  </div>
+
+{% endblock %}

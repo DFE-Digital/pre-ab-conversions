@@ -1,0 +1,831 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Key stage 2 performance tables – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Academy: The Richard Crosse Cofe Primary School
+            </span>
+            <h1 class="govuk-heading-l">
+                Key stage 2 performance tables
+            </h1>
+            <p class="govuk-body">
+                This information comes from the Find and compare schools in England service and the data in this page will go into your project template.
+            </p>
+
+            <p class="govuk-body">
+                You can <a href="#additional-information" class="govuk-body">add additional information</a> if you need to. This will automatically go into your project template. 
+            </p>
+            <p class="govuk-body">
+                <a href="https://www.compare-school-performance.service.gov.uk/school/<URN>" class="govuk-link" rel="noreferrer noopener" target="_blank">View the school's performance data on Find and compare schools in England (opens in new tab)</a>
+            </p>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <!--We do not need KS1 data for the time being – still want to keep it for future proffing>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Key stage (KS) 1
+            </h2>
+            <p class="govuk-body govuk-!-margin-bottom-6">
+                Percentage reaching the expected standard
+            </p>
+            {{ govukTable({
+                caption: "Godmanchester Community Academy",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    },
+                    {
+                        text: "Local authority average",
+                        format: "numeric"
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "87%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "83%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "92%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "91%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "85%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "89%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "92%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "86%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
+    <-->
+
+    <!--Not needed for mvp>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+            {{ govukTable({
+                caption: "Godmanchester Bridge Academy",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    },
+                    {
+                        text: "Local authority average",
+                        format: "numeric"
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "100%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "80%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "100%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "90%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "85%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "96%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+            {{ govukTable({
+                caption: "Gorefield primary school",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    },
+                    {
+                        text: "Local authority average",
+                        format: "numeric"
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "73%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "73%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "94%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "94%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+        <div class="govuk-grid-column-full">
+            {{ govukTable({
+                caption: "Key stage 1 – 0",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    },
+                    {
+                        text: "Local authority average",
+                        format: "numeric"
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "()",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div> -->
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "2019 key stage 2",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },       
+                {
+                    text: "Percentage meeting expected standard in reading, writing and maths"
+                },
+                {
+                    text: "Percentage achieving a higher standard in reading, writing and maths"
+                },
+                {
+                    text: "Reading progress scores"
+                },
+                {
+                    text: "Writing progress scores"
+                },
+                {
+                    text: "Maths progress scores"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        }
+                    ],
+                    [
+                        {
+                            text: "Cambridgeshire local authority average"
+                        },
+                        {
+                            text: "63"
+                        },
+                        {
+                            text: "9"
+                        },
+                        {
+                            text: "0.2"
+                        },
+                        {
+                            text: "-0.8"
+                        },
+                        {
+                            text: "-0.3"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            html: "65 <br> (disadvantaged 51)"
+                        },
+                        {
+                            html: "11 <br> (disadvantaged 5)"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        }
+                    ]
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "2018 key stage 2",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },       
+                {
+                    text: "Percentage meeting expected standard in reading, writing and maths"
+                },
+                {
+                    text: "Percentage achieving a higher standard in reading, writing and maths"
+                },
+                {
+                    text: "Reading progress scores"
+                },
+                {
+                    text: "Writing progress scores"
+                },
+                {
+                    text: "Maths progress scores"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        },
+                        {
+                            text: "Suppressed "
+                        }
+                    ],
+                    [
+                        {
+                            text: "Cambridgeshire local authority average"
+                        },
+                        {
+                            text: "61"
+                        },
+                        {
+                            text: "10"
+                        },
+                        {
+                            text: "0.1"
+                        },
+                        {
+                            text: "-0.9"
+                        },
+                        {
+                            text: "-0.5"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            html: "64 <br> (disadvantaged 51)"
+                        },
+                        {
+                            html: "10 <br> (disadvantaged 4)"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        }
+                    ]
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "2017 key stage 2",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },       
+                {
+                    text: "Percentage meeting expected standard in reading, writing and maths"
+                },
+                {
+                    text: "Percentage achieving a higher standard in reading, writing and maths"
+                },
+                {
+                    text: "Reading progress scores"
+                },
+                {
+                    text: "Writing progress scores"
+                },
+                {
+                    text: "Maths progress scores"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            text: "()"
+                        },
+                        {
+                            text: "()"
+                        },
+                        {
+                            text: "()"
+                        },
+                        {
+                            text: "()"
+                        },
+                        {
+                            text: "()"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Cambridgeshire local authority average"
+                        },
+                        {
+                            text: "59"
+                        },
+                        {
+                            text: "8"
+                        },
+                        {
+                            text: "0.2"
+                        },
+                        {
+                            text: "-1.2"
+                        },
+                        {
+                            text: "-0.9"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            html: "64 <br> (disadvantaged 51)"
+                        },
+                        {
+                            html: "10 <br> (disadvantaged 4)"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        },
+                        {
+                            text: "0.00"
+                        }
+                    ]
+                ]
+            }) }}
+        </div>
+
+        {% if data['key-stage-performance-more-detail'] and data['update-key-stage-performance'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Add any additional information if you need to
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the school performance (Ofsted information) section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['key-stage-performance-more-detail'] %}
+                            {{data['key-stage-performance-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/key-stage-performance-tables?update-key-stage-performance=yes#key-stage-performance-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/key-stage-performance-tables#additional-information" method="post" novalidate>
+                <input type="text" name="update-key-stage-performance" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "key-stage-performance-more-detail",
+                    id: "key-stage-performance-more-detail",
+                    label: {
+                        text: "Add any additional information if you need to",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                    },
+                    value: data['key-stage-performance-more-detail'],
+                    hint: {
+                        text: "This information will populate in your HTB template under the key stage performance tables section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+
+    
+
+{% endblock %}
