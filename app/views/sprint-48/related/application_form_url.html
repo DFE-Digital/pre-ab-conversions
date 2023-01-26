@@ -18,20 +18,20 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#application-form-url" method="post">
         {% else %}
-        <form action="../related/application_involuntary_conversions" method="post">
+        <form action="../related/application_saved_involuntary_conversions" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-      <h1 class="govuk-heading-l">What is the link for the school application form?</h1>
+      <h1 class="govuk-heading-l">What is the link for the Annex B form?</h1>
       
-      {{ govukDetails({
-        summaryText: "Where to find this link",
-        text: "This is the annex b form saved in your region's SharePoint folder."
-      }) }}
+     
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
       {{ govukTextarea({
         name: "application-form-url",
         id: "application-form-url",
+        hint: {
+          text: "The Annex B form is saved in the school's SharePoint folder"
+        },
         value: data["application-form-url"],
         title: "Sharepoint link"
       }) }}
