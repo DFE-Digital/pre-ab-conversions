@@ -21,7 +21,7 @@
           School name
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">St. Wilfrid's Primary School</p>
+          <p class="govuk-body">Cheltenham Spa Primary School</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -31,7 +31,7 @@
           Unique reference number (URN)
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">120620</p>
+          <p class="govuk-body">100006</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -41,7 +41,7 @@
           Trust name
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Dynamics Trust</p>
+          <p class="govuk-body">Gloucestershire Trust</p>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -77,21 +77,30 @@
           Form 7 received
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
+          
+          {% if data['form7received'] =="Yes" and data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
+          <p class="govuk-body">{{ data['form7received']}},</br>
           <span>{{ data['form-7-date-day'] }} </span>
           <span>{{ data['form-7-date-month'] }} </span>
           <span>{{ data['form-7-date-year'] }}</span>
+          </p>
+
+          {% elseif data['form7received'] =="No" or data['form7received'] =="Not sure"%}
+          <span>{{ data['form7received']}}</span>
+       
           {% else %} 
           <span class="empty">Empty</span>
-        {% endif %}
+          
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="set-form-7-date.html">
-            Change<span class="govuk-visually-hidden">form 7 sent</span>
+          <a class="govuk-link" href="set-form-7.html">
+            Change<span class="govuk-visually-hidden">form 7 received</span>
           </a>
         </dd>
       </div>
 
+      
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
