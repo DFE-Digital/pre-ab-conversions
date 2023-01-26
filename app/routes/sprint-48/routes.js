@@ -1,11 +1,35 @@
 // Add your routes here - above the module.exports line
 
 //***********
-//* SPRINT 47
+//* SPRINT 48
 //***********
+
+
+
+
 module.exports = function (router) {
 
   var version = "sprint-48";
+
+
+  router.post('/' + version + '/overview/form7-answer', function (req, res) {
+    // Make a variable to give it the value from the radio buttons on the index page  
+    var form7answer = req.session.data['form7received']
+
+    // Check whether the variable matches a condition
+    if (form7answer == "Yes") { 
+      // Send user to next page 
+      res.redirect('set-form-7-date')
+
+    }   
+    else if (form7answer != "Yes") {
+      //send user to transfers prototype
+      res.redirect('summary1-involuntary')
+    }
+
+  })
+
+
 
   router.post('/' + version + '/status/status-answer', function(req, res) {
 
