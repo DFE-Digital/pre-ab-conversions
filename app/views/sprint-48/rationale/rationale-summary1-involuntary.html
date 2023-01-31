@@ -2,7 +2,7 @@
 
 {% block beforeContent %}
 
-<a href="../task_list.html" class="govuk-back-link">Back to task list</a>
+<a href="../task_list_involuntary_conversions.html" class="govuk-back-link">Back to task list</a>
 {% endblock %}
 
 {% block content %}
@@ -11,39 +11,24 @@
     {% if data['returnToSummary'] == 'yes' %}
     <form action="../generate/generate_summary#rationale" method="post">
       {% else %}
-      <form action="../task_list" method="post">
+      <form action="../task_list_involuntary_conversions" method="post">
     {% endif %}
     <input hidden type="text" name="returnToSummary" value="no"/>
   
 <div class="govuk-grid-row"><div class="govuk-grid-column-full">
-  <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-  <h1 class="govuk-heading-l">Confirm project and trust rationale</h1>
+  <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">Confirm trust rationale</h1>
   <p>This information is pre-populated from the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
 </div></div>
 
 
         <dl class="govuk-summary-list">
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
-              Rationale for project
-            </dt>
-            <dd class="govuk-summary-list__value govuk-!-width-full">
-              {% if data['project-rationale']%}
-              {{data['project-rationale'] | safe}}
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}</dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="project-rationale.html">
-                Change<span class="govuk-visually-hidden">project rationale</span>
-              </a>
-            </dd>
-          </div>
+         
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
-              Rationale for the trust or sponsor
+              Rationale for the trust
             </dt>
             <dd class="govuk-summary-list__value  govuk-!-width-two-thirds">
               {% if data['trust-rationale']%}
@@ -53,7 +38,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="sponsor-rationale.html">
+              <a class="govuk-link" href="sponsor-rationale-involuntary.html">
                 Change<span class="govuk-visually-hidden">sponsor rationale</span>
               </a>
             </dd>
