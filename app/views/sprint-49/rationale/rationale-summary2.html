@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+<a href="/task_list.html" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+  
+  <div class="govuk-grid-row"><div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Confirm project and trust rationale</h1>
+      <p>This information is pre-populated from the <a href="/related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>.</p>
+</div></div>
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full">
+            <dl class="govuk-summary-list">
+              <dt class="govuk-summary-list__key">Rationale for project</dt>
+            <dd class="govuk-summary-list__key"></dd>
+          </dl>
+          <dl class="govuk-summary-list__row--no-border">
+            <dd class="govuk-summary-list__value  govuk-body">{% if data['project-rationale']%}
+              {{data['project-rationale']  | safe}}
+          {% else %} 
+<span class="empty">Empty</span>
+              {% endif %}</dd>
+
+            <dd class="govuk-summary-list__actions">
+             <p><a href="project-rationale.html">
+                Change<span class="govuk-visually-hidden">project rationale</span></a></p> 
+            </dd>
+            </dl>
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                          <dl class="govuk-summary-list govuk-!-margin-top-">
+                            <dt class="govuk-summary-list__key">Rationale for trust or sponsor</dt>
+                          <dd class="govuk-summary-list__key"></dd>
+                        </dl>
+            <dl class="govuk-summary-list">
+    
+            <dd class="govuk-summary-list__value govuk-body">{% if data['trust-rationale']%}
+              {{data['trust-rationale'] | safe}}
+          {% else %} 
+<span class="empty">Empty</span>
+              {% endif %}</dd>
+            <dd class="govuk-summary-list__actions govuk-body">
+            <p> <a href="sponsor-rationale.html">
+                Change<span class="govuk-visually-hidden">sponsor rationale</span></a></p>
+            </dd>
+            </dl>
+          </div></div>
+
+        
+&nbsp;
+&nbsp;
+
+        <form action="/task_list" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukCheckboxes({
+            idPrefix: "rationale-status-htb",
+            name: "rationale-status-htb",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark this section as complete, you can still make changes later"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </form>
+        <p><a href="javascript:history.back();">Cancel</a></p>
+      </main>
+    </main>   
+    </div>
+  </div>
+  {% endblock %}
+
+  
