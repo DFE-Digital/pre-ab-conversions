@@ -1,0 +1,181 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Latest Ofsted judgement – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Academy: The Richard Crosse Cofe Primary School
+            </span>
+            <h1 class="govuk-heading-l">
+                Latest Ofsted report
+            </h1>
+            <p class="govuk-body">
+                This information comes from TRAMS and the data in this page will go into your project template.
+            </p>
+
+            <p class="govuk-body">
+                You can <a href="#additional-information" class="govuk-body">add additional information</a> if you need to, this will also go into your project template. 
+            </p>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <!--Short inspection Ofsted report section-->
+            <h2 class="govuk-heading-m">Short inspection</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Ofsted inspection date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ "" | todayGovuk }}
+                    </dd>
+                </div>
+            </dl>
+
+            <!--Last full inspection Ofsted report section-->
+            <h2 class="govuk-heading-m">Last full inspection: Good</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Ofsted inspection date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ "" | todayGovuk }}
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Effectiveness of leadership and management
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Good
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Quality of teaching, learning and assessment
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Good
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Personal development, behaviour and welfare
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Good
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Outcomes for pupils
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Good
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Early years provision
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Good
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Ofsted report
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="#" class="govuk-link">View latest inspection report on Ofsted's website (opens in a new tab)</a>
+                    </dd>
+                </div>
+        
+            </dl>
+          
+        </div>
+
+        {% if data['latest-ofsted-judgement-more-detail'] and data['update-latest-ofsted-judgement'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Additional information
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the school performance (Ofsted information) section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['latest-ofsted-judgement-more-detail'] %}
+                            {{data['latest-ofsted-judgement-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/latest-ofsted-judgement?update-latest-ofsted-judgement=yes#latest-ofsted-judgement-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/latest-ofsted-judgement#additional-information" method="post" novalidate>
+                <input type="text" name="update-latest-ofsted-judgement" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "latest-ofsted-judgement-more-detail",
+                    id: "latest-ofsted-judgement-more-detail",
+                    label: {
+                        text: "Additional information (optional)",
+                        classes: "govuk-label--m",
+                        isPageHeading: false
+                    },
+                    value: data['latest-ofsted-judgement-more-detail'],
+                    hint: {
+                        text: "This information will populate into your HTB template under the school performance (Ofsted information) section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

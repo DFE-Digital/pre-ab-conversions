@@ -1,0 +1,42 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "What outgoing trust issues are there? – Manage an academy transfer" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="/outgoing-trust-issues" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+     What are the outgoing trust issues? (optional)
+     <div id="more-detail-hint" class="govuk-hint">
+      For example, the trust is refusing to provide information.
+    </div>
+    {% endset %}
+    
+  
+
+
+    {{ govukTextarea({
+      name: "outgoing-trust-issues-detail",
+      id: "outgoing-trust-issues-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      },
+      value: data["outgoing-trust-issues-detail"]
+    }) }}    
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
