@@ -25,19 +25,48 @@
       <h1 class="govuk-heading-l">What is the link for the Annex B form?</h1>
       
      
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-      {{ govukTextarea({
-        name: "application-form-url",
-        id: "application-form-url",
-        hint: {
-          text: "The Annex B form is saved in the school's SharePoint folder"
-        },
-        value: data["application-form-url"],
-        title: "Sharepoint link"
-      }) }}
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
+        {% set yesHtml %}
+
+        {{ govukTextarea({
+          name: "application-form-url",
+          hint: {
+            text: "The Annex B form is saved in the school's SharePoint folder"
+          },
+          id: "application-form-url",
+          title: "Sharepoint link",
+          value: data["application-form-url"],
+          label: {
+            text: "What is the link for the Annex B form?"
+          }
+        }) }}
+        {% endset -%}
+  
+        {{ govukRadios({
+          idPrefix: "annexBsaved",
+          name: "annexBsaved",
+          items: [
+            {
+              value: "Yes",
+              checked:  data['annexBsaved'] === "Yes",
+              text: "Yes",
+              conditional: {
+                html: yesHtml
+              }
+            },
+            {
+              value: "No",
+              checked:  data['annexBsaved'] === "No",
+              text: "No"
+            }
+          ]
+        }) }}
+      
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
 
       </form>
 

@@ -40,25 +40,28 @@
     <div class="govuk-grid-column-full">
       <dl class="govuk-summary-list">
 
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
             Have you received a completed Annex B form from the school
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['application-form-url']%}
-            Yes,<br>
+            {{data['annexBsaved']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application_form_url.html">
+              Change<span class="govuk-visually-hidden">Annex B form saved from the school</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['application-form-url'] and data['annexBsaved'] =='Yes'%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            SharePoint link
+          </dt>
+          <dd class="govuk-summary-list__value">
             <a href="{{data['application-form-url']}}" target="_blank" aria-label="School application form (opens in a new tab)">{{data['application-form-url']}}</a>
-             
-
-          
-            {% elseif data['annexBsaved'] =="No"%} 
-            <span>No</span>
-
-              {% else %} 
-              <span>No</span>
-             
-            {% endif %}
-
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="application_form_url.html">
@@ -66,9 +69,12 @@
             </a>
           </dd>
         </div>
+        {% endif %}
     </div>
   </div>
   {% else %} 
+
+
   <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#application-form-url" method="post">
@@ -79,35 +85,43 @@
           <h1 class="govuk-heading-l">Have you saved the school's completed
             Annex B form in SharePoint?</h1>
 
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+              {% set yesHtml %}
+
+              {{ govukTextarea({
+                name: "application-form-url",
+                hint: {
+                  text: "The Annex B form is saved in the school's SharePoint folder"
+                },
+                id: "application-form-url",
+                title: "Sharepoint link",
+                label: {
+                  text: "What is the link for the Annex B form?"
+                }
+              }) }}
+              {% endset -%}
+        
+              {{ govukRadios({
+                idPrefix: "annexBsaved",
+                name: "annexBsaved",
+                items: [
+                  {
+                    value: "Yes",
+                    checked:  data['annexBsaved'] === "Yes",
+                    text: "Yes",
+                    conditional: {
+                      html: yesHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    checked:  data['annexBsaved'] === "No",
+                    text: "No"
+                  }
+                ]
+              }) }}
             
-            {{data['annexBsaved']}}
-
-            {% from "govuk/components/details/macro.njk" import govukDetails %}
-            {{ govukDetails({
-              summaryText: "What is the Annex B form?",
-              text: "The Annex B form was sent in the directive academy order (DAO) pack to the school. You'll need the completed Annex B form to get the project template ready for advisory board."
-            }) }}
-
-          
-          {{ govukRadios({
-            idPrefix: "annexBsaved",
-            name: "annexBsaved",
-  
-            items: [
-  
-              {
-                value: "Yes",
-                checked:  data['annexBsaved'] === "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                checked:  data['annexBsaved'] === "No",
-                text: "No"
-              }
-  
-            ]
-          }) }}
 
           {{ govukButton({
             text: "Save and continue"
