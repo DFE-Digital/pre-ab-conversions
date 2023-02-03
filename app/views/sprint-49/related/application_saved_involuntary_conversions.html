@@ -85,6 +85,12 @@
           <h1 class="govuk-heading-l">Have you saved the school's completed
             Annex B form in SharePoint?</h1>
 
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+            {{ govukDetails({
+              summaryText: "What is the Annex B form?",
+              text: "The Annex B form was sent in the directive academy order (DAO) pack to the school. You'll need the completed Annex B form to get the project template ready for advisory board."
+            }) }}
+
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
             {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
               {% set yesHtml %}
