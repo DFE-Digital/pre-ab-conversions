@@ -74,23 +74,13 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Form 7 received
+          Has the Schools Notification Mailbox (SNM) received a Form 7
         </dt>
         <dd class="govuk-summary-list__value">
-          
-          {% if data['form7received'] =="Yes" and data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
-          <p class="govuk-body">{{ data['form7received']}},</br>
-          <span>{{ data['form-7-date-day'] }} </span>
-          <span>{{ data['form-7-date-month'] }} </span>
-          <span>{{ data['form-7-date-year'] }}</span>
-          </p>
-
-          {% elseif data['form7received'] =="No" or data['form7received'] =="Not sure"%}
-          <span>{{ data['form7received']}}</span>
-       
+          {% if data['form7received'] %}
+          {{ data['form7received']}}
           {% else %} 
           <span class="empty">Empty</span>
-          
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -100,11 +90,33 @@
         </dd>
       </div>
 
+      {% if data['form7received'] =='Yes'%}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date SNM received Form 7
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
+          <span>{{ data['form-7-date-day'] }} </span>
+          <span>{{ data['form-7-date-month'] }} </span>
+          <span>{{ data['form-7-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-form-7-date.html">
+            Change<span class="govuk-visually-hidden">form 7 received</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
       
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Directive academy order (DAO) pack sent
+          Date directive academy order (DAO) pack sent
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['dao-date-day'] and data['dao-date-month'] and data['dao-date-year']%}

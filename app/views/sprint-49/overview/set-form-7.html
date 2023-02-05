@@ -16,11 +16,11 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#previousHTB" method="post">
         {% else %}
-        <form action="form7" method="post">
+        <form action="summary1-involuntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-      <h1 class="govuk-heading-l"> Has the form 7 been received by stakeholders?</h1>
+      <h1 class="govuk-heading-l">Has the Schools Notification Mailbox (SNM) received a Form 7?</h1>
 
       <div class="govuk-form-group">
     
@@ -44,6 +44,14 @@
               value: "Not sure",
               checked:  data['form7received'] === "Not sure",
               text: "Not sure"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Not applicable",
+              checked:  data['form7received'] === "Not applicable",
+              text: "Not applicable"
             }
 
           ]
