@@ -18,22 +18,16 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-        <h1 class="govuk-heading-l">Date form 7 received by stakeholders</h1>
+        <h1 class="govuk-heading-l">Date SNM received Form 7</h1>
       </legend>
 
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
-  id: "dao-date",
+  id: "form-7-date",
   namePrefix: "form-7-date",
-  fieldset: {
-    legend: {
-
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
   hint: {
-    text: "For example, 27 3 2021. The Regional Director will confirm the date received."
+    text: "For example, 27 3 2021"
   },
   items: [
     {
