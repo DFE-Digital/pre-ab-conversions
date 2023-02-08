@@ -16,7 +16,7 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#previousHTB" method="post">
         {% else %}
-        <form action="summary1-involuntary" method="post">
+        <form action="form7" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
@@ -27,6 +27,10 @@
         {{ govukRadios({
           idPrefix: "form7received",
           name: "form7received",
+          hint: {
+            text: "Form 7 is a letter from Ofsted confirming that the school requires significant improvement"
+          },
+          
 
           items: [
 
