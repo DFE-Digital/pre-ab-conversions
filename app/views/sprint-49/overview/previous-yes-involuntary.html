@@ -16,53 +16,49 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#previousHTB" method="post">
         {% else %}
-        <form action="form7" method="post">
+        <form action="summary1-involuntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-      <h1 class="govuk-heading-l">Has the Schools Notification Mailbox (SNM) received a Form 7?</h1>
+      <h1 class="govuk-heading-l">Date of previous Advisory Board</h1>
 
       <div class="govuk-form-group">
     
-        {{ govukRadios({
-          idPrefix: "form7received",
-          name: "form7received",
-          hint: {
-            text: "Form 7 is a letter from Ofsted confirming that the school requires significant improvement"
-          },
-          
 
-          items: [
-
-            {
-              value: "Yes",
-              checked:  data['form7received'] === "Yes",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              checked:  data['form7received'] === "No",
-              text: "No"
-            },
-            {
-              value: "Not sure",
-              checked:  data['form7received'] === "Not sure",
-              text: "Not sure"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "Not applicable",
-              checked:  data['form7received'] === "Not applicable",
-              text: "Not applicable"
-            }
-
-          ]
-        }) }}
         </div>
      <div class="govuk-form-group">
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
+      {{ govukDateInput({
+        id: "previousHTB-date",
+        namePrefix: "previousHTB-date",
+        fieldset: {
+          legend: {
+     
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2021"
+        },
+        items: [
+          {
+            name: "day",
+            value: data["previousHTB-date-day"],
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "month",
+            value: data["previousHTB-date-month"],
+            classes: "govuk-input--width-2"
+          },                
+          {
+            name: "year",
+            value: data["previousHTB-date-year"],
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
      
 
           <!--    <label class="govuk-label govuk-label--m" for="recommendation">

@@ -16,10 +16,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#routes" method="post">
         {% else %}
-        <form action="../overview/summary1" method="post">
+        <form action="../overview/summary1-involuntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
       <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
 <h2 class="govuk-heading-m">Academy type and route</h2>
       <p class="govuk-body-m gov">Converter (cannot be changed for this private beta)</p>
@@ -66,25 +66,7 @@
     <!-- right hand nav -->
     <div class="govuk-grid-column-one-third">
   
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-s" id="subsection-title">
-          Useful information
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="govuk-link" href="#">
-
-              </a>
-            </li>
-            <li>
-              <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
-            </li>
-
-          </ul>
-        </nav>
-
-      </aside>
+      {% include "../includes/useful_info_sidebar.html" %}
      
     </div>
   </div>

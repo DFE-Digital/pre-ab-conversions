@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#clearedby" method="post">
+        {% else %}
+        <form action="../overview/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Enter the full name of the person who will clear this project template</h1>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        hint: {
+          text: "Entering the person's name will not send the template to them. You will still need to add the template to Sharepoint when you download it."
+        },
+        classes: "govuk-input--width-20",
+        id: "cleared",
+        name: "cleared",
+    
+        value: data["cleared"]
+      }) }}
+       
+   
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+    </div>
+  </div>
+{% endblock %}

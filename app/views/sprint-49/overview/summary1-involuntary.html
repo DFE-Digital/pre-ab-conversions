@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-<a href="../task_list" class="govuk-back-link">Back to task list</a>
+<a href="../task_list_involuntary_conversions" class="govuk-back-link">Back to task list</a>
 {% endblock %}
  
 {% block content %}
@@ -66,7 +66,7 @@
             {{ data['routes-funding']}} </p>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="route">
+          <a class="govuk-link" href="route-involuntary.html">
             Change<span class="govuk-visually-hidden">route"</span>
           </a>
         </dd>
@@ -149,7 +149,7 @@
         {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="set-htb.html">
+          <a class="govuk-link" href="set-htb-involuntary.html">
             Change<span class="govuk-visually-hidden">Advisory Board date</span>
           </a>
         </dd>
@@ -163,7 +163,7 @@
           {{ data['opening-date']}} 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="opening">
+          <a class="govuk-link" href="opening-involuntary">
             Change<span class="govuk-visually-hidden">proposed academy opening date</span>
           </a>
         </dd>
@@ -175,8 +175,8 @@
         </dt>
         <dd class="govuk-summary-list__value">
 
-          {% if data['Conditions2']%}
-          {{data['Conditions2']}}
+          {% if data['Conditions3']%}
+          {{data['Conditions3']}}
           {% else %} 
           <span class="empty">Empty</span>
         {% endif %}
@@ -192,7 +192,7 @@
    
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="previous-htb.html">
+          <a class="govuk-link" href="previous-htb-involuntary.html">
             Change<span class="govuk-visually-hidden">perevious head teacher board date</span>
           </a>
         </dd>
@@ -243,7 +243,7 @@
         {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="author">
+          <a class="govuk-link" href="author-involuntary">
             Change<span class="govuk-visually-hidden">author</span>
           </a>
         </dd>
@@ -261,7 +261,7 @@
   {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="cleared.html">
+    <a class="govuk-link" href="cleared-involuntary.html">
       Change<span class="govuk-visually-hidden">cleared by</span>
     </a>
   </dd>
