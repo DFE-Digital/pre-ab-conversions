@@ -11,6 +11,23 @@ module.exports = function (router) {
 
   var version = "sprint-49";
 
+  router.post('/' + version + '/overview/conditions2-previous2', function (req, res) {
+    // Make a variable to give it the value from the radio buttons on the index page  
+    var previousAnswer2 = req.session.data['Conditions3']
+
+    // Check whether the variable matches a condition
+    if (previousAnswer2 == "Yes") { 
+      // Send user to next page 
+      res.redirect('previous-yes-involuntary')
+
+    }   
+    else if (previousAnswer2 != "Yes") {
+      //send user to transfers prototype
+      res.redirect('summary1-involuntary')
+    }
+
+  })
+
 
   router.post('/' + version + '/overview/form7', function (req, res) {
     // Make a variable to give it the value from the radio buttons on the index page  

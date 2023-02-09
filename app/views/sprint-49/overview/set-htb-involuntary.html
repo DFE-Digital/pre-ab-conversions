@@ -18,14 +18,14 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-        <h1 class="govuk-heading-l">Date you sent the directive academy order (DAO) pack to the school</h1>
+        <h1 class="govuk-heading-l">Set the Advisory Board date</h1>
       </legend>
 
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
-  id: "dao-date",
-  namePrefix: "dao-date",
+  id: "HTB-date",
+  namePrefix: "HTB-date",
   fieldset: {
     legend: {
 
@@ -38,17 +38,17 @@
   items: [
     {
       name: "day",
-      value: data["dao-date-day"],
+      value: data["HTB-date-day"],
       classes: "govuk-input--width-2"
     },
     {
       name: "month",
-      value: data["dao-date-month"],
+      value: data["HTB-date-month"],
       classes: "govuk-input--width-2"
     },                
     {
       name: "year",
-      value: data["dao-date-year"],
+      value: data["HTB-date-year"],
       classes: "govuk-input--width-4"
     }
   ]
@@ -64,6 +64,7 @@
   <!-- right hand nav -->    
   <div class="govuk-grid-column-one-third">
     {% include "../includes/useful_info_sidebar.html" %}
+    <p class="govuk-body-s"><a href=" https://www.gov.uk/government/publications/headteacher-board-meetings-schedule-and-preparation-templates" target="_blank">Schedule of Advisory Board meetings (opens in a new tab)</a></p>
   </div>
 </div>
 {% endblock %}
