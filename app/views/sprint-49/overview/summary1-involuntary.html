@@ -112,7 +112,23 @@
       </div>
       {% endif %}
 
-      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is an academy order (AO) required?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['aorequired']%}
+          {{data['aorequired']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="aorequired-involuntary.html">
+            Change<span class="govuk-visually-hidden">academy order required</span>
+          </a>
+        </dd>
+</div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
