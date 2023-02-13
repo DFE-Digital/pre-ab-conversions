@@ -311,7 +311,7 @@
       <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="./task_list_cheltenham.html">Task list</a>
+              <a class="app-sub-navigation__link" href="task_list_cheltenham">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="application">School application form</a>
@@ -323,119 +323,173 @@
               <a class="app-sub-navigation__link"  href="#">Project notes</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" href="./trust-information.html">Trust information</a>
+              <a class="app-sub-navigation__link"  aria-current="page" href="#">Trust information</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="page" href="./other_mat_schools.html">Other schools in this MAT</a>
+              <a class="app-sub-navigation__link"  href="./projects-other-mat.html">Other schools in this MAT</a>
             </li>
       </ul>
 
     </nav>
   </div>
 
-  <div class="govuk-grid-column-full">
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header app-!-width-three-fifths">
-            Application information
-          </th>
-          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
-            Project status and dates
-          </th>  
-        </tr>
-      </thead>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Trust information</h2>
+    <p class="govuk-body">The trust information below was provided previously and is shown here for reference.</p>
+  
+    
+    <ul class="app-task-list">
+      <!--
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Local authority (LA) information template</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template-involuntary">
+                Record dates for the LA information template 
+              </a>
+            </span>
+            <strong class="{{data|laProformaStatusClass(
+                      ['la-proforma-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']  
+              )}} app-task-list__tag" id="LA-infromation-template">  
+              {{data|laProformaStatusText(
+                ['la-proforma-status'],
+                ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                'la-comments', 'la-sharepoint-link']               
+              )}} 
+            </strong>            
+          </li>
+        </ul>
+      </li>
 
-      <tbody class="govuk-table__body">
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Sponsor template guidance</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/index.html"  aria-describedby="trust-template">
+          Prepare your sponsor template
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+          </li>
+        </ul>
+      </li>
+    -->
+    
 
-       
+      <li>
+       <!-- <h3 class="app-task-list__section govuk-!-margin-top-0">Create project template</h3>-->
+      </br></br>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/name-of-the-trust.html"  aria-describedby="name-of-the-trust">
+                Name of the trust
+              </a>
+            </span>
+            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
+            </strong>
+          </li>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_gloucester">Gloucester Primary Scool</a></strong> URN 101573</h2>
-              <p class="govuk-!-margin-top-3">
-              Route: Form a MAT</br>
-              Application to join a trust: Gloucestershire Academy Trust</br>
-              Local authority: Gloucestershire</br>
-              Delivery officer: <span class="empty">Empty</span>
-              </p>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
-              <p class="govuk-!-margin-top-0">
-                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
-              </p>
-              <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
-                Advisory Board date: <span class="empty">Empty</span></br>
-                Opening date: <span class="empty">Empty</span>
-              </p>
-            </td>   
-          </tr>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/opening-date.html"  aria-describedby="opening-date">
+                Opening date
+              </a>
+            </span>
+            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
+            </strong>
+          </li>
+         
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/reasons-for-forming-the-trust.html" aria-describedby="reasons-for-forming-the-trust">
+                Reasons for forming the trust
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">
+              Reference only
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/plans-for-growth.html" aria-describedby="plans-for-growth">
+                Plans for growth
+              </a>
+            </span>
+            <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
+              {{data|rationaleOverviewStatusText(
+                ['rationale-status-htb'],
+                ['trust-rationale'],
+                ['project-rationale']
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/school-improvement-strategy.html" aria-describedby="school-improvement-strategy">
+                School improvement strategy
+              </a>
+            </span>
+            <strong class="{{data|riskStatusClass(['risks-status'],['risks'] )}} app-task-list__tag" id="risks-status">  
+              {{data|riskStatusText(
+                ['risks-status'],
+                ['risks']
+              )}} 
+              </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/governance-structure.html" aria-describedby="governance-structure">
+                Governance structure
+              </a>
+            </span>
+            <strong class="{{data|schoolBudgetInfoStatusClass(['school-budget-status'],
+                ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022'] )}} 
+                app-task-list__tag" 
+                id="school-budget-informatiion">
+              {{data|schoolBudgetInfoStatusText(
+                ['school-budget-status'],
+                ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022']
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./trust-information/key-people.html" aria-describedby="key-people">
+              Key people
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="key-people">
+              Reference only
+            </strong>
+          </li>
+        </ul>
+      </li>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Stroud Primary School</a></strong> URN 102821</h2>
-              <p class="govuk-!-margin-top-3">
-              Route: Form a MAT</br>
-              Application to join a trust: Gloucestershire Academy Trust</br>
-              Local authority: Gloucestershire</br>
-              Delivery officer: <span class="empty">Empty</span>
-              </p>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
-              <p class="govuk-!-margin-top-0">
-                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
-              </p>
-              <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
-                Advisory Board date: <span class="empty">Empty</span></br>
-                Opening date: <span class="empty">Empty</span>
-              </p>
-            </td>   
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Prestbury Primary School</a></strong> URN 103459</h2>
-              <p class="govuk-!-margin-top-3">
-              Route: Form a MAT</br>
-              Application to join a trust: Gloucestershire Academy Trust</br>
-              Local authority: Gloucestershire</br>
-              Delivery officer: <span class="empty">Empty</span>
-              </p>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
-              <p class="govuk-!-margin-top-0">
-                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
-              </p>
-              <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
-                Advisory Board date: <span class="empty">Empty</span></br>
-                Opening date: <span class="empty">Empty</span>
-              </p>
-            </td>   
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Winchcombe Primary School</a></strong> URN 104944</h2>
-              <p class="govuk-!-margin-top-3">
-              Route: Form a MAT</br>
-              Application to join a trust: Gloucestershire Academy Trust</br>
-              Local authority: Gloucestershire</br>
-              Delivery officer: <span class="empty">Empty</span>
-              </p>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
-              <p class="govuk-!-margin-top-0">
-                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
-              </p>
-              <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
-                Advisory Board date: <span class="empty">Empty</span></br>
-                Opening date: <span class="empty">Empty</span>
-              </p>
-            </td>   
-          </tr>
-        </tbody>
-        </table>
+    </ul>
   </div>
 </div>
 {% endblock %}
