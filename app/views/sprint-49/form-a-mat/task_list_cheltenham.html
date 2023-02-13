@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a href="projects-list-involuntary-conversions-after" class="govuk-back-link">Back to all conversion projects</a>
+<a href="projects-list-involuntary-conversions-alt" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 
@@ -46,7 +46,7 @@
       Cheltenham Spa Primary School 
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-8">
-      Route: Involuntary conversion</br>
+      Route: Form a MAT</br>
       Delivery officer: 
       {% if (data['delivery-officer-assigned']) %}
         <strong>{{ data['delivery-officer-assigned'] }}</strong>
@@ -314,13 +314,16 @@
               <a class="app-sub-navigation__link" aria-current="page" href="task_list">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/application_saved_involuntary_conversions.html">Annex B form</a>
+              <a class="app-sub-navigation__link"  href="application">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/notes_involuntary_conversions.html">Project notes</a>
+              <a class="app-sub-navigation__link"  href="#">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
             </li>
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="./projects-other-mat.html">Other schools in this MAT</a>
