@@ -12,13 +12,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="../generate/generate_summary#revenue" method="post">
-        {% else %}  
+        <form action="../generate/generate_summary#capital" method="post">
+        {% else %}
         <form action="../school-budget/budget-information2" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-  <h1 class="govuk-heading-l">Update the school's remaining revenue</h1>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">Update the school's remaining capital</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -31,7 +31,7 @@
     </div>
   </details>
   -->
-  <h2 class="govuk-heading-m">Remaining revenue on 31 March </h2>
+  <h2 class="govuk-heading-m">Remaining capital on 31 March </h2>
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -41,9 +41,9 @@
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "revenue-previous-year",
-    name: "revenue-previous-year",
-    value: data["revenue-previous-year"],
+    id: "capital-previous-year",
+    name: "capital-previous-year",
+    value: data["capital-previous-year"],
     prefix: {text:"£"}
   }) }}
 
@@ -53,9 +53,9 @@
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "revenue-current-year",
-    name: "revenue-current-year",
-    value: data["revenue-current-year"],
+    id: "capital-current-year",
+    name: "capital-current-year",
+    value: data["capital-current-year"],
     prefix: {text:"£"}
   }) }}
 
@@ -65,15 +65,16 @@
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "revenue-next-year",
-    name: "revenue-next-year",
-    value: data["revenue-next-year"],
+    id: "capital-next-year",
+    name: "capital-next-year",
+    value: data["capital-next-year"],
     prefix: {text:"£"}
   }) }}
+
   {{ govukTextarea({
-    name: "revenue-reason-for-deficit",
-    id: "rrevenue-eason-for-deficit",
-    value: data["revenue-reason-for-deficit"],
+    name: "reason-for-deficit",
+    id: "reason-for-deficit",
+    value: data["reason-for-deficit"],
     label: {
       text: "If the school has a financial deficit, explain why",
       classes: "govuk-label--s"
@@ -83,7 +84,7 @@
           {{ govukButton({
             text: "Save and continue"
           }) }}
-
+          
         </form>
    
       </div>
@@ -91,25 +92,7 @@
       
    <!-- right hand nav -->    
    <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-    <h2 class="govuk-heading-s" id="subsection-title">
-    Useful information
-    </h2>
-    <nav role="navigation" aria-labelledby="subsection-title">
-    <ul class="govuk-list govuk-!-font-size-16">
-    <li>
-    <a class="govuk-link" href="#">
-  
-    </a>
-    </li>
-    <li>
-      <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
-    </li>
-  
-    </ul>
-    </nav>
-  
-    </aside>
+    {% include "../includes/useful_info_sidebar.html" %}
   </div>
     </div>
     {% endblock %}

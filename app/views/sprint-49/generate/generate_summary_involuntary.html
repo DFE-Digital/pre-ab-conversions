@@ -83,25 +83,7 @@
       <dd class="govuk-summary-list__actions"></dd>
   </div>
 
-  <!--
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-two-thirds"><a name="recommendation"></a>
-          Recommendation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['recomendation']%}
-                {{data['recomendation']}}
-               {% else %} 
-               <span class="empty">Empty</span>
-              {% endif %}
-        </dd>
-          <dd class="govuk-summary-list__actions">
-            
-              <a class="govuk-link" href="../overview/recommendation?returnToSummary=yes">
-                Change<span class="govuk-visually-hidden">recommendation</span>
-                </a>
-          </dd>
-      </div>
+
     
 
       <div class="govuk-summary-list__row">
@@ -116,12 +98,12 @@
               {% endif %}
         </dd>
           <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../overview/aorequired?returnToSummary=yes">
+              <a class="govuk-link" href="../overview/aorequired-involuntary?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">academy order required</span>
                 </a>
               </dd>
       </div>
-    -->
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><a name="routes"></a>
@@ -129,7 +111,7 @@
         </dt>
         <dd class="govuk-summary-list__value">Sponsor, grant only £25000</dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../overview/route?returnToSummary=yes">
+            <a class="govuk-link" href="../overview/route-involuntary?returnToSummary=yes">
               Change<span class="govuk-visually-hidden">route and grant</span>
             </a>
           </dd>   
@@ -183,7 +165,7 @@
               {% endif %}
         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../overview/set-htb?returnToSummary=yes">
+            <a class="govuk-link" href="../overview/set-htb-involuntary?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">headteacher board date</span>
                 </a>
           </dd>
@@ -197,7 +179,7 @@
          {{ data['opening-date']}} 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="../overview/opening?returnToSummary=yes">
+          <a class="govuk-link" href="../overview/opening-involuntary?returnToSummary=yes">
             Change<span class="govuk-visually-hidden">proposed academy opening date</span>
           </a>
         </dd>
@@ -224,7 +206,7 @@
         {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="../overview/previous-htb?returnToSummary=yes">
+          <a class="govuk-link" href="../overview/previous-htb-involuntary?returnToSummary=yes">
             Change<span class="govuk-visually-hidden">headteacher board date</span>
             </a>
         </dd>
@@ -265,7 +247,7 @@
          <span class="empty">Empty</span>
         {% endif %}
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../overview/author?returnToSummary=yes">
+            <a class="govuk-link" href="../overview/author-involuntary?returnToSummary=yes">
               Change<span class="govuk-visually-hidden">recommendation</span>
               </a>
           </dd>
@@ -283,7 +265,7 @@
       {% endif %}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../overview/cleared.html?returnToSummary=yes">
+        <a class="govuk-link" href="../overview/cleared-involuntary.html?returnToSummary=yes">
           Change<span class="govuk-visually-hidden">cleared by</span>
         </a>
       </dd>
@@ -354,7 +336,7 @@
           Published admission number (PAN)
         </dt>
         <dd class="govuk-summary-list__value">210</dd>
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/PAN?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/PAN-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -394,7 +376,7 @@
          {% else %} 
          <span class="empty">Empty</span>
         {% endif %}
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/viability?returnToSummary=yes">Change<span class="govuk-visually-hidden">viability issues</span></a></dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/viability-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">viability issues</span></a></dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -406,7 +388,7 @@
          {% else %} 
          <span class="empty">Empty</span>
         {% endif %}
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/deficit?returnToSummary=yes">Change<span class="govuk-visually-hidden">financial surplus or deficit</span></a> </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/deficit-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">financial surplus or deficit</span></a> </dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -444,7 +426,7 @@
         {% endif %}<br>
         {{data['distance-more-detail']}}
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="../general-info/distance?returnToSummary=yes">
+          <a class="govuk-link" href="../general-info/distance-involuntary?returnToSummary=yes">
             Change<span class="govuk-visually-hidden">distance to trust headquarters</span>
           </a>
         </dd>
@@ -466,7 +448,7 @@
           {% else %} 
           <span class="empty">Empty</span>
         {% endif %}
-        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/local-mp?returnToSummary=yes">
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/local-mp-involuntary?returnToSummary=yes">
           Change<span class="govuk-visually-hidden">MP name</span>
         </a></dd>
       </div>
@@ -480,7 +462,7 @@
          {% else %} 
          <span class="empty">Empty</span>
        {% endif %}
-        <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="../general-info/local-mp?returnToSummary=yes">
+        <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="../general-info/local-mp-involuntary?returnToSummary=yes">
           Change<span class="govuk-visually-hidden">MP political party</span>
         </a></dd>
       </div>
@@ -601,7 +583,7 @@
 <dl>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-   Additional information<a name="ofsted"></a>
+   Additional informationftjutry<a name="ofsted"></a>
       </dt>
       <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
         {% if data['ofsted-more-detail']%}
@@ -610,7 +592,7 @@
        <span class="empty">Empty</span>
       {% endif %}
       </dd>
-      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-performance/ofsted-information?returnToSummary=yes">  Change<span class="govuk-visually-hidden">Ofsted additional information</span></a></dd>
+      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-performance/ofsted-information-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">Ofsted additional information</span></a></dd>
     </div>
   </dl>
   </div>
@@ -645,7 +627,7 @@
               <span class="empty">Empty</span>
               {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../rationale/project-rationale?returnToSummary=yes">
+              <a class="govuk-link" href="../rationale/sponsor-rationale-involuntary?returnToSummary=yes">
                 Change<span class="govuk-visually-hidden">project rationale</span>
               </a>
             </dd>
@@ -685,7 +667,7 @@
           {% endif %}
         </dd>
 
-        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="../risks-and-issues/risks-and-issues?returnToSummary=yes">  Change<span class="govuk-visually-hidden">risks and issues</span>
+        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="../risks-and-issues/risks-and-issues-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">risks and issues</span>
         </a>  
         </dd>
       </div>
@@ -806,7 +788,7 @@
     <a name="revenue"></a>
   <h3 class="govuk-!-margin-bottom-2">Remaining revenue on 31 March</h3>
 </dt>
-<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/revenue?returnToSummary=yes">
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/revenue-involuntary?returnToSummary=yes">
   Change remaining revenue<span class="govuk-visually-hidden">Change data in remaining revenue section</span>
 </a>
 </dd>
@@ -865,7 +847,7 @@ If the school has a deficit, explain why
     <a name="capital"></a>
   <h3 class="govuk-!-margin-bottom-2">Remaining capital on 31 March</h3>
 </dt>
-<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/capital?returnToSummary=yes">
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/capital-involuntary?returnToSummary=yes">
   Change remaining capital<span class="govuk-visually-hidden">Change data in remaining capital section</span>
 </a>
 </dd>
@@ -921,7 +903,7 @@ If the school has a deficit, explain why
     <a name="loans-leases"></a>
   <h3 class="govuk-!-margin-bottom-2">Loans and financial leases</h3>
 </dt>
-<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loans-leases?returnToSummary=yes">
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loans-leases-involuntary?returnToSummary=yes">
   Change loans and leases<span class="govuk-visually-hidden">Change data in loans and leases section</span>
 </a>
 </dd>
@@ -994,7 +976,7 @@ Purpose of the leases
      <span class="empty">Empty</span>
     {% endif %}
     </dd>
-    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information-comments#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information-comments-involuntary#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
   </div>
 
 </section>  
@@ -1057,7 +1039,7 @@ Additional information
    <span class="empty">Empty</span>
   {% endif %}
   </dd>
-  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../pupil-forecasts/school-pupil-forecasts?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../pupil-forecasts/school-pupil-forecasts-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
 </div>
 </dl>
 
@@ -1552,7 +1534,7 @@ Additional information
            <span class="empty">Empty</span>
           {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-performance-tables?returnToSummary=yes">  Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-performance-tables-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
         </div>
         </dl>
         
@@ -2857,7 +2839,7 @@ Additional information
              <span class="empty">Empty</span>
             {% endif %}
             </dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-4-performance-tables?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-4-performance-tables-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
           </div>
           </dl>
           
@@ -3158,7 +3140,7 @@ Additional information
              <span class="empty">Empty</span>
             {% endif %}
             </dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-5-performance-tables?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-5-performance-tables-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
           </div>
           </dl>
           
