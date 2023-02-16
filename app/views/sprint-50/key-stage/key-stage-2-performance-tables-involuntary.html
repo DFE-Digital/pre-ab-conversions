@@ -1,4 +1,3 @@
-
 {% extends "layout.html" %}
 
 {% block beforeContent %}
@@ -15,24 +14,25 @@
       {% if data['returnToSummary'] == 'yes' %}
       <form action="../generate/generate_summary#performance" method="post">
         {% else %}
-        <form action="../task_list" method="post">
+        <form action="key-stage-2-performance-comments-involuntary#additional_info" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-  <h1 class="govuk-heading-l">Key stage 2 performance tables</h1>
+  <h1 class="govuk-heading-l">Key stage 2 performance tables</h1> 
   <p class="govuk-body">This information comes from TRAMS and you can <a href="#additional_info">add additional information</a> if you need to. These performance tables and additional information will go into your project template.</p>
   
   <p class="govuk-body-s">TRAMS last updated on: 23 March 2021<br>
     <a href="https://www.compare-school-performance.service.gov.uk/school/<URN>" class="govuk-link" rel="noreferrer noopener" target="_blank">Source of data: Find and compare school performance (opens in new tab)</a>
   </p>
+
   <div class="govuk-inset-text">
     There is no 2019 to 2020 key stage data because of the pandemic. 2020 to 2021 data is limited.
   </div>
-  </div></div>
 
+  </div></div>
   <div>
     <table class="govuk-table govuk-!-margin-bottom-9">
   
@@ -348,7 +348,7 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
         
-          <th scope="col" class="govuk-table__header">Status</br><strong class="govuk-tag govuk-tag--green">Final</strong></th>
+          <th scope="col" class="govuk-table__header">Status</br><strong class="govuk-tag govuk-tag--green">Finall</strong></th>
         
           <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
         
@@ -490,43 +490,35 @@
           
         
       </tbody>
-    </table></div>
+    </table>
+</div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <a name="additional_info"></a>  <h3 class="govuk-heading-m govuk-!-margin-top-8">Add any additional information if you need to</h3>
-      <p>This information will go into your project template under the key stage performance tables section.</p>
-    </div></div>
-    <div>
-      <br>
-      <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Addtional information</dt>
-              <dd class="govuk-summary-list__value">
-                  {% if data['key-stage-more-detail'] %}
-                      {{data['key-stage-more-detail']}}
-                  {% else %}
-                      <span class="empty">Empty</span>
-                  {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="key-stage-2-performance-tables-involuntary#additional_info">
-                    Change<span class="govuk-visually-hidden">key stage 4 performance additional information</span>
-                  </a>
-              </dd>
-          </div>
-      </dl>
-  </div>
 
-<form action="../task_list" method="post"> 
+
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+<a name="additional_info"></a>
+  {{ govukTextarea({
+    name: "key-stage-more-detail",
+    id: "key-stage-more-detail",
+    value: data["key-stage-more-detail"],
+    label: {
+      text: "Add any additional information if you need to",
+      classes: "govuk-label--m"
+    },
+    hint: {
+      text:"This information will go into your project template under the key stage performance tables section."
+    }
+  }) }}
+
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
   {{ govukButton({
-    text: "Confirm and continue"
+    text: "Save and continue"
   }) }}
-
 </form>
 
 </div>
 </div>
-
 {% endblock %}
