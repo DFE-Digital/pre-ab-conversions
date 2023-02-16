@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#routes" method="post">
+        {% else %}
+        <form action="../overview/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
+<h2 class="govuk-heading-m">Academy type and route</h2>
+      <p class="govuk-body-m gov">Converter (cannot be changed for this private beta)</p>
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its support grant, so you can decrease the amount for this project if you need to. For example, £20,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "routes",
+          name: "routes",
+          prefix: {text:"£"}, 
+          value: data["routes"],
+          label: {
+            text: "Change the conversion support grant if it needs to be less than £25,000",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        <a name="additional_info"></a>{{ govukTextarea({
+          name: "routes-funding",
+          id: "routes-funding",
+          label: {
+            text: "If you changed the amount of the support grant, give a reason why",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+       
+ 
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+  
+      {% include "../includes/useful_info_sidebar.html" %}
+     
+    </div>
+  </div>
+
+
+{% endblock %}

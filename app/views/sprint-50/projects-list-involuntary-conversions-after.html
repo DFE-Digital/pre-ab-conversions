@@ -1,0 +1,630 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project list
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">{{data['userName']}}, {{data['userRole']}}</span>
+      Manage an academy conversion
+    </h1>
+
+    <p class="govuk-body">Use this service to start a new involuntary conversion project or update an existing conversion project.</p>
+
+
+    <a href="#" role="button" draggable="false" class="govuk-button <!--govuk-button--start-->" data-module="govuk-button">
+      Start a new involuntary conversion project
+      <!--
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>--></a>
+
+    </br></br></br></br>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-font-size-27">4033 projects found</h2>
+
+    <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details">
+      <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
+        <span class="govuk-details__summary-text govuk-button govuk-button--secondary prepare-project-listing__button--main">
+          Filter projects
+        </span>
+      </summary>
+      <div class="govuk-details__text prepare-project-listing__filters-details">
+        <form action="projects-list-do-filter-by-regions-results" method="post" class="form">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukInput({
+                label: {
+                  text: "Project title",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                classes: "",
+                hint: {
+                  text: "For example, Bolton Spa Primary"
+                },
+                id: "filter-project-title",
+                name: "filter-project-title",
+                value: data['filter-project-title']
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-regions",
+                name: "filter-regions",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Regions",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "East Midlands",
+                    text: "East Midlands",
+                    checked: checked("filter-regions", "East Midlands")
+                  },
+                  {
+                    value: "East of England",
+                    text: "East of England",
+                    checked: checked("filter-regions", "East of England")
+                  },
+                  {
+                    value: "London",
+                    text: "London",
+                    checked: checked("filter-regions", "London")
+                  },
+                  {
+                    value: "North East",
+                    text: "North East",
+                    checked: checked("filter-regions", "North East")
+                  },
+                  {
+                    value: "North West",
+                    text: "North West",
+                    checked: checked("filter-regions", "North West")
+                  },
+                  {
+                    value: "South East",
+                    text: "South East",
+                    checked: checked("filter-regions", "South East")
+                  },
+                  {
+                    value: "South West",
+                    text: "South West",
+                    checked: checked("filter-regions", "South West")
+                  },
+                  {
+                    value: "West Midlands",
+                    text: "West Midlands",
+                    checked: checked("filter-regions", "West Midlands")
+                  },
+                  {
+                    value: "Yorkshire and the Humber",
+                    text: "Yorkshire and the Humber",
+                    checked: checked("filter-regions", "Yorkshire and the Humber")
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-delivery-officers",
+                name: "filter-delivery-officers",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Delivery officers",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Alex James",
+                    text: "Alex James",
+                    checked: checked("filter-delivery-officers", "Alex James")
+                  },
+                  {
+                    value: "Paul Michaels",
+                    text: "Paul Michaels",
+                    checked: checked("filter-delivery-officers", "Paul Michaels")
+                  },
+                  {
+                    value: "Zara Laney",
+                    text: "Zara Laney",
+                    checked: checked("filter-delivery-officers", "Zara Laney")
+                  },
+                  {
+                    value: "",
+                    text: "Not assigned",
+                    checked: checked("filter-delivery-officers", "")
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-project-status",
+                name: "filter-project-status",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Project status",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Pre advisory board",
+                    text: "Pre advisory board",
+                    checked: checked("filter-project-status", "Pre advisory board")
+                  },
+                  {
+                    value: "Approved",
+                    text: "Approved",
+                    checked: checked("filter-project-status", "Approved")
+                  },
+                  {
+                    value: "Approved with conditions",
+                    text: "Approved with conditions",
+                    checked: checked("filter-project-status", "Approved with conditions")
+                  },
+                  {
+                    value: "Declined",
+                    text: "Declined",
+                    checked: checked("filter-project-status", "Declined")
+                  },
+                  {
+                    value: "Deferred",
+                    text: "Deferred",
+                    checked: checked("filter-project-status", "Deferred")
+                  }
+                ]
+              }) }}
+            </div>
+
+
+
+
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary prepare-project-listing__button--apply" data-module="govuk-button ">
+                  Apply filters
+                </button>
+              
+                <a class="govuk-link" href="projects-list-do-filter-by-regions?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </details>
+
+    <div class="sort-component">
+      <nav class="govuk-body sort-component__nav">
+        <span class="govuk-!-font-weight-bold">Sorted by:</span>
+        <ul class="sort-component__list">
+          <li class="sort-component__list-item">Project created date</li>
+          <!--li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-2"><span class="govuk-visually-hidden">Sort by </span>Project title</a></li-->
+        </ul>
+      </nav>
+    </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Application information
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Project status and dates
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_involuntary_conversions">Cheltenham Spa Primary</a></strong> URN 100006</h2>
+              <p class="govuk-!-margin-top-3">
+              Route: Involuntary conversion</br>
+              Application to join a trust: Gloucestershire Academy Trust</br>
+              Local authority: Gloucestershire</br>
+              Delivery officer: <span class="empty">Empty</span>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Project created date: 8 February 2023</br>
+                Advisory Board date: <span class="empty">Empty</span></br>
+                Opening date: <span class="empty">Empty</span>
+              </p>
+            </td>   
+          </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: Oak Hill Trust</br>
+            Local authority: Bolton</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--orange">Deferred</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 5 January 2021</br>
+              Advisory Board date: 1 June 2021</br>
+              Opening date: 1 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+              <strong><a href="task_list?justRecorded=no&justAssigned=no">St. Wilfrid's Primary School</a></strong> URN 102062
+            </h2>
+
+            <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+            Route: Voluntary conversion</br>
+            Application to join a trust: Dynamics Trust</br>
+            Local authority: Warrington</br>
+            Delivery officer: 
+            {% if (data['delivery-officer-assigned']) %}
+              <strong>{{ data['delivery-officer-assigned'] }}</strong>
+            {% else %}
+              <span class="empty">Empty</span>
+            {% endif %}
+            </p>
+          </td>
+          <td class="govuk-table__cell prepare-text-align-right">  
+            {% if data['htb-date']%}
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>  
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                Opening date:  {{ data['opening-date']}}
+              </p>  
+            {% else %}               
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>    
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">
+                Project created date: 29 January 2021</br>
+                Advisory Board date: 15 April 2021</br>
+                Opening date: 1 September 2021
+              </p>
+            {% endif %}
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Luke's Church of England Primary School</a></strong> URN 145616 </h2>
+            <p class="govuk-!-margin-top-3">
+              Route: Voluntary conversion</br>
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Lambeth</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
+            <p class="govuk-!-margin-top-3">
+              Route: Voluntary conversion</br>
+              Application to form a trust: Oak Hill Trust</br>
+              Local authority: Warrington</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 4 March 2021</br>
+              Advisory Board date: 15 April 2021</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>  
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Thomas of Canterbury Catholic Primary School</a></strong> URN 100357 </h2>
+            <p class="govuk-!-margin-top-3">
+              Route: Voluntary conversion</br>
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Hammersmith and Fulham</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 12 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Lymington Junior School</a></strong> URN 116051</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: THE KITE ACADEMY TRUST </br>
+            Local authority: Hampshire</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 29 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Marys Catholic Academy</a></strong> URN 140114</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: CREATIVE EDUCATION TRUST</br>
+            Local authority: Stoke-on-Trent</br>
+            Delivery officer: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 12 April 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Binstead Primary School</a></strong> URN 118176</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: UNITED LEARNING TRUST </br>
+            Local authority: Isle of Wight</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 12 May 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St James Catholic Primary School</a></strong> URN 141820</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: ACADEMY TRANSFORMATION TRUST</br>
+            Local authority: Birmingham</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Project created date: 12 June 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Bexley</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: AURORA ACADEMIES TRUST</br>
+            Local authority: Brighton and Hove</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 21 September 2021</br>
+              Advisory board date: 7 November 2021</br>
+              Opening date: 30 December 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: THE WHITE HORSE FEDERATIONG</br>
+            Local authority: Isle of Wight</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 10 November 2021</br>
+              Advisory Board date: 7 February 2022</br>
+              Opening date: 10 May 2022
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Wickham Common Primary School</a></strong> URN 142301</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary conversion</br>
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Bromley</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+
+      </tbody>
+    </table>
+
+    <nav class="moj-pagination" id="pagination-label">
+      <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+      <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active">1</li>
+          <li class="moj-pagination__item">
+              <a class="moj-pagination__link" href="#">2</a>
+          </li>
+          <li class="moj-pagination__item  moj-pagination__item--next">
+              <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+      </ul>
+      <p class="moj-pagination__results"></p>
+    </nav>
+
+  </div>
+</div>
+{% endblock %}
