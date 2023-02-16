@@ -1,0 +1,3190 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list_involuntary_conversions" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+          
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-xl">Preview project template</h1>
+    </div></div>  
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-width">
+{% if data['htb-date']%}
+ 
+   {% else %} 
+        <div class="govuk-grid-column-full">
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a class="govuk-link" href="../overview/set-htb?returnToSummary=yes">Set an Advisory Board date before you generate your project template</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+{% endif %}
+    </div>    
+    </section> 
+  
+
+  <h2 class="govuk-heading-m">
+ Conversion details
+   </h2> 
+<section class="app-summary-card govuk-!-margin-bottom-6">
+   
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School and trust information and project date details
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+      School name
+    </dt>
+    <dd class="govuk-summary-list__value">Cheltenham Spa Primary School</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Unique reference number (URN)
+    </dt>
+    <dd class="govuk-summary-list__value">100006</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Trust name
+    </dt>
+    <dd class="govuk-summary-list__value">Gloucestershire Trust</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Trust reference number
+    </dt>
+    <dd class="govuk-summary-list__value">TR01318</dd>
+      <dd class="govuk-summary-list__actions"></dd>
+  </div>
+
+
+    
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="aorequired"></a>
+         Is an academy order (AO) required?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['aorequired']%}
+                {{data['aorequired']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../overview/aorequired-involuntary?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">academy order required</span>
+                </a>
+              </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="routes"></a>
+          Academy type and route
+        </dt>
+        <dd class="govuk-summary-list__value">Sponsor, grant only £25000</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/route-involuntary?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">route and grant</span>
+            </a>
+          </dd>   
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="routes"></a>
+          Has the Schools Notification Mailbox (SNM) received a Form 7
+        </dt>
+        <dd class="govuk-summary-list__value">Yes</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/set-form-7">
+              Change<span class="govuk-visually-hidden">SNM received a Form 7</span>
+            </a>
+          </dd>   
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="routes"></a>
+          Date SNM received Form 7
+        </dt>
+        <dd class="govuk-summary-list__value">01 February 2023</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/set-form-7-date?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">date SNM received a Form 7</span>
+            </a>
+          </dd>   
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="routes"></a>
+          Date directive academy order (DAO) pack sent
+        </dt>
+        <dd class="govuk-summary-list__value">9 February 2023</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/set-dao-date?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">date DAO pack sent</span>
+            </a>
+          </dd>   
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="htbdate"></a>
+          Date of Advisory Board
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['htb-date']%}
+                {{data['htb-date']}}
+               {% else %} 
+               <span class="empty">Empty</span>
+              {% endif %}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/set-htb-involuntary?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">headteacher board date</span>
+                </a>
+          </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="opening"></a>
+         Proposed academy opening date
+        </dt>
+        <dd class="govuk-summary-list__value">
+         {{ data['opening-date']}} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../overview/opening-involuntary?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous Advisory Board
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['Conditions2']%}
+          {{data['Conditions2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+
+          {{ data['']}} </br>
+          {% if data['previousHTB-date-day'] and data['previousHTB-date-month'] and data['previousHTB-date-year']%}
+          <span>{{ data['previousHTB-date-day'] }} </span>
+          <span>{{ data['previousHTB-date-month'] }} </span>
+          <span>{{ data['previousHTB-date-year'] }}</span>
+          {% else %} 
+   
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../overview/previous-htb-involuntary?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden">headteacher board date</span>
+            </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Local authority
+        </dt>
+        <dd class="govuk-summary-list__value">Gloucestershire</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sponsor name
+        </dt>
+        <dd class="govuk-summary-list__value">Diocese of Gloucestershire</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sponsor reference number
+        </dt>
+        <dd class="govuk-summary-list__value">SP00170</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="author"></a>
+          Author
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['author']%}
+          {{data['author']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../overview/author-involuntary?returnToSummary=yes">
+              Change<span class="govuk-visually-hidden">recommendation</span>
+              </a>
+          </dd>
+        </div>
+        
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key"><a name="clearedby"></a>
+       Cleared by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['cleared']%}
+        {{data['cleared']}}
+        {% else %} 
+        <span class="empty">Empty</span>
+      {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../overview/cleared-involuntary.html?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">cleared by</span>
+        </a>
+      </dd>
+    </div>    
+</dl>
+  </div>
+</section>    
+
+<!-- start here-->
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     General information details
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+     School type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Voluntary aided school
+    </dd> 
+      <dd class="govuk-summary-list__actions">
+      </dd>
+  </div>
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          School phase
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Primary
+        </dd>
+          <dd class="govuk-summary-list__actions">
+ </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Age range
+        </dt>
+        <dd class="govuk-summary-list__value">
+         3 to 11
+        </dd>
+          <dd class="govuk-summary-list__actions">  
+          </dd>
+      </div>
+ 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Capacity
+        </dt>
+        <dd class="govuk-summary-list__value">236</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="PAN"></a>
+          Published admission number (PAN)
+        </dt>
+        <dd class="govuk-summary-list__value">210</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/PAN-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">published admission numbers</span></a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+       Number on roll (NOR)
+        </dt>
+        <dd class="govuk-summary-list__value">
+        226
+        </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+      </div>
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Percentage the school is full
+        </dt>
+        <dd class="govuk-summary-list__value">80%</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Percentage of free school meals at the school (%FSM)
+        </dt>
+        <dd class="govuk-summary-list__value">23.8%</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Viability issues
+        </dt>
+        <dd class="govuk-summary-list__value"><a name="viability"></a>
+          {% if data['viability']%}
+          {{data['viability']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/viability-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">viability issues</span></a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="deficit"></a>
+         Financial deficit
+        </dt>
+        <dd class="govuk-summary-list__value">  {% if data['deficit']%}
+          {{data['deficit']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/deficit-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">financial surplus or deficit</span></a> </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Part of private finance initiative (PFI) scheme
+        </dt>
+        <dd class="govuk-summary-list__value">No</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="diocsean"></a>
+          Is the school linked to a diocese?
+        </dt>
+        <dd class="govuk-summary-list__value">Yes, Diocese of Gloucestershire</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+      </div>
+     <!--<div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="goodschools"></a>
+        Percentage of good or outstanding schools in the diocesan trust
+        </dt>
+        <dd class="govuk-summary-list__value"> 80%
+  
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/general-info/goodschools?returnToSummary=yes">Change<span class="govuk-visually-hidden">percentage of good or outstanding schools</span></a></dd>
+      </div> --> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><a name="distance"></a>
+      Distance from the converting school to the trust, or other schools in the trust
+        </dt>
+        <dd class="govuk-summary-list__value">  {% if data['distance']%}
+          {{data['distance']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+        {% endif %}<br>
+        {{data['distance-more-detail']}}
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../general-info/distance-involuntary?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden">distance to trust headquarters</span>
+          </a>
+        </dd>
+      </div><a name="local-mp"></a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Parlimentary consituency
+        </dt>
+        <dd class="govuk-summary-list__value"> Cheltenham
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        MP name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['local-mp']%}
+          {{data['local-mp']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../general-info/local-mp-involuntary?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">MP name</span>
+        </a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        MP political party
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          {% if data['party']%}
+          {{data['party']}}
+         {% else %} 
+         <span class="empty">Empty</span>
+       {% endif %}
+        <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="../general-info/local-mp-involuntary?returnToSummary=yes">
+          Change<span class="govuk-visually-hidden">MP political party</span>
+        </a></dd>
+      </div>
+</dl>
+  </div>
+</section>  
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School performance (Ofsted information) details
+    </h2><a name="ofsted"></a>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+
+    <div class="govuk-grid-column-full-width">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+              <span class="govuk-body-l">Short inspection</span>
+            </dt>
+            <dd class="govuk-summary-list__value"></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ofsted inspection date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 February 2020
+            </dd>      
+          </div>
+              <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>      
+          </div>
+  </div>
+
+
+
+  <div class="govuk-grid-column-full-width">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          <span class="govuk-body-l">Last full inspection <b>Good</b></span>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+      </div>
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-width-two-thirds">
+          Ofsted inspection date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 February 2017
+        </dd>     
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Effectiveness of leadership and management
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Good</p>
+        </dd>    
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Quality of teaching, learning and assessment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Good</p>
+        </dd> 
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Personal development, behaviour and welfare
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Outstanding</p>
+        </dd>
+     
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Outcomes for pupils
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Good</p>
+        </dd>
+      
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Early years provision
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Good</p>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+        </dd>
+      </div>
+      
+</dl>
+</div>
+<dl>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+   Additional informationftjutry<a name="ofsted"></a>
+      </dt>
+      <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
+        {% if data['ofsted-more-detail']%}
+        {{data['ofsted-more-detail']}}
+       {% else %} 
+       <span class="empty">Empty</span>
+      {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-performance/ofsted-information-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">Ofsted additional information</span></a></dd>
+    </div>
+  </dl>
+  </div>
+</section>  
+
+</section> 
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+      <a name="rationale"></a>
+     Rationale details
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+    <dl class="govuk-summary-list">
+      
+        
+          <div class="govuk-summary-list__row">
+
+            <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+              Rationale for the trust or sponsor
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-full">
+              {% if data['project-rationale']%}
+              {{data['project-rationale'] | safe}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../rationale/sponsor-rationale-involuntary?returnToSummary=yes">
+                Change<span class="govuk-visually-hidden">project rationale</span>
+              </a>
+            </dd>
+          </div>
+        
+         
+      
+</dl>
+</div>
+
+      
+</section> 
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     Risks and issues details
+    </h2> <a name="risks"></a>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Risks and issues
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          {% if data['risks']%}
+          {{data['risks'] | safe  }} 
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+
+        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="../risks-and-issues/risks-and-issues-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">risks and issues</span>
+        </a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Has an Equalities Impact Assessment been considered?
+        </dt>
+        <dd class="govuk-summary-list__value"> 
+          The equalities duty has been considered and the Secretary of State’s decision is unlikely to affect disproportionately any particular person or group who share protected characteristics
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section> 
+
+<!--
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     Legal requirements details
+    </h2> <a name="legal-requirements"></a>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Governing body resolution
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-governing-body-checked']%}
+            {{data['legal-governing-body-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">    <a class="govuk-link" href="../legal-requirements/legal-governing-body?returnToSummary=yes">  Change<span class="govuk-visually-hidden">governing body resolution</span>
+        </a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consultation
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-consultation-checked']%}
+            {{data['legal-consultation-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-consultation?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> consultation</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Diocesan consent
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-diocesan-consent-checked']%}
+            {{data['legal-diocesan-consent-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-diocesan-consent?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> diocesan consent</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Foundation consent
+        </dt>
+        <dd class="govuk-summary-list__value">             
+          {% if data['legal-foundation-consent-checked']%}
+            {{data['legal-foundation-consent-checked']}}
+          {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../legal-requirements/legal-foundation-consent?returnToSummary=yes">
+            Change<span class="govuk-visually-hidden"> foundation consent</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section> 
+-->
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School budget information details
+    </h2> <a name="budget"></a>
+  </header>
+
+  <div class="app-summary-card__body">
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    <a name="revenue"></a>
+  <h3 class="govuk-!-margin-bottom-2">Remaining revenue on 31 March</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/revenue-involuntary?returnToSummary=yes">
+  Change remaining revenue<span class="govuk-visually-hidden">Change data in remaining revenue section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Previous financial year
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £{{ data['revenue-previous-year'] }} </dd>
+
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Current financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['revenue-current-year'] }}
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+ Next financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['revenue-next-year'] }}
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+If the school has a deficit, explain why
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['revenue-reason-for-deficit']%}
+    {{data['revenue-reason-for-deficit']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+    <a name="capital"></a>
+  <h3 class="govuk-!-margin-bottom-2">Remaining capital on 31 March</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/capital-involuntary?returnToSummary=yes">
+  Change remaining capital<span class="govuk-visually-hidden">Change data in remaining capital section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Previous financial year
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £{{ data['capital-previous-year'] }} </dd>
+
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Current financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['capital-current-year'] }}
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+ Next financial year (forecasted)
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['capital-next-year'] }}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+If the school has a deficit, explain why
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['reason-for-deficit']%}
+    {{data['reason-for-deficit']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+    <a name="loans-leases"></a>
+  <h3 class="govuk-!-margin-bottom-2">Loans and financial leases</h3>
+</dt>
+<dd class="govuk-summary-list__actions"><a class="govuk-link" href="../school-budget/loans-leases-involuntary?returnToSummary=yes">
+  Change loans and leases<span class="govuk-visually-hidden">Change data in loans and leases section</span>
+</a>
+</dd>
+</div>
+</dl>
+<dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Total loan amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £{{ data['total-loan-amounts'] }} </dd>
+
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Purpose of loan
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['purpose-of-loans'] }}
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Total annual lease repayment amount
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £{{ data['total-lease-repayments'] }}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Purpose of the leases
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['purpose-of-leases']%}
+    {{data['purpose-of-leases']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Has the ESFA approved the loans and leases?
+  </dt>
+  <dd class="govuk-summary-list__value">        {% if data['esfa-approved'] %}
+    {{data['esfa-approved']}}
+{% else %}
+    <span class="empty">Empty</span>
+{% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  </dt>
+  <dd class="govuk-summary-list__value">
+  </dd>
+</div>
+</dl>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      <a name="loans-additional-info"></a>
+  <span class=" govuk-!-margin-top-8">Additional information</span>
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-two-thirds">
+      {% if data['budget-more-detail']%}
+      {{data['budget-more-detail']}}
+     {% else %} 
+     <span class="empty">Empty</span>
+    {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions govuk-!-width-one-third"><a class="govuk-link" href="../school-budget/budget-information-comments-involuntary#additional_info?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+  </div>
+
+</section>  
+<a name="forecasts"></a>
+
+
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     School pupil forecast details
+    </h2> <a name="pupil"></a>
+  </header>
+  <div class="app-summary-card__body">
+
+  
+<dl class="govuk-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Year</dt>
+        <dt class="govuk-summary-list__key govuk-table__header--numeric">Capacity </dt>
+        <dt class="govuk-summary-list__key govuk-table__header--numeric">Total pupil numbers</dt>
+        <dt class="govuk-summary-list__key govuk-table__header--numeric">Percentage full</dt> </div>
+             
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">2022</dt>
+        <dd class="govuk-summary-list__value govuk-table__cell--numeric">236</dd>
+        <dd class="govuk-summary-list__value govuk-table__cell--numeric">226</dd>
+        <dd class="govuk-summary-list__value govuk-table__cell--numeric">96%</dd> </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Projected pupil numbers on roll in the year the academy opens (year 1)</dt>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric"></dd>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+          <dd class="govuk-summary-list__value govuk-table__cell--numeric"></dd> </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Projected pupil numbers on roll in the year the academy opens (year 2)</dt>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric"></dd>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+            <dd class="govuk-summary-list__value govuk-table__cell--numeric "></dd> </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Projected pupil numbers on roll in the year the academy opens (year 3)</dt>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric"></dd>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric">189</dd>
+              <dd class="govuk-summary-list__value govuk-table__cell--numeric"></dd> </div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Additional information
+  </dt>
+ 
+  <dd class="govuk-summary-list__value">
+    {% if data['pupil-more-detail']%}
+    {{data['pupil-more-detail']}}
+   {% else %} 
+   <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../pupil-forecasts/school-pupil-forecasts-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">pupil forecasts additional information</span></a></dd>
+</div>
+</dl>
+
+</section> 
+ <a name="ofsted"></a>
+<section class="app-summary-card govuk-!-margin-bottom-6">
+  
+  <header class="app-summary-card__header">
+    
+    <h2 class="app-summary-card__title">
+     Key stage 2 performance table details
+    </h2>
+  </header>
+  <div class="app-summary-card__body">
+
+<dl class="govuk-summary-list">
+  
+  <table class="govuk-table govuk-!-margin-bottom-9">
+  
+    <caption class="govuk-table__caption govuk-table__caption--m">2019 key stage 2</caption>
+    
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      
+        <th scope="col" class="govuk-table__header"></th>
+      
+        <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Reading progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Writing progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Maths progress scores</th>
+      
+      </tr>
+    </thead>
+    
+    <tbody class="govuk-table__body">
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Cheltenham Spa Primary School</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Gloucestershire LA average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >63</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >9</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.2</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-0.8</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-0.3</td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >National average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >65 <br> (disadvantaged 51)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >11 <br> (disadvantaged 5)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+          </tr>
+        
+      
+    </tbody>
+  </table>
+  
+  
+              <table class="govuk-table govuk-!-margin-bottom-9">
+    
+    <caption class="govuk-table__caption govuk-table__caption--m">2018 key stage 2</caption>
+    
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      
+        <th scope="col" class="govuk-table__header"></th>
+      
+        <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Reading progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Writing progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Maths progress scores</th>
+      
+      </tr>
+    </thead>
+    
+    <tbody class="govuk-table__body">
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Cheltenham Spa Primary School</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >Suppressed </td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Gloucestershire LA average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >61</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >10</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.1</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-0.9</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-0.5</td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >National average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >64 <br> (disadvantaged 51)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >10 <br> (disadvantaged 4)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+          </tr>
+        
+      
+    </tbody>
+  </table>
+  
+  
+              <table class="govuk-table govuk-!-margin-bottom-9">
+    
+    <caption class="govuk-table__caption govuk-table__caption--m">2017 key stage 2</caption>
+    
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      
+        <th scope="col" class="govuk-table__header"></th>
+      
+        <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+      
+        <th scope="col" class="govuk-table__header">Reading progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Writing progress scores</th>
+      
+        <th scope="col" class="govuk-table__header">Maths progress scores</th>
+      
+      </tr>
+    </thead>
+    
+    <tbody class="govuk-table__body">
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Cheltenham Spa Primary School</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >()</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >()</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >()</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >()</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >()</td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >Gloucestershire LA average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >59</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >8</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.2</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-1.2</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >-0.9</td>
+            
+          
+          </tr>
+        
+      
+        
+          <tr class="govuk-table__row">
+          
+            
+            
+            <th scope="row" class="govuk-table__header"
+            >National average</th>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >64 <br> (disadvantaged 51)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >10 <br> (disadvantaged 4)</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+            
+            
+            <td class="govuk-table__cell"
+            >0.00</td>
+            
+          
+          </tr>
+        
+      
+    </tbody>
+  </table>
+
+
+
+<a name="performance"></a>    
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional information</dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['key-stage-more-detail']%}
+            {{data['key-stage-more-detail']}}
+           {% else %} 
+           <span class="empty">Empty</span>
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-performance-tables-involuntary?returnToSummary=yes">  Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+        </div>
+        </dl>
+        
+        </section> 
+     <!--      <h2 class="govuk-heading-s">
+          Supporting documents
+           </h2>
+<section class="app-summary-card govuk-!-margin-bottom-6">
+ 
+    <header class="app-summary-card__header">
+      
+      <h2 class="app-summary-card__title">
+       Supporting documents details
+      </h2>
+    </header>
+    <div class="app-summary-card__body">
+  
+    
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">File 1</dt>
+          <dd class="govuk-summary-list__value">Ofsted_interim-report.docx</dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2?returnToSummary=yes">Change<span class="govuk-visually-hidden">file 1</span></a> </dd>
+     
+        </div>
+               
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">File 2</dt>
+          <dd class="govuk-summary-list__value">google-map.jpg</dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="/upload-docs/upload-docs2?returnToSummary=yes">Change<span class="govuk-visually-hidden">file 2</span></a> </dd>        </div>
+  </dl>
+    </div>
+  </section> -->
+  
+   <a name="peformance4"></a>
+     </h2> <a name="ofsted"></a>
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+      
+      <header class="app-summary-card__header">
+        
+        <h2 class="app-summary-card__title">
+         Key stage 4 performance table details
+        </h2>
+      </header>
+      <div class="app-summary-card__body">
+    
+    <dl class="govuk-summary-list">
+
+  <table class="govuk-table govuk-!-margin-bottom-9">
+
+    <caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 scores</caption>
+    <h2 class="govuk-heading-l">
+      Attainment 8
+  </h2> 
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.1 <br> (disadvantaged 47.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >54.7 <br> (disadvantaged 49.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >46.2</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >46.50 <br> (disadvantaged 36.70)</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+          
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+          
+          <caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 English</caption>
+          
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.1 <br> (disadvantaged 47.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >54.7 <br> (disadvantaged 49.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >9.7</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >9.90 <br> (disadvantaged 8.10)</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+          
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+          
+          <caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 Maths</caption>
+          
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.1 <br> (disadvantaged 47.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >54.7 <br> (disadvantaged 49.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >8.8</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >9.00 <br> (disadvantaged 7.00)</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+          
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+          
+          <caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 EBacc</caption>
+          
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.1 <br> (disadvantaged 47.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >54.7 <br> (disadvantaged 49.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >13</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >13.40 <br> (disadvantaged 10.10)</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+
+          
+                  <h2 class="govuk-heading-l">
+                      Progress 8
+                  </h2>
+          
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+          
+          <caption class="govuk-table__caption govuk-table__caption--m">Pupils included in P8</caption>
+          
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >191 <br> (disadvantaged 54)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >182 <br> (disadvantaged 43)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >219 <br> (disadvantaged 48)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >1,851</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >49,4832</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+          
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+          
+          <caption class="govuk-table__caption govuk-table__caption--m">School progress scores</caption>
+          
+          
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">2016</th>
+          
+            <th scope="col" class="govuk-table__header">2017</th>
+          
+            <th scope="col" class="govuk-table__header">2018</th>
+          
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.23 <br> (disadvantaged 0.02)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.62 <br> (disadvantaged 0.55)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.34 <br> (disadvantaged 0.25)</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >School confidence interval</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.08	to 0.38</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.44	to 0.8</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.17	to 0.5</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >1,851</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Gloucestershire LA confidence interval</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >-0.3	to -0.19</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >49,4832</td>
+                
+              
+              </tr>
+            
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average confidence interval</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >0.00</td>
+                
+              
+              </tr>
+            
+          
+          </tbody>
+          </table>
+
+          <table class="govuk-table govuk-!-margin-bottom-9">
+          
+            <caption class="govuk-table__caption govuk-table__caption--m">Progress 8 English</caption>
+            
+            
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            
+              <th scope="col" class="govuk-table__header"></th>
+            
+              <th scope="col" class="govuk-table__header">2016</th>
+            
+              <th scope="col" class="govuk-table__header">2017</th>
+            
+              <th scope="col" class="govuk-table__header">2018</th>
+            
+            </tr>
+            </thead>
+            
+            <tbody class="govuk-table__body">
+            
+              
+                <tr class="govuk-table__row">
+                
+                  
+                  
+                  <th scope="row" class="govuk-table__header"
+                  >Cheltenham Spa Primary School</th>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >53.1 <br> (disadvantaged 47.6)</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >54.7 <br> (disadvantaged 49.6)</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >53.8 <br> (disadvantaged 48.6)</td>
+                  
+                
+                </tr>
+              
+            
+              
+                <tr class="govuk-table__row">
+                
+                  
+                  
+                  <th scope="row" class="govuk-table__header"
+                  >Gloucestershire LA average</th>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >no data</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >no data</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >13</td>
+                  
+                
+                </tr>
+              
+            
+              
+                <tr class="govuk-table__row">
+                
+                  
+                  
+                  <th scope="row" class="govuk-table__header"
+                  >National average</th>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >no data</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >no data</td>
+                  
+                
+                  
+                  
+                  <td class="govuk-table__cell"
+                  >13.40 <br> (disadvantaged 10.10)</td>
+                  
+                
+                </tr>
+              
+            
+            </tbody>
+            </table>
+            
+            <table class="govuk-table govuk-!-margin-bottom-9">
+          
+              <caption class="govuk-table__caption govuk-table__caption--m">Progress 8 Maths</caption>
+              
+              
+              <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              
+                <th scope="col" class="govuk-table__header"></th>
+              
+                <th scope="col" class="govuk-table__header">2016</th>
+              
+                <th scope="col" class="govuk-table__header">2017</th>
+              
+                <th scope="col" class="govuk-table__header">2018</th>
+              
+              </tr>
+              </thead>
+              
+              <tbody class="govuk-table__body">
+              
+                
+                  <tr class="govuk-table__row">
+                  
+                    
+                    
+                    <th scope="row" class="govuk-table__header"
+                    >Cheltenham Spa Primary School</th>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >53.1 <br> (disadvantaged 47.6)</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >54.7 <br> (disadvantaged 49.6)</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >53.8 <br> (disadvantaged 48.6)</td>
+                    
+                  
+                  </tr>
+                
+              
+                
+                  <tr class="govuk-table__row">
+                  
+                    
+                    
+                    <th scope="row" class="govuk-table__header"
+                    >Gloucestershire LA average</th>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >no data</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >no data</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >13</td>
+                    
+                  
+                  </tr>
+                
+              
+                
+                  <tr class="govuk-table__row">
+                  
+                    
+                    
+                    <th scope="row" class="govuk-table__header"
+                    >National average</th>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >no data</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >no data</td>
+                    
+                  
+                    
+                    
+                    <td class="govuk-table__cell"
+                    >13.40 <br> (disadvantaged 10.10)</td>
+                    
+                  
+                  </tr>
+                
+              
+              </tbody>
+              </table>
+              
+              <table class="govuk-table govuk-!-margin-bottom-9">
+          
+                <caption class="govuk-table__caption govuk-table__caption--m">Progress 8 EBacc</caption>
+                
+                
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                
+                  <th scope="col" class="govuk-table__header"></th>
+                
+                  <th scope="col" class="govuk-table__header">2016</th>
+                
+                  <th scope="col" class="govuk-table__header">2017</th>
+                
+                  <th scope="col" class="govuk-table__header">2018</th>
+                
+                </tr>
+                </thead>
+                
+                <tbody class="govuk-table__body">
+                
+                  
+                    <tr class="govuk-table__row">
+                    
+                      
+                      
+                      <th scope="row" class="govuk-table__header"
+                      >Cheltenham Spa Primary School</th>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >53.1 <br> (disadvantaged 47.6)</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >54.7 <br> (disadvantaged 49.6)</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >53.8 <br> (disadvantaged 48.6)</td>
+                      
+                    
+                    </tr>
+                  
+                
+                  
+                    <tr class="govuk-table__row">
+                    
+                      
+                      
+                      <th scope="row" class="govuk-table__header"
+                      >Gloucestershire LA average</th>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >no data</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >no data</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >13</td>
+                      
+                    
+                    </tr>
+                  
+                
+                  
+                    <tr class="govuk-table__row">
+                    
+                      
+                      
+                      <th scope="row" class="govuk-table__header"
+                      >National average</th>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >no data</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >no data</td>
+                      
+                    
+                      
+                      
+                      <td class="govuk-table__cell"
+                      >13.40 <br> (disadvantaged 10.10)</td>
+                      
+                    
+                    </tr>
+                  
+                
+                </tbody>
+                </table>
+                
+                <table class="govuk-table govuk-!-margin-bottom-9">
+          
+                  <caption class="govuk-table__caption govuk-table__caption--m">Percentage of students entering EBacc</caption>
+                  
+                  
+                  <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                  
+                    <th scope="col" class="govuk-table__header"></th>
+                  
+                    <th scope="col" class="govuk-table__header">2016</th>
+                  
+                    <th scope="col" class="govuk-table__header">2017</th>
+                  
+                    <th scope="col" class="govuk-table__header">2018</th>
+                  
+                  </tr>
+                  </thead>
+                  
+                  <tbody class="govuk-table__body">
+                  
+                    
+                      <tr class="govuk-table__row">
+                      
+                        
+                        
+                        <th scope="row" class="govuk-table__header"
+                        >Cheltenham Spa Primary School</th>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >53.1 <br> (disadvantaged 47.6)</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >54.7 <br> (disadvantaged 49.6)</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >53.8 <br> (disadvantaged 48.6)</td>
+                        
+                      
+                      </tr>
+                    
+                  
+                    
+                      <tr class="govuk-table__row">
+                      
+                        
+                        
+                        <th scope="row" class="govuk-table__header"
+                        >Gloucestershire LA average</th>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >13</td>
+                        
+                      
+                      </tr>
+                    
+                  
+                    
+                      <tr class="govuk-table__row">
+                      
+                        
+                        
+                        <th scope="row" class="govuk-table__header"
+                        >National average</th>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >13.40 <br> (disadvantaged 10.10)</td>
+                        
+                      
+                      </tr>
+                    
+                  
+                  </tbody>
+                  </table>
+                  
+
+          <a name="performance4"></a>  
+          <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Additional information</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['key-stage-more-detail']%}
+              {{data['key-stage-more-detail']}}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-4-performance-tables-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+          </div>
+          </dl>
+          
+          </section> 
+
+ <a name="peformance4"></a> <a name="ofsted"></a>
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+      
+      <header class="app-summary-card__header">
+        
+        <h2 class="app-summary-card__title">
+         Key stage 5 performance table details
+        </h2>
+      </header>
+      <div class="app-summary-card__body">
+    
+    <dl class="govuk-summary-list">
+
+  <table class="govuk-table govuk-!-margin-bottom-9">
+<br>
+<caption class="govuk-table__caption govuk-table__caption--s">Local authority: Gloucestershire</caption>
+<h2 class="govuk-heading-m">
+  2016 scores for academic and applied general qualifications
+</h2> 
+          <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header"></th>
+          
+            <th scope="col" class="govuk-table__header">Academic progress</th>
+          
+            <th scope="col" class="govuk-table__header">Academic average</th>
+          
+            <th scope="col" class="govuk-table__header">Applied general progress</th>
+          
+            <th scope="col" class="govuk-table__header">Applied general average</th>
+          </tr>
+          </thead>
+          
+          <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >Cheltenham Spa Primary School</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.1 <br> (disadvantaged 47.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >54.7 <br> (disadvantaged 49.6)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+                
+                <td class="govuk-table__cell"
+                >53.8 <br> (disadvantaged 48.6)</td>
+              
+              </tr>
+            
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"
+                >National average</th>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >no data</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell"
+                >46.50 <br> (disadvantaged 36.70)</td>
+                
+
+                <td class="govuk-table__cell"
+                >46.50 <br> (disadvantaged 36.70)</td>
+
+              </tr>
+            
+          
+          </tbody>
+          </table>
+          
+          
+          <table class="govuk-table govuk-!-margin-bottom-9">
+            <br>
+            <caption class="govuk-table__caption govuk-table__caption--s">Local authority: Gloucestershire</caption>
+            <h2 class="govuk-heading-m">
+              2017 scores for academic and applied general qualifications
+            </h2> 
+                  <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                  
+                    <th scope="col" class="govuk-table__header"></th>
+                  
+                    <th scope="col" class="govuk-table__header">Academic progress</th>
+                  
+                    <th scope="col" class="govuk-table__header">Academic average</th>
+                  
+                    <th scope="col" class="govuk-table__header">Applied general progress</th>
+                  
+                    <th scope="col" class="govuk-table__header">Applied general average</th>
+                  </tr>
+                  </thead>
+                  
+                  <tbody class="govuk-table__body">
+                  
+                    
+                      <tr class="govuk-table__row">
+                      
+                        
+                        
+                        <th scope="row" class="govuk-table__header"
+                        >Cheltenham Spa Primary School</th>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >53.1 <br> (disadvantaged 47.6)</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >54.7 <br> (disadvantaged 49.6)</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >53.8 <br> (disadvantaged 48.6)</td>
+                        
+                        <td class="govuk-table__cell"
+                        >53.8 <br> (disadvantaged 48.6)</td>
+                      
+                      </tr>
+                    
+        
+                      <tr class="govuk-table__row">
+                      
+                        
+                        
+                        <th scope="row" class="govuk-table__header"
+                        >National average</th>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >no data</td>
+                        
+                      
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >46.50 <br> (disadvantaged 36.70)</td>
+                        
+                        
+                        <td class="govuk-table__cell"
+                        >46.50 <br> (disadvantaged 36.70)</td>
+        
+                      </tr>
+                    
+                  
+                  </tbody>
+                  </table>
+
+                  <table class="govuk-table govuk-!-margin-bottom-9">
+                    <br>
+                    <caption class="govuk-table__caption govuk-table__caption--s">Local authority: Gloucestershire</caption>
+                    <h2 class="govuk-heading-m">
+                      2018 scores for academic and applied general qualifications
+                    </h2> 
+                          <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                          
+                            <th scope="col" class="govuk-table__header"></th>
+                          
+                            <th scope="col" class="govuk-table__header">Academic progress</th>
+                          
+                            <th scope="col" class="govuk-table__header">Academic average</th>
+                          
+                            <th scope="col" class="govuk-table__header">Applied general progress</th>
+                          
+                            <th scope="col" class="govuk-table__header">Applied general average</th>
+                          </tr>
+                          </thead>
+                          
+                          <tbody class="govuk-table__body">
+                          
+                            
+                              <tr class="govuk-table__row">
+                              
+                                
+                                
+                                <th scope="row" class="govuk-table__header"
+                                >Cheltenham Spa Primary School</th>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >53.1 <br> (disadvantaged 47.6)</td>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >54.7 <br> (disadvantaged 49.6)</td>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >53.8 <br> (disadvantaged 48.6)</td>
+                                
+                                <td class="govuk-table__cell"
+                                >53.8 <br> (disadvantaged 48.6)</td>
+                              
+                              </tr>
+                            
+                
+                              <tr class="govuk-table__row">
+                              
+                                
+                                
+                                <th scope="row" class="govuk-table__header"
+                                >National average</th>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >no data</td>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >no data</td>
+                                
+                              
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >46.50 <br> (disadvantaged 36.70)</td>
+                                
+                                
+                                <td class="govuk-table__cell"
+                                >46.50 <br> (disadvantaged 36.70)</td>
+                
+                              </tr>
+                            
+                          
+                          </tbody>
+                          </table> 
+
+          <a name="performance4"></a>
+          <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Additional information</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['key-stage-more-detail']%}
+              {{data['key-stage-more-detail']}}
+             {% else %} 
+             <span class="empty">Empty</span>
+            {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="../key-stage/key-stage-5-performance-tables-involuntary?returnToSummary=yes">Change<span class="govuk-visually-hidden">key stage performance additional information</span></a></dd>
+          </div>
+          </dl>
+          
+          </section> 
+
+          
+
+  
+
+
+
+   
+
+
+
+
+
+
+
+<!-- missing information style
+<div class="app-banner app-banner--missing-section">
+  <div class="app-banner__message">
+    
+  <p class="govuk-body" id="missing-degree-details">Risks and issue section is not marked as complete</p>
+  <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
+</div>
+</div> 
+<h2 class="govuk-heading-s">
+Trust template
+ </h2>
+<div class="app-banner app-banner--missing-section">
+  <div class="app-banner__message">
+    
+  <p class="govuk-body" id="missing-degree-details">Trust template section is not marked as complete</p>
+  <a class="govuk-link" aria-describedby="missing-degree-details" href="#">Complete section</a>
+</div>
+</div> -->
+
+          
+
+<h2 class="govuk-heading-l">Generate project template</h2>
+      <p> Generate the project template into a Word document and download it.</p>
+      <div class="govuk-button-group"> <button class="govuk-button" data-module="govuk-button"> Generate project template </button> <p class="govuk-body"> <a href="../index" class="govuk-link govuk-link--no-visited-state"> Save and return to this project later </a> </p> </div>
+  </div>
+</div>
+ 
+{% endblock %}
