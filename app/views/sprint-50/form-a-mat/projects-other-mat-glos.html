@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cheltenham Spa Primary School - task list
+  Gloucester Primary School - other schools in this MAT
 {% endblock %}
 
 {% block beforeContent %}
@@ -41,7 +41,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 101573</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 101573</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
       Gloucester Primary School 
     </h1>
@@ -57,6 +57,7 @@
     </p>
   </div>
 
+  <!--
   <div class="govuk-grid-column-two-thirds">
 
     {% if (data['decision-status'] == "Approved") %}
@@ -146,7 +147,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            <!--Reasons-->Why was this project deferred
+          Why was this project deferred
           </dt>
           <dd class="govuk-summary-list__value">               
             {% for reason in data['declined-reasons'] %}
@@ -304,6 +305,7 @@
     {% else %} 
     {% endif %}
   </div>
+-->
 
   <div class="govuk-grid-column-full">
     <nav class="app-sub-navigation" aria-label="sub menu">
@@ -314,14 +316,15 @@
               <a class="app-sub-navigation__link"  href="./task_list_gloucester.html">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/application-glos.html">School application form</a>
+              <a class="app-sub-navigation__link"  href="./application-glos.html">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
-            </li> -->
+            </li> 
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="#">Project notes</a>
             </li>
+            -->
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="./trust-information-alt.html">Trust information</a>
             </li>
@@ -334,6 +337,7 @@
   </div>
 
   <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Other schools in this MAT</h2>
     <table class="govuk-table">
       <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
       <thead class="govuk-table__head">
@@ -352,7 +356,7 @@
        
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_cheltenham">Cheltenham Spa Primary School</a></strong> URN 100006</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_cheltenham">Cheltenham Spa Primary School</a></strong> URN: 100006</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
@@ -365,7 +369,7 @@
                 <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
               </p>
               <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
+                Project created date: 20 February 2023</br>
                 Advisory Board date: <span class="empty">Empty</span></br>
                 Opening date: <span class="empty">Empty</span>
               </p>
@@ -373,7 +377,7 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_stroud.html">Stroud Primary School</a></strong> URN 102821</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_stroud.html">Stroud Primary School</a></strong> URN: 102821</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
@@ -386,7 +390,7 @@
                 <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
               </p>
               <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
+                Project created date: 15 February 2023</br>
                 Advisory Board date: <span class="empty">Empty</span></br>
                 Opening date: <span class="empty">Empty</span>
               </p>
@@ -394,7 +398,7 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Prestbury Primary School</a></strong> URN 103459</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_winchcombe">Winchcombe Primary School</a></strong> URN: 104944</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
@@ -407,7 +411,7 @@
                 <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
               </p>
               <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
+                Project created date: 11 February 2023</br>
                 Advisory Board date: <span class="empty">Empty</span></br>
                 Opening date: <span class="empty">Empty</span>
               </p>
@@ -415,7 +419,7 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Winchcombe Primary School</a></strong> URN 104944</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="application-prestbury">Prestbury Primary School</a></strong> URN: 103459</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
@@ -428,12 +432,14 @@
                 <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
               </p>
               <p class="govuk-hint  govuk-!-margin-top-0">
-                Project created date: 8 February 2023</br>
+                Project created date: 7 February 2023</br>
                 Advisory Board date: <span class="empty">Empty</span></br>
                 Opening date: <span class="empty">Empty</span>
               </p>
             </td>   
           </tr>
+
+         
         </tbody>
         </table>
   </div>

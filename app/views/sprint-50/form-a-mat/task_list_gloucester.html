@@ -41,7 +41,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 101573</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 101573</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
       Gloucester Primary School 
     </h1>
@@ -57,6 +57,7 @@
     </p>
   </div>
 
+  <!--
   <div class="govuk-grid-column-two-thirds">
 
     {% if (data['decision-status'] == "Approved") %}
@@ -146,7 +147,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            <!--Reasons-->Why was this project deferred
+           Why was this project deferred
           </dt>
           <dd class="govuk-summary-list__value">               
             {% for reason in data['declined-reasons'] %}
@@ -304,6 +305,7 @@
     {% else %} 
     {% endif %}
   </div>
+-->
 
   <div class="govuk-grid-column-full">
     <nav class="app-sub-navigation" aria-label="sub menu">
@@ -314,14 +316,15 @@
               <a class="app-sub-navigation__link" aria-current="page" href="task_list">Task list</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="#">School application form</a>
+              <a class="app-sub-navigation__link"  href="./application-glos.html">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
-            </li> -->
+            </li> 
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="#">Project notes</a>
             </li>
+          -->
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="./trust-information-alt.html">Trust information</a>
             </li>
@@ -534,6 +537,7 @@
         </ul>
       </li>
 
+      <!--
       <h2 class="govuk-heading-l">Preview or generate project template</h2>
       <p>Preview your template before you generate it into a Word document. Or, you can generate the document without previewing it.</p>
 
@@ -545,7 +549,9 @@
           Generate project template
         </a>
       </div>
+      -->
     </ul>
+
   </div>
 </div>
 {% endblock %}
