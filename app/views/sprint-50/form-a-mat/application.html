@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
+{% block pageTitle %}
+  Cheltenham Spa Primary School - school application form
+{% endblock %}
+
 {% block beforeContent %}
-<a href="./task_list_cheltenham.html" class="govuk-back-link">Back to task list</a>
+<a href="projects-list-involuntary-conversions-alt" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 {% block content %}
@@ -9,39 +13,50 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-xl">URN 100006</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        Cheltenham Spa Primary School</h1>
-        {% if data['htb-date']%}
-        <div class="govuk-inset-text"><h4 class="govuk-heading-m">HTB date</h4>
-        <p>HTB date for this project is {{ data['htb-date']}}</p></div> 
-         {% else %} 
-         {% endif %}
-<nav class="app-sub-navigation" aria-label="sub menu">
-  <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+      <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        Cheltenham Spa Primary School
+      </h1>
+      <p class="govuk-body govuk-!-margin-bottom-8">
+        Route: Form a MAT</br>
+        Delivery officer: 
+        {% if (data['delivery-officer-assigned']) %}
+          <strong>{{ data['delivery-officer-assigned'] }}</strong>
+        {% else %}
+          <span class="empty">Empty</span>
+        {% endif %}
+        <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+      </p>
+    </div>
 
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link" href="task_list_cheltenham">Task list</a>
-    </li>
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link" aria-current="page" href="application">School application form</a>
-    </li>
-    <!-- Not MVP <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
-    </li> -->
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link"  href="#">Project notes</a>
-    </li>
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
-    </li>
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link"  href="./projects-other-mat.html">Other schools in this MAT</a>
-    </li>
-</ul>
-
-</nav>
-</div>
+    <div class="govuk-grid-column-full">
+      <nav class="app-sub-navigation" aria-label="sub menu">
+  
+        <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+  
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="task_list_cheltenham.html">Task list</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="application">School application form</a>
+              </li>
+              <!-- Not MVP <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+              </li> 
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="#">Project notes</a>
+              </li>
+            -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="./projects-other-mat.html">Other schools in this MAT</a>
+              </li>
+        </ul>
+  
+      </nav>
+    </div>
 <div class="govuk-grid-column-full">
 
 <p><a href="application_newtab" target="application">Open school application form in a new tab</a></p>

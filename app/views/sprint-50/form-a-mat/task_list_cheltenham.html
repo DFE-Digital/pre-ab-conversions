@@ -11,6 +11,7 @@
 
 {% block content %}
 
+
 {% if data['justRecorded'] == 'yes' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -24,6 +25,7 @@
 </div>
 {% endif %}
 <input hidden type="text" name="justRecorded" value="no"/>
+
 
 {% if data['justAssigned'] == 'yes' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
@@ -41,7 +43,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
       Cheltenham Spa Primary School 
     </h1>
@@ -57,6 +59,7 @@
     </p>
   </div>
 
+  <!--
   <div class="govuk-grid-column-two-thirds">
 
     {% if (data['decision-status'] == "Approved") %}
@@ -146,7 +149,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            <!--Reasons-->Why was this project deferred
+            Why was this project deferred
           </dt>
           <dd class="govuk-summary-list__value">               
             {% for reason in data['declined-reasons'] %}
@@ -305,6 +308,8 @@
     {% endif %}
   </div>
 
+-->
+
   <div class="govuk-grid-column-full">
     <nav class="app-sub-navigation" aria-label="sub menu">
 
@@ -318,10 +323,11 @@
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
-            </li> -->
+            </li> 
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="#">Project notes</a>
             </li>
+          -->
             <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
             </li>
@@ -394,6 +400,8 @@
                 School and trust information and project dates
               </a>
             </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--
             <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
                 {{data|conversionOverviewStatusText(
                   ['overview-status'],
@@ -401,6 +409,7 @@
                   ['opening-date', 'aorequired']
                 )}} 
             </strong>
+            -->
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -408,6 +417,8 @@
                 General information
               </a>
             </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--
             <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
               {{data|generalInfoStatusText(
                 ['general-info-status'],
@@ -417,6 +428,7 @@
                 ['goodschools','viability' ]
               )}} 
             </strong>
+            -->
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -434,6 +446,8 @@
                 Rationale
               </a>
             </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--
             <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
               {{data|rationaleOverviewStatusText(
                 ['rationale-status-htb'],
@@ -441,6 +455,7 @@
                 ['project-rationale']
               )}} 
             </strong>
+            -->
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -448,12 +463,15 @@
                 Risks and issues
               </a>
             </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--
             <strong class="{{data|riskStatusClass(['risks-status'],['risks'] )}} app-task-list__tag" id="risks-status">  
               {{data|riskStatusText(
                 ['risks-status'],
                 ['risks']
               )}} 
-              </strong>
+            </strong>
+            -->
           </li>
           <!--
           <li class="app-task-list__item">
@@ -479,6 +497,8 @@
                 School budget information
               </a>
             </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--
             <strong class="{{data|schoolBudgetInfoStatusClass(['school-budget-status'],
                 ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022'] )}} 
                 app-task-list__tag" 
@@ -488,6 +508,7 @@
                 ['finance-current-year-2021', 'finance-following-year-2022', 'finance-forward-2021', 'finance-forward-2022']
               )}} 
             </strong>
+            -->
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -534,6 +555,7 @@
         </ul>
       </li>
 
+      <!--
       <h2 class="govuk-heading-l">Preview or generate project template</h2>
       <p>Preview your template before you generate it into a Word document. Or, you can generate the document without previewing it.</p>
 
@@ -545,6 +567,8 @@
           Generate project template
         </a>
       </div>
+      -->
+
     </ul>
   </div>
 </div>
