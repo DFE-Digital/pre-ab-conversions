@@ -22,7 +22,7 @@
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
       <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
 <h2 class="govuk-heading-m">Academy type and route</h2>
-      <p class="govuk-body-m gov">Converter (cannot be changed for this private beta)</p>
+      <p class="govuk-body-m gov">Sponsored (cannot be changed for this private beta)</p>
 
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -35,7 +35,7 @@
           id: "routes",
           name: "routes",
           prefix: {text:"£"}, 
-          value: data["routes"],
+          value: '25,000',
           label: {
             text: "Change the conversion support grant if it needs to be less than £25,000",
             classes: "govuk-label--m",
@@ -52,6 +52,93 @@
             classes: "govuk-label--m",
             value: data["routes-funding"]   }
         }) }}
+
+
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its fast track grant, so you can decrease the amount for this project if you need to. For example, £40,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "routes",
+          name: "routes",
+          prefix: {text:"£"}, 
+          value: '45,000',
+          label: {
+            text: "Change the conversion fast track grant if it needs to be less than £45,000",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        <a name="additional_info"></a>{{ govukTextarea({
+          name: "routes-funding",
+          id: "routes-funding",
+          label: {
+            text: "If you changed the amount of the fast track grant, give a reason why",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has applied for a primary grant, please enter the value below. For example, £20,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "primary-grant",
+          name: "primary-grant",
+          prefix: {text:"£"}, 
+          label: {
+            text: "Primary grant",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+        
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has applied for a secondary grant, please enter the value below. For example, £20,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "secondary-grant",
+          name: "secondary-grant",
+          prefix: {text:"£"}, 
+          label: {
+            text: "Secondary grant",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+        
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has applied for an environmental grant, please enter the value below. For example, £20,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "environmental-grant",
+          name: "environmental-grant",
+          prefix: {text:"£"}, 
+          label: {
+            text: "Environmental grant",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+       
        
  
 
