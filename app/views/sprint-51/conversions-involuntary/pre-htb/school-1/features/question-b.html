@@ -1,0 +1,82 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "What type of transfer is it? – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+{% block formQuestions %}
+  <form action="../features-of-a-transfer" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      What type of transfer is it?
+    {% endset %}
+
+    {% set typeOfTransfer %}
+      {{ govukInput({
+        id: "other-type-of-transfer",
+        name: "other-type-of-transfer",
+        type: "text",
+        spellcheck: true,
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Enter the type of transfer"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "type-of-transfer",
+      name: "type-of-transfer",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Closure of a SAT and the academy joining a MAT",
+          text: "Closure of a SAT and the academy joining a MAT",
+          checked: checked("['type-of-transfer']", "Closure of a SAT and the academy joining a MAT")
+        },
+        {
+          value: "Closure of a MAT and academies joining a MAT",
+          text: "Closure of a MAT and academies joining a MAT",
+          checked: checked("['type-of-transfer']", "Closure of a MAT and academies joining a MAT")
+        },
+        {
+          value: "Academy moving out of a MAT and joining another MAT",
+          text: "Academy moving out of a MAT and joining another MAT",
+          checked: checked("['type-of-transfer']", "Academy moving out of a MAT and joining another MAT")
+        },
+        {
+          value: "Academies joining together to form a new MAT",
+          text: "Academies joining together to form a new MAT",
+          checked: checked("['type-of-transfer']", "Academies joining together to form a new MAT")
+        },
+     
+        {
+          divider: "or"
+        },
+        {
+          value: "Other type of transfer",
+          text: "Any other type of transfer",
+          conditional: {
+            html: typeOfTransfer
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
