@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Academy transfer projects – Transfer an academy – GOV.UK" %}
+
+
+{% block beforeContent %}
+<a href="../service-selection" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Projects filtered.
+      </h3> 
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Manage an academy transfer
+          <!--Academy transfer projects-->
+      </h1>
+
+      <p class="govuk-body-l">
+        Use this service to start a new academy transfer project or update an existing project.
+      </p>
+
+      {{ govukButton({
+        text: "Start a new transfer project",
+        href: "#",
+        isStartButton: false
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-font-size-27">
+          2 projects found
+      </h2>
+
+      <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details" open>
+        <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
+          <span class="govuk-details__summary-text govuk-button govuk-button--secondary prepare-project-listing__button--main">
+            Filter projects
+          </span>
+        </summary>
+        <div class="govuk-details__text prepare-project-listing__filters-details">
+          <form action="projects-list-transfers-results" method="post" class="form">
+  
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+                {{ govukInput({
+                  label: {
+                    text: "Project title",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  classes: "",
+                  hint: {
+                    text: "For example, The Rutland Learning Trust"
+                  },
+                  id: "filter-project-title",
+                  name: "filter-project-title",
+                  value: data['filter-project-title']
+                }) }}
+              </div>
+            </div>
+  
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <div class="govuk-button-group">
+                  <button class="govuk-button govuk-button--secondary prepare-project-listing__button--apply" data-module="govuk-button ">
+                    Apply filters
+                  </button>
+                
+                  <a class="govuk-link" href="projects-list-transfers?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+                </div>
+              </div>
+            </div>
+  
+          </form>
+        </div>
+      </details>
+  
+      <div class="sort-component">
+        <nav class="govuk-body sort-component__nav">
+          <span class="govuk-!-font-weight-bold">Sort by:</span>
+          <ul class="sort-component__list">
+            <li class="sort-component__list-item">Application received</li>
+            <!--li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-2"><span class="govuk-visually-hidden">Sort by </span>Project title</a></li-->
+          </ul>
+        </nav>
+      </div>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">4032 projects found</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header app-!-width-three-fifths">
+              Application information
+            </th>
+            <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+              Project status
+            </th>  
+          </tr>
+        </thead>
+  
+        <tbody class="govuk-table__body">
+  
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="pre-htb/task-list-transfers.html">Rutland And District Schools' Federation</a> </strong>UKPRN 10058584</h2>
+              <p class="govuk-!-margin-top-3">
+                Project reference: SAT-10002142</br>
+                Outgoing trust: The Hoddesdon School Trust
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+            </td>   
+          </tr>
+  
+  
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">South East London Catholic Academy Trust (Selcat) Limited</a> </strong>UKPRN 10088706</h2>
+              <p class="govuk-!-margin-top-3">
+                Project reference: SAT-10000117</br>
+                Outgoing trust: London Design & Engineering Utc
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+            </td>   
+          </tr>
+
+        </tbody>
+      </table>
+
+      {% for project in data['records'] %}
+        {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+        <div class="app-application-card">
+          <div class="app-application-card--project-info">
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+              <a class="govuk-link govuk-!-margin-right-1" href="./pre-htb/school-1/st-wilfreds-ps">
+                {{ project.project_reference }}
+              </a>
+            </h4>
+            <p class="govuk-body govuk-!-margin-bottom-1">
+              <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+                Outgoing trust:
+              </span>
+              {{ project.name }}
+            </p>
+            <p class="govuk-body">
+              <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+                Incoming trust:
+              </span>
+              Moordown St John's Church Of England Primary School
+            </p>
+          </div>
+          <!--Disabling statuses for the time being until we learn more about the needs to use it
+          <div class="app-application-card--statuses">
+            <span class="govuk-tag govuk-tag--orange">
+              SAT
+            </span>
+            <span class="govuk-tag govuk-tag--green">
+              SW
+            </span>
+          </div>
+          <!-->
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+    
+{% endblock %}
