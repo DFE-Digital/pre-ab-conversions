@@ -130,11 +130,37 @@
           Part of a private finance initiative (PFI) scheme
           </dt>
           <dd class="govuk-summary-list__value">
-          No
+            {% if data['pfi-scheme']%}
+            {{data['pfi-scheme']}}
+            {% else %} 
+            No
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="pfi-involuntary?pfi-scheme=No">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            </a>
           </dd>
         </div>
+
+        {% if data['pfi-scheme']%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Private finance initiative (PFI) scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['pfi-scheme-details']%}
+            {{data['pfi-scheme-details']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="pfi-involuntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
