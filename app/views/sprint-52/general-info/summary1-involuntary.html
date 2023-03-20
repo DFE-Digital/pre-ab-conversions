@@ -4,6 +4,7 @@
 {% block beforeContent %}
    
 <a href="../task_list_involuntary_conversions" class="govuk-back-link">Back to task list</a>
+<p>PFI scheme: {{data['pfi-scheme']}}</p>
 
 {% endblock %}
 
@@ -13,7 +14,15 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
     <h1 class="govuk-heading-l">Confirm general information</h1>
-    <p>This information is pre-populated from TRAMS and the <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in a new tab)</a>.</p>
+    
+
+    {% if data['application-form-url']%}
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
+    {% else %} 
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
+    {% endif %}
+
+
     <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
     </div></div>
     <div class="govuk-grid-row">
@@ -131,28 +140,30 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['pfi-scheme']%}
-            {{data['pfi-scheme']}}
-            {% else %} 
-            No
-          {% endif %}
+              {{data['pfi-scheme']}}
+              {% else %} 
+              No
+              {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
+            {% if data['pfi-scheme']%}
+            <a class="govuk-link" href="pfi-involuntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            {% else %} 
             <a class="govuk-link" href="pfi-involuntary?pfi-scheme=No">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            {% endif %}
             </a>
           </dd>
         </div>
 
-        {% if data['pfi-scheme']%}
+        {%  if(data['pfi-scheme-details']) %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Private finance initiative (PFI) scheme
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['pfi-scheme-details']%}
+        
             {{data['pfi-scheme-details']}}
-            {% else %} 
-            <span class="empty">Empty</span>
-          {% endif %}
+          
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="pfi-involuntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>

@@ -11,6 +11,22 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
   
 {% block content %}
+
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "You must enter the PFI scheme the school is part of",
+            href: "#"
+          }
+        ]
+      }) }}
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
@@ -56,6 +72,9 @@
         value: data["pfi-scheme-details"],
         label: {
           text: "Which PFI scheme is the school part of?"
+        },
+        errorMessage: {
+          text: "You must enter the PFI scheme the school is part of"
         }
       }) }}
       {% endset -%}
