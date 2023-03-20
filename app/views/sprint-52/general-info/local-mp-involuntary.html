@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#local-mp" method="post">
+        {% else %}
+        <form action="../general-info/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Enter the name of the MP and their political party</h1>
+
+      <p>Use the school's postcode to find the name of the MP and their political party on <a href="https://www.theyworkforyou.com" target="blank">They Work For You (opens in a new tab)</a></p>
+
+<h2 class="govuk-heading-m">School postcode</h2>
+<p class="govuk-body">WA4 6GH</p>
+
+<h2 class="govuk-heading-m">Enter the MP's name</h2>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+     
+      {{ govukInput({
+
+        classes: "govuk-input--width-20",
+        id: "local-mp",
+        name: "local-mp",
+    
+        value: data["local-mp"]
+      }) }}
+
+      <h2 class="govuk-heading-m">Enter the MP’s political party</h2>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+     
+      {{ govukInput({
+
+        classes: "govuk-input--width-20",
+        id: "party",
+        name: "party",
+    
+        value: data["party"]
+      }) }}
+       
+   
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+      <p class="govuk-body-s"><a href="https://www.theyworkforyou.com" target="blank">They Work For You (opens in a new tab)</a></p>
+    </div>
+  </div>
+{% endblock %}
