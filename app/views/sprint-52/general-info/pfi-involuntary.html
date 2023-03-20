@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#deficit" method="post">
+        {% else %}
+        <form action="../general-info/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Is your school part of a private finance initiative (PFI) scheme?'</h1>
+    <p class="govuk-body-s">Please refer to the <a href="https://www.google.co.uk">Annex B form</a> saved in the school's SharePoint folder to see what school is required to fill on the form.</p>
+
+
+    <!-- Not MVP
+    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with surplus and deficits
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
+    </div>
+    </details>
+    -->
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% set yesHtml %}
+
+      {{ govukTextarea({
+        name: "pfi-scheme-details",
+        hint: {
+          text: ""
+        },
+        id: "pfi-scheme-details",
+        title: "PFI Scheme details",
+        value: data["pfi-scheme-details"],
+        label: {
+          text: "Which PFI scheme is the school part of?"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "pfi-scheme",
+        name: "pfi-scheme",
+        items: [
+          {
+            value: "Yes",
+            checked:  data['pfi-scheme'] === "Yes",
+            text: "Yes",
+            conditional: {
+              html: yesHtml
+            }
+          },
+          {
+            value: "No",
+            checked:  data['pfi-scheme'] === "No",
+            text: "No"
+          }
+        ]
+      }) }}
+    
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+  </div> 
+  
+  <!-- right hand nav -->    
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+</div> 
+
+{% endblock %}
+
