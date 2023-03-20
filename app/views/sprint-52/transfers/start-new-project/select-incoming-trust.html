@@ -1,0 +1,29 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Select the incoming trust – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./check-trust-academy-summary" method="post" novalidate>
+        {{ govukRadios({
+            idPrefix: "outgoing-trust",
+            name: "incoming-trust-id",
+            fieldset: {
+                legend: {
+                text: "Select the incoming trust",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            items: data['trusts'] | filterTrustsBySearchString(data['incoming-trust-query']) | trustsToCheckboxes
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
