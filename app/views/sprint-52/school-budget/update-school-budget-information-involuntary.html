@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#revenue" method="post">
+        {% else %}  
+        <form action="../school-budget/confirm-school-budget-information-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">School budget information</h1>
+<!-- Not MVP
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with viability
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+     The school should be accepting more than 85% of its capacity. You can check pupil numbers by looking at the school information in TRAMS and the <a href="/pupil-forecasts/school-pupil-forecasts">School Pupil Forecast reference section</a> in the task list.
+    </div>
+  </details>
+  -->
+  
+
+  {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukDateInput({
+    id: "current-financial-year",
+    namePrefix: "current-financial-year",
+    fieldset: {
+      legend: {
+  
+        classes: "govuk-label--s"
+      }
+    },
+    hint: {
+      text: "For example, 27 3 2021"
+    },
+    items: [
+      {
+        name: "day",
+        value: data["current-financial-year-day"],
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "month",
+        value: data["current-financial-year-month"],
+        classes: "govuk-input--width-2"
+      },                
+      {
+        name: "year",
+        value: data["current-financial-year-year"],
+        classes: "govuk-input--width-4"
+      }
+    ]
+  }) }}
+
+  
+
+  {{ govukInput({
+    label: {
+      text: "Forecasted revenue carry forward at the end of the current financial year",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "forecast-revenue-current-year",
+    name: "forecast-revenue-current-year",
+    value: data["forecast-revenue-current-year"],
+    prefix: {text:"£"}
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Forecasted capital carry forward at the end of the current financial year",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "forecast-capital-current-year",
+    name: "forecast-capital-current-year",
+    value: data["forecast-capital-current-year"],
+    prefix: {text:"£"}
+  }) }}
+
+
+  {{ govukDateInput({
+    id: "next-financial-year",
+    namePrefix: "next-financial-year",
+    fieldset: {
+      legend: {
+        text: "End of next financial year",
+        isPageHeading: true,
+        classes: "govuk-label--s"
+      }
+    },
+    hint: {
+      text: "For example, 31 3 2021"
+    }
+  }) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "Forecasted revenue carry forward at the end of the current financial year",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "forecast-revenue-next-year",
+    name: "forecast-revenue-next-year",
+    value: data["forecast-revenue-next-year"],
+    prefix: {text:"£"}
+  }) }}
+
+
+
+  {{ govukInput({
+    label: {
+      text: "Forecasted capital carry forward at the end of the current financial year",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "forecast-capital-next-year",
+    name: "forecast-capital-next-year",
+    value: data["forecast-capital-next-year"],
+    prefix: {text:"£"}
+  }) }}
+ 
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </form>
+   
+      </div>
+      
+      
+   <!-- right hand nav -->    
+   <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+    </div>
+    {% endblock %}
