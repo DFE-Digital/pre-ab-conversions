@@ -23,7 +23,11 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
     <h1 class="govuk-heading-l">Confirm school budget information</h1>
-    <p class="govuk-body">This table will go into your project template.</p>
+    {% if data['application-form-url']%}
+    <p class="govuk-body-m">Please refer to the <a href="https://educationgovuk.sharepoint.com">Annex B form</a> saved in the school's SharePoint folder to see what the school is required to fill on the form. This table will go into your project template.</p>
+    {% else %} 
+    <p class="govuk-body-m">If you <a href="../related/application_form_url_alt">attach an Annex B form</a> to this application, it will appear here for quick reference. This table will go into your project template.</p>      
+    {% endif %}
     <p>You can<a href="#additional_info"> add additional information</a> if you need to, this will also go into your project template.</p>
  <br>
   </div>
