@@ -18,7 +18,7 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-  <h1 class="govuk-heading-l">Projected pupil data</h1>
+  <h1 class="govuk-heading-l">School pupil forecasts</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -36,6 +36,17 @@
  
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
+
+  {{ govukInput({
+    label: {
+      text: "Total pupil numbers",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "total-pupil-numbers",
+    name: "total-pupil-numbers",
+    value: data["total-pupil-numbers"]
+  }) }}
 
 
   {{ govukInput({
