@@ -22,12 +22,13 @@
              <span class="empty">Empty</span>
             {% endif %}</dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="risks-and-issues.html">
+              <a class="govuk-link" href="risks-and-issues-involuntary.html">
                 Change<span class="govuk-visually-hidden">risks and issues</span>
               </a>
             </dd>
           </div>
 
+          <!--
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Has an Equalities Impact Assessment been considered?
@@ -39,13 +40,14 @@ The equalities duty has been considered and the Secretary of State’s decision 
             
             </dd>
           </div>
+        -->
 
         </dl>
 
 
 
   
-        <form action="../task_list" method="post"> 
+        <form action="../task_list_involuntary_conversions" method="post"> 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
