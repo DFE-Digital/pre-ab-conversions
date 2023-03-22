@@ -10,7 +10,7 @@
     {% if data['returnToSummary'] == 'yes' %}
     <form action="../generate/generate_summary#forecasts" method="post">
       {% else %}
-      <form action="../task_list" method="post">
+      <form action="../task_list_involuntary_conversions" method="post">
     {% endif %}
       </div></div>
 
@@ -30,32 +30,83 @@
           <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
           <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
           <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
       </tr>
       </thead>
       <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header ">2022</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">236</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">226</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['capacity'] %}
+          {{ data['capacity']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['total-pupil-numbers'] %}
+          {{ data['total-pupil-numbers']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">96%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"> 
+          <a class="govuk-link" href="update-current-pupil-data">
+          Change<span class="govuk-visually-hidden"> current pupil data</span>
+          </a>
+      </td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 1)</th>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-1'] %}
+          {{ data['projected-pupils-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 2)</th>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-2'] %}
+          {{ data['projected-pupils-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 3)</th>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">189</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-3'] %}
+          {{ data['projected-pupils-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
       </tr>
       </tbody>
   </table>           
@@ -79,7 +130,7 @@
               {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="school-pupil-forecasts#additional_info">
+              <a class="govuk-link" href="school-pupil-forecasts-involuntary#additional_info">
                 Change<span class="govuk-visually-hidden">pupil forecast additional information</span>
               </a>
           </dd>

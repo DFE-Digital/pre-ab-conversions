@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#revenue" method="post">
+        {% else %}  
+        <form action="../pupil-forecasts/school-pupil-forecasts-summary-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">Projected pupil data</h1>
+<!-- Not MVP
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with viability
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+     The school should be accepting more than 85% of its capacity. You can check pupil numbers by looking at the school information in TRAMS and the <a href="/pupil-forecasts/school-pupil-forecasts">School Pupil Forecast reference section</a> in the task list.
+    </div>
+  </details>
+  -->
+  
+
+ 
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+  {{ govukInput({
+    label: {
+      text: "Projected pupil numbers on roll in the year the academy opens (year 1)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "projected-pupils-year-1",
+    name: "projected-pupils-year-1",
+    value: data["projected-pupils-year-1"]
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Projected pupil numbers on roll in the year the academy opens (year 2)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "projected-pupils-year-2",
+    name: "projected-pupils-year-2",
+    value: data["projected-pupils-year-2"]
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Projected pupil numbers on roll in the year the academy opens (year 3)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "projected-pupils-year-3",
+    name: "projected-pupils-year-3",
+    value: data["projected-pupils-year-3"]
+  }) }}
+
+
+
+
+
+
+
+
+  
+ 
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </form>
+   
+      </div>
+      
+      
+   <!-- right hand nav -->    
+   <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+    </div>
+    {% endblock %}
