@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
     <h1 class="govuk-heading-l">School pupil forecasts</h1>
-    <p class="govuk-body">This comes from GIAS (Get Information about Schools) and the <a href="../related/application_newtab" target="_blank">school's application form (opens in a new tab)</a>. It will go into your project template.</p>
+    <p class="govuk-body">This information is taken from GIAS (Get Information About Schools) and will go into your template. You can add more from the school's Annex B form.</p>
     <p>Published on GIAS: <strong>June 2022</strong>.</p>
   </div>
 </div>
@@ -50,7 +50,13 @@
           <span class="empty">Empty</span>
           {% endif %}
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">96%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['capacity'] %}
+          CALC %
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"> 
           <a class="govuk-link" href="update-current-pupil-data">
           Change<span class="govuk-visually-hidden"> current pupil data</span>
@@ -121,7 +127,7 @@
 <div>
   <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Addtional information</dt>
+        <dt class="govuk-summary-list__key">Additional information</dt>
           <dd class="govuk-summary-list__value">
               {% if data['pupil-more-detail'] %}
                   {{data['pupil-more-detail']}}
@@ -138,7 +144,7 @@
   </dl>
 </div>
                 
-<form action="../task_list" method="post"> 
+<form action="../task_list_involuntary_conversions" method="post"> 
   <a href="#" name="additional_info"></a> 
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
