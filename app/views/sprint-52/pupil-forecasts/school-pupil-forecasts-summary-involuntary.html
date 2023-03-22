@@ -37,11 +37,7 @@
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header ">2022</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">
-          {% if data['capacity'] %}
-          {{ data['capacity']}}
-          {% else %} 
-          <span class="empty">Empty</span>
-          {% endif %}
+          236
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           {% if data['total-pupil-numbers'] %}
@@ -51,14 +47,14 @@
           {% endif %}
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
-          {% if data['capacity'] %}
+          {% if data['total-pupil-numbers'] %}
           CALC %
           {% else %} 
           <span class="empty">Empty</span>
           {% endif %}
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"> 
-          <a class="govuk-link" href="update-current-pupil-data">
+          <a class="govuk-link" href="update-projected-pupil-data">
           Change<span class="govuk-visually-hidden"> current pupil data</span>
           </a>
       </td>
