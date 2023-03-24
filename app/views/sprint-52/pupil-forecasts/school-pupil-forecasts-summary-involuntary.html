@@ -40,28 +40,25 @@
           236
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
-          {% if data['total-pupil-numbers'] %}
-          {{ data['total-pupil-numbers']}}
-          {% else %} 
-          <span class="empty">Empty</span>
-          {% endif %}
+          226
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
-          {% if data['total-pupil-numbers'] %}
-          CALC %
-          {% else %} 
-          <span class="empty">Empty</span>
-          {% endif %}
+          96%
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric"> 
-          <a class="govuk-link" href="update-projected-pupil-data">
-          Change<span class="govuk-visually-hidden"> current pupil data</span>
-          </a>
+          
       </td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 1)</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-1'] %}
+          {{ data['projected-capacity-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           {% if data['projected-pupils-year-1'] %}
           {{ data['projected-pupils-year-1']}}
@@ -69,7 +66,16 @@
           <span class="empty">Empty</span>
           {% endif %}
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+          {% if data['projected-capacity-year-1'] and data['projected-pupils-year-1'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           <a class="govuk-link" href="update-projected-pupil-data">
           Change<span class="govuk-visually-hidden">projected pupil data</span>
@@ -78,7 +84,13 @@
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 2)</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] %}
+          {{ data['projected-capacity-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           {% if data['projected-pupils-year-2'] %}
           {{ data['projected-pupils-year-2']}}
@@ -86,7 +98,14 @@
           <span class="empty">Empty</span>
           {% endif %}
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] and data['projected-pupils-year-2'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           <a class="govuk-link" href="update-projected-pupil-data">
           Change<span class="govuk-visually-hidden">projected pupil data</span>
@@ -95,7 +114,13 @@
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Projected pupil numbers on roll in the year the academy opens (year 3)</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] %}
+          {{ data['projected-capacity-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           {% if data['projected-pupils-year-3'] %}
           {{ data['projected-pupils-year-3']}}
@@ -103,7 +128,13 @@
           <span class="empty">Empty</span>
           {% endif %}
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] and data['projected-pupils-year-3'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+        </td>
         <td class="govuk-table__cell govuk-table__cell--numeric">
           <a class="govuk-link" href="update-projected-pupil-data">
           Change<span class="govuk-visually-hidden">projected pupil data</span>
