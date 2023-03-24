@@ -39,13 +39,13 @@
 
   {{ govukInput({
     label: {
-      text: "Total pupil numbers",
+      text: "Projected capacity in the year the academy opens (year 1)",
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "total-pupil-numbers",
-    name: "total-pupil-numbers",
-    value: data["total-pupil-numbers"]
+    id: "projected-capacity-year-1",
+    name: "projected-capacity-year-1",
+    value: data["projected-capacity-year-1"]
   }) }}
 
 
@@ -62,6 +62,17 @@
 
   {{ govukInput({
     label: {
+      text: "Projected capacity in the year the academy opens (year 2)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "projected-capacity-year-2",
+    name: "projected-capacity-year-2",
+    value: data["projected-capacity-year-2"]
+  }) }}
+
+  {{ govukInput({
+    label: {
       text: "Projected pupil numbers on roll in the year the academy opens (year 2)",
       classes: "govuk-label--s"
     },
@@ -69,6 +80,17 @@
     id: "projected-pupils-year-2",
     name: "projected-pupils-year-2",
     value: data["projected-pupils-year-2"]
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Projected capacity in the year the academy opens (year 3)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "projected-capacity-year-3",
+    name: "projected-capacity-year-3",
+    value: data["projected-capacity-year-3"]
   }) }}
 
   {{ govukInput({
