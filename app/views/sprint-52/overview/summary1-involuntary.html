@@ -62,15 +62,80 @@
           Academy type and route
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Sponsored<br>
-            £70,000 </p>
+          <p class="govuk-body">Sponsored</p>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="route-involuntary.html">
-            Change<span class="govuk-visually-hidden">route"</span>
+          
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grant funding type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['grant-type'] %}
+          {{ data['grant-type']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">grant funding"</span>
           </a>
         </dd>
       </div>
+
+      {%  if(data['grant-type']) %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grant funding amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Fast track'%}
+            £70,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Intermediate'%}
+            £90,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Full'%}
+            £110,000
+            {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-grants-involuntary.html">
+            Change<span class="govuk-visually-hidden">grant funding amount"</span>
+          </a> 
+        </dd>
+      </div>
+      {% endif %}
+
+
+      {%  if(data['eig-amount']) %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Environmental Improvement Grant (EIG)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+            £{{ data['eig-amount']}}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">additional funding"</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
