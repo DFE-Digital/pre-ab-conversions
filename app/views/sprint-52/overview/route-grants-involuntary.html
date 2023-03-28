@@ -86,8 +86,9 @@
           value: '',
           label: {
             text: "Change the grant if it needs to be less than the default amount shown above",
-            classes: "govuk-label--m",
-            value: data["grant-revided-amount"]   }
+            classes: "govuk-label--m"
+            },
+            value: data["grant-revised-amount"]
         }) }}
 
         {{ govukTextarea({
@@ -97,7 +98,8 @@
           label: {
             text: "If you changed the amount of the grant, give a reason why",
             classes: "govuk-label--m"
-          }
+          },
+          value: data["grant-change-reason"]
         }) }}
         {% endset -%}
   
@@ -133,40 +135,29 @@
 
 
         
-        {% set yesHtml %}
-        {{ govukInput({
-          id: "eig-amount",
-          name: "eig-amount",
-          prefix: {text:"£"}, 
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Environmental Improvement Grant (EIG) amount"
-          },
-          value: data["eig-amount"]
-        }) }}
-        {% endset -%}
         
         
         
         
+        {% if (data['grant-type'] == 'Intermediate' or data['grant-type'] == 'Full') and data['phase'] == 'primary' %}
         
         {{ govukRadios({
           name: "eig",
           fieldset: {
             legend: {
-              text: "Are you applying for an Environmental Improvement Grant (EIG)",
+              text: "Are you applying for an Environmental Improvement Grant (EIG)?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
+          },
+          hint: {
+            text: "Your school is eligible for a grant of £40,000."
           },
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked:  data['eig'] === "Yes",
-              conditional: {
-                html: yesHtml
-              }
+              checked:  data['eig'] === "Yes"
             },
             {
               value: "No",
@@ -176,6 +167,39 @@
             
           ]
         }) }}
+
+        {% endif %}
+
+        {% if (data['grant-type'] == 'Intermediate' or data['grant-type'] == 'Full') and data['phase'] == 'secondary' %}
+        
+        {{ govukRadios({
+          name: "eig",
+          fieldset: {
+            legend: {
+              text: "Are you applying for an Environmental Improvement Grant (EIG)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Your school is eligible for a grant of £80,000."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked:  data['eig'] === "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked:  data['eig'] === "No"
+            }
+            
+          ]
+        }) }}
+
+        {% endif %}
 
        
 
