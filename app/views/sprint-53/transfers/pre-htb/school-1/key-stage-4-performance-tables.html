@@ -1,0 +1,826 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Key stage 4 performance tables – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Academy: The Richard Crosse Cofe Primary School
+            </span>
+            <h1 class="govuk-heading-l">
+                Key stage 4 performance tables
+            </h1>
+            <p class="govuk-body">
+                This information comes from the Find and compare schools in England service and the data in this page will go into your project template.
+            </p>
+
+            <p class="govuk-body">
+                You can <a href="#additional-information" class="govuk-body">add additional information</a> if you need to. This will automatically go into your project template. 
+            </p>
+            <p class="govuk-body">
+                <a href="https://www.compare-school-performance.service.gov.uk/school/<URN>" class="govuk-link" rel="noreferrer noopener" target="_blank">View the school's performance data on Find and compare schools in England (opens in new tab)</a>
+            </p>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-3">
+            <h2 class="govuk-heading-l">
+                Attainment 8
+            </h2>
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Attainment 8 scores",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "53.1 <br> (disadvantaged 47.6)"
+                        },
+                        {
+                            html: "54.7 <br> (disadvantaged 49.6)"
+                        },
+                        {
+                            html: "53.8 <br> (disadvantaged 48.6)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "46.2"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "46.50 <br> (disadvantaged 36.70)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Attainment 8 English",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "53.1 <br> (disadvantaged 47.6)"
+                        },
+                        {
+                            html: "54.7 <br> (disadvantaged 49.6)"
+                        },
+                        {
+                            html: "53.8 <br> (disadvantaged 48.6)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "9.7"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "9.90 <br> (disadvantaged 8.10)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Attainment 8 Maths",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "53.1 <br> (disadvantaged 47.6)"
+                        },
+                        {
+                            html: "54.7 <br> (disadvantaged 49.6)"
+                        },
+                        {
+                            html: "53.8 <br> (disadvantaged 48.6)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "8.8"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "9.00 <br> (disadvantaged 7.00)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Attainment 8 Ebacc",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "53.1 <br> (disadvantaged 47.6)"
+                        },
+                        {
+                            html: "54.7 <br> (disadvantaged 49.6)"
+                        },
+                        {
+                            html: "53.8 <br> (disadvantaged 48.6)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "13"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "13.40 <br> (disadvantaged 10.10)"
+                        }
+                    ]
+
+                ]
+            }) }}
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+            <h2 class="govuk-heading-l">
+                Progress 8
+            </h2>
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Pupils included in P8",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "191 <br> (disadvantaged 54)"
+                        },
+                        {
+                            html: "182 <br> (disadvantaged 43)"
+                        },
+                        {
+                            html: "219 <br> (disadvantaged 48)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "1,851"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "49,4832"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "School progress scores",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "0.23 <br> (disadvantaged 0.02)"
+                        },
+                        {
+                            html: "0.62 <br> (disadvantaged 0.55)"
+                        },
+                        {
+                            html: "0.34 <br> (disadvantaged 0.25)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "School confidence interval"
+                        },
+                        {
+                            text: "0.08	to 0.38"
+                        },
+                        {
+                            text: "0.44	to 0.8"
+                        },
+                        {
+                            text: "0.17	to 0.5"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "1,851"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority confidence interval"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "-0.3	to -0.19"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "49,4832"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average confidence interval"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "0.00"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Progress 8 English",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "0.35 <br> (disadvantaged 0.31)"
+                        },
+                        {
+                            html: "0.5 <br> (disadvantaged 0.62)"
+                        },
+                        {
+                            html: "0.15 <br> (disadvantaged 0.11)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "-0.33"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "-0.04 <br> (disadvantaged -0.44)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Progress 8 Maths",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "0.26 <br> (disadvantaged 0.16)"
+                        },
+                        {
+                            html: "0.6 <br> (disadvantaged 0.44)"
+                        },
+                        {
+                            html: "0.37 <br> (disadvantaged 0.23)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "-0.32"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "-0.02 <br> (disadvantaged -0.39)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            caption: "Progress 8 Ebacc",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "0.16 <br> (disadvantaged -0.17)"
+                        },
+                        {
+                            html: "0.57 <br> (disadvantaged 0.5)"
+                        },
+                        {
+                            html: "0.42 <br> (disadvantaged 0.27)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "-0.32"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "-0.03 <br> (disadvantaged -0.49)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+        </div>
+        
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+            <h2 class="govuk-heading-m">
+                Percentage of students entering EBacc
+            </h2>
+
+            {{ govukTable({
+            classes: "govuk-!-margin-bottom-9",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: ""
+                },
+                {
+                    text: "2016"
+                },       
+                {
+                    text: "2017"
+                },
+                {
+                    text: "2018"
+                }
+            ],
+                rows: [
+                    [
+                        {
+                            text: "Godmanchester Bridge Academy"
+                        },
+                        {
+                            html: "53.1 <br> (disadvantaged 47.6)"
+                        },
+                        {
+                            html: "54.7 <br> (disadvantaged 49.6)"
+                        },
+                        {
+                            html: "53.8 <br> (disadvantaged 48.6)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Gateshead local authority average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "46.2"
+                        }
+                    ],
+                    [
+                        {
+                            text: "National average"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            text: "no data"
+                        },
+                        {
+                            html: "46.50 <br> (disadvantaged 36.70)"
+                        }
+                    ]
+
+                ]
+            }) }}
+
+        </div>
+
+        {% if data['key-stage-performance-more-detail'] and data['update-key-stage-performance'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Additional information
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the school performance (Ofsted information) section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['key-stage-performance-more-detail'] %}
+                            {{data['key-stage-performance-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/key-stage-performance-tables?update-key-stage-performance=yes#key-stage-performance-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/key-stage-performance-tables#additional-information" method="post" novalidate>
+                <input type="text" name="update-key-stage-performance" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "key-stage-performance-more-detail",
+                    id: "key-stage-performance-more-detail",
+                    label: {
+                        text: "Additional information (optional)",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                    },
+                    value: data['key-stage-performance-more-detail'],
+                    hint: {
+                        text: "This information will populate in your HTB template under the key stage performance tables section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+
+    
+
+{% endblock %}

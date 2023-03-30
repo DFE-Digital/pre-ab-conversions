@@ -1,0 +1,111 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "When is the expected date for the transfer? – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+
+{% block formQuestions %}
+  <form action="../set-transfer-dates" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      When is the expected date for the transfer?
+    {% endset %}
+
+    {# {{ govukRadios({
+      idPrefix: "set-htb-date",
+      name: "set-htb-date",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true
+        }
+      },
+      items: [
+        {
+          value: "Friday 1 January 2021",
+          text: "Friday 1 January 2021"
+        },
+        {
+          value: "Monday 1 February 2021",
+          text: "Monday 1 February 2021"
+        },
+        {
+          value: "Monday 1 March 2021",
+          text: "Monday 1 March 2021"
+        },
+        {
+          value: "Thursday 1 April 2021",
+          text: "Thursday 1 April 2021"
+        },
+        {
+          value: "Monday 3 May 2021",
+          text: "Monday 3 May 2021"
+        },
+        {
+          value: "Tuesday 1 June 2021",
+          text: "Tuesday 1 June 2021"
+        },
+        {
+          value: "Thursday 1 July 2021",
+          text: "Thursday 1 July 2021"
+        },
+        {
+          value: "Tuesday 3 August 2021",
+          text: "Tuesday 3 August 2021"
+        },
+        {
+          value: "Wednesday 1 September 2021",
+          text: "Wednesday 1 September 2021"
+        },
+        {
+          value: "Friday 1 October 2021",
+          text: "Friday 1 October 2021"
+        },
+        {
+          value: "Monday 1 November 2021",
+          text: "Monday 1 November 2021"
+        },
+        {
+          value: "Wednesday 1 December 2021",
+          text: "Wednesday 1 December 2021"
+        }
+      ]
+    }) }} #}
+
+    {{ govukDateInput({
+      id: "set-htb-date",
+      namePrefix: "set-htb-date",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 09 2007"
+      },
+      items: [
+        {
+          name: "month",
+          classes: "govuk-input--width-2"
+        },
+        {
+          name: "year",
+          classes: "govuk-input--width-4"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

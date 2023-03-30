@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Legal requirements for " + projectData.name + " – Manage an academy transfer" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../../task-list-transfers">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Project reference: EMH-SAT-10000110
+                <!--
+                Project reference: {{ projectData.project_reference }}
+                -->
+            </span>
+            <h1 class="govuk-heading-l">
+                Legal requirements
+            </h1>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Have you received a resolution from the outgoing trust?
+                    </dt>
+                    <dd class="govuk-summary-list__value">             
+                    {% if data['legal-outgoing-trust-resolution-checked']%}
+                        {{data['legal-outgoing-trust-resolution-checked']}}
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="legal-outgoing-trust-resolution.html">
+                        Change<span class="govuk-visually-hidden"> Have you received a resolution from the outgoing trust</span>
+                    </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Has the incoming trust agreed to take on the academy?
+                    </dt>
+                    <dd class="govuk-summary-list__value">             
+                    {% if data['legal-incoming-trust-agreement-checked']%}
+                        {{data['legal-incoming-trust-agreement-checked']}}
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="legal-incoming-trust-agreement.html">
+                        Change<span class="govuk-visually-hidden"> Has the incoming trust agreed to take on the academy</span>
+                    </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Have you spoken with the diocese about the incoming trust?
+                    </dt>
+                    <dd class="govuk-summary-list__value">             
+                    {% if data['legal-diocesan-consent-checked']%}
+                        {{data['legal-diocesan-consent-checked']}}
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="legal-diocesan-consent.html">
+                        Change<span class="govuk-visually-hidden"> Have you spoken with the diocese about the incoming trust</span>
+                    </a>
+                    </dd>
+                </div>
+            </dl>
+                
+            <form action="../../task-list-transfers" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            {% if data['legal-outgoing-trust-resolution-checked'] and data
+            ['legal-incoming-trust-agreement-checked'] and data
+            ['legal-diocesan-consent-checked'] %}
+            {{ govukCheckboxes({
+            idPrefix: "legal-requirements-section-complete",
+            name: "legal-requirements-section-complete",
+            items: [
+                {
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['legal-requirements-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "legal-requirements-complete",
+                text: "Mark this section as complete, you can still make changes later"
+                }
+            ]
+            }) }}
+            {% endif %}
+
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}
