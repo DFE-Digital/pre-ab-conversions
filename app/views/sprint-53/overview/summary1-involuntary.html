@@ -1,0 +1,399 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list_involuntary_conversions" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+ 
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">
+    Confirm school and trust information and project dates</h1>
+    <p>This information is pre-populated from TRAMS.</p>
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          School name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Cheltenham Spa Primary School</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unique reference number (URN)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">100006</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Trust name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Gloucestershire Trust</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Trust reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">TRO1318</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Academy type and route
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Sponsored</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grant funding type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['grant-type'] %}
+          {{ data['grant-type']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">grant funding"</span>
+          </a>
+        </dd>
+      </div>
+
+      {%  if(data['grant-type']) %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grant funding amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Fast track' and data['grant-change'] == 'Yes' %}
+            £70,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Intermediate' and data['grant-change'] == 'Yes' %}
+            £90,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Full' and data['grant-change'] == 'Yes' %}
+            £110,000
+            {% endif %}
+            {% if data['grant-change'] == 'No' %}
+            £{{ data['grant-revised-amount']}}
+            {% endif %}
+            </br> 
+            {% if data['grant-change-reason'] %}
+            {{ data['grant-change-reason']}}
+            {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-grants-involuntary.html">
+            Change<span class="govuk-visually-hidden">grant funding amount"</span>
+          </a> 
+        </dd>
+      </div>
+      {% endif %}
+
+
+      {% if data['eig'] == 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Environmental Improvement Grant (EIG)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+            {% if data['phase'] == 'primary' and data['eig'] == 'Yes' %}
+            £40,000
+            {% endif %}
+            {% if data['phase'] == 'secondary' and data['eig'] == 'No' %}
+            £80,000
+            {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">additional funding"</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Has the Schools Notification Mailbox (SNM) received a Form 7
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['form7received'] %}
+          {{ data['form7received']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-form-7.html">
+            Change<span class="govuk-visually-hidden">form 7 received</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['form7received'] =='Yes'%}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date SNM received Form 7
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['form-7-date-day'] and data['form-7-date-month'] and data['form-7-date-year']%}
+          <span>{{ data['form-7-date-day'] }} </span>
+          <span>{{ data['form-7-date-month'] }} </span>
+          <span>{{ data['form-7-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-form-7-date.html">
+            Change<span class="govuk-visually-hidden">form 7 received</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is an academy order (AO) required?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['aorequired']%}
+          {{data['aorequired']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="aorequired-involuntary.html">
+            Change<span class="govuk-visually-hidden">academy order required</span>
+          </a>
+        </dd>
+</div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date directive academy order (DAO) pack sent
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['dao-date-day'] and data['dao-date-month'] and data['dao-date-year']%}
+          <span>{{ data['dao-date-day'] }} </span>
+          <span>{{ data['dao-date-month'] }} </span>
+          <span>{{ data['dao-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-dao-date.html">
+            Change<span class="govuk-visually-hidden">directive academy order (DAO) pack sent</span>
+          </a>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of Advisory Board
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
+          <span>{{ data['HTB-date-day'] }} </span>
+          <span>{{ data['HTB-date-month'] }} </span>
+          <span>{{ data['HTB-date-year'] }}</span>
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="set-htb-involuntary.html">
+            Change<span class="govuk-visually-hidden">Advisory Board date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Proposed academy opening date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['opening-date']}} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="opening-involuntary">
+            Change<span class="govuk-visually-hidden">proposed academy opening date</span>
+          </a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous Advisory Board
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data['Conditions3']%}
+          {{data['Conditions3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+
+          {{ data['']}} </br>
+          {% if data['previousHTB-date-day'] and data['previousHTB-date-month'] and data['previousHTB-date-year']%}
+          <span>{{ data['previousHTB-date-day'] }} </span>
+          <span>{{ data['previousHTB-date-month'] }} </span>
+          <span>{{ data['previousHTB-date-year'] }}</span>
+          {% else %} 
+   
+        {% endif %}
+   
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="previous-htb-involuntary.html">
+            Change<span class="govuk-visually-hidden">perevious head teacher board date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Local authority
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Warrington</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+            
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Sponsor name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Diocese of Warrington</p>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+</div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Sponsor reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">SP00170</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Author
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['author']%}
+          {{data['author']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="author-involuntary">
+            Change<span class="govuk-visually-hidden">author</span>
+          </a>
+        </dd>
+      </div>
+      
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+   Cleared by
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['cleared']%}
+    {{data['cleared']}}
+    {% else %} 
+    <span class="empty">Empty</span>
+  {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="cleared-involuntary.html">
+      Change<span class="govuk-visually-hidden">cleared by</span>
+    </a>
+  </dd>
+</div>
+
+      
+     
+
+      
+      
+     
+    </dl>
+    <form action="../task_list" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "overview-status",
+    name: "overview-status",
+    
+    items: [
+    
+      {
+        value: "Complete",
+        text: "Mark this section as complete, you can still make changes later"
+      }
+      ]
+    }) }}
+
+  
+        
+
+  {{ govukButton({
+    text: "Confirm and continue"
+  }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

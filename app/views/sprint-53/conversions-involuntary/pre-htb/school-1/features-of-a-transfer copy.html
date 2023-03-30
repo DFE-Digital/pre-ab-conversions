@@ -1,0 +1,115 @@
+{% extends "version-4/layout.html" %}
+
+{% set pageTitle = "Features of the transfer – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  {% include "version-4/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Project reference: {{ projectData.project_reference }}
+            </span>
+            <h1 class="govuk-heading-l">
+                Features of the transfer
+            </h1>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Who initiated this academy transfer?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['Who initiated the academy transfer']%}
+                        {{data['Who initiated the academy transfer']}}
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./features/question-a?returnToTaskList=yes">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Reason for transfer
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['rdd or esfa intervention']%}
+                        <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
+                        <p class="govuk-body">{{data['more-detail']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./features/question-b">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Type of transfer
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['type-of-transfer']%}
+                        <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                        <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./features/question-c">
+                        Change<span class="govuk-visually-hidden">type of transfer</span>
+                    </a>
+                    </dd>
+                </div>
+        
+            </dl>
+
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+            
+            {% if data['Who initiated the academy transfer'] and data['rdd or esfa intervention'] and data['type-of-transfer'] %}
+            {{ govukCheckboxes({
+            idPrefix: "features-section-complete",
+            name: "features-section-complete",
+            items: [
+                {
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['features-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "features-completed",
+                text: "Mark this section as complete, you can still make changes later"
+                }
+            ]
+            }) }}
+            {% endif %}
+
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}

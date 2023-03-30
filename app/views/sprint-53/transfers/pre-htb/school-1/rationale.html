@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Provide the rationale for the transfer – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Project reference: {{ projectData.project_reference }}
+            </span>
+            <h1 class="govuk-heading-l">
+                Provide the rationale for the transfer
+            </h1>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Rationale for project
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-!-width-full">
+                    {% if data['project-rationale']%}
+                        <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./rationale/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Rationale for the trust or sponsor
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['trust-rationale']%}
+                        <p class="govuk-body govuk-!-width-full">{{data['trust-rationale']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./rationale/question-b">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+        
+            </dl>
+
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            {% if data['project-rationale'] and data['trust-rationale'] %}
+            {{ govukCheckboxes({
+            idPrefix: "rationale-section-complete",
+            name: "rationale-section-complete",
+            items: [
+                {
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['rationale-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "rationale-completed",
+                text: "Mark this section as complete, you can still make changes later"
+                }
+            ]
+            }) }}
+            {% endif %}
+
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}

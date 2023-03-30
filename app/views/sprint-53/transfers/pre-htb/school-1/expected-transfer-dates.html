@@ -1,0 +1,107 @@
+{% extends "version-4/layout.html" %}
+
+{% set pageTitle = "Transfer dates – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  {% include "version-4/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Project reference: {{ projectData.project_reference }}
+            </span>
+            <h1 class="govuk-heading-l">
+                Transfer dates
+            </h1>
+            <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
+            <h2 class="govuk-heading-m">
+                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
+            </h2>
+            <-->
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Date when the transfer was first discussed with a trust
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['transfer-first-discussed-date'] %}
+                        <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Advisory Board date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['set-htb-date-day'] and data['set-htb-date-month'] and data['set-htb-date-year'] %}
+                        <p class="govuk-body">
+                            {{ [data['set-htb-date-day'], data['set-htb-date-month'], data['set-htb-date-year']] | arrayToGovukDate }}
+                        </p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-b">
+                        Change<span class="govuk-visually-hidden">type of transfer</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Expected transfer date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['target-date-for-transfer'] %}
+                        <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-c">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+        
+            </dl>
+
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </div>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}

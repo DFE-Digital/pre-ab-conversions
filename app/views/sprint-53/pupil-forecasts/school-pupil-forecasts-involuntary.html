@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['returnToSummary'] == 'yes' %}
+    <form action="../generate/generate_summary#forecasts" method="post">
+    {% else %}
+    <form action="school-pupil-forecasts-summary-involuntary" method="post">
+  {% endif %}
+    
+    <input hidden type="text" name="returnToSummary" value="no"/>
+    
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">School pupil forecasts</h1>
+    <p class="govuk-body">This information is taken from GIAS (Get Information About Schools) and will go into your template. You can add more from the school's Annex B form.</p>
+    <p>Published on GIAS: <strong>June 2022</strong>.</p>
+  </div>
+</div>
+<div>
+ 
+
+
+ 
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Year</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header ">Current academic year</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          236
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          226
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          96%
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"> 
+          
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 1)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-1'] %}
+          {{ data['projected-capacity-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-1'] %}
+          {{ data['projected-pupils-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+          {% if data['projected-capacity-year-1'] and data['projected-pupils-year-1'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 2)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] %}
+          {{ data['projected-capacity-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-2'] %}
+          {{ data['projected-pupils-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] and data['projected-pupils-year-2'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 3)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] %}
+          {{ data['projected-capacity-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-3'] %}
+          {{ data['projected-pupils-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] and data['projected-pupils-year-3'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+</table> 
+
+
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+   <a href="#" name="additional_info"></a>   {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    
+      {{ govukTextarea({
+        name: "pupil-more-detail",
+        id: "pupil-more-detail",
+        value: data["pupil-more-detail"],
+        label: {
+          text: "Add any additional information if you need to",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text:"This information will go into your project template under the school pupil forecasts section."
+        }
+      }) }}
+    
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+    <p>
+
+    </p>
+  </div>
+</div>
+{% endblock %}
