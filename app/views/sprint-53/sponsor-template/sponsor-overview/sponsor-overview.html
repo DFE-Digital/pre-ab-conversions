@@ -21,11 +21,11 @@
      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Row label here
+          Sponsor overview
         </dt>
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">
-          {% if data['grant-type'] %}
+          {% if data['sponsor-overview'] %}
           {{ data['grant-type']}}
           {% else %} 
           <span class="empty">Empty</span>
@@ -34,7 +34,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="route-type-involuntary.html">
-            Change<span class="govuk-visually-hidden">grant funding"</span>
+            Change<span class="govuk-visually-hidden">sponsor overview"</span>
           </a>
         </dd>
       </div>
