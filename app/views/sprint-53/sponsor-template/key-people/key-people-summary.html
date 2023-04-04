@@ -23,12 +23,12 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Row label here
+          Chief Executive Officer
         </dt>
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">
-          {% if data['grant-type'] %}
-          {{ data['grant-type']}}
+          {% if data['sponsor-ceo'] %}
+          {{ data['sponsor-ceo']}}
           {% else %} 
           <span class="empty">Empty</span>
           {% endif %}
@@ -36,7 +36,87 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="route-type-involuntary.html">
-            Change<span class="govuk-visually-hidden">grant funding"</span>
+            Change<span class="govuk-visually-hidden">chief executive officer details"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chief Operating Officer
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-coo'] %}
+          {{ data['sponsor-coo']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">chief operating officer details"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Finance Director
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-fd'] %}
+          {{ data['sponsor-fd']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">finance director details"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          HR Lead
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-hr'] %}
+          {{ data['sponsor-hr']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">HR lead details"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Other key people
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-other-key'] %}
+          {{ data['sponsor-other-key']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="route-type-involuntary.html">
+            Change<span class="govuk-visually-hidden">details of other key people"</span>
           </a>
         </dd>
       </div>
