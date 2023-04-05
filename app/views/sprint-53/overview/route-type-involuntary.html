@@ -20,9 +20,9 @@
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-      <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
+      <h1 class="govuk-heading-l">What kind of grant is the school applying for?</h1>
 
-      <p class="govuk-body-m gov">Sponsored (cannot be changed for this private beta)</p>
+     
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -30,13 +30,6 @@
 {{ govukRadios({
   name: "grant-type",
   idPrefix: "grant-type",
-  fieldset: {
-    legend: {
-      text: "What kind of grant is the school applying for?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
   items: [
     {
       value: "Fast track",
