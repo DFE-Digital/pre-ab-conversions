@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#revenue" method="post">
+        {% else %}  
+        <form action="../school-budget/budget-information2" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">Update the school's remaining revenue</h1>
+<!-- Not MVP
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with viability
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+     The school should be accepting more than 85% of its capacity. You can check pupil numbers by looking at the school information in TRAMS and the <a href="/pupil-forecasts/school-pupil-forecasts">School Pupil Forecast reference section</a> in the task list.
+    </div>
+  </details>
+  -->
+  <h2 class="govuk-heading-m">Remaining revenue on 31 March </h2>
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    label: {
+      text: "Previous financial year",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "revenue-previous-year",
+    name: "revenue-previous-year",
+    value: data["revenue-previous-year"],
+    prefix: {text:"£"}
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Current financial year (forecasted)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "revenue-current-year",
+    name: "revenue-current-year",
+    value: data["revenue-current-year"],
+    prefix: {text:"£"}
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Next financial year (forecasted)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "revenue-next-year",
+    name: "revenue-next-year",
+    value: data["revenue-next-year"],
+    prefix: {text:"£"}
+  }) }}
+  {{ govukTextarea({
+    name: "revenue-reason-for-deficit",
+    id: "rrevenue-eason-for-deficit",
+    value: data["revenue-reason-for-deficit"],
+    label: {
+      text: "If the school has a financial deficit, explain why",
+      classes: "govuk-label--s"
+    }
+  }) }}
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+        </form>
+   
+      </div>
+      
+      
+   <!-- right hand nav -->    
+   <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+    </div>
+    {% endblock %}

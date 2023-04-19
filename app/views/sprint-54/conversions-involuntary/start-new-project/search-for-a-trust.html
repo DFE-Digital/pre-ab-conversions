@@ -1,0 +1,63 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "What is the trust name? – Involuntary conversions – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./check-school-and-trust-details" method="post" novalidate>
+        
+
+        {% set pageHeading %}
+            What is the trust name?
+        {% endset %}
+
+        {{ govukSelect({
+            label: {
+                html: pageHeading,
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+              text: "Search by name, UKPRN or Companies House number."
+            },
+            id: "trust-name",
+            name: "trust-name",
+            value: data['trust-name'],
+            
+            items: [
+              {
+                value: "",
+                text: ""
+              },
+              {
+                value: "Gloucestershire Academy Trust (10060980) - Companies House number: 09613632",
+                text: "Gloucestershire Academy Trust (10060980) - Companies House number: 09613632",
+                selected: checked("trust-name", "Gloucestershire Academy Trust (10060980) - Companies House number: 09613632")
+              },
+              {
+                value: "Gloucestershire North Schools Trust (10058638) - Companies House number: 07561574",
+                text: "Gloucestershire North Schools Trust (10058638) - Companies House number: 07561574",
+                selected: checked("trust-name", "Gloucestershire North Schools Trust (10058638) - Companies House number: 07561574")
+              },
+              {
+                value: "Gloucestershire South Schools Trust (10058757) - Companies House number: 07641004",
+                text: "Gloucestershire South Schools Trust (10058757) - Companies House number: 07641004",
+                selected: checked("trust-name", "Gloucestershire South Schools Trust (10058757) - Companies House number: 07641004")
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+            }) }}
+      
+    
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          accessibleAutocomplete.enhanceSelectElement({
+            selectElement: document.querySelector('#trust-name')
+          })
+        });
+        </script>
+{% endblock %}
