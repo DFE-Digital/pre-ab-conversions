@@ -1,0 +1,75 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "What are the risks with this transfer? – Manage an academy transfer" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="/associated-risks-for-transfer" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      What are the risks with this transfer?
+    {% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "risks-issues",
+      name: "risks-issues",
+      classes: "govuk-!-margin-bottom-6",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        
+
+        {
+          value: "There are complex land and building issues",
+          text: "Complex land and building issues",
+          id: "risk-complex-land-and-building-issues",
+          checked: checked("['risks-issues']", "There are complex land and building issues")
+        },
+
+        {
+          value: "There are finance and debt concerns",
+          text: "Finance and debt concerns",
+          id: "risk-finance-and-debt-concerns",
+          checked: checked("['risks-issues']", "There are finance and debt concerns")
+        },
+        {
+          value: "This is a high profile transfer (ministers and media could be involved)",
+          text: "High profile transfer",
+          id: "risk-high-profile-transfer",
+          checked: checked("['risks-issues']", "This is a high profile transfer")
+        },
+        {
+          value: "There are outgoing trust issues",
+          text: "Outgoing trust issues",
+          id: "outgoing-trust-issues",
+          checked: checked("['risks-issues']", "There are outgoing trust issues")
+        },
+        {
+          value: "Other risks",
+          text: "Other risks",
+          id: "risk-other-risks",
+          checked: checked("['risks-issues']", "Other risks")
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
