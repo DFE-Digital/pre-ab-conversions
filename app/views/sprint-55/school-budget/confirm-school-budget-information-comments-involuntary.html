@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+        
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+{% if data['returnToSummary'] == 'yes' %}
+<form action="../generate/generate_summary#budget_additional_info" method="post">
+{% else %}
+<form action="confirm-school-budget-information-involuntary" method="post">
+{% endif %}
+<input hidden type="text" name="returnToSummary" value="no"/>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Confirm school budget information</h1>    
+    <p class="govuk-body-m">This table will go into your project template. You can <a href="#additional_info">add additional information</a> if you need to.</p>
+ <br>
+  </div>
+</div>
+
+
+<table class="govuk-table">
+ 
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">End of current financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['current-financial-year-day'] and data['current-financial-year-month'] and data['current-financial-year-year']%}
+        <span>{{ data['current-financial-year-day'] }} </span>
+        <span>{{ data['current-financial-year-month'] }} </span>
+        <span>{{ data['current-financial-year-year'] }}</span>
+        {% else %} 
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> End of current financial year</span>
+        </a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">Forecasted revenue carry forward at the end of the current financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['forecast-revenue-current-year'] %}
+        {{data['forecast-revenue-current-year']}}
+        {% else %}
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> Forecasted revenue carry forward at the end of the current financial year</span>
+        </a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">Forecasted capital carry forward at the end of the current financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['forecast-capital-current-year'] %}
+        {{data['forecast-capital-current-year']}}
+        {% else %}
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> Forecasted capital carry forward at the end of the current financial year</span>
+        </a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">End of next financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['next-financial-year-day'] and data['next-financial-year-month'] and data['next-financial-year-year']%}
+        <span>{{ data['next-financial-year-day'] }} </span>
+        <span>{{ data['next-financial-year-month'] }} </span>
+        <span>{{ data['next-financial-year-year'] }}</span>
+        {% else %} 
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> End of next financial year</span>
+        </a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">Forecasted revenue carry forward at the end of the next financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['forecast-revenue-next-year'] %}
+        {{data['forecast-revenue-next-year']}}
+        {% else %}
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> Forecasted revenue carry forward at the end of the next financial year</span>
+        </a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-half govuk-!-font-size-19">Forecasted capital carry forward at the end of the next financial year</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter govuk-!-font-size-19">
+        {% if data['forecast-capital-next-year'] %}
+        {{data['forecast-capital-next-year']}}
+        {% else %}
+        <span class="empty">Empty</span>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-!-width-one-quarter govuk-!-font-size-19">
+        <a class="govuk-link" href="update-school-budget-information-involuntary">
+          Change <span class="govuk-visually-hidden"> Forecasted capital carry forward at the end of the next financial year</span>
+        </a>
+      </td>
+    </tr>
+   
+   
+  </tbody>
+</table>
+
+
+  
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <a name="additional_info"></a>
+
+    
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    
+      {{ govukTextarea({
+        name: "budget-more-detail",
+        id: "budget-more-detail",
+        value: data["budget-more-detail"],
+        label: {
+          text: "Add any additional information if you need to",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text:"This information will go into your project template under the school budget section."
+        }
+      }) }}
+    
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+    </form>
+
+  </div>
+  </div>
+
+
+  {% endblock %}

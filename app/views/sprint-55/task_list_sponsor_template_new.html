@@ -1,0 +1,312 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cheltenham Spa Primary School - task list
+{% endblock %}
+
+{% block beforeContent %}
+<a href="projects-list-involuntary-conversions-after" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+{% if data['justRecorded'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Decision recorded</p>
+  </div>
+</div>
+{% endif %}
+<input hidden type="text" name="justRecorded" value="no"/>
+
+{% if data['justAssigned'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Project is assigned</p>
+  </div>
+</div>
+{% endif %}
+<input hidden type="text" name="justAssigned" value="no"/>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cheltenham Spa Primary School 
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Sponsored conversion</br>
+      Delivery officer: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+      <br><br>
+      <strong class="govuk-tag govuk-tag--grey" id="general-info">Awaiting decision</strong>
+    </p>
+  </div>
+
+  
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="task_list">Project details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/application_saved_involuntary_conversions.html">Annex B form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Record a decision</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/notes_involuntary_conversions.html">Project notes</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Review and prepare a project document</h2>
+    <p class="govuk-body">These steps will help you create a document you can present to an Advisory Board, and record things like when the LA (Local Authority) information template was sent.</p>
+    <p class="govuk-body">You can complete them in any order.</p>
+    <br>
+  
+    <ul class="app-task-list">
+
+
+     
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Add information about the school</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#"  aria-describedby="general-info-summary">
+          School overview
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/sponsor-overview/sponsor-overview.html"  aria-describedby="sponsor-overview">
+          Budget
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/key-people/key-people-summary.html"  aria-describedby="key-people-summary">
+          Pupil forecasts
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="key-people">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/governance/governance-summary.html"  aria-describedby="governance-summary">
+          Conversion details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="governance">Not started</strong>
+          </li>
+
+         
+
+         
+
+
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Add sponsor information</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="overview/summary1-involuntary.html"  aria-describedby="project-overview">
+                Trust overview
+              </a>
+            </span>
+            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="general-info/summary1-involuntary" aria-describedby="general-information">
+               Governance
+              </a>
+            </span>
+            <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
+              {{data|generalInfoStatusText(
+                ['general-info-status'],
+                ['distance'],
+                ['deficit'],
+                ['diocesan'],
+                ['goodschools','viability' ]
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-performance/ofsted-comments-involuntary.html" aria-describedby="school-performance">
+                School improvement strategy
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">
+             Not started
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="rationale/rationale-summary1-involuntary.html" aria-describedby="rationale-status">
+                Finances
+              </a>
+            </span>
+            <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
+              {{data|rationaleOverviewStatusText(
+                ['rationale-status-htb'],
+                ['trust-rationale'],
+                ['project-rationale']
+              )}} 
+            </strong>
+          </li>
+     
+        </ul>
+      </li>
+
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Give a case for academisation</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#"  aria-describedby="general-info-summary">
+          Rationale
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/sponsor-overview/sponsor-overview.html"  aria-describedby="sponsor-overview">
+          Risks and issues
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Say when the LA information template was sent</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template-involuntary">
+                Record LA information template sent date 
+              </a>
+            </span>
+            <strong class="{{data|laProformaStatusClass(
+                      ['la-proforma-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']  
+              )}} app-task-list__tag" id="LA-infromation-template">  
+              {{data|laProformaStatusText(
+                ['la-proforma-status'],
+                ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                'la-comments', 'la-sharepoint-link']               
+              )}} 
+            </strong>            
+          </li>
+        </ul>
+      </li>
+
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Performance data</h3>
+
+        <div class="govuk-inset-text">
+          This information will be added to your project document automatically.
+        </div>
+
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#"  aria-describedby="general-info-summary">
+          Ofsted information
+              </a>
+            </span>
+            <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/sponsor-overview/sponsor-overview.html"  aria-describedby="sponsor-overview">
+          Key stage data
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+        </ul>
+      </li>
+
+
+
+      <h2 class="govuk-heading-l">Create your project document</h2>
+      <p>Project documents are in Microsoft Word format. You can preview them first and make changes to them afterwards. </p>
+
+      <div class="govuk-button-group">
+        <a href="generate/generate_documents_involuntary" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Preview project document
+        </a>
+        <a href="generate/generate_summary_involuntary.html" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+          Create project document
+        </a>
+       
+      </div>
+    </ul>
+  </div>
+</div>
+{% endblock %}

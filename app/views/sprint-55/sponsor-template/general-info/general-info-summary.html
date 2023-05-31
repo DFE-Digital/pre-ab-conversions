@@ -1,0 +1,339 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+ 
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">
+    General information</h1>
+    <p>This information is pre-populated from TRAMS.</p>
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    <dl class="govuk-summary-list">
+     
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name of MAT/Sponsor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['mat-sponsor'] %}
+          {{ data['mat-sponsor']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">full name of MAT or sponsor"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of last update
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-date'] %}
+          {{ data['sponsor-date']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">date of last update"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Author
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-author'] %}
+          {{ data['sponsor-author']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">author"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          MAT/Sponsor ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-id'] %}
+          {{ data['sponsor-id']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">MAT or sponsor ID"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name of MAT/Sponsor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['mat-sponsor'] %}
+          {{ data['mat-sponsor']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">full name of MAT or sponsor"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cleared by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-cleared-by'] %}
+          {{ data['sponsor-cleared-by']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">cleared by"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-type'] %}
+          {{ data['sponsor-type']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">sponsor type"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Pipeline
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-pipeline'] %}
+          {{ data['sponsor-pipeline']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">sponsor pipeline"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Pre-pipeline
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-pre-pipeline'] %}
+          {{ data['sponsor-pre-pipeline']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">sponsor pre-pipeline"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Any academies in the process of transferring?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-academy-transfers'] %}
+          {{ data['sponsor-academy-transfers']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">academies in the process of transferring"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current footprint
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-footprint'] %}
+          {{ data['sponsor-footprint']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">sponsor footprint"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Capacity beyond open and pipeline if available/required
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-capacity'] %}
+          {{ data['sponsor-capacity']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">capacity beyond open and pipeline"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is this a Diocesan MAT?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-diocesan'] %}
+          {{ data['sponsor-diocesan']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">is this a diocesan MAT"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          If yes, % of schools that are good or outstanding?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-good-percentage'] %}
+          {{ data['sponsor-good-percentage']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">percentage of good or outstanding schools"</span>
+          </a>
+        </dd>
+      </div>
+
+     
+      
+     
+
+      
+      
+     
+    </dl>
+    <form action="../task_list" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "overview-status",
+    name: "overview-status",
+    
+    items: [
+    
+      {
+        value: "Complete",
+        text: "Mark this section as complete, you can still make changes later"
+      }
+      ]
+    }) }}
+
+  
+        
+
+  {{ govukButton({
+    text: "Confirm and continue"
+  }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "Select the school – Involuntary – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./search-for-a-trust" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "select-the-school",
+          fieldset: {
+            legend: {
+              text: "Select the school",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+          {
+            value: "cheltenham-primary-school",
+            text: "Cheltenham Primary School",
+            hint: {
+              text: "URN: 100006"
+            }
+          },
+            {
+              value: "cheltenham-secondary-school",
+              text: "Cheltenham Secondary School",
+              hint: {
+                text: "URN: 138403"
+              }
+            },
+             {  
+              value: "cheltenham-girls-school",
+              text: "Cheltenham Girls School",
+              hint: {
+                text: "URN: 106049"
+              }
+            },
+            {  
+             value: "cheltenham-boys-school",
+             text: "Cheltenham Boys School",
+             hint: {
+               text: "URN: 106049"
+             }
+           }
+          ]
+        }) }}
+
+
+        
+
+
+
+
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
