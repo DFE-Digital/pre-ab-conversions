@@ -1,0 +1,1282 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project list
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">{{data['userName']}}, {{data['userRole']}}</span>
+      Manage an academy conversion
+    </h1>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">All projects (4032)</h2>
+
+    <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details">
+      <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
+        <span class="govuk-details__summary-text govuk-button govuk-button--secondary prepare-project-listing__button--main">
+          Filter projects
+        </span>
+      </summary>
+      <div class="govuk-details__text prepare-project-listing__filters-details">
+        <form action="projects-list-do-filter-by-local-authorities-results" method="post" class="form">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              {{ govukInput({
+                label: {
+                  text: "Project title",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                classes: "",
+                hint: {
+                  text: "For example, Bolton Spa Primary"
+                },
+                id: "filter-project-title",
+                name: "filter-project-title",
+                value: data['filter-project-title']
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-two-thirds">
+              
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="filter-regions-hint">
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-grid-row">
+
+                      <div class="govuk-grid-column-one-half">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h2 class="govuk-fieldset__heading">
+                            Regions
+                          </h2>
+                        </legend>
+                        <div id="filter-regions-hint" class="govuk-hint">
+                          Select one option.
+                        </div>
+                        <div class="prepare-project-listing__filter">
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions" name="filter-regions" type="radio" value="East Midlands" {{ checked("filter-regions", "East Midlands") }} data-aria-controls="conditional-regions-east-midlands">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions">
+                              East Midlands
+                            </label>
+                          </div>
+      
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-2" name="filter-regions" type="radio" value="East of England" {{ checked("filter-regions", "East of England") }} data-aria-controls="conditional-regions-east-of-england">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-2">
+                              East of England
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-3" name="filter-regions" type="radio" value="London" {{ checked("filter-regions", "London") }} data-aria-controls="conditional-regions-london">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-3">
+                              London
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-4" name="filter-regions" type="radio" value="North East" {{ checked("filter-regions", "North East") }} data-aria-controls="conditional-regions-north-east">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-4">
+                              North East
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-5" name="filter-regions" type="radio" value="North West" {{ checked("filter-regions", "North West") }} data-aria-controls="conditional-regions-north-west">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-5">
+                              North West
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-6" name="filter-regions" type="radio" value="South East" {{ checked("filter-regions", "South East") }} data-aria-controls="conditional-regions-south-east">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-6">
+                              South East
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-7" name="filter-regions" type="radio" value="South West" {{ checked("filter-regions", "South West") }} data-aria-controls="conditional-regions-south-west">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-7">
+                              South West
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-8" name="filter-regions" type="radio" value="West Midlands" {{ checked("filter-regions", "West Midlands") }} data-aria-controls="conditional-regions-west-midlands">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-8">
+                              West Midlands
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="filter-regions-9" name="filter-regions" type="radio" value="Yorkshire and the Humber" {{ checked("filter-regions", "Yorkshire and the Humber") }} data-aria-controls="conditional-regions-yorkshire-and-the-humber">
+                            <label class="govuk-label govuk-radios__label" for="filter-regions-9">
+                              Yorkshire and the Humber
+                            </label>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="govuk-grid-column-one-half">
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-east-midlands">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-east-midlands-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-east-midlands-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-derby" name="filter-local-authorities" type="checkbox" value="Derby" {{ checked("filter-local-authorities", "Derby") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-derby">
+                                    Derby
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-derbyshire" name="filter-local-authorities" type="checkbox" value="Derbyshire" {{ checked("filter-local-authorities", "Derbyshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-derbyshire">
+                                    Derbyshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-leicester" name="filter-local-authorities" type="checkbox" value="Leicester" {{ checked("filter-local-authorities", "Leicester") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-leicester">
+                                    Leicester
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-leicestershire" name="filter-local-authorities" type="checkbox" value="Leicestershire" {{ checked("filter-local-authorities", "Leicestershire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-leicestershire">
+                                    Leicestershire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-lincolnshire" name="filter-local-authorities" type="checkbox" value="Lincolnshire" {{ checked("filter-local-authorities", "Lincolnshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-lincolnshire">
+                                    Lincolnshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-north-northamptonshire" name="filter-local-authorities" type="checkbox" value="North Northamptonshire" {{ checked("filter-local-authorities", "North Northamptonshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-north-northamptonshire">
+                                    North Northamptonshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-nottingham" name="filter-local-authorities" type="checkbox" value="Nottingham" {{ checked("filter-local-authorities", "Nottingham") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-nottingham">
+                                    Nottingham
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-nottinghamshire" name="filter-local-authorities" type="checkbox" value="Nottinghamshire" {{ checked("filter-local-authorities", "Nottinghamshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-nottinghamshire">
+                                    Nottinghamshire
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-east-of-england">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-east-of-england-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-east-of-england-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bedford" name="filter-local-authorities" type="checkbox" value="Bedford" {{ checked("filter-local-authorities", "Bedford") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bedford">
+                                    Bedford
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-cambridgeshire" name="filter-local-authorities" type="checkbox" value="Cambridgeshire" {{ checked("filter-local-authorities", "Cambridgeshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-cambridgeshire">
+                                    Cambridgeshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-central-bedfordshire" name="filter-local-authorities" type="checkbox" value="Central Bedfordshire" {{ checked("filter-local-authorities", "Central Bedfordshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-central-bedfordshire">
+                                    Central Bedfordshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-essex" name="filter-local-authorities" type="checkbox" value="Essex" {{ checked("filter-local-authorities", "Essex") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-essex">
+                                    Essex
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hertfordshire" name="filter-local-authorities" type="checkbox" value="Hertfordshire" {{ checked("filter-local-authorities", "Hertfordshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hertfordshire">
+                                    Hertfordshire
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-london">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-london-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-london-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-barking-and-dagenham" name="filter-local-authorities" type="checkbox" value="Barking and Dagenham" {{ checked("filter-local-authorities", "Barking and Dagenham") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-barking-and-dagenham">
+                                    Barking and Dagenham
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-barnet" name="filter-local-authorities" type="checkbox" value="Barnet" {{ checked("filter-local-authorities", "Barnet") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-barnet">
+                                    Barnet
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bexley" name="filter-local-authorities" type="checkbox" value="Bexley" {{ checked("filter-local-authorities", "Bexley") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bexley">
+                                    Bexley
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-brent" name="filter-local-authorities" type="checkbox" value="Brent" {{ checked("filter-local-authorities", "Brent") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-brent">
+                                    Brent
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bromley" name="filter-local-authorities" type="checkbox" value="Bromley" {{ checked("filter-local-authorities", "Bromley") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bromley">
+                                    Bromley
+                                  </label>
+                                </div>
+                                
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-camden" name="filter-local-authorities" type="checkbox" value="Camden" {{ checked("filter-local-authorities", "Camden") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-camden">
+                                    Camden
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-city-of-london" name="filter-local-authorities" type="checkbox" value="City of London" {{ checked("filter-local-authorities", "City of London") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-city-of-london">
+                                    City of London
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-croydon" name="filter-local-authorities" type="checkbox" value="Croydon" {{ checked("filter-local-authorities", "Croydon") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-croydon">
+                                    Croydon
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-ealing" name="filter-local-authorities" type="checkbox" value="Ealing" {{ checked("filter-local-authorities", "Ealing") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-ealing">
+                                    Ealing
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-enfield" name="filter-local-authorities" type="checkbox" value="Enfield" {{ checked("filter-local-authorities", "Enfield") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-enfield">
+                                    Enfield
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-greenwich" name="filter-local-authorities" type="checkbox" value="Greenwich" {{ checked("filter-local-authorities", "Greenwich") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-greenwich">
+                                    Greenwich
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hackney" name="filter-local-authorities" type="checkbox" value="Hackney" {{ checked("filter-local-authorities", "Hackney") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hackney">
+                                    Hackney
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hammersmith-and-fulham" name="filter-local-authorities" type="checkbox" value="Hammersmith and Fulham" {{ checked("filter-local-authorities", "Hammersmith and Fulham") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hammersmith-and-fulham">
+                                    Hammersmith and Fulham
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-haringey" name="filter-local-authorities" type="checkbox" value="Haringey" {{ checked("filter-local-authorities", "Haringey") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-haringey">
+                                    Haringey
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-harrow" name="filter-local-authorities" type="checkbox" value="Harrow" {{ checked("filter-local-authorities", "Harrow") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-harrow">
+                                    Harrow
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-havering" name="filter-local-authorities" type="checkbox" value="Havering" {{ checked("filter-local-authorities", "Havering") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-havering">
+                                    Havering
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hillingdon" name="filter-local-authorities" type="checkbox" value="Hillingdon" {{ checked("filter-local-authorities", "Hillingdon") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hillingdon">
+                                    Hillingdon
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hounslow" name="filter-local-authorities" type="checkbox" value="Hounslow" {{ checked("filter-local-authorities", "Hounslow") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hounslow">
+                                    Hounslow
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-lambeth" name="filter-local-authorities" type="checkbox" value="Lambeth" {{ checked("filter-local-authorities", "Lambeth") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-lambeth">
+                                    Lambeth
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-north-east">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-north-east-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-north-east-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-county-durham" name="filter-local-authorities" type="checkbox" value="County Durham" {{ checked("filter-local-authorities", "County Durham") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-county-durham">
+                                    County Durham
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-darlington" name="filter-local-authorities" type="checkbox" value="Darlington" {{ checked("filter-local-authorities", "Darlington") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-darlington">
+                                    Darlington
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-gateshead" name="filter-local-authorities" type="checkbox" value="Gateshead" {{ checked("filter-local-authorities", "Gateshead") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-gateshead">
+                                    Gateshead
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hartlepool" name="filter-local-authorities" type="checkbox" value="Hartlepool" {{ checked("filter-local-authorities", "Hartlepool") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hartlepool">
+                                    Hartlepool
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-middlesborough" name="filter-local-authorities" type="checkbox" value="Middlesborough" {{ checked("filter-local-authorities", "Middlesborough") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-middlesborough">
+                                    Middlesborough
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-newcastle-upon-tyne" name="filter-local-authorities" type="checkbox" value="Newcastle upon Tyne" {{ checked("filter-local-authorities", "Newcastle upon Tyne") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-newcastle-upon-tyne">
+                                    Newcastle upon Tyne
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-north-tyneside" name="filter-local-authorities" type="checkbox" value="North Tyneside" {{ checked("filter-local-authorities", "North Tyneside") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-north-tyneside">
+                                    North Tyneside
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-north-west">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-north-west-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-north-west-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-blackburn-with-darwen" name="filter-local-authorities" type="checkbox" value="Blackburn with Darwen" {{ checked("filter-local-authorities", "Blackburn with Darwen") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-blackburn-with-darwen">
+                                    Blackburn with Darwen
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-blackpool" name="filter-local-authorities" type="checkbox" value="Blackpool" {{ checked("filter-local-authorities", "Blackpool") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-blackpool">
+                                    Blackpool
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bolton" name="filter-local-authorities" type="checkbox" value="Bolton" {{ checked("filter-local-authorities", "Bolton") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bolton">
+                                    Bolton
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bury" name="filter-local-authorities" type="checkbox" value="Bury" {{ checked("filter-local-authorities", "Bury") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bury">
+                                    Bury
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-cheshire-east" name="filter-local-authorities" type="checkbox" value="Cheshire East" {{ checked("filter-local-authorities", "Cheshire East") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-cheshire-east">
+                                    Cheshire East
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-cheshire-west-and-chester" name="filter-local-authorities" type="checkbox" value="Cheshire West and Chester" {{ checked("filter-local-authorities", "Cheshire West and Chester") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-cheshire-west-and-chester">
+                                    Cheshire West and Chester
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-south-east">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-south-east-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-south-east-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bracknell-forest" name="filter-local-authorities" type="checkbox" value="Bracknell Forest" {{ checked("filter-local-authorities", "Bracknell Forest") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bracknell-forest">
+                                    Bracknell Forest
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-brighton-and-hove" name="filter-local-authorities" type="checkbox" value="Brighton and Hove" {{ checked("filter-local-authorities", "Brighton and Hove") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-brighton-and-hove">
+                                    Brighton and Hove
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-buckinghamshire" name="filter-local-authorities" type="checkbox" value="Buckinghamshire" {{ checked("filter-local-authorities", "Buckinghamshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-buckinghamshire">
+                                    Buckinghamshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-east-sussex" name="filter-local-authorities" type="checkbox" value="East Sussex" {{ checked("filter-local-authorities", "East Sussex") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-east-sussex">
+                                    East Sussex
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-hampshire" name="filter-local-authorities" type="checkbox" value="Hampshire" {{ checked("filter-local-authorities", "Hampshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-hampshire">
+                                    Hampshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-isle-of-wight" name="filter-local-authorities" type="checkbox" value="Isle of Wight" {{ checked("filter-local-authorities", "Isle of Wight") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-isle-of-wight">
+                                    Isle of Wight
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-kent" name="filter-local-authorities" type="checkbox" value="Kent" {{ checked("filter-local-authorities", "Kent") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-kent">
+                                    Kent
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-south-west">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-south-west-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-south-west-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bath-and-north-east-somerset" name="filter-local-authorities" type="checkbox" value="Bath and North East Somerset" {{ checked("filter-local-authorities", "Bath and North East Somerset") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bath-and-north-east-somerset">
+                                    Bath and North East Somerset
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bournemouth-christchurchand-poole" name="filter-local-authorities" type="checkbox" value="Bournemouth, Christchurchand Poole" {{ checked("filter-local-authorities", "Bournemouth, Christchurchand Poole") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bournemouth-christchurchand-poole">
+                                    Bournemouth, Christchurchand Poole
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-city-of-bristol" name="filter-local-authorities" type="checkbox" value="City of Bristol" {{ checked("filter-local-authorities", "City of Bristol") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-city-of-bristol">
+                                    City of Bristol
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-cornwall" name="filter-local-authorities" type="checkbox" value="Cornwall" {{ checked("filter-local-authorities", "Cornwall") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-cornwall">
+                                    Cornwall
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-devon" name="filter-local-authorities" type="checkbox" value="Devon" {{ checked("filter-local-authorities", "Devon") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-devon">
+                                    Devon
+                                  </label>
+                                </div>
+                                
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-west-midlands">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-west-midlands-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-west-midlands-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-birmingham" name="filter-local-authorities" type="checkbox" value="Birmingham" {{ checked("filter-local-authorities", "Birmingham") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-birmingham">
+                                    Birmingham
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-Coventry" name="filter-local-authorities" type="checkbox" value="Coventry" {{ checked("filter-local-authorities", "Coventry") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-Coventry">
+                                    Coventry
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-dudley" name="filter-local-authorities" type="checkbox" value="Dudley" {{ checked("filter-local-authorities", "Dudley") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-dudley">
+                                    Dudley
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-stoke-on-trent" name="filter-local-authorities" type="checkbox" value="Stoke-on-Trent" {{ checked("filter-local-authorities", "Stoke-on-Trent") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-stoke-on-trent">
+                                    Stoke-on-Trent
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-walsall" name="filter-local-authorities" type="checkbox" value="Walsall" {{ checked("filter-local-authorities", "Walsall") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-walsall">
+                                    Walsall
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-warwickshire" name="filter-local-authorities" type="checkbox" value="Warwickshire" {{ checked("filter-local-authorities", "Warwickshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-warwickshire">
+                                    Warwickshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-wolverhampton" name="filter-local-authorities" type="checkbox" value="Wolverhampton" {{ checked("filter-local-authorities", "Wolverhampton") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-wolverhampton">
+                                    Wolverhampton
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-worcestershire" name="filter-local-authorities" type="checkbox" value="Worcestershire" {{ checked("filter-local-authorities", "Worcestershire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-worcestershire">
+                                    Worcestershire
+                                  </label>
+                                </div>
+                                
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                        <div class="govuk-radios__conditional prepare-project-listing__conditional govuk-radios__conditional--hidden" id="conditional-regions-yorkshire-and-the-humber">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="filter-local-authorities-yorkshire-and-the-humber-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h2 class="govuk-fieldset__heading">
+                                  Local authorities
+                                </h2>
+                              </legend>
+                              <div id="filter-local-authorities-yorkshire-and-the-humber-hint" class="govuk-hint">
+                                Select all that apply
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small prepare-project-listing__filter">
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-barnsley" name="filter-local-authorities" type="checkbox" value="Barnsley" {{ checked("filter-local-authorities", "Barnsley") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-barnsley">
+                                    Barnsley
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-bradford" name="filter-local-authorities" type="checkbox" value="Bradford" {{ checked("filter-local-authorities", "Bradford") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-bradford">
+                                    Bradford
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-calderdale" name="filter-local-authorities" type="checkbox" value="Calderdale" {{ checked("filter-local-authorities", "Calderdale") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-calderdale">
+                                    Calderdale
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-doncaster" name="filter-local-authorities" type="checkbox" value="Doncaster" {{ checked("filter-local-authorities", "Doncaster") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-doncaster">
+                                    Doncaster
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-east-riding-of-yorkshire" name="filter-local-authorities" type="checkbox" value="East iding of Yorkshire" {{ checked("filter-local-authorities", "East Riding of Yorkshire") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-east-riding-of-yorkshire">
+                                    East Riding of Yorkshire
+                                  </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-kirklees" name="filter-local-authorities" type="checkbox" value="Kirklees" {{ checked("filter-local-authorities", "Kirklees") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-kirklees">
+                                    Kirklees
+                                  </label>
+                                </div>
+                                
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="filter-local-authorities-leeds" name="filter-local-authorities" type="checkbox" value="Leeds" {{ checked("filter-local-authorities", "Leeds") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="filter-local-authorities-leeds">
+                                    Leeds
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              {{ govukCheckboxes({
+                idPrefix: "filter-delivery-officers",
+                name: "filter-delivery-officers",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Delivery officers",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Alex James",
+                    text: "Alex James",
+                    checked: checked("filter-delivery-officers", "Alex James")
+                  },
+                  {
+                    value: "Paul Michaels",
+                    text: "Paul Michaels",
+                    checked: checked("filter-delivery-officers", "Paul Michaels")
+                  },
+                  {
+                    value: "Zara Laney",
+                    text: "Zara Laney",
+                    checked: checked("filter-delivery-officers", "Zara Laney")
+                  },
+                  {
+                    value: "",
+                    text: "Not assigned",
+                    checked: checked("filter-delivery-officers", "")
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              {{ govukCheckboxes({
+                idPrefix: "filter-project-status",
+                name: "filter-project-status",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Project status",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Pre advisory board",
+                    text: "Pre advisory board",
+                    checked: checked("filter-project-status", "Pre advisory board")
+                  },
+                  {
+                    value: "Approved",
+                    text: "Approved",
+                    checked: checked("filter-project-status", "Approved")
+                  },
+                  {
+                    value: "Approved with conditions",
+                    text: "Approved with conditions",
+                    checked: checked("filter-project-status", "Approved with conditions")
+                  },
+                  {
+                    value: "Declined",
+                    text: "Declined",
+                    checked: checked("filter-project-status", "Declined")
+                  },
+                  {
+                    value: "Deferred",
+                    text: "Deferred",
+                    checked: checked("filter-project-status", "Deferred")
+                  }
+                ]
+              }) }}
+            </div>
+
+
+
+
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary prepare-project-listing__button--apply" data-module="govuk-button ">
+                  Apply filters
+                </button>
+              
+                <a class="govuk-link" href="projects-list-do-filter-by-local-authorities?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </details>
+
+    <div class="sort-component">
+      <nav class="govuk-body sort-component__nav">
+        <span class="govuk-!-font-weight-bold">Sort by:</span>
+        <ul class="sort-component__list">
+          <li class="sort-component__list-item">Application received</li>
+          <!--li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-2"><span class="govuk-visually-hidden">Sort by </span>Project title</a></li-->
+        </ul>
+      </nav>
+    </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Application information
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Project status and dates
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 112456</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: Oak Hill Trust</br>
+            Local authority: Bolton</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--orange">Deferred</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 5 January 2021</br>
+              Advisory Board date: 1 June 2021</br>
+              Opening date: 1 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1">
+              <strong><a href="task_list?justRecorded=no&justAssigned=no">St. Wilfrid's Primary School</a></strong> URN 102062
+            </h2>
+
+            <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">Application to join a trust: Dynamics Trust</br>
+            Local authority: Warrington</br>
+            Delivery officer: 
+            {% if (data['delivery-officer-assigned']) %}
+              <strong>{{ data['delivery-officer-assigned'] }}</strong>
+            {% else %}
+              <span class="empty">Empty</span>
+            {% endif %}
+            </p>
+          </td>
+          <td class="govuk-table__cell prepare-text-align-right">  
+            {% if data['htb-date']%}
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>  
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">Advisory Board date: {{ data['htb-date']}}</br>
+                Opening date:  {{ data['opening-date']}}
+              </p>  
+            {% else %}               
+              <p class="govuk-!-margin-top-0">
+                {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+                  <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+                {% elseif (data['decision-status'] == "Approved") %}
+                  <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
+                {% elseif (data['decision-status'] == "Declined") %} 
+                  <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>    
+                {% elseif (data['decision-status'] == "Deferred") %} 
+                  <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
+                {% else %} 
+                  <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+                {% endif %} 
+              </p>
+              <p class="govuk-hint govuk-!-margin-top-0">
+                Application received: 29 January 2021</br>
+                Advisory Board date: 15 April 2021</br>
+                Opening date: 1 September 2021
+              </p>
+            {% endif %}
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Luke's Church of England Primary School</a></strong> URN 145616 </h2>
+            <p class="govuk-!-margin-top-3">
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Lambeth</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Bolton Spa Primary</a></strong> URN 675091</h2>
+            <p class="govuk-!-margin-top-3">
+              Application to form a trust: Oak Hill Trust</br>
+              Local authority: Warrington</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 4 March 2021</br>
+              Advisory Board date: 15 April 2021</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>  
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Thomas of Canterbury Catholic Primary School</a></strong> URN 100357 </h2>
+            <p class="govuk-!-margin-top-3">
+              Application to join a trust: Kingfisher learning trust</br>
+              Local authority: Hammersmith and Fulham</br>
+              Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right"><!-- not MVP <span class="overdue">OVERDUE TASK</span> --><p class="govuk-tag govuk-tag--yellow">Pre advisory board</p> 
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 12 February 2021</br>
+              Advisory board date: 1 June 2021</br>
+              Opening date: 3 July 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Newcastle High School for Girls</a></strong> URN 108538</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: WISE ACADEMIES</br>
+            Local authority: Newcastle upon Tyne</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Lymington Junior School</a></strong> URN 116051</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: THE KITE ACADEMY TRUST </br>
+            Local authority: Hampshire</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 29 March 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St Marys Catholic Academy</a></strong> URN 140114</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: CREATIVE EDUCATION TRUST</br>
+            Local authority: Stoke-on-Trent</br>
+            Delivery officer: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 April 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Binstead Primary School</a></strong> URN 118176</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: UNITED LEARNING TRUST </br>
+            Local authority: Isle of Wight</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 May 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">St James Catholic Primary School</a></strong> URN 141820</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: ACADEMY TRANSFORMATION TRUST</br>
+            Local authority: Birmingham</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint govuk-!-margin-top-0">
+              Application received: 12 June 2021</br>
+              Advisory board date: 1 April 2021</br>
+              Opening date: 1 August 2021
+            </p>
+          </td>   
+        </tr>
+      
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Morningside Primary School</a></strong> URN 100232</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Bexley</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Paul Michaels</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Brighton Girls GDST</a></strong> URN 114658</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: AURORA ACADEMIES TRUST</br>
+            Local authority: Brighton and Hove</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 21 September 2021</br>
+              Advisory board date: 7 November 2021</br>
+              Opening date: 30 December 2021
+            </p>
+          </td>   
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Coley Primary School</a></strong> URN 109779</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: THE WHITE HORSE FEDERATIONG</br>
+            Local authority: Isle of Wight</br>
+            Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--green">Approved</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 November 2021</br>
+              Advisory Board date: 7 February 2022</br>
+              Opening date: 10 May 2022
+            </p>
+          </td>   
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="#">Wickham Common Primary School</a></strong> URN 142301</h2>
+            <p class="govuk-!-margin-top-3">
+            Application to join a trust: OASIS COMMUNITY LEARNING</br>
+            Local authority: Bromley</br>
+            Delivery officer: <!--span class="empty">Empty</span--><strong>Alex James</strong>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+            <p class="govuk-hint  govuk-!-margin-top-0">
+              Application received: 10 July 2021</br>
+              Advisory Board date: 3 May 2022</br>
+              Opening date: <span class="empty">Empty</span>
+            </p>
+          </td>   
+        </tr>
+
+      </tbody>
+    </table>
+
+    <nav class="moj-pagination" id="pagination-label">
+      <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+      <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active">1</li>
+          <li class="moj-pagination__item">
+              <a class="moj-pagination__link" href="#">2</a>
+          </li>
+          <li class="moj-pagination__item  moj-pagination__item--next">
+              <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+      </ul>
+      <p class="moj-pagination__results"></p>
+    </nav>
+
+  </div>
+</div>
+{% endblock %}
