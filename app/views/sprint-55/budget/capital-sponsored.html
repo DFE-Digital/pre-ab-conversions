@@ -12,13 +12,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="../generate/generate_summary#loans-leases" method="post">
+        <form action="../generate/generate_summary#capital" method="post">
         {% else %}
-        <form action="../school-budget/budget-information2" method="post">
+        <form action="../budget/budget-sponsored" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-  <h1 class="govuk-heading-l">Update the school's loans and financial leases</h1>
+      <span class="govuk-caption-l">Budget</span>
+  <h1 class="govuk-heading-l">Update the school's remaining capital</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -31,82 +31,55 @@
     </div>
   </details>
   -->
-  <h2 class="govuk-heading-m">Loans and financial leases</h2>
+  <h2 class="govuk-heading-m">Remaining capital on 31 March </h2>
 
-  
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
   {{ govukInput({
     label: {
-      text: "Total loan amount",
+      text: "Previous financial year",
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "total-loan-amounts",
-    name: "total-loan-amounts",
-    value: data["total-loan-amounts"],
+    id: "capital-previous-year",
+    name: "capital-previous-year",
+    value: data["capital-previous-year"],
     prefix: {text:"£"}
   }) }}
 
-  {{ govukTextarea({
-    name: "purpose-of-loans",
-    id: "purpose-of-loans",
-    value: data["purpose-of-loans"],
-    label: {
-      text: "Purpose of the loans",
-      classes: "govuk-label--s"
-    }
-  }) }}
-
-  
   {{ govukInput({
     label: {
-      text: "Total annual lease repayment amount",
+      text: "Current financial year (forecasted)",
       classes: "govuk-label--s"
     },
     classes: "govuk-input--width-10",
-    id: "total-lease-repayments",
-    name: "total-lease-repayments",
-    value: data["total-lease-repayments"],
+    id: "capital-current-year",
+    name: "capital-current-year",
+    value: data["capital-current-year"],
+    prefix: {text:"£"}
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Next financial year (forecasted)",
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "capital-next-year",
+    name: "capital-next-year",
+    value: data["capital-next-year"],
     prefix: {text:"£"}
   }) }}
 
   {{ govukTextarea({
-    name: "purpose-of-leases",
-    id: "purpose-of-leases",
-    value: data["purpose-of-leases"],
+    name: "reason-for-deficit",
+    id: "reason-for-deficit",
+    value: data["reason-for-deficit"],
     label: {
-      text: "Purpose of the leases",
+      text: "If the school has a financial deficit, explain why",
       classes: "govuk-label--s"
     }
   }) }}
-  
-
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
-  idPrefix: "esfa-approved",
-  name: "esfa-approved",
-  fieldset: {
-    legend: {
-      text: "Has ESFA approved that the loans and leases are affordable?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      checked:  data['esfa-approved'] === "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      checked:  data['esfa-approved'] === "No",
-      text: "No"
-    }
-  ]
-}) }}
   
           {{ govukButton({
             text: "Save and continue"
