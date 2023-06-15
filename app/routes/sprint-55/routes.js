@@ -11,6 +11,42 @@ module.exports = function (router) {
 
   var version = "sprint-55";
 
+  router.post('/' + version + '/status/status-answer-sponsored', function(req, res) {
+
+    const projectStatusSponsored = req.body["decision-status-sponsored"];
+
+    if (projectStatusSponsored == "Declined"){
+      // Send user to next page
+      res.redirect('declined/who-made-this-decision-sponsored')
+    } 
+    else if (projectStatusSponsored == "Deferred") {
+      res.redirect('deferred/who-made-this-decision-sponsored')
+    }
+    else if (projectStatusSponsored == "Approved"){
+      res.redirect('approved/who-made-this-decision-sponsored')
+    }
+      
+  });
+
+
+
+  router.post('/' + version + '/related/annexb-answer-sponsored', function (req, res) {
+    // Make a variable to give it the value from the radio buttons on the index page  
+    var annexBanswer2 = req.session.data['annexBsaved2']
+
+    // Check whether the variable matches a condition
+    if (annexBanswer2 == "Yes") { 
+      // Send user to next page 
+      res.redirect('application_sponsored_conversions')
+
+    }   
+    else if (annexBanswer2 != "Yes") {
+      //send user to transfers prototype
+      res.redirect('application_saved_sponsored_conversions')
+    }
+
+  })
+
   router.post('/' + version + '/overview/conditions2-previous2', function (req, res) {
     // Make a variable to give it the value from the radio buttons on the index page  
     var previousAnswer2 = req.session.data['Conditions3']
@@ -54,12 +90,12 @@ module.exports = function (router) {
     // Check whether the variable matches a condition
     if (annexBanswer == "Yes") { 
       // Send user to next page 
-      res.redirect('application_involuntary_conversions')
+      res.redirect('application_sponsored_conversions')
 
     }   
     else if (annexBanswer != "Yes") {
       //send user to transfers prototype
-      res.redirect('application_saved_involuntary_conversions')
+      res.redirect('application_saved_sponsored_conversions')
     }
 
   })

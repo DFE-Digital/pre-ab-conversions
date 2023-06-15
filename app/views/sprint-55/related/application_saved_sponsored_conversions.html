@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Annex B form - Cheltenham Spa Primary School
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../task_list_sponsor_template_new" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+          
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <span class="govuk-visually-hidden">Project details - </span>Cheltenham Spa Primary School
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Sponsored conversion</br>
+      Project owner: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment-sponsored" style="margin-left: 1em;">Change</a>
+      <br><br>
+
+      <!--
+      {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is 
+          <span>{{ data['HTB-date-day'] }} </span>
+          <span>{{ data['HTB-date-month'] }} </span>
+          <span>{{ data['HTB-date-year'] }}</span></p>
+      </div> 
+      {% endif %}
+      -->
+
+
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey">Awaiting decision</strong>
+      {% endif %}
+
+    </p>
+  </div>
+
+
+
+
+        <div class="govuk-grid-column-full">
+        <nav class="app-sub-navigation govuk-!-margin-bottom-8>" aria-label="sub menu">
+        <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="../task_list_sponsor_template_new.html">Project details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"   aria-current="page"  href="#">Annex B form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="dates">Project dates</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="../status/decision-sponsored.html">Record a decision</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="../related/notes_sponsored_conversions.html">Project notes</a>
+            </li>
+          </ul>
+        </nav>
+    
+    </div>
+
+    {% if data['application-form-url'] or data['annexBsaved2'] =="No"%}
+    <div class="govuk-grid-column-full">
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Have you received a completed Annex B form from the school
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['annexBsaved2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application_form_url_sponsored.html">
+              Change<span class="govuk-visually-hidden">Annex B form saved from the school</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['application-form-url'] and data['annexBsaved2'] =='Yes'%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            SharePoint link
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="{{data['application-form-url']}}" target="_blank" aria-label="School application form (opens in a new tab)">{{data['application-form-url']}}</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application_form_url_sponsored.html">
+              Change<span class="govuk-visually-hidden">school application form url</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+  {% else %} 
+
+
+  <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#application-form-url" method="post">
+        {% else %}
+        <form action="/related/annexb-answer-sponsored" method="post">
+        {% endif %}
+          <input hidden type="text" name="returnToSummary" value="no"/>
+          <h1 class="govuk-heading-l">Have you saved the school's completed
+            Annex B form in SharePoint?</h1>
+
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+            {{ govukDetails({
+              summaryText: "What is the Annex B form?",
+              text: "The Annex B form was sent in the directive academy order (DAO) pack to the school. You'll need the completed Annex B form to get the project template ready for advisory board."
+            }) }}
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+              {% set yesHtml %}
+
+              {{ govukTextarea({
+                name: "application-form-url",
+                hint: {
+                  text: "The Annex B form is saved in the school's SharePoint folder"
+                },
+                id: "application-form-url",
+                title: "Sharepoint link",
+                label: {
+                  text: "What is the link for the Annex B form?"
+                }
+              }) }}
+              {% endset -%}
+        
+              {{ govukRadios({
+                idPrefix: "annexBsaved2",
+                name: "annexBsaved2",
+                items: [
+                  {
+                    value: "Yes",
+                    checked:  data['annexBsaved2'] === "Yes",
+                    text: "Yes",
+                    conditional: {
+                      html: yesHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    checked:  data['annexBsaved2'] === "No",
+                    text: "No"
+                  }
+                ]
+              }) }}
+            
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+       </form>
+  </div>
+{% endif %}
+
+{% endblock %}
