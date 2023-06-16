@@ -14,10 +14,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#capital" method="post">
         {% else %}
-        <form action="../budget/budget-information2" method="post">
+        <form action="../budget/budget-involuntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <span class="govuk-caption-l">Budget</span>
   <h1 class="govuk-heading-l">Update the school's remaining capital</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">
@@ -92,25 +92,7 @@
       
    <!-- right hand nav -->    
    <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-    <h2 class="govuk-heading-s" id="subsection-title">
-    Useful information
-    </h2>
-    <nav role="navigation" aria-labelledby="subsection-title">
-    <ul class="govuk-list govuk-!-font-size-16">
-    <li>
-    <a class="govuk-link" href="#">
-  
-    </a>
-    </li>
-    <li>
-      <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
-    </li>
-  
-    </ul>
-    </nav>
-  
-    </aside>
+    {% include "../includes/useful_info_sidebar.html" %}
   </div>
     </div>
     {% endblock %}

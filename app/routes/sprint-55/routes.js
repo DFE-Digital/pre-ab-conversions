@@ -28,7 +28,22 @@ module.exports = function (router) {
       
   });
 
+  router.post('/' + version + '/related/annexb-answer', function (req, res) {
+    // Make a variable to give it the value from the radio buttons on the index page  
+    var annexBanswer = req.session.data['annexBsaved']
 
+    // Check whether the variable matches a condition
+    if (annexBanswer == "Yes") { 
+      // Send user to next page 
+      res.redirect('application_involuntary_conversions')
+
+    }   
+    else if (annexBanswer != "Yes") {
+      //send user to transfers prototype
+      res.redirect('application_saved_involuntary_conversions')
+    }
+
+  })
 
   router.post('/' + version + '/related/annexb-answer-sponsored', function (req, res) {
     // Make a variable to give it the value from the radio buttons on the index page  
@@ -83,22 +98,7 @@ module.exports = function (router) {
   })
 
 
-  router.post('/' + version + '/related/annexb-answer', function (req, res) {
-    // Make a variable to give it the value from the radio buttons on the index page  
-    var annexBanswer = req.session.data['annexBsaved']
-
-    // Check whether the variable matches a condition
-    if (annexBanswer == "Yes") { 
-      // Send user to next page 
-      res.redirect('application_sponsored_conversions')
-
-    }   
-    else if (annexBanswer != "Yes") {
-      //send user to transfers prototype
-      res.redirect('application_saved_sponsored_conversions')
-    }
-
-  })
+  
 
 
 
