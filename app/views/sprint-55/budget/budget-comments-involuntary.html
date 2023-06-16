@@ -3,23 +3,25 @@
 {% block beforeContent %}
         
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
-
-
-
-<form action="../task_list" method="post">
-
+{% endblock %}
+{% block content %}
+{% if data['returnToSummary'] == 'yes' %}
+<form action="../generate/generate_summary#budget_additional_info" method="post">
+{% else %}
+<form action="budget-involuntary#additional_info"" method="post">
+{% endif %}
+<input hidden type="text" name="returnToSummary" value="no"/>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
     <h1 class="govuk-heading-l">Confirm school budget information</h1>
-    <p class="govuk-body">This table will go into your project template.</p>
-    <p>You can<a href="#additional_info"> add additional information</a> if you need to, this will also go into your project template.</p>
+    <p class="govuk-body">This information comes from the <a href="../related/application_newtab" target="_application">school's application form (opens in a new tab)</a>. The table will go into your project template.</p>
+    <p>You can <a href="#additional_info">add additional information</a> if you need to, this will also go into your project template.</p>
  <br>
   </div>
 </div>
-
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-heading-m govuk-!-width-one-half">
@@ -27,7 +29,7 @@
     </dt>
    
     <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-      <a class="govuk-link" href="revenue">
+      <a class="govuk-link" href="revenue-involuntary">
         Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
       </a>
     </dd>
@@ -39,9 +41,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['revenue-previous-year'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+   
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -50,9 +50,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['revenue-current-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+   
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -61,24 +59,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['revenue-next-year']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       If the school has a financial deficit, explain why?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {% if data['revenue-reason-for-deficit'] %}
-        {{data['revenue-reason-for-deficit']}}
-    {% else %}
-        <span class="empty">Empty</span>
-    {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
+   
     </div>
   </dl>
 
@@ -89,7 +70,7 @@
     </dt>
    
     <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-      <a class="govuk-link" href="capital">
+      <a class="govuk-link" href="capital-involuntary">
         Change remaining capital<span class="govuk-visually-hidden"> Change data in the capital section</span>
       </a>
     </dd>
@@ -151,8 +132,8 @@
        <br><span class="govuk-body-s"><a href="../related/application_newtab#finances" target="_application">View full loans and financial leases information (opens in a new tab)</a></span>
       </dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
-       <a class="govuk-link" href="loans-leases">
-          Change loans and leases<span class="govuk-visually-hidden"> Change data in the loans and leases section</span>
+       <a class="govuk-link" href="loans-leases-involuntary">
+          Change loans AND leases<span class="govuk-visually-hidden"> Change data in the loans and leases section</span>
         </a>
       </dd>
     </div>
@@ -163,9 +144,7 @@
       <dd class="govuk-summary-list__value">
         £{{ data['total-loan-amounts'] }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-      
-      </dd>
+
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -173,9 +152,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['purpose-of-loans']}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -185,9 +161,6 @@
       <dd class="govuk-summary-list__value">
         £{{ data ['total-lease-repayments']}}
       </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -195,9 +168,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data ['purpose-of-leases']}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-  
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -210,69 +180,39 @@
     {% else %}
         <span class="empty">Empty</span>
     {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-  
-      </dd>
-    </div>
-  </dl>
+</dd>
+</div>
+</dl>
 
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <a name="additional_info"></a>  <h3 class="govuk-heading-m govuk-!-margin-top-8">Add any additional information if you need to</h3>
-        <p>This information will go into your project template under the school budget information section.</p>
-      </div></div>
-      <div>
-        <br>
-        <dl class="govuk-summary-list">
-          <a name="additional_info"></a>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Addtional information</dt>
-                <dd class="govuk-summary-list__value">
-                    {% if data['budget-more-detail'] %}
-                        {{data['budget-more-detail']}}
-                    {% else %}
-                        <span class="empty">Empty</span>
-                    {% endif %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <a name="additional_info"></a>
 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="budget-information-comments##udget_additional_info">
-                      Change<span class="govuk-visually-hidden">Change budget comments</span>
-                    </a>
-                </dd>
-            </div>
-        </dl>
-    </div>
-
- 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-     
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukCheckboxes({
-        idPrefix: "school-budget-status",
-        name: "school-budget-status",
-        items: [
-          {
-            value: "Complete",
-            text: "Mark this section as complete, you can still make changes later"
-          }
-        ]
+    
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    
+      {{ govukTextarea({
+        name: "budget-more-detail",
+        id: "budget-more-detail",
+        value: data["budget-more-detail"],
+        label: {
+          text: "Add any additional information if you need to",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text:"This information will go into your project template under the school budget section."
+        }
       }) }}
-
-
+    
       {{ govukButton({
         text: "Confirm and continue"
       }) }}
-
     </form>
 
-    </div>
-    </div>
+  </div>
+  </div>
+
 
   {% endblock %}

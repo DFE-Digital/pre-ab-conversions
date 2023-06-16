@@ -1,37 +1,43 @@
 {% extends "layout.html" %}
 
+
 {% block beforeContent %}
-        
-<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+  <a href="../task_list_sponsor_template_new.html" class="govuk-back-link">Back to project details</a>
+{% endblock %}
 
+{% block content %}
 
-
-<form action="../task_list" method="post">
+<form action="../task_list_involuntary_conversions" method="post">
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
-    <h1 class="govuk-heading-l">Confirm school budget information</h1>
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Budget</h1>
     <p class="govuk-body">This table will go into your project template.</p>
     <p>You can<a href="#additional_info"> add additional information</a> if you need to, this will also go into your project template.</p>
  <br>
   </div>
 </div>
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-heading-m govuk-!-width-one-half">
-        Remaining revenue 31 March
-    </dt>
+  
+<dl class="govuk-summary-list">
    
-    <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-      <a class="govuk-link" href="revenue">
-        Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
-      </a>
-    </dd>
-  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-heading-m govuk-!-width-one-half">
+      Remaining revenue 31 March
+  </dt>
+ 
+  <dd class="govuk-summary-list__actions govuk-!-width-one-half">
+    <a class="govuk-link" href="revenue-involuntary">
+      Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
+    </a>
+  </dd>
+</div>
+
+    
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Previous financial year
@@ -83,17 +89,23 @@
   </dl>
 
   <dl class="govuk-summary-list">
+
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-heading-m govuk-!-width-one-half">
         Remaining capital 31 March
     </dt>
    
     <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-      <a class="govuk-link" href="capital">
+      <a class="govuk-link" href="capital-involuntary">
         Change remaining capital<span class="govuk-visually-hidden"> Change data in the capital section</span>
       </a>
     </dd>
   </div>
+
+
+
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Previous financial year
@@ -144,6 +156,9 @@
     </div>
   </dl>
 
+
+
+
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-heading-m govuk-!-width-two-thirds">
@@ -151,8 +166,8 @@
        <br><span class="govuk-body-s"><a href="../related/application_newtab#finances" target="_application">View full loans and financial leases information (opens in a new tab)</a></span>
       </dt>
       <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
-       <a class="govuk-link" href="loans-leases">
-          Change loans and leases<span class="govuk-visually-hidden"> Change data in the loans and leases section</span>
+       <a class="govuk-link" href="loans-leases-involuntary">
+          Change loans AND leases<span class="govuk-visually-hidden"> Change data in the loans and leases section</span>
         </a>
       </dd>
     </div>
@@ -239,7 +254,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="budget-information-comments##udget_additional_info">
+                    <a class="govuk-link" href="budget-comments-involuntary#additional_info">
                       Change<span class="govuk-visually-hidden">Change budget comments</span>
                     </a>
                 </dd>
