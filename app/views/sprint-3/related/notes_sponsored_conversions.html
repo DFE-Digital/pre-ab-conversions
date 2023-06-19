@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project notes - Cheltenham Spa Primary School
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../task_list_sponsor_template_new.html" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <span class="govuk-visually-hidden">Project details - </span>Cheltenham Spa Primary School
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Sponsored conversion</br>
+      Project owner: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment-sponsored" style="margin-left: 1em;">Change</a>
+      <br><br>
+
+      <!--
+      {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is 
+          <span>{{ data['HTB-date-day'] }} </span>
+          <span>{{ data['HTB-date-month'] }} </span>
+          <span>{{ data['HTB-date-year'] }}</span></p>
+      </div> 
+      {% endif %}
+      -->
+
+
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey">Awaiting decision</strong>
+      {% endif %}
+      
+    </p>
+  </div>
+
+
+        <div class="govuk-grid-column-full">
+      <nav class="app-sub-navigation" aria-label="sub menu">
+          <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="../task_list_sponsor_template_new.html">Project details</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="application_saved_sponsored_conversions">Annex B form</a>
+              </li>
+            <!-- Not MVP   <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
+              </li> -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="../status/decision-sponsored">Record a decision</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="../related/notes_sponsored_conversions">Project notes</a>
+              </li>
+          </ul>
+        </nav>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Project notes</h2>
+    <a href="notes-new-sponsored.html" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add note</a>
+      <div class="app-notes">
+        <div class="app-notes__note">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Update on what's happened so far</h2>
+          <p class="govuk-!-margin-bottom-1">Apologies for this last minute handover. There are a few things to note. I've not updated the task list with the school's preferred opening date. There could also be a possible viability issue so we should highlight that too. The school's rationale seems thorough but I've not edited it to add my own narrative yet.</p>
+          <p class="govuk-body-s">Aleah Khan, 1 April 2023 at 4:31pm</p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+      </div>
+
+      {% if data['note-subject']%}
+      <div class="app-notes">
+        <div class="app-notes__note">
+          <hr class="govuk-section-break govuk-section-break--m">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">{{data['note-subject']}}</h2>
+          <p class="govuk-!-margin-bottom-1">{{data['note-body']}}</p>
+          <p class="govuk-body-s">Aleah Khan, 15 June 2023</p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+      </div>
+      {% endif %}
+
+  </div>
+</div>
+{% endblock %}
