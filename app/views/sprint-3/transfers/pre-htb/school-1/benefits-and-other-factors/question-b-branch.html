@@ -1,0 +1,52 @@
+{% extends "sprint-39/transfers/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Are there any risks to consider? – Manage an academy transfer" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="/decide-risks-branch" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      Are there any risks to consider?
+    {% endset %}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "risks-branching",
+      name: "risks-branching",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          id: "risks-yes",
+          checked: checked("['risks-branching']", "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          id: "risks-no",
+          checked: checked("['risks-branching']", "No")
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

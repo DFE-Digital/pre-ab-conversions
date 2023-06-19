@@ -1,0 +1,54 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "What is the reason for this transfer? – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+
+{% block formQuestions %}
+    <form action="../features-of-a-transfer" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      What is the reason for this transfer?
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "reason-for-this-transfer",
+      name: "reason-for-this-transfer",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Intervention",
+          text: "Intervention",
+          checked: checked("['reason-for-this-transfer']", "Intervention")
+        },
+        {
+          value: "Initiated by trust",
+          text: "Initiated by trust",
+          checked: checked("['reason-for-this-transfer']", "Initiated by trust")
+        },
+        {
+          value: "Sponsor or trust closure",
+          text: "Sponsor or trust closure",
+          checked: checked("['reason-for-this-transfer']", "Sponsor or trust closure")
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
