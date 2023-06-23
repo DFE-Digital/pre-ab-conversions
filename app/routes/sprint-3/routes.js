@@ -11,6 +11,23 @@ module.exports = function (router) {
 
   var version = "sprint-3";
 
+  router.post('/' + version + '/status/status-answer-voluntary', function(req, res) {
+
+    const projectStatusVoluntary = req.body["decision-status-voluntary"];
+
+    if (projectStatusVoluntary == "Declined"){
+      // Send user to next page
+      res.redirect('declined/who-made-this-decision-voluntary')
+    } 
+    else if (projectStatusVoluntary == "Deferred") {
+      res.redirect('deferred/who-made-this-decision-voluntary')
+    }
+    else if (projectStatusVoluntary == "Approved"){
+      res.redirect('approved/who-made-this-decision-voluntary')
+    }
+      
+  });
+
   router.post('/' + version + '/status/status-answer-sponsored', function(req, res) {
 
     const projectStatusSponsored = req.body["decision-status-sponsored"];

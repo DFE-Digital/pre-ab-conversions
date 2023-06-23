@@ -14,10 +14,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#revenue" method="post">
         {% else %}  
-        <form action="../pupil-forecasts/pupil-forecasts-info-sponsored" method="post">
+        <form action="../pupil-forecasts/pupil-forecasts-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
   <h1 class="govuk-heading-l">Pupil forecasts</h1>
 <!-- Not MVP
   <details class="govuk-details" data-module="govuk-details">
@@ -125,7 +125,7 @@
       
    <!-- right hand nav -->    
    <div class="govuk-grid-column-one-third">
-    {% include "../includes/useful_info_sidebar.html" %}
+    {% include "../includes/useful_info_sidebar_voluntary.html" %}
   </div>
     </div>
     {% endblock %}

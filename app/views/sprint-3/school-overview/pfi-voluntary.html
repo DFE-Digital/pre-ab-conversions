@@ -16,11 +16,15 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#deficit" method="post">
         {% else %}
-        <form action="../school-overview/school-overview-sponsored" method="post">
+        <form action="../school-overview/school-overview-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">School overview</span>
-    <h1 class="govuk-heading-l">Is there a financial deficit at the school in its current financial year?</h1>
+    <h1 class="govuk-heading-l">Is your school part of a PFI (Private Finance Initiative) scheme?</h1>
+
+  
+
+
     <!-- Not MVP
     <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -34,25 +38,44 @@
     </details>
     -->
 
-      {{ govukRadios({
-        idPrefix: "defict",
-        name: "deficit",
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% set yesHtml %}
 
+      {{ govukTextarea({
+        name: "pfi-scheme-details",
+        hint: {
+          text: ""
+        },
+        id: "pfi-scheme-details",
+        title: "PFI Scheme details",
+        value: data["pfi-scheme-details"],
+        label: {
+          text: "Which PFI scheme is the school part of?"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "pfi-scheme",
+        name: "pfi-scheme",
         items: [
-    
-          {
-            value: "No",
-            checked:  data['deficit'] === "No",
-            text: "No"
-          },
           {
             value: "Yes",
-            checked:  data['deficit'] === "Yes",
-            text: "Yes"
+            checked:  data['pfi-scheme'] === "Yes",
+            text: "Yes",
+            conditional: {
+              html: yesHtml
+            }
+          },
+          {
+            value: "No",
+            checked:  data['pfi-scheme'] === "No",
+            text: "No"
           }
-          
         ]
       }) }}
+    
 
       {{ govukButton({
         text: "Save and continue"
@@ -62,7 +85,7 @@
   
   <!-- right hand nav -->    
     <div class="govuk-grid-column-one-third">
-      {% include "../includes/useful_info_sidebar.html" %}
+      {% include "../includes/useful_info_sidebar_voluntary.html" %}
   </div>
 </div> 
 

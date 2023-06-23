@@ -12,28 +12,42 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['returnToSummary'] == 'yes' %}
-        <form action="../generate/generate_summary#PAN" method="post">
+        <form action="../generate/generate_summary#distance" method="post">
         {% else %}
-        <form action="../school-overview/school-overview-sponsored" method="post">
+        <form action="../school-overview/school-overview-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">School overview</span>
       
-        <h1 class="govuk-heading-l">Update the school's published admission number (PAN) if it's not correct</h1>
-          
+        <h1 class="govuk-heading-l">How far is the converting school from the trust or other schools in the trust?</h1>
+        
+        <p>Use the school and trust's postcode to measure the distance on Bing or Google maps.</p>
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           hint: {
-            text: "For example, 30"
+            text: "For example, 20"
           },
           classes: "govuk-input--width-5",
-          id: "PAN",
-          name: "PAN",
-          value: data["PAN"]
+          id: "distance",
+          name: "distance",
+          suffix: {text:"miles"}, 
+          value: data["distance"]
         }) }}
 
-    
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        <a name="additional_info"></a>{{ govukTextarea({
+          name: "distance-more-detail",
+          id: "distance-more-detail",
+          label: {
+            text: "Add any additional information if you need to",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text:"This information will populate into your project template under the distance to the trust headquarters section."
+          }
+        }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -47,8 +61,7 @@
     
     <!-- right hand nav -->    
     <div class="govuk-grid-column-one-third">
-      {% include "../includes/useful_info_sidebar.html" %}
-
+      {% include "../includes/useful_info_sidebar_voluntary.html" %}
     </div>
   </div>
 

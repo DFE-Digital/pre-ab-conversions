@@ -16,10 +16,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#sponsor" method="post">
         {% else %}
-        <form action="future-plans-sponsored" method="post">
+        <form action="future-plans-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
 <h1 class="govuk-heading-l">Future plans</h1>
 
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
@@ -39,7 +39,7 @@
         </div>
       </details>-->
  
-      <form action="future-plans-sponsored" method="post" novalidate>
+      <form action="future-plans-voluntary" method="post" novalidate>
 
         {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
@@ -64,7 +64,7 @@ value: data["sponsor-future-plans"]
 
 <!-- right hand nav -->    
 <div class="govuk-grid-column-one-third">
-  {% include "../includes/useful_info_sidebar.html" %}
+  {% include "../includes/useful_info_sidebar_voluntary.html" %}
 </div>
 </div>
 
