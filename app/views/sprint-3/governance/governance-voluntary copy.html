@@ -7,14 +7,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-    <h1 class="govuk-heading-l">
-    Governance</h1>
-    {% if data['application-form-url']%}
-    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
-    {% else %} 
-    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
-    {% endif %}
+    <span class="govuk-caption-l">St Wilfrid's Primary School</span>
+    <h1 class="govuk-heading-l">Governance</h1>
+    <p class="govuk-body-m">This information is pre-populated from TRAMS and the <a href="../related/application_newtab_voluntary" target="_blank">school's application form (opens in a new tab)</a>.</p>
     <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
     </div></div>
     <div class="govuk-grid-row">
@@ -50,7 +45,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-ceo-sponsored.html">
+              <a class="govuk-link" href="update-governance-key-person.html">
                 Change<span class="govuk-visually-hidden">CEO details</span>
               </a>
             </dd>
@@ -116,7 +111,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-coo-sponsored.html">
+              <a class="govuk-link" href="update-governance-key-person.html">
                 Change<span class="govuk-visually-hidden">COO details</span>
               </a>
             </dd>
@@ -182,7 +177,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-fd-sponsored.html">
+              <a class="govuk-link" href="update-governance-key-person.html">
                 Change<span class="govuk-visually-hidden">Finance Director details</span>
               </a>
             </dd>
@@ -247,7 +242,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-hr-sponsored.html">
+              <a class="govuk-link" href="update-governance-key-person.html">
                 Change<span class="govuk-visually-hidden">HR Lead details</span>
               </a>
             </dd>
@@ -304,73 +299,6 @@
 
 
 
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-              <dt class="govuk-heading-m">
-              Safeguarding Lead
-            </dt>
-            <dd class="govuk-summary-list__value">
-              
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-sg-sponsored.html">
-                Change<span class="govuk-visually-hidden">Safeguarding Lead details</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Full name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['sg-name'] %}
-          {{ data['sg-name']}}
-          {% else %} 
-          <span class="empty">Empty</span>
-          {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['sg-dob-day'] and data['sg-dob-month'] and data['sg-dob-year']%}
-              <span>{{ data['sg-dob-day'] }} </span>
-              <span>{{ data['sg-dob-month'] }} </span>
-              <span>{{ data['sg-dob-year'] }}</span>
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            
-            </dd>
-          </div>
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Biography
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['sg-bio'] %}
-              {{ data['sg-bio']}}
-              {% else %} 
-              <span class="empty">Empty</span>
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              
-            </dd>
-          </div>
-        </dl>
-
-
-
-
 
         {% if data['other-role-role'] %}
         <dl class="govuk-summary-list">
@@ -386,7 +314,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-other-sponsored.html">
+              <a class="govuk-link" href="update-governance-other-person.html">
                 Change<span class="govuk-visually-hidden">other role</span>
               </a>
             </dd>
@@ -447,7 +375,7 @@
 
         
       
-<a href="update-governance-other-sponsored.html">
+<a href="update-governance-other-person.html">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Add another person
         </button>
@@ -456,7 +384,7 @@
    
     
      
-    <form action="../task_list_sponsor_template_new" method="post"> 
+    <form action="../task_list_voluntary_new" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 

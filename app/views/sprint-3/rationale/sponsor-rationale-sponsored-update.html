@@ -16,12 +16,12 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#sponsor" method="post">
         {% else %}
-        <form action="future-plans-sponsored" method="post">
+        <form action="../rationale/rationale-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
-<h1 class="govuk-heading-l">Future plans</h1>
-
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+<h1 class="govuk-heading-l">Write the rationale for the trust or sponsor</h1>
+<p class="govuk-hint">Explain why the trust is a good match for the school.</p>
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -39,16 +39,16 @@
         </div>
       </details>-->
  
-      <form action="future-plans-sponsored" method="post" novalidate>
+      <form action="rationale-summary1" method="post" novalidate>
 
         {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
 {{ govukTextarea({
-id: 'sponsor-future-plans',
-name: 'sponsor-future-plans',
+id: 'trust-rationale',
+name: 'trust-rationale',
 maxlength: 500,
 rows: 15,
-value: data["sponsor-future-plans"]
+value: data["trust-rationale"]
 }) }} 
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -64,7 +64,7 @@ value: data["sponsor-future-plans"]
 
 <!-- right hand nav -->    
 <div class="govuk-grid-column-one-third">
-  {% include "../includes/useful_info_sidebar.html" %}
+  {% include "../includes/useful_info_sidebar_voluntary.html" %}
 </div>
 </div>
 

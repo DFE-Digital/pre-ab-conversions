@@ -1,0 +1,304 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project details - St Wilfrid's Primary School
+{% endblock %}
+
+{% block beforeContent %}
+<a href="projects-list-new" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <span class="govuk-visually-hidden">Project details - </span>St Wilfrid's Primary School
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Voluntary conversion</br>
+      Project owner: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment-voluntary" style="margin-left: 1em;">Change</a>
+      <br><br>
+      <!--
+      {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is 
+          <span>{{ data['HTB-date-day'] }} </span>
+          <span>{{ data['HTB-date-month'] }} </span>
+          <span>{{ data['HTB-date-year'] }}</span></p>
+      </div> 
+      {% endif %}
+      -->
+
+
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey">Awaiting decision</strong>
+      {% endif %} 
+
+    </p>
+  </div>
+
+  
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="#">Project details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/application_saved_voluntary_conversions.html">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="status/decision-voluntary.html">Record a decision</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="related/notes_voluntary_conversions.html">Project notes</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Prepare a project document</h2>
+    <p class="govuk-body">These steps will help you create a document you can present to an advisory board, and record things like when the LA (local authority) information template was sent.</p>
+    <p class="govuk-body">You can complete them in any order.</p>
+    <br>
+  
+    <ul class="app-task-list">
+
+
+     
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Add school information</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-overview/school-overview-voluntary.html"  aria-describedby="general-info-summary">
+          School overview
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="budget/budget-voluntary.html"  aria-describedby="sponsor-overview">
+          Budget
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="pupil-forecasts/pupil-forecasts-voluntary.html"  aria-describedby="key-people-summary">
+          Pupil forecasts
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="key-people">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="conversion-details/conversion-details-voluntary.html"  aria-describedby="governance-summary">
+          Conversion details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="governance">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="legal-requirements/legal-requirements-voluntary.html"  aria-describedby="legal-requirements-summary">
+          Legal requirements
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="legal-requirements">Not started</strong>
+          </li>
+
+         
+
+         
+
+
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Create a trust template</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trust-template/trust-template.html"  aria-describedby="trust-template">
+          Preparing your trust template
+              </a>
+            </span>
+           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="trust-template">Not started</strong>
+          </li>
+        </ul>
+      </li>
+
+
+         
+
+
+       
+        
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Give a case for academisation</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="rationale/rationale-voluntary.html"  aria-describedby="general-info-summary">
+          Rationale
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="risks-and-issues/risks-and-issues-voluntary.html"  aria-describedby="sponsor-overview">
+          Risks and issues
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="future-plans/future-plans-voluntary.html"  aria-describedby="sponsor-overview">
+          Future plans
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Say when the LA information template was sent</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a 
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template-involuntary">
+                LA information template sent date 
+              </a>
+            </span>
+            <strong class="{{data|laProformaStatusClass(
+                      ['la-proforma-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']  
+              )}} app-task-list__tag" id="LA-infromation-template">  
+              {{data|laProformaStatusText(
+                ['la-proforma-status'],
+                ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                'la-comments', 'la-sharepoint-link']               
+              )}} 
+            </strong>            
+          </li>
+        </ul>
+      </li>
+
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Performance data</h3>
+
+        <div class="govuk-inset-text">
+          This information will be added to your project document automatically.
+        </div>
+
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-performance/ofsted-comments-voluntary"  aria-describedby="general-info-summary">
+          Ofsted information
+              </a>
+            </span>
+            <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-2-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+          Key stage 2 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-4-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+                Key stage 4 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-5-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+                Key stage 5 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+        </ul>
+      </li>
+
+
+
+      <h2 class="govuk-heading-l">Create your project document</h2>
+      <p>Project documents are in Microsoft Word format. You can make changes to documents after you create them.</p>
+
+      <div class="govuk-button-group">
+        <a href="generate/generate_summary_voluntary.html" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Preview project document
+        </a>
+        <a href="generate/generate_documents_voluntary" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+          Create project document
+        </a>
+       
+      </div>
+    </ul>
+  </div>
+</div>
+{% endblock %}

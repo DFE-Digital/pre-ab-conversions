@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Were any conditions set?
+  Project assignment
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,9 +11,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="../task_list_sponsored_new?justAssigned=yes" method="post">
+    <form action="../task_list_voluntary_new?justAssigned=yes" method="post">
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
       <h1 class="govuk-heading-l">Who will be on this project?</h1>
 
       
@@ -60,7 +60,7 @@
           text: "Continue"
         }) }}
         <span class="govuk-body" style="margin-right: 0.5em;">or </span>
-        <a class="govuk-link" href="../task_list_sponsored_new?justAssigned=&delivery-officer-assigned=">Unassign the project owner</a>
+        <a class="govuk-link" href="../task_list_voluntary_new?justAssigned=&delivery-officer-assigned=">Unassign the project owner</a>
       </div>
 
     </form>

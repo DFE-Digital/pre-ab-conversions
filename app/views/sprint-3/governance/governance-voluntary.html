@@ -7,14 +7,10 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <span class="govuk-caption-l">St Wilfrid's Primary School</span>
     <h1 class="govuk-heading-l">
     Governance</h1>
-    {% if data['application-form-url']%}
-    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
-    {% else %} 
-    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
-    {% endif %}
+    <p class="govuk-body-m">This information is pre-populated from TRAMS and the <a href="../related/application_newtab_voluntary" target="_blank">school's application form (opens in a new tab)</a>.</p>
     <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
     </div></div>
     <div class="govuk-grid-row">
@@ -50,7 +46,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-ceo-sponsored.html">
+              <a class="govuk-link" href="update-governance-ceo-voluntary.html">
                 Change<span class="govuk-visually-hidden">CEO details</span>
               </a>
             </dd>
@@ -116,7 +112,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-coo-sponsored.html">
+              <a class="govuk-link" href="update-governance-coo-voluntary.html">
                 Change<span class="govuk-visually-hidden">COO details</span>
               </a>
             </dd>
@@ -182,7 +178,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-fd-sponsored.html">
+              <a class="govuk-link" href="update-governance-fd-voluntary.html">
                 Change<span class="govuk-visually-hidden">Finance Director details</span>
               </a>
             </dd>
@@ -247,7 +243,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-hr-sponsored.html">
+              <a class="govuk-link" href="update-governance-hr-voluntary.html">
                 Change<span class="govuk-visually-hidden">HR Lead details</span>
               </a>
             </dd>
@@ -313,7 +309,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-sg-sponsored.html">
+              <a class="govuk-link" href="update-governance-sg-voluntary.html">
                 Change<span class="govuk-visually-hidden">Safeguarding Lead details</span>
               </a>
             </dd>
@@ -386,7 +382,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-governance-other-sponsored.html">
+              <a class="govuk-link" href="update-governance-other-voluntary.html">
                 Change<span class="govuk-visually-hidden">other role</span>
               </a>
             </dd>
@@ -447,7 +443,7 @@
 
         
       
-<a href="update-governance-other-sponsored.html">
+<a href="update-governance-other-voluntary.html">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Add another person
         </button>
@@ -456,7 +452,7 @@
    
     
      
-    <form action="../task_list_sponsor_template_new" method="post"> 
+    <form action="../task_list_voluntary_new" method="post"> 
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 

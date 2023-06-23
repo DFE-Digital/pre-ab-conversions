@@ -16,7 +16,7 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#deficit" method="post">
         {% else %}
-        <form action="../school-overview/school-overview-sponsored" method="post">
+        <form action="../school-overview/school-overview-voluntary" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
       <span class="govuk-caption-l">School overview</span>
@@ -35,9 +35,8 @@
     -->
 
       {{ govukRadios({
-        idPrefix: "defict",
+        idPrefix: "deficit",
         name: "deficit",
-
         items: [
     
           {
@@ -62,7 +61,7 @@
   
   <!-- right hand nav -->    
     <div class="govuk-grid-column-one-third">
-      {% include "../includes/useful_info_sidebar.html" %}
+      {% include "../includes/useful_info_sidebar_voluntary.html" %}
   </div>
 </div> 
 
