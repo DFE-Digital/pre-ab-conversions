@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Project details - St Wilfrid's Primary School
+  Project details - Cheltenham Spa Primary School
 {% endblock %}
 
 {% block beforeContent %}
-<a href="projects-list-new" class="govuk-back-link">Back to all conversion projects</a>
+<a href="projects-list-involuntary-conversions-after" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 
@@ -15,19 +15,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 102062</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      <span class="govuk-visually-hidden">Project details - </span>St Wilfrid's Primary School
+      <span class="govuk-visually-hidden">Project details - </span>Cheltenham Spa Primary School
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-8">
-      Route: Voluntary conversion</br>
+      Route: Sponsored conversion</br>
       Project owner: 
       {% if (data['delivery-officer-assigned']) %}
         <strong>{{ data['delivery-officer-assigned'] }}</strong>
       {% else %}
         <span class="empty">Empty</span>
       {% endif %}
-      <a class="govuk-link" href="project-assignment/project-assignment-voluntary" style="margin-left: 1em;">Change</a>
+      <a class="govuk-link" href="project-assignment/project-assignment-sponsored" style="margin-left: 1em;">Change</a>
       <br><br>
       <!--
       {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
@@ -68,16 +68,16 @@
               <a class="app-sub-navigation__link" aria-current="page" href="#">Project details</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/application_saved_voluntary_conversions.html">School application form</a>
+              <a class="app-sub-navigation__link"  href="related/application_saved_sponsored_conversions.html">Annex B form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="status/decision-voluntary.html">Record a decision</a>
+              <a class="app-sub-navigation__link"  href="status/decision-sponsored.html">Record a decision</a>
             </li>
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="related/notes_voluntary_conversions.html">Project notes</a>
+              <a class="app-sub-navigation__link"  href="related/notes_sponsored_conversions.html">Project notes</a>
             </li>
       </ul>
 
@@ -100,7 +100,7 @@
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="school-overview/school-overview-voluntary.html"  aria-describedby="general-info-summary">
+              <a href="school-overview/school-overview-sponsored.html"  aria-describedby="general-info-summary">
           School overview
               </a>
             </span>
@@ -109,7 +109,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="budget/budget-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="budget/budget-sponsored.html"  aria-describedby="sponsor-overview">
           Budget
               </a>
             </span>
@@ -118,7 +118,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="pupil-forecasts/pupil-forecasts-voluntary.html"  aria-describedby="key-people-summary">
+              <a href="pupil-forecasts/pupil-forecasts-sponsored.html"  aria-describedby="key-people-summary">
           Pupil forecasts
               </a>
             </span>
@@ -127,95 +127,29 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="conversion-details/conversion-details-voluntary.html"  aria-describedby="governance-summary">
+              <a href="conversion-details/conversion-details-sponsored.html"  aria-describedby="governance-summary">
           Conversion details
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="governance">Not started</strong>
           </li>
 
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="legal-requirements/legal-requirements-voluntary.html"  aria-describedby="legal-requirements-summary">
-          Legal requirements
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="legal-requirements">Not started</strong>
-          </li>
-
-         
-
-         
-
-
         </ul>
       </li>
 
       <li>
-        <h3 class="app-task-list__section govuk-!-margin-top-0">Add trust information</h3>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Create a sponsor template</h3>
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="trust-overview/trust-overview-voluntary.html"  aria-describedby="project-overview">
-                Trust overview
+              <a href="sponsor-template/sponsor-template.html"  aria-describedby="sponsor-template">
+          Preparing your sponsor template
               </a>
             </span>
-            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
-                {{data|conversionOverviewStatusText(
-                  ['overview-status'],
-                  ['htb-date','recomendation'],
-                  ['opening-date', 'aorequired']
-                )}} 
-            </strong>
+           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-template">Not started</strong>
           </li>
-
-         
-
-
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="governance/governance-voluntary.html" aria-describedby="general-information">
-               Governance
-              </a>
-            </span>
-            <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
-              {{data|generalInfoStatusText(
-                ['general-info-status'],
-                ['distance'],
-                ['deficit'],
-                ['diocesan'],
-                ['goodschools','viability' ]
-              )}} 
-            </strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="school-improvement-strategy/school-improvement-strategy-voluntary.html" aria-describedby="school-improvement-strategy">
-                School improvement strategy
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">
-             Not started
-            </strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="finances/finances-voluntary.html" aria-describedby="finances">
-                Finances
-              </a>
-            </span>
-            <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
-              {{data|rationaleOverviewStatusText(
-                ['rationale-status-htb'],
-                ['trust-rationale'],
-                ['project-rationale']
-              )}} 
-            </strong>
-          </li>
-     
         </ul>
       </li>
-
 
 
       <li>
@@ -223,7 +157,7 @@
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="rationale/rationale-voluntary.html"  aria-describedby="general-info-summary">
+              <a href="rationale/rationale-sponsored.html"  aria-describedby="general-info-summary">
           Rationale
               </a>
             </span>
@@ -232,7 +166,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="risks-and-issues/risks-and-issues-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="risks-and-issues/risks-and-issues-sponsored.html"  aria-describedby="sponsor-overview">
           Risks and issues
               </a>
             </span>
@@ -241,7 +175,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="future-plans/future-plans-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="future-plans/future-plans-sponsored.html"  aria-describedby="sponsor-overview">
           Future plans
               </a>
             </span>
@@ -255,9 +189,14 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a 
-                href="LA-proforma/LA-proforma-voluntary.html" 
-                aria-describedby="LA-proforma-voluntary">
-                LA information template sent date
+                href="{{data|laProformaNextPageLink(
+                      ['overview-status'],
+                      ['la-sent-date-day', la-sent-date-month', la-sent-date-year', 
+                      'la-sent-back-day', 'la-sent-back-month', 'la-sent-back-year', 
+                      'la-comments', 'la-sharepoint-link']                
+                    )}}" 
+                aria-describedby="LA-infromation-template-involuntary">
+                LA information template sent date 
               </a>
             </span>
             <strong class="{{data|laProformaStatusClass(
@@ -289,7 +228,7 @@
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="school-performance/ofsted-comments-voluntary"  aria-describedby="general-info-summary">
+              <a href="school-performance/ofsted-comments-sponsored"  aria-describedby="general-info-summary">
           Ofsted information
               </a>
             </span>
@@ -298,7 +237,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-2-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="key-stage/key-stage-2-performance-comments-sponsored.html"  aria-describedby="sponsor-overview">
           Key stage 2 performance tables
               </a>
             </span>
@@ -307,7 +246,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-4-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="key-stage/key-stage-4-performance-comments-sponsored.html"  aria-describedby="sponsor-overview">
                 Key stage 4 performance tables
               </a>
             </span>
@@ -316,7 +255,7 @@
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="key-stage/key-stage-5-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+              <a href="key-stage/key-stage-5-performance-comments-sponsored.html"  aria-describedby="sponsor-overview">
                 Key stage 5 performance tables
               </a>
             </span>
@@ -326,15 +265,36 @@
       </li>
 
 
+      <!--
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Sponsor template</h3>
+
+       
+
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="sponsor-template/index.html"  aria-describedby="general-info-summary">
+                How to prepare your sponsor template
+              </a>
+            </span>-->
+            <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>-->
+            <!--
+          </li>
+        </ul>
+      </li>
+    -->
+
+
 
       <h2 class="govuk-heading-l">Create your project document</h2>
       <p>Project documents are in Microsoft Word format. You can make changes to documents after you create them.</p>
 
       <div class="govuk-button-group">
-        <a href="generate/generate_summary_voluntary.html" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+        <a href="generate/generate_summary_sponsored.html" role="button" draggable="false" class="govuk-button govuk-button--secondary">
           Preview project document
         </a>
-        <a href="generate/generate_documents_voluntary" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+        <a href="generate/generate_documents_sponsored" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
           Create project document
         </a>
        
