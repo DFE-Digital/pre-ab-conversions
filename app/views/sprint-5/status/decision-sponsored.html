@@ -1,0 +1,332 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Record a decision - Cheltenham Spa Primary School
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../task_list_sponsor_template_new.html" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <span class="govuk-visually-hidden">Project details - </span>Cheltenham Spa Primary School
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Sponsored conversion</br>
+      Project owner: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment-sponsored" style="margin-left: 1em;">Change</a>
+      <br><br>
+
+      <!--
+      {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-m">HTB date</h4>
+        <p>HTB date for this project is 
+          <span>{{ data['HTB-date-day'] }} </span>
+          <span>{{ data['HTB-date-month'] }} </span>
+          <span>{{ data['HTB-date-year'] }}</span></p>
+      </div> 
+      {% endif %}
+      -->
+
+
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey">Awaiting decision</strong>
+      {% endif %}
+
+    </p>
+  </div>
+
+
+
+        <div class="govuk-grid-column-full">
+      <nav class="app-sub-navigation" aria-label="sub menu">
+          <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="../task_list_sponsor_template_new.html">Project details</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="../related/application_saved_sponsored_conversions">Annex B form</a>
+              </li>
+            <!-- Not MVP   <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
+              </li> -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="#">Record a decision</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="../related/notes_sponsored_conversions.html">Project notes</a>
+              </li>
+
+
+          </ul>
+        </nav>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Record a decision</h2>
+    
+   
+    {%  if (data['decision-status-sponsored'] == "Approved") %}
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes") %}
+            <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+            {% endif %} 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Were any conditions set
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% if data['approved-conditions'] == "Yes" %}
+            <p>Yes:</p>
+              {% if data['approved-conditions-yes-details'] %} 
+                <p class="govuk-!-margin-bottom-2">{{ data['approved-conditions-yes-details'] }} </p>
+              {% endif %}
+            {% else %}
+            <p>No</p>
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>      
+    {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <!--Reasons-->Why was this project deferred
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% for reason in data['declined-reasons'] %}
+
+              {% if reason == "Finance" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['finance-reason']}} </div>
+              {% endif %}
+
+              {% if reason == "Performance" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['performance-reason']}} </div>
+              {% endif %}
+
+              {% if reason == "Governance" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['governance-reason']}} </div>
+              {% endif %}
+
+              {% if reason == "Choice of trust" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['choice-of-trust-reason']}} </div>
+              {% endif %}
+              
+              {% if reason == "Other" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
+              {% endif %}
+
+            {% endfor %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+
+    {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['decision-status-sponsored'] == "Approved") %}
+              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+            {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+              <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+            {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+              <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+            {% endif %} 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who made this decision
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% if data['who-decided'] != "Other" %}
+              <div>{{ data['who-decided']}} </div>
+            {% else %}
+              {% if data['who-decided-other-details'] %} 
+                <div>{{data['who-decided-other-details']}} </div>
+              {% endif %}
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Why was this project deferred
+          </dt>
+          <dd class="govuk-summary-list__value">               
+            {% for reason in data['deferred-reasons'] %}
+
+              {% if reason == "Additional information needed" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['additional-information-reason']}} </div>
+              {% endif %}
+
+              {% if reason == "Awaiting next Ofsted report" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['awaiting-ofsted-reason']}} </div>
+              {% endif %}
+
+              {% if reason == "Performance concerns" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['performance-concerns-reason']}} </div>
+              {% endif %}
+              
+              {% if reason == "Other" %} 
+                <div>{{ reason }}:</div>
+                <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
+              {% endif %}
+
+            {% endfor %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Date of decision
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
+              <span>{{ data['decision-date-day'] }} </span>
+              <span>{{ data['decision-date-month'] }} </span>
+              <span>{{ data['decision-date-year'] }}</span>
+            {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+    {% endif %} 
+    
+    {% if (data['decision-status-sponsored']) %}
+      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+        You can click the button to change the recorded decision.
+      </p>
+      <form action="list-sponsored" method="post" class="form">
+        {{ govukButton({
+          text: "Change your decision"
+        }) }}
+      </form>   
+    {% else %}  
+      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
+        You have not recorded the decision for this project. You can record the decision once it has been made.
+      </p>
+      <form action="list-sponsored" method="post" class="form">
+        {{ govukButton({
+          text: "Record a decision"
+        }) }}
+      </form>
+    {% endif %} 
+
+
+
+
+     
+
+  </div>
+</div>
+{% endblock %}
