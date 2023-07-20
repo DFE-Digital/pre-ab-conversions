@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#previousHTB" method="post">
+        {% else %}
+        <form action="../trust-overview/trust-overview-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Trust overview</span>
+      <h1 class="govuk-heading-l">Does the trust have any academies that are transferring?</h1>
+
+      <div class="govuk-form-group">
+    
+        {{ govukRadios({
+          idPrefix: "sponsor-academy-transfers",
+          name: "sponsor-academy-transfers",
+          items: [
+
+            {
+              value: "Yes",
+              checked:  data['sponsor-academy-transfers'] === "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              checked:  data['sponsor-academy-transfers'] === "No",
+              text: "No"
+            }
+
+          ]
+        }) }}
+        </div>
+     <div class="govuk-form-group">
+
+     
+
+          <!--    <label class="govuk-label govuk-label--m" for="recommendation">
+            Enter the full name of the author of this headteacher board (HTB) template
+          </label>
+   
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+        {{ govukInput({
+         
+          classes: "govuk-input--width-20",
+          id: "author",
+          name: "author",
+      
+          value: data["author"]
+        }) }}-->
+         
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+ <div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Were any conditions set?
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary1" method="post">
+        {% else %}
+        <form action="dates" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Assign to caseworker
+          </label>
+        </h1>
+        
+        <div id="event-name-hint" class="govuk-hint">
+          Please choose the caseworker's email address
+        </div>
+
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="-- Email address --" selected>-- Email address --</option>
+          <option value="alex.j@education.gov.uk">alex.j@education.gov.uk</option>
+          <option value="zara.e@education.gov.uk">zara.e@education.gov.uk</option>
+          <option value="paul.m@education.gov.uk">paul.m@education.gov.uk</option>
+        </select>
+      </div>
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>  
+  </div>  
+</div>
+{% endblock %}
+  
+  
+  
+  

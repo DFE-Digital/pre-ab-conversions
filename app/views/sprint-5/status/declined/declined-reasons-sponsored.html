@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="summary-sponsored" method="post">
+        {% else %}
+        <form action="dates-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      
+
+      {% set financeHtml %}
+      {{ govukTextarea({
+        id: "finance-reason",
+        name: "finance-reason",
+        value: data['finance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set performanceHtml %}
+      {{ govukTextarea({
+        id: "performance-reason",
+        name: "performance-reason",
+        value: data['performance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+      
+      {% set governanceHtml %}
+      {{ govukTextarea({
+        id: "governance-reason",
+        name: "governance-reason",
+        value: data['governance-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set choiceOfTrustHtml %}
+      {{ govukTextarea({
+        id: "choice-of-trust-reason",
+        name: "choice-of-trust-reason",
+        value: data['choice-of-trust-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set otherHtml %}
+      {{ govukTextarea({
+        id: "other-reason",
+        name: "other-reason",
+        value: data['other-reason'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Give reasons"
+        }
+      }) }}
+      {% endset -%}
+      
+
+      {{ govukCheckboxes({
+        idPrefix: "declined-reasons",
+        name: "declined-reasons",
+        fieldset: {
+          legend: {
+            text: "Why was this project declined?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select at least one option."
+        },
+        items: [
+
+          {
+            value: "Finance",
+            checked: checked("declined-reasons", "Finance"),
+            text: "Finance",
+            conditional: {
+              html: financeHtml
+            }
+          },
+
+          {
+            value: "Performance",
+            checked: checked("declined-reasons", "Performance"),
+            text: "Performance",
+            conditional: {
+              html: performanceHtml
+            }
+          },
+
+          {
+            value: "Governance",
+            checked: checked("declined-reasons", "Governance"),
+            text: "Governance",
+            conditional: {
+              html: governanceHtml
+            }
+          },
+
+          {
+            value: "Choice of trust",
+            checked: checked("declined-reasons", "Choice of trust"),
+            text: "Choice of trust",
+            conditional: {
+              html: choiceOfTrustHtml
+            }
+          },
+
+          {
+            value: "Other",
+            checked: checked("declined-reasons", "Other"),
+            text: "Other",
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
+  
+          
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+  
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav 
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+    <h2 class="govuk-heading-s" id="subsection-title">
+    Useful information
+    </h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+    <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+    <a class="govuk-link" href="#">
+  
+    </a>
+    </li>
+    <li>
+      <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+    </li>
+  
+    </ul>
+    </nav>
+  
+    </aside>
+  </div>-->    
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#author" method="post">
+        {% else %}
+        <form action="../trust-overview/trust-overview-voluntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Trust overview</span>
+      <h1 class="govuk-heading-l">Does the trust have any academies in the pipeline</h1>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set noHtml %}
+        {{ govukInput({
+          classes: "govuk-input--width-5",
+          id: "sponsor-pipeline-number",
+          name: "sponsor-pipeline-number",
+          value: '',
+          label: {
+            text: "How many academies does the trust have in the pipeline?",
+            classes: "govuk-label--m"
+            },
+            value: data["sponsor-pipeline-number"]
+        }) }}
+
+      
+        {% endset -%}
+  
+        {{ govukRadios({
+          idPrefix: "sponsor-pipeline",
+          name: "sponsor-pipeline",
+          
+          items: [
+            {
+              value: "No",
+              checked:  data['sponsor-pipeline'] === "No",
+              text: "No"
+            },
+            {
+              value: "Yes",
+              checked:  data['sponsor-pipeline'] === "Yes",
+              text: "Yes",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+
+
+       
+   
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar_voluntary.html" %}
+    </div>
+  </div>
+{% endblock %}

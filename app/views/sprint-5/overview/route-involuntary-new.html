@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#routes" method="post">
+        {% else %}
+        <form action="../overview/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
+      <h2 class="govuk-heading-m">Academy type and route</h2>
+      <p class="govuk-body-m gov">Sponsored (cannot be changed for this private beta)</p>
+
+
+      <h2 class="govuk-heading-m">Pre-opening support grant funding type</h2>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "pre-opening-support-grant-funding-type",
+        items: [
+          {
+            value: "fast-track",
+            text: "Fast track"
+          },
+          {
+            value: "intermediate",
+            text: "Intermediate"
+          },
+          {
+            value: "full",
+            text: "Full"
+          }
+        ]
+      }) }}
+
+
+
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "Guidance notes can go here if required..."
+          },
+          classes: "govuk-input--width-5",
+          id: "routes",
+          name: "routes",
+          prefix: {text:"£"}, 
+          value: '',
+          label: {
+            text: "Grant amount",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        <a name="additional_info"></a>{{ govukTextarea({
+          name: "routes-funding",
+          id: "routes-funding",
+          label: {
+            text: "If you changed the amount of the support grant, give a reason why",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+
+
+
+
+
+      
+
+        
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "If the school has applied for an environmental grant, please enter the value below. For example, £20,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "environmental-grant",
+          name: "environmental-grant",
+          prefix: {text:"£"}, 
+          label: {
+            text: "Environmental grant",
+            classes: "govuk-label--m",
+            value: data["routes-funding"]   }
+        }) }}
+
+       
+       
+ 
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+  
+      {% include "../includes/useful_info_sidebar.html" %}
+     
+    </div>
+  </div>
+
+
+{% endblock %}

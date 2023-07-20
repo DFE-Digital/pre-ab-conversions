@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#htbdate" method="post">
+        {% else %}
+        <form action="summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+        <h1 class="govuk-heading-l">Date you sent the directive academy order (DAO) pack to the school</h1>
+      </legend>
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "dao-date",
+  namePrefix: "dao-date",
+  fieldset: {
+    legend: {
+
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2021"
+  },
+  items: [
+    {
+      name: "day",
+      value: data["dao-date-day"],
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      value: data["dao-date-month"],
+      classes: "govuk-input--width-2"
+    },                
+    {
+      name: "year",
+      value: data["dao-date-year"],
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav -->    
+  <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+</div>
+{% endblock %}
+  
+  
+  
+  
