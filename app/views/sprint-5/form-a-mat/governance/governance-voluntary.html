@@ -1,0 +1,483 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list_cheltenham" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+ 
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">
+    Governance</h1>
+    <p class="govuk-body-m">This information is pre-populated from TRAMS and the <a href="../related/application_newtab_voluntary" target="_blank">school's application form (opens in a new tab)</a>.</p>
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+  
+    
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Upload an A4 diagram of the proposed governance structure of the trust
+            </dt>
+            <dd class="govuk-summary-list__value">
+              file_name.pdf
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+              Chief Executive Officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-ceo-voluntary.html">
+                Change<span class="govuk-visually-hidden">CEO details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['ceo-name'] %}
+          {{ data['ceo-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['ceo-dob-day'] and data['ceo-dob-month'] and data['ceo-dob-year']%}
+              <span>{{ data['ceo-dob-day'] }} </span>
+              <span>{{ data['ceo-dob-month'] }} </span>
+              <span>{{ data['ceo-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['ceo-bio'] %}
+              {{ data['ceo-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+              Chief Operating Officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-coo-voluntary.html">
+                Change<span class="govuk-visually-hidden">COO details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['coo-name'] %}
+          {{ data['coo-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['coo-dob-day'] and data['coo-dob-month'] and data['coo-dob-year']%}
+              <span>{{ data['coo-dob-day'] }} </span>
+              <span>{{ data['coo-dob-month'] }} </span>
+              <span>{{ data['coo-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['coo-bio'] %}
+              {{ data['coo-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+              Finance Director
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-fd-voluntary.html">
+                Change<span class="govuk-visually-hidden">Finance Director details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['fd-name'] %}
+          {{ data['fd-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['fd-dob-day'] and data['fd-dob-month'] and data['fd-dob-year']%}
+              <span>{{ data['fd-dob-day'] }} </span>
+              <span>{{ data['fd-dob-month'] }} </span>
+              <span>{{ data['fd-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['fd-bio'] %}
+              {{ data['fd-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+              HR Lead
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-hr-voluntary.html">
+                Change<span class="govuk-visually-hidden">HR Lead details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['hr-name'] %}
+          {{ data['hr-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['hr-dob-day'] and data['hr-dob-month'] and data['hr-dob-year']%}
+              <span>{{ data['hr-dob-day'] }} </span>
+              <span>{{ data['hr-dob-month'] }} </span>
+              <span>{{ data['hr-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['hr-bio'] %}
+              {{ data['hr-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+              Safeguarding Lead
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-sg-voluntary.html">
+                Change<span class="govuk-visually-hidden">Safeguarding Lead details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sg-name'] %}
+          {{ data['sg-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sg-dob-day'] and data['sg-dob-month'] and data['sg-dob-year']%}
+              <span>{{ data['sg-dob-day'] }} </span>
+              <span>{{ data['sg-dob-month'] }} </span>
+              <span>{{ data['sg-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sg-bio'] %}
+              {{ data['sg-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+
+        {% if data['other-role-role'] %}
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-heading-m">
+                {% if data['other-role-role'] %}
+                {{ data['other-role-role']}}
+                {% else %} 
+                <span class="empty">Empty</span>
+                {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-governance-other-voluntary.html">
+                Change<span class="govuk-visually-hidden">other role</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['other-role-name'] %}
+          {{ data['other-role-name']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['other-role-dob-day'] and data['other-role-dob-month'] and data['other-role-dob-year']%}
+              <span>{{ data['other-role-dob-day'] }} </span>
+              <span>{{ data['other-role-dob-month'] }} </span>
+              <span>{{ data['other-role-dob-year'] }}</span>
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Biography
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['other-role-bio'] %}
+              {{ data['other-role-bio']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+        {% endif %}
+
+
+
+
+        
+      
+<a href="update-governance-other-voluntary.html">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add another person
+        </button>
+      </a>
+
+   
+    
+     
+    <form action="../task_list_cheltenham" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "overview-status",
+    name: "overview-status",
+    
+    items: [
+    
+      {
+        value: "Complete",
+        text: "Mark this section as complete, you can still make changes later"
+      }
+      ]
+    }) }}
+
+  
+        
+
+  {{ govukButton({
+    text: "Confirm and continue"
+  }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

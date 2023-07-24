@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#deficit" method="post">
+        {% else %}
+        <form action="../school-overview/school-overview-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">School overview</span>
+    <h1 class="govuk-heading-l">Is there a financial deficit at the school in its current financial year?</h1>
+    <!-- Not MVP
+    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with surplus and deficits
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
+    </div>
+    </details>
+    -->
+
+      {{ govukRadios({
+        idPrefix: "defict",
+        name: "deficit",
+
+        items: [
+    
+          {
+            value: "No",
+            checked:  data['deficit'] === "No",
+            text: "No"
+          },
+          {
+            value: "Yes",
+            checked:  data['deficit'] === "Yes",
+            text: "Yes"
+          }
+          
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+  </div> 
+  
+  <!-- right hand nav -->    
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+</div> 
+
+{% endblock %}
+

@@ -1,0 +1,276 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+  <a href="../task_list_involuntary_conversions.html" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+
+<form action="../task_list_involuntary_conversions" method="post">
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Confirm school budget information</h1>
+    <p class="govuk-body">This table will go into your project template.</p>
+    <p>You can<a href="#additional_info"> add additional information</a> if you need to, this will also go into your project template.</p>
+ <br>
+  </div>
+</div>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining revenue on 31 March</h3></dt>
+      <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
+        <a class="govuk-link" href="revenue">
+          Change remaining revenue<span class="govuk-visually-hidden"> Change data in the revenue section</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Previous financial year
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data['revenue-previous-year'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Current financial year (forecasted)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data['revenue-current-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Next financial year (forecasted)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data ['revenue-next-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       If the school has a financial deficit, explain why?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['revenue-reason-for-deficit'] %}
+        {{data['revenue-reason-for-deficit']}}
+    {% else %}
+        <span class="empty">Empty</span>
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+  </dl>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Remaining capital on 31 March</h3>
+      </dt>
+      <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
+        <a class="govuk-link" href="capital">
+          Change remaining capital<span class="govuk-visually-hidden"> Change data in the capital section</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Previous financial year
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data['capital-previous-year'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Current financial year (forecasted)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data['capital-current-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       Next financial year (forecasted)
+      </dt>
+      <dd class="govuk-summary-list__value">
+      <span class="deficit">£{{ data ['capital-next-year']}}</span>  
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+       If the school has a financial deficit, explain why?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['reason-for-deficit'] %}
+        {{data['reason-for-deficit']}}
+    {% else %}
+        <span class="empty">Empty</span>
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+  </dl>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key  govuk-!-width-two-thirds">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Loans and financial leases</h3>
+        <p class="govuk-link govuk-!-margin-bottom-0 govuk-body-s"><a href="../related/application_newtab#finances" target="_application">View full loans and financial leases information (opens in a new tab)</a></p>
+      </dt>
+      <dd class="govuk-summary-list__actions govuk-!-width-two-thirds">
+       <br><a class="govuk-link" href="loans-leases">
+          Change loans and leases<span class="govuk-visually-hidden"> Change data in the loans and leases section</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Total loan amount
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data['total-loan-amounts'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Purpose of the loans
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['purpose-of-loans']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+     Total annual lease repayment amount
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £{{ data ['total-lease-repayments']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+   Pupose of the leases
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data ['purpose-of-leases']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+   Have ESFA approved the loans and leases?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['esfa-approved'] %}
+        {{data['esfa-approved']}}
+    {% else %}
+        <span class="empty">Empty</span>
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+  
+      </dd>
+    </div>
+  </dl>
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a name="additional_info"></a>  <h3 class="govuk-heading-m govuk-!-margin-top-8">Add any additional information if you need to</h3>
+        <p>This information will go into your project template under the school budget information section.</p>
+      </div></div>
+      <div>
+        <br>
+        <dl class="govuk-summary-list">
+          <a name="additional_info"></a>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Addtional information</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['budget-more-detail'] %}
+                        {{data['budget-more-detail']}}
+                    {% else %}
+                        <span class="empty">Empty</span>
+                    {% endif %}
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="budget-information-comments#additional_info">
+                      Change<span class="govuk-visually-hidden">Change budget comments</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+
+ 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+     
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukCheckboxes({
+        idPrefix: "school-budget-status",
+        name: "school-budget-status",
+        items: [
+          {
+            value: "Complete",
+            text: "Mark this section as complete, you can still make changes later"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+
+    </form>
+
+    </div>
+    </div>
+
+  {% endblock %}

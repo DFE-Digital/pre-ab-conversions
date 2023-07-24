@@ -9,72 +9,63 @@
 {% endblock %}
 
 {% block content %}
-
-
-
-
           
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
+      <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        Cheltenham Spa Primary School
+      </h1>
+      <p class="govuk-body govuk-!-margin-bottom-8">
+        Route: Form a MAT</br>
+        Delivery officer: 
+        {% if (data['delivery-officer-assigned']) %}
+          <strong>{{ data['delivery-officer-assigned'] }}</strong>
+        {% else %}
+          <span class="empty">Empty</span>
+        {% endif %}
+        <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+      </p>
+    </div>
 
-    <div class="govuk-notification-banner" role="region"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      You cannot currently use this service to create project templates for Form a MAT applications. You should use KIM instead.
-    </p>
-  </div>
-</div>
-
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-      Cheltenham Spa Primary School 
-    </h1>
-    <p class="govuk-body govuk-!-margin-bottom-8">
-      Route: Form a MAT</br>
-      <!--Delivery officer: 
-      {% if (data['delivery-officer-assigned']) %}
-        <strong>{{ data['delivery-officer-assigned'] }}</strong>
-      {% else %}
-        <span class="empty">Empty</span>
-      {% endif %}
-      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>-->
-    </p>
-  </div>
-
-
-  <div class="govuk-grid-column-full">      
-<nav class="app-sub-navigation" aria-label="sub menu">
-  <ul class="app-sub-navigation__list govuk-!-margin-top-6">
-    
-  <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link" aria-current="page" href="#">School application form</a>
-    </li>
-   
-    <li class="app-sub-navigation__item">
-      <a class="app-sub-navigation__link"  href="./projects-other-mat-cheltenham.html">Other schools in this MAT</a>
-    </li>
-</ul>
-
-</nav>
-</div>
+    <div class="govuk-grid-column-full">
+      <nav class="app-sub-navigation" aria-label="sub menu">
+  
+        <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+  
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="task_list_cheltenham.html">Project details</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="application-cheltenham">School application form</a>
+              </li>
+              <!-- Not MVP <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+              </li> -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="./related/notes-cheltenham">Project notes</a>
+              </li>
+            <!--
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
+              </li>
+            -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="./projects-other-mat-cheltenham.html">Other schools in this MAT</a>
+              </li>
+        </ul>
+  
+      </nav>
+    </div>
 <div class="govuk-grid-column-full">
 
-
+<p><a href="./related/application_newtab" target="application">Open school application form in a new tab</a></p>
   <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">School application form</h2>
 
   <nav class="gem-c-contents-list" aria-label="Pages in this guide" role="navigation" data-module="gem-track-click"> <h2 class="gem-c-contents-list__title"> Contents</h2>
     <ol class="gem-c-contents-list__list">
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#overview"> Overview</a></li> 
-        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#trust">Trust information</a></li>
-        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#people">Key people within the trust</a></li>
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#about">About the conversion</a></li>
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#further_info">Further information</a></li>
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#finances">Finances</a></li>
@@ -115,297 +106,57 @@
   </div>
 </dl>
 
-<a name="trust"></a><h2 class="govuk-heading-l govuk-!-margin-bottom-3">Trust information</h2>
- 
-  </div>
-  <div class="govuk-grid-column-full">
-  <dl class="govuk-summary-list">
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Proposed name of the trust
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p class="govuk-body">Gloucestershire Academy Trust</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-  </dd>
-</div>
-</dl>
-
-
-<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">Opening date</h3>
-
+<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">Trust details</h3>
 <dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    When do you plan to establish the new multi-academy trust?
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p class="govuk-body">1 September 2023</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-  </dd>
-</div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Approver full name
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p class="govuk-body">Bob Roberts</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-  </dd>
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Approver email address
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p class="govuk-body">bob.roberts@education.gov.uk</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <!--<a class="govuk-link" href="route-involuntary.html">Change<span class="govuk-visually-hidden">route"</span></a>-->
-  </dd>
-</div>
-</dl>
-
-
-
-
-
-<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">Reasons for forming the trust</h3>
-
-
-<dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  Why are the schools forming the trust?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Details about this here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  What vision and aspirations have the schools agreed to for the trust?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Vision and aspirations info here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  What geographical areas and communities will the trust serve?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Geographical information here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-  <!--<a class="govuk-link" href="route-involuntary.html">Change<span class="govuk-visually-hidden">route"</span></a>-->
-</dd>
-</div>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  How will the schools make the most of the freedom that academies have?
-</dt>
-<dd class="govuk-summary-list__value">
-  Details about academy freedoms here...
-</dd>
-<dd class="govuk-summary-list__actions">
-  <!--<a class="govuk-link" href="set-form-7.html">Change<span class="govuk-visually-hidden">form 7 received</span></a>-->
-</dd>
-</div>
-
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  How will the schools work together to improve teaching and learning
-</dt>
-<dd class="govuk-summary-list__value">
-  Information about teaching and learning here...
-</dd>
-<dd class="govuk-summary-list__actions">
-  <!--<a class="govuk-link" href="set-form-7-date.html">Change<span class="govuk-visually-hidden">form 7 received</span></a>-->
-</dd>
-</div>
-</dl>
-
-
-
-<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">Plans for growth</h3>
-
-<dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  Do you plan to grow the trust over the next 5 years?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Yes</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  What are your plans?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Details of how to grow the trust here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-
-<!--
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  Why are you not planning to grow?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Reasons why no plans to grow here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="route-involuntary.html">
-    Change<span class="govuk-visually-hidden">route"</span>
-  </a>
-</dd>
-</div>
--->
-
-</dl>
-
-
-<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">School improvement strategy</h3>
-
-
-<dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  How will the trust support and improve the academies in the trust?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Details here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  How will the trust make sure that the school improvement strategy is fit for purpose and improve standards?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Details here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-</div>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-  If the trust wants to become an approved sponsor, when would it plan to apply and begin sponsoring schools?
-</dt>
-<dd class="govuk-summary-list__value">
-  <p class="govuk-body">Details here...</p>
-</dd>
-<dd class="govuk-summary-list__actions">
-  <!--<a class="govuk-link" href="route-involuntary.html">Change<span class="govuk-visually-hidden">route"</span></a>-->
-</dd>
-</div>
-</dl>
-
-
-
-
-
-
-<a name="people"></a><h2 class="govuk-heading-l govuk-!-margin-bottom-3">Key people within the trust</h2>
-<!--<h3 class="govuk-heading-m govuk-!-margin-bottom govuk-!-font-size-24">Key people</h3>-->
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key  govuk-!-width-full">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Iain MacDonald</h3></dt>
-
-  </div>
-
-  <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Position(s) within the trust
+      Trust name
     </dt>
     <dd class="govuk-summary-list__value">
-      Trustee, Financial director
+      Gloucester Academy Trust
     </dd>
-
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-    Date of birth
+      Upload evidence that the trust consents to the school joining
     </dt>
     <dd class="govuk-summary-list__value">
-     11 February 1971
+      <a href="#">consent_dynamics.docx</a>
     </dd>
- 
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-     Biography
+      Will there be any changes to the governance of the trust due to the school joining?
     </dt>
     <dd class="govuk-summary-list__value">
-     A short bio of Iain goes here...
+      Yes
     </dd>
-
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      What are the changes?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The trust will get a new CEO and CFO to make sure the finances of the school are in line with other schools in the trust.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Will there be any changes at a local level due to this school joining?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      What are the changes and how do they fit into the current lines of accountability in the trust
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Some explanation of this.
+    </dd>
   </div>
 </dl>
-
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key  govuk-!-width-full">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Bob Roberts</h3></dt>
-
-  </div>
-
-  <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Position(s) within the trust
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Member, Trustee
-    </dd>
-
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-    Date of birth
-    </dt>
-    <dd class="govuk-summary-list__value">
-     23 March 1983
-    </dd>
- 
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-     Biography
-    </dt>
-    <dd class="govuk-summary-list__value">
-     A short bio of Bob goes here...
-    </dd>
-
-  </div>
-</dl>
-
-
 
 
 
@@ -437,7 +188,7 @@
       Headteacher's email address
     </dt>
     <dd class="govuk-summary-list__value">
-      garth.brown@winchcombeprimary.edu.uk
+      garth.brown@cheltenhamspaprimary.edu.uk
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -525,7 +276,7 @@
       Approver's email address
     </dt>
     <dd class="govuk-summary-list__value">
-    garth.brown@winchcombeprimary.edu.uk
+    garth.brown@cheltenhamspaprimary.edu.uk
     </dd>
   </div>
 </dl>
