@@ -1,0 +1,524 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+ 
+      {% if data['returnToSummary'] == 'yes' %}
+      <form action="../generate/generate_summary#performance" method="post">
+        {% else %}
+        <form action="key-stage-2-performance-comments-voluntary#additional_info" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Performance data</span>
+  <h1 class="govuk-heading-l">Key stage 2 performance tables</h1> 
+  <p class="govuk-body">This information comes from TRAMS and you can <a href="#additional_info">add additional information</a> if you need to. These performance tables and additional information will go into your project document.</p>
+  
+  <p class="govuk-body-s">TRAMS last updated on: 23 March 2021<br>
+    <a href="https://www.compare-school-performance.service.gov.uk/school/<URN>" class="govuk-link" rel="noreferrer noopener" target="_blank">Source of data: Find and compare school performance (opens in new tab)</a>
+  </p>
+
+  <div class="govuk-inset-text">
+    There is no 2019 to 2020 key stage data because of the pandemic. 2020 to 2021 data is limited.
+  </div>
+
+  </div></div>
+  <div>
+    <table class="govuk-table govuk-!-margin-bottom-9">
+  
+      <caption class="govuk-table__caption govuk-table__caption--m">2021 to 2022 key stage 2</caption>
+      
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        
+          <th scope="col" class="govuk-table__header">Status</br><strong class="govuk-tag govuk-tag--grey">Provisional</strong></th>
+        
+          <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Reading progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Writing progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Maths progress scores</th>
+        
+        </tr>
+      </thead>
+      
+      <tbody class="govuk-table__body">
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">St Wilfrid's Primary School</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">Warrington LA average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >63</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >9</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.2</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-0.8</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-0.3</td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header"
+              >National average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >65 <br> (disadvantaged 51)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >11 <br> (disadvantaged 5)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+            </tr>
+          
+        
+      </tbody>
+    </table>
+    
+    
+                <table class="govuk-table govuk-!-margin-bottom-9">
+      
+      <caption class="govuk-table__caption govuk-table__caption--m">2020 to 2021 key stage 2</caption>
+      
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        
+          <th scope="col" class="govuk-table__header">Status</br><strong class="govuk-tag govuk-tag--orange">Revised</strong></th>
+        
+          <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Reading progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Writing progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Maths progress scores</th>
+        
+        </tr>
+      </thead>
+      
+      <tbody class="govuk-table__body">
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">St Wilfrid's Primary School</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >Suppressed </td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">Warrington LA average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >61</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >10</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.1</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-0.9</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-0.5</td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header"
+              >National average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >64 <br> (disadvantaged 51)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >10 <br> (disadvantaged 4)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+            </tr>
+          
+        
+      </tbody>
+    </table>
+    
+    
+                <table class="govuk-table govuk-!-margin-bottom-9">
+      
+      <caption class="govuk-table__caption govuk-table__caption--m">2018 to 2019 key stage 2</caption>
+      
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        
+          <th scope="col" class="govuk-table__header">Status</br><strong class="govuk-tag govuk-tag--green">Final</strong></th>
+        
+          <th scope="col" class="govuk-table__header">Percentage meeting expected standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Percentage achieving a higher standard in reading, writing and maths</th>
+        
+          <th scope="col" class="govuk-table__header">Reading progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Writing progress scores</th>
+        
+          <th scope="col" class="govuk-table__header">Maths progress scores</th>
+        
+        </tr>
+      </thead>
+      
+      <tbody class="govuk-table__body">
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">St Wilfrid's Primary School</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >()</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >()</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >()</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >()</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >()</td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header">Warrington LA average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >59</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >8</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.2</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-1.2</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >-0.9</td>
+              
+            
+            </tr>
+          
+        
+          
+            <tr class="govuk-table__row">
+            
+              
+              
+              <th scope="row" class="govuk-table__header"
+              >National average</th>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >64 <br> (disadvantaged 51)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >10 <br> (disadvantaged 4)</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+              
+              
+              <td class="govuk-table__cell"
+              >0.00</td>
+              
+            
+            </tr>
+          
+        
+      </tbody>
+    </table>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+<a name="additional_info"></a>
+  {{ govukTextarea({
+    name: "key-stage-2-more-detail",
+    id: "key-stage-2-more-detail",
+    value: data["key-stage-2-more-detail"],
+    label: {
+      text: "Add any additional information if you need to",
+      classes: "govuk-label--m"
+    },
+    hint: {
+      text:"This information will go into your project document under the key stage performance tables section."
+    }
+  }) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+</form>
+
+</div>
+</div>
+{% endblock %}

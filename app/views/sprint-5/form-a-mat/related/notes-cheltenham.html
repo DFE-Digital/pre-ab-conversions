@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cheltenham Spa Primary School 
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Form a MAT</br>
+      Delivery officer: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+    </p>
+  </div>
+
+
+
+  <div class="govuk-grid-column-full">
+   
+     
+      <nav class="app-sub-navigation" aria-label="sub menu">
+          <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="../task_list_cheltenham">Project details</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="../application-cheltenham">School application form</a>
+              </li>
+            <!-- Not MVP   <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
+              </li> -->
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  aria-current="page" href="#">Project notes</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="../projects-other-mat-cheltenham.html">Other schools in this MAT</a>
+              </li>
+          </ul>
+        </nav>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Project notes</h2>
+    <a href="notes-new.html" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add note</a>
+      <div class="app-notes">
+        <div class="app-notes__note">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Update on what's happened so far</h2>
+          <p class="govuk-!-margin-bottom-1">Apologies for this last minute handover. There are a few things to note. I've not updated the task list with the school's preferred opening date. There could also be a possible viability issue so we should highlight that too. The school's rationale seems thorough but I've not edited it to add my own narrative yet.</p>
+          <p class="govuk-body-s">Aleah Khan, 1 April 2021 at 4:31pm</p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+
+        
+        {% if data['project_note_subject']%}
+        <div class="app-notes__note">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">{{data['project_note_subject']}}</h2>
+          <p class="govuk-!-margin-bottom-1">{{data['project_note']}}</p>
+          <p class="govuk-body-s">Alex James, 21 July at 4:31pm</p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+        {% endif %}
+    
+
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+

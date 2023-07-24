@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#routes" method="post">
+        {% else %}
+        <form action="../conversion-details/conversion-details-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Conversion details</span>
+      <h1 class="govuk-heading-l">Grant details</h1>
+
+      <div class="govuk-inset-text">
+        The amount shown below includes the £25,000 conversion grant element.
+      </div>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grant type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['grant-type']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="route-type-involuntary.html">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Default grant amount
+
+            
+
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Fast track'%}
+            £70,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Intermediate'%}
+            £90,000
+            {% endif %}
+            {% if data['phase'] == 'primary' and data['grant-type'] == 'Full'%}
+            £110,000
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+      </dl>
+
+     
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% set noHtml %}
+        {{ govukInput({
+          hint: {
+            text: "If the school has tried to convert before and was unsuccessful, it may have already spent some of its support grant, so you can decrease the amount for this project if you need to. For example, £60,000"
+          },
+          classes: "govuk-input--width-5",
+          id: "grant-revised-amount",
+          name: "grant-revised-amount",
+          prefix: {text:"£"}, 
+          value: '',
+          label: {
+            text: "Change the grant if it needs to be less than the default amount shown above",
+            classes: "govuk-label--m"
+            },
+            value: data["grant-revised-amount"]
+        }) }}
+
+        {{ govukTextarea({
+          name: "grant-change-reason",
+          id: "grant-change-reason",
+          title: "Reason for change of grant amount",
+          label: {
+            text: "If you changed the amount of the grant, give a reason why",
+            classes: "govuk-label--m"
+          },
+          value: data["grant-change-reason"]
+        }) }}
+        {% endset -%}
+  
+        {{ govukRadios({
+          idPrefix: "grant-change",
+          name: "grant-change",
+          fieldset: {
+            legend: {
+              text: "Is the school applying for the default grant amount shown above?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              checked:  data['grant-change'] === "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              checked:  data['grant-change'] === "No",
+              text: "No",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+
+        
+        
+        
+        
+        
+        {% if (data['grant-type'] == 'Intermediate' or data['grant-type'] == 'Full') and data['phase'] == 'primary' %}
+        
+        {{ govukRadios({
+          name: "eig",
+          fieldset: {
+            legend: {
+              text: "Is the school applying for an Environmental Improvement Grant (EIG)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked:  data['eig'] === "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked:  data['eig'] === "No"
+            }
+            
+          ]
+        }) }}
+
+        {% endif %}
+
+        {% if (data['grant-type'] == 'Intermediate' or data['grant-type'] == 'Full') and data['phase'] == 'secondary' %}
+        
+        {{ govukRadios({
+          name: "eig",
+          fieldset: {
+            legend: {
+              text: "Are you applying for an Environmental Improvement Grant (EIG)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Your school is eligible for a grant of £80,000."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked:  data['eig'] === "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked:  data['eig'] === "No"
+            }
+            
+          ]
+        }) }}
+
+        {% endif %}
+
+       
+
+
+
+
+      
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+
+
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+  
+      {% include "../includes/useful_info_sidebar.html" %}
+     
+    </div>
+  </div>
+
+
+{% endblock %}

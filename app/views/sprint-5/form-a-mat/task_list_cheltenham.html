@@ -1,43 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cheltenham Primary School - task list
+  Cheltenham Spa Primary School - task list
 {% endblock %}
 
 {% block beforeContent %}
-<a href="projects-list-involuntary-conversions-alt" class="govuk-back-link">Back to all conversion projects</a>
+<a href="projects-list-mat" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
 
 
 {% block content %}
 
-{% if data['justRecorded'] == 'yes' %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-     Done
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">Decision recorded</p>
-  </div>
-</div>
-{% endif %}
-<input hidden type="text" name="justRecorded" value="no"/>
 
-{% if data['justAssigned'] == 'yes' %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-     Done
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">Project is assigned</p>
-  </div>
-</div>
-{% endif %}
-<input hidden type="text" name="justAssigned" value="no"/>
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -53,282 +30,35 @@
       {% else %}
         <span class="empty">Empty</span>
       {% endif %}
-      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+      <a class="govuk-link" href="#" style="margin-left: 1em;">Change</a>
     </p>
   </div>
-
-  <!--
-  <div class="govuk-grid-column-two-thirds">
-
-    {% if (data['decision-status'] == "Approved") %}
-      <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if (data['decision-status'] == "Approved") and (data['approved-conditions'] == "Yes") %}
-            <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
-            {% else %}
-              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
-            {% endif %} 
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Who made this decision
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% if data['who-decided'] != "Other" %}
-              <div>{{ data['who-decided']}} </div>
-            {% else %}
-              {% if data['who-decided-other-details'] %} 
-                <div>{{data['who-decided-other-details']}} </div>
-              {% endif %}
-            {% endif %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Were any conditions set
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% if data['approved-conditions'] == "Yes" %}
-            <p>Yes:</p>
-              {% if data['approved-conditions-yes-details'] %} 
-                <p class="govuk-!-margin-bottom-2">{{ data['approved-conditions-yes-details'] }} </p>
-              {% endif %}
-            {% else %}
-            <p>No</p>
-            {% endif %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Date of decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
-              <span>{{ data['decision-date-day'] }} </span>
-              <span>{{ data['decision-date-month'] }} </span>
-              <span>{{ data['decision-date-year'] }}</span>
-            {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
-          </dd>
-        </div>
-
-      </dl>      
-    {% elseif (data['decision-status'] == "Declined") %}  
-      <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Who made this decision
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% if data['who-decided'] != "Other" %}
-              <div>{{ data['who-decided']}} </div>
-            {% else %}
-              {% if data['who-decided-other-details'] %} 
-                <div>{{data['who-decided-other-details']}} </div>
-              {% endif %}
-            {% endif %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Why was this project deferred
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% for reason in data['declined-reasons'] %}
-
-              {% if reason == "Finance" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['finance-reason']}} </div>
-              {% endif %}
-
-              {% if reason == "Performance" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['performance-reason']}} </div>
-              {% endif %}
-
-              {% if reason == "Governance" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['governance-reason']}} </div>
-              {% endif %}
-
-              {% if reason == "Choice of trust" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['choice-of-trust-reason']}} </div>
-              {% endif %}
-              
-              {% if reason == "Other" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
-              {% endif %}
-
-            {% endfor %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Date of decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
-              <span>{{ data['decision-date-day'] }} </span>
-              <span>{{ data['decision-date-month'] }} </span>
-              <span>{{ data['decision-date-year'] }}</span>
-            {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
-          </dd>
-        </div>
-
-      </dl>
-
-    {% elseif (data['decision-status'] == "Deferred") %} 
-      <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if (data['decision-status'] == "Approved") %}
-              <strong class="govuk-tag govuk-tag--green">{{ data['decision-status']}}</strong>
-            {% elseif (data['decision-status'] == "Declined") %}  
-              <strong class="govuk-tag govuk-tag--red">{{ data['decision-status']}}</strong>
-            {% elseif (data['decision-status'] == "Deferred") %} 
-              <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status']}}</strong>
-            {% endif %} 
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Who made this decision
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% if data['who-decided'] != "Other" %}
-              <div>{{ data['who-decided']}} </div>
-            {% else %}
-              {% if data['who-decided-other-details'] %} 
-                <div>{{data['who-decided-other-details']}} </div>
-              {% endif %}
-            {% endif %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Why was this project deferred
-          </dt>
-          <dd class="govuk-summary-list__value">               
-            {% for reason in data['deferred-reasons'] %}
-
-              {% if reason == "Additional information needed" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['additional-information-reason']}} </div>
-              {% endif %}
-
-              {% if reason == "Awaiting next Ofsted report" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['awaiting-ofsted-reason']}} </div>
-              {% endif %}
-
-              {% if reason == "Performance concerns" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['performance-concerns-reason']}} </div>
-              {% endif %}
-              
-              {% if reason == "Other" %} 
-                <div>{{ reason }}:</div>
-                <div class="govuk-!-margin-bottom-2">{{data['other-reason']}} </div>
-              {% endif %}
-
-            {% endfor %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Date of decision
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['decision-date-day'] and data['decision-date-month'] and data['decision-date-year']%}
-              <span>{{ data['decision-date-day'] }} </span>
-              <span>{{ data['decision-date-month'] }} </span>
-              <span>{{ data['decision-date-year'] }}</span>
-            {% else %} 
-              <span class="empty">Empty</span>
-            {% endif %}
-          </dd>
-        </div>
-
-      </dl>
-    {% endif %} 
-    
-    {% if (data['decision-status']) %}
-      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
-        You can click the button to change the recorded decision.
-      </p>
-      <form action="status/list" method="post" class="form">
-        {{ govukButton({
-          text: "Change your decision"
-        }) }}
-      </form>   
-    {% else %}  
-      <p class="govuk-!-margin-top-2 govuk--!-margin-bottom-0">
-        You have not recorded the decision for this project. You can record the decision once it has been made.
-      </p>
-      <form action="status/list" method="post" class="form">
-        {{ govukButton({
-          text: "Record a decision"
-        }) }}
-      </form>
-    {% endif %} 
-
-
-    {% if data['htb-date']%}
-    <div class="govuk-inset-text">
-      <h4 class="govuk-heading-m">HTB date</h4>
-      <p>HTB date for this project is {{ data['htb-date']}}</p>
-    </div> 
-    {% else %} 
-    {% endif %}
-  </div>
-  -->
 
   <div class="govuk-grid-column-full">
     <nav class="app-sub-navigation" aria-label="sub menu">
 
       <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
-            
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="page" href="task_list_cheltenham.html">Guidance</a>
+              <a class="app-sub-navigation__link" aria-current="page" href="#">Project details</a>
             </li>
-          
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="./application-cheltenham.html">School application form</a>
+              <a class="app-sub-navigation__link"  href="application-cheltenham">School application form</a>
             </li>
             <!-- Not MVP <li class="app-sub-navigation__item">
               <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
             </li> 
+          -->
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="#">Project notes</a>
+              <a class="app-sub-navigation__link"  href="./related/notes-cheltenham">Project notes</a>
             </li>
-            -->
+            <!--
             <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link"  href="./projects-other-mat.html">Other schools in this MAT</a>
+              <a class="app-sub-navigation__link"  href="./trust-information.html">Trust information</a>
+            </li>
+          -->
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="./projects-other-mat-cheltenham.html">Other schools in this MAT</a>
             </li>
       </ul>
 
@@ -336,12 +66,173 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Guidance</h2>
-    <p class="govuk-body">Bit of intro text about what is here...</p>
+   
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Prepare a project document</h2>
+    <p class="govuk-body">These steps will help you create a document you can present to an advisory board, and record things like when the LA (local authority) information template was sent.</p>
+    <p class="govuk-body">You can complete them in any order.</p>
+    <br>
   
     <ul class="app-task-list">
+
+
+     
+
       <li>
-        <h3 class="app-task-list__section govuk-!-margin-top-8">Local authority (LA) information template</h3>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Add school information</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-overview/school-overview-voluntary.html"  aria-describedby="general-info-summary">
+          School overview
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="budget/budget-voluntary.html"  aria-describedby="sponsor-overview">
+          Budget
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="pupil-forecasts/pupil-forecasts-voluntary.html"  aria-describedby="key-people-summary">
+          Pupil forecasts
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="key-people">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="conversion-details/conversion-details-voluntary.html"  aria-describedby="governance-summary">
+          Conversion details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="governance">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="legal-requirements/legal-requirements-voluntary.html"  aria-describedby="legal-requirements-summary">
+          Legal requirements
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="legal-requirements">Not started</strong>
+          </li>
+
+         
+
+         
+
+
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Add sponsor information</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trust-overview/trust-overview-voluntary.html"  aria-describedby="project-overview">
+                Trust overview
+              </a>
+            </span>
+            <strong class="{{data|conversionOverviewStatusClass(['overview-status'],['htb-date', 'recomendation'],['opening-date', 'aorequired'] )}} app-task-list__tag" id="project-overview">  
+                {{data|conversionOverviewStatusText(
+                  ['overview-status'],
+                  ['htb-date','recomendation'],
+                  ['opening-date', 'aorequired']
+                )}} 
+            </strong>
+          </li>
+
+         
+
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="governance/governance-voluntary.html" aria-describedby="general-information">
+               Governance
+              </a>
+            </span>
+            <strong class="{{data|generalInfoStatusClass(['general-info-status'], ['distance'], ['deficit'],['diocesan'], ['goodschools','viability'] )}} app-task-list__tag" id="general-information">  
+              {{data|generalInfoStatusText(
+                ['general-info-status'],
+                ['distance'],
+                ['deficit'],
+                ['diocesan'],
+                ['goodschools','viability' ]
+              )}} 
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-improvement-strategy/school-improvement-strategy-voluntary.html" aria-describedby="school-improvement-strategy">
+                School improvement strategy
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">
+             Not started
+            </strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="finances/finances-voluntary.html" aria-describedby="finances">
+                Finances
+              </a>
+            </span>
+            <strong class="{{data|rationaleStatusClass(['rationale-status-htb'],['trust-rationale'], ['project-rationale'] )}} app-task-list__tag" id="rationale-status">  
+              {{data|rationaleOverviewStatusText(
+                ['rationale-status-htb'],
+                ['trust-rationale'],
+                ['project-rationale']
+              )}} 
+            </strong>
+          </li>
+     
+        </ul>
+      </li>
+
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Give a case for academisation</h3>
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="rationale/rationale-voluntary.html"  aria-describedby="general-info-summary">
+          Rationale
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="risks-and-issues/risks-and-issues-voluntary.html"  aria-describedby="sponsor-overview">
+          Risks and issues
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="future-plans/future-plans-voluntary.html"  aria-describedby="sponsor-overview">
+          Future plans
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>
+          </li>
+
+
+      <li>
+        <h3 class="app-task-list__section govuk-!-margin-top-8">Say when the LA information template was sent</h3>
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -353,7 +244,7 @@
                       'la-comments', 'la-sharepoint-link']                
                     )}}" 
                 aria-describedby="LA-infromation-template-involuntary">
-                Record dates for the LA information template 
+                LA information template sent date 
               </a>
             </span>
             <strong class="{{data|laProformaStatusClass(
@@ -373,37 +264,72 @@
         </ul>
       </li>
 
+
+
       <li>
-        <h3 class="app-task-list__section govuk-!-margin-top-0">Trust template guidance</h3>
+        <h3 class="app-task-list__section govuk-!-margin-top-0">Performance data</h3>
+
+        <div class="govuk-inset-text">
+          This information will be added to your project document automatically.
+        </div>
+
         <ul class="app-task-list__items govuk-!-padding-left-0">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="sponsor-template/index.html"  aria-describedby="trust-template">
-          Prepare your trust template
+              <a href="school-performance/ofsted-comments-voluntary"  aria-describedby="general-info-summary">
+          Ofsted information
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="school-performance">Reference only</strong>
+            <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-info">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-2-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+          Key stage 2 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-4-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+                Key stage 4 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="key-stage/key-stage-5-performance-comments-voluntary.html"  aria-describedby="sponsor-overview">
+                Key stage 5 performance tables
+              </a>
+            </span>
+           <!--<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="sponsor-overview">Not started</strong>-->
           </li>
         </ul>
       </li>
 
-    
-       
 
-      <!--
-      <h2 class="govuk-heading-l">Preview or generate project template</h2>
-      <p>Preview your template before you generate it into a Word document. Or, you can generate the document without previewing it.</p>
+
+      <h2 class="govuk-heading-l">Create your project document</h2>
+      <p>Project documents are in Microsoft Word format. You can make changes to documents after you create them.</p>
 
       <div class="govuk-button-group">
-        <a href="generate/generate_summary_involuntary.html" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
-          Preview project template
+        <a href="generate/generate_summary_voluntary.html" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Preview project document
         </a>
-        <a href="generate/generate_documents_involuntary" role="button" draggable="false" class="govuk-button govuk-button--secondary">
-          Generate project template
+        <a href="generate/generate_documents_voluntary" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+          Create project document
         </a>
+       
       </div>
-      -->
     </ul>
+
+
+
   </div>
 </div>
 {% endblock %}
