@@ -18,19 +18,31 @@
 
  
 
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 104944</span>
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 104944</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
       Winchcombe Primary School 
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-8">
       Route: Form a MAT</br>
-      Delivery officer: 
+      Project owner:
       {% if (data['delivery-officer-assigned']) %}
         <strong>{{ data['delivery-officer-assigned'] }}</strong>
       {% else %}
         <span class="empty">Empty</span>
       {% endif %}
       <a class="govuk-link" href="#" style="margin-left: 1em;">Change</a>
+      <br><br>
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--yellow">Pre advisory board</strong>
+      {% endif %} 
     </p>
   </div>
 
@@ -78,7 +90,7 @@
        
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="application-cheltenham">Cheltenham Spa Primary School</a></strong> URN: 100006</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_cheltenham">Cheltenham Spa Primary School</a></strong> URN: 100006</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
@@ -96,7 +108,7 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="application-gloucester">Gloucester Primary School</a></strong> URN: 101573</h2>
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_gloucester">Gloucester Primary School</a></strong> URN: 101573</h2>
               <p class="govuk-!-margin-top-3">
               Route: Form a MAT</br>
               Application to join a trust: Gloucestershire Academy Trust</br>
