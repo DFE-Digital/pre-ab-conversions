@@ -1,47 +1,37 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Record a decision - Cheltenham Spa Primary School
+  Cheltenham Spa Primary School - task list
 {% endblock %}
 
 {% block beforeContent %}
-<a href="../task_list_sponsor_template_new.html" class="govuk-back-link">Back to project details</a>
+<a href="projects-list-mat" class="govuk-back-link">Back to all conversion projects</a>
 {% endblock %}
+
 
 {% block content %}
 
 
 
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN 100006</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      <span class="govuk-visually-hidden">Project details - </span>Cheltenham Spa Primary School
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 100006</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cheltenham Spa Primary School 
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-8">
-      Route: Sponsored conversion</br>
+      Route: Form a MAT</br>
       Project owner: 
       {% if (data['delivery-officer-assigned']) %}
         <strong>{{ data['delivery-officer-assigned'] }}</strong>
       {% else %}
         <span class="empty">Empty</span>
       {% endif %}
-      <a class="govuk-link" href="project-assignment/project-assignment-sponsored" style="margin-left: 1em;">Change</a>
+      <a class="govuk-link" href="#" style="margin-left: 1em;">Change</a>
       <br><br>
-
-      <!--
-      {% if data['HTB-date-day'] and data['HTB-date-month'] and data['HTB-date-year']%}
-      <div class="govuk-inset-text">
-        <h4 class="govuk-heading-m">HTB date</h4>
-        <p>HTB date for this project is 
-          <span>{{ data['HTB-date-day'] }} </span>
-          <span>{{ data['HTB-date-month'] }} </span>
-          <span>{{ data['HTB-date-year'] }}</span></p>
-      </div> 
-      {% endif %}
-      -->
-
-
       {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
       <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
       {% elseif (data['decision-status-sponsored'] == "Approved") %}
@@ -51,42 +41,46 @@
       {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
       <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
       {% else %}
-      <strong class="govuk-tag govuk-tag--grey">Awaiting decision</strong>
-      {% endif %}
-
+      <strong class="govuk-tag govuk-tag--yellow">Pre advisory board</strong>
+      {% endif %} 
     </p>
   </div>
 
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
 
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
 
-        <div class="govuk-grid-column-full">
-      <nav class="app-sub-navigation" aria-label="sub menu">
-          <ul class="app-sub-navigation__list govuk-!-margin-top-6">
-              <li class="app-sub-navigation__item">
-                <a class="app-sub-navigation__link" href="../task_list_sponsor_template_new.html">Project details</a>
-              </li>
-              <li class="app-sub-navigation__item">
-                <a class="app-sub-navigation__link"  href="../related/application_saved_sponsored_conversions">Annex B form</a>
-              </li>
-            <!-- Not MVP   <li class="app-sub-navigation__item">
-                <a class="app-sub-navigation__link" href="/related/dates">Project dates</a>
-              </li> -->
-              <li class="app-sub-navigation__item">
-                <a class="app-sub-navigation__link" aria-current="page" href="#">Record a decision</a>
-              </li>
-              <li class="app-sub-navigation__item">
-                <a class="app-sub-navigation__link"  href="../related/notes_sponsored_conversions.html">Project notes</a>
-              </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Project details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="application-cheltenham">School application form</a>
+            </li>
+            <!-- Not MVP <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="/related/dates">Project milestones</a>
+            </li> 
+          -->
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link" aria-current="page" href="#">Record a decision</a>
+          </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="./related/notes-cheltenham">Project notes</a>
+            </li>
+            
+           
+          
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="./projects-other-mat-cheltenham.html">Other schools in this MAT</a>
+            </li>
+      </ul>
 
-
-          </ul>
-        </nav>
+    </nav>
   </div>
+
   <div class="govuk-grid-column-two-thirds">
+   
 
-
-
-    
     <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Record a decision</h2>
     
    
@@ -326,10 +320,6 @@
       </form>
     {% endif %} 
 
-
-
-
-     
 
   </div>
 </div>
