@@ -16,12 +16,12 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#sponsor" method="post">
         {% else %}
-        <form action="risks-and-issues-voluntary" method="post">
+        <form action="rationale-sponsored" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
-<h1 class="govuk-heading-l">Write about any risks and issues for this conversion</h1>
-
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+<h1 class="govuk-heading-l">Write the rationale for the trust or sponsor</h1>
+<p class="govuk-hint">Explain why the trust is a good match for the school.</p>
     <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -39,16 +39,16 @@
         </div>
       </details>-->
  
-      <form action="risks-and-issues-voluntary" method="post" novalidate>
+      <form action="rationale-sponsored" method="post" novalidate>
 
         {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 
 {{ govukTextarea({
-id: 'sponsor-risks',
-name: 'sponsor-risks',
+id: 'trust-rationale',
+name: 'trust-rationale',
 maxlength: 500,
 rows: 15,
-value: data["sponsor-risks"]
+value: data["trust-rationale"]
 }) }} 
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -64,7 +64,25 @@ value: data["sponsor-risks"]
 
 <!-- right hand nav -->    
 <div class="govuk-grid-column-one-third">
-  {% include "../includes/useful_info_sidebar_voluntary.html" %}
+  <aside class="app-related-items" role="complementary">
+  <h2 class="govuk-heading-s" id="subsection-title">
+  Useful information
+  </h2>
+  <nav role="navigation" aria-labelledby="subsection-title">
+  <ul class="govuk-list govuk-!-font-size-16">
+  <li>
+  <a class="govuk-link" href="#">
+
+  </a>
+  </li>
+  <li>
+    <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+  </li>
+
+  </ul>
+  </nav>
+
+  </aside>
 </div>
 </div>
 
