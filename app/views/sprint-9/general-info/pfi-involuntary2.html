@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#deficit" method="post">
+        {% else %}
+        <form action="../general-info/summary1-involuntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Is your school part of a private finance initiative (PFI) scheme?'</h1>
+    <!-- Not MVP
+    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with surplus and deficits
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    You need to make sure the school does not have a financial deficit that they cannot recover from in 3 years. To check the school's finances you can view the <a href="/related/application">application form</a> or check with ESFA to see if they have any financial concerns about the school.
+    </div>
+    </details>
+    -->
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+       
+       
+        <div class="govuk-radios" data-module="govuk-radios">
+         
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="Yes" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="pfi-scheme">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-phone">
+                Phone number
+              </label>
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
+              Text message
+            </label>
+          </div>
+         
+        </div>
+      </fieldset>
+    </div>
+    
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+  </div> 
+  
+  <!-- right hand nav -->    
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+  </div>
+</div> 
+
+{% endblock %}
+

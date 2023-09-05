@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#routes" method="post">
+        {% else %}
+        <form action="../conversion-details/route-grants-voluntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Conversion details</span>
+      <h1 class="govuk-heading-l">What kind of grant is the school applying for?</h1>
+
+     
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "grant-type",
+  idPrefix: "grant-type",
+  items: [
+    {
+      value: "Fast track",
+      text: "Fast track",
+      checked:  data['grant-type'] === "Fast track"
+    },
+    {
+      value: "Intermediate",
+      text: "Intermediate",
+      checked:  data['grant-type'] === "Intermediate"
+    },
+    {
+      value: "Full",
+      text: "Full",
+      checked:  data['grant-type'] === "Full"
+    }
+  ]
+}) }}
+ 
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+  
+      {% include "../includes/useful_info_sidebar_voluntary.html" %}
+     
+    </div>
+  </div>
+
+
+{% endblock %}

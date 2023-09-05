@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Record the decision
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../task_list_voluntary_new?justRecorded=no" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="status-answer-voluntary" method="post">
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
+      <h1 class="govuk-heading-l">Record the decision</h1>
+
+      <!--radio buttons-->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-voluntary-approved" name="decision-status-voluntary" {{checked("decision-status-voluntary", "Approved")}} type="radio" value="Approved">
+              <label class="govuk-label govuk-radios__label" for="decision-status-voluntary-approved">
+                Approved
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-voluntary-declined" name="decision-status-voluntary" {{checked("decision-status-voluntary", "Declined")}} type="radio" value="Declined">
+              <label class="govuk-label govuk-radios__label" for="decision-status-voluntary-declined">
+                Declined
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-voluntary-deferred" name="decision-status-voluntary" {{checked("decision-status-voluntary", "Deferred")}} type="radio" value="Deferred">
+              <label class="govuk-label govuk-radios__label" for="decision-status-voluntary-deferred">
+                Deferred
+              </label>
+            </div>          
+          </div>
+      
+        </fieldset>
+      </div>
+      
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </fieldset>   
+    </form>
+
+  </div>  
+</div>
+{% endblock %}

@@ -1,0 +1,382 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Project list
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">{{data['userName']}}, {{data['userRole']}}</span>
+      Form a MAT applications
+    </h1>
+
+    <p class="govuk-body">Use this service to manage Form a MAT applications.</p>
+
+    
+
+<!--
+    <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Start a new Form a MAT project
+      
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg></a>-->
+
+    </br></br></br></br>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-font-size-27">3 applications found</h2>
+  
+    <details class="govuk-details prepare-project-listing__filters-container" data-module="govuk-details">
+      <summary class="govuk-details__summary prepare-project-listing__fitlers-details-summary">
+        <span class="govuk-details__summary-text govuk-button govuk-button--secondary prepare-project-listing__button--main">
+          Filter applications
+        </span>
+      </summary>
+      <div class="govuk-details__text prepare-project-listing__filters-details">
+        <form action="projects-list-do-filter-by-regions-results" method="post" class="form">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukInput({
+                label: {
+                  text: "Project title",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                classes: "",
+                hint: {
+                  text: "For example, Bolton Spa Primary"
+                },
+                id: "filter-project-title",
+                name: "filter-project-title",
+                value: data['filter-project-title']
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-regions",
+                name: "filter-regions",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Regions",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "East Midlands",
+                    text: "East Midlands",
+                    checked: checked("filter-regions", "East Midlands")
+                  },
+                  {
+                    value: "East of England",
+                    text: "East of England",
+                    checked: checked("filter-regions", "East of England")
+                  },
+                  {
+                    value: "London",
+                    text: "London",
+                    checked: checked("filter-regions", "London")
+                  },
+                  {
+                    value: "North East",
+                    text: "North East",
+                    checked: checked("filter-regions", "North East")
+                  },
+                  {
+                    value: "North West",
+                    text: "North West",
+                    checked: checked("filter-regions", "North West")
+                  },
+                  {
+                    value: "South East",
+                    text: "South East",
+                    checked: checked("filter-regions", "South East")
+                  },
+                  {
+                    value: "South West",
+                    text: "South West",
+                    checked: checked("filter-regions", "South West")
+                  },
+                  {
+                    value: "West Midlands",
+                    text: "West Midlands",
+                    checked: checked("filter-regions", "West Midlands")
+                  },
+                  {
+                    value: "Yorkshire and the Humber",
+                    text: "Yorkshire and the Humber",
+                    checked: checked("filter-regions", "Yorkshire and the Humber")
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-delivery-officers",
+                name: "filter-delivery-officers",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Delivery officers",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Alex James",
+                    text: "Alex James",
+                    checked: checked("filter-delivery-officers", "Alex James")
+                  },
+                  {
+                    value: "Paul Michaels",
+                    text: "Paul Michaels",
+                    checked: checked("filter-delivery-officers", "Paul Michaels")
+                  },
+                  {
+                    value: "Zara Laney",
+                    text: "Zara Laney",
+                    checked: checked("filter-delivery-officers", "Zara Laney")
+                  },
+                  {
+                    value: "",
+                    text: "Not assigned",
+                    checked: checked("filter-delivery-officers", "")
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              {{ govukCheckboxes({
+                idPrefix: "filter-project-status",
+                name: "filter-project-status",
+                classes: "govuk-checkboxes--small prepare-project-listing__filter",
+                fieldset: {
+                  legend: {
+                    text: "Project status",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select all that apply."
+                },
+                items: [
+                  {
+                    value: "Pre advisory board",
+                    text: "Pre advisory board",
+                    checked: checked("filter-project-status", "Pre advisory board")
+                  },
+                  {
+                    value: "Approved",
+                    text: "Approved",
+                    checked: checked("filter-project-status", "Approved")
+                  },
+                  {
+                    value: "Approved with conditions",
+                    text: "Approved with conditions",
+                    checked: checked("filter-project-status", "Approved with conditions")
+                  },
+                  {
+                    value: "Declined",
+                    text: "Declined",
+                    checked: checked("filter-project-status", "Declined")
+                  },
+                  {
+                    value: "Deferred",
+                    text: "Deferred",
+                    checked: checked("filter-project-status", "Deferred")
+                  }
+                ]
+              }) }}
+            </div>
+         
+
+
+
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary prepare-project-listing__button--apply" data-module="govuk-button ">
+                  Apply filters
+                </button>
+              
+                <a class="govuk-link" href="projects-list-do-filter-by-regions?filter-project-title=&filter-regions=null&filter-local-authorities=null&filter-delivery-officers=null&filter-project-status=null">Clear filters</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </details>
+    
+
+    <div class="sort-component">
+      <nav class="govuk-body sort-component__nav">
+        <span class="govuk-!-font-weight-bold">Sorted by:</span>
+        <ul class="sort-component__list">
+          <li class="sort-component__list-item">Application received date</li>
+          <!--li class="sort-component__list-item"><a class="govuk-link" href="projects-list-sorting-2"><span class="govuk-visually-hidden">Sort by </span>Project title</a></li-->
+        </ul>
+      </nav>
+    </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Application information
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Application status and dates
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="schools-list-involuntary-conversions">Gloucestershire Academies Trust</a></strong> A2B_1651</h2>
+              <p class="govuk-!-margin-top-3">
+              <strong>5 Participating schools</strong><br>
+                Cheltenham Spa Primary School<br>
+                Gloucester Primary School<br>
+                Prestbury Primary School
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    View other schools
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul>
+                  <li>Stroud Primary School</li>
+                  <li>Winchcombe Primary School</li>
+                  </ul>
+                </div>
+              </details>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Application received date: 8 February 2023</br>
+                Advisory Board date: 14 April 2023</p>
+                <p>Local authority: Gloucestershire</br>
+                Delivery officers: <strong>Alex James</strong>, <strong>Paul Michaels</strong>
+              </p>
+            </td>   
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="schools-list-involuntary-conversions">Somerset Academies Trust</a></strong> REF 736254</h2>
+              <p class="govuk-!-margin-top-3">
+              <strong>3 Participating schools</strong><br>
+                Bridgwater Secondary School<br>
+                Taunton Secondary School<br>
+                Wellington Secondary School<br>
+             
+             
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Application received date: 22 January 2023</br>
+                Advisory Board date: 11 March 2023</p>
+                <p>Local authority: Somerset</br>
+                Delivery officer: <strong>Bob Roberts</strong>
+              </p>
+            </td>   
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="schools-list-involuntary-conversions">Cumbria Academies Trust</a></strong> REF 258296</h2>
+              <p class="govuk-!-margin-top-3">
+              <strong>5 Participating schools</strong><br>
+                Carlisle Primary School<br>
+                Kendal Primary School<br>
+                Penrith Primary School
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    View other schools
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul>
+                  <li>Whitehaven Primary School</li>
+                  <li>Workington Primary School</li>
+                  </ul>
+                </div>
+              </details>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Application received date: 06 November 2022</br>
+                Advisory Board date: 04 February 2023</p>
+                <p>Local authority: Cumbria</br>
+                Delivery officers: <strong>James Jones</strong>, <strong>Michael Smith</strong>
+              </p>
+            </td>   
+          </tr>
+        
+        
+
+      </tbody>
+    </table>
+    <!--
+    <nav class="moj-pagination" id="pagination-label">
+      <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+      <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active">1</li>
+          <li class="moj-pagination__item">
+              <a class="moj-pagination__link" href="#">2</a>
+          </li>
+          <li class="moj-pagination__item  moj-pagination__item--next">
+              <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+      </ul>
+      <p class="moj-pagination__results"></p>
+    </nav>
+  -->
+
+  </div>
+</div>
+{% endblock %}

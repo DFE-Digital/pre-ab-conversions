@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="../task_list_voluntary_new.html" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['returnToSummary'] == 'yes' %}
+    <form action="../generate/generate_summary#forecasts" method="post">
+      {% else %}
+      <form action="../task_list_voluntary_new" method="post">
+    {% endif %}
+      </div></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">St Wilfrid's Primary School</span>
+    <h1 class="govuk-heading-l">Pupil forecasts</h1>
+    <p class="govuk-body">This comes from GIAS (Get Information about Schools) and the <a href="../related/application_newtab_voluntary" target="_blank">school's application form (opens in a new tab)</a>. The table will go into your project document.</p>
+    <p class="govuk-body">You can <a href="#additional_info" target="_blank">add additional information</a> if you neeed to, this will also go into your project document.</p>
+    <p>Published on GIAS: <strong>June 2022</strong>.</p>
+  </div>
+</div>
+<div>
+  <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half">Year</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Capacity</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total pupil numbers</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage full</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header ">Current academic year</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          236
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          226
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          96%
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"> 
+          
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 1)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-1'] %}
+          {{ data['projected-capacity-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-1'] %}
+          {{ data['projected-pupils-year-1']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+          {% if data['projected-capacity-year-1'] and data['projected-pupils-year-1'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data-voluntary">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 2)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] %}
+          {{ data['projected-capacity-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-2'] %}
+          {{ data['projected-pupils-year-2']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-2'] and data['projected-pupils-year-2'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data-voluntary">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Projected pupil numbers on roll (year 3)</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] %}
+          {{ data['projected-capacity-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-pupils-year-3'] %}
+          {{ data['projected-pupils-year-3']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          {% if data['projected-capacity-year-3'] and data['projected-pupils-year-3'] %}
+          CALC %
+          {% else %} 
+          
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+          <a class="govuk-link" href="update-projected-pupil-data-voluntary">
+          Change<span class="govuk-visually-hidden">projected pupil data</span>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+  </table>           
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m">Add any additional information if you need to</h3>
+      <p>This information will go into your project document under the school pupil forecasts section.</p>
+      <br>
+  </div>
+</div>
+<div>
+  <dl class="govuk-summary-list">
+    <a name="additional_info"></a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Additional information</dt>
+          <dd class="govuk-summary-list__value">
+              {% if data['pupil-more-detail'] %}
+                  {{data['pupil-more-detail']}}
+              {% else %}
+                  <span class="empty">Empty</span>
+              {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="pupil-forecasts-info-voluntary#additional_info">
+                Change<span class="govuk-visually-hidden">pupil forecast additional information</span>
+              </a>
+          </dd>
+      </div>
+  </dl>
+</div>
+                
+
+<form action="../task_list_voluntary_new" method="post"> 
+
+  <a href="#" name="additional_info"></a> 
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+text: "Confirm and continue"
+}) }}
+</form>
+{% endblock %}

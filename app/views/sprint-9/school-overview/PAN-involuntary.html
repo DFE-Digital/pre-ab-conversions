@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#PAN" method="post">
+        {% else %}
+        <form action="../school-overview/school-overview-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">School overview</span>
+      
+        <h1 class="govuk-heading-l">Update the school's published admission number (PAN) if it's not correct</h1>
+          
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          hint: {
+            text: "For example, 30"
+          },
+          classes: "govuk-input--width-5",
+          id: "PAN",
+          name: "PAN",
+          value: data["PAN"]
+        }) }}
+
+    
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>  
+    
+    <!-- right hand nav -->    
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+

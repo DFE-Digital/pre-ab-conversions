@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#htbdate" method="post">
+        {% else %}
+        <form action="governance-voluntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Governance</span>
+        <h1 class="govuk-heading-l">Add another person's details</h1>
+      </legend>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukInput({
+  label: {
+    text: "Role",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "other-role-role",
+  name: "other-role-role",
+  value: data["other-role-role"]
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Full name",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "other-role-name",
+  name: "other-role-name",
+  value: data["other-role-name"]
+}) }}
+
+
+
+{{ govukDateInput({
+  id: "other-role-dob",
+  namePrefix: "other-role-dob",
+  fieldset: {
+    legend: {
+      text: "Date of birth",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2021"
+  },
+  items: [
+    {
+      name: "day",
+      value: data["other-role-dob-day"],
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      value: data["other-role-dob-month"],
+      classes: "govuk-input--width-2"
+    },                
+    {
+      name: "year",
+      value: data["other-role-dob-year"],
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+
+
+
+
+{{ govukTextarea({
+  name: "other-role-bio",
+  id: "other-role-bio",
+  value: data["other-role-bio"],
+  label: {
+    text: "Biography",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  }
+}) }}
+
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav -->    
+  <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar_voluntary.html" %}
+    <p class="govuk-body-s"><a href=" https://www.gov.uk/government/publications/headteacher-board-meetings-schedule-and-preparation-templates" target="_blank">Schedule of advisory board meetings (opens in a new tab)</a></p>
+  </div>
+</div>
+{% endblock %}
+  
+  
+  
+  
