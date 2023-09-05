@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#sponsor" method="post">
+        {% else %}
+        <form action="rationale-voluntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+<h1 class="govuk-heading-l">Write the rationale for the trust or sponsor</h1>
+<p class="govuk-hint">Explain why the trust is a good match for the school.</p>
+    <!-- Not MVP  <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with writing a trust or sponsor rationale
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">To write your rationale, you could include information about:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if the school and the trust have a shared vision and values</li>
+        <li>the services the trust can offer the school</li>
+        <li>how the trust can help the school imporve (if needed)</li>
+        <li>how the trust will run the school</li>
+      </ul>
+        </div>
+      </details>-->
+ 
+      <form action="rationale-voluntary" method="post" novalidate>
+
+        {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+
+{{ govukTextarea({
+id: 'trust-rationale',
+name: 'trust-rationale',
+maxlength: 500,
+rows: 15,
+value: data["trust-rationale"]
+}) }} 
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+
+</form>
+
+</div>  
+
+<!-- right hand nav -->    
+<div class="govuk-grid-column-one-third">
+  <aside class="app-related-items" role="complementary">
+  <h2 class="govuk-heading-s" id="subsection-title">
+  Useful information
+  </h2>
+  <nav role="navigation" aria-labelledby="subsection-title">
+  <ul class="govuk-list govuk-!-font-size-16">
+  <li>
+  <a class="govuk-link" href="#">
+
+  </a>
+  </li>
+  <li>
+    <p class="govuk-body-s"><a href="/related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+  </li>
+
+  </ul>
+  </nav>
+
+  </aside>
+</div>
+</div>
+
+{% endblock %}

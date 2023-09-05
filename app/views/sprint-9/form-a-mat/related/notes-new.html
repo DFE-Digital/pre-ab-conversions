@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Project notes</h1>
+      
+        <form action="notes-successful" method="post">
+
+
+
+
+          <h2 class="govuk-heading-m">Subject</h2>
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+    
+          {{ govukInput({
+    
+            classes: "govuk-input--width-full",
+            id: "project_note_subject",
+            name: "project_note_subject",
+            value: data["project_note_subject"]
+          }) }}
+    
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+{{ govukCharacterCount({
+  name: "project_note",
+  id: "project_note",
+  value: data["project_note"],
+  maxlength: 500,
+  height:20,
+  label: {
+    text: "Note",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  }
+}) }}
+           
+       
+    
+            {{ govukButton({
+              text: "Save note"
+            }) }}
+
+
+                </form>
+          
+              </div>
+            </div>
+          
+                  </main>
+      </div>
+    
+
+      {% endblock %}
+

@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "General information – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">
+                Academy: The Richard Crosse Cofe Primary School
+            </span>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                General information
+            </h1>
+            <div class="govuk-body">
+                This information comes from GIAS (Get Information about Schools). It will go into your project template. 
+            </div>
+            <p class="govuk-body">
+                Published on GIAS: <strong>June 2021</strong>.
+            </p>
+            <hr class="govuk-section-break govuk-section-break--m">
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        School phase
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">Primary</p>
+                    </dd>
+                    <!--Add change link if necessary based on needs-->
+                    {# <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd> #}
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Age range
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">5 to 11 years old</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Capacity
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">420</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Number on roll (percentage the school is full)
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">401 (95.47%)</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Percentage of free school meals (%FSM)
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+            </dl>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-body">
+                This information comes from KIM (Knowledge Information Management) and FSS (Free School Store). It will go into your project template.
+            </div>
+            <hr class="govuk-section-break govuk-section-break--m">
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Published admission number (PAN)
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">60</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Private finance initiative (PFI) scheme
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">No</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Viability issues
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">No</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Financial deficit
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">No</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        School type
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">Academy</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Percentage of good or outstanding academies in the diocesan trust
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">Not applicable</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Distance from the academy to the trust headquarters
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">1.5 miles (9 minutes)</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        MP (party)
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
+                    </dd>
+                </div>
+        
+            </dl>
+
+            <form action="../../task-list-transfers" method="post" novalidate>
+                <input type="hidden" name="answers-checked" value="true">
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Confirm and continue
+                    </button>
+                </div>
+            </form> 
+
+        </div>
+
+        <!--We don't need the additional information for General information-->
+        
+        {# {% if data['submitted-academy-performance'] and data['update-additional-information'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Additional information
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the academy performance section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['academy-performance-more-detail'] %}
+                            {{data['academy-performance-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/academy-performance?update-additional-information=yes#academy-performance-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/academy-performance#additional-information" method="post" novalidate>
+                <input type="text" name="submitted-academy-performance" value="yes" hidden>
+                <input type="text" name="update-additional-information" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "academy-performance-more-detail",
+                    id: "academy-performance-more-detail",
+                    label: {
+                        text: "Additional information (optional)",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                    },
+                    value: data['academy-performance-more-detail'],
+                    hint: {
+                        text: "This information will populate into your HTB template under the academy performance section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %} #}
+        
+    </div>
+
+{% endblock %}

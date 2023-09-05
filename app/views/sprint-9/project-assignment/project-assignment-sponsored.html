@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Were any conditions set?
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="../task_list_sponsored_new?justAssigned=yes" method="post">
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Who will be on this project?</h1>
+
+      
+      <!--
+      <label for="my-autocomplete">Select delivery officer</label>
+      <div id="my-autocomplete-container"></div>
+      -->
+
+      {{ govukSelect({
+        hint: {
+          text: "The main person working on this project"
+        },
+        id: "delivery-officer-assigned",
+        name: "delivery-officer-assigned",
+        value: data['delivery-officer-assigned'],
+        label: {
+          text: "Project owner"
+        },
+        items: [
+          {
+            value: "",
+            text: ""
+          },
+          {
+            value: "Alex James",
+            text: "Alex James",
+            selected: checked("delivery-officer-assigned", "Alex James")
+          },
+          {
+            value: "Paul Michaels",
+            text: "Paul Michaels",
+            selected: checked("delivery-officer-assigned", "Paul Michaels")
+          },
+          {
+            value: "Zara Laney",
+            text: "Zara Laney",
+            selected: checked("delivery-officer-assigned", "Zara Laney")
+          }
+        ]
+      }) }}
+      
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <span class="govuk-body" style="margin-right: 0.5em;">or </span>
+        <a class="govuk-link" href="../task_list_sponsored_new?justAssigned=&delivery-officer-assigned=">Unassign the project owner</a>
+      </div>
+
+    </form>
+ 
+  </div>  
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#delivery-officer-assigned')
+  })
+});
+</script>
+{% endblock %}
+  
+  
+  
+  

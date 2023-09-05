@@ -1,0 +1,40 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Advisory Board date – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
+
+
+{% block formQuestions %}
+  <form action="../expected-transfer-dates" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      Advisory Board date
+    {% endset %}
+
+    {{ govukDateInput({
+      id: "target-date-for-transfer",
+      namePrefix: "target-date-for-transfer",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 12 11 2021. You can change this date later."
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#author" method="post">
+        {% else %}
+        <form action="../finances/finances-sponsored" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Finances</span>
+      <h1 class="govuk-heading-l">How much and what was it for?</h1>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {{ govukInput({
+        label: {
+          text: "How much?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-10",
+        id: "sponsor-mdif-amount",
+        name: "sponsor-mdif-amount",
+        prefix: {
+          text: "£"
+        },
+        value: data["sponsor-mdif-amount"]
+      }) }}
+
+
+
+      
+
+      {{ govukTextarea({
+        name: "sponsor-mdif-purpose",
+        id: "sponsor-mdif-purpose",
+        value: data["sponsor-mdif-purpose"],
+        label: {
+          text: "What was it for?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+       
+   
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      {% include "../includes/useful_info_sidebar.html" %}
+    </div>
+  </div>
+{% endblock %}

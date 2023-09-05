@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#htbdate" method="post">
+        {% else %}
+        <form action="../conversion-details/conversion-details-voluntary" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
+        <h1 class="govuk-heading-l">Set the advisory board date</h1>
+      </legend>
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "HTB-date",
+  namePrefix: "HTB-date",
+  fieldset: {
+    legend: {
+
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2021"
+  },
+  items: [
+    {
+      name: "day",
+      value: data["HTB-date-day"],
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      value: data["HTB-date-month"],
+      classes: "govuk-input--width-2"
+    },                
+    {
+      name: "year",
+      value: data["HTB-date-year"],
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+    </form>
+
+  </div>  
+  
+  <!-- right hand nav -->    
+  <div class="govuk-grid-column-one-third">
+    {% include "../includes/useful_info_sidebar_voluntary.html" %}
+    <p class="govuk-body-s"><a href=" https://www.gov.uk/government/publications/headteacher-board-meetings-schedule-and-preparation-templates" target="_blank">Schedule of advisory board meetings (opens in a new tab)</a></p>
+  </div>
+</div>
+{% endblock %}
+  
+  
+  
+  

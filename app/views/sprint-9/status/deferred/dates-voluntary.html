@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Decision date
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['returnToSummary'] == 'yes' %}
+      <form action="summary-sponsored" method="post">
+    {% else %}
+      <form action="summary-sponsored" method="post">
+    {% endif %}
+    
+        <input hidden type="text" name="returnToSummary" value="no"/>
+        <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  
+        <h1 class="govuk-heading-l">Date conversion was deferred</h1>
+      
+        {{ govukDateInput({
+          id: "decision-date",
+          namePrefix: "decision-date",
+          fieldset: {
+            legend: {
+              html: pageHeading,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2021"
+          },
+          items: [
+            {
+              name: "day",
+              value: data["decision-date-day"],
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: data["decision-date-month"],
+              classes: "govuk-input--width-2"
+            },                
+            {
+              name: "year",
+              value: data["decision-date-year"],
+              classes: "govuk-input--width-4"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+  </div>  
+</div>
+{% endblock %}

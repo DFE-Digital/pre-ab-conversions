@@ -1,0 +1,152 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#ofsted" method="post">
+        {% else %}
+        <form action="ofsted-comments-sponsored#additional_info" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Performance data</span>
+<h1 class="govuk-heading-l">Ofsted information</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body ">This information comes from TRAMS. The table will go into your project template.</p> 
+    <p>You can <a href="#additional_info">add additional information</a> if you need to, this will also go into your project template.</p>
+    <!--<p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>--><br>
+  </div>
+</div>
+
+<div class="govuk-grid-column-full-width">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          <span class="govuk-body-l">Short inspection</span>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ofsted inspection date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 February 2020
+        </dd>      
+      </div>
+</div>
+
+
+
+<div class="govuk-grid-column-full-width">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+      <span class="govuk-body-l">Last full inspection <b>Good</b></span>
+    </dt>
+    <dd class="govuk-summary-list__value"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-width-two-thirds">
+      Ofsted inspection date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 February 2017
+    </dd>     
+  </div>
+  
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Effectiveness of leadership and management
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Good</p>
+    </dd>    
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Quality of teaching, learning and assessment
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Good</p>
+    </dd> 
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Personal development, behaviour and welfare
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Outstanding</p>
+    </dd>
+ 
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Outcomes for pupils
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Good</p>
+    </dd>
+  
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Early years provision
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Good</p>
+    </dd>
+ 
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Ofsted report
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body"><a href="https://reports.ofsted.gov.uk/provider/21/111315" target="blank">View latest inspection report on Ofsted's website (opens in a new tab)</a></p>
+    </dd>
+ 
+  </div>
+  
+</dl>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <a name="additional_info"></a>
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    
+      {{ govukTextarea({
+        name: "ofsted-more-detail",
+        id: "ofsted-more-detail",
+        value: data["ofsted-more-detail"],
+        label: {
+          text: "Add any additional information if you need to",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text:"This information will go into your project template under the school performance (Ofsted information) section."
+        }
+      }) }}
+    
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}
