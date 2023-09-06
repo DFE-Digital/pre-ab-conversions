@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a href="../task_list" class="govuk-back-link">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">
+        Record dates for the local authority information template</h1>
+        <p>Send the local authority information template like you normally would on your email. Then record the date you sent it and when you want it returned to you.</p>
+        <form method="post"  action="LAproforma-summary-sponsored">
+          <div class="govuk-form-group">
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+              id: "la-sent-date",
+              namePrefix: "la-sent-date",
+              fieldset: {
+                legend: {
+                  text: "Date you sent the template",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2021"
+              },
+              items: [
+                {
+                  name: "day",
+                  value: data["la-sent-date-day"],
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: data["la-sent-date-month"],
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",
+                  value: data["la-sent-date-year"],
+                  classes: "govuk-input--width-4"
+                }
+              ]
+            }) }}
+          
+            <br></br>
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+              {{ govukDateInput({
+                id: "la-sent-back",
+                namePrefix: "la-sent-back",
+                fieldset: {
+                  legend: {
+                    text: "Date you want the template returned to you",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "For example, 27 3 2021"
+                },
+                items: [
+                {
+                  name: "day",
+                  value: data["la-sent-back-day"],
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  value: data["la-sent-back-month"],
+                  classes: "govuk-input--width-2"
+                },                
+                {
+                  name: "year",                  
+                  value: data["la-sent-back-year"],
+                  classes: "govuk-input--width-4"
+                }
+              ]
+              }) }}
+
+            <br></br>
+
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+              name: "la-comments",
+              id: "la-comments",
+              value: data["la-comments"],
+              label: {
+                text: "Add any additional information if you need to",
+                classes: "govuk-fieldset__legend--s"
+              }
+            }) }}
+
+            
+            
+            <br><br>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Add a link to where you have stored the template in Sharepoint",
+                classes: "govuk-fieldset__legend--s"
+              },
+              id: "la-sharepoint-link",
+              name: "la-sharepoint-link",
+              value: data["la-sharepoint-link"]
+            }) }}
+
+            <br><br>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+
+          </div>
+        </form>
+          
+              </div>
+  </div>
+{% endblock %}
+
+      

@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cheltenham Spa Primary School - task list
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--yellow">Pre advisory board</strong>
+      {% endif %} 
+
+
+    </span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cotswolds Academies Trust
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      Project created date: 18 February 2023</br>
+      Assigned to: <strong>Zara Laney</strong>
+      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+     
+   
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+     
+      <a class="govuk-link" href="#">Open the application form for this project in a new tab</a>
+
+    </p>
+    </div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="schools-in-this-trust">Schools in this trust</a>
+        </li>
+           <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="school-details">School details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="#">Trust details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="./related/notes-cheltenham">Performance data</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" href="#">Create project document</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+   
+    <!--<h2 class="govuk-heading-l govuk-!-margin-bottom-3">Prepare a project document</h2>-->
+    <div class="govuk-inset-text govuk-!-margin-top-0">
+      As you work through the information given in each section, your progress will be shown on this page.
+    </div>
+    <br>
+  
+    <ul class="app-task-list">
+
+
+     
+
+      <li>
+       <!--<h3 class="app-task-list__section govuk-!-margin-top-0">Add school information</h3>-->
+        <ul class="app-task-list__items govuk-!-padding-left-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="school-overview/school-overviews.html"  aria-describedby="general-info-summary">
+          School overviews
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag app-task-list__tag" id="general-info">3/3 COMPLETED</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="budget/budget-voluntary.html"  aria-describedby="sponsor-overview">
+          Budgets
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="sponsor-overview">2/3 COMPLETED</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="pupil-forecasts/pupil-forecasts-voluntary.html"  aria-describedby="key-people-summary">
+          Pupil forecasts
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="key-people">1/3 COMPLETED</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="conversion-details/conversion-details-voluntary.html"  aria-describedby="governance-summary">
+          Conversion details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="governance">0/3 COMPLETED</strong>
+          </li>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="legal-requirements/legal-requirements-voluntary.html"  aria-describedby="legal-requirements-summary">
+          Legal requirements
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="legal-requirements">0/3 COMPLETED</strong>
+          </li>
+
+         
+
+         
+
+
+        </ul>
+      </li>
+
+      
+
+         
+
+
+         
+         
+     
+    
+
+
+
+   
+
+         
+
+
+    
+
+
+    
+
+         
+
+      <!--
+      <h2 class="govuk-heading-l">Create your project document</h2>
+      <p>Project documents are in Microsoft Word format. You can make changes to documents after you create them.</p>
+
+      <div class="govuk-button-group">
+        <a href="generate/generate_summary_voluntary.html" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Preview project document
+        </a>
+        <a href="generate/generate_documents_voluntary" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
+          Create project document
+        </a>
+       
+      </div>
+    </ul>
+  -->
+
+
+  </div>
+</div>
+{% endblock %}

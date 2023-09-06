@@ -1,0 +1,1547 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+ 
+      {% if data['returnToSummary'] == 'yes' %}
+      <form action="../generate/generate_summary#performance4" method="post">
+        {% else %}
+        <form action="key-stage-4-performance-comments-sponsored#additional_info" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Performance data</span>
+  <h1 class="govuk-heading-l">Key stage 4 performance tables</h1> 
+  <p class="govuk-body">This information comes from TRAMS and you can <a href="#additional_info">add additional information</a> if you need to. These performance tables and additional information will go into your project template.</p>
+  
+  <p class="govuk-body-s">TRAMS last updated on: 23 March 2021<br>
+    <a href="https://www.compare-school-performance.service.gov.uk/school/<URN>" class="govuk-link" rel="noreferrer noopener" target="_blank">Source of data: Find and compare school performance (opens in new tab)</a>
+  </p>
+
+  <div class="govuk-inset-text">
+    There is no 2019 to 2020 key stage data because of the pandemic. 2020 to 2021 data is limited.
+  </div>
+
+  </div></div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-3">
+        <h2 class="govuk-heading-l">
+            Attainment 8
+        </h2>
+    </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 scores</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.1 <br> (disadvantaged 47.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >54.7 <br> (disadvantaged 49.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.8 <br> (disadvantaged 48.6)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >46.2</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >46.50 <br> (disadvantaged 36.70)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 English</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.1 <br> (disadvantaged 47.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >54.7 <br> (disadvantaged 49.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.8 <br> (disadvantaged 48.6)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >9.7</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >9.90 <br> (disadvantaged 8.10)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 Maths</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.1 <br> (disadvantaged 47.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >54.7 <br> (disadvantaged 49.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.8 <br> (disadvantaged 48.6)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >8.8</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >9.00 <br> (disadvantaged 7.00)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Attainment 8 EBacc</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.1 <br> (disadvantaged 47.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >54.7 <br> (disadvantaged 49.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.8 <br> (disadvantaged 48.6)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >13</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >13.40 <br> (disadvantaged 10.10)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+    </div>
+
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+        <h2 class="govuk-heading-l">
+            Progress 8
+        </h2>
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Pupils included in P8</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >191 <br> (disadvantaged 54)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >182 <br> (disadvantaged 43)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >219 <br> (disadvantaged 48)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >1,851</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >49,4832</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">School progress scores</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.23 <br> (disadvantaged 0.02)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.62 <br> (disadvantaged 0.55)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.34 <br> (disadvantaged 0.25)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >School confidence interval</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.08	to 0.38</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.44	to 0.8</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.17	to 0.5</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >1,851</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA confidence interval</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.3	to -0.19</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >49,4832</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average confidence interval</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.00</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Progress 8 English</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.35 <br> (disadvantaged 0.31)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.5 <br> (disadvantaged 0.62)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.15 <br> (disadvantaged 0.11)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.33</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.04 <br> (disadvantaged -0.44)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Progress 8 Maths</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.26 <br> (disadvantaged 0.16)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.6 <br> (disadvantaged 0.44)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.37 <br> (disadvantaged 0.23)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.32</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.02 <br> (disadvantaged -0.39)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+<caption class="govuk-table__caption govuk-table__caption--m">Progress 8 EBacc</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.16 <br> (disadvantaged -0.17)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.57 <br> (disadvantaged 0.5)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >0.42 <br> (disadvantaged 0.27)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.32</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >-0.03 <br> (disadvantaged -0.49)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+    </div>
+    
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+        <h2 class="govuk-heading-m">
+            Percentage of students entering EBacc
+        </h2>
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+  <th scope="col" class="govuk-table__header"></th>
+
+  <th scope="col" class="govuk-table__header">2021 to 2022</th>
+
+  <th scope="col" class="govuk-table__header">2020 to 2021</th>
+
+  <th scope="col" class="govuk-table__header">2018 to 2019</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+          
+    <th scope="row" class="govuk-table__header">Status</th>
+    
+    <td class="govuk-table__cell"> 
+      <strong class="govuk-tag govuk-tag--grey">
+      Provisional
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange">
+      Revised
+      </strong>
+    </td>
+    
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green">
+      Final
+        </strong>
+    </td>
+    
+  </tr>
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Cheltenham Spa Primary School</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.1 <br> (disadvantaged 47.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >54.7 <br> (disadvantaged 49.6)</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >53.8 <br> (disadvantaged 48.6)</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header">Gloucestershire LA average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >46.2</td>
+      
+    
+    </tr>
+  
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"
+      >National average</th>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >no data</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"
+      >46.50 <br> (disadvantaged 36.70)</td>
+      
+    
+    </tr>
+  
+
+</tbody>
+</table>
+
+
+</div></div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+<a name="additional_info"></a>
+  {{ govukTextarea({
+    name: "key-stage-4-more-detail",
+    id: "key-stage-4-more-detail",
+    value: data["key-stage-4-more-detail"],
+    label: {
+      text: "Add any additional information if you need to",
+      classes: "govuk-label--m"
+    },
+    hint: {
+      text:"This information will go into your project template under the key stage performance tables section."
+    }
+  }) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+</form>
+
+</div>
+</div>
+{% endblock %}

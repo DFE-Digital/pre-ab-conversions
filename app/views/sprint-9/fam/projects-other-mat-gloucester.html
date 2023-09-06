@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Gloucester Primary School - other schools in this MAT
+{% endblock %}
+
+{% block beforeContent %}
+<a href="projects-list-mat" class="govuk-back-link">Back to all conversion projects</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >URN: 101573</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Gloucester Primary School 
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      Route: Form a MAT</br>
+      Project owner: 
+      {% if (data['delivery-officer-assigned']) %}
+        <strong>{{ data['delivery-officer-assigned'] }}</strong>
+      {% else %}
+        <span class="empty">Empty</span>
+      {% endif %}
+      <a class="govuk-link" href="#" style="margin-left: 1em;">Change</a>
+      <br><br>
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--yellow">Pre advisory board</strong>
+      {% endif %} 
+    </p>
+  </div>
+
+
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" href="task_list_gloucester">Project details</a>
+        </li>
+           <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">School application form</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Record a decision</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Project notes</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current="page" href="#">Other schools in this MAT</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Other schools in this MAT</h2>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Application information
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Project status and dates
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+       
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_cheltenham">Cheltenham Spa Primary School</a></strong> URN: 100006</h2>
+              <p class="govuk-!-margin-top-3">
+              Route: Form a MAT</br>
+              Application to join a trust: Gloucestershire Academy Trust</br>
+              Local authority: Gloucestershire</br>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Project created date: 20 February 2023</br>
+              </p>
+            </td>   
+          </tr>
+
+        
+
+        
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><a href="task_list_winchcombe">Winchcombe Primary School</a></strong> URN: 104944</h2>
+              <p class="govuk-!-margin-top-3">
+              Route: Form a MAT</br>
+              Application to join a trust: Gloucestershire Academy Trust</br>
+              Local authority: Gloucestershire</br>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+              <p class="govuk-hint  govuk-!-margin-top-0">
+                Project created date: 7 February 2023</br>
+              </p>
+            </td>   
+          </tr>
+
+         
+        </tbody>
+        </table>
+  </div>
+</div>
+{% endblock %}
