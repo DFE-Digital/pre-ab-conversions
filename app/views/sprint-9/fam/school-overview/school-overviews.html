@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+   
+<a href="../task_list_cheltenham" class="govuk-back-link">Back to project details</a>
+
+{% endblock %}
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">School overview</h1>
+    <p class="govuk-body-m">This information comes from from TRAMS and the <a href="../related/application_newtab_voluntary" target="_blank">school's application form (opens in a new tab)</a>.</p>
+    <!--<p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>-->
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+
+        <table class="govuk-table govuk-!-input-border-colour">
+          <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Date</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">First 6 weeks</th>
+              <td class="govuk-table__cell">£109.80 per week</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+              <td class="govuk-table__cell">£109.80 per week</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total estimated pay</th>
+              <td class="govuk-table__cell">£4,282.20</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sarah Philips
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 January 1978
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>London<br>SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">07700 900457</p>
+              <p class="govuk-body">sarah.phillips@example.com</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+
+      
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Lead tenant</h2></div>
+      
+          <div class="govuk-summary-card__content">  <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Age
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  38
+                </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> age</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Nationality
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  UK national resident in UK
+                </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> nationality</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Working situation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Part time – less than 30 hours a week
+                </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> working situation</span>
+                      </a>
+                  </dd>
+              </div>
+        </dl></div>
+        </div>
+
+
+     
+      
+     
+      <form action="../task_list_cheltenham" method="post"> 
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      
+        {{ govukCheckboxes({
+          idPrefix: "general-info-status",
+          name: "general-info-status",
+          items: [
+            {
+              value: "Complete",
+              text: "Mark this section as complete, you can still make changes later"
+            }
+            ]
+          }) }}
+        {{ govukButton({
+          text: "Confirm and continue"
+        }) }}
+      
+        </form>
+
+  </div>
+</div>
+
+{% endblock %}

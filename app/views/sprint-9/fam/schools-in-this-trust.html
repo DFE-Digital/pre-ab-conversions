@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cheltenham Spa Primary School - other schools in this MAT
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+{% if data['justRecorded'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Decision recorded</p>
+  </div>
+</div>
+{% endif %}
+<input hidden type="text" name="justRecorded" value="no"/>
+
+{% if data['justAssigned'] == 'yes' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-success" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Done
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Project is assigned</p>
+  </div>
+</div>
+{% endif %}
+<input hidden type="text" name="justAssigned" value="no"/>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   
+
+
+    <span class="govuk-caption-xl govuk-!-margin-top-6" >
+      {% if (data['decision-status-sponsored'] == "Approved") and (data['approved-conditions'] == "Yes")%}
+      <strong class="govuk-tag govuk-tag--green">Approved with conditions</strong>
+      {% elseif (data['decision-status-sponsored'] == "Approved") %}
+      <strong class="govuk-tag govuk-tag--green">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Declined") %}  
+      <strong class="govuk-tag govuk-tag--red">{{ data['decision-status-sponsored']}}</strong>
+      {% elseif (data['decision-status-sponsored'] == "Deferred") %} 
+      <strong class="govuk-tag govuk-tag--orange">{{ data['decision-status-sponsored']}}</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--yellow">Pre advisory board</strong>
+      {% endif %} 
+
+
+    </span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cotswolds Academies Trust
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      Project created date: 18 February 2023</br>
+      Assigned to: <strong>Zara Laney</strong>
+      <a class="govuk-link" href="project-assignment/project-assignment" style="margin-left: 1em;">Change</a>
+     
+   
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+     
+      <a class="govuk-link" href="#">Open the application form for this project in a new tab</a>
+
+    </p>
+  </div>
+
+ 
+
+  <div class="govuk-grid-column-full">
+    <nav class="app-sub-navigation" aria-label="sub menu">
+
+      <ul class="app-sub-navigation__list govuk-!-margin-top-6">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" aria-current="page" href="schools-in-this-trust">Schools in this trust</a>
+        </li>
+           <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="school-details">School details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Trust details</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="./related/notes-cheltenham">Performance data</a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link"  href="#">Create project document</a>
+            </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <!--<h2 class="govuk-heading-l govuk-!-margin-bottom-3">Other schools in this MAT</h2>-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Projects (12)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header app-!-width-three-fifths">
+            Academising school
+          </th>
+          <th class="govuk-table__header prepare-text-align-right app-!-width-two-fifths">
+            Conversion status
+          </th>  
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><!--<a href="task_list_gloucester">-->Cheltenham Spa Primary School<!--</a>--></strong> URN: 100006</h2>
+            <p class="govuk-!-margin-top-3">
+            Route: Voluntary</br>
+            School phase: Primary</br>
+            Local authority: Gloucestershire</br>
+            </p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+            <p class="govuk-!-margin-top-0">
+              <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+            </p>
+           <!-- <p class="govuk-hint  govuk-!-margin-top-0">
+              Project created date: 18 February 2023</br>
+            </p>
+          -->
+          </td>   
+        </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><!--<a href="task_list_gloucester">-->Gloucester Primary School<!--</a>--></strong> URN: 101573</h2>
+              <p class="govuk-!-margin-top-3">
+              Route: Voluntary</br>
+              School phase: Primary</br>
+              Local authority: Gloucestershire</br>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+             <!-- <p class="govuk-hint  govuk-!-margin-top-0">
+                Project created date: 18 February 2023</br>
+              </p>
+            -->
+            </td>   
+          </tr>
+
+        
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><h2 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong><!--<a href="task_list_gloucester">-->Winchcombe Primary School<!--</a>--></strong> URN: 104944</h2>
+              <p class="govuk-!-margin-top-3">
+              Route: Voluntary</br>
+              School phase: Primary</br>
+              Local authority: Gloucestershire</br>
+              </p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell prepare-text-align-right">
+              <p class="govuk-!-margin-top-0">
+                <strong class="govuk-tag govuk-tag--yellow">Pre Advisory Board</strong>
+              </p>
+             <!-- <p class="govuk-hint  govuk-!-margin-top-0">
+                Project created date: 18 February 2023</br>
+              </p>
+            -->
+            </td>   
+          </tr>
+
+         
+
+         
+        </tbody>
+        </table>
+  </div>
+</div>
+{% endblock %}

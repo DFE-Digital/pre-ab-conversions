@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['returnToSummary'] == 'yes' %}
+        <form action="../generate/generate_summary#recommendation" method="post">
+        {% else %}
+        <form action="../overview/summary1" method="post">
+      {% endif %}
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Recommendation</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="recommendation">
+          What is the recommendation for this project?
+        </label>
+        {{ govukRadios({
+          idPrefix: "recomendation",
+          name: "recomendation",
+
+          items: [
+
+            {
+              value: "Approve",
+              checked:  data['recomendation'] === "Approve",
+              text: "Approve"
+            },
+            {
+              value: "Defer",
+              checked:  data['recomendation'] === "Defer",
+              text: "Defer"
+            },
+            {
+              value: "Decline",
+              checked:  data['recomendation'] === "Decline",
+              text: "Decline"
+            }
+
+          ]
+        }) }}
+        </div>
+     <div class="govuk-form-group">
+          <!--    <label class="govuk-label govuk-label--m" for="recommendation">
+            Enter the full name of the author of this headteacher board (HTB) template
+          </label>
+   
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+        {{ govukInput({
+         
+          classes: "govuk-input--width-20",
+          id: "author",
+          name: "author",
+      
+          value: data["author"]
+        }) }}-->
+         
+     
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+ <div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+    <!-- right hand nav -->
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">
+          Useful information
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#">
+
+              </a>
+            </li>
+            <li>
+              <p class="govuk-body-s"><a href="../related/application_newtab" target="application">School application form (opens in a new tab)</a></p>
+            </li>
+
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+{% endblock %}
