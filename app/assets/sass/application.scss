@@ -14,6 +14,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/pagination";
 @import "patterns/related-items";
 @import "patterns/task-list";
+@import "patterns/summary-card";
 
 // Import settings first so we can override them before importing all of GOV.UK Frontend
 // If you need to enable compatibility mode or the legacy palette, do that *before* this import.
