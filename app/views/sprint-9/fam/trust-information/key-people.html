@@ -1,61 +1,205 @@
 {% extends "layout.html" %}
 
-{% block beforeContent %}
-<a href="../trust-information.html" class="govuk-back-link">Back to trust information</a>
-{% endblock %}
  
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
 {% block content %}
+  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l govuk-!-margin-top-6" >Gloucester Academy Trust</span>
-    <h1 class="govuk-heading-l">Key structure</h1>
-    <p>This information is pre-populated from TRAMS.</p>
-    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
-    </div></div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-    <dl class="govuk-summary-list">
-      
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Row one label
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Row one details</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Row two label
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Row two details</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Row three label
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Row three label</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!--
-          <a class="govuk-link" href="route-involuntary.html">
-            Change<span class="govuk-visually-hidden">route"</span>
-          </a>
-          -->
-        </dd>
-      </div>
-
-     
+    <span class="govuk-caption-l">Cotswolds Academies Trust</span>
+    <h1 class="govuk-heading-l">Key people</h1>
+    <p class="govuk-body-m govuk-!-margin-bottom-8" ><a href="../related/application_newtab_voluntary" target="_blank">Open the application form for this project in a new tab</a></p>
+    <br><br><br>
+    <!--<p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>-->
   </div>
 </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+        <form action="../trust-details" method="post"> 
+       
+      
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Bob Roberts</h2></div>
+      
+            <div class="govuk-summary-card__content">  
+          
+            <dl class="govuk-summary-list">
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Position within the trust</dt>
+                <dd class="govuk-summary-list__value">CEO</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> position within the trust</span>
+                  </a>
+                </dd>
+              </div>
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Date of birth</dt>
+                <dd class="govuk-summary-list__value">12 September 1983</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Biography</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh, imperdiet varius tortor nisl vitae libero. Ut feugiat lobortis finibus.</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> biography</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+    
+          </div>
+
+        </div>
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Bob Smith</h2></div>
+      
+            <div class="govuk-summary-card__content">  
+          
+            <dl class="govuk-summary-list">
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Position within the trust</dt>
+                <dd class="govuk-summary-list__value">Finance officer</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> position within the trust</span>
+                  </a>
+                </dd>
+              </div>
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Date of birth</dt>
+                <dd class="govuk-summary-list__value">23 May 1989</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Biography</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh, imperdiet varius tortor nisl vitae libero. Ut feugiat lobortis finibus.</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> biography</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+    
+          </div>
+
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Bob Macintosh</h2></div>
+      
+            <div class="govuk-summary-card__content">  
+          
+            <dl class="govuk-summary-list">
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Position within the trust</dt>
+                <dd class="govuk-summary-list__value">Safeguarding officer</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> position within the trust</span>
+                  </a>
+                </dd>
+              </div>
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Date of birth</dt>
+                <dd class="govuk-summary-list__value">11 February 1971</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">Biography</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh, imperdiet varius tortor nisl vitae libero. Ut feugiat lobortis finibus.</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> biography</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+    
+          </div>
+
+        </div>
+
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add another person
+        </button>
+
+
+       
+        
+
+
+
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      
+        {{ govukCheckboxes({
+          idPrefix: "general-info-status",
+          name: "general-info-status",
+          items: [
+            {
+              value: "Complete",
+              text: "Mark the key people section for this trust as complete, you can still make changes later",
+              checked: true
+            }
+            ]
+          }) }}
+        
+
+
+
+
+
+
+      
+
+
+<br><br>
+     
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+</form>
+
 {% endblock %}
