@@ -16,10 +16,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#aorequired" method="post">
         {% else %}
-        <form action="../conversion-details/conversion-details-voluntary" method="post">
+        <form action="../conversion-details/conversion-details" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">Conversion details</span>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
       <h1 class="govuk-heading-l">Is an academy order required for this conversion?</h1>
 
         {{ govukRadios({

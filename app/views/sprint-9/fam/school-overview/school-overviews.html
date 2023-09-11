@@ -10,12 +10,13 @@
   
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Cotswolds Acadcemies Trusts</span>
+    <span class="govuk-caption-l">Cotswolds Academies Trusts</span>
     <h1 class="govuk-heading-l">School overviews</h1>
     <p class="govuk-body-m govuk-!-margin-bottom-8" ><a href="../related/application_newtab_voluntary" target="_blank">Open the application form for this project in a new tab</a></p>
     <br><br><br>
     <!--<p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>-->
-    </div></div>
+  </div>
+</div>
 
 
     <div class="govuk-grid-row">
@@ -197,7 +198,7 @@
               
                   <dd class="govuk-summary-list__value">
                     {% if data['distance']%}
-                    {{data['distance'] | safe }} Miles
+                    {{data['distance'] | safe }} miles
                     {% else %} 
                     <span class="empty">Empty</span>
                     {% endif %}</br>
@@ -394,12 +395,10 @@
                 Private finance initiative (PFI) scheme
                 </dt>
                 <dd class="govuk-summary-list__value">
-              
                   {{data['pfi-scheme-details']}}
-                
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="pfi-voluntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
                   </a>
                 </dd>
               </div>
@@ -608,7 +607,7 @@
             No
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="pfi-voluntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
             </a>
           </dd>
         </div>
@@ -693,7 +692,7 @@
 <br><br>
      
 {{ govukButton({
-  text: "Confirm and continue"
+  text: "Save and continue"
 }) }}
 
 </form>
