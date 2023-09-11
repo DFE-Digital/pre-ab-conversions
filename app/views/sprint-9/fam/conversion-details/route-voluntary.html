@@ -16,10 +16,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#routes" method="post">
         {% else %}
-        <form action="../conversion-details/conversion-details-voluntary" method="post">
+        <form action="../conversion-details/conversion-details" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St. Wilfrid's Primary School</span>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
       <h1 class="govuk-heading-l">Academy type, route and conversion support grant</h1>
 <h2 class="govuk-heading-m">Academy type and route</h2>
       <p class="govuk-body-m gov">Converter (cannot be changed for this private beta)</p>
@@ -47,10 +47,10 @@
         <a name="additional_info"></a>{{ govukTextarea({
           name: "routes-funding",
           id: "routes-funding",
+          value: data["routes-funding"],
           label: {
-            text: "If you changed the amount of the support grant, give a reason why",
-            classes: "govuk-label--m",
-            value: data["routes-funding"]   }
+            text: "If you chaged the amount of the support grant, give a reason why",
+            classes: "govuk-label--m"  }
         }) }}
        
  

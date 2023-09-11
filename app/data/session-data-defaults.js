@@ -25,7 +25,7 @@ console.log(records)
 module.exports = {
   
   /* overview */
-  "opening-date": "Monday 1 March 2021",
+  "opening-date": "Sunday 1 October 2023",
 
   /* Academy order required*/
   "aorequired": "Yes",

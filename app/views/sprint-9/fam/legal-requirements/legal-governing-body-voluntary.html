@@ -10,10 +10,10 @@
       {% if data['returnToSummary'] == 'yes' %}
         <form action="../generate/generate_summary#legal-governing-body-checked" method="post">
         {% else %}
-        <form action="legal-requirements-voluntary" method="post">
+        <form action="legal-requirements" method="post">
       {% endif %}
       <input hidden type="text" name="returnToSummary" value="no"/>
-      <span class="govuk-caption-l">St Wilfrid's Primary School</span>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
       <h1 class="govuk-heading-l">Has the school provided a governing body resolution?</h1>
 
         {{ govukRadios({
