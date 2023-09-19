@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+
+ 
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">School details</span>
+    <h1 class="govuk-heading-l">The case for academisation</h1>
+    <p class="govuk-body-m govuk-!-margin-bottom-8" ><a href="../related/application_newtab_voluntary" target="_blank">Open the application form for this project in a new tab</a></p>
+    <br><br><br>
+    <!--<p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>-->
+  </div>
+</div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+        <form action="../school-details" method="post"> 
+       
+      
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Cheltenham Spa Primary School</h2></div>
+      
+          <div class="govuk-summary-card__content">  
+            
+            
+            <dl class="govuk-summary-list">
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">Rationale</dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['school-rationale']%}
+                  {{data['school-rationale']}}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="school-rationale">
+                  Change<span class="govuk-visually-hidden"> school rationale</span>
+                </a>
+                </dd>
+              </div>
+      
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">Risks and issues</dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['school-risks']%}
+                  {{data['school-risks']}}
+                  {% else %} 
+                  <span class="empty">Empty</span>
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="school-risks-and-issues">
+                  Change<span class="govuk-visually-hidden"> school risks and issues</span>
+                </a>
+                </dd>
+              </div>
+            
+            </dl>
+      
+      
+      
+       
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+          {{ govukCheckboxes({
+            idPrefix: "general-info-status",
+            name: "general-info-status",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark the overview section for this school as complete, you can still make changes later",
+                checked: false
+              }
+              ]
+            }) }}
+         
+      
+      </div>
+
+
+        </div>
+
+
+
+        
+
+
+
+
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Gloucester Primary School</h2></div>
+      
+          <div class="govuk-summary-card__content">  
+            
+            
+            <dl class="govuk-summary-list">
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">Rationale</dt>
+                <dd class="govuk-summary-list__value">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh, imperdiet varius tortor nisl vitae libero. Ut feugiat lobortis finibus.
+                </dd>
+                <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> school rationale</span>
+                </a>
+                </dd>
+              </div>
+      
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-thirds">Risks and issues</dt>
+                <dd class="govuk-summary-list__value">
+                  Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh.
+                </dd>
+                <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> school risks and issues</span>
+                </a>
+                </dd>
+              </div>
+      
+              
+            
+            </dl>
+      
+      
+      
+       
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+          {{ govukCheckboxes({
+            idPrefix: "general-info-status",
+            name: "general-info-status",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark the case for academisation section for this school as complete, you can still make changes later",
+                checked: false
+              }
+              ]
+            }) }}
+         
+      
+      </div>
+
+
+  </div>
+
+
+
+
+ 
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Winchcombe Primary School</h2></div>
+
+    <div class="govuk-summary-card__content">  
+      
+      
+      <dl class="govuk-summary-list">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">Rationale</dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh, imperdiet varius tortor nisl vitae libero. Ut feugiat lobortis finibus.
+          </dd>
+          <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> school rationale</span>
+          </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">Risks and issues</dt>
+          <dd class="govuk-summary-list__value">
+            Donec lobortis, nisi posuere tincidunt bibendum, felis libero bibendum ante, sit amet gravida nisl sapien sit amet sem. In fringilla, mauris nec blandit tincidunt, arcu est mattis nibh.
+          </dd>
+          <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> school risks and issues</span>
+          </a>
+          </dd>
+        </div>
+      
+      </dl>
+
+
+
+ 
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+    {{ govukCheckboxes({
+      idPrefix: "general-info-status",
+      name: "general-info-status",
+      items: [
+        {
+          value: "Complete",
+          text: "Mark the case for academisation section for this school as complete, you can still make changes later",
+          checked: false
+        }
+        ]
+      }) }}
+   
+
+</div>
+
+
+</div>
+
+
+
+<br><br>
+     
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+</form>
+
+{% endblock %}
