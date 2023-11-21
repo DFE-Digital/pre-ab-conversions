@@ -1,0 +1,74 @@
+{% extends "../includes/form-template.html" %}
+
+{% set pageTitle = "What is the school name? – Involuntary conversions – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./search-for-a-trust" method="post" novalidate>
+        
+
+      
+        {% set pageHeading %}
+            What is the school name?
+        {% endset %}
+
+
+        {{ govukSelect({
+            label: {
+                html: pageHeading,
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+              text: "Search by name or URN (Unique Reference Number)."
+            },
+            id: "school-name",
+            name: "school-name",
+            value: data['school-name'],
+            items: [
+              {
+                value: "",
+                text: ""
+              },
+              {
+                value: "Cheltenham Spa Primary School",
+                text: "Cheltenham Spa Primary School",
+                selected: checked("school-name", "Cheltenham Spa Primary School")
+              },
+              {
+                value: "Cheltenham Spa Secondary School",
+                text: "Cheltenham Spa Secondary School",
+                selected: checked("school-name", "Cheltenham Spa Secondary School")
+              },
+              {
+                value: "Cheltenham Boys School",
+                text: "Cheltenham Boys School",
+                selected: checked("school-name", "Cheltenham Boys School")
+              },
+              {
+                value: "Cheltenham Girls School",
+                text: "Cheltenham Girls School",
+                selected: checked("school-name", "Cheltenham Girls School")
+              }
+            ]
+          }) }}
+
+
+
+
+          {{ govukButton({
+            text: "Continue"
+        }) }}
+          
+         
+
+
+    </form>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#school-name')
+      })
+    });
+    </script>
+{% endblock %}

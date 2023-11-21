@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+<a href="../task_list_sponsored_intermediate.html" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% if data['returnToSummary'] == 'yes' %}
+    <form action="../generate/generate_summary#rationale" method="post">
+      {% else %}
+      <form action="../task_list_sponsored_intermediate" method="post">
+    {% endif %}
+    <input hidden type="text" name="returnToSummary" value="no"/>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+  <h1 class="govuk-heading-l">Preparing your template</h1>
+
+  <p>In the future you will be able to use this service to capture and record the information you would normally provide on trust or sponsor templates, as well as project templates.</p>
+
+  <p>For now you must either <a href="sponsor-template-guidance.html">update an existing template, or create a new one</a> and save a copy in SharePoint.</p>
+
+  
+</div></div>
+
+
+ 
+
+         
+
+       
+
+
+  
+        <form action="../task_list_sponsored_intermediate" method="post"> 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukCheckboxes({
+            idPrefix: "sponsor-template-status",
+            name: "sponsor-template-status",
+            items: [
+              {
+                value: "Complete",
+                text: "Mark this section as complete, you can still make changes later"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
+
+        </form>
+   
+      </main>
+    </main>   
+    </div>
+  </div>
+  {% endblock %}

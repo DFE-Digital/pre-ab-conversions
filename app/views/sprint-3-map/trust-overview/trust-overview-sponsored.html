@@ -1,0 +1,317 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+ 
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">
+    Trust overview</h1>
+    <!--
+    {% if data['application-form-url']%}
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
+    {% else %} 
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
+    {% endif %}
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    -->
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    <dl class="govuk-summary-list">
+     
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Trust name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          Gloucestershire Academy Trust
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Trust reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          TR01318
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sponsor ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-id'] %}
+          {{ data['sponsor-id']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/mat-sponsor-id-involuntary">
+            Change<span class="govuk-visually-hidden">MAT or sponsor ID"</span>
+          </a>
+        </dd>
+      </div>
+
+     
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of trust
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-type'] %}
+          {{ data['sponsor-type']}} (example)
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/type-involuntary">
+            Change<span class="govuk-visually-hidden">sponsor type"</span>
+          </a>
+        </dd>
+      </div>
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Diocesan MAT
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-diocesan'] %}
+          {{ data['sponsor-diocesan']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/diocesan-mat-involuntary">
+            Change<span class="govuk-visually-hidden">is this a diocesan MAT"</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['sponsor-diocesan'] == 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What percentage of schools are good or outstanding?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-good-percentage'] %}
+          {{ data['sponsor-good-percentage']}}%
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/percentage-good-outstanding-involuntary">
+            Change<span class="govuk-visually-hidden">percentage of good or outstanding schools"</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Any transferring academies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-academy-transfers'] %}
+          {{ data['sponsor-academy-transfers']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/academies-transferring-involuntary">
+            Change<span class="govuk-visually-hidden">academies in the process of transferring"</span>
+          </a>
+        </dd>
+      </div>
+
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Open academies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-open'] %}
+          {{ data['sponsor-open']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/open-involuntary">
+            Change<span class="govuk-visually-hidden">open academies"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Academies in the pipeline
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-pipeline'] %}
+          {{ data['sponsor-pipeline']}}{% if data['sponsor-pipeline'] == 'Yes' %}, {{ data['sponsor-pipeline-number']}} {% endif %}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/pipeline-involuntary">
+            Change<span class="govuk-visually-hidden">academies in the pipeline"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Pre-pipeline academies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-pre-pipeline'] %}
+          {{ data['sponsor-pre-pipeline']}}{% if data['sponsor-pre-pipeline'] == 'Yes' %}, {{ data['sponsor-pre-pipeline-number']}} {% endif %}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/pre-pipeline-involuntary">
+            Change<span class="govuk-visually-hidden">pre-pipeline academies"</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Capacity for more academies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-capacity'] %}
+          {{ data['sponsor-capacity']}}{% if data['sponsor-capacity'] == 'Yes' %}, {{ data['sponsor-capacity-number']}} {% endif %}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/capacity-beyond-open-involuntary">
+            Change<span class="govuk-visually-hidden">capacity for more academies"</span>
+          </a>
+        </dd>
+      </div>
+
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Plans for change or improvement
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-plans-intended'] %}
+          {{ data['sponsor-plans-intended']}}<br>
+          {{ data['sponsor-plans']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/plans-for-change-involuntary">
+            Change<span class="govuk-visually-hidden">sponsor plans for improvement"</span>
+          </a>
+        </dd>
+      </div>
+      
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Areas the trust covers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-footprint'] %}
+          {{ data['sponsor-footprint']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../trust-overview/current-footprint-involuntary">
+            Change<span class="govuk-visually-hidden">sponsor footprint"</span>
+          </a>
+        </dd>
+      </div>
+
+      
+     
+    </dl>
+    <form action="../task_list_sponsor_template_new" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "overview-status",
+    name: "overview-status",
+    
+    items: [
+    
+      {
+        value: "Complete",
+        text: "Mark this section as complete, you can still make changes later"
+      }
+      ]
+    }) }}
+
+  
+        
+
+  {{ govukButton({
+    text: "Confirm and continue"
+  }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

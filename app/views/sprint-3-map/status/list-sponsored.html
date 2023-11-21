@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Record the decision
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../task_list_sponsor_template_new?justRecorded=no" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="status-answer-sponsored" method="post">
+      <input hidden type="text" name="returnToSummary" value="no"/>
+      <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+      <h1 class="govuk-heading-l">Record the decision</h1>
+
+      <!--radio buttons-->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-sponsored-approved" name="decision-status-sponsored" {{checked("decision-status-sponsored", "Approved")}} type="radio" value="Approved">
+              <label class="govuk-label govuk-radios__label" for="decision-status-sponsored-approved">
+                Approved
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-sponsored-declined" name="decision-status-sponsored" {{checked("decision-status-sponsored", "Declined")}} type="radio" value="Declined">
+              <label class="govuk-label govuk-radios__label" for="decision-status-sponsored-declined">
+                Declined
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="decision-status-sponsored-deferred" name="decision-status-sponsored" {{checked("decision-status-sponsored", "Deferred")}} type="radio" value="Deferred">
+              <label class="govuk-label govuk-radios__label" for="decision-status-sponsored-deferred">
+                Deferred
+              </label>
+            </div>          
+          </div>
+      
+        </fieldset>
+      </div>
+      
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </fieldset>   
+    </form>
+
+  </div>  
+</div>
+{% endblock %}

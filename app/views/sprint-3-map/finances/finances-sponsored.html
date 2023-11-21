@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back();" class="govuk-back-link">Back to project details</a>
+{% endblock %}
+ 
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">
+    Finances</h1>
+    <!--
+    {% if data['application-form-url']%}
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
+    {% else %} 
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
+    {% endif %}
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    -->
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    <dl class="govuk-summary-list">
+   
+      
+      
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Received funding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-mdif'] %}
+          {{ data['sponsor-mdif']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="finances-sponsored-mdif.html">
+            Change<span class="govuk-visually-hidden">MDIF funding"</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['sponsor-mdif'] == 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How much and what for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-mdif-amount'] %}
+          £{{ data['sponsor-mdif-amount']}}<br>
+          {{ data['sponsor-mdif-purpose']}}
+          {% else %}
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="finances-sponsored-mdif-amount.html">
+            Change<span class="govuk-visually-hidden">MDIF funding amount"</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Integrated Curriculum Financial Planning (ICFP) information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">
+          {% if data['sponsor-icfp'] %}
+          {{ data['sponsor-icfp']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+          {% endif %}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="finances-sponsored-icfp.html">
+            Change<span class="govuk-visually-hidden">ICFP information"</span>
+          </a>
+        </dd>
+      </div>
+
+      
+  
+
+            
+
+    
+      
+
+
+      
+     
+
+      
+      
+     
+    </dl>
+    <form action="../task_list_sponsor_template_new" method="post"> 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukCheckboxes({
+    idPrefix: "overview-status",
+    name: "overview-status",
+    
+    items: [
+    
+      {
+        value: "Complete",
+        text: "Mark this section as complete, you can still make changes later"
+      }
+      ]
+    }) }}
+
+  
+        
+
+  {{ govukButton({
+    text: "Confirm and continue"
+  }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

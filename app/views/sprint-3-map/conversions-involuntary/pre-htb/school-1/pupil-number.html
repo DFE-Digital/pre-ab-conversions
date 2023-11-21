@@ -1,0 +1,154 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Pupil numbers – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-l">
+                Academy: The Richard Crosse Cofe Primary School
+            </span>
+            <h1 class="govuk-heading-l">
+                Pupil numbers
+            </h1>
+            <p class="govuk-body">
+                This information comes from TRAMS and will go into your project template
+            </p>
+
+            <p class="govuk-body">
+                You can <a href="#additional-information" class="govuk-body">add additional information</a> if you need to. This will automatically go into your project template. 
+            </p>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Girls on roll
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">48.7%</p>
+                    </dd>
+                    <!--Add change link if necessary based on needs-->
+                    {# <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd> #}
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Boys on roll
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">51.3%</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Pupils with a statement of special educational needs (SEN)
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">2.7%</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Pupils whose first language is not English
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">2.7%</p>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Pupils eligible for free school meals during the past 6 years
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <p class="govuk-body">16.8%</p>
+                    </dd>
+                </div>
+        
+            </dl>
+       
+        </div>
+
+        {% if data['pupil-number-more-detail'] and data['update-pupil-number'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Additional information
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the school pupil forecasts section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['pupil-number-more-detail'] %}
+                            {{data['pupil-number-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/pupil-number?update-pupil-number=yes#pupil-number-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/pupil-number#additional-information" method="post" novalidate>
+                <input type="text" name="update-pupil-number" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "pupil-number-more-detail",
+                    id: "pupil-number-more-detail",
+                    label: {
+                        text: "Additional information (optional)",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                    },
+                    value: data['pupil-number-more-detail'],
+                    hint: {
+                        text: "This information will populate into your HTB template under the pupil numbers section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
