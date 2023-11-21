@@ -1,0 +1,276 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+   
+<a href="task_list_involuntary_conversions" class="govuk-back-link">Back to task list</a>
+<p>PFI scheme: {{data['pfi-scheme']}}</p>
+
+{% endblock %}
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Cheltenham Spa Primary School</span>
+    <h1 class="govuk-heading-l">Confirm general information</h1>
+    
+
+    {% if data['application-form-url']%}
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="{{data['application-form-url']}}" target="_blank">the Annex B form (opens in the new tab)</a>.</p>
+    {% else %} 
+    <p class="govuk-body-m">Some details have been taken from TRAMS. You can add more from <a href="../related/application_form_url_alt">the Annex B form</a>.</p>      
+    {% endif %}
+
+
+    <p class="govuk-body-s">TRAMS last updated on: 23 March 2021</p>
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">School type</dt>
+          <dd class="govuk-summary-list__value">Voluntary aided school</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">School phase</dt>
+          <dd class="govuk-summary-list__value">Primary</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Age range</dt>
+          <dd class="govuk-summary-list__value">3 to 11</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Capacity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">236</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Published admission number (PAN)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['PAN']%}
+            {{data['PAN']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions"> <a class="govuk-link" href="PAN-involuntary">
+            Change<span class="govuk-visually-hidden">published admission numbers</span>
+          </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Number on roll (NOR)</dt>
+          <dd class="govuk-summary-list__value">226</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Percentage the school is full</dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">80%</p>
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Percentage of free school meals at the school (%FSM)
+          </dt>
+          <dd class="govuk-summary-list__value">
+          23.8%
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Viability issues
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['viability']%}
+            {{data['viability']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="viability-involuntary">
+              Change<span class="govuk-visually-hidden">viability issues</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Financial deficit
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['deficit']%}
+            {{data['deficit']}}
+            {% else %} 
+            <span class="empty">Empty</span>
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deficit-involuntary">Change<span class="govuk-visually-hidden">financial surplus or deficit</span>
+            </a>
+          </dd>
+        </div>
+
+           
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Part of a PFI (Private Finance Initiative) scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['pfi-scheme']%}
+              {{data['pfi-scheme']}}
+              {% else %} 
+              No
+              {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {% if data['pfi-scheme']%}
+            <a class="govuk-link" href="pfi-involuntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            {% else %} 
+            <a class="govuk-link" href="pfi-involuntary?pfi-scheme=No">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        {%  if(data['pfi-scheme-details']) %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Private finance initiative (PFI) scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+        
+            {{data['pfi-scheme-details']}}
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="pfi-involuntary">Change<span class="govuk-visually-hidden">private finance initiative scheme</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Is the school linked to a diocese?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes, Diocese of Goucestershire
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Distance from the converting school to the trust, or other schools in the trust
+          </dt>
+        
+            <dd class="govuk-summary-list__value">
+              {% if data['distance']%}
+              {{data['distance'] | safe }} Miles
+              {% else %} 
+              <span class="empty">Empty</span>
+              {% endif %}</br>
+              {{data['distance-more-detail']}}
+            </dd>
+        
+              
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="distance-involuntary">Change<span class="govuk-visually-hidden">distance to trust headquarters</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Parlimentary consituency
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Cheltenham
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          MP name
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {% if data['local-mp']%}
+              {{data['local-mp']}}
+              {% else %} 
+              <span class="empty">Empty</span>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="local-mp-involuntary">Change<span class="govuk-visually-hidden">MP name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          MP political party
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {% if data['party']%}
+           {{data['party']}}
+          {% else %} 
+          <span class="empty">Empty</span>
+        {% endif %}
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="local-mp-involuntary">Change<span class="govuk-visually-hidden">Political party</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <form action="../task_list" method="post"> 
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      
+        {{ govukCheckboxes({
+          idPrefix: "general-info-status",
+          name: "general-info-status",
+          items: [
+            {
+              value: "Complete",
+              text: "Mark this section as complete, you can still make changes later"
+            }
+            ]
+          }) }}
+        {{ govukButton({
+          text: "Confirm and continue"
+        }) }}
+      
+        </form>
+
+  </div>
+</div>
+
+{% endblock %}
