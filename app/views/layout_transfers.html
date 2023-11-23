@@ -41,7 +41,29 @@
 {% endblock %}
 
 {% block header %}
+
+<!-- PHASE BANNER AT TOP OF PAGE -->
+
+<!--
+<div class="app-phase-banner__wrapper">
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a new service – Some parts of this prototype do not work yet.
+    </span>
+    </p>
+  </div>
+</div>
+-->
+
 <header class="dfe-header" role="banner">
+
+ 
+
+
   <div class="dfe-width-container dfe-header__container">
     <div class="dfe-header__logo">
       <a class="dfe-header__link dfe-header__link--service " href="/" aria-label="DfE homepage">
@@ -108,7 +130,7 @@
         </button>
       </p>
       <ul class="dfe-header__navigation-list">
-        <li class="dfe-header__navigation-item dfe-header__navigation-item--current">
+        <li class="dfe-header__navigation-item">
           <a class="dfe-header__navigation-link" href="/sprint-3-map/projects-list-new?userName=Alex%20James&userRole=Delivery%20Officer&filter-project-title=&filter-regions=null&filter-delivery-officers=null&filter-project-status=null">
             Conversions
             <svg class="dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
@@ -116,7 +138,7 @@
             </svg>
           </a>
         </li>
-        <li class="dfe-header__navigation-item">
+        <li class="dfe-header__navigation-item dfe-header__navigation-item--current">
           <a class="dfe-header__navigation-link" href="/sprint-3-map/transfers/projects-list-transfers">
             Transfers
             <svg class="dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
@@ -139,7 +161,7 @@
   </nav>
 </header>
 
-
+<!-- PHASE BANNER IN HEADER -->
 
 <div class="app-phase-banner__wrapper">
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
@@ -153,6 +175,7 @@
     </p>
   </div>
 </div>
+
 <!--
 <div class="app-primary-navigation">
   <div class="app-primary-navigation__container">
